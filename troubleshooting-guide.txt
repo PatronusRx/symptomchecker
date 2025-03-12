@@ -1,0 +1,140 @@
+# Symptom Checker Troubleshooting Guide
+
+If you're experiencing errors when clicking on chapters in the symptom checker, follow these steps to resolve the issue:
+
+## Step 1: Check Your Supabase Setup
+
+### Verify Database Tables
+
+Make sure all required tables have been created with the correct structure:
+
+```sql
+-- Confirm the tables exist
+SELECT table_name 
+FROM information_schema.tables 
+WHERE table_schema = 'public';
+
+-- Check the structure of the chapters table
+SELECT column_name, data_type 
+FROM information_schema.columns 
+WHERE table_name = 'chapters';
+```
+
+### Verify Sample Data
+
+Check if your chapters table has data:
+
+```sql
+SELECT * FROM chapters;
+```
+
+If it's empty, run the sample SQL data script provided.
+
+## Step 2: Check Environment Variables
+
+1. Make sure you have a `.env.local` file with the following variables set:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+2. Verify the values match those in your Supabase project settings.
+
+3. **Important**: After updating environment variables, restart your development server:
+   ```
+   npm run dev
+   ```
+
+## Step 3: Fix Slug Handling
+
+The most common issue is a mismatch between the URL slug and how we're querying the database. Here are some fixes:
+
+### Manual URL Testing
+
+Try these URLs directly in your browser to test different formats:
+
+```
+http://localhost:3000/symptoms/chest-pain
+http://localhost:3000/symptoms/Chest-Pain
+http://localhost:3000/symptoms/chest_pain
+```
+
+### Check Chapter Titles in Database
+
+Make sure your chapter titles in the database match what you expect:
+
+```sql
+-- Update a chapter title if needed
+UPDATE chapters 
+SET title = 'Chest Pain' 
+WHERE title = 'ChestPain';
+```
+
+## Step 4: Debug in Browser
+
+1. Open your browser's developer tools (F12 or right-click → Inspect)
+2. Go to the Console tab
+3. Look for any error messages when you click on a chapter
+
+## Step 5: Enable Verbose Logging
+
+Add this code to your page before deploying to see more detailed information:
+
+```typescript
+// At the top of your DynamicSymptomChecker component
+useEffect(() => {
+  console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+  console.log("Supabase Key set:", !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+}, []);
+```
+
+## Common Issues and Solutions
+
+### 1. "Chapter not found" Error
+
+**Solution**: Make sure the case and format of the titles in your database match what the code expects. Update this line in your DynamicSymptomChecker component:
+
+```typescript
+// Change this:
+.eq('title', chapterSlug.replace('-', ' '))
+
+// To this (more flexible matching):
+.ilike('title', `%${formattedSlug}%`)
+```
+
+### 2. CORS Errors
+
+**Solution**: Check your Supabase project settings and ensure the domain you're accessing from is allowed in CORS settings.
+
+### 3. "Failed to fetch" Errors
+
+**Solution**: This usually indicates an issue with your Supabase connection. Double-check your environment variables and make sure your internet connection is working.
+
+### 4. Empty Lists/Categories
+
+**Solution**: Make sure you have properly populated all required tables, including:
+- chapters
+- categories
+- sections
+- checklist_items
+
+## Last Resort Solutions
+
+If none of the above works:
+
+1. **Clear your browser cache** - sometimes old data can cause issues
+
+2. **Try a different browser** - to rule out browser-specific issues
+
+3. **Redeploy your application** - to ensure all environment variables are correctly loaded
+
+4. **Check Supabase logs** - for any API errors or rate limiting issues
+
+5. **Implement a direct fallback** for testing:
+   ```typescript
+   // At the top of your DynamicSymptomChecker component
+   if (!supabaseUrl || !supabaseKey) {
+     // Fallback to hardcoded data for testing
+     return <div>Using fallback data due to missing Supabase credentials</div>;
+   }
+   ```

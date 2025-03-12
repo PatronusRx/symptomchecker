@@ -14,20 +14,20 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  // Define a set of icons for different symptoms
+  // Define a mapping of symptom titles to Lucide icon names
   const symptomIcons: Record<string, string> = {
-    'Chest Pain': '❤️',
-    Headache: '🧠',
-    Cough: '🫁',
-    'Abdominal Pain': '🩻',
-    Fever: '🌡️',
-    Dizziness: '💫',
-    'Shortness of Breath': '💨',
-    Fatigue: '😴',
-    Nausea: '🤢',
-    Vomiting: '🤮',
+    'Chest Pain': 'heart',
+    Headache: 'brain',
+    Cough: 'wind',
+    'Abdominal Pain': 'stethoscope',
+    Fever: 'thermometer',
+    Dizziness: 'sparkles',
+    'Shortness of Breath': 'wind',
+    Fatigue: 'moon',
+    Nausea: 'pill',
+    Vomiting: 'droplets',
     // Default icon for any other symptoms
-    default: '🩺',
+    default: 'activity',
   };
 
   // Define keywords for each symptom for better searching
@@ -176,7 +176,8 @@ export default function Home() {
             let description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
 
             // Get icon for this symptom
-            const icon = symptomIcons[chapter.title] || symptomIcons.default;
+            const iconName =
+              symptomIcons[chapter.title] || symptomIcons.default;
 
             // Get keywords for this symptom
             const keywords = symptomKeywords[chapter.title] || [];
@@ -186,7 +187,7 @@ export default function Home() {
                 key={chapter.id}
                 title={chapter.title}
                 description={description}
-                icon={icon}
+                iconName={iconName}
                 onClick={() => handleCardClick(chapter.title)}
               />
             );

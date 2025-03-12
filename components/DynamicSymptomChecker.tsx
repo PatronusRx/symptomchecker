@@ -1,6 +1,16 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import {
+  Plus,
+  Minus,
+  Ban,
+  FileEdit,
+  Copy,
+  ListTodo,
+  Clipboard,
+  ChevronRight,
+} from 'lucide-react';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -424,145 +434,182 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   }
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">
-        {chapter?.title || 'Symptom'} SOAP Note Generator
-      </h1>
-
-      <div className="mb-6">
-        <label className="block mb-2 font-semibold">
-          Duration of Symptoms:
-        </label>
-        <input
-          type="text"
-          className="w-full p-2 border rounded"
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-          placeholder="e.g., 2 hours, 3 days"
-        />
-      </div>
-
-      {/* Category tabs */}
-      <div className="mb-6 border-b border-gray-200">
-        <nav className="flex flex-wrap -mb-px">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`mr-2 py-2 px-4 font-medium text-sm border-b-2 ${
-                activeCategory === category.id
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              }`}
-              onClick={() => setActiveCategory(category.id)}
-            >
-              {category.title}
-            </button>
-          ))}
+    <div className="flex min-h-screen">
+      {/* Left Sidebar */}
+      <div className="w-64 bg-gray-100 border-r border-gray-200 p-4">
+        <h2 className="text-lg font-bold mb-4 flex items-center">
+          <ListTodo className="mr-2" size={20} />
+          Categories
+        </h2>
+        <nav>
+          <ul className="space-y-1">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button
+                  className={`w-full text-left px-3 py-2 rounded flex items-center ${
+                    activeCategory === category.id
+                      ? 'bg-blue-50 text-blue-600 font-medium'
+                      : 'text-gray-700 hover:bg-gray-200'
+                  }`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <ChevronRight
+                    size={16}
+                    className={`mr-2 transition-transform ${
+                      activeCategory === category.id
+                        ? 'transform rotate-90'
+                        : ''
+                    }`}
+                  />
+                  {category.title}
+                </button>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
 
-      {/* Checklist items for selected category */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-4">Symptom Checklist:</h2>
+      {/* Main Content Area */}
+      <div className="flex-1 p-6 max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4 flex items-center">
+          <FileEdit className="mr-2" size={24} />
+          {chapter?.title || 'Symptom'} SOAP Note Generator
+        </h1>
 
-        <div className="bg-white shadow-sm rounded-lg overflow-hidden">
-          {getItemsByCategory(activeCategory).map((item) => (
-            <div
-              key={item.id}
-              className="border-b border-gray-100 p-4 last:border-b-0"
-            >
-              <div className="font-semibold mb-2">{item.item_text}</div>
-
-              <div className="flex space-x-4 mb-2">
-                <label className="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name={`item-${item.id}`}
-                    value="positive"
-                    checked={responses[item.id]?.response === '+'}
-                    onChange={() => handleResponseChange(item.id, '+')}
-                    className="mr-1"
-                  />
-                  Positive
-                </label>
-                <label className="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name={`item-${item.id}`}
-                    value="negative"
-                    checked={responses[item.id]?.response === '-'}
-                    onChange={() => handleResponseChange(item.id, '-')}
-                    className="mr-1"
-                  />
-                  Negative
-                </label>
-                <label className="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name={`item-${item.id}`}
-                    value="not_applicable"
-                    checked={responses[item.id]?.response === 'NA'}
-                    onChange={() => handleResponseChange(item.id, 'NA')}
-                    className="mr-1"
-                  />
-                  Not Applicable
-                </label>
-              </div>
-
-              {/* Notes field */}
-              {item.has_text_input && (
-                <div className="mt-2">
-                  <textarea
-                    className="w-full p-2 border rounded"
-                    placeholder={item.input_placeholder || 'Add notes...'}
-                    value={responses[item.id]?.notes || ''}
-                    onChange={(e) => handleNotesChange(item.id, e.target.value)}
-                    rows={2}
-                  />
-                  {item.input_unit && (
-                    <span className="text-sm text-gray-500 ml-2">
-                      {item.input_unit}
-                    </span>
-                  )}
-                </div>
-              )}
-
-              {/* If there are child items, we would render them here */}
-              {/* This depends on how parent_item_id is used in your system */}
-            </div>
-          ))}
-
-          {getItemsByCategory(activeCategory).length === 0 && (
-            <div className="p-6 text-center text-gray-500">
-              No items in this category
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-          onClick={generateSoapNote}
-        >
-          Generate SOAP Note
-        </button>
-      </div>
-
-      {generatedNote && (
         <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Generated Note:</h2>
-          <div className="p-4 border rounded bg-white">
-            <pre className="whitespace-pre-wrap font-sans">{generatedNote}</pre>
+          <label className="block mb-2 font-semibold">
+            Duration of Symptoms:
+          </label>
+          <input
+            type="text"
+            className="w-full p-2 border rounded"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            placeholder="e.g., 2 hours, 3 days"
+          />
+        </div>
+
+        {/* Checklist items for selected category */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4 flex items-center">
+            <Clipboard className="mr-2" size={20} />
+            Symptom Checklist:
+          </h2>
+
+          <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+            {getItemsByCategory(activeCategory).map((item) => (
+              <div
+                key={item.id}
+                className="border-b border-gray-100 p-4 last:border-b-0"
+              >
+                <div className="font-semibold mb-2">{item.item_text}</div>
+
+                <div className="flex space-x-4 mb-2">
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name={`item-${item.id}`}
+                      value="positive"
+                      checked={responses[item.id]?.response === '+'}
+                      onChange={() => handleResponseChange(item.id, '+')}
+                      className="mr-1 text-green-500 focus:ring-green-500"
+                    />
+                    <span className="flex items-center text-green-600">
+                      <Plus className="mr-1" size={16} />
+                      Positive
+                    </span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name={`item-${item.id}`}
+                      value="negative"
+                      checked={responses[item.id]?.response === '-'}
+                      onChange={() => handleResponseChange(item.id, '-')}
+                      className="mr-1 text-red-500 focus:ring-red-500"
+                    />
+                    <span className="flex items-center text-red-600">
+                      <Minus className="mr-1" size={16} />
+                      Negative
+                    </span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name={`item-${item.id}`}
+                      value="not_applicable"
+                      checked={responses[item.id]?.response === 'NA'}
+                      onChange={() => handleResponseChange(item.id, 'NA')}
+                      className="mr-1 text-gray-500 focus:ring-gray-500"
+                    />
+                    <span className="flex items-center text-gray-600">
+                      <Ban className="mr-1" size={16} />
+                      Not Applicable
+                    </span>
+                  </label>
+                </div>
+
+                {/* Notes field */}
+                {item.has_text_input && (
+                  <div className="mt-2">
+                    <textarea
+                      className="w-full p-2 border rounded"
+                      placeholder={item.input_placeholder || 'Add notes...'}
+                      value={responses[item.id]?.notes || ''}
+                      onChange={(e) =>
+                        handleNotesChange(item.id, e.target.value)
+                      }
+                      rows={2}
+                    />
+                    {item.input_unit && (
+                      <span className="text-sm text-gray-500 ml-2">
+                        {item.input_unit}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {getItemsByCategory(activeCategory).length === 0 && (
+              <div className="p-6 text-center text-gray-500">
+                No items in this category
+              </div>
+            )}
           </div>
+        </div>
+
+        <div className="mb-6">
           <button
-            className="mt-2 bg-gray-500 text-white py-1 px-3 rounded hover:bg-gray-600"
-            onClick={copyToClipboard}
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 flex items-center"
+            onClick={generateSoapNote}
           >
-            Copy to Clipboard
+            <FileEdit className="mr-2" size={16} />
+            Generate SOAP Note
           </button>
         </div>
-      )}
+
+        {generatedNote && (
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold mb-2 flex items-center">
+              <FileEdit className="mr-2" size={20} />
+              Generated Note:
+            </h2>
+            <div className="p-4 border rounded bg-white">
+              <pre className="whitespace-pre-wrap font-sans">
+                {generatedNote}
+              </pre>
+            </div>
+            <button
+              className="mt-2 bg-gray-500 text-white py-1 px-3 rounded hover:bg-gray-600 flex items-center"
+              onClick={copyToClipboard}
+            >
+              <Copy className="mr-2" size={14} />
+              Copy to Clipboard
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
