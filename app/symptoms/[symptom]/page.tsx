@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
+import { Chapter } from '@/types/symptom-types';
 
 export default function SymptomPage() {
   const { symptom } = useParams();
-  const symptomSlug = Array.isArray(symptom) ? symptom[0] : (symptom as string);
+  const symptomSlug = Array.isArray(symptom) ? symptom[0] : symptom;
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -20,33 +21,45 @@ export default function SymptomPage() {
       try {
         setLoading(true);
 
+        console.log('Checking for chapter with slug:', symptomSlug);
+
         // Format the slug for database query (replace hyphens with spaces and capitalize)
         const formattedSlug = symptomSlug
           .split('-')
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(' ');
 
-        // Query to check if chapter exists
+        console.log('Formatted slug for query:', formattedSlug);
+
+        // Query to check if chapter exists - use less strict matching
         const { data, error } = await supabase
           .from('chapters')
           .select('id, title')
-          .ilike('title', formattedSlug)
-          .single();
+          .ilike('title', `%${formattedSlug}%`);
+
+        console.log('Query results:', data, 'Error:', error);
 
         if (error) {
           console.error('Error fetching chapter:', error);
-          setError('Chapter not found or database error');
+          setError(`Database error: ${error.message}`);
           setChapterExists(false);
-        } else if (data) {
+        } else if (data && data.length > 0) {
+          // Use the first matching result
           setChapterExists(true);
-          setChapterTitle(data.title);
+          setChapterTitle(data[0].title);
+          console.log('Found chapter:', data[0]);
         } else {
           setChapterExists(false);
-          setError('Chapter not found');
+          setError(`Chapter "${formattedSlug}" not found in database`);
+          console.log('No matching chapters found');
         }
       } catch (err) {
         console.error('Unexpected error:', err);
-        setError('An unexpected error occurred');
+        setError(
+          `An unexpected error occurred: ${
+            err instanceof Error ? err.message : String(err)
+          }`
+        );
         setChapterExists(false);
       } finally {
         setLoading(false);
@@ -74,8 +87,7 @@ export default function SymptomPage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Symptom Not Found</h1>
           <p className="mb-4">
-            The symptom &ldquo;{symptomSlug}&rdquo; does not exist or is not yet
-            supported.
+            The symptom "{symptomSlug}" does not exist or is not yet supported.
           </p>
           <Link href="/" className="text-blue-500 hover:underline">
             Return Home

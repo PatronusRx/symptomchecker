@@ -115,8 +115,14 @@ export default function Home() {
 
   // Handle card click - navigate to the symptom page
   const handleCardClick = (title: string) => {
-    // Convert title to slug format
-    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    // Convert title to slug format (remove any special characters)
+    const slug = title
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/[^\w\-]+/g, '') // Remove non-word chars except hyphens
+      .replace(/\-\-+/g, '-'); // Replace multiple hyphens with single hyphen
+
+    console.log(`Navigating to symptom: ${title} with slug: ${slug}`);
     router.push(`/symptoms/${slug}`);
   };
 
@@ -161,16 +167,19 @@ export default function Home() {
 
       {searchQuery && filteredChapters.length === 0 ? (
         <p className="text-center text-gray-600">
-          No symptoms found matching &ldquo;{searchQuery}&rdquo;
+          No symptoms found matching "{searchQuery}"
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredChapters.map((chapter) => {
             // Create a descriptive string based on the chapter title
-            const description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
+            let description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
 
             // Get icon for this symptom
             const icon = symptomIcons[chapter.title] || symptomIcons.default;
+
+            // Get keywords for this symptom
+            const keywords = symptomKeywords[chapter.title] || [];
 
             return (
               <SymptomCard
