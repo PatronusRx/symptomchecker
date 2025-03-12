@@ -1,15 +1,23 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
-  Plus,
-  Minus,
-  Ban,
-  FileEdit,
-  Copy,
-  ListTodo,
+  PlusCircle,
+  MinusCircle,
+  HelpCircle,
+  ClipboardEdit,
+  Save,
+  FileText,
+  Menu,
+  X,
+  Check,
   Clipboard,
+  RefreshCw,
+  Search,
   ChevronRight,
+  ChevronDown,
+  User,
+  ChevronLeft,
+  Clock,
 } from 'lucide-react';
 
 // Initialize Supabase client
@@ -49,6 +57,11 @@ type ChecklistItem = {
   input_label: string | null;
   input_placeholder: string | null;
   input_unit: string | null;
+  isCompleted?: boolean;
+  response?: '+' | '-' | 'NA' | null;
+  notes?: string;
+  selectedOptions?: { [key: string]: string | string[] };
+  detailNotes?: { [key: string]: string };
 };
 
 // State type for tracking responses
@@ -81,26 +94,41 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
 
   // State for SOAP note
-  const [generatedNote, setGeneratedNote] = useState('');
+  const [generatedNote, setGeneratedNote] = useState({
+    subjective: '',
+    objective: '',
+    assessment: '',
+    plan: '',
+  });
 
   // UI states
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [duration, setDuration] = useState('');
+  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showMobilePreview, setShowMobilePreview] = useState(false);
+  const [isAutoSaving, setIsAutoSaving] = useState(false);
+
+  // Patient info state
+  const [patientInfo, setPatientInfo] = useState({
+    name: 'New Patient',
+    dob: '',
+    mrn: '',
+    visitDate: new Date().toISOString().split('T')[0],
+  });
 
   // Fetch data from Supabase
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log('Starting data fetch for chapter slug:', chapterSlug);
 
         // Format slug for database query
         const formattedSlug = chapterSlug
           .split('-')
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(' ');
-        console.log('Formatted chapter slug for query:', formattedSlug);
 
         // Fetch chapter by slug with more flexible matching
         const { data: chaptersData, error: chapterError } = await supabase
@@ -108,21 +136,16 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           .select('*')
           .ilike('title', `%${formattedSlug}%`);
 
-        console.log('Chapter query results:', chaptersData);
-
         if (chapterError) {
-          console.error('Chapter query error:', chapterError);
           throw chapterError;
         }
 
         if (!chaptersData || chaptersData.length === 0) {
-          console.error('No chapters found for slug:', formattedSlug);
           throw new Error(`Chapter "${formattedSlug}" not found in database`);
         }
 
         // Use the first matching chapter
         const chapterData = chaptersData[0];
-        console.log('Using chapter data:', chapterData);
         setChapter(chapterData);
 
         // Fetch categories
@@ -132,11 +155,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           .order('display_order');
 
         if (categoriesError) {
-          console.error('Categories query error:', categoriesError);
           throw categoriesError;
         }
-
-        console.log('Categories query results:', categoriesData);
         setCategories(categoriesData || []);
 
         // Set initial active category to the first one
@@ -152,11 +172,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           .order('display_order');
 
         if (sectionsError) {
-          console.error('Sections query error:', sectionsError);
           throw sectionsError;
         }
-
-        console.log('Sections query results:', sectionsData);
         setSections(sectionsData || []);
 
         if (sectionsData && sectionsData.length > 0) {
@@ -171,14 +188,18 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             .order('display_order');
 
           if (itemsError) {
-            console.error('Checklist items query error:', itemsError);
             throw itemsError;
           }
 
-          console.log('Checklist items query results:', itemsData);
-          setChecklistItems(itemsData || []);
-        } else {
-          console.log('No sections found, skipping checklist items fetch');
+          // Initialize with isCompleted property
+          const initializedItems = (itemsData || []).map((item) => ({
+            ...item,
+            isCompleted: false,
+            response: null,
+            notes: '',
+          }));
+
+          setChecklistItems(initializedItems);
         }
 
         setLoading(false);
@@ -214,6 +235,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     itemId: number,
     value: '+' | '-' | 'NA' | null
   ) => {
+    // Update the responses state
     setResponses((prev) => ({
       ...prev,
       [itemId]: {
@@ -221,6 +243,21 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         response: value,
       },
     }));
+
+    // Also update the checklistItems to mark as completed
+    setChecklistItems((items) =>
+      items.map((item) =>
+        item.id === itemId
+          ? { ...item, response: value, isCompleted: true }
+          : item
+      )
+    );
+
+    // Trigger autosave
+    triggerAutosave();
+
+    // Regenerate SOAP note
+    generateSoapNote();
   };
 
   // Handle notes change
@@ -232,6 +269,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         notes,
       },
     }));
+
+    // Also update in checklistItems
+    setChecklistItems((items) =>
+      items.map((item) => (item.id === itemId ? { ...item, notes } : item))
+    );
+
+    // Trigger autosave
+    triggerAutosave();
+
+    // Regenerate SOAP note
+    generateSoapNote();
   };
 
   // Handle detail option selection
@@ -239,142 +287,353 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     itemId: number,
     detailKey: string,
     option: string,
-    isMultiSelect: boolean
+    isSelected: boolean
   ) => {
-    setResponses((prev) => {
-      const currentItem = prev[itemId] || { response: null, notes: '' };
-      const currentOptions = currentItem.selected_options || {};
+    setChecklistItems((items) =>
+      items.map((item) => {
+        if (item.id === itemId) {
+          // Initialize selectedOptions if not existing
+          const currentSelectedOptions = item.selectedOptions || {};
 
-      let newValue;
+          // Get the current options for this detail key
+          const currentOptions = currentSelectedOptions[detailKey] || [];
 
-      if (isMultiSelect) {
-        // For multi-select, maintain an array of selected options
-        const currentSelections = Array.isArray(currentOptions[detailKey])
-          ? (currentOptions[detailKey] as string[])
-          : [];
+          let updatedOptions;
 
-        if (currentSelections.includes(option)) {
-          // Remove if already selected
-          newValue = currentSelections.filter((item) => item !== option);
-        } else {
-          // Add if not selected
-          newValue = [...currentSelections, option];
+          if (Array.isArray(currentOptions)) {
+            // For multi-select details
+            if (isSelected) {
+              // Add to array if not already there
+              updatedOptions = currentOptions.includes(option)
+                ? currentOptions
+                : [...currentOptions, option];
+            } else {
+              // Remove from array if present
+              updatedOptions = currentOptions.filter((opt) => opt !== option);
+            }
+          } else {
+            // For single-select details
+            updatedOptions = isSelected ? option : '';
+          }
+
+          return {
+            ...item,
+            selectedOptions: {
+              ...currentSelectedOptions,
+              [detailKey]: updatedOptions,
+            },
+          };
         }
-      } else {
-        // For single-select, just use the value
-        newValue = option;
-      }
+        return item;
+      })
+    );
 
-      return {
-        ...prev,
-        [itemId]: {
-          ...currentItem,
-          selected_options: {
-            ...currentOptions,
-            [detailKey]: newValue,
-          },
-        },
-      };
-    });
+    // Regenerate SOAP note
+    generateSoapNote();
+  };
+
+  // Handle detail notes change
+  const handleDetailNoteChange = (
+    itemId: number,
+    detailKey: string,
+    option: string,
+    note: string
+  ) => {
+    setChecklistItems((items) =>
+      items.map((item) => {
+        if (item.id === itemId) {
+          // Initialize detail notes if not existing
+          const currentDetailNotes = item.detailNotes || {};
+
+          return {
+            ...item,
+            detailNotes: {
+              ...currentDetailNotes,
+              [`${detailKey}-${option}`]: note,
+            },
+          };
+        }
+        return item;
+      })
+    );
+
+    // Regenerate SOAP note
+    generateSoapNote();
+  };
+
+  // Trigger autosave animation
+  const triggerAutosave = () => {
+    setIsAutoSaving(true);
+    setTimeout(() => {
+      setIsAutoSaving(false);
+    }, 1500);
   };
 
   // Generate SOAP note
   const generateSoapNote = () => {
-    // In a real app, this would generate the SOAP note based on the responses
-    // Similar to the ChestPain.tsx component's generateNote function
+    // Generate each section of the SOAP note
+    const subjective = generateSubjectiveSection();
+    const objective = generateObjectiveSection();
+    const assessment = generateAssessmentSection();
+    const plan = generatePlanSection();
 
-    const template = {
-      intro: `Patient presents with ${chapter?.title || 'symptoms'} of ${
-        duration || 'unspecified'
-      } duration.`,
-      assessment: `${
-        chapter?.title || 'Symptoms'
-      }, {duration} duration, with features {consistentWith/inconsistentWith} for specific etiology.`,
-      plan: 'Recommend {recommendations} for further evaluation and management.',
+    // Set the complete SOAP note
+    setGeneratedNote({
+      subjective,
+      objective,
+      assessment,
+      plan,
+    });
+
+    // Return the full note text for clipboard copying
+    return {
+      subjective,
+      objective,
+      assessment,
+      plan,
     };
+  };
 
-    let note = '';
+  // Helper methods for SOAP note generation
+  const generateSubjectiveSection = () => {
+    // Start with patient's chief complaint
+    let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
+      duration || 'unspecified'
+    } duration.\n\n`;
 
-    // Add intro
-    note +=
-      template.intro.replace('{duration}', duration || 'unspecified') + '\n\n';
-
-    // Add symptoms section
-    note += 'SYMPTOMS:\n';
+    // Get all positive and negative findings from history-related categories
+    const historyItems = checklistItems.filter(
+      (item) => item.response === '+' || item.response === '-'
+    );
 
     // Add positive findings
-    const positiveItems = Object.entries(responses)
-      .filter(([_, value]) => value.response === '+')
-      .map(([id]) => checklistItems.find((item) => item.id === parseInt(id)))
-      .filter(Boolean);
-
+    const positiveItems = historyItems.filter((item) => item.response === '+');
     if (positiveItems.length > 0) {
+      section += 'Positive findings:\n';
       positiveItems.forEach((item) => {
-        if (!item) return;
-        const responseData = responses[item.id];
-        note += `- ${item.item_text}${
-          responseData.notes ? ': ' + responseData.notes : ''
-        }\n`;
+        let itemText = `• ${item.item_text}`;
 
-        // Add any detail options if present
-        if (responseData.selected_options) {
-          Object.entries(responseData.selected_options).forEach(
-            ([key, value]) => {
-              if (Array.isArray(value) && value.length > 0) {
-                note += `  - ${key}: ${value.join(', ')}\n`;
-              } else if (typeof value === 'string' && value) {
-                note += `  - ${key}: ${value}\n`;
+        // Add notes if present
+        if (item.notes) {
+          itemText += `: ${item.notes}`;
+        }
+
+        // Add selected options if present
+        if (
+          item.selectedOptions &&
+          Object.keys(item.selectedOptions).length > 0
+        ) {
+          Object.entries(item.selectedOptions).forEach(([key, value]) => {
+            if (Array.isArray(value) && value.length > 0) {
+              itemText += `\n  - ${key}: ${value.join(', ')}`;
+
+              // Add any detail notes
+              value.forEach((option) => {
+                const detailNote = item.detailNotes?.[`${key}-${option}`];
+                if (detailNote) {
+                  itemText += `\n    * ${option}: ${detailNote}`;
+                }
+              });
+            } else if (typeof value === 'string' && value) {
+              itemText += `\n  - ${key}: ${value}`;
+
+              // Add any detail note
+              const detailNote = item.detailNotes?.[`${key}-${value}`];
+              if (detailNote) {
+                itemText += ` (${detailNote})`;
               }
             }
-          );
+          });
         }
+
+        section += itemText + '\n';
       });
     }
 
     // Add negative findings
-    const negativeItems = Object.entries(responses)
-      .filter(([_, value]) => value.response === '-')
-      .map(([id]) => checklistItems.find((item) => item.id === parseInt(id)))
-      .filter(Boolean);
-
+    const negativeItems = historyItems.filter((item) => item.response === '-');
     if (negativeItems.length > 0) {
-      note += '\nPatient denies:\n';
+      section += '\nPatient denies:\n';
       negativeItems.forEach((item) => {
-        if (!item) return;
-        const responseData = responses[item.id];
-        note += `- ${item.item_text}${
-          responseData.notes ? ' ' + responseData.notes : ''
+        section += `• ${item.item_text}${item.notes ? ' ' + item.notes : ''}\n`;
+      });
+    }
+
+    return section;
+  };
+
+  const generateObjectiveSection = () => {
+    let section = '';
+
+    // Add physical exam findings
+    const examItems = checklistItems.filter((item) => item.response === '+');
+
+    if (examItems.length > 0) {
+      section += 'Physical examination findings:\n';
+      examItems.forEach((item) => {
+        let itemText = `• ${item.item_text}`;
+
+        // Add notes if present
+        if (item.notes) {
+          itemText += `: ${item.notes}`;
+        }
+
+        // Add selected options if present
+        if (
+          item.selectedOptions &&
+          Object.keys(item.selectedOptions).length > 0
+        ) {
+          Object.entries(item.selectedOptions).forEach(([key, value]) => {
+            if (Array.isArray(value) && value.length > 0) {
+              itemText += `\n  - ${key}: ${value.join(', ')}`;
+
+              // Add any detail notes
+              value.forEach((option) => {
+                const detailNote = item.detailNotes?.[`${key}-${option}`];
+                if (detailNote) {
+                  itemText += `\n    * ${option}: ${detailNote}`;
+                }
+              });
+            } else if (typeof value === 'string' && value) {
+              itemText += `\n  - ${key}: ${value}`;
+
+              // Add any detail note
+              const detailNote = item.detailNotes?.[`${key}-${value}`];
+              if (detailNote) {
+                itemText += ` (${detailNote})`;
+              }
+            }
+          });
+        }
+
+        section += itemText + '\n';
+      });
+    } else {
+      section += 'No significant physical examination findings.\n';
+    }
+
+    return section;
+  };
+
+  const generateAssessmentSection = () => {
+    let section = `${chapter?.title || 'Symptoms'}, ${
+      duration || 'unspecified'
+    } duration.\n\n`;
+
+    // Get differential diagnoses if any
+    const differentialItems = checklistItems.filter(
+      (item) => item.response === '+'
+    );
+
+    if (differentialItems.length > 0) {
+      section += 'Differential diagnoses to consider:\n';
+      differentialItems.forEach((item) => {
+        section += `• ${item.item_text}${
+          item.notes ? ': ' + item.notes : ''
+        }\n`;
+      });
+    } else {
+      section += 'Differential diagnoses pending further evaluation.\n';
+    }
+
+    return section;
+  };
+
+  const generatePlanSection = () => {
+    let section = 'Plan:\n';
+
+    // Default recommendations
+    section +=
+      '• Consider appropriate diagnostic tests based on clinical presentation\n';
+    section += '• Symptomatic management\n';
+    section += '• Consider follow-up evaluation based on symptom progression\n';
+
+    // Add any specific management plans
+    const planItems = checklistItems.filter((item) => item.response === '+');
+
+    if (planItems.length > 0) {
+      planItems.forEach((item) => {
+        section += `• ${item.item_text}${
+          item.notes ? ': ' + item.notes : ''
         }\n`;
       });
     }
 
-    // Add assessment
-    let consistency = 'inconsistentWith';
-    // Logic to determine if findings are consistent with a specific diagnosis
-    // This would depend on your specific clinical logic
-
-    // Add assessment
-    note += '\nASSESSMENT:\n';
-    note += template.assessment
-      .replace('{duration}', duration || 'unspecified')
-      .replace('{consistentWith/inconsistentWith}', consistency);
-
-    // Add plan
-    note += '\n\nPLAN:\n';
-    let recommendations = ['observe', 'consider appropriate diagnostic tests'];
-    note += template.plan.replace(
-      '{recommendations}',
-      recommendations.join(', ')
-    );
-
-    setGeneratedNote(note);
-    return note;
+    return section;
   };
 
-  // Copy note to clipboard
+  // Calculate completion percentage
+  const calculateCompletion = () => {
+    const completedItems = checklistItems.filter(
+      (item) => item.isCompleted
+    ).length;
+    const totalItems = checklistItems.length;
+    return totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+  };
+
+  // Handle copy to clipboard
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(generatedNote);
-    alert('Note copied to clipboard!');
+    const soapText = `SOAP NOTE - ${patientInfo.name} (${patientInfo.mrn}) - ${
+      patientInfo.visitDate
+    }
+    
+SUBJECTIVE:
+${generatedNote.subjective || 'No subjective data recorded.'}
+
+OBJECTIVE:
+${generatedNote.objective || 'No objective data recorded.'}
+
+ASSESSMENT:
+${generatedNote.assessment || 'No assessment data recorded.'}
+
+PLAN:
+${generatedNote.plan || 'No plan data recorded.'}`;
+
+    navigator.clipboard
+      .writeText(soapText)
+      .then(() => {
+        alert('SOAP note copied to clipboard!');
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err);
+      });
+  };
+
+  // Clear all responses (new patient)
+  const clearAllResponses = () => {
+    if (
+      window.confirm(
+        'Are you sure you want to clear all responses? This will reset the form for a new patient.'
+      )
+    ) {
+      setChecklistItems((items) =>
+        items.map((item) => ({
+          ...item,
+          response: null,
+          notes: '',
+          isCompleted: false,
+          selectedOptions: {},
+          detailNotes: {},
+        }))
+      );
+
+      setResponses({});
+
+      setPatientInfo({
+        name: 'New Patient',
+        dob: '',
+        mrn: '',
+        visitDate: new Date().toISOString().split('T')[0],
+      });
+
+      setDuration('');
+    }
+  };
+
+  // Check if category has any completed questions
+  const hasCategoryCompletedItems = (categoryId: number) => {
+    const categoryItems = getItemsByCategory(categoryId);
+    return categoryItems.some((item) => item.isCompleted);
   };
 
   if (loading) {
@@ -407,26 +666,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                 Make sure you've added sample data to your Supabase database
               </li>
               <li>Check that your environment variables are set correctly</li>
-              <li>
-                Verify that the chapter title in the database matches the URL
-                slug format
-              </li>
             </ul>
-          </div>
-          <div className="mt-4">
-            <p>Try the following:</p>
-            <ol className="list-decimal pl-5 mt-2 text-sm">
-              <li>
-                Check your browser console for more detailed error messages
-              </li>
-              <li>
-                Verify that your Supabase tables have been created correctly
-              </li>
-              <li>Ensure you've added the sample data to your database</li>
-              <li>
-                Confirm your Supabase URL and key in the environment variables
-              </li>
-            </ol>
           </div>
         </div>
       </div>
@@ -434,179 +674,511 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   }
 
   return (
-    <div className="flex min-h-screen">
-      {/* Left Sidebar */}
-      <div className="w-64 bg-gray-100 border-r border-gray-200 p-4">
-        <h2 className="text-lg font-bold mb-4 flex items-center">
-          <ListTodo className="mr-2" size={20} />
-          Categories
-        </h2>
-        <nav>
-          <ul className="space-y-1">
-            {categories.map((category) => (
-              <li key={category.id}>
-                <button
-                  className={`w-full text-left px-3 py-2 rounded flex items-center ${
-                    activeCategory === category.id
-                      ? 'bg-blue-50 text-blue-600 font-medium'
-                      : 'text-gray-700 hover:bg-gray-200'
-                  }`}
-                  onClick={() => setActiveCategory(category.id)}
-                >
-                  <ChevronRight
-                    size={16}
-                    className={`mr-2 transition-transform ${
-                      activeCategory === category.id
-                        ? 'transform rotate-90'
-                        : ''
-                    }`}
-                  />
-                  {category.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="flex-1 p-6 max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-4 flex items-center">
-          <FileEdit className="mr-2" size={24} />
-          {chapter?.title || 'Symptom'} SOAP Note Generator
-        </h1>
-
-        <div className="mb-6">
-          <label className="block mb-2 font-semibold">
-            Duration of Symptoms:
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded"
-            value={duration}
-            onChange={(e) => setDuration(e.target.value)}
-            placeholder="e.g., 2 hours, 3 days"
-          />
-        </div>
-
-        {/* Checklist items for selected category */}
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <Clipboard className="mr-2" size={20} />
-            Symptom Checklist:
-          </h2>
-
-          <div className="bg-white shadow-sm rounded-lg overflow-hidden">
-            {getItemsByCategory(activeCategory).map((item) => (
-              <div
-                key={item.id}
-                className="border-b border-gray-100 p-4 last:border-b-0"
-              >
-                <div className="font-semibold mb-2">{item.item_text}</div>
-
-                <div className="flex space-x-4 mb-2">
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      name={`item-${item.id}`}
-                      value="positive"
-                      checked={responses[item.id]?.response === '+'}
-                      onChange={() => handleResponseChange(item.id, '+')}
-                      className="mr-1 text-green-500 focus:ring-green-500"
-                    />
-                    <span className="flex items-center text-green-600">
-                      <Plus className="mr-1" size={16} />
-                      Positive
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      name={`item-${item.id}`}
-                      value="negative"
-                      checked={responses[item.id]?.response === '-'}
-                      onChange={() => handleResponseChange(item.id, '-')}
-                      className="mr-1 text-red-500 focus:ring-red-500"
-                    />
-                    <span className="flex items-center text-red-600">
-                      <Minus className="mr-1" size={16} />
-                      Negative
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      name={`item-${item.id}`}
-                      value="not_applicable"
-                      checked={responses[item.id]?.response === 'NA'}
-                      onChange={() => handleResponseChange(item.id, 'NA')}
-                      className="mr-1 text-gray-500 focus:ring-gray-500"
-                    />
-                    <span className="flex items-center text-gray-600">
-                      <Ban className="mr-1" size={16} />
-                      Not Applicable
-                    </span>
-                  </label>
-                </div>
-
-                {/* Notes field */}
-                {item.has_text_input && (
-                  <div className="mt-2">
-                    <textarea
-                      className="w-full p-2 border rounded"
-                      placeholder={item.input_placeholder || 'Add notes...'}
-                      value={responses[item.id]?.notes || ''}
-                      onChange={(e) =>
-                        handleNotesChange(item.id, e.target.value)
-                      }
-                      rows={2}
-                    />
-                    {item.input_unit && (
-                      <span className="text-sm text-gray-500 ml-2">
-                        {item.input_unit}
-                      </span>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {getItemsByCategory(activeCategory).length === 0 && (
-              <div className="p-6 text-center text-gray-500">
-                No items in this category
-              </div>
-            )}
+    <div className="flex flex-col h-screen bg-gray-50">
+      {/* Top Navigation */}
+      <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
+        <div className="flex items-center">
+          <button
+            className="md:hidden mr-3 text-gray-500"
+            onClick={() => setShowMobileNav(true)}
+          >
+            <Menu size={24} />
+          </button>
+          <div className="flex items-center">
+            <ClipboardEdit className="text-blue-600 mr-2" size={24} />
+            <h1 className="text-xl font-bold text-gray-800 hidden sm:block">
+              {chapter?.title || 'Symptom'} Checker
+            </h1>
           </div>
         </div>
 
-        <div className="mb-6">
+        <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-1 text-green-600 text-sm">
+            <span
+              className={`transition-opacity duration-300 ${
+                isAutoSaving ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <RefreshCw size={14} className="animate-spin mr-1" />
+            </span>
+            <span
+              className={`transition-opacity duration-300 ${
+                isAutoSaving ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              Autosaving...
+            </span>
+          </div>
+
+          <div className="hidden md:block">
+            <div className="bg-blue-50 text-blue-800 px-3 py-1 rounded-md flex items-center text-sm">
+              <User size={14} className="mr-2" />
+              <span className="font-medium">
+                {patientInfo.name || 'New Patient'}
+              </span>
+            </div>
+          </div>
+
           <button
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 flex items-center"
-            onClick={generateSoapNote}
+            onClick={clearAllResponses}
+            className="bg-gray-100 text-gray-600 hidden md:flex items-center px-3 py-1.5 rounded-md hover:bg-gray-200 transition-colors text-sm font-medium"
           >
-            <FileEdit className="mr-2" size={16} />
-            Generate SOAP Note
+            <RefreshCw size={14} className="mr-1" />
+            New Patient
+          </button>
+
+          <button
+            onClick={copyToClipboard}
+            className="bg-green-50 text-green-700 flex items-center px-3 py-1.5 rounded-md hover:bg-green-100 transition-colors text-sm font-medium"
+          >
+            <Clipboard size={14} className="mr-1" />
+            <span className="hidden md:inline">Copy SOAP Note</span>
+            <span className="inline md:hidden">Copy</span>
+          </button>
+
+          <button
+            className="md:hidden text-blue-600"
+            onClick={() => setShowMobilePreview(true)}
+          >
+            <FileText size={22} />
           </button>
         </div>
+      </header>
 
-        {generatedNote && (
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-2 flex items-center">
-              <FileEdit className="mr-2" size={20} />
-              Generated Note:
-            </h2>
-            <div className="p-4 border rounded bg-white">
-              <pre className="whitespace-pre-wrap font-sans">
-                {generatedNote}
-              </pre>
+      {/* Main Content Area */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Left Sidebar - Categories Navigation */}
+        <aside
+          className={`bg-white shadow-sm hidden md:flex flex-col ${
+            isSidebarCollapsed ? 'w-16' : 'w-56'
+          } transition-all duration-300 overflow-hidden`}
+        >
+          {/* Collapse toggle */}
+          <button
+            className="p-2 text-gray-400 hover:text-gray-600 self-end"
+            onClick={() => setSidebarCollapsed(!isSidebarCollapsed)}
+          >
+            {isSidebarCollapsed ? (
+              <ChevronRight size={16} />
+            ) : (
+              <ChevronLeft size={16} />
+            )}
+          </button>
+
+          {/* Progress indicator */}
+          <div className={`mx-3 mb-4 ${isSidebarCollapsed ? 'mx-2' : 'mx-3'}`}>
+            <div className="bg-gray-100 h-2 rounded-full overflow-hidden">
+              <div
+                className="bg-blue-500 h-full rounded-full"
+                style={{ width: `${calculateCompletion()}%` }}
+              ></div>
             </div>
+            {!isSidebarCollapsed && (
+              <div className="text-xs text-center mt-1 text-gray-500">
+                {calculateCompletion()}% complete
+              </div>
+            )}
+          </div>
+
+          {/* Categories navigation */}
+          <nav className="flex-1 overflow-y-auto py-2">
+            {categories.map((category) => {
+              const isActive = activeCategory === category.id;
+              const hasCompleted = hasCategoryCompletedItems(category.id);
+
+              return (
+                <button
+                  key={category.id}
+                  className={`w-full text-left px-3 py-2 flex items-center ${
+                    isActive
+                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                      : 'border-l-4 border-transparent hover:bg-gray-50'
+                  } transition-colors`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <span
+                    className={isActive ? 'text-blue-600' : 'text-gray-400'}
+                  >
+                    <ClipboardEdit size={18} />
+                  </span>
+
+                  {!isSidebarCollapsed && (
+                    <>
+                      <span className="ml-3 flex-1 truncate">
+                        {category.title}
+                      </span>
+
+                      {/* Status indicators */}
+                      {hasCompleted && !isActive && (
+                        <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+                      )}
+                    </>
+                  )}
+                </button>
+              );
+            })}
+          </nav>
+        </aside>
+
+        {/* Mobile Navigation Sidebar */}
+        {showMobileNav && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
+            <div className="absolute top-0 left-0 h-full w-64 bg-white shadow-lg z-50 overflow-y-auto">
+              <div className="p-4 flex justify-between items-center border-b">
+                <h2 className="font-bold text-lg">Sections</h2>
+                <button onClick={() => setShowMobileNav(false)}>
+                  <X size={20} />
+                </button>
+              </div>
+
+              <nav className="py-2">
+                {categories.map((category) => {
+                  const isActive = activeCategory === category.id;
+                  const hasCompleted = hasCategoryCompletedItems(category.id);
+
+                  return (
+                    <button
+                      key={category.id}
+                      className={`w-full text-left px-4 py-3 flex items-center ${
+                        isActive
+                          ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                          : 'border-l-4 border-transparent'
+                      }`}
+                      onClick={() => {
+                        setActiveCategory(category.id);
+                        setShowMobileNav(false);
+                      }}
+                    >
+                      <span
+                        className={isActive ? 'text-blue-600' : 'text-gray-400'}
+                      >
+                        <ClipboardEdit size={18} />
+                      </span>
+                      <span className="ml-3 flex-1">{category.title}</span>
+
+                      {/* Status indicators */}
+                      {hasCompleted && !isActive && (
+                        <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+                      )}
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
+          </div>
+        )}
+
+        {/* Main Content - Checklist Items Display */}
+        <main className="flex-1 overflow-y-auto">
+          <div className="max-w-3xl mx-auto p-4 md:p-6">
+            {/* Duration Input - Moved to center of layout */}
+            <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+              <div className="flex items-center">
+                <Clock size={20} className="text-blue-500 mr-2" />
+                <div className="flex-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Duration of Symptoms
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="e.g., 2 days, 1 week, 3 months"
+                    value={duration}
+                    onChange={(e) => {
+                      setDuration(e.target.value);
+                      triggerAutosave();
+                      generateSoapNote();
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm">
+              <div className="px-4 py-3 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-blue-50 to-blue-100">
+                <h2 className="text-lg font-bold text-blue-800">
+                  {categories.find((c) => c.id === activeCategory)?.title ||
+                    'Questions'}
+                </h2>
+                <div className="text-sm text-blue-600">
+                  {
+                    getItemsByCategory(activeCategory).filter(
+                      (item) => item.isCompleted
+                    ).length
+                  }
+                  /{getItemsByCategory(activeCategory).length} completed
+                </div>
+              </div>
+
+              <div className="divide-y divide-gray-100">
+                {getItemsByCategory(activeCategory).map((item) => (
+                  <div key={item.id} className="p-4">
+                    <div className="flex flex-wrap items-start mb-2">
+                      <div className="flex-1 mr-2">
+                        <div className="text-gray-900 font-medium mb-1">
+                          {item.item_text}
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-1">
+                        <button
+                          className={`p-1.5 rounded-md ${
+                            item.response === '+'
+                              ? 'bg-green-500 text-white'
+                              : 'bg-green-100 text-green-600 hover:bg-green-200'
+                          }`}
+                          onClick={() => handleResponseChange(item.id, '+')}
+                          title="Positive"
+                        >
+                          <PlusCircle size={16} />
+                        </button>
+
+                        <button
+                          className={`p-1.5 rounded-md ${
+                            item.response === '-'
+                              ? 'bg-red-500 text-white'
+                              : 'bg-red-100 text-red-600 hover:bg-red-200'
+                          }`}
+                          onClick={() => handleResponseChange(item.id, '-')}
+                          title="Negative"
+                        >
+                          <MinusCircle size={16} />
+                        </button>
+
+                        <button
+                          className={`p-1.5 rounded-md ${
+                            item.response === 'NA'
+                              ? 'bg-gray-500 text-white'
+                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          }`}
+                          onClick={() => handleResponseChange(item.id, 'NA')}
+                          title="Not Applicable"
+                        >
+                          <HelpCircle size={16} />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Always show a text input field for each symptom */}
+                    <div className="flex items-start space-x-2">
+                      <textarea
+                        className="flex-1 p-2 border border-gray-300 rounded-md text-sm resize-none"
+                        placeholder="Add optional notes for this symptom..."
+                        rows={2}
+                        value={item.notes || ''}
+                        onChange={(e) =>
+                          handleNotesChange(item.id, e.target.value)
+                        }
+                      />
+                    </div>
+                  </div>
+                ))}
+
+                {getItemsByCategory(activeCategory).length === 0 && (
+                  <div className="p-6 text-center text-gray-500">
+                    No items in this category
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* Right Sidebar - SOAP Note Preview */}
+        <aside className="hidden md:block bg-white shadow-sm w-80 overflow-y-auto border-l">
+          <div className="p-4 border-b flex justify-between items-center bg-gradient-to-r from-gray-50 to-gray-100">
+            <h2 className="font-bold text-gray-800">Live SOAP Preview</h2>
             <button
-              className="mt-2 bg-gray-500 text-white py-1 px-3 rounded hover:bg-gray-600 flex items-center"
               onClick={copyToClipboard}
+              className="text-blue-600 hover:text-blue-800 p-1"
+              title="Copy to clipboard"
             >
-              <Copy className="mr-2" size={14} />
-              Copy to Clipboard
+              <Clipboard size={16} />
             </button>
+          </div>
+
+          <div className="p-4">
+            {/* Patient info */}
+            <div className="mb-4 text-sm">
+              <div className="font-bold">
+                {patientInfo.name || 'New Patient'}
+              </div>
+              <div className="text-gray-500">
+                {patientInfo.dob ? `DOB: ${patientInfo.dob}` : ''}
+                {patientInfo.mrn ? ` • MRN: ${patientInfo.mrn}` : ''}
+              </div>
+              <div className="text-gray-500">
+                Visit Date: {patientInfo.visitDate}
+              </div>
+            </div>
+
+            {/* SOAP sections */}
+            <div className="space-y-4 text-sm">
+              <div>
+                <div className="flex items-center mb-1">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold text-xs mr-1.5">
+                    S
+                  </div>
+                  <h3 className="font-bold text-blue-800">SUBJECTIVE</h3>
+                </div>
+                <div className="pl-6 whitespace-pre-line text-gray-800">
+                  {generatedNote.subjective ||
+                    'No subjective data recorded yet.'}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center mb-1">
+                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-800 font-bold text-xs mr-1.5">
+                    O
+                  </div>
+                  <h3 className="font-bold text-green-800">OBJECTIVE</h3>
+                </div>
+                <div className="pl-6 whitespace-pre-line text-gray-800">
+                  {generatedNote.objective || 'No objective data recorded yet.'}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center mb-1">
+                  <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-800 font-bold text-xs mr-1.5">
+                    A
+                  </div>
+                  <h3 className="font-bold text-purple-800">ASSESSMENT</h3>
+                </div>
+                <div className="pl-6 whitespace-pre-line text-gray-800">
+                  {generatedNote.assessment ||
+                    'No assessment data recorded yet.'}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center mb-1">
+                  <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center text-orange-800 font-bold text-xs mr-1.5">
+                    P
+                  </div>
+                  <h3 className="font-bold text-orange-800">PLAN</h3>
+                </div>
+                <div className="pl-6 whitespace-pre-line text-gray-800">
+                  {generatedNote.plan || 'No plan data recorded yet.'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {/* Mobile SOAP Preview Modal */}
+        {showMobilePreview && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
+            <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-white shadow-lg z-50 overflow-y-auto">
+              <div className="p-4 flex justify-between items-center border-b">
+                <h2 className="font-bold text-lg">SOAP Note Preview</h2>
+                <button onClick={() => setShowMobilePreview(false)}>
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="p-4">
+                {/* Mobile Duration of Symptoms input */}
+                <div className="mb-4 border-b pb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Duration of Symptoms
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="e.g., 2 days, 1 week, 3 months"
+                    value={duration}
+                    onChange={(e) => {
+                      setDuration(e.target.value);
+                      triggerAutosave();
+                      generateSoapNote();
+                    }}
+                  />
+                </div>
+
+                {/* Patient info */}
+                <div className="mb-4 text-sm">
+                  <div className="font-bold">
+                    {patientInfo.name || 'New Patient'}
+                  </div>
+                  <div className="text-gray-500">
+                    {patientInfo.dob ? `DOB: ${patientInfo.dob}` : ''}
+                    {patientInfo.mrn ? ` • MRN: ${patientInfo.mrn}` : ''}
+                  </div>
+                  <div className="text-gray-500">
+                    Visit Date: {patientInfo.visitDate}
+                  </div>
+                </div>
+
+                {/* SOAP sections */}
+                <div className="space-y-4 text-sm">
+                  <div>
+                    <div className="flex items-center mb-1">
+                      <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold text-xs mr-1.5">
+                        S
+                      </div>
+                      <h3 className="font-bold text-blue-800">SUBJECTIVE</h3>
+                    </div>
+                    <div className="pl-6 whitespace-pre-line">
+                      {generatedNote.subjective ||
+                        'No subjective data recorded yet.'}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center mb-1">
+                      <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-800 font-bold text-xs mr-1.5">
+                        O
+                      </div>
+                      <h3 className="font-bold text-green-800">OBJECTIVE</h3>
+                    </div>
+                    <div className="pl-6 whitespace-pre-line">
+                      {generatedNote.objective ||
+                        'No objective data recorded yet.'}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center mb-1">
+                      <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-800 font-bold text-xs mr-1.5">
+                        A
+                      </div>
+                      <h3 className="font-bold text-purple-800">ASSESSMENT</h3>
+                    </div>
+                    <div className="pl-6 whitespace-pre-line">
+                      {generatedNote.assessment ||
+                        'No assessment data recorded yet.'}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center mb-1">
+                      <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center text-orange-800 font-bold text-xs mr-1.5">
+                        P
+                      </div>
+                      <h3 className="font-bold text-orange-800">PLAN</h3>
+                    </div>
+                    <div className="pl-6 whitespace-pre-line">
+                      {generatedNote.plan || 'No plan data recorded yet.'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 border-t pt-4">
+                  <button
+                    onClick={() => {
+                      copyToClipboard();
+                      setShowMobilePreview(false);
+                    }}
+                    className="w-full bg-blue-600 text-white py-2 rounded-md flex items-center justify-center"
+                  >
+                    <Clipboard size={16} className="mr-2" />
+                    Copy to Clipboard
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
