@@ -1,19 +1,38 @@
 // app/page.tsx
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import SearchBox from '@/components/SearchBox';
 import SymptomCard from '@/components/SymptomCard';
-import { Symptom } from '@/types';
+import { supabase } from '@/lib/supabase';
+import { Chapter } from '@/types/symptom-types';
 
-// Define symptoms directly in the home page
-const symptoms: Symptom[] = [
-  {
-    slug: 'chest-pain',
-    title: 'Chest Pain',
-    description: 'Evaluate chest pain, from cardiac to musculoskeletal causes.',
-    icon: '❤️',
-    keywords: [
+export default function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  // Define a set of icons for different symptoms
+  const symptomIcons: Record<string, string> = {
+    'Chest Pain': '❤️',
+    Headache: '🧠',
+    Cough: '🫁',
+    'Abdominal Pain': '🩻',
+    Fever: '🌡️',
+    Dizziness: '💫',
+    'Shortness of Breath': '💨',
+    Fatigue: '😴',
+    Nausea: '🤢',
+    Vomiting: '🤮',
+    // Default icon for any other symptoms
+    default: '🩺',
+  };
+
+  // Define keywords for each symptom for better searching
+  const symptomKeywords: Record<string, string[]> = {
+    'Chest Pain': [
       'heart',
       'cardiac',
       'angina',
@@ -21,21 +40,8 @@ const symptoms: Symptom[] = [
       'tightness',
       'discomfort',
     ],
-  },
-  {
-    slug: 'headache',
-    title: 'Headache',
-    description:
-      'Assess different types of headaches and their potential causes.',
-    icon: '🧠',
-    keywords: ['migraine', 'tension', 'cluster', 'sinus', 'head pain'],
-  },
-  {
-    slug: 'cough',
-    title: 'Cough',
-    description: 'Evaluate causes of acute and chronic cough.',
-    icon: '🫁',
-    keywords: [
+    Headache: ['migraine', 'tension', 'cluster', 'sinus', 'head pain'],
+    Cough: [
       'bronchitis',
       'pneumonia',
       'respiratory',
@@ -43,34 +49,101 @@ const symptoms: Symptom[] = [
       'phlegm',
       'mucus',
     ],
-  },
-  {
-    slug: 'abdominal-pain',
-    title: 'Abdominal Pain',
-    description: 'Evaluate different types of abdominal and digestive pain.',
-    icon: '🩻',
-    keywords: ['stomach', 'gut', 'digestive', 'belly', 'nausea', 'cramps'],
-  },
-  // Add more symptoms as needed
-];
+    'Abdominal Pain': [
+      'stomach',
+      'gut',
+      'digestive',
+      'belly',
+      'nausea',
+      'cramps',
+    ],
+    Fever: ['temperature', 'hot', 'chills', 'sweats', 'infection'],
+    Dizziness: ['vertigo', 'lightheaded', 'faint', 'balance', 'spinning'],
+    'Shortness of Breath': [
+      'dyspnea',
+      'breathing',
+      'respiratory',
+      'asthma',
+      'copd',
+    ],
+    Fatigue: ['tired', 'exhaustion', 'weakness', 'lethargy', 'energy'],
+    Nausea: ['sick', 'queasy', 'upset stomach', 'motion sickness'],
+    Vomiting: ['throw up', 'emesis', 'regurgitation', 'retching'],
+  };
 
-export default function Home() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
+  useEffect(() => {
+    const fetchChapters = async () => {
+      try {
+        setLoading(true);
+        const { data, error } = await supabase
+          .from('chapters')
+          .select('*')
+          .order('chapter_number');
 
-  // Filter symptoms based on search query
-  const filteredSymptoms = symptoms.filter(
-    (symptom) =>
-      symptom.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      symptom.keywords.some((keyword) =>
-        keyword.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-  );
+        if (error) {
+          throw error;
+        }
+
+        if (data) {
+          setChapters(data);
+        }
+      } catch (err) {
+        console.error('Error fetching chapters:', err);
+        setError('Failed to load symptoms');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchChapters();
+  }, []);
+
+  // Filter chapters based on search query
+  const filteredChapters = chapters.filter((chapter) => {
+    const title = chapter.title.toLowerCase();
+    const query = searchQuery.toLowerCase();
+
+    // Direct title match
+    if (title.includes(query)) {
+      return true;
+    }
+
+    // Check against keywords
+    const keywords = symptomKeywords[chapter.title] || [];
+    return keywords.some((keyword) => keyword.toLowerCase().includes(query));
+  });
 
   // Handle card click - navigate to the symptom page
-  const handleCardClick = (slug: string) => {
+  const handleCardClick = (title: string) => {
+    // Convert title to slug format
+    const slug = title.toLowerCase().replace(/\s+/g, '-');
     router.push(`/symptoms/${slug}`);
   };
+
+  if (loading) {
+    return (
+      <main className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold text-center mb-8">
+          Medical Symptom Checker
+        </h1>
+        <div className="text-center">Loading symptoms...</div>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold text-center mb-8">
+          Medical Symptom Checker
+        </h1>
+        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded">
+          <p>{error}</p>
+          <p>Please try refreshing the page.</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="container mx-auto p-4">
@@ -86,21 +159,29 @@ export default function Home() {
         />
       </div>
 
-      {searchQuery && filteredSymptoms.length === 0 ? (
+      {searchQuery && filteredChapters.length === 0 ? (
         <p className="text-center text-gray-600">
-          No symptoms found matching "{searchQuery}"
+          No symptoms found matching &ldquo;{searchQuery}&rdquo;
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSymptoms.map((symptom) => (
-            <SymptomCard
-              key={symptom.slug}
-              title={symptom.title}
-              description={symptom.description}
-              icon={symptom.icon}
-              onClick={() => handleCardClick(symptom.slug)}
-            />
-          ))}
+          {filteredChapters.map((chapter) => {
+            // Create a descriptive string based on the chapter title
+            const description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
+
+            // Get icon for this symptom
+            const icon = symptomIcons[chapter.title] || symptomIcons.default;
+
+            return (
+              <SymptomCard
+                key={chapter.id}
+                title={chapter.title}
+                description={description}
+                icon={icon}
+                onClick={() => handleCardClick(chapter.title)}
+              />
+            );
+          })}
         </div>
       )}
     </main>
