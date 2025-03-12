@@ -47,21 +47,27 @@ const SymptomCard: React.FC<SymptomCardProps> = ({
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-200"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 group"
       onClick={onClick}
     >
-      <div className="flex items-center mb-4">
-        <div className="mr-4 text-blue-500">
-          <IconComponent size={24} />
+      <div className="p-6">
+        <div className="flex items-center mb-4">
+          <div className="mr-4 p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-500 dark:text-blue-400 rounded-lg group-hover:scale-110 transition-transform duration-300">
+            <IconComponent size={24} />
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            {title}
+          </h2>
         </div>
-        <h2 className="text-xl font-semibold">{title}</h2>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
+        <div className="flex justify-end">
+          <button className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+            Check Symptoms
+            <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
       </div>
-      <p className="text-gray-600">{description}</p>
-      <div className="mt-4 text-right">
-        <button className="text-blue-500 font-medium hover:underline flex items-center justify-end">
-          Check Symptoms <ArrowRight className="ml-1" size={16} />
-        </button>
-      </div>
+      <div className="h-1 w-full bg-gradient-to-r from-blue-400 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
     </div>
   );
 };

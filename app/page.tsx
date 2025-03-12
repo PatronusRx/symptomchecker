@@ -128,72 +128,97 @@ export default function Home() {
 
   if (loading) {
     return (
-      <main className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-8">
-          Medical Symptom Checker
-        </h1>
-        <div className="text-center">Loading symptoms...</div>
-      </main>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4"></div>
+          <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+            Loading symptoms...
+          </h2>
+        </div>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <main className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-8">
-          Medical Symptom Checker
-        </h1>
-        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded">
-          <p>{error}</p>
-          <p>Please try refreshing the page.</p>
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-xl mx-auto">
+          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 p-6 rounded-xl shadow-sm">
+            <h2 className="text-xl font-semibold mb-2">Error</h2>
+            <p className="mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-red-100 dark:bg-red-900/30 hover:bg-red-200 dark:hover:bg-red-900/50 text-red-700 dark:text-red-400 rounded-lg transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        Medical Symptom Checker
-      </h1>
+    <div className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Medical Symptom Checker
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Identify potential causes for your symptoms and get guidance on what
+            to do next.
+          </p>
 
-      <div className="max-w-xl mx-auto mb-8">
-        <SearchBox
-          value={searchQuery}
-          onChange={setSearchQuery}
-          placeholder="Search symptoms (e.g., chest pain, headache, cough...)"
-        />
-      </div>
-
-      {searchQuery && filteredChapters.length === 0 ? (
-        <p className="text-center text-gray-600">
-          No symptoms found matching "{searchQuery}"
-        </p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredChapters.map((chapter) => {
-            // Create a descriptive string based on the chapter title
-            let description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
-
-            // Get icon for this symptom
-            const iconName =
-              symptomIcons[chapter.title] || symptomIcons.default;
-
-            // Get keywords for this symptom
-            const keywords = symptomKeywords[chapter.title] || [];
-
-            return (
-              <SymptomCard
-                key={chapter.id}
-                title={chapter.title}
-                description={description}
-                iconName={iconName}
-                onClick={() => handleCardClick(chapter.title)}
-              />
-            );
-          })}
+          <div className="max-w-xl mx-auto mb-12">
+            <SearchBox
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search symptoms (e.g., chest pain, headache, cough...)"
+            />
+          </div>
         </div>
-      )}
-    </main>
+
+        {searchQuery && filteredChapters.length === 0 ? (
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 text-yellow-700 dark:text-yellow-400 p-6 rounded-xl max-w-xl mx-auto">
+            <p className="text-center">
+              No symptoms found matching &ldquo;
+              <span className="font-semibold">{searchQuery}</span>&rdquo;
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {filteredChapters.map((chapter) => {
+              // Create a descriptive string based on the chapter title
+              const description = `Evaluate ${chapter.title.toLowerCase()}, identifying potential causes and severity.`;
+
+              // Get icon for this symptom
+              const iconName =
+                symptomIcons[chapter.title] || symptomIcons.default;
+
+              return (
+                <SymptomCard
+                  key={chapter.id}
+                  title={chapter.title}
+                  description={description}
+                  iconName={iconName}
+                  onClick={() => handleCardClick(chapter.title)}
+                />
+              );
+            })}
+          </div>
+        )}
+
+        <div className="mt-16 text-center">
+          <div className="inline-block p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded-lg max-w-2xl mx-auto">
+            <p className="text-sm">
+              <strong>Disclaimer:</strong> This tool is for informational
+              purposes only and is not a substitute for professional medical
+              advice. Always consult with a qualified healthcare provider.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
