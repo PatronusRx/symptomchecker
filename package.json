@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "node tools/db-migration/migrate.js",
+    "migrate:test": "node tools/db-migration/migrate.js --test",
+    "migrate:chapter": "node tools/db-migration/migrate.js --chapter",
+    "test:parser": "node tools/db-migration/test-parser.js",
+    "clear:db": "node tools/db-migration/clear-tables.js",
+    "check:db": "node tools/db-migration/check-db.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
