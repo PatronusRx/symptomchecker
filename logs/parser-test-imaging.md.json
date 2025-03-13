@@ -1,0 +1,1325 @@
+{
+  "sections": [
+    "Chest X-ray",
+    "Head CT",
+    "CT Pulmonary Angiogram",
+    "CT Abdomen/Pelvis",
+    "CT Angiogram of Chest",
+    "MRI Brain",
+    "MR Angiography",
+    "Carotid Ultrasound",
+    "Abdominal Ultrasound",
+    "Pelvic Ultrasound (if applicable)"
+  ],
+  "items": [
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Normal cardiac silhouette",
+      "processed": [
+        {
+          "itemText": "Normal cardiac silhouette",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Cardiomegaly",
+      "processed": [
+        {
+          "itemText": "Cardiomegaly",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Pulmonary edema",
+      "processed": [
+        {
+          "itemText": "Pulmonary edema",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Pulmonary vascular congestion",
+      "processed": [
+        {
+          "itemText": "Pulmonary vascular congestion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Pleural effusion",
+      "processed": [
+        {
+          "itemText": "Pleural effusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Pneumonia",
+      "processed": [
+        {
+          "itemText": "Pneumonia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Pneumothorax",
+      "processed": [
+        {
+          "itemText": "Pneumothorax",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Widened mediastinum",
+      "processed": [
+        {
+          "itemText": "Widened mediastinum",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chest X-ray",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Intracranial hemorrhage",
+      "processed": [
+        {
+          "itemText": "Intracranial hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Subarachnoid hemorrhage",
+      "processed": [
+        {
+          "itemText": "Subarachnoid hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Ischemic stroke",
+      "processed": [
+        {
+          "itemText": "Ischemic stroke",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Mass lesion",
+      "processed": [
+        {
+          "itemText": "Mass lesion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Cerebral edema",
+      "processed": [
+        {
+          "itemText": "Cerebral edema",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head CT",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Pulmonary embolism",
+      "processed": [
+        {
+          "itemText": "Pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 2,
+      "text": "Main pulmonary artery",
+      "processed": [
+        {
+          "itemText": "Main pulmonary artery",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 2,
+      "text": "Lobar arteries",
+      "processed": [
+        {
+          "itemText": "Lobar arteries",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 2,
+      "text": "Segmental arteries",
+      "processed": [
+        {
+          "itemText": "Segmental arteries",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 2,
+      "text": "Subsegmental arteries",
+      "processed": [
+        {
+          "itemText": "Subsegmental arteries",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Right ventricular strain",
+      "processed": [
+        {
+          "itemText": "Right ventricular strain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Pulmonary Angiogram",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Abdominal aortic aneurysm",
+      "processed": [
+        {
+          "itemText": "Abdominal aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Aortic dissection",
+      "processed": [
+        {
+          "itemText": "Aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Ruptured visceral organ",
+      "processed": [
+        {
+          "itemText": "Ruptured visceral organ",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Free fluid",
+      "processed": [
+        {
+          "itemText": "Free fluid",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Bowel obstruction",
+      "processed": [
+        {
+          "itemText": "Bowel obstruction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Abdomen/Pelvis",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Aortic dissection",
+      "processed": [
+        {
+          "itemText": "Aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Aortic aneurysm",
+      "processed": [
+        {
+          "itemText": "Aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "CT Angiogram of Chest",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Acute ischemic stroke",
+      "processed": [
+        {
+          "itemText": "Acute ischemic stroke",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Chronic ischemic changes",
+      "processed": [
+        {
+          "itemText": "Chronic ischemic changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Intracranial hemorrhage",
+      "processed": [
+        {
+          "itemText": "Intracranial hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Mass lesion",
+      "processed": [
+        {
+          "itemText": "Mass lesion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MRI Brain",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Normal vasculature",
+      "processed": [
+        {
+          "itemText": "Normal vasculature",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Vascular stenosis",
+      "processed": [
+        {
+          "itemText": "Vascular stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Vascular occlusion",
+      "processed": [
+        {
+          "itemText": "Vascular occlusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Aneurysm",
+      "processed": [
+        {
+          "itemText": "Aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Arteriovenous malformation",
+      "processed": [
+        {
+          "itemText": "Arteriovenous malformation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "MR Angiography",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Carotid stenosis (% stenosis: _____)",
+      "processed": [
+        {
+          "itemText": "Carotid stenosis (% stenosis: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Plaque formation",
+      "processed": [
+        {
+          "itemText": "Plaque formation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Carotid Ultrasound",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Abdominal aortic aneurysm",
+      "processed": [
+        {
+          "itemText": "Abdominal aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Free fluid",
+      "processed": [
+        {
+          "itemText": "Free fluid",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal Ultrasound",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Not performed",
+      "processed": [
+        {
+          "itemText": "Not performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Performed",
+      "processed": [
+        {
+          "itemText": "Performed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Ectopic pregnancy",
+      "processed": [
+        {
+          "itemText": "Ectopic pregnancy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Ovarian cyst/mass",
+      "processed": [
+        {
+          "itemText": "Ovarian cyst/mass",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Free fluid",
+      "processed": [
+        {
+          "itemText": "Free fluid",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Other findings: _____",
+      "processed": [
+        {
+          "itemText": "Other findings: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pelvic Ultrasound (if applicable)",
+      "indentLevel": 0,
+      "text": "Not applicable",
+      "processed": [
+        {
+          "itemText": "Not applicable",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Carotid stenosis (% stenosis: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other findings: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Chest X-ray": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Head CT": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "CT Pulmonary Angiogram": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 6,
+        "2": 4
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "CT Abdomen/Pelvis": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "CT Angiogram of Chest": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "MRI Brain": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "MR Angiography": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Carotid Ultrasound": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Abdominal Ultrasound": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Pelvic Ultrasound (if applicable)": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

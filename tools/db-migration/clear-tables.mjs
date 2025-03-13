@@ -1,6 +1,6 @@
 // tools/db-migration/clear-tables.js
-const { createClient } = require('@supabase/supabase-js');
-const config = require('./config');
+import { createClient } from '@supabase/supabase-js';
+import config from './config.mjs';
 
 const supabase = createClient(config.supabaseUrl, config.supabaseKey);
 

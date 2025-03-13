@@ -1,0 +1,1023 @@
+{
+  "sections": [
+    "Basic ECG Parameters",
+    "Rhythm",
+    "Conduction Abnormalities",
+    "Tachyarrhythmias",
+    "Ischemia/Infarction",
+    "Other ECG Findings",
+    "Serial ECG Changes",
+    "Cardiac Monitor Findings (if available)"
+  ],
+  "items": [
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "Heart rate: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Heart rate: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "Rhythm: _____",
+      "processed": [
+        {
+          "itemText": "Rhythm: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "PR interval: _____ ms",
+      "processed": [
+        {
+          "itemText": "PR interval: _____ ms",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ms",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "QRS duration: _____ ms (prolonged if >130 ms)",
+      "processed": [
+        {
+          "itemText": "QRS duration: _____ ms (prolonged if >130 ms)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ms (prolonged if >130 ms)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "QT interval: _____ ms",
+      "processed": [
+        {
+          "itemText": "QT interval: _____ ms",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ms",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "QTc interval: _____ ms (prolonged if >480 ms)",
+      "processed": [
+        {
+          "itemText": "QTc interval: _____ ms (prolonged if >480 ms)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ms (prolonged if >480 ms)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic ECG Parameters",
+      "indentLevel": 0,
+      "text": "Axis: _____ degrees (abnormal if <-30° or >110°)",
+      "processed": [
+        {
+          "itemText": "Axis: _____ degrees (abnormal if <-30° or >110°)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "degrees (abnormal if <-30° or >110°)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Normal sinus rhythm",
+      "processed": [
+        {
+          "itemText": "Normal sinus rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Sinus bradycardia (<60 bpm)",
+      "processed": [
+        {
+          "itemText": "Sinus bradycardia (<60 bpm)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Sinus bradycardia <40 bpm",
+      "processed": [
+        {
+          "itemText": "Sinus bradycardia <40 bpm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Sinus tachycardia (>100 bpm)",
+      "processed": [
+        {
+          "itemText": "Sinus tachycardia (>100 bpm)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Atrial fibrillation",
+      "processed": [
+        {
+          "itemText": "Atrial fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Atrial flutter",
+      "processed": [
+        {
+          "itemText": "Atrial flutter",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Junctional rhythm",
+      "processed": [
+        {
+          "itemText": "Junctional rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Ventricular rhythm",
+      "processed": [
+        {
+          "itemText": "Ventricular rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rhythm",
+      "indentLevel": 0,
+      "text": "Agonal rhythm",
+      "processed": [
+        {
+          "itemText": "Agonal rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "First-degree AV block (PR >200 ms)",
+      "processed": [
+        {
+          "itemText": "First-degree AV block (PR >200 ms)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Second-degree AV block, Mobitz type I (Wenckebach)",
+      "processed": [
+        {
+          "itemText": "Second-degree AV block, Mobitz type I (Wenckebach)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Second-degree AV block, Mobitz type II",
+      "processed": [
+        {
+          "itemText": "Second-degree AV block, Mobitz type II",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Third-degree (complete) AV block",
+      "processed": [
+        {
+          "itemText": "Third-degree (complete) AV block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Right bundle branch block",
+      "processed": [
+        {
+          "itemText": "Right bundle branch block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Left bundle branch block",
+      "processed": [
+        {
+          "itemText": "Left bundle branch block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Left anterior fascicular block",
+      "processed": [
+        {
+          "itemText": "Left anterior fascicular block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Left posterior fascicular block",
+      "processed": [
+        {
+          "itemText": "Left posterior fascicular block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Alternating bundle branch block",
+      "processed": [
+        {
+          "itemText": "Alternating bundle branch block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Sinus pause >3 seconds",
+      "processed": [
+        {
+          "itemText": "Sinus pause >3 seconds",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Conduction Abnormalities",
+      "indentLevel": 0,
+      "text": "Pre-excitation (WPW pattern)",
+      "processed": [
+        {
+          "itemText": "Pre-excitation (WPW pattern)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "Supraventricular tachycardia",
+      "processed": [
+        {
+          "itemText": "Supraventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "AV nodal reentry tachycardia",
+      "processed": [
+        {
+          "itemText": "AV nodal reentry tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "AV reentry tachycardia",
+      "processed": [
+        {
+          "itemText": "AV reentry tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "Monomorphic ventricular tachycardia",
+      "processed": [
+        {
+          "itemText": "Monomorphic ventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "Polymorphic ventricular tachycardia",
+      "processed": [
+        {
+          "itemText": "Polymorphic ventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "Torsades de pointes",
+      "processed": [
+        {
+          "itemText": "Torsades de pointes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Tachyarrhythmias",
+      "indentLevel": 0,
+      "text": "Ventricular fibrillation",
+      "processed": [
+        {
+          "itemText": "Ventricular fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "ST-segment elevation (leads: _____)",
+      "processed": [
+        {
+          "itemText": "ST-segment elevation (leads: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "ST-segment depression (leads: _____)",
+      "processed": [
+        {
+          "itemText": "ST-segment depression (leads: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "T-wave inversions (leads: _____)",
+      "processed": [
+        {
+          "itemText": "T-wave inversions (leads: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "Pathological Q waves (leads: _____)",
+      "processed": [
+        {
+          "itemText": "Pathological Q waves (leads: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "Signs of acute myocardial ischemia",
+      "processed": [
+        {
+          "itemText": "Signs of acute myocardial ischemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ischemia/Infarction",
+      "indentLevel": 0,
+      "text": "Signs of old myocardial infarction",
+      "processed": [
+        {
+          "itemText": "Signs of old myocardial infarction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Left ventricular hypertrophy",
+      "processed": [
+        {
+          "itemText": "Left ventricular hypertrophy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Right ventricular hypertrophy",
+      "processed": [
+        {
+          "itemText": "Right ventricular hypertrophy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Low voltage",
+      "processed": [
+        {
+          "itemText": "Low voltage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Electrical alternans",
+      "processed": [
+        {
+          "itemText": "Electrical alternans",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Right ventricular strain pattern",
+      "processed": [
+        {
+          "itemText": "Right ventricular strain pattern",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Brugada pattern (RBBB with ST elevation in V1-V3)",
+      "processed": [
+        {
+          "itemText": "Brugada pattern (RBBB with ST elevation in V1-V3)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Long QT pattern",
+      "processed": [
+        {
+          "itemText": "Long QT pattern",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Short QT pattern",
+      "processed": [
+        {
+          "itemText": "Short QT pattern",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Epsilon waves (ARVC)",
+      "processed": [
+        {
+          "itemText": "Epsilon waves (ARVC)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Early repolarization",
+      "processed": [
+        {
+          "itemText": "Early repolarization",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Diffuse ST elevation (pericarditis)",
+      "processed": [
+        {
+          "itemText": "Diffuse ST elevation (pericarditis)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "J-point elevation",
+      "processed": [
+        {
+          "itemText": "J-point elevation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Prominent U waves",
+      "processed": [
+        {
+          "itemText": "Prominent U waves",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other ECG Findings",
+      "indentLevel": 0,
+      "text": "Osborn waves (hypothermia)",
+      "processed": [
+        {
+          "itemText": "Osborn waves (hypothermia)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Serial ECG Changes",
+      "indentLevel": 0,
+      "text": "No change from prior ECG",
+      "processed": [
+        {
+          "itemText": "No change from prior ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Serial ECG Changes",
+      "indentLevel": 0,
+      "text": "New compared to prior ECG: _____",
+      "processed": [
+        {
+          "itemText": "New compared to prior ECG: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Serial ECG Changes",
+      "indentLevel": 0,
+      "text": "No prior ECG for comparison",
+      "processed": [
+        {
+          "itemText": "No prior ECG for comparison",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Serial ECG Changes",
+      "indentLevel": 0,
+      "text": "Improvement from prior ECG",
+      "processed": [
+        {
+          "itemText": "Improvement from prior ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Monitor Findings (if available)",
+      "indentLevel": 0,
+      "text": "No arrhythmias detected",
+      "processed": [
+        {
+          "itemText": "No arrhythmias detected",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Monitor Findings (if available)",
+      "indentLevel": 0,
+      "text": "Arrhythmias detected: _____",
+      "processed": [
+        {
+          "itemText": "Arrhythmias detected: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Heart rate: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Rhythm: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "PR interval: _____ ms",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ms",
+      "icd10Code": null
+    },
+    {
+      "itemText": "QRS duration: _____ ms (prolonged if >130 ms)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ms (prolonged if >130 ms)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "QT interval: _____ ms",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ms",
+      "icd10Code": null
+    },
+    {
+      "itemText": "QTc interval: _____ ms (prolonged if >480 ms)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ms (prolonged if >480 ms)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Axis: _____ degrees (abnormal if <-30° or >110°)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "degrees (abnormal if <-30° or >110°)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "ST-segment elevation (leads: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "ST-segment depression (leads: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "T-wave inversions (leads: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Pathological Q waves (leads: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "New compared to prior ECG: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Arrhythmias detected: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Basic ECG Parameters": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Rhythm": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Conduction Abnormalities": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Tachyarrhythmias": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Ischemia/Infarction": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Other ECG Findings": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 14
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Serial ECG Changes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiac Monitor Findings (if available)": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 2
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

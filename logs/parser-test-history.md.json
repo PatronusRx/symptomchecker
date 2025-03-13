@@ -1,0 +1,1076 @@
+{
+  "sections": [
+    "Chief Complaint",
+    "Episode Details",
+    "Position During Episode",
+    "Activity During Episode",
+    "Setting",
+    "Precipitating Factors",
+    "Associated Prodromal Symptoms",
+    "Associated Symptoms During/After Episode",
+    "Post-Episode Status"
+  ],
+  "items": [
+    {
+      "section": "Chief Complaint",
+      "indentLevel": 0,
+      "text": "Syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Chief Complaint",
+      "indentLevel": 0,
+      "text": "Pre-syncope/Near-syncope",
+      "processed": [
+        {
+          "itemText": "Pre-syncope/Near-syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Chief Complaint",
+      "indentLevel": 0,
+      "text": "Loss of consciousness",
+      "processed": [
+        {
+          "itemText": "Loss of consciousness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Details",
+      "indentLevel": 0,
+      "text": "Number of episodes: _____",
+      "processed": [
+        {
+          "itemText": "Number of episodes: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Details",
+      "indentLevel": 0,
+      "text": "Duration of unconsciousness: _____ seconds/minutes",
+      "processed": [
+        {
+          "itemText": "Duration of unconsciousness: _____ seconds/minutes",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "seconds/minutes",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Details",
+      "indentLevel": 0,
+      "text": "Complete recovery after episode",
+      "processed": [
+        {
+          "itemText": "Complete recovery after episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Details",
+      "indentLevel": 0,
+      "text": "Spontaneous recovery after episode",
+      "processed": [
+        {
+          "itemText": "Spontaneous recovery after episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Position During Episode",
+      "indentLevel": 0,
+      "text": "Standing",
+      "processed": [
+        {
+          "itemText": "Standing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Position During Episode",
+      "indentLevel": 0,
+      "text": "Sitting",
+      "processed": [
+        {
+          "itemText": "Sitting",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Position During Episode",
+      "indentLevel": 0,
+      "text": "Lying down",
+      "processed": [
+        {
+          "itemText": "Lying down",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Position During Episode",
+      "indentLevel": 0,
+      "text": "During position change",
+      "processed": [
+        {
+          "itemText": "During position change",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Activity During Episode",
+      "indentLevel": 0,
+      "text": "At rest",
+      "processed": [
+        {
+          "itemText": "At rest",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Activity During Episode",
+      "indentLevel": 0,
+      "text": "During exertion",
+      "processed": [
+        {
+          "itemText": "During exertion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Activity During Episode",
+      "indentLevel": 0,
+      "text": "After exertion",
+      "processed": [
+        {
+          "itemText": "After exertion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Activity During Episode",
+      "indentLevel": 0,
+      "text": "While driving",
+      "processed": [
+        {
+          "itemText": "While driving",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Activity During Episode",
+      "indentLevel": 0,
+      "text": "While eating",
+      "processed": [
+        {
+          "itemText": "While eating",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "Bathroom",
+      "processed": [
+        {
+          "itemText": "Bathroom",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "After voiding (micturition syncope)",
+      "processed": [
+        {
+          "itemText": "After voiding (micturition syncope)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "Restaurant/after meal (post-prandial syncope)",
+      "processed": [
+        {
+          "itemText": "Restaurant/after meal (post-prandial syncope)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "During blood draw/medical procedure",
+      "processed": [
+        {
+          "itemText": "During blood draw/medical procedure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "Crowded place",
+      "processed": [
+        {
+          "itemText": "Crowded place",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "While coughing",
+      "processed": [
+        {
+          "itemText": "While coughing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "During defecation",
+      "processed": [
+        {
+          "itemText": "During defecation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "Immediately after standing up",
+      "processed": [
+        {
+          "itemText": "Immediately after standing up",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "During urination",
+      "processed": [
+        {
+          "itemText": "During urination",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "After a large meal",
+      "processed": [
+        {
+          "itemText": "After a large meal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Setting",
+      "indentLevel": 0,
+      "text": "During swallowing",
+      "processed": [
+        {
+          "itemText": "During swallowing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Emotional stress",
+      "processed": [
+        {
+          "itemText": "Emotional stress",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Pain",
+      "processed": [
+        {
+          "itemText": "Pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Fear",
+      "processed": [
+        {
+          "itemText": "Fear",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Medical procedure",
+      "processed": [
+        {
+          "itemText": "Medical procedure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Noxious stimulus",
+      "processed": [
+        {
+          "itemText": "Noxious stimulus",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Prolonged standing",
+      "processed": [
+        {
+          "itemText": "Prolonged standing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Warm, crowded environment",
+      "processed": [
+        {
+          "itemText": "Warm, crowded environment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Fasting state",
+      "processed": [
+        {
+          "itemText": "Fasting state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Dehydration",
+      "processed": [
+        {
+          "itemText": "Dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Head rotation/neck pressure (carotid sinus syndrome)",
+      "processed": [
+        {
+          "itemText": "Head rotation/neck pressure (carotid sinus syndrome)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Breath holding",
+      "processed": [
+        {
+          "itemText": "Breath holding",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Precipitating Factors",
+      "indentLevel": 0,
+      "text": "Laughing",
+      "processed": [
+        {
+          "itemText": "Laughing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Lightheadedness",
+      "processed": [
+        {
+          "itemText": "Lightheadedness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Dizziness",
+      "processed": [
+        {
+          "itemText": "Dizziness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Nausea",
+      "processed": [
+        {
+          "itemText": "Nausea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Diaphoresis (sweating)",
+      "processed": [
+        {
+          "itemText": "Diaphoresis (sweating)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Pallor",
+      "processed": [
+        {
+          "itemText": "Pallor",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Blurred vision",
+      "processed": [
+        {
+          "itemText": "Blurred vision",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Darkening vision",
+      "processed": [
+        {
+          "itemText": "Darkening vision",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Feeling warm",
+      "processed": [
+        {
+          "itemText": "Feeling warm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "Chills",
+      "processed": [
+        {
+          "itemText": "Chills",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Prodromal Symptoms",
+      "indentLevel": 0,
+      "text": "None (sudden onset without warning)",
+      "processed": [
+        {
+          "itemText": "None (sudden onset without warning)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Chest pain/discomfort",
+      "processed": [
+        {
+          "itemText": "Chest pain/discomfort",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Palpitations",
+      "processed": [
+        {
+          "itemText": "Palpitations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Shortness of breath/dyspnea",
+      "processed": [
+        {
+          "itemText": "Shortness of breath/dyspnea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Abdominal pain",
+      "processed": [
+        {
+          "itemText": "Abdominal pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Back pain",
+      "processed": [
+        {
+          "itemText": "Back pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Headache",
+      "processed": [
+        {
+          "itemText": "Headache",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Confusion",
+      "processed": [
+        {
+          "itemText": "Confusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Myoclonic jerks/convulsions (<20 seconds)",
+      "processed": [
+        {
+          "itemText": "Myoclonic jerks/convulsions (<20 seconds)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Prolonged convulsions (>20 seconds)",
+      "processed": [
+        {
+          "itemText": "Prolonged convulsions (>20 seconds)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Tongue biting",
+      "processed": [
+        {
+          "itemText": "Tongue biting",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Urinary incontinence",
+      "processed": [
+        {
+          "itemText": "Urinary incontinence",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Fecal incontinence",
+      "processed": [
+        {
+          "itemText": "Fecal incontinence",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Associated Symptoms During/After Episode",
+      "indentLevel": 0,
+      "text": "Vaginal bleeding",
+      "processed": [
+        {
+          "itemText": "Vaginal bleeding",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Immediate return to baseline",
+      "processed": [
+        {
+          "itemText": "Immediate return to baseline",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Confusion",
+      "processed": [
+        {
+          "itemText": "Confusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Fatigue",
+      "processed": [
+        {
+          "itemText": "Fatigue",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Persistent neurological symptoms",
+      "processed": [
+        {
+          "itemText": "Persistent neurological symptoms",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Post-ictal state",
+      "processed": [
+        {
+          "itemText": "Post-ictal state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Post-Episode Status",
+      "indentLevel": 0,
+      "text": "Injuries sustained",
+      "processed": [
+        {
+          "itemText": "Injuries sustained",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Number of episodes: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Duration of unconsciousness: _____ seconds/minutes",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "seconds/minutes",
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [
+    {
+      "itemText": "Syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    }
+  ],
+  "nestedItems": {
+    "Chief Complaint": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Episode Details": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Position During Episode": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Activity During Episode": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Setting": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Precipitating Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 12
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Associated Prodromal Symptoms": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Associated Symptoms During/After Episode": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 13
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Post-Episode Status": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

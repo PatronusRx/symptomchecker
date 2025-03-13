@@ -1,0 +1,834 @@
+{
+  "sections": [
+    "Witness Account",
+    "Description of Episode (From Observer)",
+    "Pre-Episode Observations",
+    "Episode Characteristics",
+    "Movement During Episode",
+    "Autonomic Features",
+    "Recovery Characteristics",
+    "EMS/First Responder Report"
+  ],
+  "items": [
+    {
+      "section": "Witness Account",
+      "indentLevel": 0,
+      "text": "Event witnessed",
+      "processed": [
+        {
+          "itemText": "Event witnessed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Witness Account",
+      "indentLevel": 0,
+      "text": "Event not witnessed",
+      "processed": [
+        {
+          "itemText": "Event not witnessed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Witness Account",
+      "indentLevel": 0,
+      "text": "Witness account available",
+      "processed": [
+        {
+          "itemText": "Witness account available",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Witness Account",
+      "indentLevel": 0,
+      "text": "No witness account available",
+      "processed": [
+        {
+          "itemText": "No witness account available",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Description of Episode (From Observer)",
+      "indentLevel": 0,
+      "text": "Duration of loss of consciousness: _____ seconds/minutes",
+      "processed": [
+        {
+          "itemText": "Duration of loss of consciousness: _____ seconds/minutes",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "seconds/minutes",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Description of Episode (From Observer)",
+      "indentLevel": 0,
+      "text": "Complete collapse",
+      "processed": [
+        {
+          "itemText": "Complete collapse",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Description of Episode (From Observer)",
+      "indentLevel": 0,
+      "text": "Partial collapse",
+      "processed": [
+        {
+          "itemText": "Partial collapse",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Description of Episode (From Observer)",
+      "indentLevel": 0,
+      "text": "Fall resulting in injury",
+      "processed": [
+        {
+          "itemText": "Fall resulting in injury",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Description of Episode (From Observer)",
+      "indentLevel": 0,
+      "text": "No fall or injury",
+      "processed": [
+        {
+          "itemText": "No fall or injury",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pre-Episode Observations",
+      "indentLevel": 0,
+      "text": "Appeared normal before episode",
+      "processed": [
+        {
+          "itemText": "Appeared normal before episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pre-Episode Observations",
+      "indentLevel": 0,
+      "text": "Appeared pale/diaphoretic",
+      "processed": [
+        {
+          "itemText": "Appeared pale/diaphoretic",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pre-Episode Observations",
+      "indentLevel": 0,
+      "text": "Complained of feeling unwell",
+      "processed": [
+        {
+          "itemText": "Complained of feeling unwell",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pre-Episode Observations",
+      "indentLevel": 0,
+      "text": "Strange behavior noted",
+      "processed": [
+        {
+          "itemText": "Strange behavior noted",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pre-Episode Observations",
+      "indentLevel": 0,
+      "text": "Complained of specific symptoms: _____",
+      "processed": [
+        {
+          "itemText": "Complained of specific symptoms: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Sudden onset",
+      "processed": [
+        {
+          "itemText": "Sudden onset",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Gradual onset",
+      "processed": [
+        {
+          "itemText": "Gradual onset",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Loss of postural tone (collapse)",
+      "processed": [
+        {
+          "itemText": "Loss of postural tone (collapse)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Eyes open",
+      "processed": [
+        {
+          "itemText": "Eyes open",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Eyes closed",
+      "processed": [
+        {
+          "itemText": "Eyes closed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Pallor",
+      "processed": [
+        {
+          "itemText": "Pallor",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Cyanosis",
+      "processed": [
+        {
+          "itemText": "Cyanosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Episode Characteristics",
+      "indentLevel": 0,
+      "text": "Flushing",
+      "processed": [
+        {
+          "itemText": "Flushing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "No movements observed",
+      "processed": [
+        {
+          "itemText": "No movements observed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Brief myoclonic jerks (<20 jerks)",
+      "processed": [
+        {
+          "itemText": "Brief myoclonic jerks (<20 jerks)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Prolonged rhythmic movements (>20 jerks)",
+      "processed": [
+        {
+          "itemText": "Prolonged rhythmic movements (>20 jerks)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Tonic posturing",
+      "processed": [
+        {
+          "itemText": "Tonic posturing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Clonic movements",
+      "processed": [
+        {
+          "itemText": "Clonic movements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Tongue biting observed",
+      "processed": [
+        {
+          "itemText": "Tongue biting observed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Head turning to one side",
+      "processed": [
+        {
+          "itemText": "Head turning to one side",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Bilateral symmetric movements",
+      "processed": [
+        {
+          "itemText": "Bilateral symmetric movements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Movement During Episode",
+      "indentLevel": 0,
+      "text": "Asymmetric movements",
+      "processed": [
+        {
+          "itemText": "Asymmetric movements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Autonomic Features",
+      "indentLevel": 0,
+      "text": "Urinary incontinence",
+      "processed": [
+        {
+          "itemText": "Urinary incontinence",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Autonomic Features",
+      "indentLevel": 0,
+      "text": "Fecal incontinence",
+      "processed": [
+        {
+          "itemText": "Fecal incontinence",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Autonomic Features",
+      "indentLevel": 0,
+      "text": "Vomiting",
+      "processed": [
+        {
+          "itemText": "Vomiting",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Autonomic Features",
+      "indentLevel": 0,
+      "text": "Excessive salivation",
+      "processed": [
+        {
+          "itemText": "Excessive salivation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Rapid return to normal (seconds)",
+      "processed": [
+        {
+          "itemText": "Rapid return to normal (seconds)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Gradual return to normal (minutes)",
+      "processed": [
+        {
+          "itemText": "Gradual return to normal (minutes)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Prolonged recovery (>5 minutes)",
+      "processed": [
+        {
+          "itemText": "Prolonged recovery (>5 minutes)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Post-episode confusion",
+      "processed": [
+        {
+          "itemText": "Post-episode confusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "No post-episode confusion",
+      "processed": [
+        {
+          "itemText": "No post-episode confusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Speech difficulty after episode",
+      "processed": [
+        {
+          "itemText": "Speech difficulty after episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Drowsiness after episode",
+      "processed": [
+        {
+          "itemText": "Drowsiness after episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Memory of event",
+      "processed": [
+        {
+          "itemText": "Memory of event",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "No memory of event",
+      "processed": [
+        {
+          "itemText": "No memory of event",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Continued weakness after episode",
+      "processed": [
+        {
+          "itemText": "Continued weakness after episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recovery Characteristics",
+      "indentLevel": 0,
+      "text": "Tongue or cheek biting noted",
+      "processed": [
+        {
+          "itemText": "Tongue or cheek biting noted",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "EMS/First Responder Report",
+      "indentLevel": 0,
+      "text": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+      "processed": [
+        {
+          "itemText": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "BP _____ HR _____ RR _____ O2 ",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "EMS/First Responder Report",
+      "indentLevel": 0,
+      "text": "Initial blood glucose: _____",
+      "processed": [
+        {
+          "itemText": "Initial blood glucose: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "EMS/First Responder Report",
+      "indentLevel": 0,
+      "text": "Interventions performed: _____",
+      "processed": [
+        {
+          "itemText": "Interventions performed: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "EMS/First Responder Report",
+      "indentLevel": 0,
+      "text": "Response to interventions: _____",
+      "processed": [
+        {
+          "itemText": "Response to interventions: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Duration of loss of consciousness: _____ seconds/minutes",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "seconds/minutes",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Complained of specific symptoms: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "BP _____ HR _____ RR _____ O2 ",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Initial blood glucose: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Interventions performed: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Response to interventions: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Witness Account": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Description of Episode (From Observer)": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Pre-Episode Observations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Episode Characteristics": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Movement During Episode": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Autonomic Features": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Recovery Characteristics": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "EMS/First Responder Report": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

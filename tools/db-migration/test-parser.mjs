@@ -1,8 +1,15 @@
-// tools/db-migration/test-parser.js
-const fs = require('fs');
-const path = require('path');
-const { processItemText } = require('./parser');
-const config = require('./config');
+// tools/db-migration/test-parser.mjs
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Import parser and config - assuming we'll convert these to ESM too
+import { processItemText } from './parser.mjs';
+import config from './config.mjs';
 
 /**
  * Test the parser on a specific markdown file
@@ -155,9 +162,9 @@ function main() {
 
   if (args.length === 0) {
     console.error(
-      'Usage: node test-parser.js <markdown_file> [markdown_file2 ...]'
+      'Usage: node test-parser.mjs <markdown_file> [markdown_file2 ...]'
     );
-    console.error('Or:    node test-parser.js --chapter <chapter_dir>');
+    console.error('Or:    node test-parser.mjs --chapter <chapter_dir>');
     process.exit(1);
   }
 

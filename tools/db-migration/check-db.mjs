@@ -8,7 +8,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
-import { tables } from './config.js';
+import tables from './config.mjs';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.SUPABASE_URL;

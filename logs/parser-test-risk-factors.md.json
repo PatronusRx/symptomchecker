@@ -1,0 +1,973 @@
+{
+  "sections": [
+    "Demographic Risk Factors",
+    "Cardiac Risk Factors",
+    "Vascular Risk Factors",
+    "Pulmonary Embolism Risk Factors",
+    "Orthostatic Hypotension Risk Factors",
+    "Canadian Syncope Risk Score Factors",
+    "San Francisco Syncope Rule Factors",
+    "FAINT Score Factors"
+  ],
+  "items": [
+    {
+      "section": "Demographic Risk Factors",
+      "indentLevel": 0,
+      "text": "Age > 60 years",
+      "processed": [
+        {
+          "itemText": "Age > 60 years",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Demographic Risk Factors",
+      "indentLevel": 0,
+      "text": "Male gender",
+      "processed": [
+        {
+          "itemText": "Male gender",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Demographic Risk Factors",
+      "indentLevel": 0,
+      "text": "Bimodal age distribution (peak at age 20, peak after age 60)",
+      "processed": [
+        {
+          "itemText": "Bimodal age distribution (peak at age 20, peak after age 60)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Known heart disease",
+      "processed": [
+        {
+          "itemText": "Known heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Previous myocardial infarction",
+      "processed": [
+        {
+          "itemText": "Previous myocardial infarction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Family history of sudden cardiac death (< 50 years)",
+      "processed": [
+        {
+          "itemText": "Family history of sudden cardiac death (< 50 years)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Family history of cardiac arrhythmia",
+      "processed": [
+        {
+          "itemText": "Family history of cardiac arrhythmia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Family history of early CAD",
+      "processed": [
+        {
+          "itemText": "Family history of early CAD",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "History of congestive heart failure",
+      "processed": [
+        {
+          "itemText": "History of congestive heart failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Known arrhythmia",
+      "processed": [
+        {
+          "itemText": "Known arrhythmia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Implanted cardiac device (pacemaker/ICD/VAD)",
+      "processed": [
+        {
+          "itemText": "Implanted cardiac device (pacemaker/ICD/VAD)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Structural heart disease",
+      "processed": [
+        {
+          "itemText": "Structural heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Valvular heart disease",
+      "processed": [
+        {
+          "itemText": "Valvular heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Congenital heart disease",
+      "processed": [
+        {
+          "itemText": "Congenital heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Atrial fibrillation",
+      "processed": [
+        {
+          "itemText": "Atrial fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Previous abnormal ECG",
+      "processed": [
+        {
+          "itemText": "Previous abnormal ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "History of cardiomyopathy",
+      "processed": [
+        {
+          "itemText": "History of cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Risk Factors",
+      "indentLevel": 0,
+      "text": "Cardiac channelopathy (Brugada, Long QT)",
+      "processed": [
+        {
+          "itemText": "Cardiac channelopathy (Brugada, Long QT)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Hypertension",
+      "processed": [
+        {
+          "itemText": "Hypertension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Hyperlipidemia",
+      "processed": [
+        {
+          "itemText": "Hyperlipidemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Diabetes mellitus",
+      "processed": [
+        {
+          "itemText": "Diabetes mellitus",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Smoking",
+      "processed": [
+        {
+          "itemText": "Smoking",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Sedentary lifestyle",
+      "processed": [
+        {
+          "itemText": "Sedentary lifestyle",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Family history of aortic dissection/aneurysm",
+      "processed": [
+        {
+          "itemText": "Family history of aortic dissection/aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Known aortic aneurysm",
+      "processed": [
+        {
+          "itemText": "Known aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "Peripheral vascular disease",
+      "processed": [
+        {
+          "itemText": "Peripheral vascular disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular Risk Factors",
+      "indentLevel": 0,
+      "text": "History of previous stroke/TIA",
+      "processed": [
+        {
+          "itemText": "History of previous stroke/TIA",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Prolonged immobility",
+      "processed": [
+        {
+          "itemText": "Prolonged immobility",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Recent surgery",
+      "processed": [
+        {
+          "itemText": "Recent surgery",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "History of deep vein thrombosis",
+      "processed": [
+        {
+          "itemText": "History of deep vein thrombosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "History of pulmonary embolism",
+      "processed": [
+        {
+          "itemText": "History of pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Active cancer",
+      "processed": [
+        {
+          "itemText": "Active cancer",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Pregnancy or postpartum state",
+      "processed": [
+        {
+          "itemText": "Pregnancy or postpartum state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Oral contraceptive use",
+      "processed": [
+        {
+          "itemText": "Oral contraceptive use",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Known hypercoagulable state",
+      "processed": [
+        {
+          "itemText": "Known hypercoagulable state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Obesity",
+      "processed": [
+        {
+          "itemText": "Obesity",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary Embolism Risk Factors",
+      "indentLevel": 0,
+      "text": "Long-distance travel",
+      "processed": [
+        {
+          "itemText": "Long-distance travel",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Dehydration",
+      "processed": [
+        {
+          "itemText": "Dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Blood loss/anemia",
+      "processed": [
+        {
+          "itemText": "Blood loss/anemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Autonomic dysfunction",
+      "processed": [
+        {
+          "itemText": "Autonomic dysfunction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Advanced age",
+      "processed": [
+        {
+          "itemText": "Advanced age",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Medications (see Medication section)",
+      "processed": [
+        {
+          "itemText": "Medications (see Medication section)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Alcohol consumption",
+      "processed": [
+        {
+          "itemText": "Alcohol consumption",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Hypotension Risk Factors",
+      "indentLevel": 0,
+      "text": "Prolonged bedrest",
+      "processed": [
+        {
+          "itemText": "Prolonged bedrest",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "Predisposition to vasovagal syncope (-1 point)",
+      "processed": [
+        {
+          "itemText": "Predisposition to vasovagal syncope (-1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "History of heart disease (+1 point)",
+      "processed": [
+        {
+          "itemText": "History of heart disease (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "Systolic BP <90 or >180 mmHg (+2 points)",
+      "processed": [
+        {
+          "itemText": "Systolic BP <90 or >180 mmHg (+2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "Elevated troponin (+2 points)",
+      "processed": [
+        {
+          "itemText": "Elevated troponin (+2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "Abnormal QRS axis (+1 point)",
+      "processed": [
+        {
+          "itemText": "Abnormal QRS axis (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "QRS >130 ms (+1 point)",
+      "processed": [
+        {
+          "itemText": "QRS >130 ms (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "QTc >480 ms (+2 points)",
+      "processed": [
+        {
+          "itemText": "QTc >480 ms (+2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "ED diagnosis of vasovagal syncope (-2 points)",
+      "processed": [
+        {
+          "itemText": "ED diagnosis of vasovagal syncope (-2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Factors",
+      "indentLevel": 0,
+      "text": "ED diagnosis of cardiac syncope (+2 points)",
+      "processed": [
+        {
+          "itemText": "ED diagnosis of cardiac syncope (+2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Factors",
+      "indentLevel": 0,
+      "text": "History of CHF",
+      "processed": [
+        {
+          "itemText": "History of CHF",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Factors",
+      "indentLevel": 0,
+      "text": "Hematocrit <30%",
+      "processed": [
+        {
+          "itemText": "Hematocrit <30%",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Factors",
+      "indentLevel": 0,
+      "text": "Abnormal ECG",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Factors",
+      "indentLevel": 0,
+      "text": "Shortness of breath",
+      "processed": [
+        {
+          "itemText": "Shortness of breath",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Factors",
+      "indentLevel": 0,
+      "text": "Systolic BP <90 mmHg",
+      "processed": [
+        {
+          "itemText": "Systolic BP <90 mmHg",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Factors",
+      "indentLevel": 0,
+      "text": "History of heart failure (+1 point)",
+      "processed": [
+        {
+          "itemText": "History of heart failure (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Factors",
+      "indentLevel": 0,
+      "text": "History of cardiac arrhythmia (+1 point)",
+      "processed": [
+        {
+          "itemText": "History of cardiac arrhythmia (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Factors",
+      "indentLevel": 0,
+      "text": "Abnormal ECG (+1 point)",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Factors",
+      "indentLevel": 0,
+      "text": "Elevated NT-proBNP >125 pg/mL (+2 points)",
+      "processed": [
+        {
+          "itemText": "Elevated NT-proBNP >125 pg/mL (+2 points)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Factors",
+      "indentLevel": 0,
+      "text": "Elevated troponin T >19 ng/L (+1 point)",
+      "processed": [
+        {
+          "itemText": "Elevated troponin T >19 ng/L (+1 point)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Demographic Risk Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiac Risk Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 15
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Vascular Risk Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Pulmonary Embolism Risk Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Orthostatic Hypotension Risk Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Canadian Syncope Risk Score Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "San Francisco Syncope Rule Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "FAINT Score Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

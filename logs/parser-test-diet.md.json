@@ -1,0 +1,579 @@
+{
+  "sections": [
+    "Oral Intake",
+    "Dietary Triggers",
+    "Specialized Diets",
+    "Hydration Status",
+    "Recent Dietary Changes",
+    "Dietary Supplements",
+    "Appetite"
+  ],
+  "items": [
+    {
+      "section": "Oral Intake",
+      "indentLevel": 0,
+      "text": "Normal hydration status",
+      "processed": [
+        {
+          "itemText": "Normal hydration status",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Oral Intake",
+      "indentLevel": 0,
+      "text": "Decreased fluid intake",
+      "processed": [
+        {
+          "itemText": "Decreased fluid intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Oral Intake",
+      "indentLevel": 0,
+      "text": "Signs of dehydration",
+      "processed": [
+        {
+          "itemText": "Signs of dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Oral Intake",
+      "indentLevel": 0,
+      "text": "Poor oral intake",
+      "processed": [
+        {
+          "itemText": "Poor oral intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Oral Intake",
+      "indentLevel": 0,
+      "text": "NPO (nothing by mouth) status",
+      "processed": [
+        {
+          "itemText": "NPO (nothing by mouth) status",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Triggers",
+      "indentLevel": 0,
+      "text": "Fasting state",
+      "processed": [
+        {
+          "itemText": "Fasting state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Triggers",
+      "indentLevel": 0,
+      "text": "Recent large meal (post-prandial syncope)",
+      "processed": [
+        {
+          "itemText": "Recent large meal (post-prandial syncope)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Triggers",
+      "indentLevel": 0,
+      "text": "Alcohol consumption",
+      "processed": [
+        {
+          "itemText": "Alcohol consumption",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Triggers",
+      "indentLevel": 0,
+      "text": "Caffeine intake",
+      "processed": [
+        {
+          "itemText": "Caffeine intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Specialized Diets",
+      "indentLevel": 0,
+      "text": "Low-sodium diet",
+      "processed": [
+        {
+          "itemText": "Low-sodium diet",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Specialized Diets",
+      "indentLevel": 0,
+      "text": "Diabetic diet",
+      "processed": [
+        {
+          "itemText": "Diabetic diet",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Specialized Diets",
+      "indentLevel": 0,
+      "text": "Fluid restriction",
+      "processed": [
+        {
+          "itemText": "Fluid restriction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Specialized Diets",
+      "indentLevel": 0,
+      "text": "High potassium foods (black licorice consumption)",
+      "processed": [
+        {
+          "itemText": "High potassium foods (black licorice consumption)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Specialized Diets",
+      "indentLevel": 0,
+      "text": "Other dietary restrictions: _____",
+      "processed": [
+        {
+          "itemText": "Other dietary restrictions: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hydration Status",
+      "indentLevel": 0,
+      "text": "Well-hydrated",
+      "processed": [
+        {
+          "itemText": "Well-hydrated",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hydration Status",
+      "indentLevel": 0,
+      "text": "Mild dehydration",
+      "processed": [
+        {
+          "itemText": "Mild dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hydration Status",
+      "indentLevel": 0,
+      "text": "Moderate dehydration",
+      "processed": [
+        {
+          "itemText": "Moderate dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hydration Status",
+      "indentLevel": 0,
+      "text": "Severe dehydration",
+      "processed": [
+        {
+          "itemText": "Severe dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "No recent changes",
+      "processed": [
+        {
+          "itemText": "No recent changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "New diet regimen",
+      "processed": [
+        {
+          "itemText": "New diet regimen",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "Significant weight loss",
+      "processed": [
+        {
+          "itemText": "Significant weight loss",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "Significant weight gain",
+      "processed": [
+        {
+          "itemText": "Significant weight gain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "Extreme caloric restriction",
+      "processed": [
+        {
+          "itemText": "Extreme caloric restriction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "Rapid fluid intake",
+      "processed": [
+        {
+          "itemText": "Rapid fluid intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Dietary Changes",
+      "indentLevel": 0,
+      "text": "Poor nutritional status",
+      "processed": [
+        {
+          "itemText": "Poor nutritional status",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "None",
+      "processed": [
+        {
+          "itemText": "None",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "Potassium supplements",
+      "processed": [
+        {
+          "itemText": "Potassium supplements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "Herbal supplements",
+      "processed": [
+        {
+          "itemText": "Herbal supplements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "Weight loss supplements",
+      "processed": [
+        {
+          "itemText": "Weight loss supplements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "Pre-workout supplements",
+      "processed": [
+        {
+          "itemText": "Pre-workout supplements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Dietary Supplements",
+      "indentLevel": 0,
+      "text": "Energy drinks",
+      "processed": [
+        {
+          "itemText": "Energy drinks",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Appetite",
+      "indentLevel": 0,
+      "text": "Normal appetite",
+      "processed": [
+        {
+          "itemText": "Normal appetite",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Appetite",
+      "indentLevel": 0,
+      "text": "Decreased appetite",
+      "processed": [
+        {
+          "itemText": "Decreased appetite",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Appetite",
+      "indentLevel": 0,
+      "text": "Anorexia",
+      "processed": [
+        {
+          "itemText": "Anorexia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Appetite",
+      "indentLevel": 0,
+      "text": "Increased appetite",
+      "processed": [
+        {
+          "itemText": "Increased appetite",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Other dietary restrictions: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Oral Intake": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Dietary Triggers": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Specialized Diets": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Hydration Status": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Recent Dietary Changes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Dietary Supplements": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Appetite": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

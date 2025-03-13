@@ -1,0 +1,1587 @@
+{
+  "sections": [
+    "Cardiac History",
+    "Vascular History",
+    "Pulmonary History",
+    "Neurological History",
+    "Endocrine History",
+    "Hematologic History",
+    "Gastrointestinal History",
+    "Genitourinary History",
+    "Psychiatric History",
+    "Previous Episodes"
+  ],
+  "items": [
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Coronary artery disease (I25.10)",
+      "processed": [
+        {
+          "itemText": "Coronary artery disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I25.10"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Previous myocardial infarction (I25.2)",
+      "processed": [
+        {
+          "itemText": "Previous myocardial infarction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I25.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Heart failure (I50.9)",
+      "processed": [
+        {
+          "itemText": "Heart failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I50.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "With reduced ejection fraction (HFrEF) (I50.2)",
+      "processed": [
+        {
+          "itemText": "With reduced ejection fraction (HFrEF)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I50.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "With preserved ejection fraction (HFpEF) (I50.3)",
+      "processed": [
+        {
+          "itemText": "With preserved ejection fraction (HFpEF)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I50.3"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Valvular heart disease",
+      "processed": [
+        {
+          "itemText": "Valvular heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Aortic stenosis (I35.0)",
+      "processed": [
+        {
+          "itemText": "Aortic stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I35.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Mitral stenosis (I34.2)",
+      "processed": [
+        {
+          "itemText": "Mitral stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I34.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Aortic regurgitation (I35.1)",
+      "processed": [
+        {
+          "itemText": "Aortic regurgitation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I35.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Mitral regurgitation (I34.0)",
+      "processed": [
+        {
+          "itemText": "Mitral regurgitation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I34.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Cardiomyopathy (I42.9)",
+      "processed": [
+        {
+          "itemText": "Cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I42.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Hypertrophic cardiomyopathy (I42.2)",
+      "processed": [
+        {
+          "itemText": "Hypertrophic cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I42.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Dilated cardiomyopathy (I42.0)",
+      "processed": [
+        {
+          "itemText": "Dilated cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I42.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Arrhythmogenic right ventricular cardiomyopathy (I42.8)",
+      "processed": [
+        {
+          "itemText": "Arrhythmogenic right ventricular cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I42.8"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Cardiac arrhythmia (I49.9)",
+      "processed": [
+        {
+          "itemText": "Cardiac arrhythmia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Atrial fibrillation (I48.91)",
+      "processed": [
+        {
+          "itemText": "Atrial fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I48.91"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Ventricular tachycardia (I47.2)",
+      "processed": [
+        {
+          "itemText": "Ventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Supraventricular tachycardia (I47.1)",
+      "processed": [
+        {
+          "itemText": "Supraventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Second degree AV block (I44.1)",
+      "processed": [
+        {
+          "itemText": "Second degree AV block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I44.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Third degree AV block (I44.2)",
+      "processed": [
+        {
+          "itemText": "Third degree AV block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I44.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Wolff-Parkinson-White syndrome (I45.6)",
+      "processed": [
+        {
+          "itemText": "Wolff-Parkinson-White syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I45.6"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Long QT syndrome (I45.81)",
+      "processed": [
+        {
+          "itemText": "Long QT syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I45.81"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Brugada syndrome (I49.8)",
+      "processed": [
+        {
+          "itemText": "Brugada syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.8"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 2,
+      "text": "Sick sinus syndrome (I49.5)",
+      "processed": [
+        {
+          "itemText": "Sick sinus syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.5"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Pacemaker (Z95.0)",
+      "processed": [
+        {
+          "itemText": "Pacemaker",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "Z95.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Implantable cardioverter-defibrillator (Z95.810)",
+      "processed": [
+        {
+          "itemText": "Implantable cardioverter-defibrillator (Z95.810)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Ventricular assist device (Z95.811)",
+      "processed": [
+        {
+          "itemText": "Ventricular assist device (Z95.811)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac History",
+      "indentLevel": 0,
+      "text": "Congenital heart disease (Q24.9)",
+      "processed": [
+        {
+          "itemText": "Congenital heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "Q24.9"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Hypertension (I10)",
+      "processed": [
+        {
+          "itemText": "Hypertension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I10"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Orthostatic hypotension (I95.1)",
+      "processed": [
+        {
+          "itemText": "Orthostatic hypotension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I95.1"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "History of aortic dissection (I71.9)",
+      "processed": [
+        {
+          "itemText": "History of aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.9"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Aortic aneurysm (I71.9)",
+      "processed": [
+        {
+          "itemText": "Aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.9"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Peripheral vascular disease (I73.9)",
+      "processed": [
+        {
+          "itemText": "Peripheral vascular disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I73.9"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Previous pulmonary embolism (I27.82)",
+      "processed": [
+        {
+          "itemText": "Previous pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I27.82"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Deep vein thrombosis (I82.409)",
+      "processed": [
+        {
+          "itemText": "Deep vein thrombosis (I82.409)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Carotid artery stenosis (I65.29)",
+      "processed": [
+        {
+          "itemText": "Carotid artery stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I65.29"
+        }
+      ]
+    },
+    {
+      "section": "Vascular History",
+      "indentLevel": 0,
+      "text": "Previous stroke/TIA (I63.9/G45.9)",
+      "processed": [
+        {
+          "itemText": "Previous stroke/TIA (I63.9/G45.9)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary History",
+      "indentLevel": 0,
+      "text": "Pulmonary hypertension (I27.0)",
+      "processed": [
+        {
+          "itemText": "Pulmonary hypertension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I27.0"
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary History",
+      "indentLevel": 0,
+      "text": "COPD (J44.9)",
+      "processed": [
+        {
+          "itemText": "COPD",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "J44.9"
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary History",
+      "indentLevel": 0,
+      "text": "Asthma (J45.909)",
+      "processed": [
+        {
+          "itemText": "Asthma (J45.909)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary History",
+      "indentLevel": 0,
+      "text": "Sleep apnea (G47.33)",
+      "processed": [
+        {
+          "itemText": "Sleep apnea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G47.33"
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary History",
+      "indentLevel": 0,
+      "text": "Pulmonary embolism (I26.99)",
+      "processed": [
+        {
+          "itemText": "Pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I26.99"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Seizure disorder (G40.909)",
+      "processed": [
+        {
+          "itemText": "Seizure disorder (G40.909)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Previous stroke (I63.9)",
+      "processed": [
+        {
+          "itemText": "Previous stroke",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I63.9"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Previous TIA (G45.9)",
+      "processed": [
+        {
+          "itemText": "Previous TIA",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G45.9"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Dementia (G30.9)",
+      "processed": [
+        {
+          "itemText": "Dementia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G30.9"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Parkinson's disease (G20)",
+      "processed": [
+        {
+          "itemText": "Parkinson's disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G20"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Autonomic dysfunction (G90.9)",
+      "processed": [
+        {
+          "itemText": "Autonomic dysfunction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G90.9"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Multiple sclerosis (G35)",
+      "processed": [
+        {
+          "itemText": "Multiple sclerosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G35"
+        }
+      ]
+    },
+    {
+      "section": "Neurological History",
+      "indentLevel": 0,
+      "text": "Migraines (G43.909)",
+      "processed": [
+        {
+          "itemText": "Migraines (G43.909)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Endocrine History",
+      "indentLevel": 0,
+      "text": "Diabetes mellitus (E11.9)",
+      "processed": [
+        {
+          "itemText": "Diabetes mellitus",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E11.9"
+        }
+      ]
+    },
+    {
+      "section": "Endocrine History",
+      "indentLevel": 0,
+      "text": "Adrenal insufficiency (E27.40)",
+      "processed": [
+        {
+          "itemText": "Adrenal insufficiency",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E27.40"
+        }
+      ]
+    },
+    {
+      "section": "Endocrine History",
+      "indentLevel": 0,
+      "text": "Hypothyroidism (E03.9)",
+      "processed": [
+        {
+          "itemText": "Hypothyroidism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E03.9"
+        }
+      ]
+    },
+    {
+      "section": "Endocrine History",
+      "indentLevel": 0,
+      "text": "Hyperthyroidism (E05.90)",
+      "processed": [
+        {
+          "itemText": "Hyperthyroidism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E05.90"
+        }
+      ]
+    },
+    {
+      "section": "Hematologic History",
+      "indentLevel": 0,
+      "text": "Anemia (D64.9)",
+      "processed": [
+        {
+          "itemText": "Anemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "D64.9"
+        }
+      ]
+    },
+    {
+      "section": "Hematologic History",
+      "indentLevel": 0,
+      "text": "Bleeding disorder (D69.9)",
+      "processed": [
+        {
+          "itemText": "Bleeding disorder",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "D69.9"
+        }
+      ]
+    },
+    {
+      "section": "Hematologic History",
+      "indentLevel": 0,
+      "text": "Hypercoagulable state (D68.9)",
+      "processed": [
+        {
+          "itemText": "Hypercoagulable state",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "D68.9"
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal History",
+      "indentLevel": 0,
+      "text": "Gastrointestinal bleeding (K92.2)",
+      "processed": [
+        {
+          "itemText": "Gastrointestinal bleeding",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "K92.2"
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal History",
+      "indentLevel": 0,
+      "text": "Liver disease (K76.9)",
+      "processed": [
+        {
+          "itemText": "Liver disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "K76.9"
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal History",
+      "indentLevel": 0,
+      "text": "Inflammatory bowel disease (K50.90/K51.90)",
+      "processed": [
+        {
+          "itemText": "Inflammatory bowel disease (K50.90/K51.90)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary History",
+      "indentLevel": 0,
+      "text": "Chronic kidney disease (N18.9)",
+      "processed": [
+        {
+          "itemText": "Chronic kidney disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "N18.9"
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary History",
+      "indentLevel": 0,
+      "text": "Recurrent urinary tract infections (N39.0)",
+      "processed": [
+        {
+          "itemText": "Recurrent urinary tract infections",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "N39.0"
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric History",
+      "indentLevel": 0,
+      "text": "Anxiety disorder (F41.9)",
+      "processed": [
+        {
+          "itemText": "Anxiety disorder",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F41.9"
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric History",
+      "indentLevel": 0,
+      "text": "Depression (F32.9)",
+      "processed": [
+        {
+          "itemText": "Depression",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F32.9"
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric History",
+      "indentLevel": 0,
+      "text": "Conversion disorder (F44.9)",
+      "processed": [
+        {
+          "itemText": "Conversion disorder",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F44.9"
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric History",
+      "indentLevel": 0,
+      "text": "Panic disorder (F41.0)",
+      "processed": [
+        {
+          "itemText": "Panic disorder",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F41.0"
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric History",
+      "indentLevel": 0,
+      "text": "Somatization disorder (F45.0)",
+      "processed": [
+        {
+          "itemText": "Somatization disorder",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F45.0"
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 0,
+      "text": "Prior syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Prior syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 2,
+      "text": "Number of prior episodes: _____",
+      "processed": [
+        {
+          "itemText": "Number of prior episodes: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 2,
+      "text": "Previous evaluations for syncope: _____",
+      "processed": [
+        {
+          "itemText": "Previous evaluations for syncope: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 2,
+      "text": "Previous diagnoses related to syncope: _____",
+      "processed": [
+        {
+          "itemText": "Previous diagnoses related to syncope: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 0,
+      "text": "Prior pre-syncope",
+      "processed": [
+        {
+          "itemText": "Prior pre-syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 0,
+      "text": "Prior falls",
+      "processed": [
+        {
+          "itemText": "Prior falls",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Previous Episodes",
+      "indentLevel": 0,
+      "text": "Previous injuries from syncope",
+      "processed": [
+        {
+          "itemText": "Previous injuries from syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Number of prior episodes: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Previous evaluations for syncope: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Previous diagnoses related to syncope: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [
+    {
+      "itemText": "Coronary artery disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I25.10"
+    },
+    {
+      "itemText": "Previous myocardial infarction",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I25.2"
+    },
+    {
+      "itemText": "Heart failure",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I50.9"
+    },
+    {
+      "itemText": "With reduced ejection fraction (HFrEF)",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I50.2"
+    },
+    {
+      "itemText": "With preserved ejection fraction (HFpEF)",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I50.3"
+    },
+    {
+      "itemText": "Aortic stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I35.0"
+    },
+    {
+      "itemText": "Mitral stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I34.2"
+    },
+    {
+      "itemText": "Aortic regurgitation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I35.1"
+    },
+    {
+      "itemText": "Mitral regurgitation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I34.0"
+    },
+    {
+      "itemText": "Cardiomyopathy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I42.9"
+    },
+    {
+      "itemText": "Hypertrophic cardiomyopathy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I42.2"
+    },
+    {
+      "itemText": "Dilated cardiomyopathy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I42.0"
+    },
+    {
+      "itemText": "Arrhythmogenic right ventricular cardiomyopathy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I42.8"
+    },
+    {
+      "itemText": "Cardiac arrhythmia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.9"
+    },
+    {
+      "itemText": "Atrial fibrillation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I48.91"
+    },
+    {
+      "itemText": "Ventricular tachycardia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.2"
+    },
+    {
+      "itemText": "Supraventricular tachycardia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.1"
+    },
+    {
+      "itemText": "Second degree AV block",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I44.1"
+    },
+    {
+      "itemText": "Third degree AV block",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I44.2"
+    },
+    {
+      "itemText": "Wolff-Parkinson-White syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I45.6"
+    },
+    {
+      "itemText": "Long QT syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I45.81"
+    },
+    {
+      "itemText": "Brugada syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.8"
+    },
+    {
+      "itemText": "Sick sinus syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.5"
+    },
+    {
+      "itemText": "Pacemaker",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "Z95.0"
+    },
+    {
+      "itemText": "Congenital heart disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "Q24.9"
+    },
+    {
+      "itemText": "Hypertension",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I10"
+    },
+    {
+      "itemText": "Orthostatic hypotension",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I95.1"
+    },
+    {
+      "itemText": "History of aortic dissection",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.9"
+    },
+    {
+      "itemText": "Aortic aneurysm",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.9"
+    },
+    {
+      "itemText": "Peripheral vascular disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I73.9"
+    },
+    {
+      "itemText": "Previous pulmonary embolism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I27.82"
+    },
+    {
+      "itemText": "Carotid artery stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I65.29"
+    },
+    {
+      "itemText": "Pulmonary hypertension",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I27.0"
+    },
+    {
+      "itemText": "COPD",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "J44.9"
+    },
+    {
+      "itemText": "Sleep apnea",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G47.33"
+    },
+    {
+      "itemText": "Pulmonary embolism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I26.99"
+    },
+    {
+      "itemText": "Previous stroke",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I63.9"
+    },
+    {
+      "itemText": "Previous TIA",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G45.9"
+    },
+    {
+      "itemText": "Dementia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G30.9"
+    },
+    {
+      "itemText": "Parkinson's disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G20"
+    },
+    {
+      "itemText": "Autonomic dysfunction",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G90.9"
+    },
+    {
+      "itemText": "Multiple sclerosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G35"
+    },
+    {
+      "itemText": "Diabetes mellitus",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E11.9"
+    },
+    {
+      "itemText": "Adrenal insufficiency",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E27.40"
+    },
+    {
+      "itemText": "Hypothyroidism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E03.9"
+    },
+    {
+      "itemText": "Hyperthyroidism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E05.90"
+    },
+    {
+      "itemText": "Anemia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "D64.9"
+    },
+    {
+      "itemText": "Bleeding disorder",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "D69.9"
+    },
+    {
+      "itemText": "Hypercoagulable state",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "D68.9"
+    },
+    {
+      "itemText": "Gastrointestinal bleeding",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "K92.2"
+    },
+    {
+      "itemText": "Liver disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "K76.9"
+    },
+    {
+      "itemText": "Chronic kidney disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "N18.9"
+    },
+    {
+      "itemText": "Recurrent urinary tract infections",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "N39.0"
+    },
+    {
+      "itemText": "Anxiety disorder",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F41.9"
+    },
+    {
+      "itemText": "Depression",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F32.9"
+    },
+    {
+      "itemText": "Conversion disorder",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F44.9"
+    },
+    {
+      "itemText": "Panic disorder",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F41.0"
+    },
+    {
+      "itemText": "Somatization disorder",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F45.0"
+    },
+    {
+      "itemText": "Prior syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    }
+  ],
+  "nestedItems": {
+    "Cardiac History": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 10,
+        "2": 18
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Vascular History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Pulmonary History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Neurological History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Endocrine History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Hematologic History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Gastrointestinal History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Genitourinary History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 2
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Psychiatric History": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Previous Episodes": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 4,
+        "2": 3
+      },
+      "levels": [
+        0,
+        2
+      ]
+    }
+  }
+}

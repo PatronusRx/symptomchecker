@@ -7,15 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "node tools/db-migration/migrate.js",
-    "migrate:test": "node tools/db-migration/migrate.js --test",
-    "migrate:chapter": "node tools/db-migration/migrate.js --chapter",
-    "test:parser": "node tools/db-migration/test-parser.js",
-    "clear:db": "node tools/db-migration/clear-tables.js",
-    "check:db": "node tools/db-migration/check-db.js"
+    "migrate": "node tools/db-migration/migrate.mjs",
+    "migrate:test": "node tools/db-migration/migrate.mjs --test",
+    "migrate:chapter": "node tools/db-migration/migrate.mjs --chapter",
+    "test:parser": "node tools/db-migration/test-parser.mjs",
+    "clear:db": "node tools/db-migration/clear-tables.mjs",
+    "check:db": "node tools/db-migration/check-db.mjs"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/supabase-js": "^2.49.1",
+    "dotenv": "^16.4.7",
     "lucide-react": "^0.479.0",
     "next": "15.2.0",
     "react": "^19.0.0",

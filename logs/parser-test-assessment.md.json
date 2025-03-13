@@ -1,0 +1,1036 @@
+{
+  "sections": [
+    "Syncope Classification",
+    "Diagnostic Certainty",
+    "Risk Stratification",
+    "Canadian Syncope Risk Score Calculation",
+    "FAINT Score Calculation",
+    "San Francisco Syncope Rule Assessment",
+    "Clinical Impression",
+    "Degree of Functional Impairment",
+    "Injury Assessment"
+  ],
+  "items": [
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Reflex (neurally mediated) syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Reflex (neurally mediated) syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Vasovagal syncope",
+      "processed": [
+        {
+          "itemText": "Vasovagal syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Carotid sinus syndrome",
+      "processed": [
+        {
+          "itemText": "Carotid sinus syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Situational syncope (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Situational syncope (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Orthostatic syncope (I95.1)",
+      "processed": [
+        {
+          "itemText": "Orthostatic syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I95.1"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Drug-induced",
+      "processed": [
+        {
+          "itemText": "Drug-induced",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Volume depletion",
+      "processed": [
+        {
+          "itemText": "Volume depletion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Primary autonomic failure",
+      "processed": [
+        {
+          "itemText": "Primary autonomic failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Secondary autonomic failure",
+      "processed": [
+        {
+          "itemText": "Secondary autonomic failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Cardiac syncope",
+      "processed": [
+        {
+          "itemText": "Cardiac syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Dysrhythmic (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Dysrhythmic (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Structural (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Structural (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 2,
+      "text": "Cardiopulmonary (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Cardiopulmonary (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Neurologic cause (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Neurologic cause (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Metabolic/toxic cause (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Metabolic/toxic cause (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Syncope mimic (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Syncope mimic (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Classification",
+      "indentLevel": 0,
+      "text": "Unexplained syncope",
+      "processed": [
+        {
+          "itemText": "Unexplained syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diagnostic Certainty",
+      "indentLevel": 0,
+      "text": "Definite diagnosis",
+      "processed": [
+        {
+          "itemText": "Definite diagnosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diagnostic Certainty",
+      "indentLevel": 0,
+      "text": "Highly probable diagnosis",
+      "processed": [
+        {
+          "itemText": "Highly probable diagnosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diagnostic Certainty",
+      "indentLevel": 0,
+      "text": "Probable diagnosis",
+      "processed": [
+        {
+          "itemText": "Probable diagnosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diagnostic Certainty",
+      "indentLevel": 0,
+      "text": "Possible diagnosis",
+      "processed": [
+        {
+          "itemText": "Possible diagnosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diagnostic Certainty",
+      "indentLevel": 0,
+      "text": "Diagnosis unclear",
+      "processed": [
+        {
+          "itemText": "Diagnosis unclear",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Risk Stratification",
+      "indentLevel": 0,
+      "text": "Very low risk (e.g., Canadian Syncope Risk Score -2)",
+      "processed": [
+        {
+          "itemText": "Very low risk (e.g., Canadian Syncope Risk Score -2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Risk Stratification",
+      "indentLevel": 0,
+      "text": "Low risk (e.g., Canadian Syncope Risk Score -1 or 0)",
+      "processed": [
+        {
+          "itemText": "Low risk (e.g., Canadian Syncope Risk Score -1 or 0)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Risk Stratification",
+      "indentLevel": 0,
+      "text": "Medium risk (e.g., Canadian Syncope Risk Score 1-3)",
+      "processed": [
+        {
+          "itemText": "Medium risk (e.g., Canadian Syncope Risk Score 1-3)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Risk Stratification",
+      "indentLevel": 0,
+      "text": "High risk (e.g., Canadian Syncope Risk Score >3)",
+      "processed": [
+        {
+          "itemText": "High risk (e.g., Canadian Syncope Risk Score >3)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "Predisposition to vasovagal syncope (-1)",
+      "processed": [
+        {
+          "itemText": "Predisposition to vasovagal syncope (-1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "History of heart disease (+1)",
+      "processed": [
+        {
+          "itemText": "History of heart disease (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "Any systolic BP <90 or >180 mmHg (+2)",
+      "processed": [
+        {
+          "itemText": "Any systolic BP <90 or >180 mmHg (+2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "Troponin level >99th percentile (+2)",
+      "processed": [
+        {
+          "itemText": "Troponin level >99th percentile (+2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "Abnormal QRS axis (+1)",
+      "processed": [
+        {
+          "itemText": "Abnormal QRS axis (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "QRS >130 ms (+1)",
+      "processed": [
+        {
+          "itemText": "QRS >130 ms (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "QTc >480 ms (+2)",
+      "processed": [
+        {
+          "itemText": "QTc >480 ms (+2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "ED diagnosis of vasovagal syncope (-2)",
+      "processed": [
+        {
+          "itemText": "ED diagnosis of vasovagal syncope (-2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "ED diagnosis of cardiac syncope (+2)",
+      "processed": [
+        {
+          "itemText": "ED diagnosis of cardiac syncope (+2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Canadian Syncope Risk Score Calculation",
+      "indentLevel": 0,
+      "text": "Total score: _____",
+      "processed": [
+        {
+          "itemText": "Total score: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "History of heart failure (+1)",
+      "processed": [
+        {
+          "itemText": "History of heart failure (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "History of cardiac arrhythmia (+1)",
+      "processed": [
+        {
+          "itemText": "History of cardiac arrhythmia (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "Abnormal ECG (+1)",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "Elevated NT-proBNP >125 pg/mL (+2)",
+      "processed": [
+        {
+          "itemText": "Elevated NT-proBNP >125 pg/mL (+2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "Elevated troponin T >19 ng/L (+1)",
+      "processed": [
+        {
+          "itemText": "Elevated troponin T >19 ng/L (+1)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "FAINT Score Calculation",
+      "indentLevel": 0,
+      "text": "Total score: _____",
+      "processed": [
+        {
+          "itemText": "Total score: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "History of congestive heart failure",
+      "processed": [
+        {
+          "itemText": "History of congestive heart failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Hematocrit <30%",
+      "processed": [
+        {
+          "itemText": "Hematocrit <30%",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Abnormal ECG",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Shortness of breath",
+      "processed": [
+        {
+          "itemText": "Shortness of breath",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Systolic BP <90 mmHg",
+      "processed": [
+        {
+          "itemText": "Systolic BP <90 mmHg",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Positive rule (any of the above present)",
+      "processed": [
+        {
+          "itemText": "Positive rule (any of the above present)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "San Francisco Syncope Rule Assessment",
+      "indentLevel": 0,
+      "text": "Negative rule (none of the above present)",
+      "processed": [
+        {
+          "itemText": "Negative rule (none of the above present)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Clinical Impression",
+      "indentLevel": 0,
+      "text": "Low concern for serious underlying condition",
+      "processed": [
+        {
+          "itemText": "Low concern for serious underlying condition",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Clinical Impression",
+      "indentLevel": 0,
+      "text": "Moderate concern for serious underlying condition",
+      "processed": [
+        {
+          "itemText": "Moderate concern for serious underlying condition",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Clinical Impression",
+      "indentLevel": 0,
+      "text": "High concern for serious underlying condition",
+      "processed": [
+        {
+          "itemText": "High concern for serious underlying condition",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Clinical Impression",
+      "indentLevel": 0,
+      "text": "Critical condition requiring immediate intervention",
+      "processed": [
+        {
+          "itemText": "Critical condition requiring immediate intervention",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Degree of Functional Impairment",
+      "indentLevel": 0,
+      "text": "No functional impairment",
+      "processed": [
+        {
+          "itemText": "No functional impairment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Degree of Functional Impairment",
+      "indentLevel": 0,
+      "text": "Mild functional impairment",
+      "processed": [
+        {
+          "itemText": "Mild functional impairment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Degree of Functional Impairment",
+      "indentLevel": 0,
+      "text": "Moderate functional impairment",
+      "processed": [
+        {
+          "itemText": "Moderate functional impairment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Degree of Functional Impairment",
+      "indentLevel": 0,
+      "text": "Severe functional impairment",
+      "processed": [
+        {
+          "itemText": "Severe functional impairment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Injury Assessment",
+      "indentLevel": 0,
+      "text": "No injury from syncope/fall",
+      "processed": [
+        {
+          "itemText": "No injury from syncope/fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Injury Assessment",
+      "indentLevel": 0,
+      "text": "Minor injury from syncope/fall",
+      "processed": [
+        {
+          "itemText": "Minor injury from syncope/fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Injury Assessment",
+      "indentLevel": 0,
+      "text": "Significant injury from syncope/fall",
+      "processed": [
+        {
+          "itemText": "Significant injury from syncope/fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Injury Assessment",
+      "indentLevel": 0,
+      "text": "Traumatic brain injury from syncope/fall",
+      "processed": [
+        {
+          "itemText": "Traumatic brain injury from syncope/fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Situational syncope (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Dysrhythmic (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Structural (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Cardiopulmonary (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Neurologic cause (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Metabolic/toxic cause (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Syncope mimic (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Total score: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Total score: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [
+    {
+      "itemText": "Reflex (neurally mediated) syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Orthostatic syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I95.1"
+    }
+  ],
+  "nestedItems": {
+    "Syncope Classification": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 7,
+        "2": 10
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Diagnostic Certainty": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Risk Stratification": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Canadian Syncope Risk Score Calculation": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "FAINT Score Calculation": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "San Francisco Syncope Rule Assessment": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Clinical Impression": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Degree of Functional Impairment": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Injury Assessment": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,785 @@
+{
+  "sections": [
+    "Vasodilators",
+    "Diuretics",
+    "Central Antihypertensives",
+    "QT-Prolonging Agents",
+    "Psychoactive Agents",
+    "Other Medications",
+    "Recent Medication Changes",
+    "Medication Compliance"
+  ],
+  "items": [
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Beta blockers",
+      "processed": [
+        {
+          "itemText": "Beta blockers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Calcium channel blockers",
+      "processed": [
+        {
+          "itemText": "Calcium channel blockers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Nitrates",
+      "processed": [
+        {
+          "itemText": "Nitrates",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Hydralazine",
+      "processed": [
+        {
+          "itemText": "Hydralazine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Angiotensin-converting enzyme (ACE) inhibitors",
+      "processed": [
+        {
+          "itemText": "Angiotensin-converting enzyme (ACE) inhibitors",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Angiotensin receptor blockers (ARBs)",
+      "processed": [
+        {
+          "itemText": "Angiotensin receptor blockers (ARBs)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Phenothiazines",
+      "processed": [
+        {
+          "itemText": "Phenothiazines",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vasodilators",
+      "indentLevel": 0,
+      "text": "Phosphodiesterase inhibitors (e.g., sildenafil, tadalafil)",
+      "processed": [
+        {
+          "itemText": "Phosphodiesterase inhibitors (e.g., sildenafil, tadalafil)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diuretics",
+      "indentLevel": 0,
+      "text": "Hydrochlorothiazide",
+      "processed": [
+        {
+          "itemText": "Hydrochlorothiazide",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diuretics",
+      "indentLevel": 0,
+      "text": "Furosemide",
+      "processed": [
+        {
+          "itemText": "Furosemide",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Diuretics",
+      "indentLevel": 0,
+      "text": "Other diuretics: _____",
+      "processed": [
+        {
+          "itemText": "Other diuretics: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Central Antihypertensives",
+      "indentLevel": 0,
+      "text": "Clonidine",
+      "processed": [
+        {
+          "itemText": "Clonidine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Central Antihypertensives",
+      "indentLevel": 0,
+      "text": "Methyldopa",
+      "processed": [
+        {
+          "itemText": "Methyldopa",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "QT-Prolonging Agents",
+      "indentLevel": 0,
+      "text": "Amiodarone",
+      "processed": [
+        {
+          "itemText": "Amiodarone",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "QT-Prolonging Agents",
+      "indentLevel": 0,
+      "text": "Flecainide",
+      "processed": [
+        {
+          "itemText": "Flecainide",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "QT-Prolonging Agents",
+      "indentLevel": 0,
+      "text": "Procainamide",
+      "processed": [
+        {
+          "itemText": "Procainamide",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "QT-Prolonging Agents",
+      "indentLevel": 0,
+      "text": "Quinidine",
+      "processed": [
+        {
+          "itemText": "Quinidine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "QT-Prolonging Agents",
+      "indentLevel": 0,
+      "text": "Sotalol",
+      "processed": [
+        {
+          "itemText": "Sotalol",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Carbamazepine",
+      "processed": [
+        {
+          "itemText": "Carbamazepine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Phenytoin",
+      "processed": [
+        {
+          "itemText": "Phenytoin",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Olanzapine",
+      "processed": [
+        {
+          "itemText": "Olanzapine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Risperidone",
+      "processed": [
+        {
+          "itemText": "Risperidone",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Levodopa",
+      "processed": [
+        {
+          "itemText": "Levodopa",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Pramipexole",
+      "processed": [
+        {
+          "itemText": "Pramipexole",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Barbiturates",
+      "processed": [
+        {
+          "itemText": "Barbiturates",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Benzodiazepines",
+      "processed": [
+        {
+          "itemText": "Benzodiazepines",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Monoamine oxidase inhibitors",
+      "processed": [
+        {
+          "itemText": "Monoamine oxidase inhibitors",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Selective serotonin reuptake inhibitors (SSRIs)",
+      "processed": [
+        {
+          "itemText": "Selective serotonin reuptake inhibitors (SSRIs)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Trazodone",
+      "processed": [
+        {
+          "itemText": "Trazodone",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychoactive Agents",
+      "indentLevel": 0,
+      "text": "Tricyclic antidepressants",
+      "processed": [
+        {
+          "itemText": "Tricyclic antidepressants",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Opioid analgesics (e.g., morphine)",
+      "processed": [
+        {
+          "itemText": "Opioid analgesics (e.g., morphine)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Sedating antihistamines (e.g., diphenhydramine)",
+      "processed": [
+        {
+          "itemText": "Sedating antihistamines (e.g., diphenhydramine)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Cholinesterase inhibitors (e.g., donepezil, tacrine, galantamine)",
+      "processed": [
+        {
+          "itemText": "Cholinesterase inhibitors (e.g., donepezil, tacrine, galantamine)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Alcohol",
+      "processed": [
+        {
+          "itemText": "Alcohol",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Digitalis",
+      "processed": [
+        {
+          "itemText": "Digitalis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Neuropathic agents (e.g., vincristine)",
+      "processed": [
+        {
+          "itemText": "Neuropathic agents (e.g., vincristine)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medications",
+      "indentLevel": 0,
+      "text": "Bromocriptine",
+      "processed": [
+        {
+          "itemText": "Bromocriptine",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Medication Changes",
+      "indentLevel": 0,
+      "text": "New medication started: _____",
+      "processed": [
+        {
+          "itemText": "New medication started: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Medication Changes",
+      "indentLevel": 0,
+      "text": "Recent dose increase: _____",
+      "processed": [
+        {
+          "itemText": "Recent dose increase: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Medication Changes",
+      "indentLevel": 0,
+      "text": "Recent dose decrease: _____",
+      "processed": [
+        {
+          "itemText": "Recent dose decrease: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Medication Changes",
+      "indentLevel": 0,
+      "text": "Medication discontinued: _____",
+      "processed": [
+        {
+          "itemText": "Medication discontinued: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Recent Medication Changes",
+      "indentLevel": 0,
+      "text": "Multiple medication changes",
+      "processed": [
+        {
+          "itemText": "Multiple medication changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Compliance",
+      "indentLevel": 0,
+      "text": "Takes medications as prescribed",
+      "processed": [
+        {
+          "itemText": "Takes medications as prescribed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Compliance",
+      "indentLevel": 0,
+      "text": "Misses doses occasionally",
+      "processed": [
+        {
+          "itemText": "Misses doses occasionally",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Compliance",
+      "indentLevel": 0,
+      "text": "Frequently misses doses",
+      "processed": [
+        {
+          "itemText": "Frequently misses doses",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Compliance",
+      "indentLevel": 0,
+      "text": "Intentionally skips doses",
+      "processed": [
+        {
+          "itemText": "Intentionally skips doses",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Compliance",
+      "indentLevel": 0,
+      "text": "Takes extra doses",
+      "processed": [
+        {
+          "itemText": "Takes extra doses",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Other diuretics: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "New medication started: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Recent dose increase: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Recent dose decrease: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Medication discontinued: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Vasodilators": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Diuretics": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Central Antihypertensives": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 2
+      },
+      "levels": [
+        0
+      ]
+    },
+    "QT-Prolonging Agents": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Psychoactive Agents": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 12
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Other Medications": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Recent Medication Changes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Medication Compliance": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

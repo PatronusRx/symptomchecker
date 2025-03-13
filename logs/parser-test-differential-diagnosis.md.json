@@ -1,0 +1,1502 @@
+{
+  "sections": [
+    "Reflex (Neurally Mediated) Syncope",
+    "Orthostatic Syncope",
+    "Cardiac Syncope",
+    "Cerebrovascular Causes",
+    "Metabolic/Toxic Causes",
+    "Other Medical Causes",
+    "Syncope Mimics"
+  ],
+  "items": [
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 0,
+      "text": "Vasovagal syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Vasovagal syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 0,
+      "text": "Carotid sinus syndrome (G90.01)",
+      "processed": [
+        {
+          "itemText": "Carotid sinus syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G90.01"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 0,
+      "text": "Situational syncope:",
+      "processed": [
+        {
+          "itemText": "Situational syncope:",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Micturition syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Micturition syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Defecation syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Defecation syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Post-prandial syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Post-prandial syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Cough syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Cough syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Swallow syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Swallow syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Post-exercise syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Post-exercise syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Sneeze syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Sneeze syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Valsalva-related syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Valsalva-related syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Reflex (Neurally Mediated) Syncope",
+      "indentLevel": 2,
+      "text": "Laugh syncope (R55)",
+      "processed": [
+        {
+          "itemText": "Laugh syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 0,
+      "text": "Orthostatic hypotension (I95.1)",
+      "processed": [
+        {
+          "itemText": "Orthostatic hypotension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I95.1"
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 0,
+      "text": "Drug-induced orthostatic hypotension",
+      "processed": [
+        {
+          "itemText": "Drug-induced orthostatic hypotension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 0,
+      "text": "Volume depletion/dehydration (E86.0)",
+      "processed": [
+        {
+          "itemText": "Volume depletion/dehydration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E86.0"
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 0,
+      "text": "Autonomic dysfunction (G90.9)",
+      "processed": [
+        {
+          "itemText": "Autonomic dysfunction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G90.9"
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 2,
+      "text": "Primary autonomic failure",
+      "processed": [
+        {
+          "itemText": "Primary autonomic failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 2,
+      "text": "Secondary autonomic failure",
+      "processed": [
+        {
+          "itemText": "Secondary autonomic failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Syncope",
+      "indentLevel": 0,
+      "text": "Blood loss/anemia (D64.9)",
+      "processed": [
+        {
+          "itemText": "Blood loss/anemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "D64.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Sinus node disease (I49.8)",
+      "processed": [
+        {
+          "itemText": "Sinus node disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.8"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Sinus bradycardia <40 bpm (R00.1)",
+      "processed": [
+        {
+          "itemText": "Sinus bradycardia <40 bpm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R00.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Sinus pause >3 seconds (I49.5)",
+      "processed": [
+        {
+          "itemText": "Sinus pause >3 seconds",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.5"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Sick sinus syndrome (I49.5)",
+      "processed": [
+        {
+          "itemText": "Sick sinus syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.5"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Atrioventricular block",
+      "processed": [
+        {
+          "itemText": "Atrioventricular block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Mobitz type II second-degree AV block (I44.1)",
+      "processed": [
+        {
+          "itemText": "Mobitz type II second-degree AV block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I44.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Third-degree (complete) heart block (I44.2)",
+      "processed": [
+        {
+          "itemText": "Third-degree (complete) heart block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I44.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Ventricular tachyarrhythmias",
+      "processed": [
+        {
+          "itemText": "Ventricular tachyarrhythmias",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Monomorphic ventricular tachycardia (I47.2)",
+      "processed": [
+        {
+          "itemText": "Monomorphic ventricular tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Polymorphic ventricular tachycardia/Torsades de pointes (I47.2)",
+      "processed": [
+        {
+          "itemText": "Polymorphic ventricular tachycardia/Torsades de pointes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Ventricular fibrillation (I49.01)",
+      "processed": [
+        {
+          "itemText": "Ventricular fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.01"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Supraventricular tachyarrhythmias",
+      "processed": [
+        {
+          "itemText": "Supraventricular tachyarrhythmias",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Atrial flutter/fibrillation (I48.91)",
+      "processed": [
+        {
+          "itemText": "Atrial flutter/fibrillation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I48.91"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "AV nodal reentry tachycardia (I47.1)",
+      "processed": [
+        {
+          "itemText": "AV nodal reentry tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "AV reentry tachycardia (I47.1)",
+      "processed": [
+        {
+          "itemText": "AV reentry tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I47.1"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Bundle branch block (I45.4)",
+      "processed": [
+        {
+          "itemText": "Bundle branch block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I45.4"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Alternating left and right bundle branch block",
+      "processed": [
+        {
+          "itemText": "Alternating left and right bundle branch block",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Cardiac device malfunction",
+      "processed": [
+        {
+          "itemText": "Cardiac device malfunction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "Pacemaker malfunction (T82.119A)",
+      "processed": [
+        {
+          "itemText": "Pacemaker malfunction (T82.119A)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "ICD malfunction (T82.119A)",
+      "processed": [
+        {
+          "itemText": "ICD malfunction (T82.119A)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 2,
+      "text": "VAD dysfunction (T82.519A)",
+      "processed": [
+        {
+          "itemText": "VAD dysfunction (T82.519A)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Hypertrophic cardiomyopathy (I42.2)",
+      "processed": [
+        {
+          "itemText": "Hypertrophic cardiomyopathy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I42.2"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Aortic stenosis (I35.0)",
+      "processed": [
+        {
+          "itemText": "Aortic stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I35.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Severe pulmonic stenosis (I37.0)",
+      "processed": [
+        {
+          "itemText": "Severe pulmonic stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I37.0"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Acute myocardial infarction/ischemia (I21.9)",
+      "processed": [
+        {
+          "itemText": "Acute myocardial infarction/ischemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I21.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Cardiac masses (e.g., atrial myxoma) (D15.11)",
+      "processed": [
+        {
+          "itemText": "Cardiac masses (e.g., atrial myxoma)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "D15.11"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Pericardial tamponade (I31.9)",
+      "processed": [
+        {
+          "itemText": "Pericardial tamponade",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I31.9"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Prosthetic valve dysfunction (T82.09XA)",
+      "processed": [
+        {
+          "itemText": "Prosthetic valve dysfunction (T82.09XA)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Acute aortic dissection (I71.00)",
+      "processed": [
+        {
+          "itemText": "Acute aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.00"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Pulmonary embolism (I26.99)",
+      "processed": [
+        {
+          "itemText": "Pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I26.99"
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Syncope",
+      "indentLevel": 0,
+      "text": "Pulmonary hypertension (I27.0)",
+      "processed": [
+        {
+          "itemText": "Pulmonary hypertension",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I27.0"
+        }
+      ]
+    },
+    {
+      "section": "Cerebrovascular Causes",
+      "indentLevel": 0,
+      "text": "Subarachnoid hemorrhage (I60.9)",
+      "processed": [
+        {
+          "itemText": "Subarachnoid hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I60.9"
+        }
+      ]
+    },
+    {
+      "section": "Cerebrovascular Causes",
+      "indentLevel": 0,
+      "text": "Vertebrobasilar TIA (G45.0)",
+      "processed": [
+        {
+          "itemText": "Vertebrobasilar TIA",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G45.0"
+        }
+      ]
+    },
+    {
+      "section": "Cerebrovascular Causes",
+      "indentLevel": 0,
+      "text": "Subclavian steal syndrome (I77.89)",
+      "processed": [
+        {
+          "itemText": "Subclavian steal syndrome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I77.89"
+        }
+      ]
+    },
+    {
+      "section": "Cerebrovascular Causes",
+      "indentLevel": 0,
+      "text": "Basilar artery migraine (G43.109)",
+      "processed": [
+        {
+          "itemText": "Basilar artery migraine (G43.109)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cerebrovascular Causes",
+      "indentLevel": 0,
+      "text": "Cerebral hypoperfusion from other causes",
+      "processed": [
+        {
+          "itemText": "Cerebral hypoperfusion from other causes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Hypoglycemia (E16.2)",
+      "processed": [
+        {
+          "itemText": "Hypoglycemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "E16.2"
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Hypoxemia (R09.02)",
+      "processed": [
+        {
+          "itemText": "Hypoxemia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R09.02"
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Hyperventilation (R06.4)",
+      "processed": [
+        {
+          "itemText": "Hyperventilation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R06.4"
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Carbon monoxide poisoning (T58.9XXA)",
+      "processed": [
+        {
+          "itemText": "Carbon monoxide poisoning (T58.9XXA)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Drug intoxication (F19.929)",
+      "processed": [
+        {
+          "itemText": "Drug intoxication (F19.929)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Metabolic/Toxic Causes",
+      "indentLevel": 0,
+      "text": "Alcohol intoxication (F10.929)",
+      "processed": [
+        {
+          "itemText": "Alcohol intoxication (F10.929)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Gastrointestinal hemorrhage (K92.2)",
+      "processed": [
+        {
+          "itemText": "Gastrointestinal hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "K92.2"
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Ruptured ectopic pregnancy (O00.1)",
+      "processed": [
+        {
+          "itemText": "Ruptured ectopic pregnancy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "O00.1"
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Ruptured spleen (S36.09XA)",
+      "processed": [
+        {
+          "itemText": "Ruptured spleen (S36.09XA)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Ruptured ovarian cyst (N83.209)",
+      "processed": [
+        {
+          "itemText": "Ruptured ovarian cyst (N83.209)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Ruptured abdominal aortic aneurysm (I71.3)",
+      "processed": [
+        {
+          "itemText": "Ruptured abdominal aortic aneurysm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.3"
+        }
+      ]
+    },
+    {
+      "section": "Other Medical Causes",
+      "indentLevel": 0,
+      "text": "Sepsis (A41.9)",
+      "processed": [
+        {
+          "itemText": "Sepsis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "A41.9"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Seizure/epilepsy (G40.909)",
+      "processed": [
+        {
+          "itemText": "Seizure/epilepsy (G40.909)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Concussion/mild TBI (S06.0X9A)",
+      "processed": [
+        {
+          "itemText": "Concussion/mild TBI (S06.0X9A)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Mechanical fall (R29.6)",
+      "processed": [
+        {
+          "itemText": "Mechanical fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R29.6"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Cataplexy (G47.4)",
+      "processed": [
+        {
+          "itemText": "Cataplexy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "G47.4"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Drop attacks (R55)",
+      "processed": [
+        {
+          "itemText": "Drop attacks",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R55"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Psychogenic pseudosyncope (F44.89)",
+      "processed": [
+        {
+          "itemText": "Psychogenic pseudosyncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "F44.89"
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Narcolepsy (G47.419)",
+      "processed": [
+        {
+          "itemText": "Narcolepsy (G47.419)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Syncope Mimics",
+      "indentLevel": 0,
+      "text": "Breath-holding spells (R06.89)",
+      "processed": [
+        {
+          "itemText": "Breath-holding spells",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "R06.89"
+        }
+      ]
+    }
+  ],
+  "inputFields": [],
+  "multipleInputs": [],
+  "icd10Codes": [
+    {
+      "itemText": "Vasovagal syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Carotid sinus syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G90.01"
+    },
+    {
+      "itemText": "Micturition syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Defecation syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Post-prandial syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Cough syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Swallow syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Post-exercise syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Sneeze syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Valsalva-related syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Laugh syncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Orthostatic hypotension",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I95.1"
+    },
+    {
+      "itemText": "Volume depletion/dehydration",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E86.0"
+    },
+    {
+      "itemText": "Autonomic dysfunction",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G90.9"
+    },
+    {
+      "itemText": "Blood loss/anemia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "D64.9"
+    },
+    {
+      "itemText": "Sinus node disease",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.8"
+    },
+    {
+      "itemText": "Sinus bradycardia <40 bpm",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R00.1"
+    },
+    {
+      "itemText": "Sinus pause >3 seconds",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.5"
+    },
+    {
+      "itemText": "Sick sinus syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.5"
+    },
+    {
+      "itemText": "Mobitz type II second-degree AV block",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I44.1"
+    },
+    {
+      "itemText": "Third-degree (complete) heart block",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I44.2"
+    },
+    {
+      "itemText": "Monomorphic ventricular tachycardia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.2"
+    },
+    {
+      "itemText": "Polymorphic ventricular tachycardia/Torsades de pointes",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.2"
+    },
+    {
+      "itemText": "Ventricular fibrillation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.01"
+    },
+    {
+      "itemText": "Atrial flutter/fibrillation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I48.91"
+    },
+    {
+      "itemText": "AV nodal reentry tachycardia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.1"
+    },
+    {
+      "itemText": "AV reentry tachycardia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I47.1"
+    },
+    {
+      "itemText": "Bundle branch block",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I45.4"
+    },
+    {
+      "itemText": "Hypertrophic cardiomyopathy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I42.2"
+    },
+    {
+      "itemText": "Aortic stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I35.0"
+    },
+    {
+      "itemText": "Severe pulmonic stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I37.0"
+    },
+    {
+      "itemText": "Acute myocardial infarction/ischemia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I21.9"
+    },
+    {
+      "itemText": "Cardiac masses (e.g., atrial myxoma)",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "D15.11"
+    },
+    {
+      "itemText": "Pericardial tamponade",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I31.9"
+    },
+    {
+      "itemText": "Acute aortic dissection",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.00"
+    },
+    {
+      "itemText": "Pulmonary embolism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I26.99"
+    },
+    {
+      "itemText": "Pulmonary hypertension",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I27.0"
+    },
+    {
+      "itemText": "Subarachnoid hemorrhage",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I60.9"
+    },
+    {
+      "itemText": "Vertebrobasilar TIA",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G45.0"
+    },
+    {
+      "itemText": "Subclavian steal syndrome",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I77.89"
+    },
+    {
+      "itemText": "Hypoglycemia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "E16.2"
+    },
+    {
+      "itemText": "Hypoxemia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R09.02"
+    },
+    {
+      "itemText": "Hyperventilation",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R06.4"
+    },
+    {
+      "itemText": "Gastrointestinal hemorrhage",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "K92.2"
+    },
+    {
+      "itemText": "Ruptured ectopic pregnancy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "O00.1"
+    },
+    {
+      "itemText": "Ruptured abdominal aortic aneurysm",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.3"
+    },
+    {
+      "itemText": "Sepsis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "A41.9"
+    },
+    {
+      "itemText": "Mechanical fall",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R29.6"
+    },
+    {
+      "itemText": "Cataplexy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "G47.4"
+    },
+    {
+      "itemText": "Drop attacks",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R55"
+    },
+    {
+      "itemText": "Psychogenic pseudosyncope",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "F44.89"
+    },
+    {
+      "itemText": "Breath-holding spells",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "R06.89"
+    }
+  ],
+  "nestedItems": {
+    "Reflex (Neurally Mediated) Syncope": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 3,
+        "2": 9
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Orthostatic Syncope": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 5,
+        "2": 2
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Cardiac Syncope": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 16,
+        "2": 15
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Cerebrovascular Causes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Metabolic/Toxic Causes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Other Medical Causes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Syncope Mimics": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

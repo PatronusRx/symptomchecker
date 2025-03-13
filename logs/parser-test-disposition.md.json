@@ -1,0 +1,885 @@
+{
+  "sections": [
+    "Primary Disposition Decision",
+    "Disposition Rationale",
+    "Discharge Considerations",
+    "Observation Unit Considerations",
+    "Hospital Admission Considerations",
+    "Telemetry Monitoring Indications",
+    "Intensive Care Unit Indications",
+    "Transfer Considerations"
+  ],
+  "items": [
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 0,
+      "text": "Discharge to home",
+      "processed": [
+        {
+          "itemText": "Discharge to home",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 0,
+      "text": "Observation unit admission",
+      "processed": [
+        {
+          "itemText": "Observation unit admission",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 0,
+      "text": "Inpatient admission",
+      "processed": [
+        {
+          "itemText": "Inpatient admission",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 2,
+      "text": "Telemetry unit",
+      "processed": [
+        {
+          "itemText": "Telemetry unit",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 2,
+      "text": "General medical unit",
+      "processed": [
+        {
+          "itemText": "General medical unit",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 2,
+      "text": "Step-down unit",
+      "processed": [
+        {
+          "itemText": "Step-down unit",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 2,
+      "text": "Intensive care unit",
+      "processed": [
+        {
+          "itemText": "Intensive care unit",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Primary Disposition Decision",
+      "indentLevel": 0,
+      "text": "Transfer to another facility",
+      "processed": [
+        {
+          "itemText": "Transfer to another facility",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on specific identified cause",
+      "processed": [
+        {
+          "itemText": "Based on specific identified cause",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on risk stratification",
+      "processed": [
+        {
+          "itemText": "Based on risk stratification",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on clinical risk score (specify: _____)",
+      "processed": [
+        {
+          "itemText": "Based on clinical risk score (specify: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on clinical gestalt",
+      "processed": [
+        {
+          "itemText": "Based on clinical gestalt",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on shared decision making with patient",
+      "processed": [
+        {
+          "itemText": "Based on shared decision making with patient",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on patient's social circumstances",
+      "processed": [
+        {
+          "itemText": "Based on patient's social circumstances",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Disposition Rationale",
+      "indentLevel": 0,
+      "text": "Based on access to follow-up care",
+      "processed": [
+        {
+          "itemText": "Based on access to follow-up care",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Low risk for serious outcome",
+      "processed": [
+        {
+          "itemText": "Low risk for serious outcome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Clear diagnosis with benign cause",
+      "processed": [
+        {
+          "itemText": "Clear diagnosis with benign cause",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Adequate outpatient follow-up available",
+      "processed": [
+        {
+          "itemText": "Adequate outpatient follow-up available",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Reliable patient/caregiver",
+      "processed": [
+        {
+          "itemText": "Reliable patient/caregiver",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Safe home environment",
+      "processed": [
+        {
+          "itemText": "Safe home environment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Access to transportation",
+      "processed": [
+        {
+          "itemText": "Access to transportation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Discharge Considerations",
+      "indentLevel": 0,
+      "text": "Medication access/adherence feasible",
+      "processed": [
+        {
+          "itemText": "Medication access/adherence feasible",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Intermediate risk for serious outcome",
+      "processed": [
+        {
+          "itemText": "Intermediate risk for serious outcome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Need for extended monitoring",
+      "processed": [
+        {
+          "itemText": "Need for extended monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Need for serial cardiac biomarkers",
+      "processed": [
+        {
+          "itemText": "Need for serial cardiac biomarkers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Need for additional diagnostic testing",
+      "processed": [
+        {
+          "itemText": "Need for additional diagnostic testing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Awaiting specialist consultation",
+      "processed": [
+        {
+          "itemText": "Awaiting specialist consultation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Medication adjustment/observation",
+      "processed": [
+        {
+          "itemText": "Medication adjustment/observation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Observation Unit Considerations",
+      "indentLevel": 0,
+      "text": "Social work/care coordination needed",
+      "processed": [
+        {
+          "itemText": "Social work/care coordination needed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "High risk for serious outcome",
+      "processed": [
+        {
+          "itemText": "High risk for serious outcome",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Specific diagnosis requiring inpatient care",
+      "processed": [
+        {
+          "itemText": "Specific diagnosis requiring inpatient care",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Need for continuous cardiac monitoring",
+      "processed": [
+        {
+          "itemText": "Need for continuous cardiac monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Need for immediate intervention",
+      "processed": [
+        {
+          "itemText": "Need for immediate intervention",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Need for specialist management",
+      "processed": [
+        {
+          "itemText": "Need for specialist management",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Significant injury from syncope/fall",
+      "processed": [
+        {
+          "itemText": "Significant injury from syncope/fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Comorbidities requiring management",
+      "processed": [
+        {
+          "itemText": "Comorbidities requiring management",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hospital Admission Considerations",
+      "indentLevel": 0,
+      "text": "Inadequate home support",
+      "processed": [
+        {
+          "itemText": "Inadequate home support",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "High-risk features present",
+      "processed": [
+        {
+          "itemText": "High-risk features present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "Abnormal ECG",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "Cardiac biomarker elevation",
+      "processed": [
+        {
+          "itemText": "Cardiac biomarker elevation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "History of cardiac disease",
+      "processed": [
+        {
+          "itemText": "History of cardiac disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "Unexplained syncope with risk factors",
+      "processed": [
+        {
+          "itemText": "Unexplained syncope with risk factors",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Telemetry Monitoring Indications",
+      "indentLevel": 0,
+      "text": "Need for medication titration/monitoring",
+      "processed": [
+        {
+          "itemText": "Need for medication titration/monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Hemodynamic instability",
+      "processed": [
+        {
+          "itemText": "Hemodynamic instability",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Life-threatening arrhythmia",
+      "processed": [
+        {
+          "itemText": "Life-threatening arrhythmia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Severe structural heart disease",
+      "processed": [
+        {
+          "itemText": "Severe structural heart disease",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Acute myocardial infarction",
+      "processed": [
+        {
+          "itemText": "Acute myocardial infarction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Massive pulmonary embolism",
+      "processed": [
+        {
+          "itemText": "Massive pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Aortic dissection",
+      "processed": [
+        {
+          "itemText": "Aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Intensive Care Unit Indications",
+      "indentLevel": 0,
+      "text": "Need for continuous invasive monitoring",
+      "processed": [
+        {
+          "itemText": "Need for continuous invasive monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Need for higher level of care",
+      "processed": [
+        {
+          "itemText": "Need for higher level of care",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Need for specialized cardiac services",
+      "processed": [
+        {
+          "itemText": "Need for specialized cardiac services",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Need for electrophysiology services",
+      "processed": [
+        {
+          "itemText": "Need for electrophysiology services",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Need for advanced imaging not available",
+      "processed": [
+        {
+          "itemText": "Need for advanced imaging not available",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Insurance/network requirements",
+      "processed": [
+        {
+          "itemText": "Insurance/network requirements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Transfer Considerations",
+      "indentLevel": 0,
+      "text": "Patient/family preference",
+      "processed": [
+        {
+          "itemText": "Patient/family preference",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Based on clinical risk score (specify: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Primary Disposition Decision": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 4,
+        "2": 4
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Disposition Rationale": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Discharge Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Observation Unit Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Hospital Admission Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Telemetry Monitoring Indications": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Intensive Care Unit Indications": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Transfer Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

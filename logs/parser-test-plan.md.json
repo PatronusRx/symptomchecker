@@ -1,0 +1,1058 @@
+{
+  "sections": [
+    "Immediate Management",
+    "Additional Testing",
+    "Medication Recommendations",
+    "Lifestyle Modifications",
+    "Cardiac Intervention Considerations",
+    "Follow-up Care",
+    "Preventive Measures",
+    "Special Considerations"
+  ],
+  "items": [
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Cardiac monitoring",
+      "processed": [
+        {
+          "itemText": "Cardiac monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "IV access established",
+      "processed": [
+        {
+          "itemText": "IV access established",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Fluid resuscitation",
+      "processed": [
+        {
+          "itemText": "Fluid resuscitation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Supplemental oxygen",
+      "processed": [
+        {
+          "itemText": "Supplemental oxygen",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Medication administration: _____",
+      "processed": [
+        {
+          "itemText": "Medication administration: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Pacemaker/defibrillator interrogation",
+      "processed": [
+        {
+          "itemText": "Pacemaker/defibrillator interrogation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Emergent cardiology consultation",
+      "processed": [
+        {
+          "itemText": "Emergent cardiology consultation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Emergent neurology consultation",
+      "processed": [
+        {
+          "itemText": "Emergent neurology consultation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Immediate Management",
+      "indentLevel": 0,
+      "text": "Emergent surgical consultation",
+      "processed": [
+        {
+          "itemText": "Emergent surgical consultation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Repeat ECG",
+      "processed": [
+        {
+          "itemText": "Repeat ECG",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Continuous cardiac monitoring",
+      "processed": [
+        {
+          "itemText": "Continuous cardiac monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Serial cardiac biomarkers",
+      "processed": [
+        {
+          "itemText": "Serial cardiac biomarkers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Complete echocardiogram",
+      "processed": [
+        {
+          "itemText": "Complete echocardiogram",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Exercise stress test",
+      "processed": [
+        {
+          "itemText": "Exercise stress test",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Nuclear stress test",
+      "processed": [
+        {
+          "itemText": "Nuclear stress test",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Ambulatory cardiac monitoring (specify type and duration: _____)",
+      "processed": [
+        {
+          "itemText": "Ambulatory cardiac monitoring (specify type and duration: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Tilt-table testing",
+      "processed": [
+        {
+          "itemText": "Tilt-table testing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Carotid sinus massage (if not performed in ED)",
+      "processed": [
+        {
+          "itemText": "Carotid sinus massage (if not performed in ED)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Electrophysiology study",
+      "processed": [
+        {
+          "itemText": "Electrophysiology study",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Additional laboratory tests: _____",
+      "processed": [
+        {
+          "itemText": "Additional laboratory tests: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Testing",
+      "indentLevel": 0,
+      "text": "Additional imaging: _____",
+      "processed": [
+        {
+          "itemText": "Additional imaging: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "Continue current medications",
+      "processed": [
+        {
+          "itemText": "Continue current medications",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "Discontinue medication(s): _____",
+      "processed": [
+        {
+          "itemText": "Discontinue medication(s): _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "Reduce dosage of medication(s): _____",
+      "processed": [
+        {
+          "itemText": "Reduce dosage of medication(s): _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "New medication(s): _____",
+      "processed": [
+        {
+          "itemText": "New medication(s): _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "Adjust timing of medication administration",
+      "processed": [
+        {
+          "itemText": "Adjust timing of medication administration",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Medication Recommendations",
+      "indentLevel": 0,
+      "text": "Address polypharmacy",
+      "processed": [
+        {
+          "itemText": "Address polypharmacy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Increase fluid intake",
+      "processed": [
+        {
+          "itemText": "Increase fluid intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Increase salt intake",
+      "processed": [
+        {
+          "itemText": "Increase salt intake",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Physical counter-pressure maneuvers",
+      "processed": [
+        {
+          "itemText": "Physical counter-pressure maneuvers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Compression stockings",
+      "processed": [
+        {
+          "itemText": "Compression stockings",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Avoid triggers",
+      "processed": [
+        {
+          "itemText": "Avoid triggers",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Dietary modifications",
+      "processed": [
+        {
+          "itemText": "Dietary modifications",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Alcohol limitation/cessation",
+      "processed": [
+        {
+          "itemText": "Alcohol limitation/cessation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Lifestyle Modifications",
+      "indentLevel": 0,
+      "text": "Sleeping with head of bed elevated",
+      "processed": [
+        {
+          "itemText": "Sleeping with head of bed elevated",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Pacemaker implantation",
+      "processed": [
+        {
+          "itemText": "Pacemaker implantation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Implantable cardioverter-defibrillator",
+      "processed": [
+        {
+          "itemText": "Implantable cardioverter-defibrillator",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Cardiac ablation procedure",
+      "processed": [
+        {
+          "itemText": "Cardiac ablation procedure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Cardiac surgery",
+      "processed": [
+        {
+          "itemText": "Cardiac surgery",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Coronary angiography",
+      "processed": [
+        {
+          "itemText": "Coronary angiography",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Intervention Considerations",
+      "indentLevel": 0,
+      "text": "Valvular intervention",
+      "processed": [
+        {
+          "itemText": "Valvular intervention",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Primary care follow-up (timeframe: _____)",
+      "processed": [
+        {
+          "itemText": "Primary care follow-up (timeframe: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Cardiology follow-up (timeframe: _____)",
+      "processed": [
+        {
+          "itemText": "Cardiology follow-up (timeframe: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Neurology follow-up (timeframe: _____)",
+      "processed": [
+        {
+          "itemText": "Neurology follow-up (timeframe: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Electrophysiology follow-up (timeframe: _____)",
+      "processed": [
+        {
+          "itemText": "Electrophysiology follow-up (timeframe: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Other specialist follow-up: _____",
+      "processed": [
+        {
+          "itemText": "Other specialist follow-up: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Outpatient cardiac monitoring",
+      "processed": [
+        {
+          "itemText": "Outpatient cardiac monitoring",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Outpatient diagnostic testing",
+      "processed": [
+        {
+          "itemText": "Outpatient diagnostic testing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Home health services",
+      "processed": [
+        {
+          "itemText": "Home health services",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Fall risk assessment",
+      "processed": [
+        {
+          "itemText": "Fall risk assessment",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Follow-up Care",
+      "indentLevel": 0,
+      "text": "Home safety evaluation",
+      "processed": [
+        {
+          "itemText": "Home safety evaluation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Fall precautions",
+      "processed": [
+        {
+          "itemText": "Fall precautions",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Medical alert device",
+      "processed": [
+        {
+          "itemText": "Medical alert device",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Driving restrictions/counseling",
+      "processed": [
+        {
+          "itemText": "Driving restrictions/counseling",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Occupational restrictions/counseling",
+      "processed": [
+        {
+          "itemText": "Occupational restrictions/counseling",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Avoidance of high-risk activities",
+      "processed": [
+        {
+          "itemText": "Avoidance of high-risk activities",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Home safety modifications",
+      "processed": [
+        {
+          "itemText": "Home safety modifications",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Preventive Measures",
+      "indentLevel": 0,
+      "text": "Physical therapy referral",
+      "processed": [
+        {
+          "itemText": "Physical therapy referral",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Special Considerations",
+      "indentLevel": 0,
+      "text": "Pregnancy considerations",
+      "processed": [
+        {
+          "itemText": "Pregnancy considerations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Special Considerations",
+      "indentLevel": 0,
+      "text": "Elderly patient considerations",
+      "processed": [
+        {
+          "itemText": "Elderly patient considerations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Special Considerations",
+      "indentLevel": 0,
+      "text": "Cognitive impairment considerations",
+      "processed": [
+        {
+          "itemText": "Cognitive impairment considerations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Special Considerations",
+      "indentLevel": 0,
+      "text": "Multidisciplinary team approach",
+      "processed": [
+        {
+          "itemText": "Multidisciplinary team approach",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Special Considerations",
+      "indentLevel": 0,
+      "text": "Palliative care consultation",
+      "processed": [
+        {
+          "itemText": "Palliative care consultation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Medication administration: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Ambulatory cardiac monitoring (specify type and duration: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Additional laboratory tests: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Additional imaging: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Discontinue medication(s): _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Reduce dosage of medication(s): _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "New medication(s): _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Primary care follow-up (timeframe: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Cardiology follow-up (timeframe: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Neurology follow-up (timeframe: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Electrophysiology follow-up (timeframe: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other specialist follow-up: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Immediate Management": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Additional Testing": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 12
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Medication Recommendations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Lifestyle Modifications": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiac Intervention Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Follow-up Care": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Preventive Measures": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Special Considerations": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

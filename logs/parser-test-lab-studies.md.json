@@ -1,0 +1,1525 @@
+{
+  "sections": [
+    "Complete Blood Count",
+    "Basic Metabolic Panel",
+    "Cardiac Biomarkers",
+    "Coagulation Studies",
+    "Additional Electrolytes",
+    "Liver Function Tests",
+    "Toxicology Screen",
+    "Pregnancy Test",
+    "Thyroid Function Tests",
+    "Arterial Blood Gas",
+    "Urinalysis",
+    "Other Laboratory Tests"
+  ],
+  "items": [
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "Hemoglobin: _____ g/dL",
+      "processed": [
+        {
+          "itemText": "Hemoglobin: _____ g/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "g/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "Hematocrit: _____% (note if <30%)",
+      "processed": [
+        {
+          "itemText": "Hematocrit: _____% (note if <30%)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "% (note if <30%)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "White blood cell count: _____ cells/μL",
+      "processed": [
+        {
+          "itemText": "White blood cell count: _____ cells/μL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "cells/μL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "Platelet count: _____ cells/μL",
+      "processed": [
+        {
+          "itemText": "Platelet count: _____ cells/μL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "cells/μL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "CBC normal",
+      "processed": [
+        {
+          "itemText": "CBC normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Complete Blood Count",
+      "indentLevel": 0,
+      "text": "CBC abnormal: _____",
+      "processed": [
+        {
+          "itemText": "CBC abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Sodium: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Sodium: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Potassium: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Potassium: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Chloride: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Chloride: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Bicarbonate: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Bicarbonate: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "BUN: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "BUN: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Creatinine: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Creatinine: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Glucose: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Glucose: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "Calcium: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Calcium: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "BMP normal",
+      "processed": [
+        {
+          "itemText": "BMP normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Basic Metabolic Panel",
+      "indentLevel": 0,
+      "text": "BMP abnormal: _____",
+      "processed": [
+        {
+          "itemText": "BMP abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "Troponin: _____ ng/mL (elevated if >99th percentile)",
+      "processed": [
+        {
+          "itemText": "Troponin: _____ ng/mL (elevated if >99th percentile)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ng/mL (elevated if >99th percentile)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "High-sensitivity troponin T: _____ ng/L (elevated if >19 ng/L)",
+      "processed": [
+        {
+          "itemText": "High-sensitivity troponin T: _____ ng/L (elevated if >19 ng/L)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ng/L (elevated if >19 ng/L)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "NT-proBNP: _____ pg/mL (elevated if >125 pg/mL)",
+      "processed": [
+        {
+          "itemText": "NT-proBNP: _____ pg/mL (elevated if >125 pg/mL)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "pg/mL (elevated if >125 pg/mL)",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "BNP: _____ pg/mL",
+      "processed": [
+        {
+          "itemText": "BNP: _____ pg/mL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "pg/mL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "CK-MB: _____ ng/mL",
+      "processed": [
+        {
+          "itemText": "CK-MB: _____ ng/mL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ng/mL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "Cardiac biomarkers normal",
+      "processed": [
+        {
+          "itemText": "Cardiac biomarkers normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiac Biomarkers",
+      "indentLevel": 0,
+      "text": "Cardiac biomarkers elevated",
+      "processed": [
+        {
+          "itemText": "Cardiac biomarkers elevated",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Coagulation Studies",
+      "indentLevel": 0,
+      "text": "INR: _____",
+      "processed": [
+        {
+          "itemText": "INR: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Coagulation Studies",
+      "indentLevel": 0,
+      "text": "PTT: _____ seconds",
+      "processed": [
+        {
+          "itemText": "PTT: _____ seconds",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "seconds",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Coagulation Studies",
+      "indentLevel": 0,
+      "text": "D-dimer: _____ μg/mL",
+      "processed": [
+        {
+          "itemText": "D-dimer: _____ μg/mL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "μg/mL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Coagulation Studies",
+      "indentLevel": 0,
+      "text": "Coagulation studies normal",
+      "processed": [
+        {
+          "itemText": "Coagulation studies normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Coagulation Studies",
+      "indentLevel": 0,
+      "text": "Coagulation studies abnormal: _____",
+      "processed": [
+        {
+          "itemText": "Coagulation studies abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Electrolytes",
+      "indentLevel": 0,
+      "text": "Magnesium: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Magnesium: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Additional Electrolytes",
+      "indentLevel": 0,
+      "text": "Phosphorus: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Phosphorus: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "AST: _____ U/L",
+      "processed": [
+        {
+          "itemText": "AST: _____ U/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "U/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "ALT: _____ U/L",
+      "processed": [
+        {
+          "itemText": "ALT: _____ U/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "U/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "Alkaline phosphatase: _____ U/L",
+      "processed": [
+        {
+          "itemText": "Alkaline phosphatase: _____ U/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "U/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "Total bilirubin: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Total bilirubin: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "Albumin: _____ g/dL",
+      "processed": [
+        {
+          "itemText": "Albumin: _____ g/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "g/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "LFTs normal",
+      "processed": [
+        {
+          "itemText": "LFTs normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Liver Function Tests",
+      "indentLevel": 0,
+      "text": "LFTs abnormal: _____",
+      "processed": [
+        {
+          "itemText": "LFTs abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Toxicology Screen",
+      "indentLevel": 0,
+      "text": "Blood alcohol level: _____ mg/dL",
+      "processed": [
+        {
+          "itemText": "Blood alcohol level: _____ mg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Toxicology Screen",
+      "indentLevel": 0,
+      "text": "Urine drug screen: _____",
+      "processed": [
+        {
+          "itemText": "Urine drug screen: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Toxicology Screen",
+      "indentLevel": 0,
+      "text": "Toxicology screen negative",
+      "processed": [
+        {
+          "itemText": "Toxicology screen negative",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Toxicology Screen",
+      "indentLevel": 0,
+      "text": "Toxicology screen positive: _____",
+      "processed": [
+        {
+          "itemText": "Toxicology screen positive: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pregnancy Test",
+      "indentLevel": 0,
+      "text": "Urine hCG: _____",
+      "processed": [
+        {
+          "itemText": "Urine hCG: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pregnancy Test",
+      "indentLevel": 0,
+      "text": "Serum hCG: _____ mIU/mL",
+      "processed": [
+        {
+          "itemText": "Serum hCG: _____ mIU/mL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mIU/mL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pregnancy Test",
+      "indentLevel": 0,
+      "text": "Not applicable",
+      "processed": [
+        {
+          "itemText": "Not applicable",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Thyroid Function Tests",
+      "indentLevel": 0,
+      "text": "TSH: _____ mIU/L",
+      "processed": [
+        {
+          "itemText": "TSH: _____ mIU/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mIU/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Thyroid Function Tests",
+      "indentLevel": 0,
+      "text": "Free T4: _____ ng/dL",
+      "processed": [
+        {
+          "itemText": "Free T4: _____ ng/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "ng/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Thyroid Function Tests",
+      "indentLevel": 0,
+      "text": "Thyroid function normal",
+      "processed": [
+        {
+          "itemText": "Thyroid function normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Thyroid Function Tests",
+      "indentLevel": 0,
+      "text": "Thyroid function abnormal: _____",
+      "processed": [
+        {
+          "itemText": "Thyroid function abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "pH: _____",
+      "processed": [
+        {
+          "itemText": "pH: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "PaCO2: _____ mmHg",
+      "processed": [
+        {
+          "itemText": "PaCO2: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "PaO2: _____ mmHg",
+      "processed": [
+        {
+          "itemText": "PaO2: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "HCO3: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "HCO3: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "Base excess: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Base excess: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "Lactate: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Lactate: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "ABG normal",
+      "processed": [
+        {
+          "itemText": "ABG normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Arterial Blood Gas",
+      "indentLevel": 0,
+      "text": "ABG abnormal: _____",
+      "processed": [
+        {
+          "itemText": "ABG abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Specific gravity: _____",
+      "processed": [
+        {
+          "itemText": "Specific gravity: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "pH: _____",
+      "processed": [
+        {
+          "itemText": "pH: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Protein: _____",
+      "processed": [
+        {
+          "itemText": "Protein: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Glucose: _____",
+      "processed": [
+        {
+          "itemText": "Glucose: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Ketones: _____",
+      "processed": [
+        {
+          "itemText": "Ketones: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Blood: _____",
+      "processed": [
+        {
+          "itemText": "Blood: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Leukocyte esterase: _____",
+      "processed": [
+        {
+          "itemText": "Leukocyte esterase: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Nitrites: _____",
+      "processed": [
+        {
+          "itemText": "Nitrites: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Urinalysis normal",
+      "processed": [
+        {
+          "itemText": "Urinalysis normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Urinalysis",
+      "indentLevel": 0,
+      "text": "Urinalysis abnormal: _____",
+      "processed": [
+        {
+          "itemText": "Urinalysis abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Laboratory Tests",
+      "indentLevel": 0,
+      "text": "Cortisol level: _____ μg/dL",
+      "processed": [
+        {
+          "itemText": "Cortisol level: _____ μg/dL",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "μg/dL",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Laboratory Tests",
+      "indentLevel": 0,
+      "text": "Ammonia level: _____ μmol/L",
+      "processed": [
+        {
+          "itemText": "Ammonia level: _____ μmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "μmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Laboratory Tests",
+      "indentLevel": 0,
+      "text": "Lactic acid: _____ mmol/L",
+      "processed": [
+        {
+          "itemText": "Lactic acid: _____ mmol/L",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmol/L",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Other Laboratory Tests",
+      "indentLevel": 0,
+      "text": "Other: _____",
+      "processed": [
+        {
+          "itemText": "Other: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Hemoglobin: _____ g/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "g/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Hematocrit: _____% (note if <30%)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "% (note if <30%)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "White blood cell count: _____ cells/μL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "cells/μL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Platelet count: _____ cells/μL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "cells/μL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "CBC abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Sodium: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Potassium: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Chloride: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Bicarbonate: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "BUN: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Creatinine: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Glucose: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Calcium: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "BMP abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Troponin: _____ ng/mL (elevated if >99th percentile)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ng/mL (elevated if >99th percentile)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "High-sensitivity troponin T: _____ ng/L (elevated if >19 ng/L)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ng/L (elevated if >19 ng/L)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "NT-proBNP: _____ pg/mL (elevated if >125 pg/mL)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "pg/mL (elevated if >125 pg/mL)",
+      "icd10Code": null
+    },
+    {
+      "itemText": "BNP: _____ pg/mL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "pg/mL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "CK-MB: _____ ng/mL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ng/mL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "INR: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "PTT: _____ seconds",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "seconds",
+      "icd10Code": null
+    },
+    {
+      "itemText": "D-dimer: _____ μg/mL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "μg/mL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Coagulation studies abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Magnesium: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Phosphorus: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "AST: _____ U/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "U/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "ALT: _____ U/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "U/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Alkaline phosphatase: _____ U/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "U/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Total bilirubin: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Albumin: _____ g/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "g/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "LFTs abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Blood alcohol level: _____ mg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Urine drug screen: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Toxicology screen positive: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Urine hCG: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Serum hCG: _____ mIU/mL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mIU/mL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "TSH: _____ mIU/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mIU/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Free T4: _____ ng/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "ng/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Thyroid function abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "pH: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "PaCO2: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "PaO2: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HCO3: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Base excess: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Lactate: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "ABG abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Specific gravity: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "pH: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Protein: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Glucose: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Ketones: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Blood: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Leukocyte esterase: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Nitrites: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Urinalysis abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Cortisol level: _____ μg/dL",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "μg/dL",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Ammonia level: _____ μmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "μmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Lactic acid: _____ mmol/L",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmol/L",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Other: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Complete Blood Count": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Basic Metabolic Panel": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiac Biomarkers": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Coagulation Studies": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Additional Electrolytes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 2
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Liver Function Tests": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Toxicology Screen": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Pregnancy Test": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Thyroid Function Tests": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Arterial Blood Gas": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Urinalysis": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 10
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Other Laboratory Tests": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

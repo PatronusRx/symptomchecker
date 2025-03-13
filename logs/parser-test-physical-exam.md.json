@@ -1,0 +1,1848 @@
+{
+  "sections": [
+    "Vital Signs",
+    "Orthostatic Vital Signs",
+    "General Appearance",
+    "Head, Eyes, Ears, Nose, Throat",
+    "Cardiovascular",
+    "Pulmonary",
+    "Abdominal",
+    "Neurological",
+    "Extremities",
+    "Skin",
+    "Rectal Examination (if indicated)"
+  ],
+  "items": [
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Blood pressure: _____ mmHg",
+      "processed": [
+        {
+          "itemText": "Blood pressure: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Heart rate: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Heart rate: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Respiratory rate: _____ breaths/min",
+      "processed": [
+        {
+          "itemText": "Respiratory rate: _____ breaths/min",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "breaths/min",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Temperature: _____ °F/°C",
+      "processed": [
+        {
+          "itemText": "Temperature: _____ °F/°C",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "°F/°C",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Oxygen saturation: _____% on _____",
+      "processed": [
+        {
+          "itemText": "Oxygen saturation: _____% on _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "_____% on ",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Vital Signs",
+      "indentLevel": 0,
+      "text": "Body mass index: _____",
+      "processed": [
+        {
+          "itemText": "Body mass index: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Supine BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Supine BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Sitting BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Sitting BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Standing BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Standing BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Drop in systolic BP ≥20 mmHg",
+      "processed": [
+        {
+          "itemText": "Drop in systolic BP ≥20 mmHg",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Drop in diastolic BP ≥10 mmHg",
+      "processed": [
+        {
+          "itemText": "Drop in diastolic BP ≥10 mmHg",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "Symptoms reproduced with position change",
+      "processed": [
+        {
+          "itemText": "Symptoms reproduced with position change",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Orthostatic Vital Signs",
+      "indentLevel": 0,
+      "text": "No significant orthostatic changes",
+      "processed": [
+        {
+          "itemText": "No significant orthostatic changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Well-appearing",
+      "processed": [
+        {
+          "itemText": "Well-appearing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Ill-appearing",
+      "processed": [
+        {
+          "itemText": "Ill-appearing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Pale",
+      "processed": [
+        {
+          "itemText": "Pale",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Diaphoretic",
+      "processed": [
+        {
+          "itemText": "Diaphoretic",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Cyanotic",
+      "processed": [
+        {
+          "itemText": "Cyanotic",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "General Appearance",
+      "indentLevel": 0,
+      "text": "Distressed",
+      "processed": [
+        {
+          "itemText": "Distressed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Head trauma evident",
+      "processed": [
+        {
+          "itemText": "Head trauma evident",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Facial trauma evident",
+      "processed": [
+        {
+          "itemText": "Facial trauma evident",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Pupils equal and reactive",
+      "processed": [
+        {
+          "itemText": "Pupils equal and reactive",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Extraocular movements intact",
+      "processed": [
+        {
+          "itemText": "Extraocular movements intact",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Fundoscopic exam normal",
+      "processed": [
+        {
+          "itemText": "Fundoscopic exam normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Oropharynx clear",
+      "processed": [
+        {
+          "itemText": "Oropharynx clear",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Tongue laceration present",
+      "processed": [
+        {
+          "itemText": "Tongue laceration present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Moist mucous membranes",
+      "processed": [
+        {
+          "itemText": "Moist mucous membranes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Head, Eyes, Ears, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Dry mucous membranes",
+      "processed": [
+        {
+          "itemText": "Dry mucous membranes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Regular rate and rhythm",
+      "processed": [
+        {
+          "itemText": "Regular rate and rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Irregular rhythm",
+      "processed": [
+        {
+          "itemText": "Irregular rhythm",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Tachycardia",
+      "processed": [
+        {
+          "itemText": "Tachycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Bradycardia",
+      "processed": [
+        {
+          "itemText": "Bradycardia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Normal S1, S2",
+      "processed": [
+        {
+          "itemText": "Normal S1, S2",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "S3 gallop present",
+      "processed": [
+        {
+          "itemText": "S3 gallop present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "S4 gallop present",
+      "processed": [
+        {
+          "itemText": "S4 gallop present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Systolic murmur",
+      "processed": [
+        {
+          "itemText": "Systolic murmur",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 2,
+      "text": "Location: _____",
+      "processed": [
+        {
+          "itemText": "Location: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 2,
+      "text": "Grade: ___/6",
+      "processed": [
+        {
+          "itemText": "Grade: ___/6",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "/6",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 2,
+      "text": "Radiation: _____",
+      "processed": [
+        {
+          "itemText": "Radiation: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Diastolic murmur",
+      "processed": [
+        {
+          "itemText": "Diastolic murmur",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Carotid bruits",
+      "processed": [
+        {
+          "itemText": "Carotid bruits",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Jugular venous distention",
+      "processed": [
+        {
+          "itemText": "Jugular venous distention",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Carotid sinus massage performed (results: _____)",
+      "processed": [
+        {
+          "itemText": "Carotid sinus massage performed (results: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Peripheral pulses normal",
+      "processed": [
+        {
+          "itemText": "Peripheral pulses normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Pulse deficit",
+      "processed": [
+        {
+          "itemText": "Pulse deficit",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Capillary refill <3 seconds",
+      "processed": [
+        {
+          "itemText": "Capillary refill <3 seconds",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Capillary refill >3 seconds",
+      "processed": [
+        {
+          "itemText": "Capillary refill >3 seconds",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Clear to auscultation bilaterally",
+      "processed": [
+        {
+          "itemText": "Clear to auscultation bilaterally",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Wheezes",
+      "processed": [
+        {
+          "itemText": "Wheezes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Rales/crackles",
+      "processed": [
+        {
+          "itemText": "Rales/crackles",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Rhonchi",
+      "processed": [
+        {
+          "itemText": "Rhonchi",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Decreased breath sounds",
+      "processed": [
+        {
+          "itemText": "Decreased breath sounds",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Respiratory distress",
+      "processed": [
+        {
+          "itemText": "Respiratory distress",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Pulmonary",
+      "indentLevel": 0,
+      "text": "Accessory muscle use",
+      "processed": [
+        {
+          "itemText": "Accessory muscle use",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Soft",
+      "processed": [
+        {
+          "itemText": "Soft",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Non-tender",
+      "processed": [
+        {
+          "itemText": "Non-tender",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Tender (location: _____)",
+      "processed": [
+        {
+          "itemText": "Tender (location: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Distended",
+      "processed": [
+        {
+          "itemText": "Distended",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Rigid",
+      "processed": [
+        {
+          "itemText": "Rigid",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Guarding",
+      "processed": [
+        {
+          "itemText": "Guarding",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Rebound tenderness",
+      "processed": [
+        {
+          "itemText": "Rebound tenderness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Bowel sounds normal",
+      "processed": [
+        {
+          "itemText": "Bowel sounds normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Bowel sounds hypoactive/hyperactive",
+      "processed": [
+        {
+          "itemText": "Bowel sounds hypoactive/hyperactive",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Abdominal bruit present",
+      "processed": [
+        {
+          "itemText": "Abdominal bruit present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Pulsatile mass",
+      "processed": [
+        {
+          "itemText": "Pulsatile mass",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Abdominal",
+      "indentLevel": 0,
+      "text": "Organomegaly",
+      "processed": [
+        {
+          "itemText": "Organomegaly",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Alert and oriented (x_____)",
+      "processed": [
+        {
+          "itemText": "Alert and oriented (x_____)",
+          "hasTextInput": true,
+          "inputPlaceholder": null,
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Confused",
+      "processed": [
+        {
+          "itemText": "Confused",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Altered mental status",
+      "processed": [
+        {
+          "itemText": "Altered mental status",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Normal speech",
+      "processed": [
+        {
+          "itemText": "Normal speech",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Dysarthria",
+      "processed": [
+        {
+          "itemText": "Dysarthria",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Aphasia",
+      "processed": [
+        {
+          "itemText": "Aphasia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Cranial nerves II-XII intact",
+      "processed": [
+        {
+          "itemText": "Cranial nerves II-XII intact",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Cranial nerve deficit: _____",
+      "processed": [
+        {
+          "itemText": "Cranial nerve deficit: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Motor strength 5/5 all extremities",
+      "processed": [
+        {
+          "itemText": "Motor strength 5/5 all extremities",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Motor deficit: _____",
+      "processed": [
+        {
+          "itemText": "Motor deficit: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Sensory exam normal",
+      "processed": [
+        {
+          "itemText": "Sensory exam normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Sensory deficit: _____",
+      "processed": [
+        {
+          "itemText": "Sensory deficit: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Reflexes normal and symmetric",
+      "processed": [
+        {
+          "itemText": "Reflexes normal and symmetric",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Abnormal reflexes: _____",
+      "processed": [
+        {
+          "itemText": "Abnormal reflexes: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Coordination normal",
+      "processed": [
+        {
+          "itemText": "Coordination normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Coordination abnormal: _____",
+      "processed": [
+        {
+          "itemText": "Coordination abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Gait normal",
+      "processed": [
+        {
+          "itemText": "Gait normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Gait abnormal: _____",
+      "processed": [
+        {
+          "itemText": "Gait abnormal: _____",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Romberg test negative",
+      "processed": [
+        {
+          "itemText": "Romberg test negative",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Romberg test positive",
+      "processed": [
+        {
+          "itemText": "Romberg test positive",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "No edema",
+      "processed": [
+        {
+          "itemText": "No edema",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "Peripheral edema (location/severity: _____)",
+      "processed": [
+        {
+          "itemText": "Peripheral edema (location/severity: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "No cyanosis",
+      "processed": [
+        {
+          "itemText": "No cyanosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "Cyanosis present",
+      "processed": [
+        {
+          "itemText": "Cyanosis present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "No clubbing",
+      "processed": [
+        {
+          "itemText": "No clubbing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "Clubbing present",
+      "processed": [
+        {
+          "itemText": "Clubbing present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Extremities",
+      "indentLevel": 0,
+      "text": "Evidence of trauma from fall",
+      "processed": [
+        {
+          "itemText": "Evidence of trauma from fall",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Diaphoretic",
+      "processed": [
+        {
+          "itemText": "Diaphoretic",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Pale",
+      "processed": [
+        {
+          "itemText": "Pale",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Flushed",
+      "processed": [
+        {
+          "itemText": "Flushed",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Petechiae",
+      "processed": [
+        {
+          "itemText": "Petechiae",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Purpura",
+      "processed": [
+        {
+          "itemText": "Purpura",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Laceration/Abrasion (location: _____)",
+      "processed": [
+        {
+          "itemText": "Laceration/Abrasion (location: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Skin",
+      "indentLevel": 0,
+      "text": "Hematoma (location: _____)",
+      "processed": [
+        {
+          "itemText": "Hematoma (location: _____)",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": ")",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rectal Examination (if indicated)",
+      "indentLevel": 0,
+      "text": "Normal",
+      "processed": [
+        {
+          "itemText": "Normal",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rectal Examination (if indicated)",
+      "indentLevel": 0,
+      "text": "Melena present",
+      "processed": [
+        {
+          "itemText": "Melena present",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Rectal Examination (if indicated)",
+      "indentLevel": 0,
+      "text": "Bright red blood per rectum",
+      "processed": [
+        {
+          "itemText": "Bright red blood per rectum",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [
+    {
+      "itemText": "Blood pressure: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Heart rate: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Respiratory rate: _____ breaths/min",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "breaths/min",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Temperature: _____ °F/°C",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "°F/°C",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Oxygen saturation: _____% on _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "_____% on ",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Body mass index: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Supine BP: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Sitting BP: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Standing BP: _____ mmHg",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Location: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Grade: ___/6",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "/6",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Radiation: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Carotid sinus massage performed (results: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Tender (location: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Alert and oriented (x_____)",
+      "hasTextInput": true,
+      "inputPlaceholder": null,
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Cranial nerve deficit: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Motor deficit: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Sensory deficit: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Abnormal reflexes: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Coordination abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Gait abnormal: _____",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Peripheral edema (location/severity: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Laceration/Abrasion (location: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Hematoma (location: _____)",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": ")",
+      "icd10Code": null
+    }
+  ],
+  "multipleInputs": [
+    {
+      "original": "Supine BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Supine BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "original": "Sitting BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Sitting BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "original": "Standing BP: _____ mmHg, HR: _____ bpm",
+      "processed": [
+        {
+          "itemText": "Standing BP: _____ mmHg",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "mmHg",
+          "icd10Code": null
+        },
+        {
+          "itemText": "HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Vital Signs": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Orthostatic Vital Signs": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "General Appearance": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Head, Eyes, Ears, Nose, Throat": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 9
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiovascular": {
+      "maxDepth": 2,
+      "levelCounts": {
+        "0": 16,
+        "2": 3
+      },
+      "levels": [
+        0,
+        2
+      ]
+    },
+    "Pulmonary": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Abdominal": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 12
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Neurological": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 20
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Extremities": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Skin": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Rectal Examination (if indicated)": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

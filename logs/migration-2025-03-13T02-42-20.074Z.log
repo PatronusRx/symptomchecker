@@ -1,0 +1,1161 @@
+[2025-03-13T02:42:20.075Z] [INFO] Starting migration...
+[2025-03-13T02:42:20.076Z] [INFO] Inserting categories...
+[2025-03-13T02:42:20.222Z] [INFO] All categories already exist, skipping insertion
+[2025-03-13T02:42:20.224Z] [INFO] Found 178 chapter directories to process
+[2025-03-13T02:42:20.224Z] [INFO] Processing chapter: Ch100_Factitious Disorders and Malingering
+[2025-03-13T02:42:20.353Z] [INFO] Inserted/updated chapter: Factitious Disorders and Malingering (ID: 2)
+[2025-03-13T02:42:20.408Z] [INFO] Completed processing chapter: Ch100_Factitious Disorders and Malingering
+[2025-03-13T02:42:20.408Z] [INFO] Processing chapter: Ch101_Suicidal Behavior
+[2025-03-13T02:42:20.518Z] [INFO] Inserted/updated chapter: Suicidal Behavior (ID: 3)
+[2025-03-13T02:42:20.568Z] [INFO] Completed processing chapter: Ch101_Suicidal Behavior
+[2025-03-13T02:42:20.568Z] [INFO] Processing chapter: Ch102_Arthritis
+[2025-03-13T02:42:20.617Z] [INFO] Inserted/updated chapter: Arthritis (ID: 4)
+[2025-03-13T02:42:20.665Z] [INFO] Completed processing chapter: Ch102_Arthritis
+[2025-03-13T02:42:20.666Z] [INFO] Processing chapter: Ch103_Tendinopathy and Bursitis
+[2025-03-13T02:42:20.716Z] [INFO] Inserted/updated chapter: Tendinopathy and Bursitis (ID: 5)
+[2025-03-13T02:42:20.768Z] [INFO] Completed processing chapter: Ch103_Tendinopathy and Bursitis
+[2025-03-13T02:42:20.768Z] [INFO] Processing chapter: Ch104_Musculoskeletal Back Pain
+[2025-03-13T02:42:20.820Z] [INFO] Inserted/updated chapter: Musculoskeletal Back Pain (ID: 6)
+[2025-03-13T02:42:20.870Z] [INFO] Completed processing chapter: Ch104_Musculoskeletal Back Pain
+[2025-03-13T02:42:20.870Z] [INFO] Processing chapter: Ch105_Systemic Lupus Erythematosus and the Vasculitides
+[2025-03-13T02:42:20.926Z] [INFO] Inserted/updated chapter: Systemic Lupus Erythematosus and the Vasculitides (ID: 7)
+[2025-03-13T02:42:20.977Z] [INFO] Completed processing chapter: Ch105_Systemic Lupus Erythematosus and the Vasculitides
+[2025-03-13T02:42:20.977Z] [INFO] Processing chapter: Ch106_Allergy, Anaphylaxis, and Angioedema
+[2025-03-13T02:42:21.025Z] [INFO] Inserted/updated chapter: Allergy, Anaphylaxis, and Angioedema (ID: 8)
+[2025-03-13T02:42:21.076Z] [INFO] Completed processing chapter: Ch106_Allergy, Anaphylaxis, and Angioedema
+[2025-03-13T02:42:21.076Z] [INFO] Processing chapter: Ch107_Dermatologic Presentations
+[2025-03-13T02:42:21.124Z] [INFO] Inserted/updated chapter: Dermatologic Presentations (ID: 9)
+[2025-03-13T02:42:21.169Z] [INFO] Completed processing chapter: Ch107_Dermatologic Presentations
+[2025-03-13T02:42:21.169Z] [INFO] Processing chapter: Ch108_Blood and Blood Components
+[2025-03-13T02:42:21.215Z] [INFO] Inserted/updated chapter: Blood and Blood Components (ID: 10)
+[2025-03-13T02:42:21.263Z] [INFO] Completed processing chapter: Ch108_Blood and Blood Components
+[2025-03-13T02:42:21.264Z] [INFO] Processing chapter: Ch109_Anemia and Polycythemia
+[2025-03-13T02:42:21.362Z] [INFO] Inserted/updated chapter: Anemia and Polycythemia (ID: 11)
+[2025-03-13T02:42:21.409Z] [INFO] Completed processing chapter: Ch109_Anemia and Polycythemia
+[2025-03-13T02:42:21.409Z] [INFO] Processing chapter: Ch10_Cyanosis
+[2025-03-13T02:42:21.458Z] [INFO] Inserted/updated chapter: Cyanosis (ID: 12)
+[2025-03-13T02:42:21.505Z] [INFO] Processing file: alarm-features.md
+[2025-03-13T02:42:21.555Z] [INFO] Inserted/updated section: Neurological (ID: 107)
+[2025-03-13T02:42:21.556Z] [INFO] Inserting 6 checklist items for section 107
+[2025-03-13T02:42:21.608Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:21.668Z] [INFO] Inserted/updated section: Respiratory (ID: 108)
+[2025-03-13T02:42:21.669Z] [INFO] Inserting 8 checklist items for section 108
+[2025-03-13T02:42:21.718Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:21.766Z] [INFO] Inserted/updated section: Cardiovascular (ID: 109)
+[2025-03-13T02:42:21.766Z] [INFO] Inserting 10 checklist items for section 109
+[2025-03-13T02:42:21.865Z] [ERROR] Error inserting checklist items for section 109: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:21.865Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/alarm-features.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:21.865Z] [INFO] Processing file: assessment.md
+[2025-03-13T02:42:21.913Z] [INFO] Inserted/updated section: Primary Diagnosis (ID: 110)
+[2025-03-13T02:42:21.913Z] [INFO] Inserting 25 checklist items for section 110
+[2025-03-13T02:42:22.039Z] [ERROR] Error inserting checklist items for section 110: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.039Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/assessment.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.040Z] [INFO] Processing file: collateral-history.md
+[2025-03-13T02:42:22.091Z] [INFO] Inserted/updated section: Source of Information (ID: 111)
+[2025-03-13T02:42:22.092Z] [INFO] Inserting 8 checklist items for section 111
+[2025-03-13T02:42:22.143Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:22.187Z] [INFO] Inserted/updated section: Reliability of Historian (ID: 112)
+[2025-03-13T02:42:22.187Z] [INFO] Inserting 4 checklist items for section 112
+[2025-03-13T02:42:22.236Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:22.287Z] [INFO] Inserted/updated section: Collateral Information About Onset (ID: 113)
+[2025-03-13T02:42:22.287Z] [INFO] Inserting 5 checklist items for section 113
+[2025-03-13T02:42:22.335Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:22.380Z] [INFO] Inserted/updated section: Collateral Information About Symptoms (ID: 114)
+[2025-03-13T02:42:22.381Z] [INFO] Inserting 18 checklist items for section 114
+[2025-03-13T02:42:22.477Z] [ERROR] Error inserting checklist items for section 114: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.477Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/collateral-history.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.477Z] [INFO] Processing file: diet.md
+[2025-03-13T02:42:22.524Z] [INFO] Inserted/updated section: Current Diet (ID: 115)
+[2025-03-13T02:42:22.524Z] [INFO] Inserting 6 checklist items for section 115
+[2025-03-13T02:42:22.575Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:22.627Z] [INFO] Inserted/updated section: Dietary Restrictions (ID: 116)
+[2025-03-13T02:42:22.628Z] [INFO] Inserting 8 checklist items for section 116
+[2025-03-13T02:42:22.680Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:22.727Z] [INFO] Inserted/updated section: Appetite (ID: 117)
+[2025-03-13T02:42:22.727Z] [INFO] Inserting 4 checklist items for section 117
+[2025-03-13T02:42:22.778Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:22.834Z] [INFO] Inserted/updated section: Nitrate Exposure in Diet (ID: 118)
+[2025-03-13T02:42:22.835Z] [INFO] Inserting 8 checklist items for section 118
+[2025-03-13T02:42:22.935Z] [ERROR] Error inserting checklist items for section 118: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.935Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/diet.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:22.936Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-13T02:42:23.001Z] [INFO] Inserted/updated section: Peripheral Cyanosis (ID: 119)
+[2025-03-13T02:42:23.001Z] [INFO] Inserting 16 checklist items for section 119
+[2025-03-13T02:42:23.098Z] [ERROR] Error inserting checklist items for section 119: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.098Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/differential-diagnosis.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.098Z] [INFO] Processing file: disposition.md
+[2025-03-13T02:42:23.145Z] [INFO] Inserted/updated section: Disposition Decision (ID: 120)
+[2025-03-13T02:42:23.145Z] [INFO] Inserting 13 checklist items for section 120
+[2025-03-13T02:42:23.246Z] [ERROR] Error inserting checklist items for section 120: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.246Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/disposition.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.246Z] [INFO] Processing file: ecg.md
+[2025-03-13T02:42:23.296Z] [INFO] Inserted/updated section: General Characteristics (ID: 121)
+[2025-03-13T02:42:23.297Z] [INFO] Inserting 16 checklist items for section 121
+[2025-03-13T02:42:23.435Z] [ERROR] Error inserting checklist items for section 121: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.435Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/ecg.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.435Z] [WARN] Skipping unknown file: history-component.md
+[2025-03-13T02:42:23.435Z] [INFO] Processing file: imaging.md
+[2025-03-13T02:42:23.482Z] [INFO] Inserted/updated section: Chest Radiography (ID: 122)
+[2025-03-13T02:42:23.483Z] [INFO] Inserting 35 checklist items for section 122
+[2025-03-13T02:42:23.593Z] [ERROR] Error inserting checklist items for section 122: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.594Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/imaging.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:23.594Z] [INFO] Processing file: lab-studies.md
+[2025-03-13T02:42:23.646Z] [INFO] Inserted/updated section: Complete Blood Count (ID: 123)
+[2025-03-13T02:42:23.646Z] [INFO] Inserting 9 checklist items for section 123
+[2025-03-13T02:42:23.703Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:23.750Z] [INFO] Inserted/updated section: White Blood Cell Differential (ID: 124)
+[2025-03-13T02:42:23.750Z] [INFO] Inserting 6 checklist items for section 124
+[2025-03-13T02:42:23.801Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:23.849Z] [INFO] Inserted/updated section: Peripheral Blood Smear (ID: 125)
+[2025-03-13T02:42:23.849Z] [INFO] Inserting 6 checklist items for section 125
+[2025-03-13T02:42:23.906Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:23.998Z] [INFO] Inserted/updated section: Blood Chemistry (ID: 126)
+[2025-03-13T02:42:23.998Z] [INFO] Inserting 16 checklist items for section 126
+[2025-03-13T02:42:24.044Z] [INFO] Successfully inserted 16 checklist items
+[2025-03-13T02:42:24.090Z] [INFO] Inserted/updated section: Arterial Blood Gas (ID: 127)
+[2025-03-13T02:42:24.091Z] [INFO] Inserting 13 checklist items for section 127
+[2025-03-13T02:42:24.140Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-13T02:42:24.187Z] [INFO] Inserted/updated section: CO-Oximetry (ID: 128)
+[2025-03-13T02:42:24.187Z] [INFO] Inserting 6 checklist items for section 128
+[2025-03-13T02:42:24.237Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:24.281Z] [INFO] Inserted/updated section: Coagulation Studies (ID: 129)
+[2025-03-13T02:42:24.281Z] [INFO] Inserting 5 checklist items for section 129
+[2025-03-13T02:42:24.329Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:24.382Z] [INFO] Inserted/updated section: Cardiac Markers (ID: 130)
+[2025-03-13T02:42:24.382Z] [INFO] Inserting 5 checklist items for section 130
+[2025-03-13T02:42:24.431Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:24.486Z] [INFO] Inserted/updated section: Special Hematology Tests (ID: 131)
+[2025-03-13T02:42:24.486Z] [INFO] Inserting 6 checklist items for section 131
+[2025-03-13T02:42:24.538Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:24.586Z] [INFO] Inserted/updated section: Toxicology (ID: 132)
+[2025-03-13T02:42:24.587Z] [INFO] Inserting 2 checklist items for section 132
+[2025-03-13T02:42:24.634Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-13T02:42:24.692Z] [INFO] Inserted/updated section: Microbiology (ID: 133)
+[2025-03-13T02:42:24.692Z] [INFO] Inserting 5 checklist items for section 133
+[2025-03-13T02:42:24.749Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:24.797Z] [INFO] Inserted/updated section: Other Laboratory Studies (ID: 134)
+[2025-03-13T02:42:24.797Z] [INFO] Inserting 9 checklist items for section 134
+[2025-03-13T02:42:24.845Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:24.894Z] [INFO] Inserted/updated section: Simple Diagnostic Tests (ID: 135)
+[2025-03-13T02:42:24.894Z] [INFO] Inserting 5 checklist items for section 135
+[2025-03-13T02:42:24.989Z] [ERROR] Error inserting checklist items for section 135: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:24.989Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/lab-studies.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:24.989Z] [INFO] Processing file: medications.md
+[2025-03-13T02:42:25.044Z] [INFO] Inserted/updated section: Current Medications (select all that apply) (ID: 136)
+[2025-03-13T02:42:25.044Z] [INFO] Inserting 48 checklist items for section 136
+[2025-03-13T02:42:25.148Z] [ERROR] Error inserting checklist items for section 136: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.149Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/medications.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.149Z] [WARN] Skipping unknown file: past-medical-history.md
+[2025-03-13T02:42:25.149Z] [INFO] Processing file: patient-education.md
+[2025-03-13T02:42:25.195Z] [INFO] Inserted/updated section: Diagnosis Explanation (ID: 137)
+[2025-03-13T02:42:25.195Z] [INFO] Inserting 6 checklist items for section 137
+[2025-03-13T02:42:25.242Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:25.288Z] [INFO] Inserted/updated section: Medication Education (ID: 138)
+[2025-03-13T02:42:25.289Z] [INFO] Inserting 13 checklist items for section 138
+[2025-03-13T02:42:25.386Z] [ERROR] Error inserting checklist items for section 138: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.386Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/patient-education.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.386Z] [INFO] Processing file: physical-exam.md
+[2025-03-13T02:42:25.439Z] [INFO] Inserted/updated section: Vital Signs (ID: 139)
+[2025-03-13T02:42:25.439Z] [INFO] Inserting 7 checklist items for section 139
+[2025-03-13T02:42:25.595Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:25.640Z] [INFO] Inserted/updated section: General Appearance (ID: 140)
+[2025-03-13T02:42:25.640Z] [INFO] Inserting 9 checklist items for section 140
+[2025-03-13T02:42:25.691Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:25.742Z] [INFO] Inserted/updated section: Skin (ID: 141)
+[2025-03-13T02:42:25.743Z] [INFO] Inserting 19 checklist items for section 141
+[2025-03-13T02:42:25.846Z] [ERROR] Error inserting checklist items for section 141: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.847Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/physical-exam.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.847Z] [INFO] Processing file: plan.md
+[2025-03-13T02:42:25.896Z] [INFO] Inserted/updated section: Immediate Interventions (ID: 142)
+[2025-03-13T02:42:25.897Z] [INFO] Inserting 35 checklist items for section 142
+[2025-03-13T02:42:25.993Z] [ERROR] Error inserting checklist items for section 142: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.994Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/plan.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:25.994Z] [WARN] Skipping unknown file: review-of-systems.md
+[2025-03-13T02:42:25.994Z] [INFO] Processing file: risk-factors.md
+[2025-03-13T02:42:26.046Z] [INFO] Inserted/updated section: General Risk Factors (ID: 143)
+[2025-03-13T02:42:26.046Z] [INFO] Inserting 12 checklist items for section 143
+[2025-03-13T02:42:26.143Z] [ERROR] Error inserting checklist items for section 143: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:26.144Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/risk-factors.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:26.144Z] [INFO] Processing file: special-tests.md
+[2025-03-13T02:42:26.203Z] [INFO] Inserted/updated section: Pulmonary Function Tests (ID: 144)
+[2025-03-13T02:42:26.204Z] [INFO] Inserting 22 checklist items for section 144
+[2025-03-13T02:42:26.300Z] [ERROR] Error inserting checklist items for section 144: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:26.300Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch10_Cyanosis/special-tests.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:26.300Z] [INFO] Completed processing chapter: Ch10_Cyanosis
+[2025-03-13T02:42:26.300Z] [INFO] Processing chapter: Ch110_White Blood Cell Disorders
+[2025-03-13T02:42:26.350Z] [INFO] Inserted/updated chapter: White Blood Cell Disorders (ID: 13)
+[2025-03-13T02:42:26.397Z] [INFO] Completed processing chapter: Ch110_White Blood Cell Disorders
+[2025-03-13T02:42:26.398Z] [INFO] Processing chapter: Ch111_Disorders of Hemostasis
+[2025-03-13T02:42:26.446Z] [INFO] Inserted/updated chapter: Disorders of Hemostasis (ID: 14)
+[2025-03-13T02:42:26.495Z] [INFO] Completed processing chapter: Ch111_Disorders of Hemostasis
+[2025-03-13T02:42:26.495Z] [INFO] Processing chapter: Ch112_Oncologic Emergencies
+[2025-03-13T02:42:26.550Z] [INFO] Inserted/updated chapter: Oncologic Emergencies (ID: 15)
+[2025-03-13T02:42:26.599Z] [INFO] Completed processing chapter: Ch112_Oncologic Emergencies
+[2025-03-13T02:42:26.599Z] [INFO] Processing chapter: Ch113_Acid-Base Disorders
+[2025-03-13T02:42:26.647Z] [INFO] Inserted/updated chapter: Acid-Base Disorders (ID: 16)
+[2025-03-13T02:42:26.699Z] [INFO] Completed processing chapter: Ch113_Acid-Base Disorders
+[2025-03-13T02:42:26.699Z] [INFO] Processing chapter: Ch114_Electrolyte Disorders
+[2025-03-13T02:42:26.747Z] [INFO] Inserted/updated chapter: Electrolyte Disorders (ID: 17)
+[2025-03-13T02:42:26.791Z] [INFO] Completed processing chapter: Ch114_Electrolyte Disorders
+[2025-03-13T02:42:26.791Z] [INFO] Processing chapter: Ch115_Diabetes Mellitus and Disorders of Glucose Homeostasis
+[2025-03-13T02:42:26.843Z] [INFO] Inserted/updated chapter: Diabetes Mellitus and Disorders of Glucose Homeostasis (ID: 18)
+[2025-03-13T02:42:26.892Z] [INFO] Completed processing chapter: Ch115_Diabetes Mellitus and Disorders of Glucose Homeostasis
+[2025-03-13T02:42:26.892Z] [INFO] Processing chapter: Ch116_Rhabdomyolysis
+[2025-03-13T02:42:26.941Z] [INFO] Inserted/updated chapter: Rhabdomyolysis (ID: 19)
+[2025-03-13T02:42:26.992Z] [INFO] Completed processing chapter: Ch116_Rhabdomyolysis
+[2025-03-13T02:42:26.993Z] [INFO] Processing chapter: Ch117_Thyroid and Adrenal Disorders
+[2025-03-13T02:42:27.040Z] [INFO] Inserted/updated chapter: Thyroid and Adrenal Disorders (ID: 20)
+[2025-03-13T02:42:27.085Z] [INFO] Completed processing chapter: Ch117_Thyroid and Adrenal Disorders
+[2025-03-13T02:42:27.085Z] [INFO] Processing chapter: Ch118_Bacteria
+[2025-03-13T02:42:27.135Z] [INFO] Inserted/updated chapter: Bacteria (ID: 21)
+[2025-03-13T02:42:27.180Z] [INFO] Completed processing chapter: Ch118_Bacteria
+[2025-03-13T02:42:27.180Z] [INFO] Processing chapter: Ch119_Viruses
+[2025-03-13T02:42:27.229Z] [INFO] Inserted/updated chapter: Viruses (ID: 22)
+[2025-03-13T02:42:27.282Z] [INFO] Completed processing chapter: Ch119_Viruses
+[2025-03-13T02:42:27.282Z] [INFO] Processing chapter: Ch11_Syncope
+[2025-03-13T02:42:27.339Z] [INFO] Inserted/updated chapter: Syncope (ID: 23)
+[2025-03-13T02:42:27.396Z] [INFO] Processing file: alarm-features.md
+[2025-03-13T02:42:27.443Z] [INFO] Inserted/updated section: High-Risk Features (ID: 145)
+[2025-03-13T02:42:27.443Z] [INFO] Inserting 8 checklist items for section 145
+[2025-03-13T02:42:27.490Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:27.539Z] [INFO] Inserted/updated section: Critical Diagnoses To Consider (ID: 146)
+[2025-03-13T02:42:27.539Z] [INFO] Inserting 13 checklist items for section 146
+[2025-03-13T02:42:27.642Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-13T02:42:27.694Z] [INFO] Inserted/updated section: Emergent Diagnostic Factors (ID: 147)
+[2025-03-13T02:42:27.695Z] [INFO] Inserting 11 checklist items for section 147
+[2025-03-13T02:42:27.745Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:27.792Z] [INFO] Inserted/updated section: Concerning Cardiac Symptoms (ID: 148)
+[2025-03-13T02:42:27.792Z] [INFO] Inserting 4 checklist items for section 148
+[2025-03-13T02:42:27.839Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:27.887Z] [INFO] Inserted/updated section: Concerning Neurological Symptoms (ID: 149)
+[2025-03-13T02:42:27.887Z] [INFO] Inserting 4 checklist items for section 149
+[2025-03-13T02:42:27.935Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:27.983Z] [INFO] Inserted/updated section: Concerning Abdominal/GI Symptoms (ID: 150)
+[2025-03-13T02:42:27.983Z] [INFO] Inserting 3 checklist items for section 150
+[2025-03-13T02:42:28.033Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:28.033Z] [INFO] Completed processing file: alarm-features.md
+[2025-03-13T02:42:28.033Z] [INFO] Processing file: assessment.md
+[2025-03-13T02:42:28.081Z] [INFO] Inserted/updated section: Syncope Classification (ID: 151)
+[2025-03-13T02:42:28.082Z] [INFO] Inserting 17 checklist items for section 151
+[2025-03-13T02:42:28.187Z] [ERROR] Error inserting checklist items for section 151: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:28.187Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/assessment.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:28.188Z] [INFO] Processing file: collateral-history.md
+[2025-03-13T02:42:28.260Z] [INFO] Inserted/updated section: Witness Account (ID: 152)
+[2025-03-13T02:42:28.261Z] [INFO] Inserting 4 checklist items for section 152
+[2025-03-13T02:42:28.321Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:28.367Z] [INFO] Inserted/updated section: Description of Episode (From Observer) (ID: 153)
+[2025-03-13T02:42:28.367Z] [INFO] Inserting 5 checklist items for section 153
+[2025-03-13T02:42:28.412Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:28.461Z] [INFO] Inserted/updated section: Pre-Episode Observations (ID: 154)
+[2025-03-13T02:42:28.461Z] [INFO] Inserting 5 checklist items for section 154
+[2025-03-13T02:42:28.511Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:28.557Z] [INFO] Inserted/updated section: Episode Characteristics (ID: 155)
+[2025-03-13T02:42:28.557Z] [INFO] Inserting 8 checklist items for section 155
+[2025-03-13T02:42:28.616Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:28.665Z] [INFO] Inserted/updated section: Movement During Episode (ID: 156)
+[2025-03-13T02:42:28.665Z] [INFO] Inserting 9 checklist items for section 156
+[2025-03-13T02:42:28.725Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:28.776Z] [INFO] Inserted/updated section: Autonomic Features (ID: 157)
+[2025-03-13T02:42:28.777Z] [INFO] Inserting 4 checklist items for section 157
+[2025-03-13T02:42:28.827Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:28.879Z] [INFO] Inserted/updated section: Recovery Characteristics (ID: 158)
+[2025-03-13T02:42:28.879Z] [INFO] Inserting 11 checklist items for section 158
+[2025-03-13T02:42:28.928Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:28.976Z] [INFO] Inserted/updated section: EMS/First Responder Report (ID: 159)
+[2025-03-13T02:42:28.977Z] [INFO] Inserting 4 checklist items for section 159
+[2025-03-13T02:42:29.024Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:29.025Z] [INFO] Completed processing file: collateral-history.md
+[2025-03-13T02:42:29.025Z] [INFO] Processing file: diet.md
+[2025-03-13T02:42:29.072Z] [INFO] Inserted/updated section: Oral Intake (ID: 160)
+[2025-03-13T02:42:29.072Z] [INFO] Inserting 5 checklist items for section 160
+[2025-03-13T02:42:29.122Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:29.171Z] [INFO] Inserted/updated section: Dietary Triggers (ID: 161)
+[2025-03-13T02:42:29.171Z] [INFO] Inserting 4 checklist items for section 161
+[2025-03-13T02:42:29.233Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:29.278Z] [INFO] Inserted/updated section: Specialized Diets (ID: 162)
+[2025-03-13T02:42:29.278Z] [INFO] Inserting 5 checklist items for section 162
+[2025-03-13T02:42:29.327Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:29.381Z] [INFO] Inserted/updated section: Hydration Status (ID: 163)
+[2025-03-13T02:42:29.381Z] [INFO] Inserting 4 checklist items for section 163
+[2025-03-13T02:42:29.433Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:29.479Z] [INFO] Inserted/updated section: Recent Dietary Changes (ID: 164)
+[2025-03-13T02:42:29.479Z] [INFO] Inserting 7 checklist items for section 164
+[2025-03-13T02:42:29.529Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:29.579Z] [INFO] Inserted/updated section: Dietary Supplements (ID: 165)
+[2025-03-13T02:42:29.579Z] [INFO] Inserting 6 checklist items for section 165
+[2025-03-13T02:42:29.630Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:29.681Z] [INFO] Inserted/updated section: Appetite (ID: 166)
+[2025-03-13T02:42:29.682Z] [INFO] Inserting 4 checklist items for section 166
+[2025-03-13T02:42:29.731Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:29.731Z] [INFO] Completed processing file: diet.md
+[2025-03-13T02:42:29.732Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-13T02:42:29.781Z] [INFO] Inserted/updated section: Reflex (Neurally Mediated) Syncope (ID: 167)
+[2025-03-13T02:42:29.782Z] [INFO] Inserting 12 checklist items for section 167
+[2025-03-13T02:42:29.887Z] [ERROR] Error inserting checklist items for section 167: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:29.887Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/differential-diagnosis.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:29.887Z] [INFO] Processing file: disposition.md
+[2025-03-13T02:42:29.936Z] [INFO] Inserted/updated section: Primary Disposition Decision (ID: 168)
+[2025-03-13T02:42:29.937Z] [INFO] Inserting 8 checklist items for section 168
+[2025-03-13T02:42:30.044Z] [ERROR] Error inserting checklist items for section 168: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:30.045Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/disposition.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:30.045Z] [INFO] Processing file: ecg.md
+[2025-03-13T02:42:30.099Z] [INFO] Inserted/updated section: Basic ECG Parameters (ID: 169)
+[2025-03-13T02:42:30.099Z] [INFO] Inserting 7 checklist items for section 169
+[2025-03-13T02:42:30.149Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:30.201Z] [INFO] Inserted/updated section: Rhythm (ID: 170)
+[2025-03-13T02:42:30.201Z] [INFO] Inserting 9 checklist items for section 170
+[2025-03-13T02:42:30.250Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:30.318Z] [INFO] Inserted/updated section: Conduction Abnormalities (ID: 171)
+[2025-03-13T02:42:30.318Z] [INFO] Inserting 11 checklist items for section 171
+[2025-03-13T02:42:30.366Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:30.413Z] [INFO] Inserted/updated section: Tachyarrhythmias (ID: 172)
+[2025-03-13T02:42:30.414Z] [INFO] Inserting 7 checklist items for section 172
+[2025-03-13T02:42:30.461Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:30.508Z] [INFO] Inserted/updated section: Ischemia/Infarction (ID: 173)
+[2025-03-13T02:42:30.508Z] [INFO] Inserting 6 checklist items for section 173
+[2025-03-13T02:42:30.556Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:30.601Z] [INFO] Inserted/updated section: Other ECG Findings (ID: 174)
+[2025-03-13T02:42:30.601Z] [INFO] Inserting 14 checklist items for section 174
+[2025-03-13T02:42:30.679Z] [INFO] Successfully inserted 14 checklist items
+[2025-03-13T02:42:30.725Z] [INFO] Inserted/updated section: Serial ECG Changes (ID: 175)
+[2025-03-13T02:42:30.726Z] [INFO] Inserting 4 checklist items for section 175
+[2025-03-13T02:42:30.775Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:30.821Z] [INFO] Inserted/updated section: Cardiac Monitor Findings (if available) (ID: 176)
+[2025-03-13T02:42:30.821Z] [INFO] Inserting 2 checklist items for section 176
+[2025-03-13T02:42:30.870Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-13T02:42:30.870Z] [INFO] Completed processing file: ecg.md
+[2025-03-13T02:42:30.870Z] [INFO] Processing file: history.md
+[2025-03-13T02:42:30.923Z] [INFO] Inserted/updated section: Chief Complaint (ID: 177)
+[2025-03-13T02:42:30.923Z] [INFO] Inserting 3 checklist items for section 177
+[2025-03-13T02:42:30.970Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:31.033Z] [INFO] Inserted/updated section: Episode Details (ID: 178)
+[2025-03-13T02:42:31.033Z] [INFO] Inserting 4 checklist items for section 178
+[2025-03-13T02:42:31.083Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:31.139Z] [INFO] Inserted/updated section: Position During Episode (ID: 179)
+[2025-03-13T02:42:31.140Z] [INFO] Inserting 4 checklist items for section 179
+[2025-03-13T02:42:31.187Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:31.241Z] [INFO] Inserted/updated section: Activity During Episode (ID: 180)
+[2025-03-13T02:42:31.242Z] [INFO] Inserting 5 checklist items for section 180
+[2025-03-13T02:42:31.290Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:31.335Z] [INFO] Inserted/updated section: Setting (ID: 181)
+[2025-03-13T02:42:31.335Z] [INFO] Inserting 11 checklist items for section 181
+[2025-03-13T02:42:31.383Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:31.432Z] [INFO] Inserted/updated section: Precipitating Factors (ID: 182)
+[2025-03-13T02:42:31.432Z] [INFO] Inserting 12 checklist items for section 182
+[2025-03-13T02:42:31.480Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-13T02:42:31.530Z] [INFO] Inserted/updated section: Associated Prodromal Symptoms (ID: 183)
+[2025-03-13T02:42:31.530Z] [INFO] Inserting 10 checklist items for section 183
+[2025-03-13T02:42:31.637Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-13T02:42:31.692Z] [INFO] Inserted/updated section: Associated Symptoms During/After Episode (ID: 184)
+[2025-03-13T02:42:31.693Z] [INFO] Inserting 13 checklist items for section 184
+[2025-03-13T02:42:31.742Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-13T02:42:31.792Z] [INFO] Inserted/updated section: Post-Episode Status (ID: 185)
+[2025-03-13T02:42:31.793Z] [INFO] Inserting 6 checklist items for section 185
+[2025-03-13T02:42:31.843Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:31.843Z] [INFO] Completed processing file: history.md
+[2025-03-13T02:42:31.844Z] [INFO] Processing file: imaging.md
+[2025-03-13T02:42:31.888Z] [INFO] Inserted/updated section: Chest X-ray (ID: 186)
+[2025-03-13T02:42:31.889Z] [INFO] Inserting 11 checklist items for section 186
+[2025-03-13T02:42:31.938Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:31.987Z] [INFO] Inserted/updated section: Head CT (ID: 187)
+[2025-03-13T02:42:31.987Z] [INFO] Inserting 9 checklist items for section 187
+[2025-03-13T02:42:32.036Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:32.083Z] [INFO] Inserted/updated section: CT Pulmonary Angiogram (ID: 188)
+[2025-03-13T02:42:32.084Z] [INFO] Inserting 10 checklist items for section 188
+[2025-03-13T02:42:32.198Z] [ERROR] Error inserting checklist items for section 188: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:32.198Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/imaging.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:32.198Z] [INFO] Processing file: lab-studies.md
+[2025-03-13T02:42:32.245Z] [INFO] Inserted/updated section: Complete Blood Count (ID: 189)
+[2025-03-13T02:42:32.245Z] [INFO] Inserting 6 checklist items for section 189
+[2025-03-13T02:42:32.301Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:32.347Z] [INFO] Inserted/updated section: Basic Metabolic Panel (ID: 190)
+[2025-03-13T02:42:32.348Z] [INFO] Inserting 10 checklist items for section 190
+[2025-03-13T02:42:32.397Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-13T02:42:32.443Z] [INFO] Inserted/updated section: Cardiac Biomarkers (ID: 191)
+[2025-03-13T02:42:32.444Z] [INFO] Inserting 7 checklist items for section 191
+[2025-03-13T02:42:32.491Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:32.539Z] [INFO] Inserted/updated section: Coagulation Studies (ID: 192)
+[2025-03-13T02:42:32.540Z] [INFO] Inserting 5 checklist items for section 192
+[2025-03-13T02:42:32.588Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:32.637Z] [INFO] Inserted/updated section: Additional Electrolytes (ID: 193)
+[2025-03-13T02:42:32.637Z] [INFO] Inserting 2 checklist items for section 193
+[2025-03-13T02:42:32.689Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-13T02:42:32.739Z] [INFO] Inserted/updated section: Liver Function Tests (ID: 194)
+[2025-03-13T02:42:32.739Z] [INFO] Inserting 7 checklist items for section 194
+[2025-03-13T02:42:32.787Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:32.851Z] [INFO] Inserted/updated section: Toxicology Screen (ID: 195)
+[2025-03-13T02:42:32.851Z] [INFO] Inserting 4 checklist items for section 195
+[2025-03-13T02:42:32.900Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:32.951Z] [INFO] Inserted/updated section: Pregnancy Test (ID: 196)
+[2025-03-13T02:42:32.951Z] [INFO] Inserting 3 checklist items for section 196
+[2025-03-13T02:42:33.000Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:33.058Z] [INFO] Inserted/updated section: Thyroid Function Tests (ID: 197)
+[2025-03-13T02:42:33.058Z] [INFO] Inserting 4 checklist items for section 197
+[2025-03-13T02:42:33.109Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:33.155Z] [INFO] Inserted/updated section: Arterial Blood Gas (ID: 198)
+[2025-03-13T02:42:33.155Z] [INFO] Inserting 8 checklist items for section 198
+[2025-03-13T02:42:33.207Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:33.259Z] [INFO] Inserted/updated section: Urinalysis (ID: 199)
+[2025-03-13T02:42:33.259Z] [INFO] Inserting 10 checklist items for section 199
+[2025-03-13T02:42:33.307Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-13T02:42:33.361Z] [INFO] Inserted/updated section: Other Laboratory Tests (ID: 200)
+[2025-03-13T02:42:33.361Z] [INFO] Inserting 4 checklist items for section 200
+[2025-03-13T02:42:33.409Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:33.410Z] [INFO] Completed processing file: lab-studies.md
+[2025-03-13T02:42:33.410Z] [INFO] Processing file: medications.md
+[2025-03-13T02:42:33.464Z] [INFO] Inserted/updated section: Vasodilators (ID: 201)
+[2025-03-13T02:42:33.465Z] [INFO] Inserting 8 checklist items for section 201
+[2025-03-13T02:42:33.515Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:33.563Z] [INFO] Inserted/updated section: Diuretics (ID: 202)
+[2025-03-13T02:42:33.564Z] [INFO] Inserting 3 checklist items for section 202
+[2025-03-13T02:42:33.613Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:33.662Z] [INFO] Inserted/updated section: Central Antihypertensives (ID: 203)
+[2025-03-13T02:42:33.662Z] [INFO] Inserting 2 checklist items for section 203
+[2025-03-13T02:42:33.708Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-13T02:42:33.758Z] [INFO] Inserted/updated section: QT-Prolonging Agents (ID: 204)
+[2025-03-13T02:42:33.758Z] [INFO] Inserting 5 checklist items for section 204
+[2025-03-13T02:42:33.810Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:33.860Z] [INFO] Inserted/updated section: Psychoactive Agents (ID: 205)
+[2025-03-13T02:42:33.860Z] [INFO] Inserting 12 checklist items for section 205
+[2025-03-13T02:42:33.906Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-13T02:42:33.955Z] [INFO] Inserted/updated section: Other Medications (ID: 206)
+[2025-03-13T02:42:33.955Z] [INFO] Inserting 7 checklist items for section 206
+[2025-03-13T02:42:34.006Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:34.054Z] [INFO] Inserted/updated section: Recent Medication Changes (ID: 207)
+[2025-03-13T02:42:34.054Z] [INFO] Inserting 5 checklist items for section 207
+[2025-03-13T02:42:34.100Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:34.147Z] [INFO] Inserted/updated section: Medication Compliance (ID: 208)
+[2025-03-13T02:42:34.147Z] [INFO] Inserting 5 checklist items for section 208
+[2025-03-13T02:42:34.199Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:34.199Z] [INFO] Completed processing file: medications.md
+[2025-03-13T02:42:34.199Z] [INFO] Processing file: past-medical.md
+[2025-03-13T02:42:34.247Z] [INFO] Inserted/updated section: Cardiac History (ID: 209)
+[2025-03-13T02:42:34.248Z] [INFO] Inserting 28 checklist items for section 209
+[2025-03-13T02:42:34.360Z] [ERROR] Error inserting checklist items for section 209: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:34.361Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/past-medical.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:34.361Z] [INFO] Processing file: patient-education.md
+[2025-03-13T02:42:34.409Z] [INFO] Inserted/updated section: General Syncope Information (ID: 210)
+[2025-03-13T02:42:34.409Z] [INFO] Inserting 6 checklist items for section 210
+[2025-03-13T02:42:34.469Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:34.521Z] [INFO] Inserted/updated section: Safety Considerations (ID: 211)
+[2025-03-13T02:42:34.522Z] [INFO] Inserting 8 checklist items for section 211
+[2025-03-13T02:42:34.571Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:34.618Z] [INFO] Inserted/updated section: Specific Cause Education (if identified) (ID: 212)
+[2025-03-13T02:42:34.618Z] [INFO] Inserting 7 checklist items for section 212
+[2025-03-13T02:42:34.667Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:34.718Z] [INFO] Inserted/updated section: Prodromal Symptom Recognition (ID: 213)
+[2025-03-13T02:42:34.718Z] [INFO] Inserting 5 checklist items for section 213
+[2025-03-13T02:42:34.765Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:34.811Z] [INFO] Inserted/updated section: Physical Counterpressure Maneuvers (ID: 214)
+[2025-03-13T02:42:34.811Z] [INFO] Inserting 5 checklist items for section 214
+[2025-03-13T02:42:34.858Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:34.917Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: 215)
+[2025-03-13T02:42:34.917Z] [INFO] Inserting 8 checklist items for section 215
+[2025-03-13T02:42:34.964Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:35.011Z] [INFO] Inserted/updated section: Medication Education (ID: 216)
+[2025-03-13T02:42:35.012Z] [INFO] Inserting 6 checklist items for section 216
+[2025-03-13T02:42:35.065Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:35.111Z] [INFO] Inserted/updated section: Follow-up Care (ID: 217)
+[2025-03-13T02:42:35.111Z] [INFO] Inserting 7 checklist items for section 217
+[2025-03-13T02:42:35.158Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:35.205Z] [INFO] Inserted/updated section: Warning Signs Requiring Immediate Attention (ID: 218)
+[2025-03-13T02:42:35.205Z] [INFO] Inserting 8 checklist items for section 218
+[2025-03-13T02:42:35.252Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:35.299Z] [INFO] Inserted/updated section: Family Education (ID: 219)
+[2025-03-13T02:42:35.299Z] [INFO] Inserting 6 checklist items for section 219
+[2025-03-13T02:42:35.348Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:35.348Z] [INFO] Completed processing file: patient-education.md
+[2025-03-13T02:42:35.349Z] [INFO] Processing file: physical-exam.md
+[2025-03-13T02:42:35.402Z] [INFO] Inserted/updated section: Vital Signs (ID: 220)
+[2025-03-13T02:42:35.402Z] [INFO] Inserting 6 checklist items for section 220
+[2025-03-13T02:42:35.449Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:35.496Z] [INFO] Inserted/updated section: Orthostatic Vital Signs (ID: 221)
+[2025-03-13T02:42:35.497Z] [INFO] Inserting 10 checklist items for section 221
+[2025-03-13T02:42:35.593Z] [ERROR] Error inserting checklist items for section 221: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:35.594Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/physical-exam.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:35.594Z] [INFO] Processing file: plan.md
+[2025-03-13T02:42:35.639Z] [INFO] Inserted/updated section: Immediate Management (ID: 222)
+[2025-03-13T02:42:35.639Z] [INFO] Inserting 9 checklist items for section 222
+[2025-03-13T02:42:35.688Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:35.733Z] [INFO] Inserted/updated section: Additional Testing (ID: 223)
+[2025-03-13T02:42:35.733Z] [INFO] Inserting 12 checklist items for section 223
+[2025-03-13T02:42:35.783Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-13T02:42:35.833Z] [INFO] Inserted/updated section: Medication Recommendations (ID: 224)
+[2025-03-13T02:42:35.833Z] [INFO] Inserting 6 checklist items for section 224
+[2025-03-13T02:42:35.880Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:35.931Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: 225)
+[2025-03-13T02:42:35.931Z] [INFO] Inserting 8 checklist items for section 225
+[2025-03-13T02:42:35.991Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:36.043Z] [INFO] Inserted/updated section: Cardiac Intervention Considerations (ID: 226)
+[2025-03-13T02:42:36.043Z] [INFO] Inserting 6 checklist items for section 226
+[2025-03-13T02:42:36.092Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:36.145Z] [INFO] Inserted/updated section: Follow-up Care (ID: 227)
+[2025-03-13T02:42:36.145Z] [INFO] Inserting 10 checklist items for section 227
+[2025-03-13T02:42:36.203Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-13T02:42:36.250Z] [INFO] Inserted/updated section: Preventive Measures (ID: 228)
+[2025-03-13T02:42:36.250Z] [INFO] Inserting 7 checklist items for section 228
+[2025-03-13T02:42:36.299Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:36.347Z] [INFO] Inserted/updated section: Special Considerations (ID: 229)
+[2025-03-13T02:42:36.347Z] [INFO] Inserting 5 checklist items for section 229
+[2025-03-13T02:42:36.393Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:36.394Z] [INFO] Completed processing file: plan.md
+[2025-03-13T02:42:36.394Z] [INFO] Processing file: review-systems.md
+[2025-03-13T02:42:36.447Z] [INFO] Inserted/updated section: Constitutional (ID: 230)
+[2025-03-13T02:42:36.448Z] [INFO] Inserting 4 checklist items for section 230
+[2025-03-13T02:42:36.495Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:36.539Z] [INFO] Inserted/updated section: Cardiovascular (ID: 231)
+[2025-03-13T02:42:36.540Z] [INFO] Inserting 8 checklist items for section 231
+[2025-03-13T02:42:36.588Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:36.640Z] [INFO] Inserted/updated section: Respiratory (ID: 232)
+[2025-03-13T02:42:36.640Z] [INFO] Inserting 5 checklist items for section 232
+[2025-03-13T02:42:36.696Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:36.808Z] [INFO] Inserted/updated section: Neurological (ID: 233)
+[2025-03-13T02:42:36.808Z] [INFO] Inserting 11 checklist items for section 233
+[2025-03-13T02:42:36.857Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-13T02:42:36.912Z] [INFO] Inserted/updated section: Gastrointestinal (ID: 234)
+[2025-03-13T02:42:36.912Z] [INFO] Inserting 8 checklist items for section 234
+[2025-03-13T02:42:36.963Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-13T02:42:37.011Z] [INFO] Inserted/updated section: Genitourinary (ID: 235)
+[2025-03-13T02:42:37.011Z] [INFO] Inserting 7 checklist items for section 235
+[2025-03-13T02:42:37.062Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:37.108Z] [INFO] Inserted/updated section: Psychiatric (ID: 236)
+[2025-03-13T02:42:37.108Z] [INFO] Inserting 6 checklist items for section 236
+[2025-03-13T02:42:37.159Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-13T02:42:37.207Z] [INFO] Inserted/updated section: Endocrine (ID: 237)
+[2025-03-13T02:42:37.207Z] [INFO] Inserting 4 checklist items for section 237
+[2025-03-13T02:42:37.255Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:37.310Z] [INFO] Inserted/updated section: Hematologic (ID: 238)
+[2025-03-13T02:42:37.310Z] [INFO] Inserting 3 checklist items for section 238
+[2025-03-13T02:42:37.361Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:37.408Z] [INFO] Inserted/updated section: Musculoskeletal (ID: 239)
+[2025-03-13T02:42:37.409Z] [INFO] Inserting 3 checklist items for section 239
+[2025-03-13T02:42:37.457Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:37.504Z] [INFO] Inserted/updated section: Ear, Nose, Throat (ID: 240)
+[2025-03-13T02:42:37.504Z] [INFO] Inserting 4 checklist items for section 240
+[2025-03-13T02:42:37.558Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:37.614Z] [INFO] Inserted/updated section: Eyes (ID: 241)
+[2025-03-13T02:42:37.614Z] [INFO] Inserting 4 checklist items for section 241
+[2025-03-13T02:42:37.673Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:37.674Z] [INFO] Completed processing file: review-systems.md
+[2025-03-13T02:42:37.674Z] [INFO] Processing file: risk-factors.md
+[2025-03-13T02:42:37.727Z] [INFO] Inserted/updated section: Demographic Risk Factors (ID: 242)
+[2025-03-13T02:42:37.727Z] [INFO] Inserting 3 checklist items for section 242
+[2025-03-13T02:42:37.779Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-13T02:42:37.829Z] [INFO] Inserted/updated section: Cardiac Risk Factors (ID: 243)
+[2025-03-13T02:42:37.830Z] [INFO] Inserting 15 checklist items for section 243
+[2025-03-13T02:42:37.877Z] [INFO] Successfully inserted 15 checklist items
+[2025-03-13T02:42:37.934Z] [INFO] Inserted/updated section: Vascular Risk Factors (ID: 244)
+[2025-03-13T02:42:37.934Z] [INFO] Inserting 9 checklist items for section 244
+[2025-03-13T02:42:37.981Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:38.037Z] [INFO] Inserted/updated section: Pulmonary Embolism Risk Factors (ID: 245)
+[2025-03-13T02:42:38.038Z] [INFO] Inserting 10 checklist items for section 245
+[2025-03-13T02:42:38.088Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-13T02:42:38.138Z] [INFO] Inserted/updated section: Orthostatic Hypotension Risk Factors (ID: 246)
+[2025-03-13T02:42:38.138Z] [INFO] Inserting 7 checklist items for section 246
+[2025-03-13T02:42:38.186Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:38.234Z] [INFO] Inserted/updated section: Canadian Syncope Risk Score Factors (ID: 247)
+[2025-03-13T02:42:38.235Z] [INFO] Inserting 9 checklist items for section 247
+[2025-03-13T02:42:38.281Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-13T02:42:38.333Z] [INFO] Inserted/updated section: San Francisco Syncope Rule Factors (ID: 248)
+[2025-03-13T02:42:38.333Z] [INFO] Inserting 5 checklist items for section 248
+[2025-03-13T02:42:38.380Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:38.429Z] [INFO] Inserted/updated section: FAINT Score Factors (ID: 249)
+[2025-03-13T02:42:38.430Z] [INFO] Inserting 5 checklist items for section 249
+[2025-03-13T02:42:38.494Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:38.495Z] [INFO] Completed processing file: risk-factors.md
+[2025-03-13T02:42:38.495Z] [INFO] Processing file: special-tests.md
+[2025-03-13T02:42:38.541Z] [INFO] Inserted/updated section: Bedside Ultrasonography (ID: 250)
+[2025-03-13T02:42:38.541Z] [INFO] Inserting 19 checklist items for section 250
+[2025-03-13T02:42:38.640Z] [ERROR] Error inserting checklist items for section 250: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:38.641Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/special-tests.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:38.641Z] [INFO] Completed processing chapter: Ch11_Syncope
+[2025-03-13T02:42:38.641Z] [INFO] Processing chapter: Ch120_Coronaviruses
+[2025-03-13T02:42:38.691Z] [INFO] Inserted/updated chapter: Coronaviruses (ID: 24)
+[2025-03-13T02:42:38.738Z] [INFO] Completed processing chapter: Ch120_Coronaviruses
+[2025-03-13T02:42:38.739Z] [INFO] Processing chapter: Ch121_HIV
+[2025-03-13T02:42:38.783Z] [INFO] Inserted/updated chapter: HIV (ID: 25)
+[2025-03-13T02:42:38.834Z] [INFO] Completed processing chapter: Ch121_HIV
+[2025-03-13T02:42:38.834Z] [INFO] Processing chapter: Ch122_Parasites
+[2025-03-13T02:42:38.890Z] [INFO] Inserted/updated chapter: Parasites (ID: 26)
+[2025-03-13T02:42:38.934Z] [INFO] Completed processing chapter: Ch122_Parasites
+[2025-03-13T02:42:38.934Z] [INFO] Processing chapter: Ch123_Tickborne Illnesses
+[2025-03-13T02:42:38.987Z] [INFO] Inserted/updated chapter: Tickborne Illnesses (ID: 27)
+[2025-03-13T02:42:39.038Z] [INFO] Completed processing chapter: Ch123_Tickborne Illnesses
+[2025-03-13T02:42:39.038Z] [INFO] Processing chapter: Ch124_Tuberculosis
+[2025-03-13T02:42:39.091Z] [INFO] Inserted/updated chapter: Tuberculosis (ID: 28)
+[2025-03-13T02:42:39.141Z] [INFO] Completed processing chapter: Ch124_Tuberculosis
+[2025-03-13T02:42:39.141Z] [INFO] Processing chapter: Ch125_Bone and Joint Infections
+[2025-03-13T02:42:39.193Z] [INFO] Inserted/updated chapter: Bone and Joint Infections (ID: 29)
+[2025-03-13T02:42:39.240Z] [INFO] Completed processing chapter: Ch125_Bone and Joint Infections
+[2025-03-13T02:42:39.241Z] [INFO] Processing chapter: Ch126_Skin and Soft Tissue Infections
+[2025-03-13T02:42:39.288Z] [INFO] Inserted/updated chapter: Skin and Soft Tissue Infections (ID: 30)
+[2025-03-13T02:42:39.340Z] [INFO] Completed processing chapter: Ch126_Skin and Soft Tissue Infections
+[2025-03-13T02:42:39.341Z] [INFO] Processing chapter: Ch127_Sepsis Syndrome
+[2025-03-13T02:42:39.388Z] [INFO] Inserted/updated chapter: Sepsis Syndrome (ID: 31)
+[2025-03-13T02:42:39.440Z] [INFO] Completed processing chapter: Ch127_Sepsis Syndrome
+[2025-03-13T02:42:39.440Z] [INFO] Processing chapter: Ch128_Hypothermia, Frostbite, and Nonfreezing Cold Injuries
+[2025-03-13T02:42:39.495Z] [INFO] Inserted/updated chapter: Hypothermia, Frostbite, and Nonfreezing Cold Injuries (ID: 32)
+[2025-03-13T02:42:39.547Z] [INFO] Completed processing chapter: Ch128_Hypothermia, Frostbite, and Nonfreezing Cold Injuries
+[2025-03-13T02:42:39.547Z] [INFO] Processing chapter: Ch129_Heat Illness
+[2025-03-13T02:42:39.601Z] [INFO] Inserted/updated chapter: Heat Illness (ID: 33)
+[2025-03-13T02:42:39.646Z] [INFO] Completed processing chapter: Ch129_Heat Illness
+[2025-03-13T02:42:39.647Z] [INFO] Processing chapter: Ch12_Depressed Consciousness and Coma
+[2025-03-13T02:42:39.695Z] [INFO] Inserted/updated chapter: Depressed Consciousness and Coma (ID: 34)
+[2025-03-13T02:42:39.739Z] [INFO] Processing file: alarm-features.md
+[2025-03-13T02:42:39.791Z] [INFO] Inserted/updated section: Neurological Red Flags (ID: 251)
+[2025-03-13T02:42:39.791Z] [INFO] Inserting 14 checklist items for section 251
+[2025-03-13T02:42:39.846Z] [INFO] Successfully inserted 14 checklist items
+[2025-03-13T02:42:39.898Z] [INFO] Inserted/updated section: Vital Sign Abnormalities (ID: 252)
+[2025-03-13T02:42:39.898Z] [INFO] Inserting 13 checklist items for section 252
+[2025-03-13T02:42:39.992Z] [ERROR] Error inserting checklist items for section 252: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:39.993Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/alarm-features.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:39.993Z] [INFO] Processing file: assessment.md
+[2025-03-13T02:42:40.045Z] [INFO] Inserted/updated section: Primary Diagnosis (ID: 253)
+[2025-03-13T02:42:40.046Z] [INFO] Inserting 9 checklist items for section 253
+[2025-03-13T02:42:40.139Z] [ERROR] Error inserting checklist items for section 253: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.139Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/assessment.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.139Z] [INFO] Processing file: collateral-history.md
+[2025-03-13T02:42:40.186Z] [INFO] Inserted/updated section: Source of Collateral Information (ID: 254)
+[2025-03-13T02:42:40.187Z] [INFO] Inserting 16 checklist items for section 254
+[2025-03-13T02:42:40.296Z] [ERROR] Error inserting checklist items for section 254: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.296Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/collateral-history.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.296Z] [WARN] Skipping unknown file: diet-component.md
+[2025-03-13T02:42:40.296Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-13T02:42:40.353Z] [INFO] Inserted/updated section: Vascular (ID: 255)
+[2025-03-13T02:42:40.353Z] [INFO] Inserting 16 checklist items for section 255
+[2025-03-13T02:42:40.446Z] [ERROR] Error inserting checklist items for section 255: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.446Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/differential-diagnosis.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.446Z] [INFO] Processing file: disposition.md
+[2025-03-13T02:42:40.496Z] [INFO] Inserted/updated section: Level of Care (ID: 256)
+[2025-03-13T02:42:40.496Z] [INFO] Inserting 21 checklist items for section 256
+[2025-03-13T02:42:40.596Z] [ERROR] Error inserting checklist items for section 256: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.596Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/disposition.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.596Z] [INFO] Processing file: ecg.md
+[2025-03-13T02:42:40.649Z] [INFO] Inserted/updated section: Basic ECG Data (ID: 257)
+[2025-03-13T02:42:40.649Z] [INFO] Inserting 26 checklist items for section 257
+[2025-03-13T02:42:40.747Z] [ERROR] Error inserting checklist items for section 257: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.747Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/ecg.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.747Z] [WARN] Skipping unknown file: history-component.md
+[2025-03-13T02:42:40.747Z] [INFO] Processing file: imaging.md
+[2025-03-13T02:42:40.796Z] [INFO] Inserted/updated section: Head CT (Non-contrast) (ID: 258)
+[2025-03-13T02:42:40.796Z] [INFO] Inserting 25 checklist items for section 258
+[2025-03-13T02:42:40.904Z] [ERROR] Error inserting checklist items for section 258: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.905Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/imaging.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:40.905Z] [INFO] Processing file: lab-studies.md
+[2025-03-13T02:42:40.959Z] [INFO] Inserted/updated section: Point of Care Testing (ID: 259)
+[2025-03-13T02:42:40.959Z] [INFO] Inserting 13 checklist items for section 259
+[2025-03-13T02:42:41.069Z] [ERROR] Error inserting checklist items for section 259: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.069Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/lab-studies.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.069Z] [WARN] Skipping unknown file: medications-component.md
+[2025-03-13T02:42:41.069Z] [WARN] Skipping unknown file: past-medical-history.md
+[2025-03-13T02:42:41.069Z] [INFO] Processing file: patient-education.md
+[2025-03-13T02:42:41.121Z] [INFO] Inserted/updated section: Diagnosis Education (ID: 260)
+[2025-03-13T02:42:41.121Z] [INFO] Inserting 21 checklist items for section 260
+[2025-03-13T02:42:41.221Z] [ERROR] Error inserting checklist items for section 260: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.221Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/patient-education.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.222Z] [INFO] Processing file: physical-exam.md
+[2025-03-13T02:42:41.277Z] [INFO] Inserted/updated section: Vital Signs (ID: 261)
+[2025-03-13T02:42:41.277Z] [INFO] Inserting 7 checklist items for section 261
+[2025-03-13T02:42:41.327Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-13T02:42:41.373Z] [INFO] Inserted/updated section: General Appearance (ID: 262)
+[2025-03-13T02:42:41.374Z] [INFO] Inserting 13 checklist items for section 262
+[2025-03-13T02:42:41.424Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-13T02:42:41.483Z] [INFO] Inserted/updated section: Level of Consciousness (GCS) (ID: 263)
+[2025-03-13T02:42:41.483Z] [INFO] Inserting 4 checklist items for section 263
+[2025-03-13T02:42:41.533Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-13T02:42:41.587Z] [INFO] Inserted/updated section: FOUR Score (ID: 264)
+[2025-03-13T02:42:41.587Z] [INFO] Inserting 5 checklist items for section 264
+[2025-03-13T02:42:41.632Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-13T02:42:41.678Z] [INFO] Inserted/updated section: HEENT (ID: 265)
+[2025-03-13T02:42:41.679Z] [INFO] Inserting 35 checklist items for section 265
+[2025-03-13T02:42:41.862Z] [ERROR] Error inserting checklist items for section 265: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.862Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/physical-exam.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:41.862Z] [INFO] Processing file: plan.md
+[2025-03-13T02:42:41.911Z] [INFO] Inserted/updated section: Diagnostic Plan (ID: 266)
+[2025-03-13T02:42:41.912Z] [INFO] Inserting 21 checklist items for section 266
+[2025-03-13T02:42:42.009Z] [ERROR] Error inserting checklist items for section 266: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.009Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/plan.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.009Z] [WARN] Skipping unknown file: review-of-systems.md
+[2025-03-13T02:42:42.009Z] [INFO] Processing file: risk-factors.md
+[2025-03-13T02:42:42.060Z] [INFO] Inserted/updated section: Neurological Risk Factors (ID: 267)
+[2025-03-13T02:42:42.060Z] [INFO] Inserting 12 checklist items for section 267
+[2025-03-13T02:42:42.163Z] [ERROR] Error inserting checklist items for section 267: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.163Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/risk-factors.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.163Z] [INFO] Processing file: special-tests.md
+[2025-03-13T02:42:42.217Z] [INFO] Inserted/updated section: Electroencephalogram (EEG) (ID: 268)
+[2025-03-13T02:42:42.217Z] [INFO] Inserting 26 checklist items for section 268
+[2025-03-13T02:42:42.316Z] [ERROR] Error inserting checklist items for section 268: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.317Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch12_Depressed Consciousness and Coma/special-tests.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-13T02:42:42.317Z] [INFO] Completed processing chapter: Ch12_Depressed Consciousness and Coma
+[2025-03-13T02:42:42.317Z] [INFO] Processing chapter: Ch130_Electrical and Lightning Injuries
+[2025-03-13T02:42:42.368Z] [INFO] Inserted/updated chapter: Electrical and Lightning Injuries (ID: 35)
+[2025-03-13T02:42:42.418Z] [INFO] Completed processing chapter: Ch130_Electrical and Lightning Injuries
+[2025-03-13T02:42:42.419Z] [INFO] Processing chapter: Ch131_Scuba Diving and Dysbarism
+[2025-03-13T02:42:42.473Z] [INFO] Inserted/updated chapter: Scuba Diving and Dysbarism (ID: 36)
+[2025-03-13T02:42:42.526Z] [INFO] Completed processing chapter: Ch131_Scuba Diving and Dysbarism
+[2025-03-13T02:42:42.526Z] [INFO] Processing chapter: Ch132_High-Altitude Medicine
+[2025-03-13T02:42:42.572Z] [INFO] Inserted/updated chapter: High-Altitude Medicine (ID: 37)
+[2025-03-13T02:42:42.618Z] [INFO] Completed processing chapter: Ch132_High-Altitude Medicine
+[2025-03-13T02:42:42.619Z] [INFO] Processing chapter: Ch133_Drowning
+[2025-03-13T02:42:42.667Z] [INFO] Inserted/updated chapter: Drowning (ID: 38)
+[2025-03-13T02:42:42.714Z] [INFO] Completed processing chapter: Ch133_Drowning
+[2025-03-13T02:42:42.714Z] [INFO] Processing chapter: Ch134_Radiation Injuries
+[2025-03-13T02:42:42.778Z] [INFO] Inserted/updated chapter: Radiation Injuries (ID: 39)
+[2025-03-13T02:42:42.827Z] [INFO] Completed processing chapter: Ch134_Radiation Injuries
+[2025-03-13T02:42:42.828Z] [INFO] Processing chapter: Ch135_Care of the Poisoned Patient
+[2025-03-13T02:42:42.877Z] [INFO] Inserted/updated chapter: Care of the Poisoned Patient (ID: 40)
+[2025-03-13T02:42:42.924Z] [INFO] Completed processing chapter: Ch135_Care of the Poisoned Patient
+[2025-03-13T02:42:42.925Z] [INFO] Processing chapter: Ch136_Toxic Alcohols
+[2025-03-13T02:42:42.970Z] [INFO] Inserted/updated chapter: Toxic Alcohols (ID: 41)
+[2025-03-13T02:42:43.016Z] [INFO] Completed processing chapter: Ch136_Toxic Alcohols
+[2025-03-13T02:42:43.016Z] [INFO] Processing chapter: Ch137_Alcohol-Related Disease
+[2025-03-13T02:42:43.062Z] [INFO] Inserted/updated chapter: Alcohol-Related Disease (ID: 42)
+[2025-03-13T02:42:43.110Z] [INFO] Completed processing chapter: Ch137_Alcohol-Related Disease
+[2025-03-13T02:42:43.111Z] [INFO] Processing chapter: Ch138_Acetaminophen
+[2025-03-13T02:42:43.160Z] [INFO] Inserted/updated chapter: Acetaminophen (ID: 43)
+[2025-03-13T02:42:43.218Z] [INFO] Completed processing chapter: Ch138_Acetaminophen
+[2025-03-13T02:42:43.218Z] [INFO] Processing chapter: Ch139_Aspirin and Nonsteroidal Agents
+[2025-03-13T02:42:43.268Z] [INFO] Inserted/updated chapter: Aspirin and Nonsteroidal Agents (ID: 44)
+[2025-03-13T02:42:43.317Z] [INFO] Completed processing chapter: Ch139_Aspirin and Nonsteroidal Agents
+[2025-03-13T02:42:43.317Z] [INFO] Processing chapter: Ch13_Confusion
+[2025-03-13T02:42:43.368Z] [INFO] Inserted/updated chapter: Confusion (ID: 45)
+[2025-03-13T02:42:43.420Z] [INFO] Completed processing chapter: Ch13_Confusion
+[2025-03-13T02:42:43.420Z] [INFO] Processing chapter: Ch140_Anticholinergics
+[2025-03-13T02:42:43.465Z] [INFO] Inserted/updated chapter: Anticholinergics (ID: 46)
+[2025-03-13T02:42:43.509Z] [INFO] Completed processing chapter: Ch140_Anticholinergics
+[2025-03-13T02:42:43.510Z] [INFO] Processing chapter: Ch141_Antidepressants
+[2025-03-13T02:42:43.555Z] [INFO] Inserted/updated chapter: Antidepressants (ID: 47)
+[2025-03-13T02:42:43.603Z] [INFO] Completed processing chapter: Ch141_Antidepressants
+[2025-03-13T02:42:43.603Z] [INFO] Processing chapter: Ch142_Cardiovascular Drugs
+[2025-03-13T02:42:43.650Z] [INFO] Inserted/updated chapter: Cardiovascular Drugs (ID: 48)
+[2025-03-13T02:42:43.700Z] [INFO] Completed processing chapter: Ch142_Cardiovascular Drugs
+[2025-03-13T02:42:43.700Z] [INFO] Processing chapter: Ch143_Caustics
+[2025-03-13T02:42:43.753Z] [INFO] Inserted/updated chapter: Caustics (ID: 49)
+[2025-03-13T02:42:43.805Z] [INFO] Completed processing chapter: Ch143_Caustics
+[2025-03-13T02:42:43.805Z] [INFO] Processing chapter: Ch144_Cocaine and Other Sympathomimetics
+[2025-03-13T02:42:43.856Z] [INFO] Inserted/updated chapter: Cocaine and Other Sympathomimetics (ID: 50)
+[2025-03-13T02:42:43.914Z] [INFO] Completed processing chapter: Ch144_Cocaine and Other Sympathomimetics
+[2025-03-13T02:42:43.914Z] [INFO] Processing chapter: Ch145_THC and Hallucinogens
+[2025-03-13T02:42:43.959Z] [INFO] Inserted/updated chapter: THC and Hallucinogens (ID: 51)
+[2025-03-13T02:42:44.005Z] [INFO] Completed processing chapter: Ch145_THC and Hallucinogens
+[2025-03-13T02:42:44.005Z] [INFO] Processing chapter: Ch146_Iron and Heavy Metals
+[2025-03-13T02:42:44.052Z] [INFO] Inserted/updated chapter: Iron and Heavy Metals (ID: 52)
+[2025-03-13T02:42:44.098Z] [INFO] Completed processing chapter: Ch146_Iron and Heavy Metals
+[2025-03-13T02:42:44.098Z] [INFO] Processing chapter: Ch147_Hydrocarbons
+[2025-03-13T02:42:44.144Z] [INFO] Inserted/updated chapter: Hydrocarbons (ID: 53)
+[2025-03-13T02:42:44.189Z] [INFO] Completed processing chapter: Ch147_Hydrocarbons
+[2025-03-13T02:42:44.189Z] [INFO] Processing chapter: Ch148_Inhaled Toxins
+[2025-03-13T02:42:44.239Z] [INFO] Inserted/updated chapter: Inhaled Toxins (ID: 54)
+[2025-03-13T02:42:44.292Z] [INFO] Completed processing chapter: Ch148_Inhaled Toxins
+[2025-03-13T02:42:44.293Z] [INFO] Processing chapter: Ch149_Lithium
+[2025-03-13T02:42:44.342Z] [INFO] Inserted/updated chapter: Lithium (ID: 55)
+[2025-03-13T02:42:44.386Z] [INFO] Completed processing chapter: Ch149_Lithium
+[2025-03-13T02:42:44.386Z] [INFO] Processing chapter: Ch14_Seizures
+[2025-03-13T02:42:44.436Z] [INFO] Inserted/updated chapter: Seizures (ID: 56)
+[2025-03-13T02:42:44.484Z] [INFO] Completed processing chapter: Ch14_Seizures
+[2025-03-13T02:42:44.484Z] [INFO] Processing chapter: Ch150_Antipsychotics
+[2025-03-13T02:42:44.553Z] [INFO] Inserted/updated chapter: Antipsychotics (ID: 57)
+[2025-03-13T02:42:44.600Z] [INFO] Completed processing chapter: Ch150_Antipsychotics
+[2025-03-13T02:42:44.600Z] [INFO] Processing chapter: Ch151_Opioids
+[2025-03-13T02:42:44.652Z] [INFO] Inserted/updated chapter: Opioids (ID: 58)
+[2025-03-13T02:42:44.703Z] [INFO] Completed processing chapter: Ch151_Opioids
+[2025-03-13T02:42:44.704Z] [INFO] Processing chapter: Ch152_Pesticides
+[2025-03-13T02:42:44.749Z] [INFO] Inserted/updated chapter: Pesticides (ID: 59)
+[2025-03-13T02:42:44.805Z] [INFO] Completed processing chapter: Ch152_Pesticides
+[2025-03-13T02:42:44.805Z] [INFO] Processing chapter: Ch153_Plants, Herbal Medications, and Mushrooms
+[2025-03-13T02:42:44.857Z] [INFO] Inserted/updated chapter: Plants, Herbal Medications, and Mushrooms (ID: 60)
+[2025-03-13T02:42:44.907Z] [INFO] Completed processing chapter: Ch153_Plants, Herbal Medications, and Mushrooms
+[2025-03-13T02:42:44.908Z] [INFO] Processing chapter: Ch154_Sedative-Hypnotics
+[2025-03-13T02:42:44.962Z] [INFO] Inserted/updated chapter: Sedative-Hypnotics (ID: 61)
+[2025-03-13T02:42:45.012Z] [INFO] Completed processing chapter: Ch154_Sedative-Hypnotics
+[2025-03-13T02:42:45.012Z] [INFO] Processing chapter: Ch155_Care of the Pediatric Patient
+[2025-03-13T02:42:45.060Z] [INFO] Inserted/updated chapter: Care of the Pediatric Patient (ID: 62)
+[2025-03-13T02:42:45.110Z] [INFO] Completed processing chapter: Ch155_Care of the Pediatric Patient
+[2025-03-13T02:42:45.110Z] [INFO] Processing chapter: Ch156_Pediatric Airway Management
+[2025-03-13T02:42:45.159Z] [INFO] Inserted/updated chapter: Pediatric Airway Management (ID: 63)
+[2025-03-13T02:42:45.204Z] [INFO] Completed processing chapter: Ch156_Pediatric Airway Management
+[2025-03-13T02:42:45.205Z] [INFO] Processing chapter: Ch157_Pediatric Sedation and Analgesia
+[2025-03-13T02:42:45.257Z] [INFO] Inserted/updated chapter: Pediatric Sedation and Analgesia (ID: 64)
+[2025-03-13T02:42:45.307Z] [INFO] Completed processing chapter: Ch157_Pediatric Sedation and Analgesia
+[2025-03-13T02:42:45.307Z] [INFO] Processing chapter: Ch158_Pediatric Resuscitation
+[2025-03-13T02:42:45.359Z] [INFO] Inserted/updated chapter: Pediatric Resuscitation (ID: 65)
+[2025-03-13T02:42:45.406Z] [INFO] Completed processing chapter: Ch158_Pediatric Resuscitation
+[2025-03-13T02:42:45.406Z] [INFO] Processing chapter: Ch159_Neonatal Resuscitation
+[2025-03-13T02:42:45.456Z] [INFO] Inserted/updated chapter: Neonatal Resuscitation (ID: 66)
+[2025-03-13T02:42:45.501Z] [INFO] Completed processing chapter: Ch159_Neonatal Resuscitation
+[2025-03-13T02:42:45.502Z] [INFO] Processing chapter: Ch15_Dizziness and Vertigo
+[2025-03-13T02:42:45.553Z] [INFO] Inserted/updated chapter: Dizziness and Vertigo (ID: 67)
+[2025-03-13T02:42:45.601Z] [INFO] Completed processing chapter: Ch15_Dizziness and Vertigo
+[2025-03-13T02:42:45.601Z] [INFO] Processing chapter: Ch160_Pediatric Trauma
+[2025-03-13T02:42:45.652Z] [INFO] Inserted/updated chapter: Pediatric Trauma (ID: 68)
+[2025-03-13T02:42:45.700Z] [INFO] Completed processing chapter: Ch160_Pediatric Trauma
+[2025-03-13T02:42:45.700Z] [INFO] Processing chapter: Ch161_Pediatric Fever
+[2025-03-13T02:42:45.749Z] [INFO] Inserted/updated chapter: Pediatric Fever (ID: 69)
+[2025-03-13T02:42:45.795Z] [INFO] Completed processing chapter: Ch161_Pediatric Fever
+[2025-03-13T02:42:45.795Z] [INFO] Processing chapter: Ch162_Pediatric Upper Airway Obstruction and Infections
+[2025-03-13T02:42:45.849Z] [INFO] Inserted/updated chapter: Pediatric Upper Airway Obstruction and Infections (ID: 70)
+[2025-03-13T02:42:45.895Z] [INFO] Completed processing chapter: Ch162_Pediatric Upper Airway Obstruction and Infections
+[2025-03-13T02:42:45.895Z] [INFO] Processing chapter: Ch163_Pediatric Lower Airway Obstruction
+[2025-03-13T02:42:45.943Z] [INFO] Inserted/updated chapter: Pediatric Lower Airway Obstruction (ID: 71)
+[2025-03-13T02:42:45.990Z] [INFO] Completed processing chapter: Ch163_Pediatric Lower Airway Obstruction
+[2025-03-13T02:42:45.991Z] [INFO] Processing chapter: Ch164_Pediatric Lung Disease
+[2025-03-13T02:42:46.039Z] [INFO] Inserted/updated chapter: Pediatric Lung Disease (ID: 72)
+[2025-03-13T02:42:46.089Z] [INFO] Completed processing chapter: Ch164_Pediatric Lung Disease
+[2025-03-13T02:42:46.089Z] [INFO] Processing chapter: Ch165_Pediatric Cardiac Disorders
+[2025-03-13T02:42:46.135Z] [INFO] Inserted/updated chapter: Pediatric Cardiac Disorders (ID: 73)
+[2025-03-13T02:42:46.192Z] [INFO] Completed processing chapter: Ch165_Pediatric Cardiac Disorders
+[2025-03-13T02:42:46.192Z] [INFO] Processing chapter: Ch166_Pediatric Gastrointestinal Disorders
+[2025-03-13T02:42:46.243Z] [INFO] Inserted/updated chapter: Pediatric Gastrointestinal Disorders (ID: 74)
+[2025-03-13T02:42:46.290Z] [INFO] Completed processing chapter: Ch166_Pediatric Gastrointestinal Disorders
+[2025-03-13T02:42:46.290Z] [INFO] Processing chapter: Ch167_Pediatric Infectious Diarrheal Disease and Dehydration
+[2025-03-13T02:42:46.350Z] [INFO] Inserted/updated chapter: Pediatric Infectious Diarrheal Disease and Dehydration (ID: 75)
+[2025-03-13T02:42:46.395Z] [INFO] Completed processing chapter: Ch167_Pediatric Infectious Diarrheal Disease and Dehydration
+[2025-03-13T02:42:46.396Z] [INFO] Processing chapter: Ch168_Pediatric Genitourinary and Renal Tract Disorders
+[2025-03-13T02:42:46.444Z] [INFO] Inserted/updated chapter: Pediatric Genitourinary and Renal Tract Disorders (ID: 76)
+[2025-03-13T02:42:46.489Z] [INFO] Completed processing chapter: Ch168_Pediatric Genitourinary and Renal Tract Disorders
+[2025-03-13T02:42:46.490Z] [INFO] Processing chapter: Ch169_Pediatric Neurologic Disorders
+[2025-03-13T02:42:46.552Z] [INFO] Inserted/updated chapter: Pediatric Neurologic Disorders (ID: 77)
+[2025-03-13T02:42:46.605Z] [INFO] Completed processing chapter: Ch169_Pediatric Neurologic Disorders
+[2025-03-13T02:42:46.605Z] [INFO] Processing chapter: Ch16_Headache
+[2025-03-13T02:42:46.656Z] [INFO] Inserted/updated chapter: Headache (ID: 78)
+[2025-03-13T02:42:46.713Z] [INFO] Completed processing chapter: Ch16_Headache
+[2025-03-13T02:42:46.713Z] [INFO] Processing chapter: Ch170_Pediatric Musculoskeletal Disorders
+[2025-03-13T02:42:46.769Z] [INFO] Inserted/updated chapter: Pediatric Musculoskeletal Disorders (ID: 79)
+[2025-03-13T02:42:46.823Z] [INFO] Completed processing chapter: Ch170_Pediatric Musculoskeletal Disorders
+[2025-03-13T02:42:46.823Z] [INFO] Processing chapter: Ch171_Pediatric Drug Therapy
+[2025-03-13T02:42:46.872Z] [INFO] Inserted/updated chapter: Pediatric Drug Therapy (ID: 80)
+[2025-03-13T02:42:46.920Z] [INFO] Completed processing chapter: Ch171_Pediatric Drug Therapy
+[2025-03-13T02:42:46.920Z] [INFO] Processing chapter: Ch172_Child Abuse
+[2025-03-13T02:42:46.963Z] [INFO] Inserted/updated chapter: Child Abuse (ID: 81)
+[2025-03-13T02:42:47.010Z] [INFO] Completed processing chapter: Ch172_Child Abuse
+[2025-03-13T02:42:47.011Z] [INFO] Processing chapter: Ch173_Complications of Pregnancy
+[2025-03-13T02:42:47.073Z] [INFO] Inserted/updated chapter: Complications of Pregnancy (ID: 82)
+[2025-03-13T02:42:47.124Z] [INFO] Completed processing chapter: Ch173_Complications of Pregnancy
+[2025-03-13T02:42:47.124Z] [INFO] Processing chapter: Ch174_Medical Emergencies During Pregnancy
+[2025-03-13T02:42:47.178Z] [INFO] Inserted/updated chapter: Medical Emergencies During Pregnancy (ID: 83)
+[2025-03-13T02:42:47.224Z] [INFO] Completed processing chapter: Ch174_Medical Emergencies During Pregnancy
+[2025-03-13T02:42:47.224Z] [INFO] Processing chapter: Ch175_Drug Therapy in Pregnancy
+[2025-03-13T02:42:47.272Z] [INFO] Inserted/updated chapter: Drug Therapy in Pregnancy (ID: 84)
+[2025-03-13T02:42:47.325Z] [INFO] Completed processing chapter: Ch175_Drug Therapy in Pregnancy
+[2025-03-13T02:42:47.325Z] [INFO] Processing chapter: Ch176_Labor and Delivery
+[2025-03-13T02:42:47.382Z] [INFO] Inserted/updated chapter: Labor and Delivery (ID: 85)
+[2025-03-13T02:42:47.429Z] [INFO] Completed processing chapter: Ch176_Labor and Delivery
+[2025-03-13T02:42:47.429Z] [INFO] Processing chapter: Ch177_Trauma in Pregnancy
+[2025-03-13T02:42:47.479Z] [INFO] Inserted/updated chapter: Trauma in Pregnancy (ID: 86)
+[2025-03-13T02:42:47.529Z] [INFO] Completed processing chapter: Ch177_Trauma in Pregnancy
+[2025-03-13T02:42:47.529Z] [INFO] Processing chapter: Ch178_Care of the Geriatric Patient
+[2025-03-13T02:42:47.581Z] [INFO] Inserted/updated chapter: Care of the Geriatric Patient (ID: 87)
+[2025-03-13T02:42:47.626Z] [INFO] Completed processing chapter: Ch178_Care of the Geriatric Patient
+[2025-03-13T02:42:47.626Z] [INFO] Processing chapter: Ch179_Geriatric Trauma
+[2025-03-13T02:42:47.673Z] [INFO] Inserted/updated chapter: Geriatric Trauma (ID: 88)
+[2025-03-13T02:42:47.719Z] [INFO] Completed processing chapter: Ch179_Geriatric Trauma
+[2025-03-13T02:42:47.719Z] [INFO] Processing chapter: Ch17_Diplopia
+[2025-03-13T02:42:47.766Z] [INFO] Inserted/updated chapter: Diplopia (ID: 89)
+[2025-03-13T02:42:47.811Z] [INFO] Completed processing chapter: Ch17_Diplopia
+[2025-03-13T02:42:47.811Z] [INFO] Processing chapter: Ch180_Geriatric Drug Therapy
+[2025-03-13T02:42:47.864Z] [INFO] Inserted/updated chapter: Geriatric Drug Therapy (ID: 90)
+[2025-03-13T02:42:47.910Z] [INFO] Completed processing chapter: Ch180_Geriatric Drug Therapy
+[2025-03-13T02:42:47.910Z] [INFO] Processing chapter: Ch181_Geriatric Abuse and Neglect
+[2025-03-13T02:42:47.959Z] [INFO] Inserted/updated chapter: Geriatric Abuse and Neglect (ID: 91)
+[2025-03-13T02:42:48.006Z] [INFO] Completed processing chapter: Ch181_Geriatric Abuse and Neglect
+[2025-03-13T02:42:48.006Z] [INFO] Processing chapter: Ch182_The Immunocompromised Patient
+[2025-03-13T02:42:48.066Z] [INFO] Inserted/updated chapter: The Immunocompromised Patient (ID: 92)
+[2025-03-13T02:42:48.130Z] [INFO] Completed processing chapter: Ch182_The Immunocompromised Patient
+[2025-03-13T02:42:48.131Z] [INFO] Processing chapter: Ch183_The Solid Organ Transplant Patient
+[2025-03-13T02:42:48.178Z] [INFO] Inserted/updated chapter: The Solid Organ Transplant Patient (ID: 93)
+[2025-03-13T02:42:48.231Z] [INFO] Completed processing chapter: Ch183_The Solid Organ Transplant Patient
+[2025-03-13T02:42:48.231Z] [INFO] Processing chapter: Ch184_The Morbidly Obese Patient
+[2025-03-13T02:42:48.279Z] [INFO] Inserted/updated chapter: The Morbidly Obese Patient (ID: 94)
+[2025-03-13T02:42:48.324Z] [INFO] Completed processing chapter: Ch184_The Morbidly Obese Patient
+[2025-03-13T02:42:48.324Z] [INFO] Processing chapter: Ch185_The Combative and Difficult Patient
+[2025-03-13T02:42:48.370Z] [INFO] Inserted/updated chapter: The Combative and Difficult Patient (ID: 95)
+[2025-03-13T02:42:48.413Z] [INFO] Completed processing chapter: Ch185_The Combative and Difficult Patient
+[2025-03-13T02:42:48.413Z] [INFO] Processing chapter: Ch18_Red and Painful Eye
+[2025-03-13T02:42:48.463Z] [INFO] Inserted/updated chapter: Red and Painful Eye (ID: 96)
+[2025-03-13T02:42:48.507Z] [INFO] Completed processing chapter: Ch18_Red and Painful Eye
+[2025-03-13T02:42:48.507Z] [INFO] Processing chapter: Ch19_Sore Throat
+[2025-03-13T02:42:48.569Z] [INFO] Inserted/updated chapter: Sore Throat (ID: 97)
+[2025-03-13T02:42:48.629Z] [INFO] Completed processing chapter: Ch19_Sore Throat
+[2025-03-13T02:42:48.629Z] [INFO] Processing chapter: Ch20_Hemoptysis
+[2025-03-13T02:42:48.693Z] [INFO] Inserted/updated chapter: Hemoptysis (ID: 98)
+[2025-03-13T02:42:48.738Z] [INFO] Completed processing chapter: Ch20_Hemoptysis
+[2025-03-13T02:42:48.738Z] [INFO] Processing chapter: Ch21_Dyspnea
+[2025-03-13T02:42:48.783Z] [INFO] Inserted/updated chapter: Dyspnea (ID: 99)
+[2025-03-13T02:42:48.831Z] [INFO] Completed processing chapter: Ch21_Dyspnea
+[2025-03-13T02:42:48.831Z] [INFO] Processing chapter: Ch22_Chest Pain
+[2025-03-13T02:42:48.880Z] [INFO] Inserted/updated chapter: Chest Pain (ID: 100)
+[2025-03-13T02:42:48.926Z] [INFO] Completed processing chapter: Ch22_Chest Pain
+[2025-03-13T02:42:48.927Z] [INFO] Processing chapter: Ch23_Abdominal Pain
+[2025-03-13T02:42:48.973Z] [INFO] Inserted/updated chapter: Abdominal Pain (ID: 101)
+[2025-03-13T02:42:49.025Z] [INFO] Completed processing chapter: Ch23_Abdominal Pain
+[2025-03-13T02:42:49.025Z] [INFO] Processing chapter: Ch24_Jaundice
+[2025-03-13T02:42:49.079Z] [INFO] Inserted/updated chapter: Jaundice (ID: 102)
+[2025-03-13T02:42:49.125Z] [INFO] Completed processing chapter: Ch24_Jaundice
+[2025-03-13T02:42:49.126Z] [INFO] Processing chapter: Ch25_Nausea and Vomiting
+[2025-03-13T02:42:49.171Z] [INFO] Inserted/updated chapter: Nausea and Vomiting (ID: 103)
+[2025-03-13T02:42:49.216Z] [INFO] Completed processing chapter: Ch25_Nausea and Vomiting
+[2025-03-13T02:42:49.217Z] [INFO] Processing chapter: Ch26_Gastrointestinal Bleeding
+[2025-03-13T02:42:49.262Z] [INFO] Inserted/updated chapter: Gastrointestinal Bleeding (ID: 104)
+[2025-03-13T02:42:49.311Z] [INFO] Completed processing chapter: Ch26_Gastrointestinal Bleeding
+[2025-03-13T02:42:49.311Z] [INFO] Processing chapter: Ch27_Diarrhea
+[2025-03-13T02:42:49.358Z] [INFO] Inserted/updated chapter: Diarrhea (ID: 105)
+[2025-03-13T02:42:49.406Z] [INFO] Completed processing chapter: Ch27_Diarrhea
+[2025-03-13T02:42:49.406Z] [INFO] Processing chapter: Ch28_Constipation
+[2025-03-13T02:42:49.460Z] [INFO] Inserted/updated chapter: Constipation (ID: 106)
+[2025-03-13T02:42:49.507Z] [INFO] Completed processing chapter: Ch28_Constipation
+[2025-03-13T02:42:49.507Z] [INFO] Processing chapter: Ch29_Acute Pelvic Pain
+[2025-03-13T02:42:49.567Z] [INFO] Inserted/updated chapter: Acute Pelvic Pain (ID: 107)
+[2025-03-13T02:42:49.624Z] [INFO] Completed processing chapter: Ch29_Acute Pelvic Pain
+[2025-03-13T02:42:49.625Z] [INFO] Processing chapter: Ch30_Vaginal Bleeding
+[2025-03-13T02:42:49.676Z] [INFO] Inserted/updated chapter: Vaginal Bleeding (ID: 108)
+[2025-03-13T02:42:49.735Z] [INFO] Completed processing chapter: Ch30_Vaginal Bleeding
+[2025-03-13T02:42:49.736Z] [INFO] Processing chapter: Ch31_Back Pain
+[2025-03-13T02:42:49.790Z] [INFO] Inserted/updated chapter: Back Pain (ID: 109)
+[2025-03-13T02:42:49.840Z] [INFO] Completed processing chapter: Ch31_Back Pain
+[2025-03-13T02:42:49.840Z] [INFO] Processing chapter: Ch32_Multiple Trauma
+[2025-03-13T02:42:49.891Z] [INFO] Inserted/updated chapter: Multiple Trauma (ID: 110)
+[2025-03-13T02:42:49.940Z] [INFO] Completed processing chapter: Ch32_Multiple Trauma
+[2025-03-13T02:42:49.940Z] [INFO] Processing chapter: Ch33_Head Trauma
+[2025-03-13T02:42:49.993Z] [INFO] Inserted/updated chapter: Head Trauma (ID: 111)
+[2025-03-13T02:42:50.040Z] [INFO] Completed processing chapter: Ch33_Head Trauma
+[2025-03-13T02:42:50.040Z] [INFO] Processing chapter: Ch34_Facial Trauma
+[2025-03-13T02:42:50.088Z] [INFO] Inserted/updated chapter: Facial Trauma (ID: 112)
+[2025-03-13T02:42:50.135Z] [INFO] Completed processing chapter: Ch34_Facial Trauma
+[2025-03-13T02:42:50.135Z] [INFO] Processing chapter: Ch35_Spinal Trauma
+[2025-03-13T02:42:50.182Z] [INFO] Inserted/updated chapter: Spinal Trauma (ID: 113)
+[2025-03-13T02:42:50.229Z] [INFO] Completed processing chapter: Ch35_Spinal Trauma
+[2025-03-13T02:42:50.229Z] [INFO] Processing chapter: Ch36_Neck Trauma
+[2025-03-13T02:42:50.275Z] [INFO] Inserted/updated chapter: Neck Trauma (ID: 114)
+[2025-03-13T02:42:50.320Z] [INFO] Completed processing chapter: Ch36_Neck Trauma
+[2025-03-13T02:42:50.320Z] [INFO] Processing chapter: Ch37_Thoracic Trauma
+[2025-03-13T02:42:50.367Z] [INFO] Inserted/updated chapter: Thoracic Trauma (ID: 115)
+[2025-03-13T02:42:50.413Z] [INFO] Completed processing chapter: Ch37_Thoracic Trauma
+[2025-03-13T02:42:50.414Z] [INFO] Processing chapter: Ch38_Abdominal Trauma
+[2025-03-13T02:42:50.460Z] [INFO] Inserted/updated chapter: Abdominal Trauma (ID: 116)
+[2025-03-13T02:42:50.510Z] [INFO] Completed processing chapter: Ch38_Abdominal Trauma
+[2025-03-13T02:42:50.510Z] [INFO] Processing chapter: Ch39_Genitourinary Trauma
+[2025-03-13T02:42:50.557Z] [INFO] Inserted/updated chapter: Genitourinary Trauma (ID: 117)
+[2025-03-13T02:42:50.605Z] [INFO] Completed processing chapter: Ch39_Genitourinary Trauma
+[2025-03-13T02:42:50.606Z] [INFO] Processing chapter: Ch40_Peripheral Vascular Trauma
+[2025-03-13T02:42:50.665Z] [INFO] Inserted/updated chapter: Peripheral Vascular Trauma (ID: 118)
+[2025-03-13T02:42:50.713Z] [INFO] Completed processing chapter: Ch40_Peripheral Vascular Trauma
+[2025-03-13T02:42:50.713Z] [INFO] Processing chapter: Ch41_General Principles of Orthopedic Injuries
+[2025-03-13T02:42:50.766Z] [INFO] Inserted/updated chapter: General Principles of Orthopedic Injuries (ID: 119)
+[2025-03-13T02:42:50.817Z] [INFO] Completed processing chapter: Ch41_General Principles of Orthopedic Injuries
+[2025-03-13T02:42:50.817Z] [INFO] Processing chapter: Ch42_Hand Injuries
+[2025-03-13T02:42:50.862Z] [INFO] Inserted/updated chapter: Hand Injuries (ID: 120)
+[2025-03-13T02:42:50.911Z] [INFO] Completed processing chapter: Ch42_Hand Injuries
+[2025-03-13T02:42:50.912Z] [INFO] Processing chapter: Ch43_Wrist and Forearm Injuries
+[2025-03-13T02:42:50.967Z] [INFO] Inserted/updated chapter: Wrist and Forearm Injuries (ID: 121)
+[2025-03-13T02:42:51.012Z] [INFO] Completed processing chapter: Ch43_Wrist and Forearm Injuries
+[2025-03-13T02:42:51.012Z] [INFO] Processing chapter: Ch44_Humerus and Elbow Injuries
+[2025-03-13T02:42:51.062Z] [INFO] Inserted/updated chapter: Humerus and Elbow Injuries (ID: 122)
+[2025-03-13T02:42:51.116Z] [INFO] Completed processing chapter: Ch44_Humerus and Elbow Injuries
+[2025-03-13T02:42:51.116Z] [INFO] Processing chapter: Ch45_Shoulder Injuries
+[2025-03-13T02:42:51.161Z] [INFO] Inserted/updated chapter: Shoulder Injuries (ID: 123)
+[2025-03-13T02:42:51.206Z] [INFO] Completed processing chapter: Ch45_Shoulder Injuries
+[2025-03-13T02:42:51.206Z] [INFO] Processing chapter: Ch46_Pelvic Injuries
+[2025-03-13T02:42:51.260Z] [INFO] Inserted/updated chapter: Pelvic Injuries (ID: 124)
+[2025-03-13T02:42:51.305Z] [INFO] Completed processing chapter: Ch46_Pelvic Injuries
+[2025-03-13T02:42:51.305Z] [INFO] Processing chapter: Ch47_Femur and Hip Injuries
+[2025-03-13T02:42:51.355Z] [INFO] Inserted/updated chapter: Femur and Hip Injuries (ID: 125)
+[2025-03-13T02:42:51.416Z] [INFO] Completed processing chapter: Ch47_Femur and Hip Injuries
+[2025-03-13T02:42:51.416Z] [INFO] Processing chapter: Ch48_Knee and Lower Leg Injuries
+[2025-03-13T02:42:51.464Z] [INFO] Inserted/updated chapter: Knee and Lower Leg Injuries (ID: 126)
+[2025-03-13T02:42:51.511Z] [INFO] Completed processing chapter: Ch48_Knee and Lower Leg Injuries
+[2025-03-13T02:42:51.511Z] [INFO] Processing chapter: Ch49_Ankle and Foot Injuries
+[2025-03-13T02:42:51.561Z] [INFO] Inserted/updated chapter: Ankle and Foot Injuries (ID: 127)
+[2025-03-13T02:42:51.605Z] [INFO] Completed processing chapter: Ch49_Ankle and Foot Injuries
+[2025-03-13T02:42:51.605Z] [INFO] Processing chapter: Ch50_Wound Management Principles
+[2025-03-13T02:42:51.653Z] [INFO] Inserted/updated chapter: Wound Management Principles (ID: 128)
+[2025-03-13T02:42:51.709Z] [INFO] Completed processing chapter: Ch50_Wound Management Principles
+[2025-03-13T02:42:51.710Z] [INFO] Processing chapter: Ch51_Foreign Bodies
+[2025-03-13T02:42:51.772Z] [INFO] Inserted/updated chapter: Foreign Bodies (ID: 129)
+[2025-03-13T02:42:51.822Z] [INFO] Completed processing chapter: Ch51_Foreign Bodies
+[2025-03-13T02:42:51.822Z] [INFO] Processing chapter: Ch52_Mammalian Bites
+[2025-03-13T02:42:51.871Z] [INFO] Inserted/updated chapter: Mammalian Bites (ID: 130)
+[2025-03-13T02:42:51.917Z] [INFO] Completed processing chapter: Ch52_Mammalian Bites
+[2025-03-13T02:42:51.917Z] [INFO] Processing chapter: Ch53_Venomous Animal Injuries
+[2025-03-13T02:42:51.962Z] [INFO] Inserted/updated chapter: Venomous Animal Injuries (ID: 131)
+[2025-03-13T02:42:52.010Z] [INFO] Completed processing chapter: Ch53_Venomous Animal Injuries
+[2025-03-13T02:42:52.010Z] [INFO] Processing chapter: Ch54_Thermal Injuries
+[2025-03-13T02:42:52.055Z] [INFO] Inserted/updated chapter: Thermal Injuries (ID: 132)
+[2025-03-13T02:42:52.108Z] [INFO] Completed processing chapter: Ch54_Thermal Injuries
+[2025-03-13T02:42:52.109Z] [INFO] Processing chapter: Ch55_Chemical Injuries
+[2025-03-13T02:42:52.159Z] [INFO] Inserted/updated chapter: Chemical Injuries (ID: 133)
+[2025-03-13T02:42:52.205Z] [INFO] Completed processing chapter: Ch55_Chemical Injuries
+[2025-03-13T02:42:52.205Z] [INFO] Processing chapter: Ch56_Oral Medicine
+[2025-03-13T02:42:52.249Z] [INFO] Inserted/updated chapter: Oral Medicine (ID: 134)
+[2025-03-13T02:42:52.294Z] [INFO] Completed processing chapter: Ch56_Oral Medicine
+[2025-03-13T02:42:52.294Z] [INFO] Processing chapter: Ch57_Ophthalmology
+[2025-03-13T02:42:52.347Z] [INFO] Inserted/updated chapter: Ophthalmology (ID: 135)
+[2025-03-13T02:42:52.397Z] [INFO] Completed processing chapter: Ch57_Ophthalmology
+[2025-03-13T02:42:52.397Z] [INFO] Processing chapter: Ch58_Otolaryngology
+[2025-03-13T02:42:52.449Z] [INFO] Inserted/updated chapter: Otolaryngology (ID: 136)
+[2025-03-13T02:42:52.512Z] [INFO] Completed processing chapter: Ch58_Otolaryngology
+[2025-03-13T02:42:52.512Z] [INFO] Processing chapter: Ch59_Asthma
+[2025-03-13T02:42:52.559Z] [INFO] Inserted/updated chapter: Asthma (ID: 137)
+[2025-03-13T02:42:52.608Z] [INFO] Completed processing chapter: Ch59_Asthma
+[2025-03-13T02:42:52.609Z] [INFO] Processing chapter: Ch60_Chronic Obstructive Pulmonary Disease
+[2025-03-13T02:42:52.668Z] [INFO] Inserted/updated chapter: Chronic Obstructive Pulmonary Disease (ID: 138)
+[2025-03-13T02:42:52.711Z] [INFO] Completed processing chapter: Ch60_Chronic Obstructive Pulmonary Disease
+[2025-03-13T02:42:52.711Z] [INFO] Processing chapter: Ch61_Upper Respiratory Tract Infections
+[2025-03-13T02:42:52.759Z] [INFO] Inserted/updated chapter: Upper Respiratory Tract Infections (ID: 139)
+[2025-03-13T02:42:52.810Z] [INFO] Completed processing chapter: Ch61_Upper Respiratory Tract Infections
+[2025-03-13T02:42:52.810Z] [INFO] Processing chapter: Ch62_Pneumonia
+[2025-03-13T02:42:52.855Z] [INFO] Inserted/updated chapter: Pneumonia (ID: 140)
+[2025-03-13T02:42:52.903Z] [INFO] Completed processing chapter: Ch62_Pneumonia
+[2025-03-13T02:42:52.903Z] [INFO] Processing chapter: Ch63_Pleural Disease
+[2025-03-13T02:42:52.951Z] [INFO] Inserted/updated chapter: Pleural Disease (ID: 141)
+[2025-03-13T02:42:53.000Z] [INFO] Completed processing chapter: Ch63_Pleural Disease
+[2025-03-13T02:42:53.001Z] [INFO] Processing chapter: Ch64_Acute Coronary Syndromes
+[2025-03-13T02:42:53.046Z] [INFO] Inserted/updated chapter: Acute Coronary Syndromes (ID: 142)
+[2025-03-13T02:42:53.092Z] [INFO] Completed processing chapter: Ch64_Acute Coronary Syndromes
+[2025-03-13T02:42:53.092Z] [INFO] Processing chapter: Ch65_Dysrhythmias
+[2025-03-13T02:42:53.145Z] [INFO] Inserted/updated chapter: Dysrhythmias (ID: 143)
+[2025-03-13T02:42:53.188Z] [INFO] Completed processing chapter: Ch65_Dysrhythmias
+[2025-03-13T02:42:53.189Z] [INFO] Processing chapter: Ch66_Implantable Cardiac Devices
+[2025-03-13T02:42:53.235Z] [INFO] Inserted/updated chapter: Implantable Cardiac Devices (ID: 144)
+[2025-03-13T02:42:53.281Z] [INFO] Completed processing chapter: Ch66_Implantable Cardiac Devices
+[2025-03-13T02:42:53.281Z] [INFO] Processing chapter: Ch67_Heart Failure
+[2025-03-13T02:42:53.330Z] [INFO] Inserted/updated chapter: Heart Failure (ID: 145)
+[2025-03-13T02:42:53.375Z] [INFO] Completed processing chapter: Ch67_Heart Failure
+[2025-03-13T02:42:53.376Z] [INFO] Processing chapter: Ch68_Pericardial and Myocardial Disease
+[2025-03-13T02:42:53.421Z] [INFO] Inserted/updated chapter: Pericardial and Myocardial Disease (ID: 146)
+[2025-03-13T02:42:53.470Z] [INFO] Completed processing chapter: Ch68_Pericardial and Myocardial Disease
+[2025-03-13T02:42:53.470Z] [INFO] Processing chapter: Ch69_Infective Endocarditis and Valvular Heart Disease
+[2025-03-13T02:42:53.518Z] [INFO] Inserted/updated chapter: Infective Endocarditis and Valvular Heart Disease (ID: 147)
+[2025-03-13T02:42:53.570Z] [INFO] Completed processing chapter: Ch69_Infective Endocarditis and Valvular Heart Disease
+[2025-03-13T02:42:53.570Z] [INFO] Processing chapter: Ch70_Hypertension
+[2025-03-13T02:42:53.615Z] [INFO] Inserted/updated chapter: Hypertension (ID: 148)
+[2025-03-13T02:42:53.661Z] [INFO] Completed processing chapter: Ch70_Hypertension
+[2025-03-13T02:42:53.662Z] [INFO] Processing chapter: Ch71_Aortic Dissection
+[2025-03-13T02:42:53.709Z] [INFO] Inserted/updated chapter: Aortic Dissection (ID: 149)
+[2025-03-13T02:42:53.756Z] [INFO] Completed processing chapter: Ch71_Aortic Dissection
+[2025-03-13T02:42:53.756Z] [INFO] Processing chapter: Ch72_Abdominal Aortic Aneurysm
+[2025-03-13T02:42:53.810Z] [INFO] Inserted/updated chapter: Abdominal Aortic Aneurysm (ID: 150)
+[2025-03-13T02:42:53.859Z] [INFO] Completed processing chapter: Ch72_Abdominal Aortic Aneurysm
+[2025-03-13T02:42:53.859Z] [INFO] Processing chapter: Ch73_Peripheral Arteriovascular Disease
+[2025-03-13T02:42:53.903Z] [INFO] Inserted/updated chapter: Peripheral Arteriovascular Disease (ID: 151)
+[2025-03-13T02:42:53.948Z] [INFO] Completed processing chapter: Ch73_Peripheral Arteriovascular Disease
+[2025-03-13T02:42:53.948Z] [INFO] Processing chapter: Ch74_Pulmonary Embolism and Deep Vein Thrombosis
+[2025-03-13T02:42:53.994Z] [INFO] Inserted/updated chapter: Pulmonary Embolism and Deep Vein Thrombosis (ID: 152)
+[2025-03-13T02:42:54.042Z] [INFO] Completed processing chapter: Ch74_Pulmonary Embolism and Deep Vein Thrombosis
+[2025-03-13T02:42:54.043Z] [INFO] Processing chapter: Ch75_Esophagus, Stomach, and Duodenum
+[2025-03-13T02:42:54.091Z] [INFO] Inserted/updated chapter: Esophagus, Stomach, and Duodenum (ID: 153)
+[2025-03-13T02:42:54.138Z] [INFO] Completed processing chapter: Ch75_Esophagus, Stomach, and Duodenum
+[2025-03-13T02:42:54.139Z] [INFO] Processing chapter: Ch76_Liver and Biliary Tract Disorders
+[2025-03-13T02:42:54.187Z] [INFO] Inserted/updated chapter: Liver and Biliary Tract Disorders (ID: 154)
+[2025-03-13T02:42:54.232Z] [INFO] Completed processing chapter: Ch76_Liver and Biliary Tract Disorders
+[2025-03-13T02:42:54.232Z] [INFO] Processing chapter: Ch77_Pancreas
+[2025-03-13T02:42:54.281Z] [INFO] Inserted/updated chapter: Pancreas (ID: 155)
+[2025-03-13T02:42:54.325Z] [INFO] Completed processing chapter: Ch77_Pancreas
+[2025-03-13T02:42:54.325Z] [INFO] Processing chapter: Ch78_Small Intestine
+[2025-03-13T02:42:54.371Z] [INFO] Inserted/updated chapter: Small Intestine (ID: 156)
+[2025-03-13T02:42:54.417Z] [INFO] Completed processing chapter: Ch78_Small Intestine
+[2025-03-13T02:42:54.417Z] [INFO] Processing chapter: Ch79_Acute Appendicitis
+[2025-03-13T02:42:54.475Z] [INFO] Inserted/updated chapter: Acute Appendicitis (ID: 157)
+[2025-03-13T02:42:54.518Z] [INFO] Completed processing chapter: Ch79_Acute Appendicitis
+[2025-03-13T02:42:54.519Z] [INFO] Processing chapter: Ch80_Gastroenteritis
+[2025-03-13T02:42:54.564Z] [INFO] Inserted/updated chapter: Gastroenteritis (ID: 158)
+[2025-03-13T02:42:54.612Z] [INFO] Completed processing chapter: Ch80_Gastroenteritis
+[2025-03-13T02:42:54.612Z] [INFO] Processing chapter: Ch81_Large Intestine
+[2025-03-13T02:42:54.663Z] [INFO] Inserted/updated chapter: Large Intestine (ID: 159)
+[2025-03-13T02:42:54.708Z] [INFO] Completed processing chapter: Ch81_Large Intestine
+[2025-03-13T02:42:54.708Z] [INFO] Processing chapter: Ch82_Anorectum
+[2025-03-13T02:42:54.755Z] [INFO] Inserted/updated chapter: Anorectum (ID: 160)
+[2025-03-13T02:42:54.799Z] [INFO] Completed processing chapter: Ch82_Anorectum
+[2025-03-13T02:42:54.799Z] [INFO] Processing chapter: Ch83_Renal Failure
+[2025-03-13T02:42:54.855Z] [INFO] Inserted/updated chapter: Renal Failure (ID: 161)
+[2025-03-13T02:42:54.902Z] [INFO] Completed processing chapter: Ch83_Renal Failure
+[2025-03-13T02:42:54.903Z] [INFO] Processing chapter: Ch84_Sexually Transmitted Infections
+[2025-03-13T02:42:54.947Z] [INFO] Inserted/updated chapter: Sexually Transmitted Infections (ID: 162)
+[2025-03-13T02:42:54.995Z] [INFO] Completed processing chapter: Ch84_Sexually Transmitted Infections
+[2025-03-13T02:42:54.995Z] [INFO] Processing chapter: Ch85_Urologic Disorders
+[2025-03-13T02:42:55.045Z] [INFO] Inserted/updated chapter: Urologic Disorders (ID: 163)
+[2025-03-13T02:42:55.096Z] [INFO] Completed processing chapter: Ch85_Urologic Disorders
+[2025-03-13T02:42:55.097Z] [INFO] Processing chapter: Ch86_Gynecologic Disorders
+[2025-03-13T02:42:55.148Z] [INFO] Inserted/updated chapter: Gynecologic Disorders (ID: 164)
+[2025-03-13T02:42:55.196Z] [INFO] Completed processing chapter: Ch86_Gynecologic Disorders
+[2025-03-13T02:42:55.196Z] [INFO] Processing chapter: Ch87_Stroke
+[2025-03-13T02:42:55.239Z] [INFO] Inserted/updated chapter: Stroke (ID: 165)
+[2025-03-13T02:42:55.284Z] [INFO] Completed processing chapter: Ch87_Stroke
+[2025-03-13T02:42:55.284Z] [INFO] Processing chapter: Ch88_Seizure
+[2025-03-13T02:42:55.336Z] [INFO] Inserted/updated chapter: Seizure (ID: 166)
+[2025-03-13T02:42:55.380Z] [INFO] Completed processing chapter: Ch88_Seizure
+[2025-03-13T02:42:55.381Z] [INFO] Processing chapter: Ch89_Headache Disorders
+[2025-03-13T02:42:55.428Z] [INFO] Inserted/updated chapter: Headache Disorders (ID: 167)
+[2025-03-13T02:42:55.477Z] [INFO] Completed processing chapter: Ch89_Headache Disorders
+[2025-03-13T02:42:55.477Z] [INFO] Processing chapter: Ch8_Fever in the Adult Patient
+[2025-03-13T02:42:55.523Z] [INFO] Inserted/updated chapter: Fever in the Adult Patient (ID: 168)
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: alarm-features-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: assessment-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: collateral-history-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: diet-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: differential-diagnosis-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: disposition-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: ecg-component.md
+[2025-03-13T02:42:55.569Z] [WARN] Skipping unknown file: history-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: imaging-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: lab-studies-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: medications-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: past-medical-history-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: patient-education-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: physical-exam-component.md
+[2025-03-13T02:42:55.570Z] [WARN] Skipping unknown file: plan-component.md
+[2025-03-13T02:42:55.571Z] [WARN] Skipping unknown file: review-of-systems-component.md
+[2025-03-13T02:42:55.571Z] [WARN] Skipping unknown file: risk-factors-component.md
+[2025-03-13T02:42:55.571Z] [WARN] Skipping unknown file: special-tests-component.md
+[2025-03-13T02:42:55.571Z] [INFO] Completed processing chapter: Ch8_Fever in the Adult Patient
+[2025-03-13T02:42:55.571Z] [INFO] Processing chapter: Ch90_Delirium and Dementia
+[2025-03-13T02:42:55.615Z] [INFO] Inserted/updated chapter: Delirium and Dementia (ID: 169)
+[2025-03-13T02:42:55.663Z] [INFO] Completed processing chapter: Ch90_Delirium and Dementia
+[2025-03-13T02:42:55.663Z] [INFO] Processing chapter: Ch91_Brain and Cranial Nerve Disorders
+[2025-03-13T02:42:55.713Z] [INFO] Inserted/updated chapter: Brain and Cranial Nerve Disorders (ID: 170)
+[2025-03-13T02:42:55.763Z] [INFO] Completed processing chapter: Ch91_Brain and Cranial Nerve Disorders
+[2025-03-13T02:42:55.763Z] [INFO] Processing chapter: Ch92_Spinal Cord Disorders
+[2025-03-13T02:42:55.809Z] [INFO] Inserted/updated chapter: Spinal Cord Disorders (ID: 171)
+[2025-03-13T02:42:55.855Z] [INFO] Completed processing chapter: Ch92_Spinal Cord Disorders
+[2025-03-13T02:42:55.855Z] [INFO] Processing chapter: Ch93_Peripheral Nerve Disorders
+[2025-03-13T02:42:55.901Z] [INFO] Inserted/updated chapter: Peripheral Nerve Disorders (ID: 172)
+[2025-03-13T02:42:55.963Z] [INFO] Completed processing chapter: Ch93_Peripheral Nerve Disorders
+[2025-03-13T02:42:55.963Z] [INFO] Processing chapter: Ch94_Neuromuscular Disorders
+[2025-03-13T02:42:56.014Z] [INFO] Inserted/updated chapter: Neuromuscular Disorders (ID: 173)
+[2025-03-13T02:42:56.061Z] [INFO] Completed processing chapter: Ch94_Neuromuscular Disorders
+[2025-03-13T02:42:56.062Z] [INFO] Processing chapter: Ch95_Central Nervous System Infections
+[2025-03-13T02:42:56.111Z] [INFO] Inserted/updated chapter: Central Nervous System Infections (ID: 174)
+[2025-03-13T02:42:56.164Z] [INFO] Completed processing chapter: Ch95_Central Nervous System Infections
+[2025-03-13T02:42:56.165Z] [INFO] Processing chapter: Ch96_Thought Disorders
+[2025-03-13T02:42:56.214Z] [INFO] Inserted/updated chapter: Thought Disorders (ID: 175)
+[2025-03-13T02:42:56.264Z] [INFO] Completed processing chapter: Ch96_Thought Disorders
+[2025-03-13T02:42:56.264Z] [INFO] Processing chapter: Ch97_Mood Disorders
+[2025-03-13T02:42:56.323Z] [INFO] Inserted/updated chapter: Mood Disorders (ID: 176)
+[2025-03-13T02:42:56.368Z] [INFO] Completed processing chapter: Ch97_Mood Disorders
+[2025-03-13T02:42:56.368Z] [INFO] Processing chapter: Ch98_Anxiety Disorders
+[2025-03-13T02:42:56.424Z] [INFO] Inserted/updated chapter: Anxiety Disorders (ID: 177)
+[2025-03-13T02:42:56.477Z] [INFO] Completed processing chapter: Ch98_Anxiety Disorders
+[2025-03-13T02:42:56.477Z] [INFO] Processing chapter: Ch99_Somatic Symptoms and Related Disorders
+[2025-03-13T02:42:56.526Z] [INFO] Inserted/updated chapter: Somatic Symptoms and Related Disorders (ID: 178)
+[2025-03-13T02:42:56.571Z] [INFO] Completed processing chapter: Ch99_Somatic Symptoms and Related Disorders
+[2025-03-13T02:42:56.571Z] [INFO] Processing chapter: Ch9_Weakness
+[2025-03-13T02:42:56.618Z] [INFO] Inserted/updated chapter: Weakness (ID: 179)
+[2025-03-13T02:42:56.665Z] [WARN] Skipping unknown file: alarm-features-component.md
+[2025-03-13T02:42:56.665Z] [WARN] Skipping unknown file: assessment-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: collateral-history-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: diet-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: differential-diagnosis-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: disposition-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: ecg-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: history-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: imaging-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: lab-studies-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: medications-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: past-medical-history-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: patient-education-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: physical-exam-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: plan-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: review-of-systems-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: risk-factors-component.md
+[2025-03-13T02:42:56.666Z] [WARN] Skipping unknown file: special-tests-component.md
+[2025-03-13T02:42:56.666Z] [INFO] Completed processing chapter: Ch9_Weakness
+[2025-03-13T02:42:56.667Z] [INFO] Migration completed: 178 chapters processed successfully, 0 chapters had errors

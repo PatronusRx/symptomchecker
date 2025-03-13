@@ -1,0 +1,1069 @@
+{
+  "sections": [
+    "Constitutional",
+    "Cardiovascular",
+    "Respiratory",
+    "Neurological",
+    "Gastrointestinal",
+    "Genitourinary",
+    "Psychiatric",
+    "Endocrine",
+    "Hematologic",
+    "Musculoskeletal",
+    "Ear, Nose, Throat",
+    "Eyes"
+  ],
+  "items": [
+    {
+      "section": "Constitutional",
+      "indentLevel": 0,
+      "text": "Fatigue",
+      "processed": [
+        {
+          "itemText": "Fatigue",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Constitutional",
+      "indentLevel": 0,
+      "text": "Weight loss",
+      "processed": [
+        {
+          "itemText": "Weight loss",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Constitutional",
+      "indentLevel": 0,
+      "text": "Fever",
+      "processed": [
+        {
+          "itemText": "Fever",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Constitutional",
+      "indentLevel": 0,
+      "text": "General weakness",
+      "processed": [
+        {
+          "itemText": "General weakness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Chest pain/discomfort",
+      "processed": [
+        {
+          "itemText": "Chest pain/discomfort",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Palpitations",
+      "processed": [
+        {
+          "itemText": "Palpitations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Dyspnea on exertion",
+      "processed": [
+        {
+          "itemText": "Dyspnea on exertion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Orthopnea",
+      "processed": [
+        {
+          "itemText": "Orthopnea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Paroxysmal nocturnal dyspnea",
+      "processed": [
+        {
+          "itemText": "Paroxysmal nocturnal dyspnea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Peripheral edema",
+      "processed": [
+        {
+          "itemText": "Peripheral edema",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Heart pounding/racing before syncope",
+      "processed": [
+        {
+          "itemText": "Heart pounding/racing before syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Cardiovascular",
+      "indentLevel": 0,
+      "text": "Exercise intolerance",
+      "processed": [
+        {
+          "itemText": "Exercise intolerance",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Respiratory",
+      "indentLevel": 0,
+      "text": "Shortness of breath",
+      "processed": [
+        {
+          "itemText": "Shortness of breath",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Respiratory",
+      "indentLevel": 0,
+      "text": "Chronic cough",
+      "processed": [
+        {
+          "itemText": "Chronic cough",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Respiratory",
+      "indentLevel": 0,
+      "text": "Hemoptysis",
+      "processed": [
+        {
+          "itemText": "Hemoptysis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Respiratory",
+      "indentLevel": 0,
+      "text": "Wheezing",
+      "processed": [
+        {
+          "itemText": "Wheezing",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Respiratory",
+      "indentLevel": 0,
+      "text": "Pleuritic chest pain",
+      "processed": [
+        {
+          "itemText": "Pleuritic chest pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Headache",
+      "processed": [
+        {
+          "itemText": "Headache",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Dizziness",
+      "processed": [
+        {
+          "itemText": "Dizziness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Vertigo",
+      "processed": [
+        {
+          "itemText": "Vertigo",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Vision changes",
+      "processed": [
+        {
+          "itemText": "Vision changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Focal weakness",
+      "processed": [
+        {
+          "itemText": "Focal weakness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Numbness/tingling",
+      "processed": [
+        {
+          "itemText": "Numbness/tingling",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Difficulty with gait/balance",
+      "processed": [
+        {
+          "itemText": "Difficulty with gait/balance",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Aura before episode",
+      "processed": [
+        {
+          "itemText": "Aura before episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Memory issues",
+      "processed": [
+        {
+          "itemText": "Memory issues",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Confusion",
+      "processed": [
+        {
+          "itemText": "Confusion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Neurological",
+      "indentLevel": 0,
+      "text": "Speech disturbances",
+      "processed": [
+        {
+          "itemText": "Speech disturbances",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Abdominal pain",
+      "processed": [
+        {
+          "itemText": "Abdominal pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Nausea",
+      "processed": [
+        {
+          "itemText": "Nausea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Vomiting",
+      "processed": [
+        {
+          "itemText": "Vomiting",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Diarrhea",
+      "processed": [
+        {
+          "itemText": "Diarrhea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Constipation",
+      "processed": [
+        {
+          "itemText": "Constipation",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Blood in stool (melena/hematochezia)",
+      "processed": [
+        {
+          "itemText": "Blood in stool (melena/hematochezia)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Change in bowel habits",
+      "processed": [
+        {
+          "itemText": "Change in bowel habits",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Gastrointestinal",
+      "indentLevel": 0,
+      "text": "Loss of bowel control during episode",
+      "processed": [
+        {
+          "itemText": "Loss of bowel control during episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Dysuria",
+      "processed": [
+        {
+          "itemText": "Dysuria",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Hematuria",
+      "processed": [
+        {
+          "itemText": "Hematuria",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Urinary frequency",
+      "processed": [
+        {
+          "itemText": "Urinary frequency",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Urinary urgency",
+      "processed": [
+        {
+          "itemText": "Urinary urgency",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Nocturia",
+      "processed": [
+        {
+          "itemText": "Nocturia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Urinary incontinence during episode",
+      "processed": [
+        {
+          "itemText": "Urinary incontinence during episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Genitourinary",
+      "indentLevel": 0,
+      "text": "Vaginal bleeding",
+      "processed": [
+        {
+          "itemText": "Vaginal bleeding",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Anxiety",
+      "processed": [
+        {
+          "itemText": "Anxiety",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Depression",
+      "processed": [
+        {
+          "itemText": "Depression",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Panic attacks",
+      "processed": [
+        {
+          "itemText": "Panic attacks",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Stress",
+      "processed": [
+        {
+          "itemText": "Stress",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Sleep disturbances",
+      "processed": [
+        {
+          "itemText": "Sleep disturbances",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Psychiatric",
+      "indentLevel": 0,
+      "text": "Psychogenic symptoms",
+      "processed": [
+        {
+          "itemText": "Psychogenic symptoms",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Endocrine",
+      "indentLevel": 0,
+      "text": "Polydipsia",
+      "processed": [
+        {
+          "itemText": "Polydipsia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Endocrine",
+      "indentLevel": 0,
+      "text": "Polyuria",
+      "processed": [
+        {
+          "itemText": "Polyuria",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Endocrine",
+      "indentLevel": 0,
+      "text": "Heat/cold intolerance",
+      "processed": [
+        {
+          "itemText": "Heat/cold intolerance",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Endocrine",
+      "indentLevel": 0,
+      "text": "Excessive sweating",
+      "processed": [
+        {
+          "itemText": "Excessive sweating",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hematologic",
+      "indentLevel": 0,
+      "text": "Easy bruising",
+      "processed": [
+        {
+          "itemText": "Easy bruising",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hematologic",
+      "indentLevel": 0,
+      "text": "Bleeding tendencies",
+      "processed": [
+        {
+          "itemText": "Bleeding tendencies",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Hematologic",
+      "indentLevel": 0,
+      "text": "Anemia symptoms",
+      "processed": [
+        {
+          "itemText": "Anemia symptoms",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Musculoskeletal",
+      "indentLevel": 0,
+      "text": "Joint pain",
+      "processed": [
+        {
+          "itemText": "Joint pain",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Musculoskeletal",
+      "indentLevel": 0,
+      "text": "Muscle weakness",
+      "processed": [
+        {
+          "itemText": "Muscle weakness",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Musculoskeletal",
+      "indentLevel": 0,
+      "text": "Injuries from falls",
+      "processed": [
+        {
+          "itemText": "Injuries from falls",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ear, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Hearing changes",
+      "processed": [
+        {
+          "itemText": "Hearing changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ear, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Tinnitus",
+      "processed": [
+        {
+          "itemText": "Tinnitus",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ear, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Nasal congestion",
+      "processed": [
+        {
+          "itemText": "Nasal congestion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Ear, Nose, Throat",
+      "indentLevel": 0,
+      "text": "Sore throat",
+      "processed": [
+        {
+          "itemText": "Sore throat",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Eyes",
+      "indentLevel": 0,
+      "text": "Blurred vision",
+      "processed": [
+        {
+          "itemText": "Blurred vision",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Eyes",
+      "indentLevel": 0,
+      "text": "Tunnel vision",
+      "processed": [
+        {
+          "itemText": "Tunnel vision",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Eyes",
+      "indentLevel": 0,
+      "text": "Vision blackout",
+      "processed": [
+        {
+          "itemText": "Vision blackout",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Eyes",
+      "indentLevel": 0,
+      "text": "Photophobia",
+      "processed": [
+        {
+          "itemText": "Photophobia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [],
+  "multipleInputs": [],
+  "icd10Codes": [],
+  "nestedItems": {
+    "Constitutional": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Cardiovascular": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Respiratory": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 5
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Neurological": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Gastrointestinal": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Genitourinary": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 7
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Psychiatric": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 6
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Endocrine": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Hematologic": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Musculoskeletal": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Ear, Nose, Throat": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Eyes": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}

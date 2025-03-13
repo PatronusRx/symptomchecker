@@ -1,0 +1,751 @@
+{
+  "sections": [
+    "High-Risk Features",
+    "Critical Diagnoses To Consider",
+    "Emergent Diagnostic Factors",
+    "Concerning Cardiac Symptoms",
+    "Concerning Neurological Symptoms",
+    "Concerning Abdominal/GI Symptoms"
+  ],
+  "items": [
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Age > 60 years",
+      "processed": [
+        {
+          "itemText": "Age > 60 years",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Male gender",
+      "processed": [
+        {
+          "itemText": "Male gender",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Abnormal ECG findings",
+      "processed": [
+        {
+          "itemText": "Abnormal ECG findings",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Syncope during exertion",
+      "processed": [
+        {
+          "itemText": "Syncope during exertion",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Syncope in supine position",
+      "processed": [
+        {
+          "itemText": "Syncope in supine position",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Syncope without prodrome/warning",
+      "processed": [
+        {
+          "itemText": "Syncope without prodrome/warning",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Syncope with accompanying palpitations",
+      "processed": [
+        {
+          "itemText": "Syncope with accompanying palpitations",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "High-Risk Features",
+      "indentLevel": 0,
+      "text": "Family history of sudden cardiac death (< 50 years old)",
+      "processed": [
+        {
+          "itemText": "Family history of sudden cardiac death (< 50 years old)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Myocardial infarction (I21.9)",
+      "processed": [
+        {
+          "itemText": "Myocardial infarction",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I21.9"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Life-threatening dysrhythmias",
+      "processed": [
+        {
+          "itemText": "Life-threatening dysrhythmias",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Acute aortic dissection (I71.0)",
+      "processed": [
+        {
+          "itemText": "Acute aortic dissection",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.0"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Critical aortic stenosis (I35.0)",
+      "processed": [
+        {
+          "itemText": "Critical aortic stenosis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I35.0"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Hypertrophic cardiomyopathy (I42.1-I42.2)",
+      "processed": [
+        {
+          "itemText": "Hypertrophic cardiomyopathy (I42.1-I42.2)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Pericardial tamponade (I31.9)",
+      "processed": [
+        {
+          "itemText": "Pericardial tamponade",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I31.9"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Abdominal aortic aneurysm, ruptured (I71.3)",
+      "processed": [
+        {
+          "itemText": "Abdominal aortic aneurysm, ruptured",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I71.3"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Massive pulmonary embolism (I26.0)",
+      "processed": [
+        {
+          "itemText": "Massive pulmonary embolism",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I26.0"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Subarachnoid hemorrhage (I60.9)",
+      "processed": [
+        {
+          "itemText": "Subarachnoid hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I60.9"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Toxic-metabolic derangements",
+      "processed": [
+        {
+          "itemText": "Toxic-metabolic derangements",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Severe hypovolemia or hemorrhage",
+      "processed": [
+        {
+          "itemText": "Severe hypovolemia or hemorrhage",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Ruptured ectopic pregnancy (O00.1)",
+      "processed": [
+        {
+          "itemText": "Ruptured ectopic pregnancy",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "O00.1"
+        }
+      ]
+    },
+    {
+      "section": "Critical Diagnoses To Consider",
+      "indentLevel": 0,
+      "text": "Sepsis (A41.9)",
+      "processed": [
+        {
+          "itemText": "Sepsis",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "A41.9"
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Systolic blood pressure < 90 mmHg or > 180 mmHg",
+      "processed": [
+        {
+          "itemText": "Systolic blood pressure < 90 mmHg or > 180 mmHg",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Elevated troponin level (>99th percentile)",
+      "processed": [
+        {
+          "itemText": "Elevated troponin level (>99th percentile)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Abnormal QRS axis (<-30 degrees or >110 degrees)",
+      "processed": [
+        {
+          "itemText": "Abnormal QRS axis (<-30 degrees or >110 degrees)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Prolonged QRS interval (>130 ms)",
+      "processed": [
+        {
+          "itemText": "Prolonged QRS interval (>130 ms)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Prolonged corrected QT interval (>480 ms)",
+      "processed": [
+        {
+          "itemText": "Prolonged corrected QT interval (>480 ms)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Hematocrit < 30%",
+      "processed": [
+        {
+          "itemText": "Hematocrit < 30%",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "History of congestive heart failure (I50.9)",
+      "processed": [
+        {
+          "itemText": "History of congestive heart failure",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I50.9"
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "History of cardiac arrhythmia (I49.9)",
+      "processed": [
+        {
+          "itemText": "History of cardiac arrhythmia",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": "I49.9"
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Shortness of breath",
+      "processed": [
+        {
+          "itemText": "Shortness of breath",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Elevated NT-proBNP (>125 pg/mL)",
+      "processed": [
+        {
+          "itemText": "Elevated NT-proBNP (>125 pg/mL)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Emergent Diagnostic Factors",
+      "indentLevel": 0,
+      "text": "Elevated high-sensitivity troponin T (>19 ng/L)",
+      "processed": [
+        {
+          "itemText": "Elevated high-sensitivity troponin T (>19 ng/L)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Cardiac Symptoms",
+      "indentLevel": 0,
+      "text": "Chest pain during episode",
+      "processed": [
+        {
+          "itemText": "Chest pain during episode",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Cardiac Symptoms",
+      "indentLevel": 0,
+      "text": "Severe dyspnea",
+      "processed": [
+        {
+          "itemText": "Severe dyspnea",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Cardiac Symptoms",
+      "indentLevel": 0,
+      "text": "Rapid heart rate/palpitations preceding syncope",
+      "processed": [
+        {
+          "itemText": "Rapid heart rate/palpitations preceding syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Cardiac Symptoms",
+      "indentLevel": 0,
+      "text": "Heart murmur",
+      "processed": [
+        {
+          "itemText": "Heart murmur",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Neurological Symptoms",
+      "indentLevel": 0,
+      "text": "Severe headache with syncope",
+      "processed": [
+        {
+          "itemText": "Severe headache with syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Neurological Symptoms",
+      "indentLevel": 0,
+      "text": "Focal neurological deficits",
+      "processed": [
+        {
+          "itemText": "Focal neurological deficits",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Neurological Symptoms",
+      "indentLevel": 0,
+      "text": "Post-episode confusion/cognitive changes",
+      "processed": [
+        {
+          "itemText": "Post-episode confusion/cognitive changes",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Neurological Symptoms",
+      "indentLevel": 0,
+      "text": "Persistent alteration in mental status",
+      "processed": [
+        {
+          "itemText": "Persistent alteration in mental status",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Abdominal/GI Symptoms",
+      "indentLevel": 0,
+      "text": "Abdominal/back pain with syncope",
+      "processed": [
+        {
+          "itemText": "Abdominal/back pain with syncope",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Abdominal/GI Symptoms",
+      "indentLevel": 0,
+      "text": "GI bleeding (melena, hematochezia)",
+      "processed": [
+        {
+          "itemText": "GI bleeding (melena, hematochezia)",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    },
+    {
+      "section": "Concerning Abdominal/GI Symptoms",
+      "indentLevel": 0,
+      "text": "Abdominal tenderness or distention",
+      "processed": [
+        {
+          "itemText": "Abdominal tenderness or distention",
+          "hasTextInput": false,
+          "inputPlaceholder": null,
+          "inputUnit": null,
+          "icd10Code": null
+        }
+      ]
+    }
+  ],
+  "inputFields": [],
+  "multipleInputs": [],
+  "icd10Codes": [
+    {
+      "itemText": "Myocardial infarction",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I21.9"
+    },
+    {
+      "itemText": "Acute aortic dissection",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.0"
+    },
+    {
+      "itemText": "Critical aortic stenosis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I35.0"
+    },
+    {
+      "itemText": "Pericardial tamponade",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I31.9"
+    },
+    {
+      "itemText": "Abdominal aortic aneurysm, ruptured",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I71.3"
+    },
+    {
+      "itemText": "Massive pulmonary embolism",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I26.0"
+    },
+    {
+      "itemText": "Subarachnoid hemorrhage",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I60.9"
+    },
+    {
+      "itemText": "Ruptured ectopic pregnancy",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "O00.1"
+    },
+    {
+      "itemText": "Sepsis",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "A41.9"
+    },
+    {
+      "itemText": "History of congestive heart failure",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I50.9"
+    },
+    {
+      "itemText": "History of cardiac arrhythmia",
+      "hasTextInput": false,
+      "inputPlaceholder": null,
+      "inputUnit": null,
+      "icd10Code": "I49.9"
+    }
+  ],
+  "nestedItems": {
+    "High-Risk Features": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 8
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Critical Diagnoses To Consider": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 13
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Emergent Diagnostic Factors": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 11
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Concerning Cardiac Symptoms": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Concerning Neurological Symptoms": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 4
+      },
+      "levels": [
+        0
+      ]
+    },
+    "Concerning Abdominal/GI Symptoms": {
+      "maxDepth": 1,
+      "levelCounts": {
+        "0": 3
+      },
+      "levels": [
+        0
+      ]
+    }
+  }
+}
