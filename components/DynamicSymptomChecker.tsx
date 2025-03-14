@@ -230,6 +230,30 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     );
   };
 
+  // Group items by section for the active category
+  const getItemsBySectionForCategory = (categoryId: number | null) => {
+    if (!categoryId) return [];
+
+    // Get sections for this category
+    const categorySections = sections
+      .filter((section) => section.category_id === categoryId)
+      .sort((a, b) => a.display_order - b.display_order);
+
+    // Create an array of sections with their items
+    return categorySections
+      .map((section) => {
+        const sectionItems = checklistItems
+          .filter((item) => item.section_id === section.id)
+          .sort((a, b) => a.display_order - b.display_order);
+
+        return {
+          section,
+          items: sectionItems,
+        };
+      })
+      .filter((group) => group.items.length > 0); // Only include sections with items
+  };
+
   // Handle response change (+/-/NA)
   const handleResponseChange = (
     itemId: number,
@@ -911,70 +935,110 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
               </div>
 
               <div className="divide-y divide-gray-100">
-                {getItemsByCategory(activeCategory).map((item) => (
-                  <div key={item.id} className="p-4">
-                    <div className="flex flex-wrap items-start mb-2">
-                      <div className="flex-1 mr-2">
-                        <div className="text-gray-900 font-medium mb-1">
-                          {item.item_text}
-                        </div>
+                {getItemsBySectionForCategory(activeCategory).map(
+                  (sectionGroup) => (
+                    <div
+                      key={sectionGroup.section.id}
+                      className="border-b border-gray-200 mb-3"
+                    >
+                      {/* Section Title */}
+                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                        <h3 className="text-md font-semibold text-blue-700">
+                          {sectionGroup.section.title}
+                        </h3>
                       </div>
 
-                      <div className="flex space-x-1">
-                        <button
-                          className={`p-1.5 rounded-md ${
-                            item.response === '+'
-                              ? 'bg-green-500 text-white'
-                              : 'bg-green-100 text-green-600 hover:bg-green-200'
-                          }`}
-                          onClick={() => handleResponseChange(item.id, '+')}
-                          title="Positive"
-                        >
-                          <PlusCircle size={16} />
-                        </button>
+                      {/* Section Items */}
+                      <div className="p-3 bg-white rounded-b-md">
+                        {sectionGroup.items.map((item) => {
+                          // Determine border color based on response
+                          let borderColorClass = 'border-gray-100';
+                          if (item.response === '+') {
+                            borderColorClass = 'border-green-200';
+                          } else if (item.response === '-') {
+                            borderColorClass = 'border-red-200';
+                          } else if (item.response === 'NA') {
+                            borderColorClass = 'border-gray-300';
+                          }
 
-                        <button
-                          className={`p-1.5 rounded-md ${
-                            item.response === '-'
-                              ? 'bg-red-500 text-white'
-                              : 'bg-red-100 text-red-600 hover:bg-red-200'
-                          }`}
-                          onClick={() => handleResponseChange(item.id, '-')}
-                          title="Negative"
-                        >
-                          <MinusCircle size={16} />
-                        </button>
+                          return (
+                            <div
+                              key={item.id}
+                              className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
+                            >
+                              <div className="flex flex-wrap items-start mb-2">
+                                <div className="flex-1 mr-2">
+                                  <div className="text-gray-900 font-medium mb-1">
+                                    {item.item_text}
+                                  </div>
+                                </div>
 
-                        <button
-                          className={`p-1.5 rounded-md ${
-                            item.response === 'NA'
-                              ? 'bg-gray-500 text-white'
-                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                          }`}
-                          onClick={() => handleResponseChange(item.id, 'NA')}
-                          title="Not Applicable"
-                        >
-                          <HelpCircle size={16} />
-                        </button>
+                                <div className="flex space-x-1">
+                                  <button
+                                    className={`p-1.5 rounded-md ${
+                                      item.response === '+'
+                                        ? 'bg-green-500 text-white'
+                                        : 'bg-green-100 text-green-600 hover:bg-green-200'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(item.id, '+')
+                                    }
+                                    title="Positive"
+                                  >
+                                    <PlusCircle size={16} />
+                                  </button>
+
+                                  <button
+                                    className={`p-1.5 rounded-md ${
+                                      item.response === '-'
+                                        ? 'bg-red-500 text-white'
+                                        : 'bg-red-100 text-red-600 hover:bg-red-200'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(item.id, '-')
+                                    }
+                                    title="Negative"
+                                  >
+                                    <MinusCircle size={16} />
+                                  </button>
+
+                                  <button
+                                    className={`p-1.5 rounded-md ${
+                                      item.response === 'NA'
+                                        ? 'bg-gray-500 text-white'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(item.id, 'NA')
+                                    }
+                                    title="Not Applicable"
+                                  >
+                                    <HelpCircle size={16} />
+                                  </button>
+                                </div>
+                              </div>
+
+                              {/* Always show a text input field for each symptom */}
+                              <div className="flex items-start space-x-2">
+                                <textarea
+                                  className="flex-1 p-2 border border-gray-300 rounded-md text-sm resize-none"
+                                  placeholder="Add optional notes for this symptom..."
+                                  rows={2}
+                                  value={item.notes || ''}
+                                  onChange={(e) =>
+                                    handleNotesChange(item.id, e.target.value)
+                                  }
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
+                  )
+                )}
 
-                    {/* Always show a text input field for each symptom */}
-                    <div className="flex items-start space-x-2">
-                      <textarea
-                        className="flex-1 p-2 border border-gray-300 rounded-md text-sm resize-none"
-                        placeholder="Add optional notes for this symptom..."
-                        rows={2}
-                        value={item.notes || ''}
-                        onChange={(e) =>
-                          handleNotesChange(item.id, e.target.value)
-                        }
-                      />
-                    </div>
-                  </div>
-                ))}
-
-                {getItemsByCategory(activeCategory).length === 0 && (
+                {getItemsBySectionForCategory(activeCategory).length === 0 && (
                   <div className="p-6 text-center text-gray-500">
                     No items in this category
                   </div>
