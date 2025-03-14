@@ -528,29 +528,71 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       (item) => item.response === '+' || item.response === '-'
     );
 
-    // Find all categories that have items
-    const categoriesWithItems = subjectiveCategories.filter(categoryTerm => {
+    // Store which items belong to which categories for deduplication
+    const categoryItemMap = new Map<string, Set<number>>();
+
+    // Preprocess to determine which items belong to which categories
+    subjectiveCategories.forEach((categoryTerm) => {
       const matchingCategoryIds = categories
-        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
-        .map(category => category.id);
-      
-      if (matchingCategoryIds.length === 0) return false;
-      
-      const categorySections = sections.filter(section => 
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
+
+      const categorySections = sections.filter((section) =>
         matchingCategoryIds.includes(section.category_id)
       );
-      
-      if (categorySections.length === 0) return false;
-      
-      return relevantItems.some(item => 
-        categorySections.some(section => section.id === item.section_id)
+
+      const categoryItems = relevantItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
       );
+
+      // Store item IDs for this category
+      categoryItemMap.set(
+        categoryTerm,
+        new Set(categoryItems.map((item) => item.id))
+      );
+    });
+
+    // Deduplication: check for items that appear in multiple categories
+    // For 'history' and 'past medical history' overlap:
+    if (
+      categoryItemMap.has('history') &&
+      categoryItemMap.has('past medical history')
+    ) {
+      const historyItems = categoryItemMap.get('history')!;
+      const pastMedicalItems = categoryItemMap.get('past medical history')!;
+
+      // Find duplicate items
+      const duplicateItems = new Set<number>();
+      historyItems.forEach((itemId) => {
+        if (pastMedicalItems.has(itemId)) {
+          duplicateItems.add(itemId);
+        }
+      });
+
+      // Remove duplicates from the general history category
+      duplicateItems.forEach((itemId) => {
+        historyItems.delete(itemId);
+      });
+
+      categoryItemMap.set('history', historyItems);
+    }
+
+    // Find all categories that have items after deduplication
+    const categoriesWithItems = subjectiveCategories.filter((categoryTerm) => {
+      const categoryItems = categoryItemMap.get(categoryTerm);
+      return categoryItems && categoryItems.size > 0;
     });
 
     // Process each category in the defined order
     for (let i = 0; i < subjectiveCategories.length; i++) {
       const categoryTerm = subjectiveCategories[i];
-      
+
+      // Skip if this category has no items after deduplication
+      const categoryItemIds = categoryItemMap.get(categoryTerm);
+      if (!categoryItemIds || categoryItemIds.size === 0) continue;
+
       // Find categories that match this term
       const matchingCategoryIds = categories
         .filter((category) =>
@@ -567,9 +609,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
       if (categorySections.length === 0) continue;
 
-      // Get items for these sections
-      const categoryItems = relevantItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
+      // Get items for these sections that are in our deduplicated set
+      const categoryItems = relevantItems.filter(
+        (item) =>
+          categoryItemIds.has(item.id) &&
+          categorySections.some((section) => section.id === item.section_id)
       );
 
       if (categoryItems.length === 0) continue;
@@ -634,8 +678,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       });
 
       // Check if this is the last category with items
-      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
-      
+      const isLastCategoryWithItems =
+        categoriesWithItems.indexOf(categoryTerm) ===
+        categoriesWithItems.length - 1;
+
       // Add spacing between categories - only add a single newline after each category
       // and an extra newline between different categories
       if (!isLastCategoryWithItems) {
@@ -668,26 +714,26 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     ];
 
     // Get all positive findings from all sections
-    const relevantItems = items.filter(
-      (item) => item.response === '+'
-    );
+    const relevantItems = items.filter((item) => item.response === '+');
 
     // Find all categories that have items
-    const categoriesWithItems = objectiveCategories.filter(categoryTerm => {
+    const categoriesWithItems = objectiveCategories.filter((categoryTerm) => {
       const matchingCategoryIds = categories
-        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
-        .map(category => category.id);
-      
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
+
       if (matchingCategoryIds.length === 0) return false;
-      
-      const categorySections = sections.filter(section => 
+
+      const categorySections = sections.filter((section) =>
         matchingCategoryIds.includes(section.category_id)
       );
-      
+
       if (categorySections.length === 0) return false;
-      
-      return relevantItems.some(item => 
-        categorySections.some(section => section.id === item.section_id)
+
+      return relevantItems.some((item) =>
+        categorySections.some((section) => section.id === item.section_id)
       );
     });
 
@@ -698,7 +744,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Process each category in the defined order
     for (let i = 0; i < objectiveCategories.length; i++) {
       const categoryTerm = objectiveCategories[i];
-      
+
       // Find categories that match this term
       const matchingCategoryIds = categories
         .filter((category) =>
@@ -759,8 +805,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       });
 
       // Check if this is the last category with items
-      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
-      
+      const isLastCategoryWithItems =
+        categoriesWithItems.indexOf(categoryTerm) ===
+        categoriesWithItems.length - 1;
+
       // Add spacing between categories - only add a single newline after each category
       // and an extra newline between different categories
       if (!isLastCategoryWithItems) {
@@ -792,26 +840,40 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     ];
 
     // Get all positive findings from all sections
-    const relevantItems = items.filter(
-      (item) => item.response === '+'
-    );
+    const relevantItems = items.filter((item) => item.response === '+');
+
+    // Track which items have been included already
+    const processedItemIds = new Set<number>();
 
     // Find all categories that have items
-    const categoriesWithItems = assessmentCategories.filter(categoryTerm => {
+    const categoriesWithItems = assessmentCategories.filter((categoryTerm) => {
       const matchingCategoryIds = categories
-        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
-        .map(category => category.id);
-      
+        .filter((category) => {
+          const categoryTitle = category.title.toLowerCase();
+
+          // For "diagnosis", match only if it's exactly "diagnosis", not "differential diagnosis"
+          if (categoryTerm === 'diagnosis') {
+            return (
+              categoryTitle === 'diagnosis' ||
+              (categoryTitle.includes('diagnosis') &&
+                !categoryTitle.includes('differential'))
+            );
+          }
+
+          return categoryTitle.includes(categoryTerm.toLowerCase());
+        })
+        .map((category) => category.id);
+
       if (matchingCategoryIds.length === 0) return false;
-      
-      const categorySections = sections.filter(section => 
+
+      const categorySections = sections.filter((section) =>
         matchingCategoryIds.includes(section.category_id)
       );
-      
+
       if (categorySections.length === 0) return false;
-      
-      return relevantItems.some(item => 
-        categorySections.some(section => section.id === item.section_id)
+
+      return relevantItems.some((item) =>
+        categorySections.some((section) => section.id === item.section_id)
       );
     });
 
@@ -822,12 +884,23 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Process each category in the defined order
     for (let i = 0; i < assessmentCategories.length; i++) {
       const categoryTerm = assessmentCategories[i];
-      
+
       // Find categories that match this term
       const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
+        .filter((category) => {
+          const categoryTitle = category.title.toLowerCase();
+
+          // For "diagnosis", match only if it's exactly "diagnosis", not "differential diagnosis"
+          if (categoryTerm === 'diagnosis') {
+            return (
+              categoryTitle === 'diagnosis' ||
+              (categoryTitle.includes('diagnosis') &&
+                !categoryTitle.includes('differential'))
+            );
+          }
+
+          return categoryTitle.includes(categoryTerm.toLowerCase());
+        })
         .map((category) => category.id);
 
       if (matchingCategoryIds.length === 0) continue;
@@ -839,12 +912,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
       if (categorySections.length === 0) continue;
 
-      // Get items for these sections
-      const categoryItems = relevantItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
+      // Get items for these sections that haven't been processed already
+      const categoryItems = relevantItems.filter(
+        (item) =>
+          !processedItemIds.has(item.id) &&
+          categorySections.some((section) => section.id === item.section_id)
       );
 
       if (categoryItems.length === 0) continue;
+
+      // Mark these items as processed
+      categoryItems.forEach((item) => processedItemIds.add(item.id));
 
       // Add category header (capitalize first letter)
       const displayCategoryName =
@@ -890,8 +968,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       });
 
       // Check if this is the last category with items
-      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
-      
+      const isLastCategoryWithItems =
+        categoriesWithItems.indexOf(categoryTerm) ===
+        categoriesWithItems.length - 1;
+
       // Add spacing between categories
       if (!isLastCategoryWithItems) {
         section += '\n\n';
@@ -916,26 +996,26 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     const planCategories = ['plan', 'disposition', 'patient education'];
 
     // Get all positive findings from all sections
-    const relevantItems = items.filter(
-      (item) => item.response === '+'
-    );
+    const relevantItems = items.filter((item) => item.response === '+');
 
     // Find all categories that have items
-    const categoriesWithItems = planCategories.filter(categoryTerm => {
+    const categoriesWithItems = planCategories.filter((categoryTerm) => {
       const matchingCategoryIds = categories
-        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
-        .map(category => category.id);
-      
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
+
       if (matchingCategoryIds.length === 0) return false;
-      
-      const categorySections = sections.filter(section => 
+
+      const categorySections = sections.filter((section) =>
         matchingCategoryIds.includes(section.category_id)
       );
-      
+
       if (categorySections.length === 0) return false;
-      
-      return relevantItems.some(item => 
-        categorySections.some(section => section.id === item.section_id)
+
+      return relevantItems.some((item) =>
+        categorySections.some((section) => section.id === item.section_id)
       );
     });
 
@@ -951,7 +1031,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Process each category in the defined order
     for (let i = 0; i < planCategories.length; i++) {
       const categoryTerm = planCategories[i];
-      
+
       // Find categories that match this term
       const matchingCategoryIds = categories
         .filter((category) =>
@@ -1012,8 +1092,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       });
 
       // Check if this is the last category with items
-      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
-      
+      const isLastCategoryWithItems =
+        categoriesWithItems.indexOf(categoryTerm) ===
+        categoriesWithItems.length - 1;
+
       // Add spacing between categories
       if (!isLastCategoryWithItems) {
         section += '\n\n';
@@ -1409,10 +1491,226 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                               <div className="flex flex-wrap items-start mb-2">
                                 <div className="flex-1 mr-2">
                                   <div className="text-gray-900 font-medium mb-1">
-                                    {processItemText(item)}
+                                    {item.item_text}
                                   </div>
                                 </div>
 
                                 <div className="flex space-x-1">
                                   <button
-                                    className={`
+                                    className={`p-1 rounded-full ${
+                                      item.response === '+'
+                                        ? 'bg-green-100 text-green-700 border-2 border-green-500'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(
+                                        item.id,
+                                        item.response === '+' ? null : '+'
+                                      )
+                                    }
+                                    title="Present / Yes"
+                                  >
+                                    <PlusCircle size={18} />
+                                  </button>
+                                  <button
+                                    className={`p-1 rounded-full ${
+                                      item.response === '-'
+                                        ? 'bg-red-100 text-red-700 border-2 border-red-500'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(
+                                        item.id,
+                                        item.response === '-' ? null : '-'
+                                      )
+                                    }
+                                    title="Absent / No"
+                                  >
+                                    <MinusCircle size={18} />
+                                  </button>
+                                  <button
+                                    className={`p-1 rounded-full ${
+                                      item.response === 'NA'
+                                        ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                    }`}
+                                    onClick={() =>
+                                      handleResponseChange(
+                                        item.id,
+                                        item.response === 'NA' ? null : 'NA'
+                                      )
+                                    }
+                                    title="Not Applicable"
+                                  >
+                                    <HelpCircle size={18} />
+                                  </button>
+                                </div>
+                              </div>
+
+                              {/* Notes input field - shown for '+' and '-' responses */}
+                              {(item.response === '+' ||
+                                item.response === '-') && (
+                                <div className="mt-2">
+                                  <textarea
+                                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                                    rows={2}
+                                    placeholder={
+                                      item.response === '+'
+                                        ? 'Add details about this finding...'
+                                        : 'Add notes about this negative finding...'
+                                    }
+                                    value={item.notes || ''}
+                                    onChange={(e) =>
+                                      handleNotesChange(item.id, e.target.value)
+                                    }
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* Right Sidebar - SOAP Note Preview */}
+        <aside className="bg-white shadow-sm hidden md:flex flex-col w-96 border-l border-gray-200 overflow-hidden">
+          <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
+            <h2 className="text-lg font-bold text-gray-800 flex items-center">
+              <FileText className="text-blue-600 mr-2" size={18} />
+              SOAP Note Preview
+            </h2>
+          </div>
+
+          <div className="flex-1 overflow-y-auto p-4">
+            {/* Subjective Section */}
+            <div className="mb-6">
+              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                SUBJECTIVE
+              </h3>
+              <div className="whitespace-pre-wrap text-sm">
+                {generatedNote.subjective || 'No subjective data recorded yet.'}
+              </div>
+            </div>
+
+            {/* Objective Section */}
+            <div className="mb-6">
+              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                OBJECTIVE
+              </h3>
+              <div className="whitespace-pre-wrap text-sm">
+                {generatedNote.objective || 'No objective data recorded yet.'}
+              </div>
+            </div>
+
+            {/* Assessment Section */}
+            <div className="mb-6">
+              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                ASSESSMENT
+              </h3>
+              <div className="whitespace-pre-wrap text-sm">
+                {generatedNote.assessment || 'No assessment data recorded yet.'}
+              </div>
+            </div>
+
+            {/* Plan Section */}
+            <div className="mb-6">
+              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                PLAN
+              </h3>
+              <div className="whitespace-pre-wrap text-sm">
+                {generatedNote.plan || 'No plan data recorded yet.'}
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {/* Mobile SOAP Note Preview */}
+        {showMobilePreview && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
+            <div className="absolute top-0 right-0 h-full w-full bg-white shadow-lg z-50 overflow-y-auto">
+              <div className="p-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 className="font-bold text-lg flex items-center">
+                  <FileText className="text-blue-600 mr-2" size={18} />
+                  SOAP Note Preview
+                </h2>
+                <button onClick={() => setShowMobilePreview(false)}>
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="p-4">
+                {/* Subjective Section */}
+                <div className="mb-6">
+                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                    SUBJECTIVE
+                  </h3>
+                  <div className="whitespace-pre-wrap text-sm">
+                    {generatedNote.subjective ||
+                      'No subjective data recorded yet.'}
+                  </div>
+                </div>
+
+                {/* Objective Section */}
+                <div className="mb-6">
+                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                    OBJECTIVE
+                  </h3>
+                  <div className="whitespace-pre-wrap text-sm">
+                    {generatedNote.objective ||
+                      'No objective data recorded yet.'}
+                  </div>
+                </div>
+
+                {/* Assessment Section */}
+                <div className="mb-6">
+                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                    ASSESSMENT
+                  </h3>
+                  <div className="whitespace-pre-wrap text-sm">
+                    {generatedNote.assessment ||
+                      'No assessment data recorded yet.'}
+                  </div>
+                </div>
+
+                {/* Plan Section */}
+                <div className="mb-6">
+                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
+                    PLAN
+                  </h3>
+                  <div className="whitespace-pre-wrap text-sm">
+                    {generatedNote.plan || 'No plan data recorded yet.'}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom action bar */}
+              <div className="sticky bottom-0 bg-white border-t border-gray-200 p-3 flex justify-between">
+                <button
+                  onClick={() => setShowMobilePreview(false)}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md"
+                >
+                  Back to Checklist
+                </button>
+                <button
+                  onClick={copyToClipboard}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center"
+                >
+                  <Clipboard size={16} className="mr-1" />
+                  Copy SOAP Note
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default DynamicSymptomChecker;
