@@ -423,165 +423,252 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Start with patient's chief complaint
     let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
-    } duration.\n\n`;
+    } duration. `;
 
-    // Get all positive and negative findings from history-related categories
+    // Group items by section
+    const sectionGroups = new Map();
+
+    // Get all positive and negative findings
     const historyItems = checklistItems.filter(
       (item) => item.response === '+' || item.response === '-'
     );
 
-    // Add positive findings
-    const positiveItems = historyItems.filter((item) => item.response === '+');
-    if (positiveItems.length > 0) {
-      section += 'Positive findings:\n';
-      positiveItems.forEach((item) => {
-        let itemText = `• ${item.item_text}`;
+    // Group items by their section
+    historyItems.forEach((item: ChecklistItem) => {
+      const sectionId = item.section_id;
+      if (!sectionGroups.has(sectionId)) {
+        const section = sections.find((s) => s.id === sectionId);
+        sectionGroups.set(sectionId, {
+          section,
+          positiveItems: [],
+          negativeItems: [],
+        });
+      }
 
-        // Add notes if present
-        if (item.notes) {
-          itemText += `: ${item.notes}`;
-        }
+      const group = sectionGroups.get(sectionId);
+      if (item.response === '+') {
+        group.positiveItems.push(item);
+      } else if (item.response === '-') {
+        group.negativeItems.push(item);
+      }
+    });
 
-        // Add selected options if present
-        if (
-          item.selectedOptions &&
-          Object.keys(item.selectedOptions).length > 0
-        ) {
-          Object.entries(item.selectedOptions).forEach(([key, value]) => {
-            if (Array.isArray(value) && value.length > 0) {
-              itemText += `\n  - ${key}: ${value.join(', ')}`;
+    // Format each section's findings as sentences
+    sectionGroups.forEach((group) => {
+      if (
+        group.section &&
+        (group.positiveItems.length > 0 || group.negativeItems.length > 0)
+      ) {
+        section += `\n\nRegarding ${group.section.title}: `;
 
-              // Add any detail notes
-              value.forEach((option) => {
-                const detailNote = item.detailNotes?.[`${key}-${option}`];
-                if (detailNote) {
-                  itemText += `\n    * ${option}: ${detailNote}`;
-                }
-              });
-            } else if (typeof value === 'string' && value) {
-              itemText += `\n  - ${key}: ${value}`;
-
-              // Add any detail note
-              const detailNote = item.detailNotes?.[`${key}-${value}`];
-              if (detailNote) {
-                itemText += ` (${detailNote})`;
+        // Add positive findings as a sentence
+        if (group.positiveItems.length > 0) {
+          section += `Patient reports ${group.positiveItems
+            .map((item) => {
+              let text = item.item_text.toLowerCase();
+              if (item.notes) {
+                text += ` (${item.notes})`;
               }
-            }
-          });
+              return text;
+            })
+            .join(', ')}.`;
         }
 
-        section += itemText + '\n';
-      });
-    }
-
-    // Add negative findings
-    const negativeItems = historyItems.filter((item) => item.response === '-');
-    if (negativeItems.length > 0) {
-      section += '\nPatient denies:\n';
-      negativeItems.forEach((item) => {
-        section += `• ${item.item_text}${item.notes ? ' ' + item.notes : ''}\n`;
-      });
-    }
+        // Add negative findings as a sentence
+        if (group.negativeItems.length > 0) {
+          if (group.positiveItems.length > 0) {
+            section += ' ';
+          }
+          section += `Patient denies ${group.negativeItems
+            .map((item) => {
+              let text = item.item_text.toLowerCase();
+              if (item.notes) {
+                text += ` (${item.notes})`;
+              }
+              return text;
+            })
+            .join(', ')}.`;
+        }
+      }
+    });
 
     return section;
   };
 
   const generateObjectiveSection = () => {
-    let section = '';
+    let section = 'On physical examination: ';
 
-    // Add physical exam findings
-    const examItems = checklistItems.filter((item) => item.response === '+');
+    // Find the Physical Exam category
+    const physicalExamCategory = categories.find(
+      (category) =>
+        category.title.toLowerCase().includes('physical exam') ||
+        category.title.toLowerCase().includes('examination')
+    );
 
-    if (examItems.length > 0) {
-      section += 'Physical examination findings:\n';
-      examItems.forEach((item) => {
-        let itemText = `• ${item.item_text}`;
-
-        // Add notes if present
-        if (item.notes) {
-          itemText += `: ${item.notes}`;
-        }
-
-        // Add selected options if present
-        if (
-          item.selectedOptions &&
-          Object.keys(item.selectedOptions).length > 0
-        ) {
-          Object.entries(item.selectedOptions).forEach(([key, value]) => {
-            if (Array.isArray(value) && value.length > 0) {
-              itemText += `\n  - ${key}: ${value.join(', ')}`;
-
-              // Add any detail notes
-              value.forEach((option) => {
-                const detailNote = item.detailNotes?.[`${key}-${option}`];
-                if (detailNote) {
-                  itemText += `\n    * ${option}: ${detailNote}`;
-                }
-              });
-            } else if (typeof value === 'string' && value) {
-              itemText += `\n  - ${key}: ${value}`;
-
-              // Add any detail note
-              const detailNote = item.detailNotes?.[`${key}-${value}`];
-              if (detailNote) {
-                itemText += ` (${detailNote})`;
-              }
-            }
-          });
-        }
-
-        section += itemText + '\n';
-      });
-    } else {
-      section += 'No significant physical examination findings.\n';
+    if (!physicalExamCategory) {
+      return 'Physical examination reveals no significant findings.';
     }
+
+    // Get sections that belong to the Physical Exam category
+    const physicalExamSections = sections.filter(
+      (section) => section.category_id === physicalExamCategory.id
+    );
+
+    if (physicalExamSections.length === 0) {
+      return 'Physical examination reveals no significant findings.';
+    }
+
+    // Get all positive findings from Physical Exam sections
+    const examItems = checklistItems.filter(
+      (item) =>
+        item.response === '+' &&
+        physicalExamSections.some((section) => section.id === item.section_id)
+    );
+
+    if (examItems.length === 0) {
+      return 'Physical examination reveals no significant findings.';
+    }
+
+    // Group items by their section
+    const sectionGroups = new Map();
+    examItems.forEach((item: ChecklistItem) => {
+      const sectionId = item.section_id;
+      if (!sectionGroups.has(sectionId)) {
+        const section = physicalExamSections.find((s) => s.id === sectionId);
+        sectionGroups.set(sectionId, {
+          section,
+          items: [],
+        });
+      }
+
+      sectionGroups.get(sectionId).items.push(item);
+    });
+
+    // Format each section's findings as sentences
+    const sectionTexts: string[] = [];
+    sectionGroups.forEach((group) => {
+      if (group.section && group.items.length > 0) {
+        let sectionText = `${group.section.title} examination shows `;
+
+        sectionText += group.items
+          .map((item: ChecklistItem) => {
+            let text = item.item_text.toLowerCase();
+            if (item.notes) {
+              text += ` (${item.notes})`;
+            }
+            return text;
+          })
+          .join(', ');
+
+        sectionTexts.push(sectionText);
+      }
+    });
+
+    section += sectionTexts.join('. ') + '.';
 
     return section;
   };
 
   const generateAssessmentSection = () => {
-    let section = `${chapter?.title || 'Symptoms'}, ${
+    let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
-    } duration.\n\n`;
+    } duration. `;
 
-    // Get differential diagnoses if any
-    const differentialItems = checklistItems.filter(
+    // Group items by section for assessment
+    const sectionGroups = new Map();
+
+    // Get all positive findings that might be relevant for assessment
+    const assessmentItems = checklistItems.filter(
       (item) => item.response === '+'
     );
 
-    if (differentialItems.length > 0) {
-      section += 'Differential diagnoses to consider:\n';
-      differentialItems.forEach((item) => {
-        section += `• ${item.item_text}${
-          item.notes ? ': ' + item.notes : ''
-        }\n`;
-      });
-    } else {
-      section += 'Differential diagnoses pending further evaluation.\n';
+    if (assessmentItems.length === 0) {
+      return `${section}Differential diagnoses pending further evaluation.`;
     }
+
+    // Group items by their section
+    assessmentItems.forEach((item: ChecklistItem) => {
+      const sectionId = item.section_id;
+      if (!sectionGroups.has(sectionId)) {
+        const section = sections.find((s) => s.id === sectionId);
+        sectionGroups.set(sectionId, {
+          section,
+          items: [],
+        });
+      }
+
+      sectionGroups.get(sectionId).items.push(item);
+    });
+
+    // Add assessment based on sections
+    section +=
+      'Based on the clinical presentation, differential diagnoses include: ';
+
+    const diagnosisList: string[] = [];
+    sectionGroups.forEach((group) => {
+      if (group.section && group.items.length > 0) {
+        group.items.forEach((item: ChecklistItem) => {
+          let diagnosis = item.item_text;
+          if (item.notes) {
+            diagnosis += ` (${item.notes})`;
+          }
+          diagnosisList.push(diagnosis);
+        });
+      }
+    });
+
+    section += diagnosisList.join(', ') + '.';
 
     return section;
   };
 
   const generatePlanSection = () => {
-    let section = 'Plan:\n';
+    let section = 'The management plan includes: ';
 
-    // Default recommendations
-    section +=
-      '• Consider appropriate diagnostic tests based on clinical presentation\n';
-    section += '• Symptomatic management\n';
-    section += '• Consider follow-up evaluation based on symptom progression\n';
+    // Group items by section for plan
+    const sectionGroups = new Map();
 
-    // Add any specific management plans
+    // Get all positive findings that might be relevant for plan
     const planItems = checklistItems.filter((item) => item.response === '+');
 
-    if (planItems.length > 0) {
-      planItems.forEach((item) => {
-        section += `• ${item.item_text}${
-          item.notes ? ': ' + item.notes : ''
-        }\n`;
-      });
-    }
+    // Group items by their section
+    planItems.forEach((item: ChecklistItem) => {
+      const sectionId = item.section_id;
+      if (!sectionGroups.has(sectionId)) {
+        const section = sections.find((s) => s.id === sectionId);
+        sectionGroups.set(sectionId, {
+          section,
+          items: [],
+        });
+      }
+
+      sectionGroups.get(sectionId).items.push(item);
+    });
+
+    // Format plan as sentences grouped by section
+    const planParts = [];
+
+    // Add default recommendations
+    planParts.push(
+      'appropriate diagnostic tests based on clinical presentation'
+    );
+    planParts.push('symptomatic management');
+    planParts.push('follow-up evaluation based on symptom progression');
+
+    // Add section-specific plans
+    sectionGroups.forEach((group) => {
+      if (group.section && group.items.length > 0) {
+        group.items.forEach((item: ChecklistItem) => {
+          let planItem = item.item_text.toLowerCase();
+          if (item.notes) {
+            planItem += ` (${item.notes})`;
+          }
+          planParts.push(planItem);
+        });
+      }
+    });
+
+    section += planParts.join(', ') + '.';
 
     return section;
   };
