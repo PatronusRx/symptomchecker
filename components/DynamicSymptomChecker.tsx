@@ -465,7 +465,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         if (group.positiveItems.length > 0) {
           section += `Patient reports ${group.positiveItems
             .map((item) => {
-              let text = item.item_text.toLowerCase();
+              // Remove underscores from item text
+              let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
               if (item.notes) {
                 text += ` (${item.notes})`;
               }
@@ -481,7 +482,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           }
           section += `Patient denies ${group.negativeItems
             .map((item) => {
-              let text = item.item_text.toLowerCase();
+              // Remove underscores from item text
+              let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
               if (item.notes) {
                 text += ` (${item.notes})`;
               }
@@ -552,7 +554,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
         sectionText += group.items
           .map((item: ChecklistItem) => {
-            let text = item.item_text.toLowerCase();
+            // Remove underscores from item text
+            let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
             if (item.notes) {
               text += ` (${item.notes})`;
             }
@@ -608,7 +611,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     sectionGroups.forEach((group) => {
       if (group.section && group.items.length > 0) {
         group.items.forEach((item: ChecklistItem) => {
-          let diagnosis = item.item_text;
+          // Remove underscores from item text
+          let diagnosis = item.item_text.replace(/_{2,}/g, '');
           if (item.notes) {
             diagnosis += ` (${item.notes})`;
           }
@@ -659,7 +663,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     sectionGroups.forEach((group) => {
       if (group.section && group.items.length > 0) {
         group.items.forEach((item: ChecklistItem) => {
-          let planItem = item.item_text.toLowerCase();
+          // Remove underscores from item text
+          let planItem = item.item_text.toLowerCase().replace(/_{2,}/g, '');
           if (item.notes) {
             planItem += ` (${item.notes})`;
           }
