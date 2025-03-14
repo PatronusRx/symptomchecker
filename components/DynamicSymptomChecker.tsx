@@ -509,9 +509,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Start with patient's chief complaint
     let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
-    } duration. `;
+    } duration.\n\n`;
 
-    // Define subjective categories
+    // Define subjective categories in the exact order they should appear
     const subjectiveCategories = [
       'history',
       'alarm features',
@@ -523,82 +523,128 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       'past medical history',
     ];
 
-    // Find categories that should be in the subjective section
-    const subjectiveCategoryIds = categories
-      .filter((category) =>
-        subjectiveCategories.some((term) =>
-          category.title.toLowerCase().includes(term.toLowerCase())
+    // Get all positive and negative findings from all sections
+    const relevantItems = items.filter(
+      (item) => item.response === '+' || item.response === '-'
+    );
+
+    // Find all categories that have items
+    const categoriesWithItems = subjectiveCategories.filter(categoryTerm => {
+      const matchingCategoryIds = categories
+        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
+        .map(category => category.id);
+      
+      if (matchingCategoryIds.length === 0) return false;
+      
+      const categorySections = sections.filter(section => 
+        matchingCategoryIds.includes(section.category_id)
+      );
+      
+      if (categorySections.length === 0) return false;
+      
+      return relevantItems.some(item => 
+        categorySections.some(section => section.id === item.section_id)
+      );
+    });
+
+    // Process each category in the defined order
+    for (let i = 0; i < subjectiveCategories.length; i++) {
+      const categoryTerm = subjectiveCategories[i];
+      
+      // Find categories that match this term
+      const matchingCategoryIds = categories
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
         )
-      )
-      .map((category) => category.id);
+        .map((category) => category.id);
 
-    // Get sections that belong to subjective categories
-    const subjectiveSections = sections.filter((section) =>
-      subjectiveCategoryIds.includes(section.category_id)
-    );
+      if (matchingCategoryIds.length === 0) continue;
 
-    // Get all positive and negative findings from subjective sections
-    const historyItems = items.filter(
-      (item) =>
-        (item.response === '+' || item.response === '-') &&
-        subjectiveSections.some((section) => section.id === item.section_id)
-    );
+      // Get sections that belong to this category
+      const categorySections = sections.filter((section) =>
+        matchingCategoryIds.includes(section.category_id)
+      );
 
-    // Group items by their section
-    const sectionGroups = new Map();
-    historyItems.forEach((item: ChecklistItem) => {
-      const sectionId = item.section_id;
-      if (!sectionGroups.has(sectionId)) {
-        const section = sections.find((s) => s.id === sectionId);
-        sectionGroups.set(sectionId, {
-          section,
-          positiveItems: [],
-          negativeItems: [],
-        });
-      }
+      if (categorySections.length === 0) continue;
 
-      const group = sectionGroups.get(sectionId);
-      if (item.response === '+') {
-        group.positiveItems.push(item);
-      } else if (item.response === '-') {
-        group.negativeItems.push(item);
-      }
-    });
+      // Get items for these sections
+      const categoryItems = relevantItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
+      );
 
-    // Format each section's findings as sentences
-    sectionGroups.forEach((group) => {
-      if (
-        group.section &&
-        (group.positiveItems.length > 0 || group.negativeItems.length > 0)
-      ) {
-        section += `\n\nRegarding ${group.section.title}: `;
+      if (categoryItems.length === 0) continue;
 
-        // Add positive findings as a sentence
-        if (group.positiveItems.length > 0) {
-          section += `Patient reports ${group.positiveItems
-            .map((item: ChecklistItem) => {
-              // Process item text to replace underscores with notes if applicable
-              const text = processItemText(item);
-              return text;
-            })
-            .join(', ')}.`;
+      // Add category header (capitalize first letter)
+      const displayCategoryName =
+        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
+      section += `${displayCategoryName}:\n`;
+
+      // Group items by their section
+      const sectionGroups = new Map();
+      categoryItems.forEach((item: ChecklistItem) => {
+        const sectionId = item.section_id;
+        if (!sectionGroups.has(sectionId)) {
+          const section = categorySections.find((s) => s.id === sectionId);
+          sectionGroups.set(sectionId, {
+            section,
+            positiveItems: [],
+            negativeItems: [],
+          });
         }
 
-        // Add negative findings as a sentence
-        if (group.negativeItems.length > 0) {
+        const group = sectionGroups.get(sectionId);
+        if (item.response === '+') {
+          group.positiveItems.push(item);
+        } else if (item.response === '-') {
+          group.negativeItems.push(item);
+        }
+      });
+
+      // Format each section's findings
+      sectionGroups.forEach((group) => {
+        if (
+          group.section &&
+          (group.positiveItems.length > 0 || group.negativeItems.length > 0)
+        ) {
+          section += `\n${group.section.title}: `;
+
+          // Add positive findings
           if (group.positiveItems.length > 0) {
-            section += ' ';
+            section += `Patient reports ${group.positiveItems
+              .map((item: ChecklistItem) => {
+                const text = processItemText(item);
+                return text;
+              })
+              .join(', ')}.`;
           }
-          section += `Patient denies ${group.negativeItems
-            .map((item: ChecklistItem) => {
-              // Process item text to replace underscores with notes if applicable
-              const text = processItemText(item);
-              return text;
-            })
-            .join(', ')}.`;
+
+          // Add negative findings
+          if (group.negativeItems.length > 0) {
+            if (group.positiveItems.length > 0) {
+              section += ' ';
+            }
+            section += `Patient denies ${group.negativeItems
+              .map((item: ChecklistItem) => {
+                const text = processItemText(item);
+                return text;
+              })
+              .join(', ')}.`;
+          }
         }
+      });
+
+      // Check if this is the last category with items
+      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
+      
+      // Add spacing between categories - only add a single newline after each category
+      // and an extra newline between different categories
+      if (!isLastCategoryWithItems) {
+        section += '\n\n';
+      } else {
+        // For the last category, just add a single newline at the end
+        section += '\n';
       }
-    });
+    }
 
     return section;
   };
@@ -611,7 +657,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Start with a brief introduction
     let section = 'On examination:\n\n';
 
-    // Define objective categories
+    // Define objective categories in the exact order they should appear
     const objectiveCategories = [
       'physical exam',
       'examination',
@@ -621,82 +667,109 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       'ecg',
     ];
 
-    // Find categories that should be in the objective section
-    const objectiveCategoryIds = categories
-      .filter((category) =>
-        objectiveCategories.some((term) =>
-          category.title.toLowerCase().includes(term.toLowerCase())
-        )
-      )
-      .map((category) => category.id);
-
-    if (objectiveCategoryIds.length === 0) {
-      return 'No objective findings documented.';
-    }
-
-    // Get sections that belong to objective categories
-    const objectiveSections = sections.filter((section) =>
-      objectiveCategoryIds.includes(section.category_id)
+    // Get all positive findings from all sections
+    const relevantItems = items.filter(
+      (item) => item.response === '+'
     );
 
-    if (objectiveSections.length === 0) {
-      return 'No objective findings documented.';
-    }
+    // Find all categories that have items
+    const categoriesWithItems = objectiveCategories.filter(categoryTerm => {
+      const matchingCategoryIds = categories
+        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
+        .map(category => category.id);
+      
+      if (matchingCategoryIds.length === 0) return false;
+      
+      const categorySections = sections.filter(section => 
+        matchingCategoryIds.includes(section.category_id)
+      );
+      
+      if (categorySections.length === 0) return false;
+      
+      return relevantItems.some(item => 
+        categorySections.some(section => section.id === item.section_id)
+      );
+    });
 
-    // Get all positive findings from objective sections
-    const examItems = items.filter(
-      (item) =>
-        item.response === '+' &&
-        objectiveSections.some((section) => section.id === item.section_id)
-    );
-
-    if (examItems.length === 0) {
+    if (categoriesWithItems.length === 0) {
       return 'No significant objective findings documented.';
     }
 
-    // Group items by their section
-    const sectionGroups = new Map();
-    examItems.forEach((item: ChecklistItem) => {
-      const sectionId = item.section_id;
-      if (!sectionGroups.has(sectionId)) {
-        const section = objectiveSections.find((s) => s.id === sectionId);
-        sectionGroups.set(sectionId, {
-          section,
-          items: [],
-          categoryId: section?.category_id || 0,
-        });
-      }
+    // Process each category in the defined order
+    for (let i = 0; i < objectiveCategories.length; i++) {
+      const categoryTerm = objectiveCategories[i];
+      
+      // Find categories that match this term
+      const matchingCategoryIds = categories
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
 
-      sectionGroups.get(sectionId).items.push(item);
-    });
+      if (matchingCategoryIds.length === 0) continue;
 
-    // Sort sections by their category's display order
-    const sortedSections = Array.from(sectionGroups.values()).sort((a, b) => {
-      const categoryA = categories.find((c) => c.id === a.categoryId);
-      const categoryB = categories.find((c) => c.id === b.categoryId);
-      return (categoryA?.display_order || 0) - (categoryB?.display_order || 0);
-    });
+      // Get sections that belong to this category
+      const categorySections = sections.filter((section) =>
+        matchingCategoryIds.includes(section.category_id)
+      );
 
-    // Format each section's findings as paragraphs
-    sortedSections.forEach((group, index) => {
-      if (group.section && group.items.length > 0) {
-        let sectionText = `${group.section.title}: `;
+      if (categorySections.length === 0) continue;
 
-        sectionText += group.items
-          .map((item: ChecklistItem) => {
-            // Process item text to replace underscores with notes if applicable
-            return processItemText(item);
-          })
-          .join(', ');
+      // Get items for these sections
+      const categoryItems = relevantItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
+      );
 
-        section += sectionText + '.';
+      if (categoryItems.length === 0) continue;
 
-        // Add a newline between paragraphs
-        if (index < sortedSections.length - 1) {
-          section += '\n\n';
+      // Add category header (capitalize first letter)
+      const displayCategoryName =
+        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
+      section += `${displayCategoryName}:\n`;
+
+      // Group items by their section
+      const sectionGroups = new Map();
+      categoryItems.forEach((item: ChecklistItem) => {
+        const sectionId = item.section_id;
+        if (!sectionGroups.has(sectionId)) {
+          const section = categorySections.find((s) => s.id === sectionId);
+          sectionGroups.set(sectionId, {
+            section,
+            items: [],
+          });
         }
+
+        const group = sectionGroups.get(sectionId);
+        group.items.push(item);
+      });
+
+      // Format each section's findings
+      sectionGroups.forEach((group) => {
+        if (group.section && group.items.length > 0) {
+          section += `\n${group.section.title}: `;
+
+          const itemsList = group.items
+            .map((item: ChecklistItem) => {
+              return processItemText(item);
+            })
+            .join(', ');
+
+          section += itemsList + '.';
+        }
+      });
+
+      // Check if this is the last category with items
+      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
+      
+      // Add spacing between categories - only add a single newline after each category
+      // and an extra newline between different categories
+      if (!isLastCategoryWithItems) {
+        section += '\n\n';
+      } else {
+        // For the last category, just add a single newline at the end
+        section += '\n';
       }
-    });
+    }
 
     return section;
   };
@@ -711,192 +784,122 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       duration || 'unspecified'
     } duration.\n\n`;
 
-    // Define assessment categories
+    // Define assessment categories in the exact order they should appear
     const assessmentCategories = [
-      'assessment',
       'differential diagnosis',
+      'assessment',
       'diagnosis',
     ];
 
-    // Find categories that should be in the assessment section
-    const assessmentCategoryIds = categories
-      .filter((category) =>
-        assessmentCategories.some((term) =>
-          category.title.toLowerCase().includes(term.toLowerCase())
-        )
-      )
-      .map((category) => category.id);
-
-    // Get sections that belong to assessment categories
-    const assessmentSections = sections.filter((section) =>
-      assessmentCategoryIds.includes(section.category_id)
+    // Get all positive findings from all sections
+    const relevantItems = items.filter(
+      (item) => item.response === '+'
     );
 
-    // Get all positive findings from assessment sections
-    const assessmentItems = items.filter(
-      (item) =>
-        item.response === '+' &&
-        assessmentSections.some((section) => section.id === item.section_id)
-    );
+    // Find all categories that have items
+    const categoriesWithItems = assessmentCategories.filter(categoryTerm => {
+      const matchingCategoryIds = categories
+        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
+        .map(category => category.id);
+      
+      if (matchingCategoryIds.length === 0) return false;
+      
+      const categorySections = sections.filter(section => 
+        matchingCategoryIds.includes(section.category_id)
+      );
+      
+      if (categorySections.length === 0) return false;
+      
+      return relevantItems.some(item => 
+        categorySections.some(section => section.id === item.section_id)
+      );
+    });
 
-    if (assessmentItems.length === 0) {
+    if (categoriesWithItems.length === 0) {
       return `${section}Differential diagnoses pending further evaluation.`;
     }
 
-    // Define types for our data structures
-    type SectionGroup = {
-      section: Section;
-      items: ChecklistItem[];
-    };
+    // Process each category in the defined order
+    for (let i = 0; i < assessmentCategories.length; i++) {
+      const categoryTerm = assessmentCategories[i];
+      
+      // Find categories that match this term
+      const matchingCategoryIds = categories
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
 
-    type CategoryGroup = {
-      category: Category;
-      sections: Map<number, SectionGroup>;
-      displayOrder: number;
-    };
+      if (matchingCategoryIds.length === 0) continue;
 
-    // Group items by their section and category
-    const categoryGroups = new Map<string, CategoryGroup>();
-
-    assessmentItems.forEach((item: ChecklistItem) => {
-      const sectionId = item.section_id;
-      const section = assessmentSections.find((s) => s.id === sectionId);
-
-      if (!section) return;
-
-      const category = categories.find((c) => c.id === section.category_id);
-      if (!category) return;
-
-      const categoryKey = category.title.toLowerCase();
-
-      if (!categoryGroups.has(categoryKey)) {
-        categoryGroups.set(categoryKey, {
-          category,
-          sections: new Map<number, SectionGroup>(),
-          displayOrder: category.display_order,
-        });
-      }
-
-      const categoryGroup = categoryGroups.get(categoryKey)!;
-
-      if (!categoryGroup.sections.has(sectionId)) {
-        categoryGroup.sections.set(sectionId, {
-          section,
-          items: [],
-        });
-      }
-
-      categoryGroup.sections.get(sectionId)!.items.push(item);
-    });
-
-    // Sort categories by display order
-    const sortedCategories = Array.from(categoryGroups.values()).sort(
-      (a, b) => a.displayOrder - b.displayOrder
-    );
-
-    // Process differential diagnosis first if it exists
-    const diffDiagnosisCategory = sortedCategories.find((category) =>
-      category.category.title.toLowerCase().includes('differential diagnosis')
-    );
-
-    if (diffDiagnosisCategory) {
-      section += 'Differential Diagnosis:';
-
-      // Process each section in the differential diagnosis category
-      Array.from(diffDiagnosisCategory.sections.values()).forEach(
-        (sectionGroup: SectionGroup) => {
-          if (sectionGroup.items.length > 0) {
-            const diagnosisList: string[] = [];
-            sectionGroup.items.forEach((item: ChecklistItem) => {
-              const diagnosis = processItemText(item, false);
-              diagnosisList.push(diagnosis);
-            });
-
-            section += ' ' + diagnosisList.join(', ') + '.';
-          }
-        }
+      // Get sections that belong to this category
+      const categorySections = sections.filter((section) =>
+        matchingCategoryIds.includes(section.category_id)
       );
 
-      section += '\n\n';
-    }
+      if (categorySections.length === 0) continue;
 
-    // Process assessment sections
-    const assessmentCategory = sortedCategories.find(
-      (category) =>
-        category.category.title.toLowerCase().includes('assessment') &&
-        !category.category.title.toLowerCase().includes('differential')
-    );
-
-    if (assessmentCategory) {
-      section += 'Assessment:';
-
-      // Process each section in the assessment category
-      Array.from(assessmentCategory.sections.values()).forEach(
-        (sectionGroup: SectionGroup, index, array) => {
-          if (sectionGroup.items.length > 0) {
-            let sectionText = ` ${sectionGroup.section.title}: `;
-
-            const assessmentList: string[] = [];
-            sectionGroup.items.forEach((item: ChecklistItem) => {
-              const assessment = processItemText(item, false);
-              assessmentList.push(assessment);
-            });
-
-            sectionText += assessmentList.join(', ') + '.';
-            section += sectionText;
-
-            // Add a newline between sections
-            if (index < array.length - 1) {
-              section += '\n\n';
-            }
-          }
-        }
+      // Get items for these sections
+      const categoryItems = relevantItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
       );
 
-      section += '\n\n';
-    }
+      if (categoryItems.length === 0) continue;
 
-    // Process any other categories (like diagnosis) that aren't differential diagnosis or assessment
-    sortedCategories.forEach((categoryGroup) => {
-      const categoryTitle = categoryGroup.category.title.toLowerCase();
-      if (
-        !categoryTitle.includes('differential diagnosis') &&
-        !categoryTitle.includes('assessment')
-      ) {
-        section += `${categoryGroup.category.title}:`;
+      // Add category header (capitalize first letter)
+      const displayCategoryName =
+        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
+      section += `${displayCategoryName}:`;
 
-        // Process each section in this category
-        Array.from(categoryGroup.sections.values()).forEach(
-          (sectionGroup: SectionGroup, index, array) => {
-            if (sectionGroup.items.length > 0) {
-              let sectionText = ` ${sectionGroup.section.title}: `;
-
-              const itemsList: string[] = [];
-              sectionGroup.items.forEach((item: ChecklistItem) => {
-                const itemText = processItemText(item, false);
-                itemsList.push(itemText);
-              });
-
-              sectionText += itemsList.join(', ') + '.';
-              section += sectionText;
-
-              // Add a newline between sections
-              if (index < array.length - 1) {
-                section += '\n\n';
-              }
-            }
-          }
-        );
-
-        // Only add newlines after the category if it's not the last one
-        if (
-          sortedCategories.indexOf(categoryGroup) <
-          sortedCategories.length - 1
-        ) {
-          section += '\n\n';
+      // Group items by their section
+      const sectionGroups = new Map();
+      categoryItems.forEach((item: ChecklistItem) => {
+        const sectionId = item.section_id;
+        if (!sectionGroups.has(sectionId)) {
+          const section = categorySections.find((s) => s.id === sectionId);
+          sectionGroups.set(sectionId, {
+            section,
+            items: [],
+          });
         }
+
+        const group = sectionGroups.get(sectionId);
+        group.items.push(item);
+      });
+
+      // Format each section's findings
+      const sectionGroupsArray = Array.from(sectionGroups.values());
+      sectionGroupsArray.forEach((group, sectionIndex) => {
+        if (group.section && group.items.length > 0) {
+          let sectionText = ` ${group.section.title}: `;
+
+          const itemsList = group.items
+            .map((item: ChecklistItem) => {
+              return processItemText(item, false);
+            })
+            .join(', ');
+
+          sectionText += itemsList + '.';
+          section += sectionText;
+
+          // Add a newline between sections within the same category
+          if (sectionIndex < sectionGroupsArray.length - 1) {
+            section += '\n\n';
+          }
+        }
+      });
+
+      // Check if this is the last category with items
+      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
+      
+      // Add spacing between categories
+      if (!isLastCategoryWithItems) {
+        section += '\n\n';
+      } else {
+        // For the last category, just add a single newline at the end
+        section += '\n';
       }
-    });
+    }
 
     return section;
   };
@@ -909,32 +912,35 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Start with a brief introduction
     let section = 'The management plan includes:\n\n';
 
-    // Define plan categories
+    // Define plan categories in the exact order they should appear
     const planCategories = ['plan', 'disposition', 'patient education'];
 
-    // Find categories that should be in the plan section
-    const planCategoryIds = categories
-      .filter((category) =>
-        planCategories.some((term) =>
-          category.title.toLowerCase().includes(term.toLowerCase())
-        )
-      )
-      .map((category) => category.id);
-
-    // Get sections that belong to plan categories
-    const planSections = sections.filter((section) =>
-      planCategoryIds.includes(section.category_id)
+    // Get all positive findings from all sections
+    const relevantItems = items.filter(
+      (item) => item.response === '+'
     );
 
-    // Get all positive findings from plan sections
-    const planItems = items.filter(
-      (item) =>
-        item.response === '+' &&
-        planSections.some((section) => section.id === item.section_id)
-    );
+    // Find all categories that have items
+    const categoriesWithItems = planCategories.filter(categoryTerm => {
+      const matchingCategoryIds = categories
+        .filter(category => category.title.toLowerCase().includes(categoryTerm.toLowerCase()))
+        .map(category => category.id);
+      
+      if (matchingCategoryIds.length === 0) return false;
+      
+      const categorySections = sections.filter(section => 
+        matchingCategoryIds.includes(section.category_id)
+      );
+      
+      if (categorySections.length === 0) return false;
+      
+      return relevantItems.some(item => 
+        categorySections.some(section => section.id === item.section_id)
+      );
+    });
 
     // If no plan items found, add default recommendations
-    if (planItems.length === 0) {
+    if (categoriesWithItems.length === 0) {
       section +=
         '• Appropriate diagnostic tests based on clinical presentation\n';
       section += '• Symptomatic management\n';
@@ -942,50 +948,80 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       return section;
     }
 
-    // Group items by their section
-    const sectionGroups = new Map();
-    planItems.forEach((item: ChecklistItem) => {
-      const sectionId = item.section_id;
-      if (!sectionGroups.has(sectionId)) {
-        const section = planSections.find((s) => s.id === sectionId);
-        sectionGroups.set(sectionId, {
-          section,
-          items: [],
-          categoryId: section?.category_id || 0,
-        });
-      }
+    // Process each category in the defined order
+    for (let i = 0; i < planCategories.length; i++) {
+      const categoryTerm = planCategories[i];
+      
+      // Find categories that match this term
+      const matchingCategoryIds = categories
+        .filter((category) =>
+          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
+        )
+        .map((category) => category.id);
 
-      sectionGroups.get(sectionId).items.push(item);
-    });
+      if (matchingCategoryIds.length === 0) continue;
 
-    // Sort sections by their category's display order
-    const sortedSections = Array.from(sectionGroups.values()).sort((a, b) => {
-      const categoryA = categories.find((c) => c.id === a.categoryId);
-      const categoryB = categories.find((c) => c.id === b.categoryId);
-      return (categoryA?.display_order || 0) - (categoryB?.display_order || 0);
-    });
+      // Get sections that belong to this category
+      const categorySections = sections.filter((section) =>
+        matchingCategoryIds.includes(section.category_id)
+      );
 
-    // Format each section's findings as paragraphs
-    sortedSections.forEach((group, index) => {
-      if (group.section && group.items.length > 0) {
-        let sectionText = `${group.section.title}: `;
+      if (categorySections.length === 0) continue;
 
-        const planItems: string[] = [];
-        group.items.forEach((item: ChecklistItem) => {
-          // Process item text to replace underscores with notes if applicable
-          const planItem = processItemText(item);
-          planItems.push(planItem);
-        });
+      // Get items for these sections
+      const categoryItems = relevantItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
+      );
 
-        sectionText += planItems.join(', ') + '.';
-        section += sectionText;
+      if (categoryItems.length === 0) continue;
 
-        // Add a newline between paragraphs
-        if (index < sortedSections.length - 1) {
-          section += '\n\n';
+      // Add category header (capitalize first letter)
+      const displayCategoryName =
+        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
+      section += `${displayCategoryName}:\n`;
+
+      // Group items by their section
+      const sectionGroups = new Map();
+      categoryItems.forEach((item: ChecklistItem) => {
+        const sectionId = item.section_id;
+        if (!sectionGroups.has(sectionId)) {
+          const section = categorySections.find((s) => s.id === sectionId);
+          sectionGroups.set(sectionId, {
+            section,
+            items: [],
+          });
         }
+
+        const group = sectionGroups.get(sectionId);
+        group.items.push(item);
+      });
+
+      // Format each section's findings
+      sectionGroups.forEach((group) => {
+        if (group.section && group.items.length > 0) {
+          section += `\n${group.section.title}: `;
+
+          const itemsList = group.items
+            .map((item: ChecklistItem) => {
+              return processItemText(item);
+            })
+            .join(', ');
+
+          section += itemsList + '.';
+        }
+      });
+
+      // Check if this is the last category with items
+      const isLastCategoryWithItems = categoriesWithItems.indexOf(categoryTerm) === categoriesWithItems.length - 1;
+      
+      // Add spacing between categories
+      if (!isLastCategoryWithItems) {
+        section += '\n\n';
+      } else {
+        // For the last category, just add a single newline at the end
+        section += '\n';
       }
-    });
+    }
 
     return section;
   };
@@ -1379,279 +1415,4 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
                                 <div className="flex space-x-1">
                                   <button
-                                    className={`p-1.5 rounded-md ${
-                                      item.response === '+'
-                                        ? 'bg-green-500 text-white'
-                                        : 'bg-green-100 text-green-600 hover:bg-green-200'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(item.id, '+')
-                                    }
-                                    title="Positive"
-                                  >
-                                    <PlusCircle size={16} />
-                                  </button>
-
-                                  <button
-                                    className={`p-1.5 rounded-md ${
-                                      item.response === '-'
-                                        ? 'bg-red-500 text-white'
-                                        : 'bg-red-100 text-red-600 hover:bg-red-200'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(item.id, '-')
-                                    }
-                                    title="Negative"
-                                  >
-                                    <MinusCircle size={16} />
-                                  </button>
-
-                                  <button
-                                    className={`p-1.5 rounded-md ${
-                                      item.response === 'NA'
-                                        ? 'bg-gray-500 text-white'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(item.id, 'NA')
-                                    }
-                                    title="Not Applicable"
-                                  >
-                                    <HelpCircle size={16} />
-                                  </button>
-                                </div>
-                              </div>
-
-                              {/* Always show a text input field for each symptom */}
-                              <div className="flex items-start space-x-2">
-                                <textarea
-                                  className="flex-1 p-2 border border-gray-300 rounded-md text-sm resize-none"
-                                  placeholder="Add optional notes for this symptom..."
-                                  rows={2}
-                                  value={item.notes || ''}
-                                  onChange={(e) =>
-                                    handleNotesChange(item.id, e.target.value)
-                                  }
-                                />
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )
-                )}
-
-                {getItemsBySectionForCategory(activeCategory).length === 0 && (
-                  <div className="p-6 text-center text-gray-500">
-                    No items in this category
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </main>
-
-        {/* Right Sidebar - SOAP Note Preview */}
-        <aside className="hidden md:block bg-white shadow-sm w-80 overflow-y-auto border-l">
-          <div className="p-4 border-b flex justify-between items-center bg-gradient-to-r from-gray-50 to-gray-100">
-            <h2 className="font-bold text-gray-800">Live SOAP Preview</h2>
-            <button
-              onClick={copyToClipboard}
-              className="text-blue-600 hover:text-blue-800 p-1"
-              title="Copy to clipboard"
-            >
-              <Clipboard size={16} />
-            </button>
-          </div>
-
-          <div className="p-4">
-            {/* Patient info */}
-            <div className="mb-4 text-sm">
-              <div className="font-bold">
-                {patientInfo.name || 'New Patient'}
-              </div>
-              <div className="text-gray-500">
-                {patientInfo.dob ? `DOB: ${patientInfo.dob}` : ''}
-                {patientInfo.mrn ? ` • MRN: ${patientInfo.mrn}` : ''}
-              </div>
-              <div className="text-gray-500">
-                Visit Date: {patientInfo.visitDate}
-              </div>
-            </div>
-
-            {/* SOAP sections */}
-            <div className="space-y-4 text-sm">
-              <div>
-                <div className="flex items-center mb-1">
-                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold text-xs mr-1.5">
-                    S
-                  </div>
-                  <h3 className="font-bold text-blue-800">SUBJECTIVE</h3>
-                </div>
-                <div className="pl-6 whitespace-pre-line text-gray-800">
-                  {generatedNote.subjective ||
-                    'No subjective data recorded yet.'}
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-center mb-1">
-                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-800 font-bold text-xs mr-1.5">
-                    O
-                  </div>
-                  <h3 className="font-bold text-green-800">OBJECTIVE</h3>
-                </div>
-                <div className="pl-6 whitespace-pre-line text-gray-800">
-                  {generatedNote.objective || 'No objective data recorded yet.'}
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-center mb-1">
-                  <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-800 font-bold text-xs mr-1.5">
-                    A
-                  </div>
-                  <h3 className="font-bold text-purple-800">ASSESSMENT</h3>
-                </div>
-                <div className="pl-6 whitespace-pre-line text-gray-800">
-                  {generatedNote.assessment ||
-                    'No assessment data recorded yet.'}
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-center mb-1">
-                  <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center text-orange-800 font-bold text-xs mr-1.5">
-                    P
-                  </div>
-                  <h3 className="font-bold text-orange-800">PLAN</h3>
-                </div>
-                <div className="pl-6 whitespace-pre-line text-gray-800">
-                  {generatedNote.plan || 'No plan data recorded yet.'}
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        {/* Mobile SOAP Preview Modal */}
-        {showMobilePreview && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
-            <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-white shadow-lg z-50 overflow-y-auto">
-              <div className="p-4 flex justify-between items-center border-b">
-                <h2 className="font-bold text-lg">SOAP Note Preview</h2>
-                <button onClick={() => setShowMobilePreview(false)}>
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="p-4">
-                {/* Mobile Duration of Symptoms input */}
-                <div className="mb-4 border-b pb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Duration of Symptoms
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full p-2 border border-gray-300 rounded-md"
-                    placeholder="e.g., 2 days, 1 week, 3 months"
-                    value={duration}
-                    onChange={(e) => {
-                      setDuration(e.target.value);
-                      triggerAutosave();
-                      generateSoapNote();
-                    }}
-                  />
-                </div>
-
-                {/* Patient info */}
-                <div className="mb-4 text-sm">
-                  <div className="font-bold">
-                    {patientInfo.name || 'New Patient'}
-                  </div>
-                  <div className="text-gray-500">
-                    {patientInfo.dob ? `DOB: ${patientInfo.dob}` : ''}
-                    {patientInfo.mrn ? ` • MRN: ${patientInfo.mrn}` : ''}
-                  </div>
-                  <div className="text-gray-500">
-                    Visit Date: {patientInfo.visitDate}
-                  </div>
-                </div>
-
-                {/* SOAP sections */}
-                <div className="space-y-4 text-sm">
-                  <div>
-                    <div className="flex items-center mb-1">
-                      <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold text-xs mr-1.5">
-                        S
-                      </div>
-                      <h3 className="font-bold text-blue-800">SUBJECTIVE</h3>
-                    </div>
-                    <div className="pl-6 whitespace-pre-line">
-                      {generatedNote.subjective ||
-                        'No subjective data recorded yet.'}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center mb-1">
-                      <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-800 font-bold text-xs mr-1.5">
-                        O
-                      </div>
-                      <h3 className="font-bold text-green-800">OBJECTIVE</h3>
-                    </div>
-                    <div className="pl-6 whitespace-pre-line">
-                      {generatedNote.objective ||
-                        'No objective data recorded yet.'}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center mb-1">
-                      <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-800 font-bold text-xs mr-1.5">
-                        A
-                      </div>
-                      <h3 className="font-bold text-purple-800">ASSESSMENT</h3>
-                    </div>
-                    <div className="pl-6 whitespace-pre-line">
-                      {generatedNote.assessment ||
-                        'No assessment data recorded yet.'}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center mb-1">
-                      <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center text-orange-800 font-bold text-xs mr-1.5">
-                        P
-                      </div>
-                      <h3 className="font-bold text-orange-800">PLAN</h3>
-                    </div>
-                    <div className="pl-6 whitespace-pre-line">
-                      {generatedNote.plan || 'No plan data recorded yet.'}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 border-t pt-4">
-                  <button
-                    onClick={() => {
-                      copyToClipboard();
-                      setShowMobilePreview(false);
-                    }}
-                    className="w-full bg-blue-600 text-white py-2 rounded-md flex items-center justify-center"
-                  >
-                    <Clipboard size={16} className="mr-2" />
-                    Copy to Clipboard
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default DynamicSymptomChecker;
+                                    className={`
