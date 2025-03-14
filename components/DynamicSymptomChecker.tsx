@@ -254,6 +254,44 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       .filter((group) => group.items.length > 0); // Only include sections with items
   };
 
+  // Helper function to process item text and replace underscores with notes
+  const processItemText = (
+    item: ChecklistItem,
+    makeLowercase = true
+  ): string => {
+    let text = makeLowercase ? item.item_text.toLowerCase() : item.item_text;
+
+    // Check if the item text contains underscores
+    if (text.includes('___')) {
+      if (item.notes && item.notes.trim() !== '') {
+        // Find the position of underscores
+        const underscoreIndex = text.indexOf('___');
+
+        // Find the position of the last space before the end
+        const lastSpaceIndex = text.lastIndexOf(' ');
+
+        if (underscoreIndex >= 0 && lastSpaceIndex > underscoreIndex) {
+          // There's a word after the underscores
+          // Replace just the underscores, preserving the last word
+          const beforeUnderscore = text.substring(0, underscoreIndex);
+          const afterUnderscore = text.substring(text.indexOf('___') + 3);
+          text = beforeUnderscore + item.notes + afterUnderscore;
+        } else {
+          // The underscores are at the end or there's no word after them
+          text = text.replace(/_{2,}/g, item.notes);
+        }
+      } else {
+        // If no notes, completely remove the underscores and any surrounding spaces
+        text = text.replace(/\s*_{2,}\s*/g, ' ').trim();
+      }
+    } else if (item.notes && item.notes.trim() !== '') {
+      // If no underscores but notes exist, append them in parentheses
+      text += ` (${item.notes})`;
+    }
+
+    return text;
+  };
+
   // Handle response change (+/-/NA)
   const handleResponseChange = (
     itemId: number,
@@ -269,19 +307,26 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }));
 
     // Also update the checklistItems to mark as completed
-    setChecklistItems((items) =>
-      items.map((item) =>
-        item.id === itemId
-          ? { ...item, response: value, isCompleted: true }
-          : item
-      )
-    );
+    const updatedItems = [...checklistItems];
+    const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
+
+    if (itemIndex !== -1) {
+      updatedItems[itemIndex] = {
+        ...updatedItems[itemIndex],
+        response: value,
+        isCompleted: true,
+      };
+
+      // Update state
+      setChecklistItems(updatedItems);
+
+      // Immediately regenerate SOAP note with the updated items
+      const updatedNote = generateSoapNoteWithItems(updatedItems);
+      setGeneratedNote(updatedNote);
+    }
 
     // Trigger autosave
     triggerAutosave();
-
-    // Regenerate SOAP note
-    generateSoapNote();
   };
 
   // Handle notes change
@@ -295,15 +340,25 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }));
 
     // Also update in checklistItems
-    setChecklistItems((items) =>
-      items.map((item) => (item.id === itemId ? { ...item, notes } : item))
-    );
+    const updatedItems = [...checklistItems];
+    const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
+
+    if (itemIndex !== -1) {
+      updatedItems[itemIndex] = {
+        ...updatedItems[itemIndex],
+        notes,
+      };
+
+      // Update state
+      setChecklistItems(updatedItems);
+
+      // Immediately regenerate SOAP note with the updated items
+      const updatedNote = generateSoapNoteWithItems(updatedItems);
+      setGeneratedNote(updatedNote);
+    }
 
     // Trigger autosave
     triggerAutosave();
-
-    // Regenerate SOAP note
-    generateSoapNote();
   };
 
   // Handle detail option selection
@@ -340,20 +395,25 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             updatedOptions = isSelected ? option : '';
           }
 
-          return {
+          const updatedItem = {
             ...item,
             selectedOptions: {
               ...currentSelectedOptions,
               [detailKey]: updatedOptions,
             },
           };
+
+          return updatedItem;
         }
         return item;
       })
     );
 
-    // Regenerate SOAP note
-    generateSoapNote();
+    // Immediately regenerate SOAP note with the updated items
+    setTimeout(() => {
+      const updatedNote = generateSoapNoteWithItems(checklistItems);
+      setGeneratedNote(updatedNote);
+    }, 0);
   };
 
   // Handle detail notes change
@@ -369,20 +429,25 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           // Initialize detail notes if not existing
           const currentDetailNotes = item.detailNotes || {};
 
-          return {
+          const updatedItem = {
             ...item,
             detailNotes: {
               ...currentDetailNotes,
               [`${detailKey}-${option}`]: note,
             },
           };
+
+          return updatedItem;
         }
         return item;
       })
     );
 
-    // Regenerate SOAP note
-    generateSoapNote();
+    // Immediately regenerate SOAP note with the updated items
+    setTimeout(() => {
+      const updatedNote = generateSoapNoteWithItems(checklistItems);
+      setGeneratedNote(updatedNote);
+    }, 0);
   };
 
   // Trigger autosave animation
@@ -418,22 +483,69 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     };
   };
 
+  // Generate SOAP note with specific items (for immediate updates)
+  const generateSoapNoteWithItems = (items: ChecklistItem[]) => {
+    // Generate each section of the SOAP note
+    const subjective = generateSubjectiveSectionWithItems(items);
+    const objective = generateObjectiveSectionWithItems(items);
+    const assessment = generateAssessmentSectionWithItems(items);
+    const plan = generatePlanSectionWithItems(items);
+
+    // Return the complete SOAP note
+    return {
+      subjective,
+      objective,
+      assessment,
+      plan,
+    };
+  };
+
   // Helper methods for SOAP note generation
   const generateSubjectiveSection = () => {
+    return generateSubjectiveSectionWithItems(checklistItems);
+  };
+
+  const generateSubjectiveSectionWithItems = (items: ChecklistItem[]) => {
     // Start with patient's chief complaint
     let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
     } duration. `;
 
-    // Group items by section
-    const sectionGroups = new Map();
+    // Define subjective categories
+    const subjectiveCategories = [
+      'history',
+      'alarm features',
+      'medications',
+      'diet',
+      'review of systems',
+      'collateral history',
+      'risk factors',
+      'past medical history',
+    ];
 
-    // Get all positive and negative findings
-    const historyItems = checklistItems.filter(
-      (item) => item.response === '+' || item.response === '-'
+    // Find categories that should be in the subjective section
+    const subjectiveCategoryIds = categories
+      .filter((category) =>
+        subjectiveCategories.some((term) =>
+          category.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+      .map((category) => category.id);
+
+    // Get sections that belong to subjective categories
+    const subjectiveSections = sections.filter((section) =>
+      subjectiveCategoryIds.includes(section.category_id)
+    );
+
+    // Get all positive and negative findings from subjective sections
+    const historyItems = items.filter(
+      (item) =>
+        (item.response === '+' || item.response === '-') &&
+        subjectiveSections.some((section) => section.id === item.section_id)
     );
 
     // Group items by their section
+    const sectionGroups = new Map();
     historyItems.forEach((item: ChecklistItem) => {
       const sectionId = item.section_id;
       if (!sectionGroups.has(sectionId)) {
@@ -464,12 +576,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         // Add positive findings as a sentence
         if (group.positiveItems.length > 0) {
           section += `Patient reports ${group.positiveItems
-            .map((item) => {
-              // Remove underscores from item text
-              let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
-              if (item.notes) {
-                text += ` (${item.notes})`;
-              }
+            .map((item: ChecklistItem) => {
+              // Process item text to replace underscores with notes if applicable
+              const text = processItemText(item);
               return text;
             })
             .join(', ')}.`;
@@ -481,12 +590,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             section += ' ';
           }
           section += `Patient denies ${group.negativeItems
-            .map((item) => {
-              // Remove underscores from item text
-              let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
-              if (item.notes) {
-                text += ` (${item.notes})`;
-              }
+            .map((item: ChecklistItem) => {
+              // Process item text to replace underscores with notes if applicable
+              const text = processItemText(item);
               return text;
             })
             .join(', ')}.`;
@@ -498,37 +604,54 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   };
 
   const generateObjectiveSection = () => {
-    let section = 'On physical examination: ';
+    return generateObjectiveSectionWithItems(checklistItems);
+  };
 
-    // Find the Physical Exam category
-    const physicalExamCategory = categories.find(
-      (category) =>
-        category.title.toLowerCase().includes('physical exam') ||
-        category.title.toLowerCase().includes('examination')
-    );
+  const generateObjectiveSectionWithItems = (items: ChecklistItem[]) => {
+    // Start with a brief introduction
+    let section = 'On examination:\n\n';
 
-    if (!physicalExamCategory) {
-      return 'Physical examination reveals no significant findings.';
+    // Define objective categories
+    const objectiveCategories = [
+      'physical exam',
+      'examination',
+      'lab studies',
+      'imaging',
+      'special tests',
+      'ecg',
+    ];
+
+    // Find categories that should be in the objective section
+    const objectiveCategoryIds = categories
+      .filter((category) =>
+        objectiveCategories.some((term) =>
+          category.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+      .map((category) => category.id);
+
+    if (objectiveCategoryIds.length === 0) {
+      return 'No objective findings documented.';
     }
 
-    // Get sections that belong to the Physical Exam category
-    const physicalExamSections = sections.filter(
-      (section) => section.category_id === physicalExamCategory.id
+    // Get sections that belong to objective categories
+    const objectiveSections = sections.filter((section) =>
+      objectiveCategoryIds.includes(section.category_id)
     );
 
-    if (physicalExamSections.length === 0) {
-      return 'Physical examination reveals no significant findings.';
+    if (objectiveSections.length === 0) {
+      return 'No objective findings documented.';
     }
 
-    // Get all positive findings from Physical Exam sections
-    const examItems = checklistItems.filter(
+    // Get all positive findings from objective sections
+    const examItems = items.filter(
       (item) =>
         item.response === '+' &&
-        physicalExamSections.some((section) => section.id === item.section_id)
+        objectiveSections.some((section) => section.id === item.section_id)
     );
 
     if (examItems.length === 0) {
-      return 'Physical examination reveals no significant findings.';
+      return 'No significant objective findings documented.';
     }
 
     // Group items by their section
@@ -536,53 +659,83 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     examItems.forEach((item: ChecklistItem) => {
       const sectionId = item.section_id;
       if (!sectionGroups.has(sectionId)) {
-        const section = physicalExamSections.find((s) => s.id === sectionId);
+        const section = objectiveSections.find((s) => s.id === sectionId);
         sectionGroups.set(sectionId, {
           section,
           items: [],
+          categoryId: section?.category_id || 0,
         });
       }
 
       sectionGroups.get(sectionId).items.push(item);
     });
 
-    // Format each section's findings as sentences
-    const sectionTexts: string[] = [];
-    sectionGroups.forEach((group) => {
+    // Sort sections by their category's display order
+    const sortedSections = Array.from(sectionGroups.values()).sort((a, b) => {
+      const categoryA = categories.find((c) => c.id === a.categoryId);
+      const categoryB = categories.find((c) => c.id === b.categoryId);
+      return (categoryA?.display_order || 0) - (categoryB?.display_order || 0);
+    });
+
+    // Format each section's findings as paragraphs
+    sortedSections.forEach((group, index) => {
       if (group.section && group.items.length > 0) {
-        let sectionText = `${group.section.title} examination shows `;
+        let sectionText = `${group.section.title}: `;
 
         sectionText += group.items
           .map((item: ChecklistItem) => {
-            // Remove underscores from item text
-            let text = item.item_text.toLowerCase().replace(/_{2,}/g, '');
-            if (item.notes) {
-              text += ` (${item.notes})`;
-            }
-            return text;
+            // Process item text to replace underscores with notes if applicable
+            return processItemText(item);
           })
           .join(', ');
 
-        sectionTexts.push(sectionText);
+        section += sectionText + '.';
+
+        // Add a newline between paragraphs
+        if (index < sortedSections.length - 1) {
+          section += '\n\n';
+        }
       }
     });
-
-    section += sectionTexts.join('. ') + '.';
 
     return section;
   };
 
   const generateAssessmentSection = () => {
+    return generateAssessmentSectionWithItems(checklistItems);
+  };
+
+  const generateAssessmentSectionWithItems = (items: ChecklistItem[]) => {
     let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
     } duration. `;
 
-    // Group items by section for assessment
-    const sectionGroups = new Map();
+    // Define assessment categories
+    const assessmentCategories = [
+      'assessment',
+      'differential diagnosis',
+      'diagnosis',
+    ];
 
-    // Get all positive findings that might be relevant for assessment
-    const assessmentItems = checklistItems.filter(
-      (item) => item.response === '+'
+    // Find categories that should be in the assessment section
+    const assessmentCategoryIds = categories
+      .filter((category) =>
+        assessmentCategories.some((term) =>
+          category.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+      .map((category) => category.id);
+
+    // Get sections that belong to assessment categories
+    const assessmentSections = sections.filter((section) =>
+      assessmentCategoryIds.includes(section.category_id)
+    );
+
+    // Get all positive findings from assessment sections
+    const assessmentItems = items.filter(
+      (item) =>
+        item.response === '+' &&
+        assessmentSections.some((section) => section.id === item.section_id)
     );
 
     if (assessmentItems.length === 0) {
@@ -590,10 +743,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }
 
     // Group items by their section
+    const sectionGroups = new Map();
     assessmentItems.forEach((item: ChecklistItem) => {
       const sectionId = item.section_id;
       if (!sectionGroups.has(sectionId)) {
-        const section = sections.find((s) => s.id === sectionId);
+        const section = assessmentSections.find((s) => s.id === sectionId);
         sectionGroups.set(sectionId, {
           section,
           items: [],
@@ -611,11 +765,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     sectionGroups.forEach((group) => {
       if (group.section && group.items.length > 0) {
         group.items.forEach((item: ChecklistItem) => {
-          // Remove underscores from item text
-          let diagnosis = item.item_text.replace(/_{2,}/g, '');
-          if (item.notes) {
-            diagnosis += ` (${item.notes})`;
-          }
+          // Process item text to replace underscores with notes if applicable
+          const diagnosis = processItemText(item, false);
           diagnosisList.push(diagnosis);
         });
       }
@@ -627,19 +778,42 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   };
 
   const generatePlanSection = () => {
+    return generatePlanSectionWithItems(checklistItems);
+  };
+
+  const generatePlanSectionWithItems = (items: ChecklistItem[]) => {
     let section = 'The management plan includes: ';
 
-    // Group items by section for plan
-    const sectionGroups = new Map();
+    // Define plan categories
+    const planCategories = ['plan', 'disposition', 'patient education'];
 
-    // Get all positive findings that might be relevant for plan
-    const planItems = checklistItems.filter((item) => item.response === '+');
+    // Find categories that should be in the plan section
+    const planCategoryIds = categories
+      .filter((category) =>
+        planCategories.some((term) =>
+          category.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+      .map((category) => category.id);
+
+    // Get sections that belong to plan categories
+    const planSections = sections.filter((section) =>
+      planCategoryIds.includes(section.category_id)
+    );
+
+    // Get all positive findings from plan sections
+    const planItems = items.filter(
+      (item) =>
+        item.response === '+' &&
+        planSections.some((section) => section.id === item.section_id)
+    );
 
     // Group items by their section
+    const sectionGroups = new Map();
     planItems.forEach((item: ChecklistItem) => {
       const sectionId = item.section_id;
       if (!sectionGroups.has(sectionId)) {
-        const section = sections.find((s) => s.id === sectionId);
+        const section = planSections.find((s) => s.id === sectionId);
         sectionGroups.set(sectionId, {
           section,
           items: [],
@@ -652,22 +826,21 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Format plan as sentences grouped by section
     const planParts = [];
 
-    // Add default recommendations
-    planParts.push(
-      'appropriate diagnostic tests based on clinical presentation'
-    );
-    planParts.push('symptomatic management');
-    planParts.push('follow-up evaluation based on symptom progression');
+    // Add default recommendations if no specific plan items found
+    if (planItems.length === 0) {
+      planParts.push(
+        'appropriate diagnostic tests based on clinical presentation'
+      );
+      planParts.push('symptomatic management');
+      planParts.push('follow-up evaluation based on symptom progression');
+    }
 
     // Add section-specific plans
     sectionGroups.forEach((group) => {
       if (group.section && group.items.length > 0) {
         group.items.forEach((item: ChecklistItem) => {
-          // Remove underscores from item text
-          let planItem = item.item_text.toLowerCase().replace(/_{2,}/g, '');
-          if (item.notes) {
-            planItem += ` (${item.notes})`;
-          }
+          // Process item text to replace underscores with notes if applicable
+          const planItem = processItemText(item);
           planParts.push(planItem);
         });
       }
@@ -1061,7 +1234,7 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                               <div className="flex flex-wrap items-start mb-2">
                                 <div className="flex-1 mr-2">
                                   <div className="text-gray-900 font-medium mb-1">
-                                    {item.item_text}
+                                    {processItemText(item)}
                                   </div>
                                 </div>
 
