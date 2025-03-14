@@ -706,9 +706,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   };
 
   const generateAssessmentSectionWithItems = (items: ChecklistItem[]) => {
+    // Start with patient's chief complaint
     let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
       duration || 'unspecified'
-    } duration. `;
+    } duration.\n\n`;
 
     // Define assessment categories
     const assessmentCategories = [
@@ -742,37 +743,160 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       return `${section}Differential diagnoses pending further evaluation.`;
     }
 
-    // Group items by their section
-    const sectionGroups = new Map();
+    // Define types for our data structures
+    type SectionGroup = {
+      section: Section;
+      items: ChecklistItem[];
+    };
+
+    type CategoryGroup = {
+      category: Category;
+      sections: Map<number, SectionGroup>;
+      displayOrder: number;
+    };
+
+    // Group items by their section and category
+    const categoryGroups = new Map<string, CategoryGroup>();
+
     assessmentItems.forEach((item: ChecklistItem) => {
       const sectionId = item.section_id;
-      if (!sectionGroups.has(sectionId)) {
-        const section = assessmentSections.find((s) => s.id === sectionId);
-        sectionGroups.set(sectionId, {
+      const section = assessmentSections.find((s) => s.id === sectionId);
+
+      if (!section) return;
+
+      const category = categories.find((c) => c.id === section.category_id);
+      if (!category) return;
+
+      const categoryKey = category.title.toLowerCase();
+
+      if (!categoryGroups.has(categoryKey)) {
+        categoryGroups.set(categoryKey, {
+          category,
+          sections: new Map<number, SectionGroup>(),
+          displayOrder: category.display_order,
+        });
+      }
+
+      const categoryGroup = categoryGroups.get(categoryKey)!;
+
+      if (!categoryGroup.sections.has(sectionId)) {
+        categoryGroup.sections.set(sectionId, {
           section,
           items: [],
         });
       }
 
-      sectionGroups.get(sectionId).items.push(item);
+      categoryGroup.sections.get(sectionId)!.items.push(item);
     });
 
-    // Add assessment based on sections
-    section +=
-      'Based on the clinical presentation, differential diagnoses include: ';
+    // Sort categories by display order
+    const sortedCategories = Array.from(categoryGroups.values()).sort(
+      (a, b) => a.displayOrder - b.displayOrder
+    );
 
-    const diagnosisList: string[] = [];
-    sectionGroups.forEach((group) => {
-      if (group.section && group.items.length > 0) {
-        group.items.forEach((item: ChecklistItem) => {
-          // Process item text to replace underscores with notes if applicable
-          const diagnosis = processItemText(item, false);
-          diagnosisList.push(diagnosis);
-        });
+    // Process differential diagnosis first if it exists
+    const diffDiagnosisCategory = sortedCategories.find((category) =>
+      category.category.title.toLowerCase().includes('differential diagnosis')
+    );
+
+    if (diffDiagnosisCategory) {
+      section += 'Differential Diagnosis:';
+
+      // Process each section in the differential diagnosis category
+      Array.from(diffDiagnosisCategory.sections.values()).forEach(
+        (sectionGroup: SectionGroup) => {
+          if (sectionGroup.items.length > 0) {
+            const diagnosisList: string[] = [];
+            sectionGroup.items.forEach((item: ChecklistItem) => {
+              const diagnosis = processItemText(item, false);
+              diagnosisList.push(diagnosis);
+            });
+
+            section += ' ' + diagnosisList.join(', ') + '.';
+          }
+        }
+      );
+
+      section += '\n\n';
+    }
+
+    // Process assessment sections
+    const assessmentCategory = sortedCategories.find(
+      (category) =>
+        category.category.title.toLowerCase().includes('assessment') &&
+        !category.category.title.toLowerCase().includes('differential')
+    );
+
+    if (assessmentCategory) {
+      section += 'Assessment:';
+
+      // Process each section in the assessment category
+      Array.from(assessmentCategory.sections.values()).forEach(
+        (sectionGroup: SectionGroup, index, array) => {
+          if (sectionGroup.items.length > 0) {
+            let sectionText = ` ${sectionGroup.section.title}: `;
+
+            const assessmentList: string[] = [];
+            sectionGroup.items.forEach((item: ChecklistItem) => {
+              const assessment = processItemText(item, false);
+              assessmentList.push(assessment);
+            });
+
+            sectionText += assessmentList.join(', ') + '.';
+            section += sectionText;
+
+            // Add a newline between sections
+            if (index < array.length - 1) {
+              section += '\n\n';
+            }
+          }
+        }
+      );
+
+      section += '\n\n';
+    }
+
+    // Process any other categories (like diagnosis) that aren't differential diagnosis or assessment
+    sortedCategories.forEach((categoryGroup) => {
+      const categoryTitle = categoryGroup.category.title.toLowerCase();
+      if (
+        !categoryTitle.includes('differential diagnosis') &&
+        !categoryTitle.includes('assessment')
+      ) {
+        section += `${categoryGroup.category.title}:`;
+
+        // Process each section in this category
+        Array.from(categoryGroup.sections.values()).forEach(
+          (sectionGroup: SectionGroup, index, array) => {
+            if (sectionGroup.items.length > 0) {
+              let sectionText = ` ${sectionGroup.section.title}: `;
+
+              const itemsList: string[] = [];
+              sectionGroup.items.forEach((item: ChecklistItem) => {
+                const itemText = processItemText(item, false);
+                itemsList.push(itemText);
+              });
+
+              sectionText += itemsList.join(', ') + '.';
+              section += sectionText;
+
+              // Add a newline between sections
+              if (index < array.length - 1) {
+                section += '\n\n';
+              }
+            }
+          }
+        );
+
+        // Only add newlines after the category if it's not the last one
+        if (
+          sortedCategories.indexOf(categoryGroup) <
+          sortedCategories.length - 1
+        ) {
+          section += '\n\n';
+        }
       }
     });
-
-    section += diagnosisList.join(', ') + '.';
 
     return section;
   };
@@ -782,7 +906,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   };
 
   const generatePlanSectionWithItems = (items: ChecklistItem[]) => {
-    let section = 'The management plan includes: ';
+    // Start with a brief introduction
+    let section = 'The management plan includes:\n\n';
 
     // Define plan categories
     const planCategories = ['plan', 'disposition', 'patient education'];
@@ -808,6 +933,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         planSections.some((section) => section.id === item.section_id)
     );
 
+    // If no plan items found, add default recommendations
+    if (planItems.length === 0) {
+      section +=
+        '• Appropriate diagnostic tests based on clinical presentation\n';
+      section += '• Symptomatic management\n';
+      section += '• Follow-up evaluation based on symptom progression';
+      return section;
+    }
+
     // Group items by their section
     const sectionGroups = new Map();
     planItems.forEach((item: ChecklistItem) => {
@@ -817,36 +951,41 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         sectionGroups.set(sectionId, {
           section,
           items: [],
+          categoryId: section?.category_id || 0,
         });
       }
 
       sectionGroups.get(sectionId).items.push(item);
     });
 
-    // Format plan as sentences grouped by section
-    const planParts = [];
+    // Sort sections by their category's display order
+    const sortedSections = Array.from(sectionGroups.values()).sort((a, b) => {
+      const categoryA = categories.find((c) => c.id === a.categoryId);
+      const categoryB = categories.find((c) => c.id === b.categoryId);
+      return (categoryA?.display_order || 0) - (categoryB?.display_order || 0);
+    });
 
-    // Add default recommendations if no specific plan items found
-    if (planItems.length === 0) {
-      planParts.push(
-        'appropriate diagnostic tests based on clinical presentation'
-      );
-      planParts.push('symptomatic management');
-      planParts.push('follow-up evaluation based on symptom progression');
-    }
-
-    // Add section-specific plans
-    sectionGroups.forEach((group) => {
+    // Format each section's findings as paragraphs
+    sortedSections.forEach((group, index) => {
       if (group.section && group.items.length > 0) {
+        let sectionText = `${group.section.title}: `;
+
+        const planItems: string[] = [];
         group.items.forEach((item: ChecklistItem) => {
           // Process item text to replace underscores with notes if applicable
           const planItem = processItemText(item);
-          planParts.push(planItem);
+          planItems.push(planItem);
         });
+
+        sectionText += planItems.join(', ') + '.';
+        section += sectionText;
+
+        // Add a newline between paragraphs
+        if (index < sortedSections.length - 1) {
+          section += '\n\n';
+        }
       }
     });
-
-    section += planParts.join(', ') + '.';
 
     return section;
   };
