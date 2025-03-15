@@ -4,7 +4,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient } from '@supabase/supabase-js';
 import config from './config.mjs';
-import { processItemText } from './parser.mjs';
 
 // Get directory name for ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -41,46 +40,123 @@ function logError(message, error) {
 }
 
 /**
- * Insert categories into the database
+ * Process a single markdown file directly
  */
-async function insertCategories() {
-  log('Inserting categories...');
+async function processMarkdownFile(filePath, chapterId, categoryId) {
+  const fileName = path.basename(filePath);
+  log(`Processing file: ${fileName}`);
 
   try {
-    // Check which categories already exist
-    const { data: existingCategories, error: fetchError } = await supabase
-      .from('categories')
-      .select('title');
+    // Read file content
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lines = content.split('\n');
 
-    if (fetchError) throw fetchError;
+    let currentSection = null;
+    let currentSectionId = null;
 
-    const existingTitles = existingCategories.map((c) => c.title);
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
 
-    // Prepare categories that don't already exist
-    const categoriesToInsert = Object.entries(config.categories)
-      .map(([_, { name, order }]) => ({
-        title: name,
-        display_order: order,
-      }))
-      .filter((c) => !existingTitles.includes(c.title));
+      // Skip empty lines
+      if (!line) continue;
 
-    if (categoriesToInsert.length === 0) {
-      log('All categories already exist, skipping insertion');
-      return;
+      // Process section headers
+      if (line.startsWith('## ')) {
+        const sectionTitle = line.substring(3).trim();
+
+        try {
+          // Insert section
+          const { data: sections, error } = await supabase
+            .from('sections')
+            .upsert({
+              chapter_id: chapterId,
+              category_id: categoryId,
+              title: sectionTitle,
+              display_order: i,
+            })
+            .select();
+
+          if (error) throw error;
+
+          currentSection = sectionTitle;
+          currentSectionId = sections[0].id;
+          log(
+            `Inserted/updated section: ${sectionTitle} (ID: ${currentSectionId})`
+          );
+        } catch (error) {
+          logError(`Error creating section ${sectionTitle}`, error);
+        }
+
+        continue;
+      }
+
+      // Process checklist items
+      if (line.startsWith('- [ ] ') && currentSectionId) {
+        const checklistItems = [];
+        let itemCount = 0;
+
+        // Process all items at this level until we hit another section or end of file
+        for (let j = i; j < lines.length; j++) {
+          const itemLine = lines[j].trim();
+
+          if (!itemLine || itemLine.startsWith('## ')) {
+            break;
+          }
+
+          if (itemLine.startsWith('- [ ] ')) {
+            // Just extract the text without complex parsing
+            const itemText = itemLine.substring(6).trim();
+
+            // Only capture simple attributes
+            const hasTextInput = itemText.includes('_____');
+
+            // Each item gets a unique, sequential display_order
+            checklistItems.push({
+              section_id: currentSectionId,
+              parent_item_id: null,
+              display_order: itemCount * 10, // GUARANTEED to be sequential
+              item_text: itemText,
+              has_text_input: hasTextInput,
+              input_label: null,
+              input_placeholder: null,
+              input_unit: null,
+              icd10_code: null,
+            });
+
+            itemCount++;
+            i = j; // Skip this line in the outer loop
+          }
+        }
+
+        // Insert all items for this section
+        if (checklistItems.length > 0) {
+          try {
+            log(
+              `Inserting ${checklistItems.length} checklist items for section ${currentSectionId}`
+            );
+            const { data, error } = await supabase
+              .from('checklist_items')
+              .insert(checklistItems)
+              .select();
+
+            if (error) throw error;
+
+            log(`Successfully inserted ${data.length} checklist items`);
+          } catch (error) {
+            logError(
+              `Error inserting checklist items for section ${currentSection}`,
+              error
+            );
+          }
+        }
+      }
     }
 
-    // Insert categories
-    const { data, error } = await supabase
-      .from('categories')
-      .insert(categoriesToInsert)
-      .select();
-
-    if (error) throw error;
-
-    log(`Inserted ${data.length} categories`);
+    log(`Completed processing file: ${fileName}`);
+    return true;
   } catch (error) {
-    logError('Error inserting categories', error);
-    throw error;
+    logError(`Error processing file ${filePath}`, error);
+    return false;
   }
 }
 
@@ -164,183 +240,46 @@ async function processChapter(chapterDir) {
 }
 
 /**
- * Extremely simplified markdown file processor
+ * Insert categories into the database
  */
-async function processMarkdownFile(filePath, chapterId, categoryId) {
-  const fileName = path.basename(filePath);
-  log(`Processing file: ${fileName}`);
+async function insertCategories() {
+  log('Inserting categories...');
 
   try {
-    // Read the file content
-    const content = fs.readFileSync(filePath, 'utf8');
+    // Check which categories already exist
+    const { data: existingCategories, error: fetchError } = await supabase
+      .from('categories')
+      .select('title');
 
-    // Split into sections
-    const sections = content.split(/^## /m).filter(Boolean);
+    if (fetchError) throw fetchError;
 
-    // Process each section
-    for (let sectionIndex = 0; sectionIndex < sections.length; sectionIndex++) {
-      const sectionText = sections[sectionIndex];
-      const sectionLines = sectionText.split('\n');
+    const existingTitles = existingCategories.map((c) => c.title);
 
-      // First line is section title
-      const sectionTitle = sectionLines[0].trim();
+    // Prepare categories that don't already exist
+    const categoriesToInsert = Object.entries(config.categories)
+      .map(([_, { name, order }]) => ({
+        title: name,
+        display_order: order,
+      }))
+      .filter((c) => !existingTitles.includes(c.title));
 
-      try {
-        // Insert the section
-        const { data: insertedSections, error: sectionError } = await supabase
-          .from('sections')
-          .upsert({
-            chapter_id: chapterId,
-            category_id: categoryId,
-            title: sectionTitle,
-            display_order: sectionIndex,
-          })
-          .select();
-
-        if (sectionError) {
-          throw sectionError;
-        }
-
-        const sectionId = insertedSections[0].id;
-        log(`Inserted/updated section: ${sectionTitle} (ID: ${sectionId})`);
-
-        // Extract all checklist items
-        const checklistItems = [];
-        const indentMap = new Map(); // Map of indent levels to item IDs
-
-        for (let i = 1; i < sectionLines.length; i++) {
-          const line = sectionLines[i];
-          const match = line.match(/^(\s*)- \[ \] (.+)$/);
-
-          if (match) {
-            const indent = match[1].length;
-            const text = match[2].trim();
-
-            // Find parent based on indent level
-            let parentId = null;
-            for (let level = indent - 2; level >= 0; level -= 2) {
-              if (indentMap.has(level)) {
-                parentId = indentMap.get(level);
-                break;
-              }
-            }
-
-            // Create item with a GUARANTEED display order
-            const tempId = `temp_${sectionIndex}_${i}`;
-            const item = {
-              tempId,
-              section_id: sectionId,
-              parent_item_id: parentId,
-              display_order: i * 10, // Simple, sequential ordering
-              item_text: text,
-              has_text_input: text.includes('_____'),
-              input_placeholder: null,
-              input_unit: null,
-              icd10_code: null,
-            };
-
-            // Extract ICD10 codes if present
-            const icd10Match = text.match(
-              /\(([A-Z][0-9]{2}(?:\.[0-9]{1,2})?)\)$/
-            );
-            if (icd10Match) {
-              item.icd10_code = icd10Match[1];
-              item.item_text = text.replace(
-                /\s*\([A-Z][0-9]{2}(?:\.[0-9]{1,2})?\)$/,
-                ''
-              );
-            }
-
-            // Extract unit information if this is an input field
-            if (item.has_text_input) {
-              const unitMatch = text.match(/_+\s*([^_]+?)$/);
-              if (unitMatch && unitMatch[1]) {
-                item.input_unit = unitMatch[1].trim();
-              }
-            }
-
-            checklistItems.push(item);
-
-            // Store this item as a potential parent
-            indentMap.set(indent, tempId);
-          }
-        }
-
-        // Insert all items for this section
-        if (checklistItems.length > 0) {
-          log(
-            `Inserting ${checklistItems.length} checklist items for section ${sectionId}`
-          );
-
-          // First insert all items without parent references
-          const itemsToInsert = checklistItems.map((item, idx) => ({
-            section_id: item.section_id,
-            parent_item_id: null, // Will update in second pass
-            display_order: item.display_order || idx * 10, // Force valid display_order
-            item_text: item.item_text,
-            has_text_input: item.has_text_input,
-            input_label: item.input_label,
-            input_placeholder: item.input_placeholder,
-            input_unit: item.input_unit,
-            icd10_code: item.icd10_code,
-          }));
-
-          const { data: insertedItems, error: insertError } = await supabase
-            .from('checklist_items')
-            .insert(itemsToInsert)
-            .select();
-
-          if (insertError) {
-            throw insertError;
-          }
-
-          // Create ID mapping for parent updates
-          const idMap = {};
-          checklistItems.forEach((item, idx) => {
-            idMap[item.tempId] = insertedItems[idx].id;
-          });
-
-          // Update parent relationships
-          const parentUpdates = [];
-
-          for (let i = 0; i < checklistItems.length; i++) {
-            const item = checklistItems[i];
-            if (item.parent_item_id) {
-              const actualParentId = idMap[item.parent_item_id];
-              if (actualParentId) {
-                parentUpdates.push({
-                  id: insertedItems[i].id,
-                  parent_item_id: actualParentId,
-                });
-              }
-            }
-          }
-
-          if (parentUpdates.length > 0) {
-            const { error: updateError } = await supabase
-              .from('checklist_items')
-              .upsert(parentUpdates);
-
-            if (updateError) {
-              throw updateError;
-            }
-
-            log(`Updated ${parentUpdates.length} parent references`);
-          }
-
-          log(`Successfully inserted ${insertedItems.length} checklist items`);
-        }
-      } catch (error) {
-        logError(`Error processing section ${sectionTitle}`, error);
-        // Continue with next section
-      }
+    if (categoriesToInsert.length === 0) {
+      log('All categories already exist, skipping insertion');
+      return;
     }
 
-    log(`Completed processing file: ${fileName}`);
-    return true;
+    // Insert categories
+    const { data, error } = await supabase
+      .from('categories')
+      .insert(categoriesToInsert)
+      .select();
+
+    if (error) throw error;
+
+    log(`Inserted ${data.length} categories`);
   } catch (error) {
-    logError(`Error processing file ${filePath}`, error);
-    return false;
+    logError('Error inserting categories', error);
+    throw error;
   }
 }
 

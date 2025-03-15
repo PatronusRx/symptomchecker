@@ -16,10 +16,10 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Blood pressure: _ mmHg",
+      "text": "Blood pressure: ___ mmHg",
       "processed": [
         {
-          "itemText": "Blood pressure: _ mmHg",
+          "itemText": "Blood pressure: ___ mmHg",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "mmHg",
@@ -30,10 +30,10 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Heart rate: _ bpm",
+      "text": "Heart rate: ___ bpm",
       "processed": [
         {
-          "itemText": "Heart rate: _ bpm",
+          "itemText": "Heart rate: ___ bpm",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "bpm",
@@ -44,10 +44,10 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Respiratory rate: _ breaths/min",
+      "text": "Respiratory rate: ___ breaths/min",
       "processed": [
         {
-          "itemText": "Respiratory rate: _ breaths/min",
+          "itemText": "Respiratory rate: ___ breaths/min",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "breaths/min",
@@ -58,10 +58,10 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Temperature: _ °F/°C",
+      "text": "Temperature: ___ °F/°C",
       "processed": [
         {
-          "itemText": "Temperature: _ °F/°C",
+          "itemText": "Temperature: ___ °F/°C",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "°F/°C",
@@ -72,12 +72,12 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Oxygen saturation: _% on _",
+      "text": "Oxygen saturation: ___% on ___",
       "processed": [
         {
-          "itemText": "Oxygen saturation: _% on _",
+          "itemText": "Oxygen saturation: ___% on ___",
           "hasTextInput": true,
-          "inputPlaceholder": "_% on ",
+          "inputPlaceholder": "___% on ",
           "inputUnit": null,
           "icd10Code": null
         }
@@ -86,10 +86,10 @@
     {
       "section": "Vital Signs",
       "indentLevel": 0,
-      "text": "Body mass index: _",
+      "text": "Body mass index: ___",
       "processed": [
         {
-          "itemText": "Body mass index: _",
+          "itemText": "Body mass index: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -114,10 +114,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "BP: _ mmHg,",
+      "text": "BP: ___ mmHg,",
       "processed": [
         {
-          "itemText": "BP: _ mmHg,",
+          "itemText": "BP: ___ mmHg,",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "mmHg,",
@@ -128,10 +128,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "HR: _ bpm",
+      "text": "HR: ___ bpm",
       "processed": [
         {
-          "itemText": "HR: _ bpm",
+          "itemText": "HR: ___ bpm",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "bpm",
@@ -156,10 +156,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "BP: _ mmHg,",
+      "text": "BP: ___ mmHg,",
       "processed": [
         {
-          "itemText": "BP: _ mmHg,",
+          "itemText": "BP: ___ mmHg,",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "mmHg,",
@@ -170,10 +170,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "HR: _ bpm",
+      "text": "HR: ___ bpm",
       "processed": [
         {
-          "itemText": "HR: _ bpm",
+          "itemText": "HR: ___ bpm",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "bpm",
@@ -198,10 +198,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "BP: _ mmHg,",
+      "text": "BP: ___ mmHg,",
       "processed": [
         {
-          "itemText": "BP: _ mmHg,",
+          "itemText": "BP: ___ mmHg,",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "mmHg,",
@@ -212,10 +212,10 @@
     {
       "section": "Orthostatic Vital Signs",
       "indentLevel": 1,
-      "text": "HR: _ bpm",
+      "text": "HR: ___ bpm",
       "processed": [
         {
-          "itemText": "HR: _ bpm",
+          "itemText": "HR: ___ bpm",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": "bpm",
@@ -604,10 +604,10 @@
     {
       "section": "Cardiovascular",
       "indentLevel": 1,
-      "text": "Location: _",
+      "text": "Location: ___",
       "processed": [
         {
-          "itemText": "Location: _",
+          "itemText": "Location: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -618,12 +618,12 @@
     {
       "section": "Cardiovascular",
       "indentLevel": 1,
-      "text": "Grade: \\_\\_\\_/6",
+      "text": "Grade: \\___\\___\\___/6",
       "processed": [
         {
-          "itemText": "Grade: \\_\\_\\_/6",
+          "itemText": "Grade: \\___\\___\\___/6",
           "hasTextInput": true,
-          "inputPlaceholder": "\\_\\_\\",
+          "inputPlaceholder": "\\___\\___\\",
           "inputUnit": "/6",
           "icd10Code": null
         }
@@ -632,10 +632,10 @@
     {
       "section": "Cardiovascular",
       "indentLevel": 1,
-      "text": "Radiation: _",
+      "text": "Radiation: ___",
       "processed": [
         {
-          "itemText": "Radiation: _",
+          "itemText": "Radiation: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -688,10 +688,10 @@
     {
       "section": "Cardiovascular",
       "indentLevel": 0,
-      "text": "Carotid sinus massage performed (results: _)",
+      "text": "Carotid sinus massage performed (results: ___)",
       "processed": [
         {
-          "itemText": "Carotid sinus massage performed (results: _)",
+          "itemText": "Carotid sinus massage performed (results: ___)",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": ")",
@@ -884,10 +884,10 @@
     {
       "section": "Abdominal",
       "indentLevel": 0,
-      "text": "Tender (location: _)",
+      "text": "Tender (location: ___)",
       "processed": [
         {
-          "itemText": "Tender (location: _)",
+          "itemText": "Tender (location: ___)",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": ")",
@@ -1024,10 +1024,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Alert and oriented (x_)",
+      "text": "Alert and oriented (x___)",
       "processed": [
         {
-          "itemText": "Alert and oriented (x_)",
+          "itemText": "Alert and oriented (x___)",
           "hasTextInput": true,
           "inputPlaceholder": null,
           "inputUnit": ")",
@@ -1122,10 +1122,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Cranial nerve deficit: _",
+      "text": "Cranial nerve deficit: ___",
       "processed": [
         {
-          "itemText": "Cranial nerve deficit: _",
+          "itemText": "Cranial nerve deficit: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1150,10 +1150,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Motor deficit: _",
+      "text": "Motor deficit: ___",
       "processed": [
         {
-          "itemText": "Motor deficit: _",
+          "itemText": "Motor deficit: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1178,10 +1178,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Sensory deficit: _",
+      "text": "Sensory deficit: ___",
       "processed": [
         {
-          "itemText": "Sensory deficit: _",
+          "itemText": "Sensory deficit: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1206,10 +1206,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Abnormal reflexes: _",
+      "text": "Abnormal reflexes: ___",
       "processed": [
         {
-          "itemText": "Abnormal reflexes: _",
+          "itemText": "Abnormal reflexes: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1234,10 +1234,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Coordination abnormal: _",
+      "text": "Coordination abnormal: ___",
       "processed": [
         {
-          "itemText": "Coordination abnormal: _",
+          "itemText": "Coordination abnormal: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1262,10 +1262,10 @@
     {
       "section": "Neurological",
       "indentLevel": 0,
-      "text": "Gait abnormal: _",
+      "text": "Gait abnormal: ___",
       "processed": [
         {
-          "itemText": "Gait abnormal: _",
+          "itemText": "Gait abnormal: ___",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": null,
@@ -1318,10 +1318,10 @@
     {
       "section": "Extremities",
       "indentLevel": 0,
-      "text": "Peripheral edema (location/severity: _)",
+      "text": "Peripheral edema (location/severity: ___)",
       "processed": [
         {
-          "itemText": "Peripheral edema (location/severity: _)",
+          "itemText": "Peripheral edema (location/severity: ___)",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": ")",
@@ -1486,10 +1486,10 @@
     {
       "section": "Skin",
       "indentLevel": 0,
-      "text": "Laceration/Abrasion (location: _)",
+      "text": "Laceration/Abrasion (location: ___)",
       "processed": [
         {
-          "itemText": "Laceration/Abrasion (location: _)",
+          "itemText": "Laceration/Abrasion (location: ___)",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": ")",
@@ -1500,10 +1500,10 @@
     {
       "section": "Skin",
       "indentLevel": 0,
-      "text": "Hematoma (location: _)",
+      "text": "Hematoma (location: ___)",
       "processed": [
         {
-          "itemText": "Hematoma (location: _)",
+          "itemText": "Hematoma (location: ___)",
           "hasTextInput": true,
           "inputPlaceholder": "",
           "inputUnit": ")",
@@ -1556,189 +1556,189 @@
   ],
   "inputFields": [
     {
-      "itemText": "Blood pressure: _ mmHg",
+      "itemText": "Blood pressure: ___ mmHg",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "mmHg",
       "icd10Code": null
     },
     {
-      "itemText": "Heart rate: _ bpm",
+      "itemText": "Heart rate: ___ bpm",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "bpm",
       "icd10Code": null
     },
     {
-      "itemText": "Respiratory rate: _ breaths/min",
+      "itemText": "Respiratory rate: ___ breaths/min",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "breaths/min",
       "icd10Code": null
     },
     {
-      "itemText": "Temperature: _ °F/°C",
+      "itemText": "Temperature: ___ °F/°C",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "°F/°C",
       "icd10Code": null
     },
     {
-      "itemText": "Oxygen saturation: _% on _",
+      "itemText": "Oxygen saturation: ___% on ___",
       "hasTextInput": true,
-      "inputPlaceholder": "_% on ",
+      "inputPlaceholder": "___% on ",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Body mass index: _",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": null,
-      "icd10Code": null
-    },
-    {
-      "itemText": "BP: _ mmHg,",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "mmHg,",
-      "icd10Code": null
-    },
-    {
-      "itemText": "HR: _ bpm",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "bpm",
-      "icd10Code": null
-    },
-    {
-      "itemText": "BP: _ mmHg,",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "mmHg,",
-      "icd10Code": null
-    },
-    {
-      "itemText": "HR: _ bpm",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "bpm",
-      "icd10Code": null
-    },
-    {
-      "itemText": "BP: _ mmHg,",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "mmHg,",
-      "icd10Code": null
-    },
-    {
-      "itemText": "HR: _ bpm",
-      "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "bpm",
-      "icd10Code": null
-    },
-    {
-      "itemText": "Location: _",
+      "itemText": "Body mass index: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Grade: \\_\\_\\_/6",
+      "itemText": "BP: ___ mmHg,",
       "hasTextInput": true,
-      "inputPlaceholder": "\\_\\_\\",
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg,",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: ___ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "BP: ___ mmHg,",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg,",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: ___ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "BP: ___ mmHg,",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "mmHg,",
+      "icd10Code": null
+    },
+    {
+      "itemText": "HR: ___ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Location: ___",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": null,
+      "icd10Code": null
+    },
+    {
+      "itemText": "Grade: \\___\\___\\___/6",
+      "hasTextInput": true,
+      "inputPlaceholder": "\\___\\___\\",
       "inputUnit": "/6",
       "icd10Code": null
     },
     {
-      "itemText": "Radiation: _",
+      "itemText": "Radiation: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Carotid sinus massage performed (results: _)",
+      "itemText": "Carotid sinus massage performed (results: ___)",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": ")",
       "icd10Code": null
     },
     {
-      "itemText": "Tender (location: _)",
+      "itemText": "Tender (location: ___)",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": ")",
       "icd10Code": null
     },
     {
-      "itemText": "Alert and oriented (x_)",
+      "itemText": "Alert and oriented (x___)",
       "hasTextInput": true,
       "inputPlaceholder": null,
       "inputUnit": ")",
       "icd10Code": null
     },
     {
-      "itemText": "Cranial nerve deficit: _",
+      "itemText": "Cranial nerve deficit: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Motor deficit: _",
+      "itemText": "Motor deficit: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Sensory deficit: _",
+      "itemText": "Sensory deficit: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Abnormal reflexes: _",
+      "itemText": "Abnormal reflexes: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Coordination abnormal: _",
+      "itemText": "Coordination abnormal: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Gait abnormal: _",
+      "itemText": "Gait abnormal: ___",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": null,
       "icd10Code": null
     },
     {
-      "itemText": "Peripheral edema (location/severity: _)",
+      "itemText": "Peripheral edema (location/severity: ___)",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": ")",
       "icd10Code": null
     },
     {
-      "itemText": "Laceration/Abrasion (location: _)",
+      "itemText": "Laceration/Abrasion (location: ___)",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": ")",
       "icd10Code": null
     },
     {
-      "itemText": "Hematoma (location: _)",
+      "itemText": "Hematoma (location: ___)",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": ")",
