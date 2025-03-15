@@ -1,0 +1,362 @@
+[2025-03-15T01:15:02.981Z] [INFO] Starting migration...
+[2025-03-15T01:15:02.982Z] [INFO] Inserting categories...
+[2025-03-15T01:15:03.079Z] [INFO] All categories already exist, skipping insertion
+[2025-03-15T01:15:03.079Z] [INFO] Found 1 chapter directories to process
+[2025-03-15T01:15:03.080Z] [INFO] Processing chapter: Ch11_Syncope
+[2025-03-15T01:15:03.192Z] [INFO] Inserted/updated chapter: Syncope (ID: 181)
+[2025-03-15T01:15:03.241Z] [INFO] Processing file: alarm-features.md
+[2025-03-15T01:15:03.309Z] [INFO] Inserted/updated section: High-Risk Features (ID: 375)
+[2025-03-15T01:15:03.309Z] [INFO] Inserting 8 checklist items for section 375
+[2025-03-15T01:15:03.361Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:03.415Z] [INFO] Inserted/updated section: Critical Diagnoses To Consider (ID: 376)
+[2025-03-15T01:15:03.416Z] [INFO] Inserting 13 checklist items for section 376
+[2025-03-15T01:15:03.465Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-15T01:15:03.514Z] [INFO] Inserted/updated section: Emergent Diagnostic Factors (ID: 377)
+[2025-03-15T01:15:03.514Z] [INFO] Inserting 11 checklist items for section 377
+[2025-03-15T01:15:03.567Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:03.624Z] [INFO] Inserted/updated section: Concerning Cardiac Symptoms (ID: 378)
+[2025-03-15T01:15:03.624Z] [INFO] Inserting 4 checklist items for section 378
+[2025-03-15T01:15:03.685Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:03.739Z] [INFO] Inserted/updated section: Concerning Neurological Symptoms (ID: 379)
+[2025-03-15T01:15:03.739Z] [INFO] Inserting 4 checklist items for section 379
+[2025-03-15T01:15:03.796Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:03.853Z] [INFO] Inserted/updated section: Concerning Abdominal/GI Symptoms (ID: 380)
+[2025-03-15T01:15:03.854Z] [INFO] Inserting 3 checklist items for section 380
+[2025-03-15T01:15:03.902Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:03.902Z] [INFO] Completed processing file: alarm-features.md
+[2025-03-15T01:15:03.902Z] [INFO] Processing file: assessment.md
+[2025-03-15T01:15:03.954Z] [INFO] Inserted/updated section: Syncope Classification (ID: 381)
+[2025-03-15T01:15:03.954Z] [INFO] Inserting 17 checklist items for section 381
+[2025-03-15T01:15:04.062Z] [ERROR] Error inserting checklist items for section 381: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:04.062Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/assessment.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:04.062Z] [INFO] Processing file: collateral-history.md
+[2025-03-15T01:15:04.109Z] [INFO] Inserted/updated section: Witness Account (ID: 382)
+[2025-03-15T01:15:04.109Z] [INFO] Inserting 4 checklist items for section 382
+[2025-03-15T01:15:04.157Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:04.204Z] [INFO] Inserted/updated section: Description of Episode (From Observer) (ID: 383)
+[2025-03-15T01:15:04.204Z] [INFO] Inserting 5 checklist items for section 383
+[2025-03-15T01:15:04.316Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:04.368Z] [INFO] Inserted/updated section: Pre-Episode Observations (ID: 384)
+[2025-03-15T01:15:04.369Z] [INFO] Inserting 5 checklist items for section 384
+[2025-03-15T01:15:04.424Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:04.471Z] [INFO] Inserted/updated section: Episode Characteristics (ID: 385)
+[2025-03-15T01:15:04.472Z] [INFO] Inserting 8 checklist items for section 385
+[2025-03-15T01:15:04.522Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:04.577Z] [INFO] Inserted/updated section: Movement During Episode (ID: 386)
+[2025-03-15T01:15:04.577Z] [INFO] Inserting 9 checklist items for section 386
+[2025-03-15T01:15:04.640Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:04.687Z] [INFO] Inserted/updated section: Autonomic Features (ID: 387)
+[2025-03-15T01:15:04.687Z] [INFO] Inserting 4 checklist items for section 387
+[2025-03-15T01:15:04.735Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:04.783Z] [INFO] Inserted/updated section: Recovery Characteristics (ID: 388)
+[2025-03-15T01:15:04.783Z] [INFO] Inserting 11 checklist items for section 388
+[2025-03-15T01:15:04.866Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:04.926Z] [INFO] Inserted/updated section: EMS/First Responder Report (ID: 389)
+[2025-03-15T01:15:04.926Z] [INFO] Inserting 4 checklist items for section 389
+[2025-03-15T01:15:04.973Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:04.973Z] [INFO] Completed processing file: collateral-history.md
+[2025-03-15T01:15:04.973Z] [INFO] Processing file: diet.md
+[2025-03-15T01:15:05.023Z] [INFO] Inserted/updated section: Oral Intake (ID: 390)
+[2025-03-15T01:15:05.023Z] [INFO] Inserting 5 checklist items for section 390
+[2025-03-15T01:15:05.069Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:05.114Z] [INFO] Inserted/updated section: Dietary Triggers (ID: 391)
+[2025-03-15T01:15:05.114Z] [INFO] Inserting 4 checklist items for section 391
+[2025-03-15T01:15:05.168Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:05.216Z] [INFO] Inserted/updated section: Specialized Diets (ID: 392)
+[2025-03-15T01:15:05.216Z] [INFO] Inserting 5 checklist items for section 392
+[2025-03-15T01:15:05.273Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:05.324Z] [INFO] Inserted/updated section: Hydration Status (ID: 393)
+[2025-03-15T01:15:05.324Z] [INFO] Inserting 4 checklist items for section 393
+[2025-03-15T01:15:05.390Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:05.439Z] [INFO] Inserted/updated section: Recent Dietary Changes (ID: 394)
+[2025-03-15T01:15:05.439Z] [INFO] Inserting 7 checklist items for section 394
+[2025-03-15T01:15:05.489Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:05.539Z] [INFO] Inserted/updated section: Dietary Supplements (ID: 395)
+[2025-03-15T01:15:05.539Z] [INFO] Inserting 6 checklist items for section 395
+[2025-03-15T01:15:05.588Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:05.638Z] [INFO] Inserted/updated section: Appetite (ID: 396)
+[2025-03-15T01:15:05.639Z] [INFO] Inserting 4 checklist items for section 396
+[2025-03-15T01:15:05.688Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:05.688Z] [INFO] Completed processing file: diet.md
+[2025-03-15T01:15:05.688Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-15T01:15:05.734Z] [INFO] Inserted/updated section: Reflex (Neurally Mediated) Syncope (ID: 397)
+[2025-03-15T01:15:05.734Z] [INFO] Inserting 12 checklist items for section 397
+[2025-03-15T01:15:05.840Z] [ERROR] Error inserting checklist items for section 397: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:05.840Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/differential-diagnosis.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:05.840Z] [INFO] Processing file: disposition.md
+[2025-03-15T01:15:05.894Z] [INFO] Inserted/updated section: Primary Disposition Decision (ID: 398)
+[2025-03-15T01:15:05.894Z] [INFO] Inserting 8 checklist items for section 398
+[2025-03-15T01:15:05.989Z] [ERROR] Error inserting checklist items for section 398: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:05.989Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/disposition.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:05.989Z] [INFO] Processing file: ecg.md
+[2025-03-15T01:15:06.040Z] [INFO] Inserted/updated section: Basic ECG Parameters (ID: 399)
+[2025-03-15T01:15:06.040Z] [INFO] Inserting 7 checklist items for section 399
+[2025-03-15T01:15:06.091Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:06.139Z] [INFO] Inserted/updated section: Rhythm (ID: 400)
+[2025-03-15T01:15:06.139Z] [INFO] Inserting 9 checklist items for section 400
+[2025-03-15T01:15:06.187Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:06.236Z] [INFO] Inserted/updated section: Conduction Abnormalities (ID: 401)
+[2025-03-15T01:15:06.236Z] [INFO] Inserting 11 checklist items for section 401
+[2025-03-15T01:15:06.284Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:06.329Z] [INFO] Inserted/updated section: Tachyarrhythmias (ID: 402)
+[2025-03-15T01:15:06.329Z] [INFO] Inserting 7 checklist items for section 402
+[2025-03-15T01:15:06.379Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:06.423Z] [INFO] Inserted/updated section: Ischemia/Infarction (ID: 403)
+[2025-03-15T01:15:06.423Z] [INFO] Inserting 6 checklist items for section 403
+[2025-03-15T01:15:06.476Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:06.525Z] [INFO] Inserted/updated section: Other ECG Findings (ID: 404)
+[2025-03-15T01:15:06.526Z] [INFO] Inserting 14 checklist items for section 404
+[2025-03-15T01:15:06.575Z] [INFO] Successfully inserted 14 checklist items
+[2025-03-15T01:15:06.624Z] [INFO] Inserted/updated section: Serial ECG Changes (ID: 405)
+[2025-03-15T01:15:06.624Z] [INFO] Inserting 4 checklist items for section 405
+[2025-03-15T01:15:06.673Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:06.727Z] [INFO] Inserted/updated section: Cardiac Monitor Findings (if available) (ID: 406)
+[2025-03-15T01:15:06.728Z] [INFO] Inserting 2 checklist items for section 406
+[2025-03-15T01:15:06.774Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-15T01:15:06.774Z] [INFO] Completed processing file: ecg.md
+[2025-03-15T01:15:06.774Z] [INFO] Processing file: history.md
+[2025-03-15T01:15:06.820Z] [INFO] Inserted/updated section: Chief Complaint (ID: 407)
+[2025-03-15T01:15:06.820Z] [INFO] Inserting 3 checklist items for section 407
+[2025-03-15T01:15:06.866Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:06.915Z] [INFO] Inserted/updated section: Episode Details (ID: 408)
+[2025-03-15T01:15:06.915Z] [INFO] Inserting 4 checklist items for section 408
+[2025-03-15T01:15:06.967Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:07.016Z] [INFO] Inserted/updated section: Position During Episode (ID: 409)
+[2025-03-15T01:15:07.016Z] [INFO] Inserting 4 checklist items for section 409
+[2025-03-15T01:15:07.059Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:07.104Z] [INFO] Inserted/updated section: Activity During Episode (ID: 410)
+[2025-03-15T01:15:07.104Z] [INFO] Inserting 5 checklist items for section 410
+[2025-03-15T01:15:07.148Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:07.194Z] [INFO] Inserted/updated section: Setting (ID: 411)
+[2025-03-15T01:15:07.195Z] [INFO] Inserting 11 checklist items for section 411
+[2025-03-15T01:15:07.242Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:07.288Z] [INFO] Inserted/updated section: Precipitating Factors (ID: 412)
+[2025-03-15T01:15:07.288Z] [INFO] Inserting 12 checklist items for section 412
+[2025-03-15T01:15:07.339Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-15T01:15:07.385Z] [INFO] Inserted/updated section: Associated Prodromal Symptoms (ID: 413)
+[2025-03-15T01:15:07.385Z] [INFO] Inserting 10 checklist items for section 413
+[2025-03-15T01:15:07.431Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-15T01:15:07.476Z] [INFO] Inserted/updated section: Associated Symptoms During/After Episode (ID: 414)
+[2025-03-15T01:15:07.476Z] [INFO] Inserting 13 checklist items for section 414
+[2025-03-15T01:15:07.532Z] [INFO] Successfully inserted 13 checklist items
+[2025-03-15T01:15:07.575Z] [INFO] Inserted/updated section: Post-Episode Status (ID: 415)
+[2025-03-15T01:15:07.576Z] [INFO] Inserting 6 checklist items for section 415
+[2025-03-15T01:15:07.625Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:07.625Z] [INFO] Completed processing file: history.md
+[2025-03-15T01:15:07.626Z] [INFO] Processing file: imaging.md
+[2025-03-15T01:15:07.677Z] [INFO] Inserted/updated section: Chest X-ray (ID: 416)
+[2025-03-15T01:15:07.678Z] [INFO] Inserting 11 checklist items for section 416
+[2025-03-15T01:15:07.727Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:07.800Z] [INFO] Inserted/updated section: Head CT (ID: 417)
+[2025-03-15T01:15:07.800Z] [INFO] Inserting 9 checklist items for section 417
+[2025-03-15T01:15:07.854Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:07.902Z] [INFO] Inserted/updated section: CT Pulmonary Angiogram (ID: 418)
+[2025-03-15T01:15:07.903Z] [INFO] Inserting 10 checklist items for section 418
+[2025-03-15T01:15:08.092Z] [ERROR] Error inserting checklist items for section 418: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:08.093Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/imaging.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:08.093Z] [INFO] Processing file: lab-studies.md
+[2025-03-15T01:15:08.140Z] [INFO] Inserted/updated section: Complete Blood Count (ID: 419)
+[2025-03-15T01:15:08.141Z] [INFO] Inserting 6 checklist items for section 419
+[2025-03-15T01:15:08.186Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:08.232Z] [INFO] Inserted/updated section: Basic Metabolic Panel (ID: 420)
+[2025-03-15T01:15:08.233Z] [INFO] Inserting 10 checklist items for section 420
+[2025-03-15T01:15:08.282Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-15T01:15:08.328Z] [INFO] Inserted/updated section: Cardiac Biomarkers (ID: 421)
+[2025-03-15T01:15:08.329Z] [INFO] Inserting 7 checklist items for section 421
+[2025-03-15T01:15:08.374Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:08.417Z] [INFO] Inserted/updated section: Coagulation Studies (ID: 422)
+[2025-03-15T01:15:08.417Z] [INFO] Inserting 5 checklist items for section 422
+[2025-03-15T01:15:08.476Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:08.533Z] [INFO] Inserted/updated section: Additional Electrolytes (ID: 423)
+[2025-03-15T01:15:08.533Z] [INFO] Inserting 2 checklist items for section 423
+[2025-03-15T01:15:08.589Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-15T01:15:08.641Z] [INFO] Inserted/updated section: Liver Function Tests (ID: 424)
+[2025-03-15T01:15:08.641Z] [INFO] Inserting 7 checklist items for section 424
+[2025-03-15T01:15:08.690Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:08.736Z] [INFO] Inserted/updated section: Toxicology Screen (ID: 425)
+[2025-03-15T01:15:08.736Z] [INFO] Inserting 4 checklist items for section 425
+[2025-03-15T01:15:08.784Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:08.839Z] [INFO] Inserted/updated section: Pregnancy Test (ID: 426)
+[2025-03-15T01:15:08.839Z] [INFO] Inserting 3 checklist items for section 426
+[2025-03-15T01:15:08.890Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:08.953Z] [INFO] Inserted/updated section: Thyroid Function Tests (ID: 427)
+[2025-03-15T01:15:08.953Z] [INFO] Inserting 4 checklist items for section 427
+[2025-03-15T01:15:09.000Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:09.047Z] [INFO] Inserted/updated section: Arterial Blood Gas (ID: 428)
+[2025-03-15T01:15:09.047Z] [INFO] Inserting 8 checklist items for section 428
+[2025-03-15T01:15:09.105Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:09.155Z] [INFO] Inserted/updated section: Urinalysis (ID: 429)
+[2025-03-15T01:15:09.155Z] [INFO] Inserting 10 checklist items for section 429
+[2025-03-15T01:15:09.204Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-15T01:15:09.254Z] [INFO] Inserted/updated section: Other Laboratory Tests (ID: 430)
+[2025-03-15T01:15:09.254Z] [INFO] Inserting 4 checklist items for section 430
+[2025-03-15T01:15:09.314Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:09.315Z] [INFO] Completed processing file: lab-studies.md
+[2025-03-15T01:15:09.315Z] [INFO] Processing file: medications.md
+[2025-03-15T01:15:09.363Z] [INFO] Inserted/updated section: Vasodilators (ID: 431)
+[2025-03-15T01:15:09.363Z] [INFO] Inserting 8 checklist items for section 431
+[2025-03-15T01:15:09.412Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:09.458Z] [INFO] Inserted/updated section: Diuretics (ID: 432)
+[2025-03-15T01:15:09.458Z] [INFO] Inserting 3 checklist items for section 432
+[2025-03-15T01:15:09.521Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:09.575Z] [INFO] Inserted/updated section: Central Antihypertensives (ID: 433)
+[2025-03-15T01:15:09.575Z] [INFO] Inserting 2 checklist items for section 433
+[2025-03-15T01:15:09.635Z] [INFO] Successfully inserted 2 checklist items
+[2025-03-15T01:15:09.682Z] [INFO] Inserted/updated section: QT-Prolonging Agents (ID: 434)
+[2025-03-15T01:15:09.682Z] [INFO] Inserting 5 checklist items for section 434
+[2025-03-15T01:15:09.734Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:09.787Z] [INFO] Inserted/updated section: Psychoactive Agents (ID: 435)
+[2025-03-15T01:15:09.787Z] [INFO] Inserting 12 checklist items for section 435
+[2025-03-15T01:15:09.841Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-15T01:15:09.888Z] [INFO] Inserted/updated section: Other Medications (ID: 436)
+[2025-03-15T01:15:09.888Z] [INFO] Inserting 7 checklist items for section 436
+[2025-03-15T01:15:09.935Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:09.980Z] [INFO] Inserted/updated section: Recent Medication Changes (ID: 437)
+[2025-03-15T01:15:09.980Z] [INFO] Inserting 5 checklist items for section 437
+[2025-03-15T01:15:10.026Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:10.071Z] [INFO] Inserted/updated section: Medication Compliance (ID: 438)
+[2025-03-15T01:15:10.071Z] [INFO] Inserting 5 checklist items for section 438
+[2025-03-15T01:15:10.121Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:10.121Z] [INFO] Completed processing file: medications.md
+[2025-03-15T01:15:10.121Z] [INFO] Processing file: past-medical.md
+[2025-03-15T01:15:10.167Z] [INFO] Inserted/updated section: Cardiac History (ID: 439)
+[2025-03-15T01:15:10.167Z] [INFO] Inserting 28 checklist items for section 439
+[2025-03-15T01:15:10.267Z] [ERROR] Error inserting checklist items for section 439: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:10.267Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/past-medical.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:10.268Z] [INFO] Processing file: patient-education.md
+[2025-03-15T01:15:10.325Z] [INFO] Inserted/updated section: General Syncope Information (ID: 440)
+[2025-03-15T01:15:10.325Z] [INFO] Inserting 6 checklist items for section 440
+[2025-03-15T01:15:10.378Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:10.426Z] [INFO] Inserted/updated section: Safety Considerations (ID: 441)
+[2025-03-15T01:15:10.426Z] [INFO] Inserting 8 checklist items for section 441
+[2025-03-15T01:15:10.476Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:10.522Z] [INFO] Inserted/updated section: Specific Cause Education (if identified) (ID: 442)
+[2025-03-15T01:15:10.522Z] [INFO] Inserting 7 checklist items for section 442
+[2025-03-15T01:15:10.568Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:10.619Z] [INFO] Inserted/updated section: Prodromal Symptom Recognition (ID: 443)
+[2025-03-15T01:15:10.619Z] [INFO] Inserting 5 checklist items for section 443
+[2025-03-15T01:15:10.666Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:10.711Z] [INFO] Inserted/updated section: Physical Counterpressure Maneuvers (ID: 444)
+[2025-03-15T01:15:10.711Z] [INFO] Inserting 5 checklist items for section 444
+[2025-03-15T01:15:10.757Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:10.801Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: 445)
+[2025-03-15T01:15:10.801Z] [INFO] Inserting 8 checklist items for section 445
+[2025-03-15T01:15:10.848Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:10.902Z] [INFO] Inserted/updated section: Medication Education (ID: 446)
+[2025-03-15T01:15:10.902Z] [INFO] Inserting 6 checklist items for section 446
+[2025-03-15T01:15:11.012Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:11.060Z] [INFO] Inserted/updated section: Follow-up Care (ID: 447)
+[2025-03-15T01:15:11.061Z] [INFO] Inserting 7 checklist items for section 447
+[2025-03-15T01:15:11.110Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:11.158Z] [INFO] Inserted/updated section: Warning Signs Requiring Immediate Attention (ID: 448)
+[2025-03-15T01:15:11.158Z] [INFO] Inserting 8 checklist items for section 448
+[2025-03-15T01:15:11.216Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:11.273Z] [INFO] Inserted/updated section: Family Education (ID: 449)
+[2025-03-15T01:15:11.273Z] [INFO] Inserting 6 checklist items for section 449
+[2025-03-15T01:15:11.319Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:11.319Z] [INFO] Completed processing file: patient-education.md
+[2025-03-15T01:15:11.319Z] [INFO] Processing file: physical-exam.md
+[2025-03-15T01:15:11.371Z] [INFO] Inserted/updated section: Vital Signs (ID: 450)
+[2025-03-15T01:15:11.371Z] [INFO] Inserting 6 checklist items for section 450
+[2025-03-15T01:15:11.419Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:11.469Z] [INFO] Inserted/updated section: Orthostatic Vital Signs (ID: 451)
+[2025-03-15T01:15:11.469Z] [INFO] Inserting 10 checklist items for section 451
+[2025-03-15T01:15:11.582Z] [ERROR] Error inserting checklist items for section 451: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:11.582Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/physical-exam.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:11.583Z] [INFO] Processing file: plan.md
+[2025-03-15T01:15:11.633Z] [INFO] Inserted/updated section: Immediate Management (ID: 452)
+[2025-03-15T01:15:11.633Z] [INFO] Inserting 9 checklist items for section 452
+[2025-03-15T01:15:11.678Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:11.729Z] [INFO] Inserted/updated section: Additional Testing (ID: 453)
+[2025-03-15T01:15:11.729Z] [INFO] Inserting 12 checklist items for section 453
+[2025-03-15T01:15:11.776Z] [INFO] Successfully inserted 12 checklist items
+[2025-03-15T01:15:11.831Z] [INFO] Inserted/updated section: Medication Recommendations (ID: 454)
+[2025-03-15T01:15:11.831Z] [INFO] Inserting 6 checklist items for section 454
+[2025-03-15T01:15:11.878Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:11.924Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: 455)
+[2025-03-15T01:15:11.924Z] [INFO] Inserting 8 checklist items for section 455
+[2025-03-15T01:15:11.973Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:12.025Z] [INFO] Inserted/updated section: Cardiac Intervention Considerations (ID: 456)
+[2025-03-15T01:15:12.025Z] [INFO] Inserting 6 checklist items for section 456
+[2025-03-15T01:15:12.075Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:12.124Z] [INFO] Inserted/updated section: Follow-up Care (ID: 457)
+[2025-03-15T01:15:12.124Z] [INFO] Inserting 10 checklist items for section 457
+[2025-03-15T01:15:12.174Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-15T01:15:12.230Z] [INFO] Inserted/updated section: Preventive Measures (ID: 458)
+[2025-03-15T01:15:12.230Z] [INFO] Inserting 7 checklist items for section 458
+[2025-03-15T01:15:12.282Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:12.328Z] [INFO] Inserted/updated section: Special Considerations (ID: 459)
+[2025-03-15T01:15:12.328Z] [INFO] Inserting 5 checklist items for section 459
+[2025-03-15T01:15:12.390Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:12.390Z] [INFO] Completed processing file: plan.md
+[2025-03-15T01:15:12.390Z] [INFO] Processing file: review-systems.md
+[2025-03-15T01:15:12.436Z] [INFO] Inserted/updated section: Constitutional (ID: 460)
+[2025-03-15T01:15:12.436Z] [INFO] Inserting 4 checklist items for section 460
+[2025-03-15T01:15:12.485Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:12.530Z] [INFO] Inserted/updated section: Cardiovascular (ID: 461)
+[2025-03-15T01:15:12.530Z] [INFO] Inserting 8 checklist items for section 461
+[2025-03-15T01:15:12.579Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:12.627Z] [INFO] Inserted/updated section: Respiratory (ID: 462)
+[2025-03-15T01:15:12.627Z] [INFO] Inserting 5 checklist items for section 462
+[2025-03-15T01:15:12.680Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:12.727Z] [INFO] Inserted/updated section: Neurological (ID: 463)
+[2025-03-15T01:15:12.727Z] [INFO] Inserting 11 checklist items for section 463
+[2025-03-15T01:15:12.775Z] [INFO] Successfully inserted 11 checklist items
+[2025-03-15T01:15:12.822Z] [INFO] Inserted/updated section: Gastrointestinal (ID: 464)
+[2025-03-15T01:15:12.822Z] [INFO] Inserting 8 checklist items for section 464
+[2025-03-15T01:15:12.869Z] [INFO] Successfully inserted 8 checklist items
+[2025-03-15T01:15:12.916Z] [INFO] Inserted/updated section: Genitourinary (ID: 465)
+[2025-03-15T01:15:12.916Z] [INFO] Inserting 7 checklist items for section 465
+[2025-03-15T01:15:13.060Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:13.115Z] [INFO] Inserted/updated section: Psychiatric (ID: 466)
+[2025-03-15T01:15:13.115Z] [INFO] Inserting 6 checklist items for section 466
+[2025-03-15T01:15:13.168Z] [INFO] Successfully inserted 6 checklist items
+[2025-03-15T01:15:13.219Z] [INFO] Inserted/updated section: Endocrine (ID: 467)
+[2025-03-15T01:15:13.219Z] [INFO] Inserting 4 checklist items for section 467
+[2025-03-15T01:15:13.273Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:13.333Z] [INFO] Inserted/updated section: Hematologic (ID: 468)
+[2025-03-15T01:15:13.333Z] [INFO] Inserting 3 checklist items for section 468
+[2025-03-15T01:15:13.382Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:13.455Z] [INFO] Inserted/updated section: Musculoskeletal (ID: 469)
+[2025-03-15T01:15:13.455Z] [INFO] Inserting 3 checklist items for section 469
+[2025-03-15T01:15:13.521Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:13.580Z] [INFO] Inserted/updated section: Ear, Nose, Throat (ID: 470)
+[2025-03-15T01:15:13.580Z] [INFO] Inserting 4 checklist items for section 470
+[2025-03-15T01:15:13.634Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:13.681Z] [INFO] Inserted/updated section: Eyes (ID: 471)
+[2025-03-15T01:15:13.681Z] [INFO] Inserting 4 checklist items for section 471
+[2025-03-15T01:15:13.740Z] [INFO] Successfully inserted 4 checklist items
+[2025-03-15T01:15:13.740Z] [INFO] Completed processing file: review-systems.md
+[2025-03-15T01:15:13.740Z] [INFO] Processing file: risk-factors.md
+[2025-03-15T01:15:13.803Z] [INFO] Inserted/updated section: Demographic Risk Factors (ID: 472)
+[2025-03-15T01:15:13.803Z] [INFO] Inserting 3 checklist items for section 472
+[2025-03-15T01:15:13.851Z] [INFO] Successfully inserted 3 checklist items
+[2025-03-15T01:15:13.897Z] [INFO] Inserted/updated section: Cardiac Risk Factors (ID: 473)
+[2025-03-15T01:15:13.898Z] [INFO] Inserting 15 checklist items for section 473
+[2025-03-15T01:15:13.946Z] [INFO] Successfully inserted 15 checklist items
+[2025-03-15T01:15:13.995Z] [INFO] Inserted/updated section: Vascular Risk Factors (ID: 474)
+[2025-03-15T01:15:13.995Z] [INFO] Inserting 9 checklist items for section 474
+[2025-03-15T01:15:14.047Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:14.097Z] [INFO] Inserted/updated section: Pulmonary Embolism Risk Factors (ID: 475)
+[2025-03-15T01:15:14.097Z] [INFO] Inserting 10 checklist items for section 475
+[2025-03-15T01:15:14.152Z] [INFO] Successfully inserted 10 checklist items
+[2025-03-15T01:15:14.195Z] [INFO] Inserted/updated section: Orthostatic Hypotension Risk Factors (ID: 476)
+[2025-03-15T01:15:14.195Z] [INFO] Inserting 7 checklist items for section 476
+[2025-03-15T01:15:14.244Z] [INFO] Successfully inserted 7 checklist items
+[2025-03-15T01:15:14.299Z] [INFO] Inserted/updated section: Canadian Syncope Risk Score Factors (ID: 477)
+[2025-03-15T01:15:14.299Z] [INFO] Inserting 9 checklist items for section 477
+[2025-03-15T01:15:14.345Z] [INFO] Successfully inserted 9 checklist items
+[2025-03-15T01:15:14.392Z] [INFO] Inserted/updated section: San Francisco Syncope Rule Factors (ID: 478)
+[2025-03-15T01:15:14.393Z] [INFO] Inserting 5 checklist items for section 478
+[2025-03-15T01:15:14.437Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:14.518Z] [INFO] Inserted/updated section: FAINT Score Factors (ID: 479)
+[2025-03-15T01:15:14.518Z] [INFO] Inserting 5 checklist items for section 479
+[2025-03-15T01:15:14.571Z] [INFO] Successfully inserted 5 checklist items
+[2025-03-15T01:15:14.572Z] [INFO] Completed processing file: risk-factors.md
+[2025-03-15T01:15:14.572Z] [INFO] Processing file: special-tests.md
+[2025-03-15T01:15:14.619Z] [INFO] Inserted/updated section: Bedside Ultrasonography (ID: 480)
+[2025-03-15T01:15:14.619Z] [INFO] Inserting 19 checklist items for section 480
+[2025-03-15T01:15:14.723Z] [ERROR] Error inserting checklist items for section 480: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:14.723Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/special-tests.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:15:14.723Z] [INFO] Completed processing chapter: Ch11_Syncope
+[2025-03-15T01:15:14.723Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors

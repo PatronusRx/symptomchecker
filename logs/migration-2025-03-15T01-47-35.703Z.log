@@ -1,0 +1,541 @@
+[2025-03-15T01:47:35.704Z] [INFO] Starting migration...
+[2025-03-15T01:47:35.705Z] [INFO] Inserting categories...
+[2025-03-15T01:47:35.801Z] [INFO] All categories already exist, skipping insertion
+[2025-03-15T01:47:35.801Z] [INFO] Found 1 chapter directories to process
+[2025-03-15T01:47:35.801Z] [INFO] Processing chapter: Ch11_Syncope
+[2025-03-15T01:47:35.801Z] [INFO] Cleaning up existing data for chapter 11...
+[2025-03-15T01:47:35.849Z] [INFO] No existing data found for chapter 11
+[2025-03-15T01:47:35.902Z] [INFO] Inserted chapter: Syncope (ID: 184)
+[2025-03-15T01:47:35.961Z] [INFO] Processing file: alarm-features.md
+[2025-03-15T01:47:36.014Z] [INFO] Inserted section: High-Risk Features (ID: 693)
+[2025-03-15T01:47:36.063Z] [INFO] Inserted section: Critical Diagnoses To Consider (ID: 694)
+[2025-03-15T01:47:36.113Z] [INFO] Inserted section: Emergent Diagnostic Factors (ID: 695)
+[2025-03-15T01:47:36.168Z] [INFO] Inserted section: Concerning Cardiac Symptoms (ID: 696)
+[2025-03-15T01:47:36.221Z] [INFO] Inserted section: Concerning Neurological Symptoms (ID: 697)
+[2025-03-15T01:47:36.275Z] [INFO] Inserted section: Concerning Abdominal/GI Symptoms (ID: 698)
+[2025-03-15T01:47:36.275Z] [INFO] Inserting 43 items for section 698
+[2025-03-15T01:47:36.275Z] [INFO] Inserting 8 items for section 693
+[2025-03-15T01:47:36.328Z] [INFO] Successfully inserted items for section 693
+[2025-03-15T01:47:36.328Z] [INFO] Inserting 13 items for section 694
+[2025-03-15T01:47:36.388Z] [INFO] Successfully inserted items for section 694
+[2025-03-15T01:47:36.388Z] [INFO] Inserting 11 items for section 695
+[2025-03-15T01:47:36.437Z] [INFO] Successfully inserted items for section 695
+[2025-03-15T01:47:36.437Z] [INFO] Inserting 4 items for section 696
+[2025-03-15T01:47:36.495Z] [INFO] Successfully inserted items for section 696
+[2025-03-15T01:47:36.495Z] [INFO] Inserting 4 items for section 697
+[2025-03-15T01:47:36.542Z] [INFO] Successfully inserted items for section 697
+[2025-03-15T01:47:36.543Z] [INFO] Inserting 3 items for section 698
+[2025-03-15T01:47:36.597Z] [INFO] Successfully inserted items for section 698
+[2025-03-15T01:47:36.891Z] [INFO] Completed processing file: alarm-features.md
+[2025-03-15T01:47:36.891Z] [INFO] Processing file: assessment.md
+[2025-03-15T01:47:36.953Z] [INFO] Inserted section: Syncope Classification (ID: 699)
+[2025-03-15T01:47:37.033Z] [INFO] Inserted section: Diagnostic Certainty (ID: 700)
+[2025-03-15T01:47:37.084Z] [INFO] Inserted section: Risk Stratification (ID: 701)
+[2025-03-15T01:47:37.140Z] [INFO] Inserted section: Canadian Syncope Risk Score Calculation (ID: 702)
+[2025-03-15T01:47:37.192Z] [INFO] Inserted section: FAINT Score Calculation (ID: 703)
+[2025-03-15T01:47:37.243Z] [INFO] Inserted section: San Francisco Syncope Rule Assessment (ID: 704)
+[2025-03-15T01:47:37.330Z] [INFO] Inserted section: Clinical Impression (ID: 705)
+[2025-03-15T01:47:37.381Z] [INFO] Inserted section: Degree of Functional Impairment (ID: 706)
+[2025-03-15T01:47:37.433Z] [INFO] Inserted section: Injury Assessment (ID: 707)
+[2025-03-15T01:47:37.434Z] [INFO] Inserting 61 items for section 707
+[2025-03-15T01:47:37.434Z] [INFO] Inserting 17 items for section 699
+[2025-03-15T01:47:37.482Z] [INFO] Successfully inserted items for section 699
+[2025-03-15T01:47:37.482Z] [INFO] Inserting 5 items for section 700
+[2025-03-15T01:47:37.535Z] [INFO] Successfully inserted items for section 700
+[2025-03-15T01:47:37.535Z] [INFO] Inserting 4 items for section 701
+[2025-03-15T01:47:37.582Z] [INFO] Successfully inserted items for section 701
+[2025-03-15T01:47:37.582Z] [INFO] Inserting 10 items for section 702
+[2025-03-15T01:47:37.634Z] [INFO] Successfully inserted items for section 702
+[2025-03-15T01:47:37.634Z] [INFO] Inserting 6 items for section 703
+[2025-03-15T01:47:37.694Z] [INFO] Successfully inserted items for section 703
+[2025-03-15T01:47:37.695Z] [INFO] Inserting 7 items for section 704
+[2025-03-15T01:47:37.751Z] [INFO] Successfully inserted items for section 704
+[2025-03-15T01:47:37.751Z] [INFO] Inserting 4 items for section 705
+[2025-03-15T01:47:37.808Z] [INFO] Successfully inserted items for section 705
+[2025-03-15T01:47:37.808Z] [INFO] Inserting 4 items for section 706
+[2025-03-15T01:47:37.874Z] [INFO] Successfully inserted items for section 706
+[2025-03-15T01:47:37.876Z] [INFO] Inserting 4 items for section 707
+[2025-03-15T01:47:37.924Z] [INFO] Successfully inserted items for section 707
+[2025-03-15T01:47:38.048Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/assessment.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:38.048Z] [INFO] Processing file: collateral-history.md
+[2025-03-15T01:47:38.099Z] [INFO] Inserted section: Witness Account (ID: 708)
+[2025-03-15T01:47:38.146Z] [INFO] Inserted section: Description of Episode (From Observer) (ID: 709)
+[2025-03-15T01:47:38.197Z] [INFO] Inserted section: Pre-Episode Observations (ID: 710)
+[2025-03-15T01:47:38.248Z] [INFO] Inserted section: Episode Characteristics (ID: 711)
+[2025-03-15T01:47:38.298Z] [INFO] Inserted section: Movement During Episode (ID: 712)
+[2025-03-15T01:47:38.352Z] [INFO] Inserted section: Autonomic Features (ID: 713)
+[2025-03-15T01:47:38.406Z] [INFO] Inserted section: Recovery Characteristics (ID: 714)
+[2025-03-15T01:47:38.451Z] [INFO] Inserted section: EMS/First Responder Report (ID: 715)
+[2025-03-15T01:47:38.451Z] [INFO] Inserting 50 items for section 715
+[2025-03-15T01:47:38.451Z] [INFO] Inserting 4 items for section 708
+[2025-03-15T01:47:38.496Z] [INFO] Successfully inserted items for section 708
+[2025-03-15T01:47:38.496Z] [INFO] Inserting 5 items for section 709
+[2025-03-15T01:47:38.550Z] [INFO] Successfully inserted items for section 709
+[2025-03-15T01:47:38.550Z] [INFO] Inserting 5 items for section 710
+[2025-03-15T01:47:38.601Z] [INFO] Successfully inserted items for section 710
+[2025-03-15T01:47:38.601Z] [INFO] Inserting 8 items for section 711
+[2025-03-15T01:47:38.704Z] [INFO] Successfully inserted items for section 711
+[2025-03-15T01:47:38.704Z] [INFO] Inserting 9 items for section 712
+[2025-03-15T01:47:38.757Z] [INFO] Successfully inserted items for section 712
+[2025-03-15T01:47:38.757Z] [INFO] Inserting 4 items for section 713
+[2025-03-15T01:47:38.807Z] [INFO] Successfully inserted items for section 713
+[2025-03-15T01:47:38.807Z] [INFO] Inserting 11 items for section 714
+[2025-03-15T01:47:38.857Z] [INFO] Successfully inserted items for section 714
+[2025-03-15T01:47:38.857Z] [INFO] Inserting 4 items for section 715
+[2025-03-15T01:47:38.921Z] [INFO] Successfully inserted items for section 715
+[2025-03-15T01:47:39.383Z] [INFO] Completed processing file: collateral-history.md
+[2025-03-15T01:47:39.383Z] [INFO] Processing file: diet.md
+[2025-03-15T01:47:39.440Z] [INFO] Inserted section: Oral Intake (ID: 716)
+[2025-03-15T01:47:39.491Z] [INFO] Inserted section: Dietary Triggers (ID: 717)
+[2025-03-15T01:47:39.538Z] [INFO] Inserted section: Specialized Diets (ID: 718)
+[2025-03-15T01:47:39.589Z] [INFO] Inserted section: Hydration Status (ID: 719)
+[2025-03-15T01:47:39.641Z] [INFO] Inserted section: Recent Dietary Changes (ID: 720)
+[2025-03-15T01:47:39.691Z] [INFO] Inserted section: Dietary Supplements (ID: 721)
+[2025-03-15T01:47:39.739Z] [INFO] Inserted section: Appetite (ID: 722)
+[2025-03-15T01:47:39.739Z] [INFO] Inserting 35 items for section 722
+[2025-03-15T01:47:39.739Z] [INFO] Inserting 5 items for section 716
+[2025-03-15T01:47:39.791Z] [INFO] Successfully inserted items for section 716
+[2025-03-15T01:47:39.791Z] [INFO] Inserting 4 items for section 717
+[2025-03-15T01:47:39.846Z] [INFO] Successfully inserted items for section 717
+[2025-03-15T01:47:39.846Z] [INFO] Inserting 5 items for section 718
+[2025-03-15T01:47:39.903Z] [INFO] Successfully inserted items for section 718
+[2025-03-15T01:47:39.903Z] [INFO] Inserting 4 items for section 719
+[2025-03-15T01:47:39.964Z] [INFO] Successfully inserted items for section 719
+[2025-03-15T01:47:39.964Z] [INFO] Inserting 7 items for section 720
+[2025-03-15T01:47:40.036Z] [INFO] Successfully inserted items for section 720
+[2025-03-15T01:47:40.036Z] [INFO] Inserting 6 items for section 721
+[2025-03-15T01:47:40.084Z] [INFO] Successfully inserted items for section 721
+[2025-03-15T01:47:40.084Z] [INFO] Inserting 4 items for section 722
+[2025-03-15T01:47:40.143Z] [INFO] Successfully inserted items for section 722
+[2025-03-15T01:47:40.550Z] [INFO] Completed processing file: diet.md
+[2025-03-15T01:47:40.551Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-15T01:47:40.597Z] [INFO] Inserted section: Reflex (Neurally Mediated) Syncope (ID: 723)
+[2025-03-15T01:47:40.652Z] [INFO] Inserted section: Orthostatic Syncope (ID: 724)
+[2025-03-15T01:47:40.704Z] [INFO] Inserted section: Cardiac Syncope (ID: 725)
+[2025-03-15T01:47:40.755Z] [INFO] Inserted section: Cerebrovascular Causes (ID: 726)
+[2025-03-15T01:47:40.804Z] [INFO] Inserted section: Metabolic/Toxic Causes (ID: 727)
+[2025-03-15T01:47:40.856Z] [INFO] Inserted section: Other Medical Causes (ID: 728)
+[2025-03-15T01:47:40.906Z] [INFO] Inserted section: Syncope Mimics (ID: 729)
+[2025-03-15T01:47:40.906Z] [INFO] Inserting 75 items for section 729
+[2025-03-15T01:47:40.906Z] [INFO] Inserting 12 items for section 723
+[2025-03-15T01:47:40.961Z] [INFO] Successfully inserted items for section 723
+[2025-03-15T01:47:40.961Z] [INFO] Inserting 7 items for section 724
+[2025-03-15T01:47:41.021Z] [INFO] Successfully inserted items for section 724
+[2025-03-15T01:47:41.021Z] [INFO] Inserting 31 items for section 725
+[2025-03-15T01:47:41.076Z] [INFO] Successfully inserted items for section 725
+[2025-03-15T01:47:41.076Z] [INFO] Inserting 5 items for section 726
+[2025-03-15T01:47:41.125Z] [INFO] Successfully inserted items for section 726
+[2025-03-15T01:47:41.125Z] [INFO] Inserting 6 items for section 727
+[2025-03-15T01:47:41.181Z] [INFO] Successfully inserted items for section 727
+[2025-03-15T01:47:41.181Z] [INFO] Inserting 6 items for section 728
+[2025-03-15T01:47:41.232Z] [INFO] Successfully inserted items for section 728
+[2025-03-15T01:47:41.232Z] [INFO] Inserting 8 items for section 729
+[2025-03-15T01:47:41.284Z] [INFO] Successfully inserted items for section 729
+[2025-03-15T01:47:41.389Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/differential-diagnosis.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:41.389Z] [INFO] Processing file: disposition.md
+[2025-03-15T01:47:41.441Z] [INFO] Inserted section: Primary Disposition Decision (ID: 730)
+[2025-03-15T01:47:41.487Z] [INFO] Inserted section: Disposition Rationale (ID: 731)
+[2025-03-15T01:47:41.538Z] [INFO] Inserted section: Discharge Considerations (ID: 732)
+[2025-03-15T01:47:41.585Z] [INFO] Inserted section: Observation Unit Considerations (ID: 733)
+[2025-03-15T01:47:41.641Z] [INFO] Inserted section: Hospital Admission Considerations (ID: 734)
+[2025-03-15T01:47:41.690Z] [INFO] Inserted section: Telemetry Monitoring Indications (ID: 735)
+[2025-03-15T01:47:41.740Z] [INFO] Inserted section: Intensive Care Unit Indications (ID: 736)
+[2025-03-15T01:47:41.798Z] [INFO] Inserted section: Transfer Considerations (ID: 737)
+[2025-03-15T01:47:41.798Z] [INFO] Inserting 56 items for section 737
+[2025-03-15T01:47:41.798Z] [INFO] Inserting 8 items for section 730
+[2025-03-15T01:47:41.845Z] [INFO] Successfully inserted items for section 730
+[2025-03-15T01:47:41.845Z] [INFO] Inserting 7 items for section 731
+[2025-03-15T01:47:41.892Z] [INFO] Successfully inserted items for section 731
+[2025-03-15T01:47:41.892Z] [INFO] Inserting 7 items for section 732
+[2025-03-15T01:47:41.942Z] [INFO] Successfully inserted items for section 732
+[2025-03-15T01:47:41.942Z] [INFO] Inserting 7 items for section 733
+[2025-03-15T01:47:41.990Z] [INFO] Successfully inserted items for section 733
+[2025-03-15T01:47:41.990Z] [INFO] Inserting 8 items for section 734
+[2025-03-15T01:47:42.040Z] [INFO] Successfully inserted items for section 734
+[2025-03-15T01:47:42.040Z] [INFO] Inserting 6 items for section 735
+[2025-03-15T01:47:42.097Z] [INFO] Successfully inserted items for section 735
+[2025-03-15T01:47:42.097Z] [INFO] Inserting 7 items for section 736
+[2025-03-15T01:47:42.146Z] [INFO] Successfully inserted items for section 736
+[2025-03-15T01:47:42.146Z] [INFO] Inserting 6 items for section 737
+[2025-03-15T01:47:42.198Z] [INFO] Successfully inserted items for section 737
+[2025-03-15T01:47:42.300Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/disposition.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:42.300Z] [INFO] Processing file: ecg.md
+[2025-03-15T01:47:42.357Z] [INFO] Inserted section: Basic ECG Parameters (ID: 738)
+[2025-03-15T01:47:42.420Z] [INFO] Inserted section: Rhythm (ID: 739)
+[2025-03-15T01:47:42.470Z] [INFO] Inserted section: Conduction Abnormalities (ID: 740)
+[2025-03-15T01:47:42.518Z] [INFO] Inserted section: Tachyarrhythmias (ID: 741)
+[2025-03-15T01:47:42.573Z] [INFO] Inserted section: Ischemia/Infarction (ID: 742)
+[2025-03-15T01:47:42.626Z] [INFO] Inserted section: Other ECG Findings (ID: 743)
+[2025-03-15T01:47:42.679Z] [INFO] Inserted section: Serial ECG Changes (ID: 744)
+[2025-03-15T01:47:42.737Z] [INFO] Inserted section: Cardiac Monitor Findings (if available) (ID: 745)
+[2025-03-15T01:47:42.737Z] [INFO] Inserting 60 items for section 745
+[2025-03-15T01:47:42.737Z] [INFO] Inserting 7 items for section 738
+[2025-03-15T01:47:42.795Z] [INFO] Successfully inserted items for section 738
+[2025-03-15T01:47:42.795Z] [INFO] Inserting 9 items for section 739
+[2025-03-15T01:47:42.846Z] [INFO] Successfully inserted items for section 739
+[2025-03-15T01:47:42.846Z] [INFO] Inserting 11 items for section 740
+[2025-03-15T01:47:42.902Z] [INFO] Successfully inserted items for section 740
+[2025-03-15T01:47:42.902Z] [INFO] Inserting 7 items for section 741
+[2025-03-15T01:47:42.956Z] [INFO] Successfully inserted items for section 741
+[2025-03-15T01:47:42.956Z] [INFO] Inserting 6 items for section 742
+[2025-03-15T01:47:43.004Z] [INFO] Successfully inserted items for section 742
+[2025-03-15T01:47:43.004Z] [INFO] Inserting 14 items for section 743
+[2025-03-15T01:47:43.063Z] [INFO] Successfully inserted items for section 743
+[2025-03-15T01:47:43.063Z] [INFO] Inserting 4 items for section 744
+[2025-03-15T01:47:43.121Z] [INFO] Successfully inserted items for section 744
+[2025-03-15T01:47:43.121Z] [INFO] Inserting 2 items for section 745
+[2025-03-15T01:47:43.180Z] [INFO] Successfully inserted items for section 745
+[2025-03-15T01:47:43.694Z] [INFO] Completed processing file: ecg.md
+[2025-03-15T01:47:43.695Z] [INFO] Processing file: history.md
+[2025-03-15T01:47:43.757Z] [INFO] Inserted section: Chief Complaint (ID: 746)
+[2025-03-15T01:47:43.807Z] [INFO] Inserted section: Episode Details (ID: 747)
+[2025-03-15T01:47:43.863Z] [INFO] Inserted section: Position During Episode (ID: 748)
+[2025-03-15T01:47:43.912Z] [INFO] Inserted section: Activity During Episode (ID: 749)
+[2025-03-15T01:47:43.967Z] [INFO] Inserted section: Setting (ID: 750)
+[2025-03-15T01:47:44.026Z] [INFO] Inserted section: Precipitating Factors (ID: 751)
+[2025-03-15T01:47:44.081Z] [INFO] Inserted section: Associated Prodromal Symptoms (ID: 752)
+[2025-03-15T01:47:44.145Z] [INFO] Inserted section: Associated Symptoms During/After Episode (ID: 753)
+[2025-03-15T01:47:44.203Z] [INFO] Inserted section: Post-Episode Status (ID: 754)
+[2025-03-15T01:47:44.203Z] [INFO] Inserting 68 items for section 754
+[2025-03-15T01:47:44.203Z] [INFO] Inserting 3 items for section 746
+[2025-03-15T01:47:44.254Z] [INFO] Successfully inserted items for section 746
+[2025-03-15T01:47:44.254Z] [INFO] Inserting 4 items for section 747
+[2025-03-15T01:47:44.309Z] [INFO] Successfully inserted items for section 747
+[2025-03-15T01:47:44.309Z] [INFO] Inserting 4 items for section 748
+[2025-03-15T01:47:44.365Z] [INFO] Successfully inserted items for section 748
+[2025-03-15T01:47:44.365Z] [INFO] Inserting 5 items for section 749
+[2025-03-15T01:47:44.416Z] [INFO] Successfully inserted items for section 749
+[2025-03-15T01:47:44.416Z] [INFO] Inserting 11 items for section 750
+[2025-03-15T01:47:44.464Z] [INFO] Successfully inserted items for section 750
+[2025-03-15T01:47:44.464Z] [INFO] Inserting 12 items for section 751
+[2025-03-15T01:47:44.512Z] [INFO] Successfully inserted items for section 751
+[2025-03-15T01:47:44.512Z] [INFO] Inserting 10 items for section 752
+[2025-03-15T01:47:44.566Z] [INFO] Successfully inserted items for section 752
+[2025-03-15T01:47:44.566Z] [INFO] Inserting 13 items for section 753
+[2025-03-15T01:47:44.617Z] [INFO] Successfully inserted items for section 753
+[2025-03-15T01:47:44.617Z] [INFO] Inserting 6 items for section 754
+[2025-03-15T01:47:44.672Z] [INFO] Successfully inserted items for section 754
+[2025-03-15T01:47:45.130Z] [INFO] Completed processing file: history.md
+[2025-03-15T01:47:45.131Z] [INFO] Processing file: imaging.md
+[2025-03-15T01:47:45.183Z] [INFO] Inserted section: Chest X-ray (ID: 755)
+[2025-03-15T01:47:45.231Z] [INFO] Inserted section: Head CT (ID: 756)
+[2025-03-15T01:47:45.300Z] [INFO] Inserted section: CT Pulmonary Angiogram (ID: 757)
+[2025-03-15T01:47:45.355Z] [INFO] Inserted section: CT Abdomen/Pelvis (ID: 758)
+[2025-03-15T01:47:45.410Z] [INFO] Inserted section: CT Angiogram of Chest (ID: 759)
+[2025-03-15T01:47:45.479Z] [INFO] Inserted section: MRI Brain (ID: 760)
+[2025-03-15T01:47:45.531Z] [INFO] Inserted section: MR Angiography (ID: 761)
+[2025-03-15T01:47:45.577Z] [INFO] Inserted section: Carotid Ultrasound (ID: 762)
+[2025-03-15T01:47:45.628Z] [INFO] Inserted section: Abdominal Ultrasound (ID: 763)
+[2025-03-15T01:47:45.677Z] [INFO] Inserted section: Pelvic Ultrasound (if applicable) (ID: 764)
+[2025-03-15T01:47:45.677Z] [INFO] Inserting 81 items for section 764
+[2025-03-15T01:47:45.677Z] [INFO] Inserting 11 items for section 755
+[2025-03-15T01:47:45.733Z] [INFO] Successfully inserted items for section 755
+[2025-03-15T01:47:45.733Z] [INFO] Inserting 9 items for section 756
+[2025-03-15T01:47:45.841Z] [INFO] Successfully inserted items for section 756
+[2025-03-15T01:47:45.841Z] [INFO] Inserting 10 items for section 757
+[2025-03-15T01:47:45.888Z] [INFO] Successfully inserted items for section 757
+[2025-03-15T01:47:45.888Z] [INFO] Inserting 9 items for section 758
+[2025-03-15T01:47:45.936Z] [INFO] Successfully inserted items for section 758
+[2025-03-15T01:47:45.936Z] [INFO] Inserting 6 items for section 759
+[2025-03-15T01:47:45.988Z] [INFO] Successfully inserted items for section 759
+[2025-03-15T01:47:45.988Z] [INFO] Inserting 8 items for section 760
+[2025-03-15T01:47:46.039Z] [INFO] Successfully inserted items for section 760
+[2025-03-15T01:47:46.040Z] [INFO] Inserting 8 items for section 761
+[2025-03-15T01:47:46.087Z] [INFO] Successfully inserted items for section 761
+[2025-03-15T01:47:46.087Z] [INFO] Inserting 6 items for section 762
+[2025-03-15T01:47:46.140Z] [INFO] Successfully inserted items for section 762
+[2025-03-15T01:47:46.140Z] [INFO] Inserting 6 items for section 763
+[2025-03-15T01:47:46.189Z] [INFO] Successfully inserted items for section 763
+[2025-03-15T01:47:46.189Z] [INFO] Inserting 8 items for section 764
+[2025-03-15T01:47:46.236Z] [INFO] Successfully inserted items for section 764
+[2025-03-15T01:47:46.449Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/imaging.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:46.449Z] [INFO] Processing file: lab-studies.md
+[2025-03-15T01:47:46.498Z] [INFO] Inserted section: Complete Blood Count (ID: 765)
+[2025-03-15T01:47:46.552Z] [INFO] Inserted section: Basic Metabolic Panel (ID: 766)
+[2025-03-15T01:47:46.612Z] [INFO] Inserted section: Cardiac Biomarkers (ID: 767)
+[2025-03-15T01:47:46.662Z] [INFO] Inserted section: Coagulation Studies (ID: 768)
+[2025-03-15T01:47:46.718Z] [INFO] Inserted section: Additional Electrolytes (ID: 769)
+[2025-03-15T01:47:46.762Z] [INFO] Inserted section: Liver Function Tests (ID: 770)
+[2025-03-15T01:47:46.812Z] [INFO] Inserted section: Toxicology Screen (ID: 771)
+[2025-03-15T01:47:46.859Z] [INFO] Inserted section: Pregnancy Test (ID: 772)
+[2025-03-15T01:47:46.914Z] [INFO] Inserted section: Thyroid Function Tests (ID: 773)
+[2025-03-15T01:47:46.966Z] [INFO] Inserted section: Arterial Blood Gas (ID: 774)
+[2025-03-15T01:47:47.014Z] [INFO] Inserted section: Urinalysis (ID: 775)
+[2025-03-15T01:47:47.064Z] [INFO] Inserted section: Other Laboratory Tests (ID: 776)
+[2025-03-15T01:47:47.064Z] [INFO] Inserting 70 items for section 776
+[2025-03-15T01:47:47.064Z] [INFO] Inserting 6 items for section 765
+[2025-03-15T01:47:47.111Z] [INFO] Successfully inserted items for section 765
+[2025-03-15T01:47:47.111Z] [INFO] Inserting 10 items for section 766
+[2025-03-15T01:47:47.160Z] [INFO] Successfully inserted items for section 766
+[2025-03-15T01:47:47.161Z] [INFO] Inserting 7 items for section 767
+[2025-03-15T01:47:47.210Z] [INFO] Successfully inserted items for section 767
+[2025-03-15T01:47:47.210Z] [INFO] Inserting 5 items for section 768
+[2025-03-15T01:47:47.268Z] [INFO] Successfully inserted items for section 768
+[2025-03-15T01:47:47.268Z] [INFO] Inserting 2 items for section 769
+[2025-03-15T01:47:47.323Z] [INFO] Successfully inserted items for section 769
+[2025-03-15T01:47:47.323Z] [INFO] Inserting 7 items for section 770
+[2025-03-15T01:47:47.378Z] [INFO] Successfully inserted items for section 770
+[2025-03-15T01:47:47.378Z] [INFO] Inserting 4 items for section 771
+[2025-03-15T01:47:47.429Z] [INFO] Successfully inserted items for section 771
+[2025-03-15T01:47:47.429Z] [INFO] Inserting 3 items for section 772
+[2025-03-15T01:47:47.480Z] [INFO] Successfully inserted items for section 772
+[2025-03-15T01:47:47.480Z] [INFO] Inserting 4 items for section 773
+[2025-03-15T01:47:47.530Z] [INFO] Successfully inserted items for section 773
+[2025-03-15T01:47:47.531Z] [INFO] Inserting 8 items for section 774
+[2025-03-15T01:47:47.582Z] [INFO] Successfully inserted items for section 774
+[2025-03-15T01:47:47.582Z] [INFO] Inserting 10 items for section 775
+[2025-03-15T01:47:47.640Z] [INFO] Successfully inserted items for section 775
+[2025-03-15T01:47:47.641Z] [INFO] Inserting 4 items for section 776
+[2025-03-15T01:47:47.691Z] [INFO] Successfully inserted items for section 776
+[2025-03-15T01:47:48.338Z] [INFO] Completed processing file: lab-studies.md
+[2025-03-15T01:47:48.338Z] [INFO] Processing file: medications.md
+[2025-03-15T01:47:48.388Z] [INFO] Inserted section: Vasodilators (ID: 777)
+[2025-03-15T01:47:48.437Z] [INFO] Inserted section: Diuretics (ID: 778)
+[2025-03-15T01:47:48.486Z] [INFO] Inserted section: Central Antihypertensives (ID: 779)
+[2025-03-15T01:47:48.542Z] [INFO] Inserted section: QT-Prolonging Agents (ID: 780)
+[2025-03-15T01:47:48.598Z] [INFO] Inserted section: Psychoactive Agents (ID: 781)
+[2025-03-15T01:47:48.649Z] [INFO] Inserted section: Other Medications (ID: 782)
+[2025-03-15T01:47:48.700Z] [INFO] Inserted section: Recent Medication Changes (ID: 783)
+[2025-03-15T01:47:48.751Z] [INFO] Inserted section: Medication Compliance (ID: 784)
+[2025-03-15T01:47:48.752Z] [INFO] Inserting 47 items for section 784
+[2025-03-15T01:47:48.752Z] [INFO] Inserting 8 items for section 777
+[2025-03-15T01:47:48.801Z] [INFO] Successfully inserted items for section 777
+[2025-03-15T01:47:48.801Z] [INFO] Inserting 3 items for section 778
+[2025-03-15T01:47:48.860Z] [INFO] Successfully inserted items for section 778
+[2025-03-15T01:47:48.860Z] [INFO] Inserting 2 items for section 779
+[2025-03-15T01:47:48.910Z] [INFO] Successfully inserted items for section 779
+[2025-03-15T01:47:48.911Z] [INFO] Inserting 5 items for section 780
+[2025-03-15T01:47:48.958Z] [INFO] Successfully inserted items for section 780
+[2025-03-15T01:47:48.958Z] [INFO] Inserting 12 items for section 781
+[2025-03-15T01:47:49.010Z] [INFO] Successfully inserted items for section 781
+[2025-03-15T01:47:49.010Z] [INFO] Inserting 7 items for section 782
+[2025-03-15T01:47:49.103Z] [INFO] Successfully inserted items for section 782
+[2025-03-15T01:47:49.103Z] [INFO] Inserting 5 items for section 783
+[2025-03-15T01:47:49.157Z] [INFO] Successfully inserted items for section 783
+[2025-03-15T01:47:49.157Z] [INFO] Inserting 5 items for section 784
+[2025-03-15T01:47:49.205Z] [INFO] Successfully inserted items for section 784
+[2025-03-15T01:47:49.632Z] [INFO] Completed processing file: medications.md
+[2025-03-15T01:47:49.633Z] [INFO] Processing file: past-medical.md
+[2025-03-15T01:47:49.686Z] [INFO] Inserted section: Cardiac History (ID: 785)
+[2025-03-15T01:47:49.734Z] [INFO] Inserted section: Vascular History (ID: 786)
+[2025-03-15T01:47:49.782Z] [INFO] Inserted section: Pulmonary History (ID: 787)
+[2025-03-15T01:47:49.836Z] [INFO] Inserted section: Neurological History (ID: 788)
+[2025-03-15T01:47:49.889Z] [INFO] Inserted section: Endocrine History (ID: 789)
+[2025-03-15T01:47:49.939Z] [INFO] Inserted section: Hematologic History (ID: 790)
+[2025-03-15T01:47:49.990Z] [INFO] Inserted section: Gastrointestinal History (ID: 791)
+[2025-03-15T01:47:50.039Z] [INFO] Inserted section: Genitourinary History (ID: 792)
+[2025-03-15T01:47:50.084Z] [INFO] Inserted section: Psychiatric History (ID: 793)
+[2025-03-15T01:47:50.131Z] [INFO] Inserted section: Previous Episodes (ID: 794)
+[2025-03-15T01:47:50.131Z] [INFO] Inserting 74 items for section 794
+[2025-03-15T01:47:50.131Z] [INFO] Inserting 28 items for section 785
+[2025-03-15T01:47:50.179Z] [INFO] Successfully inserted items for section 785
+[2025-03-15T01:47:50.179Z] [INFO] Inserting 9 items for section 786
+[2025-03-15T01:47:50.228Z] [INFO] Successfully inserted items for section 786
+[2025-03-15T01:47:50.228Z] [INFO] Inserting 5 items for section 787
+[2025-03-15T01:47:50.281Z] [INFO] Successfully inserted items for section 787
+[2025-03-15T01:47:50.281Z] [INFO] Inserting 8 items for section 788
+[2025-03-15T01:47:50.331Z] [INFO] Successfully inserted items for section 788
+[2025-03-15T01:47:50.331Z] [INFO] Inserting 4 items for section 789
+[2025-03-15T01:47:50.382Z] [INFO] Successfully inserted items for section 789
+[2025-03-15T01:47:50.382Z] [INFO] Inserting 3 items for section 790
+[2025-03-15T01:47:50.434Z] [INFO] Successfully inserted items for section 790
+[2025-03-15T01:47:50.434Z] [INFO] Inserting 3 items for section 791
+[2025-03-15T01:47:50.486Z] [INFO] Successfully inserted items for section 791
+[2025-03-15T01:47:50.486Z] [INFO] Inserting 2 items for section 792
+[2025-03-15T01:47:50.546Z] [INFO] Successfully inserted items for section 792
+[2025-03-15T01:47:50.546Z] [INFO] Inserting 5 items for section 793
+[2025-03-15T01:47:50.595Z] [INFO] Successfully inserted items for section 793
+[2025-03-15T01:47:50.595Z] [INFO] Inserting 7 items for section 794
+[2025-03-15T01:47:50.643Z] [INFO] Successfully inserted items for section 794
+[2025-03-15T01:47:50.742Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/past-medical.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:50.742Z] [INFO] Processing file: patient-education.md
+[2025-03-15T01:47:50.790Z] [INFO] Inserted section: General Syncope Information (ID: 795)
+[2025-03-15T01:47:50.840Z] [INFO] Inserted section: Safety Considerations (ID: 796)
+[2025-03-15T01:47:50.890Z] [INFO] Inserted section: Specific Cause Education (if identified) (ID: 797)
+[2025-03-15T01:47:50.937Z] [INFO] Inserted section: Prodromal Symptom Recognition (ID: 798)
+[2025-03-15T01:47:50.992Z] [INFO] Inserted section: Physical Counterpressure Maneuvers (ID: 799)
+[2025-03-15T01:47:51.047Z] [INFO] Inserted section: Lifestyle Modifications (ID: 800)
+[2025-03-15T01:47:51.100Z] [INFO] Inserted section: Medication Education (ID: 801)
+[2025-03-15T01:47:51.148Z] [INFO] Inserted section: Follow-up Care (ID: 802)
+[2025-03-15T01:47:51.194Z] [INFO] Inserted section: Warning Signs Requiring Immediate Attention (ID: 803)
+[2025-03-15T01:47:51.242Z] [INFO] Inserted section: Family Education (ID: 804)
+[2025-03-15T01:47:51.243Z] [INFO] Inserting 66 items for section 804
+[2025-03-15T01:47:51.243Z] [INFO] Inserting 6 items for section 795
+[2025-03-15T01:47:51.302Z] [INFO] Successfully inserted items for section 795
+[2025-03-15T01:47:51.302Z] [INFO] Inserting 8 items for section 796
+[2025-03-15T01:47:51.391Z] [INFO] Successfully inserted items for section 796
+[2025-03-15T01:47:51.391Z] [INFO] Inserting 7 items for section 797
+[2025-03-15T01:47:51.440Z] [INFO] Successfully inserted items for section 797
+[2025-03-15T01:47:51.441Z] [INFO] Inserting 5 items for section 798
+[2025-03-15T01:47:51.501Z] [INFO] Successfully inserted items for section 798
+[2025-03-15T01:47:51.501Z] [INFO] Inserting 5 items for section 799
+[2025-03-15T01:47:51.547Z] [INFO] Successfully inserted items for section 799
+[2025-03-15T01:47:51.547Z] [INFO] Inserting 8 items for section 800
+[2025-03-15T01:47:51.607Z] [INFO] Successfully inserted items for section 800
+[2025-03-15T01:47:51.607Z] [INFO] Inserting 6 items for section 801
+[2025-03-15T01:47:51.658Z] [INFO] Successfully inserted items for section 801
+[2025-03-15T01:47:51.658Z] [INFO] Inserting 7 items for section 802
+[2025-03-15T01:47:51.706Z] [INFO] Successfully inserted items for section 802
+[2025-03-15T01:47:51.706Z] [INFO] Inserting 8 items for section 803
+[2025-03-15T01:47:51.761Z] [INFO] Successfully inserted items for section 803
+[2025-03-15T01:47:51.761Z] [INFO] Inserting 6 items for section 804
+[2025-03-15T01:47:51.809Z] [INFO] Successfully inserted items for section 804
+[2025-03-15T01:47:52.344Z] [INFO] Completed processing file: patient-education.md
+[2025-03-15T01:47:52.344Z] [INFO] Processing file: physical-exam.md
+[2025-03-15T01:47:52.397Z] [INFO] Inserted section: Vital Signs (ID: 805)
+[2025-03-15T01:47:52.463Z] [INFO] Inserted section: Orthostatic Vital Signs (ID: 806)
+[2025-03-15T01:47:52.513Z] [INFO] Inserted section: General Appearance (ID: 807)
+[2025-03-15T01:47:52.559Z] [INFO] Inserted section: Head, Eyes, Ears, Nose, Throat (ID: 808)
+[2025-03-15T01:47:52.608Z] [INFO] Inserted section: Cardiovascular (ID: 809)
+[2025-03-15T01:47:52.653Z] [INFO] Inserted section: Pulmonary (ID: 810)
+[2025-03-15T01:47:52.702Z] [INFO] Inserted section: Abdominal (ID: 811)
+[2025-03-15T01:47:52.752Z] [INFO] Inserted section: Neurological (ID: 812)
+[2025-03-15T01:47:52.803Z] [INFO] Inserted section: Extremities (ID: 813)
+[2025-03-15T01:47:52.852Z] [INFO] Inserted section: Skin (ID: 814)
+[2025-03-15T01:47:52.899Z] [INFO] Inserted section: Rectal Examination (if indicated) (ID: 815)
+[2025-03-15T01:47:52.899Z] [INFO] Inserting 107 items for section 815
+[2025-03-15T01:47:52.899Z] [INFO] Inserting 6 items for section 805
+[2025-03-15T01:47:52.951Z] [INFO] Successfully inserted items for section 805
+[2025-03-15T01:47:52.952Z] [INFO] Inserting 10 items for section 806
+[2025-03-15T01:47:53.041Z] [INFO] Successfully inserted items for section 806
+[2025-03-15T01:47:53.041Z] [INFO] Inserting 6 items for section 807
+[2025-03-15T01:47:53.090Z] [INFO] Successfully inserted items for section 807
+[2025-03-15T01:47:53.090Z] [INFO] Inserting 9 items for section 808
+[2025-03-15T01:47:53.151Z] [INFO] Successfully inserted items for section 808
+[2025-03-15T01:47:53.151Z] [INFO] Inserting 19 items for section 809
+[2025-03-15T01:47:53.207Z] [INFO] Successfully inserted items for section 809
+[2025-03-15T01:47:53.207Z] [INFO] Inserting 7 items for section 810
+[2025-03-15T01:47:53.260Z] [INFO] Successfully inserted items for section 810
+[2025-03-15T01:47:53.261Z] [INFO] Inserting 12 items for section 811
+[2025-03-15T01:47:53.329Z] [INFO] Successfully inserted items for section 811
+[2025-03-15T01:47:53.329Z] [INFO] Inserting 20 items for section 812
+[2025-03-15T01:47:53.388Z] [INFO] Successfully inserted items for section 812
+[2025-03-15T01:47:53.388Z] [INFO] Inserting 7 items for section 813
+[2025-03-15T01:47:53.442Z] [INFO] Successfully inserted items for section 813
+[2025-03-15T01:47:53.443Z] [INFO] Inserting 8 items for section 814
+[2025-03-15T01:47:53.496Z] [INFO] Successfully inserted items for section 814
+[2025-03-15T01:47:53.496Z] [INFO] Inserting 3 items for section 815
+[2025-03-15T01:47:53.551Z] [INFO] Successfully inserted items for section 815
+[2025-03-15T01:47:53.862Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/physical-exam.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:53.863Z] [INFO] Processing file: plan.md
+[2025-03-15T01:47:53.910Z] [INFO] Inserted section: Immediate Management (ID: 816)
+[2025-03-15T01:47:53.956Z] [INFO] Inserted section: Additional Testing (ID: 817)
+[2025-03-15T01:47:54.003Z] [INFO] Inserted section: Medication Recommendations (ID: 818)
+[2025-03-15T01:47:54.051Z] [INFO] Inserted section: Lifestyle Modifications (ID: 819)
+[2025-03-15T01:47:54.105Z] [INFO] Inserted section: Cardiac Intervention Considerations (ID: 820)
+[2025-03-15T01:47:54.162Z] [INFO] Inserted section: Follow-up Care (ID: 821)
+[2025-03-15T01:47:54.226Z] [INFO] Inserted section: Preventive Measures (ID: 822)
+[2025-03-15T01:47:54.275Z] [INFO] Inserted section: Special Considerations (ID: 823)
+[2025-03-15T01:47:54.275Z] [INFO] Inserting 63 items for section 823
+[2025-03-15T01:47:54.275Z] [INFO] Inserting 9 items for section 816
+[2025-03-15T01:47:54.322Z] [INFO] Successfully inserted items for section 816
+[2025-03-15T01:47:54.322Z] [INFO] Inserting 12 items for section 817
+[2025-03-15T01:47:54.381Z] [INFO] Successfully inserted items for section 817
+[2025-03-15T01:47:54.381Z] [INFO] Inserting 6 items for section 818
+[2025-03-15T01:47:54.431Z] [INFO] Successfully inserted items for section 818
+[2025-03-15T01:47:54.431Z] [INFO] Inserting 8 items for section 819
+[2025-03-15T01:47:54.490Z] [INFO] Successfully inserted items for section 819
+[2025-03-15T01:47:54.490Z] [INFO] Inserting 6 items for section 820
+[2025-03-15T01:47:54.543Z] [INFO] Successfully inserted items for section 820
+[2025-03-15T01:47:54.543Z] [INFO] Inserting 10 items for section 821
+[2025-03-15T01:47:54.591Z] [INFO] Successfully inserted items for section 821
+[2025-03-15T01:47:54.592Z] [INFO] Inserting 7 items for section 822
+[2025-03-15T01:47:54.639Z] [INFO] Successfully inserted items for section 822
+[2025-03-15T01:47:54.639Z] [INFO] Inserting 5 items for section 823
+[2025-03-15T01:47:54.684Z] [INFO] Successfully inserted items for section 823
+[2025-03-15T01:47:55.142Z] [INFO] Completed processing file: plan.md
+[2025-03-15T01:47:55.142Z] [INFO] Processing file: review-systems.md
+[2025-03-15T01:47:55.190Z] [INFO] Inserted section: Constitutional (ID: 824)
+[2025-03-15T01:47:55.239Z] [INFO] Inserted section: Cardiovascular (ID: 825)
+[2025-03-15T01:47:55.287Z] [INFO] Inserted section: Respiratory (ID: 826)
+[2025-03-15T01:47:55.342Z] [INFO] Inserted section: Neurological (ID: 827)
+[2025-03-15T01:47:55.400Z] [INFO] Inserted section: Gastrointestinal (ID: 828)
+[2025-03-15T01:47:55.451Z] [INFO] Inserted section: Genitourinary (ID: 829)
+[2025-03-15T01:47:55.508Z] [INFO] Inserted section: Psychiatric (ID: 830)
+[2025-03-15T01:47:55.562Z] [INFO] Inserted section: Endocrine (ID: 831)
+[2025-03-15T01:47:55.612Z] [INFO] Inserted section: Hematologic (ID: 832)
+[2025-03-15T01:47:55.670Z] [INFO] Inserted section: Musculoskeletal (ID: 833)
+[2025-03-15T01:47:55.726Z] [INFO] Inserted section: Ear, Nose, Throat (ID: 834)
+[2025-03-15T01:47:55.780Z] [INFO] Inserted section: Eyes (ID: 835)
+[2025-03-15T01:47:55.781Z] [INFO] Inserting 67 items for section 835
+[2025-03-15T01:47:55.781Z] [INFO] Inserting 4 items for section 824
+[2025-03-15T01:47:55.826Z] [INFO] Successfully inserted items for section 824
+[2025-03-15T01:47:55.826Z] [INFO] Inserting 8 items for section 825
+[2025-03-15T01:47:55.888Z] [INFO] Successfully inserted items for section 825
+[2025-03-15T01:47:55.888Z] [INFO] Inserting 5 items for section 826
+[2025-03-15T01:47:55.936Z] [INFO] Successfully inserted items for section 826
+[2025-03-15T01:47:55.936Z] [INFO] Inserting 11 items for section 827
+[2025-03-15T01:47:55.994Z] [INFO] Successfully inserted items for section 827
+[2025-03-15T01:47:55.994Z] [INFO] Inserting 8 items for section 828
+[2025-03-15T01:47:56.046Z] [INFO] Successfully inserted items for section 828
+[2025-03-15T01:47:56.046Z] [INFO] Inserting 7 items for section 829
+[2025-03-15T01:47:56.107Z] [INFO] Successfully inserted items for section 829
+[2025-03-15T01:47:56.107Z] [INFO] Inserting 6 items for section 830
+[2025-03-15T01:47:56.169Z] [INFO] Successfully inserted items for section 830
+[2025-03-15T01:47:56.169Z] [INFO] Inserting 4 items for section 831
+[2025-03-15T01:47:56.217Z] [INFO] Successfully inserted items for section 831
+[2025-03-15T01:47:56.217Z] [INFO] Inserting 3 items for section 832
+[2025-03-15T01:47:56.269Z] [INFO] Successfully inserted items for section 832
+[2025-03-15T01:47:56.269Z] [INFO] Inserting 3 items for section 833
+[2025-03-15T01:47:56.319Z] [INFO] Successfully inserted items for section 833
+[2025-03-15T01:47:56.319Z] [INFO] Inserting 4 items for section 834
+[2025-03-15T01:47:56.380Z] [INFO] Successfully inserted items for section 834
+[2025-03-15T01:47:56.380Z] [INFO] Inserting 4 items for section 835
+[2025-03-15T01:47:56.436Z] [INFO] Successfully inserted items for section 835
+[2025-03-15T01:47:57.077Z] [INFO] Completed processing file: review-systems.md
+[2025-03-15T01:47:57.077Z] [INFO] Processing file: risk-factors.md
+[2025-03-15T01:47:57.126Z] [INFO] Inserted section: Demographic Risk Factors (ID: 836)
+[2025-03-15T01:47:57.174Z] [INFO] Inserted section: Cardiac Risk Factors (ID: 837)
+[2025-03-15T01:47:57.221Z] [INFO] Inserted section: Vascular Risk Factors (ID: 838)
+[2025-03-15T01:47:57.270Z] [INFO] Inserted section: Pulmonary Embolism Risk Factors (ID: 839)
+[2025-03-15T01:47:57.317Z] [INFO] Inserted section: Orthostatic Hypotension Risk Factors (ID: 840)
+[2025-03-15T01:47:57.373Z] [INFO] Inserted section: Canadian Syncope Risk Score Factors (ID: 841)
+[2025-03-15T01:47:57.421Z] [INFO] Inserted section: San Francisco Syncope Rule Factors (ID: 842)
+[2025-03-15T01:47:57.473Z] [INFO] Inserted section: FAINT Score Factors (ID: 843)
+[2025-03-15T01:47:57.473Z] [INFO] Inserting 63 items for section 843
+[2025-03-15T01:47:57.473Z] [INFO] Inserting 3 items for section 836
+[2025-03-15T01:47:57.526Z] [INFO] Successfully inserted items for section 836
+[2025-03-15T01:47:57.526Z] [INFO] Inserting 15 items for section 837
+[2025-03-15T01:47:57.587Z] [INFO] Successfully inserted items for section 837
+[2025-03-15T01:47:57.587Z] [INFO] Inserting 9 items for section 838
+[2025-03-15T01:47:57.634Z] [INFO] Successfully inserted items for section 838
+[2025-03-15T01:47:57.634Z] [INFO] Inserting 10 items for section 839
+[2025-03-15T01:47:57.687Z] [INFO] Successfully inserted items for section 839
+[2025-03-15T01:47:57.687Z] [INFO] Inserting 7 items for section 840
+[2025-03-15T01:47:57.733Z] [INFO] Successfully inserted items for section 840
+[2025-03-15T01:47:57.734Z] [INFO] Inserting 9 items for section 841
+[2025-03-15T01:47:57.781Z] [INFO] Successfully inserted items for section 841
+[2025-03-15T01:47:57.781Z] [INFO] Inserting 5 items for section 842
+[2025-03-15T01:47:57.832Z] [INFO] Successfully inserted items for section 842
+[2025-03-15T01:47:57.832Z] [INFO] Inserting 5 items for section 843
+[2025-03-15T01:47:57.877Z] [INFO] Successfully inserted items for section 843
+[2025-03-15T01:47:58.320Z] [INFO] Completed processing file: risk-factors.md
+[2025-03-15T01:47:58.321Z] [INFO] Processing file: special-tests.md
+[2025-03-15T01:47:58.372Z] [INFO] Inserted section: Bedside Ultrasonography (ID: 844)
+[2025-03-15T01:47:58.419Z] [INFO] Inserted section: Tilt Table Test (ID: 845)
+[2025-03-15T01:47:58.468Z] [INFO] Inserted section: Carotid Sinus Massage (ID: 846)
+[2025-03-15T01:47:58.518Z] [INFO] Inserted section: Stress Test (ID: 847)
+[2025-03-15T01:47:58.580Z] [INFO] Inserted section: Ambulatory Cardiac Monitoring (ID: 848)
+[2025-03-15T01:47:58.634Z] [INFO] Inserted section: Electroencephalogram (EEG) (ID: 849)
+[2025-03-15T01:47:58.686Z] [INFO] Inserted section: Cardiac Catheterization (ID: 850)
+[2025-03-15T01:47:58.734Z] [INFO] Inserted section: Electrophysiology Study (ID: 851)
+[2025-03-15T01:47:58.734Z] [INFO] Inserting 90 items for section 851
+[2025-03-15T01:47:58.734Z] [INFO] Inserting 19 items for section 844
+[2025-03-15T01:47:58.787Z] [INFO] Successfully inserted items for section 844
+[2025-03-15T01:47:58.787Z] [INFO] Inserting 14 items for section 845
+[2025-03-15T01:47:58.858Z] [INFO] Successfully inserted items for section 845
+[2025-03-15T01:47:58.858Z] [INFO] Inserting 12 items for section 846
+[2025-03-15T01:47:58.964Z] [INFO] Successfully inserted items for section 846
+[2025-03-15T01:47:58.964Z] [INFO] Inserting 11 items for section 847
+[2025-03-15T01:47:59.014Z] [INFO] Successfully inserted items for section 847
+[2025-03-15T01:47:59.014Z] [INFO] Inserting 14 items for section 848
+[2025-03-15T01:47:59.062Z] [INFO] Successfully inserted items for section 848
+[2025-03-15T01:47:59.062Z] [INFO] Inserting 7 items for section 849
+[2025-03-15T01:47:59.112Z] [INFO] Successfully inserted items for section 849
+[2025-03-15T01:47:59.112Z] [INFO] Inserting 7 items for section 850
+[2025-03-15T01:47:59.170Z] [INFO] Successfully inserted items for section 850
+[2025-03-15T01:47:59.170Z] [INFO] Inserting 6 items for section 851
+[2025-03-15T01:47:59.219Z] [INFO] Successfully inserted items for section 851
+[2025-03-15T01:47:59.321Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch11_Syncope/special-tests.md: null value in column "display_order" of relation "checklist_items" violates not-null constraint
+[2025-03-15T01:47:59.321Z] [INFO] Completed processing chapter: Ch11_Syncope
+[2025-03-15T01:47:59.321Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors

@@ -27,7 +27,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Vasovagal syncope",
       "processed": [
         {
@@ -41,7 +41,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Carotid sinus syndrome",
       "processed": [
         {
@@ -55,7 +55,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Situational syncope (specify: _____)",
       "processed": [
         {
@@ -83,7 +83,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Drug-induced",
       "processed": [
         {
@@ -97,7 +97,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Volume depletion",
       "processed": [
         {
@@ -111,7 +111,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Primary autonomic failure",
       "processed": [
         {
@@ -125,7 +125,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Secondary autonomic failure",
       "processed": [
         {
@@ -153,7 +153,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Dysrhythmic (specify: _____)",
       "processed": [
         {
@@ -167,7 +167,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Structural (specify: _____)",
       "processed": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "section": "Syncope Classification",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Cardiopulmonary (specify: _____)",
       "processed": [
         {
@@ -953,11 +953,11 @@
       "maxDepth": 2,
       "levelCounts": {
         "0": 7,
-        "2": 10
+        "1": 10
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Diagnostic Certainty": {

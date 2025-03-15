@@ -26,7 +26,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal cardiac function",
       "processed": [
         {
@@ -40,7 +40,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Reduced ejection fraction",
       "processed": [
         {
@@ -54,7 +54,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Right ventricular strain",
       "processed": [
         {
@@ -68,7 +68,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Pericardial effusion",
       "processed": [
         {
@@ -82,7 +82,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Cardiac tamponade",
       "processed": [
         {
@@ -96,7 +96,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Valvular abnormality",
       "processed": [
         {
@@ -110,7 +110,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Wall motion abnormality",
       "processed": [
         {
@@ -124,7 +124,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -152,7 +152,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal aorta",
       "processed": [
         {
@@ -166,7 +166,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Aortic aneurysm (size: _____ cm)",
       "processed": [
         {
@@ -180,7 +180,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Aortic dissection",
       "processed": [
         {
@@ -194,7 +194,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -222,7 +222,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal IVC diameter and respiratory variation",
       "processed": [
         {
@@ -236,7 +236,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Flat IVC (hypovolemia)",
       "processed": [
         {
@@ -250,7 +250,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Distended IVC with minimal respiratory variation (volume overload)",
       "processed": [
         {
@@ -264,7 +264,7 @@
     },
     {
       "section": "Bedside Ultrasonography",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -306,9 +306,16 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Baseline BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Baseline BP: _____ mmHg",
           "hasTextInput": true,
@@ -327,9 +334,16 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Highest BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Highest BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Highest BP: _____ mmHg",
           "hasTextInput": true,
@@ -348,9 +362,16 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Lowest BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Lowest BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Lowest BP: _____ mmHg",
           "hasTextInput": true,
@@ -369,7 +390,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Time to symptoms: _____ minutes",
       "processed": [
         {
@@ -383,7 +404,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Symptoms reproduced: _____",
       "processed": [
         {
@@ -397,7 +418,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Positive for vasovagal syncope",
       "processed": [
         {
@@ -411,7 +432,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Positive for orthostatic hypotension",
       "processed": [
         {
@@ -425,7 +446,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Negative study",
       "processed": [
         {
@@ -439,7 +460,7 @@
     },
     {
       "section": "Tilt Table Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -481,9 +502,16 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Baseline BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Baseline BP: _____ mmHg",
           "hasTextInput": true,
@@ -502,9 +530,16 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Right side BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Right side BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Right side BP: _____ mmHg",
           "hasTextInput": true,
@@ -523,9 +558,16 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Left side BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Left side BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Left side BP: _____ mmHg",
           "hasTextInput": true,
@@ -544,7 +586,7 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Symptoms reproduced: _____",
       "processed": [
         {
@@ -558,7 +600,7 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Positive for carotid sinus hypersensitivity (≥3 second pause and/or ≥50 mmHg decrease in SBP)",
       "processed": [
         {
@@ -572,7 +614,7 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Negative study",
       "processed": [
         {
@@ -586,7 +628,7 @@
     },
     {
       "section": "Carotid Sinus Massage",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -628,7 +670,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Exercise stress test",
       "processed": [
         {
@@ -642,7 +684,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Pharmacological stress test",
       "processed": [
         {
@@ -656,7 +698,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Nuclear stress test",
       "processed": [
         {
@@ -670,7 +712,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Stress echocardiogram",
       "processed": [
         {
@@ -684,7 +726,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal",
       "processed": [
         {
@@ -698,7 +740,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Ischemic changes",
       "processed": [
         {
@@ -712,7 +754,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Arrhythmia induced",
       "processed": [
         {
@@ -726,7 +768,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Symptoms reproduced",
       "processed": [
         {
@@ -740,7 +782,7 @@
     },
     {
       "section": "Stress Test",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -782,7 +824,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Type of monitor: _____",
       "processed": [
         {
@@ -796,7 +838,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Duration of monitoring: _____",
       "processed": [
         {
@@ -810,7 +852,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal sinus rhythm throughout",
       "processed": [
         {
@@ -824,7 +866,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sinus bradycardia",
       "processed": [
         {
@@ -838,7 +880,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sinus tachycardia",
       "processed": [
         {
@@ -852,7 +894,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Atrial fibrillation/flutter",
       "processed": [
         {
@@ -866,7 +908,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Supraventricular tachycardia",
       "processed": [
         {
@@ -880,7 +922,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Ventricular tachycardia",
       "processed": [
         {
@@ -894,7 +936,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "AV block",
       "processed": [
         {
@@ -908,7 +950,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sinus pauses (max duration: _____ seconds)",
       "processed": [
         {
@@ -922,7 +964,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Symptoms correlated with rhythm: _____",
       "processed": [
         {
@@ -936,7 +978,7 @@
     },
     {
       "section": "Ambulatory Cardiac Monitoring",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -978,7 +1020,7 @@
     },
     {
       "section": "Electroencephalogram (EEG)",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal",
       "processed": [
         {
@@ -992,7 +1034,7 @@
     },
     {
       "section": "Electroencephalogram (EEG)",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Epileptiform activity",
       "processed": [
         {
@@ -1006,7 +1048,7 @@
     },
     {
       "section": "Electroencephalogram (EEG)",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Focal slowing",
       "processed": [
         {
@@ -1020,7 +1062,7 @@
     },
     {
       "section": "Electroencephalogram (EEG)",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Generalized slowing",
       "processed": [
         {
@@ -1034,7 +1076,7 @@
     },
     {
       "section": "Electroencephalogram (EEG)",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -1076,7 +1118,7 @@
     },
     {
       "section": "Cardiac Catheterization",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal coronary arteries",
       "processed": [
         {
@@ -1090,7 +1132,7 @@
     },
     {
       "section": "Cardiac Catheterization",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Coronary artery disease (vessels involved: _____)",
       "processed": [
         {
@@ -1104,7 +1146,7 @@
     },
     {
       "section": "Cardiac Catheterization",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Percent stenosis: _____",
       "processed": [
         {
@@ -1118,7 +1160,7 @@
     },
     {
       "section": "Cardiac Catheterization",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Valvular disease",
       "processed": [
         {
@@ -1132,7 +1174,7 @@
     },
     {
       "section": "Cardiac Catheterization",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -1174,7 +1216,7 @@
     },
     {
       "section": "Electrophysiology Study",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Normal",
       "processed": [
         {
@@ -1188,7 +1230,7 @@
     },
     {
       "section": "Electrophysiology Study",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Inducible arrhythmia: _____",
       "processed": [
         {
@@ -1202,7 +1244,7 @@
     },
     {
       "section": "Electrophysiology Study",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Conduction abnormality: _____",
       "processed": [
         {
@@ -1216,7 +1258,7 @@
     },
     {
       "section": "Electrophysiology Study",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Other findings: _____",
       "processed": [
         {
@@ -1259,6 +1301,13 @@
       "icd10Code": null
     },
     {
+      "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
       "itemText": "Baseline BP: _____ mmHg",
       "hasTextInput": true,
       "inputPlaceholder": "",
@@ -1273,6 +1322,13 @@
       "icd10Code": null
     },
     {
+      "itemText": "Highest BP: _____ mmHg, HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
       "itemText": "Highest BP: _____ mmHg",
       "hasTextInput": true,
       "inputPlaceholder": "",
@@ -1281,6 +1337,13 @@
     },
     {
       "itemText": "HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Lowest BP: _____ mmHg, HR: _____ bpm",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "bpm",
@@ -1322,6 +1385,13 @@
       "icd10Code": null
     },
     {
+      "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
       "itemText": "Baseline BP: _____ mmHg",
       "hasTextInput": true,
       "inputPlaceholder": "",
@@ -1336,6 +1406,13 @@
       "icd10Code": null
     },
     {
+      "itemText": "Right side BP: _____ mmHg, HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
       "itemText": "Right side BP: _____ mmHg",
       "hasTextInput": true,
       "inputPlaceholder": "",
@@ -1344,6 +1421,13 @@
     },
     {
       "itemText": "HR: _____ bpm",
+      "hasTextInput": true,
+      "inputPlaceholder": "",
+      "inputUnit": "bpm",
+      "icd10Code": null
+    },
+    {
+      "itemText": "Left side BP: _____ mmHg, HR: _____ bpm",
       "hasTextInput": true,
       "inputPlaceholder": "",
       "inputUnit": "bpm",
@@ -1474,6 +1558,13 @@
       "original": "Baseline BP: _____ mmHg, HR: _____ bpm",
       "processed": [
         {
+          "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
+        {
           "itemText": "Baseline BP: _____ mmHg",
           "hasTextInput": true,
           "inputPlaceholder": "",
@@ -1492,6 +1583,13 @@
     {
       "original": "Highest BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Highest BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Highest BP: _____ mmHg",
           "hasTextInput": true,
@@ -1512,6 +1610,13 @@
       "original": "Lowest BP: _____ mmHg, HR: _____ bpm",
       "processed": [
         {
+          "itemText": "Lowest BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
+        {
           "itemText": "Lowest BP: _____ mmHg",
           "hasTextInput": true,
           "inputPlaceholder": "",
@@ -1530,6 +1635,13 @@
     {
       "original": "Baseline BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Baseline BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Baseline BP: _____ mmHg",
           "hasTextInput": true,
@@ -1550,6 +1662,13 @@
       "original": "Right side BP: _____ mmHg, HR: _____ bpm",
       "processed": [
         {
+          "itemText": "Right side BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
+        {
           "itemText": "Right side BP: _____ mmHg",
           "hasTextInput": true,
           "inputPlaceholder": "",
@@ -1568,6 +1687,13 @@
     {
       "original": "Left side BP: _____ mmHg, HR: _____ bpm",
       "processed": [
+        {
+          "itemText": "Left side BP: _____ mmHg, HR: _____ bpm",
+          "hasTextInput": true,
+          "inputPlaceholder": "",
+          "inputUnit": "bpm",
+          "icd10Code": null
+        },
         {
           "itemText": "Left side BP: _____ mmHg",
           "hasTextInput": true,
@@ -1591,88 +1717,88 @@
       "maxDepth": 2,
       "levelCounts": {
         "0": 3,
-        "2": 16
+        "1": 16
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Tilt Table Test": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 9
+        "1": 9
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Carotid Sinus Massage": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 7
+        "1": 7
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Stress Test": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 9
+        "1": 9
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Ambulatory Cardiac Monitoring": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 12
+        "1": 12
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Electroencephalogram (EEG)": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 5
+        "1": 5
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Cardiac Catheterization": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 5
+        "1": 5
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Electrophysiology Study": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 2,
-        "2": 4
+        "1": 4
       },
       "levels": [
         0,
-        2
+        1
       ]
     }
   }

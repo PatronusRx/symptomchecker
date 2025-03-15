@@ -54,7 +54,7 @@
     },
     {
       "section": "Primary Disposition Decision",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Telemetry unit",
       "processed": [
         {
@@ -68,7 +68,7 @@
     },
     {
       "section": "Primary Disposition Decision",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "General medical unit",
       "processed": [
         {
@@ -82,7 +82,7 @@
     },
     {
       "section": "Primary Disposition Decision",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Step-down unit",
       "processed": [
         {
@@ -96,7 +96,7 @@
     },
     {
       "section": "Primary Disposition Decision",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Intensive care unit",
       "processed": [
         {
@@ -811,11 +811,11 @@
       "maxDepth": 2,
       "levelCounts": {
         "0": 4,
-        "2": 4
+        "1": 4
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Disposition Rationale": {

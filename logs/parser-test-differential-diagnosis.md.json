@@ -53,7 +53,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Micturition syncope (R55)",
       "processed": [
         {
@@ -67,7 +67,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Defecation syncope (R55)",
       "processed": [
         {
@@ -81,7 +81,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Post-prandial syncope (R55)",
       "processed": [
         {
@@ -95,7 +95,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Cough syncope (R55)",
       "processed": [
         {
@@ -109,7 +109,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Swallow syncope (R55)",
       "processed": [
         {
@@ -123,7 +123,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Post-exercise syncope (R55)",
       "processed": [
         {
@@ -137,7 +137,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sneeze syncope (R55)",
       "processed": [
         {
@@ -151,7 +151,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Valsalva-related syncope (R55)",
       "processed": [
         {
@@ -165,7 +165,7 @@
     },
     {
       "section": "Reflex (Neurally Mediated) Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Laugh syncope (R55)",
       "processed": [
         {
@@ -235,7 +235,7 @@
     },
     {
       "section": "Orthostatic Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Primary autonomic failure",
       "processed": [
         {
@@ -249,7 +249,7 @@
     },
     {
       "section": "Orthostatic Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Secondary autonomic failure",
       "processed": [
         {
@@ -291,7 +291,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sinus bradycardia <40 bpm (R00.1)",
       "processed": [
         {
@@ -305,7 +305,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sinus pause >3 seconds (I49.5)",
       "processed": [
         {
@@ -319,7 +319,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Sick sinus syndrome (I49.5)",
       "processed": [
         {
@@ -347,7 +347,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Mobitz type II second-degree AV block (I44.1)",
       "processed": [
         {
@@ -361,7 +361,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Third-degree (complete) heart block (I44.2)",
       "processed": [
         {
@@ -389,7 +389,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Monomorphic ventricular tachycardia (I47.2)",
       "processed": [
         {
@@ -403,7 +403,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Polymorphic ventricular tachycardia/Torsades de pointes (I47.2)",
       "processed": [
         {
@@ -417,7 +417,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Ventricular fibrillation (I49.01)",
       "processed": [
         {
@@ -445,7 +445,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Atrial flutter/fibrillation (I48.91)",
       "processed": [
         {
@@ -459,7 +459,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "AV nodal reentry tachycardia (I47.1)",
       "processed": [
         {
@@ -473,7 +473,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "AV reentry tachycardia (I47.1)",
       "processed": [
         {
@@ -501,7 +501,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Alternating left and right bundle branch block",
       "processed": [
         {
@@ -529,7 +529,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "Pacemaker malfunction (T82.119A)",
       "processed": [
         {
@@ -543,7 +543,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "ICD malfunction (T82.119A)",
       "processed": [
         {
@@ -557,7 +557,7 @@
     },
     {
       "section": "Cardiac Syncope",
-      "indentLevel": 2,
+      "indentLevel": 1,
       "text": "VAD dysfunction (T82.519A)",
       "processed": [
         {
@@ -1433,33 +1433,33 @@
       "maxDepth": 2,
       "levelCounts": {
         "0": 3,
-        "2": 9
+        "1": 9
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Orthostatic Syncope": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 5,
-        "2": 2
+        "1": 2
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Cardiac Syncope": {
       "maxDepth": 2,
       "levelCounts": {
         "0": 16,
-        "2": 15
+        "1": 15
       },
       "levels": [
         0,
-        2
+        1
       ]
     },
     "Cerebrovascular Causes": {

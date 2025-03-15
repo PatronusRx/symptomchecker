@@ -69,13 +69,13 @@
     {
       "section": "Description of Episode (From Observer)",
       "indentLevel": 0,
-      "text": "Duration of loss of consciousness: _____ seconds/minutes",
+      "text": "Duration of loss of consciousness: **\\_** seconds/minutes",
       "processed": [
         {
-          "itemText": "Duration of loss of consciousness: _____ seconds/minutes",
+          "itemText": "Duration of loss of consciousness: **\\_** seconds/minutes",
           "hasTextInput": true,
-          "inputPlaceholder": "",
-          "inputUnit": "seconds/minutes",
+          "inputPlaceholder": "**\\",
+          "inputUnit": "** seconds/minutes",
           "icd10Code": null
         }
       ]
@@ -195,13 +195,13 @@
     {
       "section": "Pre-Episode Observations",
       "indentLevel": 0,
-      "text": "Complained of specific symptoms: _____",
+      "text": "Complained of specific symptoms: **\\_**",
       "processed": [
         {
-          "itemText": "Complained of specific symptoms: _____",
+          "itemText": "Complained of specific symptoms: **\\_**",
           "hasTextInput": true,
-          "inputPlaceholder": "",
-          "inputUnit": null,
+          "inputPlaceholder": "**\\",
+          "inputUnit": "**",
           "icd10Code": null
         }
       ]
@@ -657,13 +657,13 @@
     {
       "section": "EMS/First Responder Report",
       "indentLevel": 0,
-      "text": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+      "text": "Initial vital signs: **\\_**",
       "processed": [
         {
-          "itemText": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+          "itemText": "Initial vital signs: **\\_**",
           "hasTextInput": true,
-          "inputPlaceholder": "BP _____ HR _____ RR _____ O2 ",
-          "inputUnit": null,
+          "inputPlaceholder": "**\\",
+          "inputUnit": "**",
           "icd10Code": null
         }
       ]
@@ -671,13 +671,13 @@
     {
       "section": "EMS/First Responder Report",
       "indentLevel": 0,
-      "text": "Initial blood glucose: _____",
+      "text": "Initial blood glucose: **\\_**",
       "processed": [
         {
-          "itemText": "Initial blood glucose: _____",
+          "itemText": "Initial blood glucose: **\\_**",
           "hasTextInput": true,
-          "inputPlaceholder": "",
-          "inputUnit": null,
+          "inputPlaceholder": "**\\",
+          "inputUnit": "**",
           "icd10Code": null
         }
       ]
@@ -685,13 +685,13 @@
     {
       "section": "EMS/First Responder Report",
       "indentLevel": 0,
-      "text": "Interventions performed: _____",
+      "text": "Interventions performed: **\\_**",
       "processed": [
         {
-          "itemText": "Interventions performed: _____",
+          "itemText": "Interventions performed: **\\_**",
           "hasTextInput": true,
-          "inputPlaceholder": "",
-          "inputUnit": null,
+          "inputPlaceholder": "**\\",
+          "inputUnit": "**",
           "icd10Code": null
         }
       ]
@@ -699,13 +699,13 @@
     {
       "section": "EMS/First Responder Report",
       "indentLevel": 0,
-      "text": "Response to interventions: _____",
+      "text": "Response to interventions: **\\_**",
       "processed": [
         {
-          "itemText": "Response to interventions: _____",
+          "itemText": "Response to interventions: **\\_**",
           "hasTextInput": true,
-          "inputPlaceholder": "",
-          "inputUnit": null,
+          "inputPlaceholder": "**\\",
+          "inputUnit": "**",
           "icd10Code": null
         }
       ]
@@ -713,45 +713,45 @@
   ],
   "inputFields": [
     {
-      "itemText": "Duration of loss of consciousness: _____ seconds/minutes",
+      "itemText": "Duration of loss of consciousness: **\\_** seconds/minutes",
       "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": "seconds/minutes",
+      "inputPlaceholder": "**\\",
+      "inputUnit": "** seconds/minutes",
       "icd10Code": null
     },
     {
-      "itemText": "Complained of specific symptoms: _____",
+      "itemText": "Complained of specific symptoms: **\\_**",
       "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": null,
+      "inputPlaceholder": "**\\",
+      "inputUnit": "**",
       "icd10Code": null
     },
     {
-      "itemText": "Initial vital signs: BP _____ HR _____ RR _____ O2 _____",
+      "itemText": "Initial vital signs: **\\_**",
       "hasTextInput": true,
-      "inputPlaceholder": "BP _____ HR _____ RR _____ O2 ",
-      "inputUnit": null,
+      "inputPlaceholder": "**\\",
+      "inputUnit": "**",
       "icd10Code": null
     },
     {
-      "itemText": "Initial blood glucose: _____",
+      "itemText": "Initial blood glucose: **\\_**",
       "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": null,
+      "inputPlaceholder": "**\\",
+      "inputUnit": "**",
       "icd10Code": null
     },
     {
-      "itemText": "Interventions performed: _____",
+      "itemText": "Interventions performed: **\\_**",
       "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": null,
+      "inputPlaceholder": "**\\",
+      "inputUnit": "**",
       "icd10Code": null
     },
     {
-      "itemText": "Response to interventions: _____",
+      "itemText": "Response to interventions: **\\_**",
       "hasTextInput": true,
-      "inputPlaceholder": "",
-      "inputUnit": null,
+      "inputPlaceholder": "**\\",
+      "inputUnit": "**",
       "icd10Code": null
     }
   ],

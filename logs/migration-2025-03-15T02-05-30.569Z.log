@@ -1,0 +1,399 @@
+[2025-03-15T02:05:30.569Z] [INFO] Starting migration...
+[2025-03-15T02:05:30.571Z] [INFO] Inserting categories...
+[2025-03-15T02:05:30.660Z] [INFO] All categories already exist, skipping insertion
+[2025-03-15T02:05:30.661Z] [INFO] Found 1 chapter directories to process
+[2025-03-15T02:05:30.661Z] [INFO] Processing chapter: Ch11_Syncope
+[2025-03-15T02:05:30.661Z] [INFO] Cleaning up existing data for chapter 11...
+[2025-03-15T02:05:30.708Z] [INFO] No existing data found for chapter 11
+[2025-03-15T02:05:30.762Z] [INFO] Inserted chapter: Syncope (ID: 187)
+[2025-03-15T02:05:30.812Z] [INFO] Processing file: alarm-features.md
+[2025-03-15T02:05:30.861Z] [INFO] Inserted section: High-Risk Features (ID: 1170)
+[2025-03-15T02:05:30.908Z] [INFO] Inserted section: Critical Diagnoses To Consider (ID: 1171)
+[2025-03-15T02:05:30.966Z] [INFO] Inserted section: Emergent Diagnostic Factors (ID: 1172)
+[2025-03-15T02:05:31.015Z] [INFO] Inserted section: Concerning Cardiac Symptoms (ID: 1173)
+[2025-03-15T02:05:31.067Z] [INFO] Inserted section: Concerning Neurological Symptoms (ID: 1174)
+[2025-03-15T02:05:31.116Z] [INFO] Inserted section: Concerning Abdominal/GI Symptoms (ID: 1175)
+[2025-03-15T02:05:31.116Z] [INFO] Inserting 43 items for section 1175
+[2025-03-15T02:05:31.163Z] [INFO] Successfully inserted items for section 1170
+[2025-03-15T02:05:31.268Z] [INFO] Successfully inserted items for section 1171
+[2025-03-15T02:05:31.367Z] [INFO] Successfully inserted items for section 1172
+[2025-03-15T02:05:31.465Z] [INFO] Successfully inserted items for section 1173
+[2025-03-15T02:05:31.576Z] [INFO] Successfully inserted items for section 1174
+[2025-03-15T02:05:31.672Z] [INFO] Successfully inserted items for section 1175
+[2025-03-15T02:05:31.717Z] [INFO] Completed processing file: alarm-features.md
+[2025-03-15T02:05:31.718Z] [INFO] Processing file: assessment.md
+[2025-03-15T02:05:31.762Z] [INFO] Inserted section: Syncope Classification (ID: 1176)
+[2025-03-15T02:05:31.810Z] [INFO] Inserted section: Diagnostic Certainty (ID: 1177)
+[2025-03-15T02:05:31.857Z] [INFO] Inserted section: Risk Stratification (ID: 1178)
+[2025-03-15T02:05:31.902Z] [INFO] Inserted section: Canadian Syncope Risk Score Calculation (ID: 1179)
+[2025-03-15T02:05:31.953Z] [INFO] Inserted section: FAINT Score Calculation (ID: 1180)
+[2025-03-15T02:05:32.046Z] [INFO] Inserted section: San Francisco Syncope Rule Assessment (ID: 1181)
+[2025-03-15T02:05:32.095Z] [INFO] Inserted section: Clinical Impression (ID: 1182)
+[2025-03-15T02:05:32.141Z] [INFO] Inserted section: Degree of Functional Impairment (ID: 1183)
+[2025-03-15T02:05:32.188Z] [INFO] Inserted section: Injury Assessment (ID: 1184)
+[2025-03-15T02:05:32.188Z] [INFO] Inserting 61 items for section 1184
+[2025-03-15T02:05:32.235Z] [INFO] Successfully inserted items for section 1176
+[2025-03-15T02:05:32.897Z] [INFO] Updated 10 parent-child relationships for section 1176
+[2025-03-15T02:05:32.946Z] [INFO] Successfully inserted items for section 1177
+[2025-03-15T02:05:33.052Z] [INFO] Successfully inserted items for section 1178
+[2025-03-15T02:05:33.147Z] [INFO] Successfully inserted items for section 1179
+[2025-03-15T02:05:33.247Z] [INFO] Successfully inserted items for section 1180
+[2025-03-15T02:05:33.363Z] [INFO] Successfully inserted items for section 1181
+[2025-03-15T02:05:33.453Z] [INFO] Successfully inserted items for section 1182
+[2025-03-15T02:05:33.557Z] [INFO] Successfully inserted items for section 1183
+[2025-03-15T02:05:33.651Z] [INFO] Successfully inserted items for section 1184
+[2025-03-15T02:05:33.695Z] [INFO] Completed processing file: assessment.md
+[2025-03-15T02:05:33.695Z] [INFO] Processing file: collateral-history.md
+[2025-03-15T02:05:33.742Z] [INFO] Inserted section: Witness Account (ID: 1185)
+[2025-03-15T02:05:33.786Z] [INFO] Inserted section: Description of Episode (From Observer) (ID: 1186)
+[2025-03-15T02:05:33.835Z] [INFO] Inserted section: Pre-Episode Observations (ID: 1187)
+[2025-03-15T02:05:33.883Z] [INFO] Inserted section: Episode Characteristics (ID: 1188)
+[2025-03-15T02:05:33.938Z] [INFO] Inserted section: Movement During Episode (ID: 1189)
+[2025-03-15T02:05:33.986Z] [INFO] Inserted section: Autonomic Features (ID: 1190)
+[2025-03-15T02:05:34.030Z] [INFO] Inserted section: Recovery Characteristics (ID: 1191)
+[2025-03-15T02:05:34.080Z] [INFO] Inserted section: EMS/First Responder Report (ID: 1192)
+[2025-03-15T02:05:34.080Z] [INFO] Inserting 50 items for section 1192
+[2025-03-15T02:05:34.124Z] [INFO] Successfully inserted items for section 1185
+[2025-03-15T02:05:34.224Z] [INFO] Successfully inserted items for section 1186
+[2025-03-15T02:05:34.327Z] [INFO] Successfully inserted items for section 1187
+[2025-03-15T02:05:34.426Z] [INFO] Successfully inserted items for section 1188
+[2025-03-15T02:05:34.522Z] [INFO] Successfully inserted items for section 1189
+[2025-03-15T02:05:34.626Z] [INFO] Successfully inserted items for section 1190
+[2025-03-15T02:05:34.731Z] [INFO] Successfully inserted items for section 1191
+[2025-03-15T02:05:34.825Z] [INFO] Successfully inserted items for section 1192
+[2025-03-15T02:05:34.869Z] [INFO] Completed processing file: collateral-history.md
+[2025-03-15T02:05:34.869Z] [INFO] Processing file: diet.md
+[2025-03-15T02:05:34.923Z] [INFO] Inserted section: Oral Intake (ID: 1193)
+[2025-03-15T02:05:34.970Z] [INFO] Inserted section: Dietary Triggers (ID: 1194)
+[2025-03-15T02:05:35.015Z] [INFO] Inserted section: Specialized Diets (ID: 1195)
+[2025-03-15T02:05:35.076Z] [INFO] Inserted section: Hydration Status (ID: 1196)
+[2025-03-15T02:05:35.125Z] [INFO] Inserted section: Recent Dietary Changes (ID: 1197)
+[2025-03-15T02:05:35.170Z] [INFO] Inserted section: Dietary Supplements (ID: 1198)
+[2025-03-15T02:05:35.218Z] [INFO] Inserted section: Appetite (ID: 1199)
+[2025-03-15T02:05:35.219Z] [INFO] Inserting 35 items for section 1199
+[2025-03-15T02:05:35.264Z] [INFO] Successfully inserted items for section 1193
+[2025-03-15T02:05:35.366Z] [INFO] Successfully inserted items for section 1194
+[2025-03-15T02:05:35.457Z] [INFO] Successfully inserted items for section 1195
+[2025-03-15T02:05:35.545Z] [INFO] Successfully inserted items for section 1196
+[2025-03-15T02:05:35.634Z] [INFO] Successfully inserted items for section 1197
+[2025-03-15T02:05:35.728Z] [INFO] Successfully inserted items for section 1198
+[2025-03-15T02:05:35.816Z] [INFO] Successfully inserted items for section 1199
+[2025-03-15T02:05:35.861Z] [INFO] Completed processing file: diet.md
+[2025-03-15T02:05:35.861Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-15T02:05:35.909Z] [INFO] Inserted section: Reflex (Neurally Mediated) Syncope (ID: 1200)
+[2025-03-15T02:05:35.964Z] [INFO] Inserted section: Orthostatic Syncope (ID: 1201)
+[2025-03-15T02:05:36.013Z] [INFO] Inserted section: Cardiac Syncope (ID: 1202)
+[2025-03-15T02:05:36.059Z] [INFO] Inserted section: Cerebrovascular Causes (ID: 1203)
+[2025-03-15T02:05:36.104Z] [INFO] Inserted section: Metabolic/Toxic Causes (ID: 1204)
+[2025-03-15T02:05:36.154Z] [INFO] Inserted section: Other Medical Causes (ID: 1205)
+[2025-03-15T02:05:36.209Z] [INFO] Inserted section: Syncope Mimics (ID: 1206)
+[2025-03-15T02:05:36.209Z] [INFO] Inserting 75 items for section 1206
+[2025-03-15T02:05:36.266Z] [INFO] Successfully inserted items for section 1200
+[2025-03-15T02:05:36.838Z] [INFO] Updated 9 parent-child relationships for section 1200
+[2025-03-15T02:05:36.883Z] [INFO] Successfully inserted items for section 1201
+[2025-03-15T02:05:37.023Z] [INFO] Updated 2 parent-child relationships for section 1201
+[2025-03-15T02:05:37.076Z] [INFO] Successfully inserted items for section 1202
+[2025-03-15T02:05:37.822Z] [INFO] Updated 15 parent-child relationships for section 1202
+[2025-03-15T02:05:37.877Z] [INFO] Successfully inserted items for section 1203
+[2025-03-15T02:05:37.989Z] [INFO] Successfully inserted items for section 1204
+[2025-03-15T02:05:38.088Z] [INFO] Successfully inserted items for section 1205
+[2025-03-15T02:05:38.189Z] [INFO] Successfully inserted items for section 1206
+[2025-03-15T02:05:38.236Z] [INFO] Completed processing file: differential-diagnosis.md
+[2025-03-15T02:05:38.237Z] [INFO] Processing file: disposition.md
+[2025-03-15T02:05:38.284Z] [INFO] Inserted section: Primary Disposition Decision (ID: 1207)
+[2025-03-15T02:05:38.329Z] [INFO] Inserted section: Disposition Rationale (ID: 1208)
+[2025-03-15T02:05:38.382Z] [INFO] Inserted section: Discharge Considerations (ID: 1209)
+[2025-03-15T02:05:38.432Z] [INFO] Inserted section: Observation Unit Considerations (ID: 1210)
+[2025-03-15T02:05:38.480Z] [INFO] Inserted section: Hospital Admission Considerations (ID: 1211)
+[2025-03-15T02:05:38.529Z] [INFO] Inserted section: Telemetry Monitoring Indications (ID: 1212)
+[2025-03-15T02:05:38.575Z] [INFO] Inserted section: Intensive Care Unit Indications (ID: 1213)
+[2025-03-15T02:05:38.621Z] [INFO] Inserted section: Transfer Considerations (ID: 1214)
+[2025-03-15T02:05:38.621Z] [INFO] Inserting 56 items for section 1214
+[2025-03-15T02:05:38.666Z] [INFO] Successfully inserted items for section 1207
+[2025-03-15T02:05:38.898Z] [INFO] Updated 4 parent-child relationships for section 1207
+[2025-03-15T02:05:38.948Z] [INFO] Successfully inserted items for section 1208
+[2025-03-15T02:05:39.048Z] [INFO] Successfully inserted items for section 1209
+[2025-03-15T02:05:39.147Z] [INFO] Successfully inserted items for section 1210
+[2025-03-15T02:05:39.298Z] [INFO] Successfully inserted items for section 1211
+[2025-03-15T02:05:39.398Z] [INFO] Successfully inserted items for section 1212
+[2025-03-15T02:05:39.495Z] [INFO] Successfully inserted items for section 1213
+[2025-03-15T02:05:39.604Z] [INFO] Successfully inserted items for section 1214
+[2025-03-15T02:05:39.649Z] [INFO] Completed processing file: disposition.md
+[2025-03-15T02:05:39.649Z] [INFO] Processing file: ecg.md
+[2025-03-15T02:05:39.694Z] [INFO] Inserted section: Basic ECG Parameters (ID: 1215)
+[2025-03-15T02:05:39.739Z] [INFO] Inserted section: Rhythm (ID: 1216)
+[2025-03-15T02:05:39.785Z] [INFO] Inserted section: Conduction Abnormalities (ID: 1217)
+[2025-03-15T02:05:39.837Z] [INFO] Inserted section: Tachyarrhythmias (ID: 1218)
+[2025-03-15T02:05:39.886Z] [INFO] Inserted section: Ischemia/Infarction (ID: 1219)
+[2025-03-15T02:05:39.934Z] [INFO] Inserted section: Other ECG Findings (ID: 1220)
+[2025-03-15T02:05:39.980Z] [INFO] Inserted section: Serial ECG Changes (ID: 1221)
+[2025-03-15T02:05:40.028Z] [INFO] Inserted section: Cardiac Monitor Findings (if available) (ID: 1222)
+[2025-03-15T02:05:40.028Z] [INFO] Inserting 60 items for section 1222
+[2025-03-15T02:05:40.074Z] [INFO] Successfully inserted items for section 1215
+[2025-03-15T02:05:40.168Z] [INFO] Successfully inserted items for section 1216
+[2025-03-15T02:05:40.277Z] [INFO] Successfully inserted items for section 1217
+[2025-03-15T02:05:40.370Z] [INFO] Successfully inserted items for section 1218
+[2025-03-15T02:05:40.465Z] [INFO] Successfully inserted items for section 1219
+[2025-03-15T02:05:40.557Z] [INFO] Successfully inserted items for section 1220
+[2025-03-15T02:05:40.654Z] [INFO] Successfully inserted items for section 1221
+[2025-03-15T02:05:40.748Z] [INFO] Successfully inserted items for section 1222
+[2025-03-15T02:05:40.800Z] [INFO] Completed processing file: ecg.md
+[2025-03-15T02:05:40.800Z] [INFO] Processing file: history.md
+[2025-03-15T02:05:40.845Z] [INFO] Inserted section: Chief Complaint (ID: 1223)
+[2025-03-15T02:05:40.892Z] [INFO] Inserted section: Episode Details (ID: 1224)
+[2025-03-15T02:05:40.943Z] [INFO] Inserted section: Position During Episode (ID: 1225)
+[2025-03-15T02:05:40.992Z] [INFO] Inserted section: Activity During Episode (ID: 1226)
+[2025-03-15T02:05:41.045Z] [INFO] Inserted section: Setting (ID: 1227)
+[2025-03-15T02:05:41.096Z] [INFO] Inserted section: Precipitating Factors (ID: 1228)
+[2025-03-15T02:05:41.144Z] [INFO] Inserted section: Associated Prodromal Symptoms (ID: 1229)
+[2025-03-15T02:05:41.191Z] [INFO] Inserted section: Associated Symptoms During/After Episode (ID: 1230)
+[2025-03-15T02:05:41.240Z] [INFO] Inserted section: Post-Episode Status (ID: 1231)
+[2025-03-15T02:05:41.240Z] [INFO] Inserting 68 items for section 1231
+[2025-03-15T02:05:41.295Z] [INFO] Successfully inserted items for section 1223
+[2025-03-15T02:05:41.405Z] [INFO] Successfully inserted items for section 1224
+[2025-03-15T02:05:41.522Z] [INFO] Successfully inserted items for section 1225
+[2025-03-15T02:05:41.627Z] [INFO] Successfully inserted items for section 1226
+[2025-03-15T02:05:41.730Z] [INFO] Successfully inserted items for section 1227
+[2025-03-15T02:05:41.835Z] [INFO] Successfully inserted items for section 1228
+[2025-03-15T02:05:41.927Z] [INFO] Successfully inserted items for section 1229
+[2025-03-15T02:05:42.033Z] [INFO] Successfully inserted items for section 1230
+[2025-03-15T02:05:42.130Z] [INFO] Successfully inserted items for section 1231
+[2025-03-15T02:05:42.176Z] [INFO] Completed processing file: history.md
+[2025-03-15T02:05:42.177Z] [INFO] Processing file: imaging.md
+[2025-03-15T02:05:42.227Z] [INFO] Inserted section: Chest X-ray (ID: 1232)
+[2025-03-15T02:05:42.294Z] [INFO] Inserted section: Head CT (ID: 1233)
+[2025-03-15T02:05:42.362Z] [INFO] Inserted section: CT Pulmonary Angiogram (ID: 1234)
+[2025-03-15T02:05:42.414Z] [INFO] Inserted section: CT Abdomen/Pelvis (ID: 1235)
+[2025-03-15T02:05:42.460Z] [INFO] Inserted section: CT Angiogram of Chest (ID: 1236)
+[2025-03-15T02:05:42.518Z] [INFO] Inserted section: MRI Brain (ID: 1237)
+[2025-03-15T02:05:42.568Z] [INFO] Inserted section: MR Angiography (ID: 1238)
+[2025-03-15T02:05:42.623Z] [INFO] Inserted section: Carotid Ultrasound (ID: 1239)
+[2025-03-15T02:05:42.672Z] [INFO] Inserted section: Abdominal Ultrasound (ID: 1240)
+[2025-03-15T02:05:42.720Z] [INFO] Inserted section: Pelvic Ultrasound (if applicable) (ID: 1241)
+[2025-03-15T02:05:42.720Z] [INFO] Inserting 81 items for section 1241
+[2025-03-15T02:05:42.771Z] [INFO] Successfully inserted items for section 1232
+[2025-03-15T02:05:42.872Z] [INFO] Successfully inserted items for section 1233
+[2025-03-15T02:05:42.967Z] [INFO] Successfully inserted items for section 1234
+[2025-03-15T02:05:43.228Z] [INFO] Updated 4 parent-child relationships for section 1234
+[2025-03-15T02:05:43.275Z] [INFO] Successfully inserted items for section 1235
+[2025-03-15T02:05:43.376Z] [INFO] Successfully inserted items for section 1236
+[2025-03-15T02:05:43.470Z] [INFO] Successfully inserted items for section 1237
+[2025-03-15T02:05:43.564Z] [INFO] Successfully inserted items for section 1238
+[2025-03-15T02:05:43.677Z] [INFO] Successfully inserted items for section 1239
+[2025-03-15T02:05:43.772Z] [INFO] Successfully inserted items for section 1240
+[2025-03-15T02:05:43.880Z] [INFO] Successfully inserted items for section 1241
+[2025-03-15T02:05:43.927Z] [INFO] Completed processing file: imaging.md
+[2025-03-15T02:05:43.928Z] [INFO] Processing file: lab-studies.md
+[2025-03-15T02:05:43.974Z] [INFO] Inserted section: Complete Blood Count (ID: 1242)
+[2025-03-15T02:05:44.027Z] [INFO] Inserted section: Basic Metabolic Panel (ID: 1243)
+[2025-03-15T02:05:44.082Z] [INFO] Inserted section: Cardiac Biomarkers (ID: 1244)
+[2025-03-15T02:05:44.128Z] [INFO] Inserted section: Coagulation Studies (ID: 1245)
+[2025-03-15T02:05:44.182Z] [INFO] Inserted section: Additional Electrolytes (ID: 1246)
+[2025-03-15T02:05:44.229Z] [INFO] Inserted section: Liver Function Tests (ID: 1247)
+[2025-03-15T02:05:44.284Z] [INFO] Inserted section: Toxicology Screen (ID: 1248)
+[2025-03-15T02:05:44.333Z] [INFO] Inserted section: Pregnancy Test (ID: 1249)
+[2025-03-15T02:05:44.384Z] [INFO] Inserted section: Thyroid Function Tests (ID: 1250)
+[2025-03-15T02:05:44.440Z] [INFO] Inserted section: Arterial Blood Gas (ID: 1251)
+[2025-03-15T02:05:44.500Z] [INFO] Inserted section: Urinalysis (ID: 1252)
+[2025-03-15T02:05:44.551Z] [INFO] Inserted section: Other Laboratory Tests (ID: 1253)
+[2025-03-15T02:05:44.551Z] [INFO] Inserting 70 items for section 1253
+[2025-03-15T02:05:44.603Z] [INFO] Successfully inserted items for section 1242
+[2025-03-15T02:05:44.697Z] [INFO] Successfully inserted items for section 1243
+[2025-03-15T02:05:44.800Z] [INFO] Successfully inserted items for section 1244
+[2025-03-15T02:05:44.896Z] [INFO] Successfully inserted items for section 1245
+[2025-03-15T02:05:45.004Z] [INFO] Successfully inserted items for section 1246
+[2025-03-15T02:05:45.101Z] [INFO] Successfully inserted items for section 1247
+[2025-03-15T02:05:45.193Z] [INFO] Successfully inserted items for section 1248
+[2025-03-15T02:05:45.300Z] [INFO] Successfully inserted items for section 1249
+[2025-03-15T02:05:45.404Z] [INFO] Successfully inserted items for section 1250
+[2025-03-15T02:05:45.504Z] [INFO] Successfully inserted items for section 1251
+[2025-03-15T02:05:45.613Z] [INFO] Successfully inserted items for section 1252
+[2025-03-15T02:05:45.729Z] [INFO] Successfully inserted items for section 1253
+[2025-03-15T02:05:45.777Z] [INFO] Completed processing file: lab-studies.md
+[2025-03-15T02:05:45.777Z] [INFO] Processing file: medications.md
+[2025-03-15T02:05:45.833Z] [INFO] Inserted section: Vasodilators (ID: 1254)
+[2025-03-15T02:05:45.882Z] [INFO] Inserted section: Diuretics (ID: 1255)
+[2025-03-15T02:05:45.929Z] [INFO] Inserted section: Central Antihypertensives (ID: 1256)
+[2025-03-15T02:05:45.976Z] [INFO] Inserted section: QT-Prolonging Agents (ID: 1257)
+[2025-03-15T02:05:46.024Z] [INFO] Inserted section: Psychoactive Agents (ID: 1258)
+[2025-03-15T02:05:46.086Z] [INFO] Inserted section: Other Medications (ID: 1259)
+[2025-03-15T02:05:46.142Z] [INFO] Inserted section: Recent Medication Changes (ID: 1260)
+[2025-03-15T02:05:46.219Z] [INFO] Inserted section: Medication Compliance (ID: 1261)
+[2025-03-15T02:05:46.219Z] [INFO] Inserting 47 items for section 1261
+[2025-03-15T02:05:46.278Z] [INFO] Successfully inserted items for section 1254
+[2025-03-15T02:05:46.381Z] [INFO] Successfully inserted items for section 1255
+[2025-03-15T02:05:46.488Z] [INFO] Successfully inserted items for section 1256
+[2025-03-15T02:05:46.587Z] [INFO] Successfully inserted items for section 1257
+[2025-03-15T02:05:46.687Z] [INFO] Successfully inserted items for section 1258
+[2025-03-15T02:05:46.825Z] [INFO] Successfully inserted items for section 1259
+[2025-03-15T02:05:46.935Z] [INFO] Successfully inserted items for section 1260
+[2025-03-15T02:05:47.042Z] [INFO] Successfully inserted items for section 1261
+[2025-03-15T02:05:47.090Z] [INFO] Completed processing file: medications.md
+[2025-03-15T02:05:47.090Z] [INFO] Processing file: past-medical.md
+[2025-03-15T02:05:47.148Z] [INFO] Inserted section: Cardiac History (ID: 1262)
+[2025-03-15T02:05:47.217Z] [INFO] Inserted section: Vascular History (ID: 1263)
+[2025-03-15T02:05:47.265Z] [INFO] Inserted section: Pulmonary History (ID: 1264)
+[2025-03-15T02:05:47.321Z] [INFO] Inserted section: Neurological History (ID: 1265)
+[2025-03-15T02:05:47.368Z] [INFO] Inserted section: Endocrine History (ID: 1266)
+[2025-03-15T02:05:47.435Z] [INFO] Inserted section: Hematologic History (ID: 1267)
+[2025-03-15T02:05:47.497Z] [INFO] Inserted section: Gastrointestinal History (ID: 1268)
+[2025-03-15T02:05:47.543Z] [INFO] Inserted section: Genitourinary History (ID: 1269)
+[2025-03-15T02:05:47.589Z] [INFO] Inserted section: Psychiatric History (ID: 1270)
+[2025-03-15T02:05:47.643Z] [INFO] Inserted section: Previous Episodes (ID: 1271)
+[2025-03-15T02:05:47.643Z] [INFO] Inserting 74 items for section 1271
+[2025-03-15T02:05:47.699Z] [INFO] Successfully inserted items for section 1262
+[2025-03-15T02:05:48.653Z] [INFO] Updated 18 parent-child relationships for section 1262
+[2025-03-15T02:05:48.706Z] [INFO] Successfully inserted items for section 1263
+[2025-03-15T02:05:48.811Z] [INFO] Successfully inserted items for section 1264
+[2025-03-15T02:05:48.922Z] [INFO] Successfully inserted items for section 1265
+[2025-03-15T02:05:49.031Z] [INFO] Successfully inserted items for section 1266
+[2025-03-15T02:05:49.133Z] [INFO] Successfully inserted items for section 1267
+[2025-03-15T02:05:49.234Z] [INFO] Successfully inserted items for section 1268
+[2025-03-15T02:05:49.330Z] [INFO] Successfully inserted items for section 1269
+[2025-03-15T02:05:49.442Z] [INFO] Successfully inserted items for section 1270
+[2025-03-15T02:05:49.544Z] [INFO] Successfully inserted items for section 1271
+[2025-03-15T02:05:49.752Z] [INFO] Updated 3 parent-child relationships for section 1271
+[2025-03-15T02:05:49.753Z] [INFO] Completed processing file: past-medical.md
+[2025-03-15T02:05:49.753Z] [INFO] Processing file: patient-education.md
+[2025-03-15T02:05:49.795Z] [INFO] Inserted section: General Syncope Information (ID: 1272)
+[2025-03-15T02:05:49.840Z] [INFO] Inserted section: Safety Considerations (ID: 1273)
+[2025-03-15T02:05:49.889Z] [INFO] Inserted section: Specific Cause Education (if identified) (ID: 1274)
+[2025-03-15T02:05:49.938Z] [INFO] Inserted section: Prodromal Symptom Recognition (ID: 1275)
+[2025-03-15T02:05:49.990Z] [INFO] Inserted section: Physical Counterpressure Maneuvers (ID: 1276)
+[2025-03-15T02:05:50.047Z] [INFO] Inserted section: Lifestyle Modifications (ID: 1277)
+[2025-03-15T02:05:50.092Z] [INFO] Inserted section: Medication Education (ID: 1278)
+[2025-03-15T02:05:50.147Z] [INFO] Inserted section: Follow-up Care (ID: 1279)
+[2025-03-15T02:05:50.210Z] [INFO] Inserted section: Warning Signs Requiring Immediate Attention (ID: 1280)
+[2025-03-15T02:05:50.282Z] [INFO] Inserted section: Family Education (ID: 1281)
+[2025-03-15T02:05:50.282Z] [INFO] Inserting 66 items for section 1281
+[2025-03-15T02:05:50.411Z] [INFO] Successfully inserted items for section 1272
+[2025-03-15T02:05:50.516Z] [INFO] Successfully inserted items for section 1273
+[2025-03-15T02:05:50.622Z] [INFO] Successfully inserted items for section 1274
+[2025-03-15T02:05:50.725Z] [INFO] Successfully inserted items for section 1275
+[2025-03-15T02:05:50.850Z] [INFO] Successfully inserted items for section 1276
+[2025-03-15T02:05:50.959Z] [INFO] Successfully inserted items for section 1277
+[2025-03-15T02:05:51.067Z] [INFO] Successfully inserted items for section 1278
+[2025-03-15T02:05:51.178Z] [INFO] Successfully inserted items for section 1279
+[2025-03-15T02:05:51.276Z] [INFO] Successfully inserted items for section 1280
+[2025-03-15T02:05:51.386Z] [INFO] Successfully inserted items for section 1281
+[2025-03-15T02:05:51.444Z] [INFO] Completed processing file: patient-education.md
+[2025-03-15T02:05:51.444Z] [INFO] Processing file: physical-exam.md
+[2025-03-15T02:05:51.491Z] [INFO] Inserted section: Vital Signs (ID: 1282)
+[2025-03-15T02:05:51.541Z] [INFO] Inserted section: Orthostatic Vital Signs (ID: 1283)
+[2025-03-15T02:05:51.589Z] [INFO] Inserted section: General Appearance (ID: 1284)
+[2025-03-15T02:05:51.635Z] [INFO] Inserted section: Head, Eyes, Ears, Nose, Throat (ID: 1285)
+[2025-03-15T02:05:51.684Z] [INFO] Inserted section: Cardiovascular (ID: 1286)
+[2025-03-15T02:05:51.737Z] [INFO] Inserted section: Pulmonary (ID: 1287)
+[2025-03-15T02:05:51.788Z] [INFO] Inserted section: Abdominal (ID: 1288)
+[2025-03-15T02:05:51.837Z] [INFO] Inserted section: Neurological (ID: 1289)
+[2025-03-15T02:05:51.885Z] [INFO] Inserted section: Extremities (ID: 1290)
+[2025-03-15T02:05:51.933Z] [INFO] Inserted section: Skin (ID: 1291)
+[2025-03-15T02:05:51.985Z] [INFO] Inserted section: Rectal Examination (if indicated) (ID: 1292)
+[2025-03-15T02:05:51.985Z] [INFO] Inserting 107 items for section 1292
+[2025-03-15T02:05:52.038Z] [INFO] Successfully inserted items for section 1282
+[2025-03-15T02:05:52.137Z] [INFO] Successfully inserted items for section 1283
+[2025-03-15T02:05:52.255Z] [INFO] Successfully inserted items for section 1284
+[2025-03-15T02:05:52.374Z] [INFO] Successfully inserted items for section 1285
+[2025-03-15T02:05:52.479Z] [INFO] Successfully inserted items for section 1286
+[2025-03-15T02:05:52.712Z] [INFO] Updated 3 parent-child relationships for section 1286
+[2025-03-15T02:05:52.756Z] [INFO] Successfully inserted items for section 1287
+[2025-03-15T02:05:52.863Z] [INFO] Successfully inserted items for section 1288
+[2025-03-15T02:05:52.956Z] [INFO] Successfully inserted items for section 1289
+[2025-03-15T02:05:53.054Z] [INFO] Successfully inserted items for section 1290
+[2025-03-15T02:05:53.147Z] [INFO] Successfully inserted items for section 1291
+[2025-03-15T02:05:53.242Z] [INFO] Successfully inserted items for section 1292
+[2025-03-15T02:05:53.291Z] [INFO] Completed processing file: physical-exam.md
+[2025-03-15T02:05:53.291Z] [INFO] Processing file: plan.md
+[2025-03-15T02:05:53.339Z] [INFO] Inserted section: Immediate Management (ID: 1293)
+[2025-03-15T02:05:53.402Z] [INFO] Inserted section: Additional Testing (ID: 1294)
+[2025-03-15T02:05:53.456Z] [INFO] Inserted section: Medication Recommendations (ID: 1295)
+[2025-03-15T02:05:53.517Z] [INFO] Inserted section: Lifestyle Modifications (ID: 1296)
+[2025-03-15T02:05:53.573Z] [INFO] Inserted section: Cardiac Intervention Considerations (ID: 1297)
+[2025-03-15T02:05:53.624Z] [INFO] Inserted section: Follow-up Care (ID: 1298)
+[2025-03-15T02:05:53.669Z] [INFO] Inserted section: Preventive Measures (ID: 1299)
+[2025-03-15T02:05:53.714Z] [INFO] Inserted section: Special Considerations (ID: 1300)
+[2025-03-15T02:05:53.714Z] [INFO] Inserting 63 items for section 1300
+[2025-03-15T02:05:53.758Z] [INFO] Successfully inserted items for section 1293
+[2025-03-15T02:05:53.863Z] [INFO] Successfully inserted items for section 1294
+[2025-03-15T02:05:53.962Z] [INFO] Successfully inserted items for section 1295
+[2025-03-15T02:05:54.057Z] [INFO] Successfully inserted items for section 1296
+[2025-03-15T02:05:54.156Z] [INFO] Successfully inserted items for section 1297
+[2025-03-15T02:05:54.254Z] [INFO] Successfully inserted items for section 1298
+[2025-03-15T02:05:54.348Z] [INFO] Successfully inserted items for section 1299
+[2025-03-15T02:05:54.442Z] [INFO] Successfully inserted items for section 1300
+[2025-03-15T02:05:54.488Z] [INFO] Completed processing file: plan.md
+[2025-03-15T02:05:54.488Z] [INFO] Processing file: review-systems.md
+[2025-03-15T02:05:54.539Z] [INFO] Inserted section: Constitutional (ID: 1301)
+[2025-03-15T02:05:54.591Z] [INFO] Inserted section: Cardiovascular (ID: 1302)
+[2025-03-15T02:05:54.662Z] [INFO] Inserted section: Respiratory (ID: 1303)
+[2025-03-15T02:05:54.715Z] [INFO] Inserted section: Neurological (ID: 1304)
+[2025-03-15T02:05:54.765Z] [INFO] Inserted section: Gastrointestinal (ID: 1305)
+[2025-03-15T02:05:54.811Z] [INFO] Inserted section: Genitourinary (ID: 1306)
+[2025-03-15T02:05:54.866Z] [INFO] Inserted section: Psychiatric (ID: 1307)
+[2025-03-15T02:05:54.914Z] [INFO] Inserted section: Endocrine (ID: 1308)
+[2025-03-15T02:05:54.969Z] [INFO] Inserted section: Hematologic (ID: 1309)
+[2025-03-15T02:05:55.023Z] [INFO] Inserted section: Musculoskeletal (ID: 1310)
+[2025-03-15T02:05:55.068Z] [INFO] Inserted section: Ear, Nose, Throat (ID: 1311)
+[2025-03-15T02:05:55.119Z] [INFO] Inserted section: Eyes (ID: 1312)
+[2025-03-15T02:05:55.120Z] [INFO] Inserting 67 items for section 1312
+[2025-03-15T02:05:55.172Z] [INFO] Successfully inserted items for section 1301
+[2025-03-15T02:05:55.264Z] [INFO] Successfully inserted items for section 1302
+[2025-03-15T02:05:55.370Z] [INFO] Successfully inserted items for section 1303
+[2025-03-15T02:05:55.474Z] [INFO] Successfully inserted items for section 1304
+[2025-03-15T02:05:55.587Z] [INFO] Successfully inserted items for section 1305
+[2025-03-15T02:05:55.695Z] [INFO] Successfully inserted items for section 1306
+[2025-03-15T02:05:55.799Z] [INFO] Successfully inserted items for section 1307
+[2025-03-15T02:05:55.898Z] [INFO] Successfully inserted items for section 1308
+[2025-03-15T02:05:55.996Z] [INFO] Successfully inserted items for section 1309
+[2025-03-15T02:05:56.092Z] [INFO] Successfully inserted items for section 1310
+[2025-03-15T02:05:56.200Z] [INFO] Successfully inserted items for section 1311
+[2025-03-15T02:05:56.299Z] [INFO] Successfully inserted items for section 1312
+[2025-03-15T02:05:56.348Z] [INFO] Completed processing file: review-systems.md
+[2025-03-15T02:05:56.349Z] [INFO] Processing file: risk-factors.md
+[2025-03-15T02:05:56.395Z] [INFO] Inserted section: Demographic Risk Factors (ID: 1313)
+[2025-03-15T02:05:56.442Z] [INFO] Inserted section: Cardiac Risk Factors (ID: 1314)
+[2025-03-15T02:05:56.502Z] [INFO] Inserted section: Vascular Risk Factors (ID: 1315)
+[2025-03-15T02:05:56.554Z] [INFO] Inserted section: Pulmonary Embolism Risk Factors (ID: 1316)
+[2025-03-15T02:05:56.606Z] [INFO] Inserted section: Orthostatic Hypotension Risk Factors (ID: 1317)
+[2025-03-15T02:05:56.654Z] [INFO] Inserted section: Canadian Syncope Risk Score Factors (ID: 1318)
+[2025-03-15T02:05:56.713Z] [INFO] Inserted section: San Francisco Syncope Rule Factors (ID: 1319)
+[2025-03-15T02:05:56.760Z] [INFO] Inserted section: FAINT Score Factors (ID: 1320)
+[2025-03-15T02:05:56.760Z] [INFO] Inserting 63 items for section 1320
+[2025-03-15T02:05:56.809Z] [INFO] Successfully inserted items for section 1313
+[2025-03-15T02:05:56.909Z] [INFO] Successfully inserted items for section 1314
+[2025-03-15T02:05:57.015Z] [INFO] Successfully inserted items for section 1315
+[2025-03-15T02:05:57.113Z] [INFO] Successfully inserted items for section 1316
+[2025-03-15T02:05:57.207Z] [INFO] Successfully inserted items for section 1317
+[2025-03-15T02:05:57.321Z] [INFO] Successfully inserted items for section 1318
+[2025-03-15T02:05:57.421Z] [INFO] Successfully inserted items for section 1319
+[2025-03-15T02:05:57.524Z] [INFO] Successfully inserted items for section 1320
+[2025-03-15T02:05:57.578Z] [INFO] Completed processing file: risk-factors.md
+[2025-03-15T02:05:57.579Z] [INFO] Processing file: special-tests.md
+[2025-03-15T02:05:57.628Z] [INFO] Inserted section: Bedside Ultrasonography (ID: 1321)
+[2025-03-15T02:05:57.681Z] [INFO] Inserted section: Tilt Table Test (ID: 1322)
+[2025-03-15T02:05:57.726Z] [INFO] Inserted section: Carotid Sinus Massage (ID: 1323)
+[2025-03-15T02:05:57.775Z] [INFO] Inserted section: Stress Test (ID: 1324)
+[2025-03-15T02:05:57.825Z] [INFO] Inserted section: Ambulatory Cardiac Monitoring (ID: 1325)
+[2025-03-15T02:05:57.869Z] [INFO] Inserted section: Electroencephalogram (EEG) (ID: 1326)
+[2025-03-15T02:05:57.915Z] [INFO] Inserted section: Cardiac Catheterization (ID: 1327)
+[2025-03-15T02:05:57.963Z] [INFO] Inserted section: Electrophysiology Study (ID: 1328)
+[2025-03-15T02:05:57.963Z] [INFO] Inserting 90 items for section 1328
+[2025-03-15T02:05:58.011Z] [INFO] Successfully inserted items for section 1321
+[2025-03-15T02:05:58.989Z] [INFO] Updated 16 parent-child relationships for section 1321
+[2025-03-15T02:05:59.040Z] [INFO] Successfully inserted items for section 1322
+[2025-03-15T02:05:59.719Z] [INFO] Updated 12 parent-child relationships for section 1322
+[2025-03-15T02:05:59.768Z] [INFO] Successfully inserted items for section 1323
+[2025-03-15T02:06:00.336Z] [INFO] Updated 10 parent-child relationships for section 1323
+[2025-03-15T02:06:00.392Z] [INFO] Successfully inserted items for section 1324
+[2025-03-15T02:06:00.921Z] [INFO] Updated 9 parent-child relationships for section 1324
+[2025-03-15T02:06:00.982Z] [INFO] Successfully inserted items for section 1325
+[2025-03-15T02:06:01.653Z] [INFO] Updated 12 parent-child relationships for section 1325
+[2025-03-15T02:06:01.708Z] [INFO] Successfully inserted items for section 1326
+[2025-03-15T02:06:02.050Z] [INFO] Updated 5 parent-child relationships for section 1326
+[2025-03-15T02:06:02.111Z] [INFO] Successfully inserted items for section 1327
+[2025-03-15T02:06:02.422Z] [INFO] Updated 5 parent-child relationships for section 1327
+[2025-03-15T02:06:02.471Z] [INFO] Successfully inserted items for section 1328
+[2025-03-15T02:06:02.719Z] [INFO] Updated 4 parent-child relationships for section 1328
+[2025-03-15T02:06:02.719Z] [INFO] Completed processing file: special-tests.md
+[2025-03-15T02:06:02.719Z] [INFO] Completed processing chapter: Ch11_Syncope
+[2025-03-15T02:06:02.719Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors

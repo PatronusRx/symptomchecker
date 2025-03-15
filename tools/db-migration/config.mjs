@@ -10,38 +10,40 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: join(__dirname, '../../.env.local') });
 
 export default {
-  // Supabase config
+  // Base path for markdown files
+  markdownBasePath: '/Users/lucas/Documents/markdown_1-185/1-18',
+
+  // Directory for logs
+  logsDir: './logs',
+
+  // Supabase configuration
   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
 
-  // Paths
-  markdownBasePath: '/Users/lucas/Documents/markdown_1-185/1-18',
-  logsDir: './logs',
-
-  // Mapping of filenames to categories
-  categories: {
-    'history.md': { name: 'History', order: 1 },
-    'alarm-features.md': { name: 'Alarm Features', order: 2 },
-    'medications.md': { name: 'Medications', order: 3 },
-    'diet.md': { name: 'Diet', order: 4 },
-    'review-systems.md': { name: 'Review of Systems', order: 5 },
-    'collateral-history.md': { name: 'Collateral History', order: 6 },
-    'risk-factors.md': { name: 'Risk Factors', order: 7 },
-    'differential-diagnosis.md': { name: 'Differential Diagnosis', order: 8 },
-    'past-medical.md': { name: 'Past Medical History', order: 9 },
-    'physical-exam.md': { name: 'Physical Exam', order: 10 },
-    'lab-studies.md': { name: 'Lab Studies', order: 11 },
-    'imaging.md': { name: 'Imaging', order: 12 },
-    'special-tests.md': { name: 'Special Tests', order: 13 },
-    'ecg.md': { name: 'ECG', order: 14 },
-    'assessment.md': { name: 'Assessment', order: 15 },
-    'plan.md': { name: 'Plan', order: 16 },
-    'disposition.md': { name: 'Disposition', order: 17 },
-    'patient-education.md': { name: 'Patient Education', order: 18 },
-  },
-
   // Enable verbose logging
   verbose: true,
+
+  // Category mappings (filename -> category info)
+  categories: {
+    'alarm-features.md': { name: 'Alarm Features', order: 2 },
+    'assessment.md': { name: 'Assessment', order: 15 },
+    'collateral-history.md': { name: 'Collateral History', order: 6 },
+    'diet.md': { name: 'Diet', order: 4 },
+    'differential-diagnosis.md': { name: 'Differential Diagnosis', order: 8 },
+    'disposition.md': { name: 'Disposition', order: 17 },
+    'ecg.md': { name: 'ECG', order: 14 },
+    'history.md': { name: 'History', order: 1 },
+    'imaging.md': { name: 'Imaging', order: 12 },
+    'lab-studies.md': { name: 'Lab Studies', order: 11 },
+    'medications.md': { name: 'Medications', order: 3 },
+    'past-medical.md': { name: 'Past Medical History', order: 9 },
+    'patient-education.md': { name: 'Patient Education', order: 18 },
+    'physical-exam.md': { name: 'Physical Exam', order: 10 },
+    'plan.md': { name: 'Plan', order: 16 },
+    'review-systems.md': { name: 'Review of Systems', order: 5 },
+    'risk-factors.md': { name: 'Risk Factors', order: 7 },
+    'special-tests.md': { name: 'Special Tests', order: 13 },
+  },
 
   // Parser options
   parser: {

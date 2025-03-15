@@ -49,18 +49,23 @@ export function processItemText(itemText) {
     // This is a complex case with multiple inputs
     const parts = itemText.split(',').map((part) => part.trim());
 
-    return parts.map((part) => {
-      // Recursively process each part
-      const processedPart = processItemText(part)[0]; // Get first result
+    // FIXED: Preserve the original item for parent-child relationships
+    // and just add the split items as separate entries
+    return [
+      baseItem,
+      ...parts.map((part) => {
+        // Recursively process each part
+        const processedPart = processItemText(part)[0]; // Get first result
 
-      // Prefix the label if needed
-      if (!part.includes(':') && itemText.includes(':')) {
-        const mainLabel = itemText.split(':')[0];
-        processedPart.itemText = `${mainLabel}: ${processedPart.itemText}`;
-      }
+        // Prefix the label if needed
+        if (!part.includes(':') && itemText.includes(':')) {
+          const mainLabel = itemText.split(':')[0];
+          processedPart.itemText = `${mainLabel}: ${processedPart.itemText}`;
+        }
 
-      return processedPart;
-    });
+        return processedPart;
+      }),
+    ];
   }
 
   return [baseItem];

@@ -53,7 +53,8 @@ function testParser(mdFilePath) {
     const checklistMatch = line.match(/^(\s*)- \[ \] (.+)$/);
     if (checklistMatch && currentSection) {
       const indentStr = checklistMatch[1];
-      const indentLevel = indentStr.length;
+      // Normalize indentation to logical levels (assuming 2 spaces per level)
+      const indentLevel = Math.floor(indentStr.length / 2);
       const itemText = checklistMatch[2].trim();
 
       // Process the item
