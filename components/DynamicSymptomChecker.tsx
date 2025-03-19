@@ -232,18 +232,47 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       fetchData();
     }
   }, [chapterSlug]);
+
+  // Add useEffect to initialize expansion state when items are first loaded
+  useEffect(() => {
+    if (!loading && checklistItems.length > 0) {
+      // Set initial expansion state for all items
+      setChecklistItems((items) =>
+        items.map((item) => ({
+          ...item,
+          isExpanded: false, // Start collapsed, change to true if you want them expanded by default
+        }))
+      );
+
+      // Debug logging to check parent-child relationships
+      const itemsWithParent = checklistItems.filter(
+        (item) => item.parent_item_id !== null
+      );
+      console.log(
+        `Items with parent: ${itemsWithParent.length} out of ${checklistItems.length}`
+      );
+    }
+  }, [loading, checklistItems.length]);
+
   // Build nested hierarchy of checklist items
   const buildNestedItemsHierarchy = (items: ChecklistItem[]) => {
     // Map for quick item lookup by ID
     const itemMap = new Map<number, ChecklistItem>();
+
+    // First create all items with empty children arrays and preserve existing expansion state
     items.forEach((item) => {
-      itemMap.set(item.id, { ...item, childItems: [] });
+      itemMap.set(item.id, {
+        ...item,
+        childItems: [],
+        // Initialize with existing expansion state or default to false
+        isExpanded: item.isExpanded !== undefined ? item.isExpanded : false,
+      });
     });
 
     // Build the tree
     const rootItems: ChecklistItem[] = [];
 
-    // First pass - attach children to parents
+    // Attach children to parents
     items.forEach((item) => {
       const mappedItem = itemMap.get(item.id);
       if (!mappedItem) return;
@@ -261,7 +290,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           parent.childItems.push(mappedItem);
         }
       } else {
-        // Orphaned item - attach to root
+        // Orphaned item - attach to root level
         rootItems.push(mappedItem);
       }
     });
@@ -418,11 +447,16 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Toggle item expansion state
   const toggleItemExpansion = (itemId: number) => {
-    setChecklistItems((items) =>
-      items.map((item) =>
-        item.id === itemId ? { ...item, isExpanded: !item.isExpanded } : item
-      )
-    );
+    setChecklistItems((prevItems) => {
+      // Create a deep copy to ensure we don't mutate state
+      return prevItems.map((item) => {
+        if (item.id === itemId) {
+          // Toggle expansion state for the clicked item
+          return { ...item, isExpanded: !item.isExpanded };
+        }
+        return item;
+      });
+    });
   };
 
   // Handle detail option selection
@@ -1265,6 +1299,9 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
     // Indentation style based on depth
     const indentClass = depth > 0 ? `ml-${Math.min(depth * 4, 12)}` : ''; // max indent of ml-12
 
+    // Check if this item has children
+    const hasChildren = item.childItems && item.childItems.length > 0;
+
     return (
       <div key={item.id} className={indentClass}>
         {isHeader ? (
@@ -1334,11 +1371,14 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                   <HelpCircle size={18} />
                 </button>
 
-                {/* Add expand/collapse button if item has children */}
-                {item.childItems && item.childItems.length > 0 && (
+                {/* Only show expand/collapse button if item has children */}
+                {hasChildren && (
                   <button
                     className="p-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    onClick={() => toggleItemExpansion(item.id)}
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent event bubbling
+                      toggleItemExpansion(item.id);
+                    }}
                     title={item.isExpanded ? 'Collapse' : 'Expand'}
                   >
                     {item.isExpanded ? (
@@ -1370,20 +1410,22 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
           </div>
         )}
 
-        {/* Recursively render children if this item has children and is expanded */}
-        {item.childItems &&
-          item.childItems.length > 0 &&
-          (item.isExpanded || item.response === '+') && (
-            <div
-              className={`mb-4 ${
-                item.response === '+' ? 'border-l-2 border-green-200 pl-4' : ''
-              }`}
-            >
-              {item.childItems.map((childItem) =>
-                renderChecklistItem(childItem, depth + 1)
-              )}
-            </div>
-          )}
+        {/* Render children conditionally based on both expansion state and response */}
+        {hasChildren && (
+          <div
+            className={`mb-4 ${
+              item.response === '+' ? 'border-l-2 border-green-200 pl-4' : ''
+            }`}
+            style={{
+              display:
+                item.isExpanded || item.response === '+' ? 'block' : 'none',
+            }}
+          >
+            {item.childItems.map((childItem) =>
+              renderChecklistItem(childItem, depth + 1)
+            )}
+          </div>
+        )}
       </div>
     );
   };
