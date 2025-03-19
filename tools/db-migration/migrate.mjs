@@ -215,8 +215,42 @@ function preprocessMarkdownFile(filePath) {
         const indentLevel = Math.floor(indentStr.length / 2);
         const itemText = checklistMatch[2].trim();
 
-        // Adjust stack for this level
-        hierarchyStack = hierarchyStack.slice(0, indentLevel);
+        // DEBUGGING FOR ORIENTATION ASSESSMENT
+        if (
+          itemText.includes('Orientation assessment') ||
+          itemText.includes('Person:') ||
+          itemText.includes('Place:') ||
+          itemText.includes('Time:') ||
+          itemText.includes('Situation:')
+        ) {
+          log(`ORIENTATION DEBUG: Processing "${itemText}"`);
+          log(
+            `  - Line ${i}, Indent level: ${indentLevel}, Spaces: ${indentStr.length}`
+          );
+          log(`  - Current hierarchy stack: [${hierarchyStack.join(', ')}]`);
+
+          // Add special markers for these items
+          if (itemText.includes('Orientation assessment')) {
+            log(`  - MARKER: This is the parent item`);
+          } else {
+            log(`  - MARKER: This should be a child of Orientation assessment`);
+          }
+        }
+
+        // CRITICAL FIX: Reset hierarchy stack for top-level items
+        if (indentLevel === 0) {
+          // Always clear the stack for top-level items
+          hierarchyStack = [];
+        } else if (indentLevel === 1) {
+          // For first-level children, only keep the parent
+          // This makes sure we have the right parent (not accumulating incorrectly)
+          if (hierarchyStack.length > 1) {
+            hierarchyStack = [hierarchyStack[0]];
+          }
+        } else {
+          // For deeper nesting, maintain proper parent hierarchy
+          hierarchyStack = hierarchyStack.slice(0, indentLevel);
+        }
 
         // Add to hierarchy
         itemCounter++;
@@ -227,6 +261,20 @@ function preprocessMarkdownFile(filePath) {
           hierarchyStack.length > 0 ? hierarchyStack.join('.') : '';
         const path = generatePath(parentPath, position);
 
+        // Add debugging for key items
+        if (
+          itemText.includes('Orientation') ||
+          itemText.includes('Person:') ||
+          itemText.includes('Place:') ||
+          itemText.includes('Time:') ||
+          itemText.includes('Situation:')
+        ) {
+          log(
+            `Building item "${itemText}" with path ${path}, parent: ${parentPath}, level: ${indentLevel}`
+          );
+        }
+
+        // Add this item's position to the hierarchy stack
         hierarchyStack.push(position);
 
         // Process the item text to extract components
@@ -386,7 +434,6 @@ async function batchInsertItems(items, sectionIdMap) {
 /**
  * Update parent-child relationships using the path information
  */
-
 async function updateParentChildRelationships(itemIdByPath) {
   log('Updating parent-child relationships...');
 
@@ -443,6 +490,7 @@ async function updateParentChildRelationships(itemIdByPath) {
     `Completed parent-child relationship updates: ${successCount} successful, ${errorCount} failed`
   );
 }
+
 /**
  * Process a single markdown file and insert into database
  */
@@ -548,9 +596,6 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
   }
 }
 
-/**
- * Process a single chapter directory
- */
 /**
  * Process a single chapter directory
  */
