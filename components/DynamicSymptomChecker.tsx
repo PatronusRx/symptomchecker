@@ -126,6 +126,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   });
 
   // Fetch data from Supabase
+  // Inside the existing useEffect that fetches data (around line 146)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -147,6 +148,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           throw chapterError;
         }
 
+        // Add debug log here after fetching chapters
+        console.log('Chapter data:', chaptersData);
+
         if (!chaptersData || chaptersData.length === 0) {
           throw new Error(`Chapter "${formattedSlug}" not found in database`);
         }
@@ -164,12 +168,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         if (categoriesError) {
           throw categoriesError;
         }
-        setCategories(categoriesData || []);
 
-        // Set initial active category to the first one
-        if (categoriesData && categoriesData.length > 0) {
-          setActiveCategory(categoriesData[0].id);
-        }
+        // Add debug log here after fetching categories
+        console.log('Categories data:', categoriesData);
+
+        setCategories(categoriesData || []);
 
         // Fetch sections for this chapter
         const { data: sectionsData, error: sectionsError } = await supabase
@@ -181,6 +184,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         if (sectionsError) {
           throw sectionsError;
         }
+
+        // Add debug log here after fetching sections
+        console.log('Sections data:', sectionsData);
+
         setSections(sectionsData || []);
 
         if (sectionsData && sectionsData.length > 0) {
@@ -197,6 +204,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           if (itemsError) {
             throw itemsError;
           }
+
+          // Add debug log here after fetching checklist items
+          console.log('Items data:', itemsData);
 
           // Initialize with isCompleted property
           const initializedItems = (itemsData || []).map((item) => ({
@@ -222,7 +232,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       fetchData();
     }
   }, [chapterSlug]);
-
   // Build nested hierarchy of checklist items
   const buildNestedItemsHierarchy = (items: ChecklistItem[]) => {
     // Map for quick item lookup by ID

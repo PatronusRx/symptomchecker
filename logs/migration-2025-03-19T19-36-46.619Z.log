@@ -1,0 +1,475 @@
+[2025-03-19T19:36:46.620Z] [INFO] Starting migration...
+[2025-03-19T19:36:46.621Z] [INFO] Ensuring database schema has required columns...
+[2025-03-19T19:36:46.822Z] [WARN] Warning: Could not verify schema columns. If they do not exist, the migration may fail.
+[2025-03-19T19:36:46.822Z] [WARN] Error details: Could not find the function public.execute_sql(sql_query) in the schema cache
+[2025-03-19T19:36:46.822Z] [INFO] Inserting categories...
+[2025-03-19T19:36:47.255Z] [INFO] All categories already exist, skipping insertion
+[2025-03-19T19:36:47.256Z] [INFO] Found 1 chapter directories to process
+[2025-03-19T19:36:47.256Z] [INFO] Processing chapter: Ch13_Confusion
+[2025-03-19T19:36:47.256Z] [INFO] Checking if chapter 13 exists...
+[2025-03-19T19:36:47.541Z] [INFO] Inserted new chapter: Confusion (ID: 5)
+[2025-03-19T19:36:47.542Z] [INFO] Processing file: history.md
+[2025-03-19T19:36:47.542Z] [INFO] Preprocessing file: history.md
+[2025-03-19T19:36:47.542Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:47.542Z] [INFO] Found section: "Chief Complaint" at line 2
+[2025-03-19T19:36:47.542Z] [INFO] Found section: "Duration/Onset" at line 8
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Onset" at line 14
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Provocation/Palliation" at line 18
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Quality" at line 23
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Region/Radiation" at line 30
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Severity" at line 36
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Timing" at line 41
+[2025-03-19T19:36:47.543Z] [INFO] Found section: "Associated Symptoms" at line 45
+[2025-03-19T19:36:47.543Z] [INFO] Found 9 sections in file: Chief Complaint, Duration/Onset, Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms
+[2025-03-19T19:36:47.543Z] [INFO] Detected sections: ["Chief Complaint","Duration/Onset","Onset","Provocation/Palliation","Quality","Region/Radiation","Severity","Timing","Associated Symptoms"]
+[2025-03-19T19:36:47.543Z] [INFO] Attempting to insert section: "Chief Complaint"
+[2025-03-19T19:36:47.598Z] [INFO] Inserted/updated section: Chief Complaint (ID: 89)
+[2025-03-19T19:36:47.598Z] [INFO] Attempting to insert section: "Duration/Onset"
+[2025-03-19T19:36:47.734Z] [INFO] Inserted/updated section: Duration/Onset (ID: 90)
+[2025-03-19T19:36:47.735Z] [INFO] Attempting to insert section: "Onset"
+[2025-03-19T19:36:48.290Z] [INFO] Inserted/updated section: Onset (ID: 91)
+[2025-03-19T19:36:48.291Z] [INFO] Attempting to insert section: "Provocation/Palliation"
+[2025-03-19T19:36:48.801Z] [INFO] Inserted/updated section: Provocation/Palliation (ID: 92)
+[2025-03-19T19:36:48.802Z] [INFO] Attempting to insert section: "Quality"
+[2025-03-19T19:36:48.995Z] [INFO] Inserted/updated section: Quality (ID: 93)
+[2025-03-19T19:36:48.996Z] [INFO] Attempting to insert section: "Region/Radiation"
+[2025-03-19T19:36:49.055Z] [INFO] Inserted/updated section: Region/Radiation (ID: 94)
+[2025-03-19T19:36:49.057Z] [INFO] Attempting to insert section: "Severity"
+[2025-03-19T19:36:49.112Z] [INFO] Inserted/updated section: Severity (ID: 95)
+[2025-03-19T19:36:49.113Z] [INFO] Attempting to insert section: "Timing"
+[2025-03-19T19:36:49.250Z] [INFO] Inserted/updated section: Timing (ID: 96)
+[2025-03-19T19:36:49.250Z] [INFO] Attempting to insert section: "Associated Symptoms"
+[2025-03-19T19:36:49.432Z] [INFO] Inserted/updated section: Associated Symptoms (ID: 97)
+[2025-03-19T19:36:49.433Z] [INFO] Section ID map: {"Chief Complaint":89,"Duration/Onset":90,"Onset":91,"Provocation/Palliation":92,"Quality":93,"Region/Radiation":94,"Severity":95,"Timing":96,"Associated Symptoms":97}
+[2025-03-19T19:36:49.433Z] [INFO] Prepared 34 items for insertion (filtered from 34 total items)
+[2025-03-19T19:36:49.630Z] [INFO] Inserted batch of 34 items (total: 34/34)
+[2025-03-19T19:36:49.631Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:50.004Z] [INFO] Completed parent-child relationship updates: 2 successful, 0 failed
+[2025-03-19T19:36:50.005Z] [INFO] Successfully processed file history.md: inserted 34 items
+[2025-03-19T19:36:50.006Z] [INFO] Processing file: alarm-features.md
+[2025-03-19T19:36:50.006Z] [INFO] Preprocessing file: alarm-features.md
+[2025-03-19T19:36:50.007Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:50.008Z] [INFO] Found section: "Critical Causes (Require Immediate Intervention)" at line 2
+[2025-03-19T19:36:50.008Z] [INFO] Found section: "Emergent Causes (Primary Intracranial Disease)" at line 8
+[2025-03-19T19:36:50.008Z] [INFO] Found section: "Emergent Causes (Systemic Diseases)" at line 14
+[2025-03-19T19:36:50.009Z] [INFO] Found section: "Emergent Causes (Exogenous Toxins)" at line 23
+[2025-03-19T19:36:50.009Z] [INFO] Found section: "Emergent Causes (Drug Withdrawal)" at line 29
+[2025-03-19T19:36:50.009Z] [INFO] Found section: "Neurological Red Flags" at line 33
+[2025-03-19T19:36:50.009Z] [INFO] Found 6 sections in file: Critical Causes (Require Immediate Intervention), Emergent Causes (Primary Intracranial Disease), Emergent Causes (Systemic Diseases), Emergent Causes (Exogenous Toxins), Emergent Causes (Drug Withdrawal), Neurological Red Flags
+[2025-03-19T19:36:50.010Z] [INFO] Detected sections: ["Critical Causes (Require Immediate Intervention)","Emergent Causes (Primary Intracranial Disease)","Emergent Causes (Systemic Diseases)","Emergent Causes (Exogenous Toxins)","Emergent Causes (Drug Withdrawal)","Neurological Red Flags"]
+[2025-03-19T19:36:50.010Z] [INFO] Attempting to insert section: "Critical Causes (Require Immediate Intervention)"
+[2025-03-19T19:36:50.193Z] [INFO] Inserted/updated section: Critical Causes (Require Immediate Intervention) (ID: 98)
+[2025-03-19T19:36:50.194Z] [INFO] Attempting to insert section: "Emergent Causes (Primary Intracranial Disease)"
+[2025-03-19T19:36:50.383Z] [INFO] Inserted/updated section: Emergent Causes (Primary Intracranial Disease) (ID: 99)
+[2025-03-19T19:36:50.383Z] [INFO] Attempting to insert section: "Emergent Causes (Systemic Diseases)"
+[2025-03-19T19:36:50.950Z] [INFO] Inserted/updated section: Emergent Causes (Systemic Diseases) (ID: 100)
+[2025-03-19T19:36:50.951Z] [INFO] Attempting to insert section: "Emergent Causes (Exogenous Toxins)"
+[2025-03-19T19:36:51.463Z] [INFO] Inserted/updated section: Emergent Causes (Exogenous Toxins) (ID: 101)
+[2025-03-19T19:36:51.464Z] [INFO] Attempting to insert section: "Emergent Causes (Drug Withdrawal)"
+[2025-03-19T19:36:51.601Z] [INFO] Inserted/updated section: Emergent Causes (Drug Withdrawal) (ID: 102)
+[2025-03-19T19:36:51.602Z] [INFO] Attempting to insert section: "Neurological Red Flags"
+[2025-03-19T19:36:51.782Z] [INFO] Inserted/updated section: Neurological Red Flags (ID: 103)
+[2025-03-19T19:36:51.784Z] [INFO] Section ID map: {"Critical Causes (Require Immediate Intervention)":98,"Emergent Causes (Primary Intracranial Disease)":99,"Emergent Causes (Systemic Diseases)":100,"Emergent Causes (Exogenous Toxins)":101,"Emergent Causes (Drug Withdrawal)":102,"Neurological Red Flags":103}
+[2025-03-19T19:36:51.784Z] [INFO] Prepared 24 items for insertion (filtered from 24 total items)
+[2025-03-19T19:36:51.984Z] [INFO] Inserted batch of 24 items (total: 24/24)
+[2025-03-19T19:36:51.985Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:51.986Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:36:51.987Z] [INFO] Successfully processed file alarm-features.md: inserted 24 items
+[2025-03-19T19:36:51.987Z] [INFO] Processing file: medications.md
+[2025-03-19T19:36:51.988Z] [INFO] Preprocessing file: medications.md
+[2025-03-19T19:36:51.988Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:51.989Z] [INFO] Found section: "Medication History" at line 2
+[2025-03-19T19:36:51.989Z] [INFO] Found section: "Medications Potentially Causing Confusion" at line 7
+[2025-03-19T19:36:51.990Z] [INFO] Found section: "Medication For Management" at line 14
+[2025-03-19T19:36:51.990Z] [INFO] Found section: "Other Treatment Medications" at line 26
+[2025-03-19T19:36:51.991Z] [INFO] Found 4 sections in file: Medication History, Medications Potentially Causing Confusion, Medication For Management, Other Treatment Medications
+[2025-03-19T19:36:51.991Z] [INFO] Detected sections: ["Medication History","Medications Potentially Causing Confusion","Medication For Management","Other Treatment Medications"]
+[2025-03-19T19:36:51.992Z] [INFO] Attempting to insert section: "Medication History"
+[2025-03-19T19:36:52.153Z] [INFO] Inserted/updated section: Medication History (ID: 104)
+[2025-03-19T19:36:52.153Z] [INFO] Attempting to insert section: "Medications Potentially Causing Confusion"
+[2025-03-19T19:36:52.288Z] [INFO] Inserted/updated section: Medications Potentially Causing Confusion (ID: 105)
+[2025-03-19T19:36:52.289Z] [INFO] Attempting to insert section: "Medication For Management"
+[2025-03-19T19:36:52.458Z] [INFO] Inserted/updated section: Medication For Management (ID: 106)
+[2025-03-19T19:36:52.459Z] [INFO] Attempting to insert section: "Other Treatment Medications"
+[2025-03-19T19:36:52.626Z] [INFO] Inserted/updated section: Other Treatment Medications (ID: 107)
+[2025-03-19T19:36:52.627Z] [INFO] Section ID map: {"Medication History":104,"Medications Potentially Causing Confusion":105,"Medication For Management":106,"Other Treatment Medications":107}
+[2025-03-19T19:36:52.628Z] [INFO] Prepared 33 items for insertion (filtered from 33 total items)
+[2025-03-19T19:36:52.689Z] [INFO] Inserted batch of 33 items (total: 33/33)
+[2025-03-19T19:36:52.690Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:54.742Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-19T19:36:54.743Z] [INFO] Successfully processed file medications.md: inserted 33 items
+[2025-03-19T19:36:54.743Z] [INFO] Processing file: diet.md
+[2025-03-19T19:36:54.744Z] [INFO] Preprocessing file: diet.md
+[2025-03-19T19:36:54.745Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:54.745Z] [INFO] Found section: "Nutrition Status" at line 2
+[2025-03-19T19:36:54.746Z] [INFO] Found section: "Dietary Considerations" at line 7
+[2025-03-19T19:36:54.746Z] [INFO] Found 2 sections in file: Nutrition Status, Dietary Considerations
+[2025-03-19T19:36:54.746Z] [INFO] Detected sections: ["Nutrition Status","Dietary Considerations"]
+[2025-03-19T19:36:54.747Z] [INFO] Attempting to insert section: "Nutrition Status"
+[2025-03-19T19:36:54.918Z] [INFO] Inserted/updated section: Nutrition Status (ID: 108)
+[2025-03-19T19:36:54.919Z] [INFO] Attempting to insert section: "Dietary Considerations"
+[2025-03-19T19:36:55.036Z] [INFO] Inserted/updated section: Dietary Considerations (ID: 109)
+[2025-03-19T19:36:55.037Z] [INFO] Section ID map: {"Nutrition Status":108,"Dietary Considerations":109}
+[2025-03-19T19:36:55.038Z] [INFO] Prepared 6 items for insertion (filtered from 6 total items)
+[2025-03-19T19:36:55.157Z] [INFO] Inserted batch of 6 items (total: 6/6)
+[2025-03-19T19:36:55.158Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:55.159Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:36:55.159Z] [INFO] Successfully processed file diet.md: inserted 6 items
+[2025-03-19T19:36:55.160Z] [INFO] Processing file: review-systems.md
+[2025-03-19T19:36:55.160Z] [INFO] Preprocessing file: review-systems.md
+[2025-03-19T19:36:55.161Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:55.161Z] [INFO] Found section: "Neurological" at line 2
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Psychiatric" at line 15
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Respiratory" at line 22
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Cardiovascular" at line 27
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Gastrointestinal" at line 31
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Genitourinary" at line 36
+[2025-03-19T19:36:55.162Z] [INFO] Found section: "Infectious" at line 40
+[2025-03-19T19:36:55.162Z] [INFO] Found 7 sections in file: Neurological, Psychiatric, Respiratory, Cardiovascular, Gastrointestinal, Genitourinary, Infectious
+[2025-03-19T19:36:55.163Z] [INFO] Detected sections: ["Neurological","Psychiatric","Respiratory","Cardiovascular","Gastrointestinal","Genitourinary","Infectious"]
+[2025-03-19T19:36:55.163Z] [INFO] Attempting to insert section: "Neurological"
+[2025-03-19T19:36:55.314Z] [INFO] Inserted/updated section: Neurological (ID: 110)
+[2025-03-19T19:36:55.314Z] [INFO] Attempting to insert section: "Psychiatric"
+[2025-03-19T19:36:55.496Z] [INFO] Inserted/updated section: Psychiatric (ID: 111)
+[2025-03-19T19:36:55.497Z] [INFO] Attempting to insert section: "Respiratory"
+[2025-03-19T19:36:55.664Z] [INFO] Inserted/updated section: Respiratory (ID: 112)
+[2025-03-19T19:36:55.664Z] [INFO] Attempting to insert section: "Cardiovascular"
+[2025-03-19T19:36:55.806Z] [INFO] Inserted/updated section: Cardiovascular (ID: 113)
+[2025-03-19T19:36:55.807Z] [INFO] Attempting to insert section: "Gastrointestinal"
+[2025-03-19T19:36:55.957Z] [INFO] Inserted/updated section: Gastrointestinal (ID: 114)
+[2025-03-19T19:36:55.958Z] [INFO] Attempting to insert section: "Genitourinary"
+[2025-03-19T19:36:56.014Z] [INFO] Inserted/updated section: Genitourinary (ID: 115)
+[2025-03-19T19:36:56.015Z] [INFO] Attempting to insert section: "Infectious"
+[2025-03-19T19:36:56.175Z] [INFO] Inserted/updated section: Infectious (ID: 116)
+[2025-03-19T19:36:56.176Z] [INFO] Section ID map: {"Neurological":110,"Psychiatric":111,"Respiratory":112,"Cardiovascular":113,"Gastrointestinal":114,"Genitourinary":115,"Infectious":116}
+[2025-03-19T19:36:56.176Z] [INFO] Prepared 28 items for insertion (filtered from 28 total items)
+[2025-03-19T19:36:56.375Z] [INFO] Inserted batch of 28 items (total: 28/28)
+[2025-03-19T19:36:56.375Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:56.754Z] [INFO] Completed parent-child relationship updates: 3 successful, 0 failed
+[2025-03-19T19:36:56.755Z] [INFO] Successfully processed file review-systems.md: inserted 28 items
+[2025-03-19T19:36:56.755Z] [INFO] Processing file: collateral-history.md
+[2025-03-19T19:36:56.756Z] [INFO] Preprocessing file: collateral-history.md
+[2025-03-19T19:36:56.757Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:56.757Z] [INFO] Found section: "Sources of Collateral Information" at line 2
+[2025-03-19T19:36:56.758Z] [INFO] Found section: "Key Collateral Information" at line 8
+[2025-03-19T19:36:56.758Z] [INFO] Found section: "Behavior Patterns Reported" at line 20
+[2025-03-19T19:36:56.759Z] [INFO] Found 3 sections in file: Sources of Collateral Information, Key Collateral Information, Behavior Patterns Reported
+[2025-03-19T19:36:56.759Z] [INFO] Detected sections: ["Sources of Collateral Information","Key Collateral Information","Behavior Patterns Reported"]
+[2025-03-19T19:36:56.759Z] [INFO] Attempting to insert section: "Sources of Collateral Information"
+[2025-03-19T19:36:57.004Z] [INFO] Inserted/updated section: Sources of Collateral Information (ID: 117)
+[2025-03-19T19:36:57.006Z] [INFO] Attempting to insert section: "Key Collateral Information"
+[2025-03-19T19:36:57.181Z] [INFO] Inserted/updated section: Key Collateral Information (ID: 118)
+[2025-03-19T19:36:57.182Z] [INFO] Attempting to insert section: "Behavior Patterns Reported"
+[2025-03-19T19:36:57.334Z] [INFO] Inserted/updated section: Behavior Patterns Reported (ID: 119)
+[2025-03-19T19:36:57.335Z] [INFO] Section ID map: {"Sources of Collateral Information":117,"Key Collateral Information":118,"Behavior Patterns Reported":119}
+[2025-03-19T19:36:57.335Z] [INFO] Prepared 21 items for insertion (filtered from 21 total items)
+[2025-03-19T19:36:57.503Z] [INFO] Inserted batch of 21 items (total: 21/21)
+[2025-03-19T19:36:57.503Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:57.504Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:36:57.504Z] [INFO] Successfully processed file collateral-history.md: inserted 21 items
+[2025-03-19T19:36:57.504Z] [INFO] Processing file: risk-factors.md
+[2025-03-19T19:36:57.504Z] [INFO] Preprocessing file: risk-factors.md
+[2025-03-19T19:36:57.504Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:57.504Z] [INFO] Found section: "Patient Characteristics" at line 2
+[2025-03-19T19:36:57.504Z] [INFO] Found section: "Medication and Substance Related" at line 9
+[2025-03-19T19:36:57.504Z] [INFO] Found section: "Medical Conditions" at line 19
+[2025-03-19T19:36:57.504Z] [INFO] Found 3 sections in file: Patient Characteristics, Medication and Substance Related, Medical Conditions
+[2025-03-19T19:36:57.505Z] [INFO] Detected sections: ["Patient Characteristics","Medication and Substance Related","Medical Conditions"]
+[2025-03-19T19:36:57.505Z] [INFO] Attempting to insert section: "Patient Characteristics"
+[2025-03-19T19:36:57.689Z] [INFO] Inserted/updated section: Patient Characteristics (ID: 120)
+[2025-03-19T19:36:57.690Z] [INFO] Attempting to insert section: "Medication and Substance Related"
+[2025-03-19T19:36:58.211Z] [INFO] Inserted/updated section: Medication and Substance Related (ID: 121)
+[2025-03-19T19:36:58.213Z] [INFO] Attempting to insert section: "Medical Conditions"
+[2025-03-19T19:36:58.276Z] [INFO] Inserted/updated section: Medical Conditions (ID: 122)
+[2025-03-19T19:36:58.277Z] [INFO] Section ID map: {"Patient Characteristics":120,"Medication and Substance Related":121,"Medical Conditions":122}
+[2025-03-19T19:36:58.277Z] [INFO] Prepared 16 items for insertion (filtered from 16 total items)
+[2025-03-19T19:36:58.339Z] [INFO] Inserted batch of 16 items (total: 16/16)
+[2025-03-19T19:36:58.344Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:58.346Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:36:58.347Z] [INFO] Successfully processed file risk-factors.md: inserted 16 items
+[2025-03-19T19:36:58.348Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-19T19:36:58.348Z] [INFO] Preprocessing file: differential-diagnosis.md
+[2025-03-19T19:36:58.349Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Systemic Diseases Secondarily Affecting CNS" at line 2
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Primary Intracranial Disease" at line 16
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Exogenous Toxins" at line 27
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Drug Withdrawal States" at line 33
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Psychiatric Considerations" at line 38
+[2025-03-19T19:36:58.349Z] [INFO] Found section: "Other Causes" at line 43
+[2025-03-19T19:36:58.349Z] [INFO] Found 6 sections in file: Systemic Diseases Secondarily Affecting CNS, Primary Intracranial Disease, Exogenous Toxins, Drug Withdrawal States, Psychiatric Considerations, Other Causes
+[2025-03-19T19:36:58.349Z] [INFO] Detected sections: ["Systemic Diseases Secondarily Affecting CNS","Primary Intracranial Disease","Exogenous Toxins","Drug Withdrawal States","Psychiatric Considerations","Other Causes"]
+[2025-03-19T19:36:58.349Z] [INFO] Attempting to insert section: "Systemic Diseases Secondarily Affecting CNS"
+[2025-03-19T19:36:58.417Z] [INFO] Inserted/updated section: Systemic Diseases Secondarily Affecting CNS (ID: 123)
+[2025-03-19T19:36:58.418Z] [INFO] Attempting to insert section: "Primary Intracranial Disease"
+[2025-03-19T19:36:58.605Z] [INFO] Inserted/updated section: Primary Intracranial Disease (ID: 124)
+[2025-03-19T19:36:58.606Z] [INFO] Attempting to insert section: "Exogenous Toxins"
+[2025-03-19T19:36:58.768Z] [INFO] Inserted/updated section: Exogenous Toxins (ID: 125)
+[2025-03-19T19:36:58.769Z] [INFO] Attempting to insert section: "Drug Withdrawal States"
+[2025-03-19T19:36:58.939Z] [INFO] Inserted/updated section: Drug Withdrawal States (ID: 126)
+[2025-03-19T19:36:58.940Z] [INFO] Attempting to insert section: "Psychiatric Considerations"
+[2025-03-19T19:36:59.130Z] [INFO] Inserted/updated section: Psychiatric Considerations (ID: 127)
+[2025-03-19T19:36:59.131Z] [INFO] Attempting to insert section: "Other Causes"
+[2025-03-19T19:36:59.290Z] [INFO] Inserted/updated section: Other Causes (ID: 128)
+[2025-03-19T19:36:59.291Z] [INFO] Section ID map: {"Systemic Diseases Secondarily Affecting CNS":123,"Primary Intracranial Disease":124,"Exogenous Toxins":125,"Drug Withdrawal States":126,"Psychiatric Considerations":127,"Other Causes":128}
+[2025-03-19T19:36:59.292Z] [INFO] Prepared 33 items for insertion (filtered from 33 total items)
+[2025-03-19T19:36:59.554Z] [INFO] Inserted batch of 33 items (total: 33/33)
+[2025-03-19T19:36:59.555Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:36:59.555Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:36:59.556Z] [INFO] Successfully processed file differential-diagnosis.md: inserted 33 items
+[2025-03-19T19:36:59.557Z] [INFO] Processing file: past-medical.md
+[2025-03-19T19:36:59.557Z] [INFO] Preprocessing file: past-medical.md
+[2025-03-19T19:36:59.558Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:36:59.558Z] [INFO] Found section: "Neurological History" at line 2
+[2025-03-19T19:36:59.558Z] [INFO] Found section: "Psychiatric History" at line 11
+[2025-03-19T19:36:59.559Z] [INFO] Found section: "Medical Conditions" at line 16
+[2025-03-19T19:36:59.559Z] [INFO] Found section: "Substance Use History" at line 25
+[2025-03-19T19:36:59.559Z] [INFO] Found 4 sections in file: Neurological History, Psychiatric History, Medical Conditions, Substance Use History
+[2025-03-19T19:36:59.560Z] [INFO] Detected sections: ["Neurological History","Psychiatric History","Medical Conditions","Substance Use History"]
+[2025-03-19T19:36:59.561Z] [INFO] Attempting to insert section: "Neurological History"
+[2025-03-19T19:36:59.755Z] [INFO] Inserted/updated section: Neurological History (ID: 129)
+[2025-03-19T19:36:59.756Z] [INFO] Attempting to insert section: "Psychiatric History"
+[2025-03-19T19:36:59.938Z] [INFO] Inserted/updated section: Psychiatric History (ID: 130)
+[2025-03-19T19:36:59.940Z] [INFO] Attempting to insert section: "Medical Conditions"
+[2025-03-19T19:37:00.070Z] [INFO] Inserted/updated section: Medical Conditions (ID: 131)
+[2025-03-19T19:37:00.071Z] [INFO] Attempting to insert section: "Substance Use History"
+[2025-03-19T19:37:00.182Z] [INFO] Inserted/updated section: Substance Use History (ID: 132)
+[2025-03-19T19:37:00.183Z] [INFO] Section ID map: {"Neurological History":129,"Psychiatric History":130,"Medical Conditions":131,"Substance Use History":132}
+[2025-03-19T19:37:00.184Z] [INFO] Prepared 20 items for insertion (filtered from 20 total items)
+[2025-03-19T19:37:00.374Z] [INFO] Inserted batch of 20 items (total: 20/20)
+[2025-03-19T19:37:00.375Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:00.375Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:37:00.375Z] [INFO] Successfully processed file past-medical.md: inserted 20 items
+[2025-03-19T19:37:00.376Z] [INFO] Processing file: physical-exam.md
+[2025-03-19T19:37:00.376Z] [INFO] Preprocessing file: physical-exam.md
+[2025-03-19T19:37:00.377Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:00.377Z] [INFO] Found section: "Vital Signs" at line 2
+[2025-03-19T19:37:00.378Z] [INFO] Found section: "General Appearance" at line 9
+[2025-03-19T19:37:00.378Z] [INFO] Found section: "Neurological Exam" at line 14
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "Delirium Assessment Tools" at line 38
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "HEENT" at line 42
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "Cardiovascular" at line 45
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "Respiratory" at line 49
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "Abdominal" at line 53
+[2025-03-19T19:37:00.379Z] [INFO] Found section: "Skin" at line 58
+[2025-03-19T19:37:00.380Z] [INFO] Found section: "Toxidrome Assessment" at line 64
+[2025-03-19T19:37:00.380Z] [INFO] Found 10 sections in file: Vital Signs, General Appearance, Neurological Exam, Delirium Assessment Tools, HEENT, Cardiovascular, Respiratory, Abdominal, Skin, Toxidrome Assessment
+[2025-03-19T19:37:00.380Z] [INFO] Detected sections: ["Vital Signs","General Appearance","Neurological Exam","Delirium Assessment Tools","HEENT","Cardiovascular","Respiratory","Abdominal","Skin","Toxidrome Assessment"]
+[2025-03-19T19:37:00.380Z] [INFO] Attempting to insert section: "Vital Signs"
+[2025-03-19T19:37:00.556Z] [INFO] Inserted/updated section: Vital Signs (ID: 133)
+[2025-03-19T19:37:00.556Z] [INFO] Attempting to insert section: "General Appearance"
+[2025-03-19T19:37:00.755Z] [INFO] Inserted/updated section: General Appearance (ID: 134)
+[2025-03-19T19:37:00.756Z] [INFO] Attempting to insert section: "Neurological Exam"
+[2025-03-19T19:37:00.807Z] [INFO] Inserted/updated section: Neurological Exam (ID: 135)
+[2025-03-19T19:37:00.808Z] [INFO] Attempting to insert section: "Delirium Assessment Tools"
+[2025-03-19T19:37:00.924Z] [INFO] Inserted/updated section: Delirium Assessment Tools (ID: 136)
+[2025-03-19T19:37:00.924Z] [INFO] Attempting to insert section: "HEENT"
+[2025-03-19T19:37:01.061Z] [INFO] Inserted/updated section: HEENT (ID: 137)
+[2025-03-19T19:37:01.062Z] [INFO] Attempting to insert section: "Cardiovascular"
+[2025-03-19T19:37:01.242Z] [INFO] Inserted/updated section: Cardiovascular (ID: 138)
+[2025-03-19T19:37:01.243Z] [INFO] Attempting to insert section: "Respiratory"
+[2025-03-19T19:37:01.292Z] [INFO] Inserted/updated section: Respiratory (ID: 139)
+[2025-03-19T19:37:01.293Z] [INFO] Attempting to insert section: "Abdominal"
+[2025-03-19T19:37:01.484Z] [INFO] Inserted/updated section: Abdominal (ID: 140)
+[2025-03-19T19:37:01.485Z] [INFO] Attempting to insert section: "Skin"
+[2025-03-19T19:37:01.549Z] [INFO] Inserted/updated section: Skin (ID: 141)
+[2025-03-19T19:37:01.550Z] [INFO] Attempting to insert section: "Toxidrome Assessment"
+[2025-03-19T19:37:01.724Z] [INFO] Inserted/updated section: Toxidrome Assessment (ID: 142)
+[2025-03-19T19:37:01.725Z] [INFO] Section ID map: {"Vital Signs":133,"General Appearance":134,"Neurological Exam":135,"Delirium Assessment Tools":136,"HEENT":137,"Cardiovascular":138,"Respiratory":139,"Abdominal":140,"Skin":141,"Toxidrome Assessment":142}
+[2025-03-19T19:37:01.725Z] [INFO] Prepared 46 items for insertion (filtered from 46 total items)
+[2025-03-19T19:37:01.787Z] [INFO] Inserted batch of 46 items (total: 46/46)
+[2025-03-19T19:37:01.788Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:03.970Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-19T19:37:03.971Z] [INFO] Successfully processed file physical-exam.md: inserted 46 items
+[2025-03-19T19:37:03.972Z] [INFO] Processing file: lab-studies.md
+[2025-03-19T19:37:03.972Z] [INFO] Preprocessing file: lab-studies.md
+[2025-03-19T19:37:03.973Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:03.973Z] [INFO] Found section: "Point of Care Testing" at line 2
+[2025-03-19T19:37:03.973Z] [INFO] Found section: "Basic Studies" at line 6
+[2025-03-19T19:37:03.973Z] [INFO] Found section: "Extended Studies" at line 21
+[2025-03-19T19:37:03.974Z] [INFO] Found section: "Blood Gas Analysis" at line 31
+[2025-03-19T19:37:03.974Z] [INFO] Found section: "Microbiology" at line 42
+[2025-03-19T19:37:03.974Z] [INFO] Found section: "Toxicology" at line 46
+[2025-03-19T19:37:03.974Z] [INFO] Found section: "Cerebrospinal Fluid Analysis (if performed)" at line 51
+[2025-03-19T19:37:03.974Z] [INFO] Found 7 sections in file: Point of Care Testing, Basic Studies, Extended Studies, Blood Gas Analysis, Microbiology, Toxicology, Cerebrospinal Fluid Analysis (if performed)
+[2025-03-19T19:37:03.974Z] [INFO] Detected sections: ["Point of Care Testing","Basic Studies","Extended Studies","Blood Gas Analysis","Microbiology","Toxicology","Cerebrospinal Fluid Analysis (if performed)"]
+[2025-03-19T19:37:03.974Z] [INFO] Attempting to insert section: "Point of Care Testing"
+[2025-03-19T19:37:04.264Z] [INFO] Inserted/updated section: Point of Care Testing (ID: 143)
+[2025-03-19T19:37:04.265Z] [INFO] Attempting to insert section: "Basic Studies"
+[2025-03-19T19:37:04.380Z] [INFO] Inserted/updated section: Basic Studies (ID: 144)
+[2025-03-19T19:37:04.381Z] [INFO] Attempting to insert section: "Extended Studies"
+[2025-03-19T19:37:04.541Z] [INFO] Inserted/updated section: Extended Studies (ID: 145)
+[2025-03-19T19:37:04.541Z] [INFO] Attempting to insert section: "Blood Gas Analysis"
+[2025-03-19T19:37:04.725Z] [INFO] Inserted/updated section: Blood Gas Analysis (ID: 146)
+[2025-03-19T19:37:04.726Z] [INFO] Attempting to insert section: "Microbiology"
+[2025-03-19T19:37:04.888Z] [INFO] Inserted/updated section: Microbiology (ID: 147)
+[2025-03-19T19:37:04.889Z] [INFO] Attempting to insert section: "Toxicology"
+[2025-03-19T19:37:05.024Z] [INFO] Inserted/updated section: Toxicology (ID: 148)
+[2025-03-19T19:37:05.025Z] [INFO] Attempting to insert section: "Cerebrospinal Fluid Analysis (if performed)"
+[2025-03-19T19:37:05.140Z] [INFO] Inserted/updated section: Cerebrospinal Fluid Analysis (if performed) (ID: 149)
+[2025-03-19T19:37:05.143Z] [INFO] Section ID map: {"Point of Care Testing":143,"Basic Studies":144,"Extended Studies":145,"Blood Gas Analysis":146,"Microbiology":147,"Toxicology":148,"Cerebrospinal Fluid Analysis (if performed)":149}
+[2025-03-19T19:37:05.144Z] [INFO] Prepared 44 items for insertion (filtered from 44 total items)
+[2025-03-19T19:37:05.391Z] [INFO] Inserted batch of 44 items (total: 44/44)
+[2025-03-19T19:37:05.391Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:07.855Z] [INFO] Completed parent-child relationship updates: 16 successful, 0 failed
+[2025-03-19T19:37:07.856Z] [INFO] Successfully processed file lab-studies.md: inserted 44 items
+[2025-03-19T19:37:07.857Z] [INFO] Processing file: imaging.md
+[2025-03-19T19:37:07.857Z] [INFO] Preprocessing file: imaging.md
+[2025-03-19T19:37:07.857Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:07.858Z] [INFO] Found section: "Cranial Imaging" at line 2
+[2025-03-19T19:37:07.858Z] [INFO] Found section: "Chest Imaging" at line 12
+[2025-03-19T19:37:07.858Z] [INFO] Found section: "Other Imaging" at line 17
+[2025-03-19T19:37:07.858Z] [INFO] Found 3 sections in file: Cranial Imaging, Chest Imaging, Other Imaging
+[2025-03-19T19:37:07.858Z] [INFO] Detected sections: ["Cranial Imaging","Chest Imaging","Other Imaging"]
+[2025-03-19T19:37:07.858Z] [INFO] Attempting to insert section: "Cranial Imaging"
+[2025-03-19T19:37:08.048Z] [INFO] Inserted/updated section: Cranial Imaging (ID: 150)
+[2025-03-19T19:37:08.049Z] [INFO] Attempting to insert section: "Chest Imaging"
+[2025-03-19T19:37:08.588Z] [INFO] Inserted/updated section: Chest Imaging (ID: 151)
+[2025-03-19T19:37:08.588Z] [INFO] Attempting to insert section: "Other Imaging"
+[2025-03-19T19:37:08.767Z] [INFO] Inserted/updated section: Other Imaging (ID: 152)
+[2025-03-19T19:37:08.768Z] [INFO] Section ID map: {"Cranial Imaging":150,"Chest Imaging":151,"Other Imaging":152}
+[2025-03-19T19:37:08.768Z] [INFO] Prepared 12 items for insertion (filtered from 12 total items)
+[2025-03-19T19:37:08.830Z] [INFO] Inserted batch of 12 items (total: 12/12)
+[2025-03-19T19:37:08.831Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:09.497Z] [INFO] Completed parent-child relationship updates: 6 successful, 0 failed
+[2025-03-19T19:37:09.497Z] [INFO] Successfully processed file imaging.md: inserted 12 items
+[2025-03-19T19:37:09.498Z] [INFO] Processing file: special-tests.md
+[2025-03-19T19:37:09.498Z] [INFO] Preprocessing file: special-tests.md
+[2025-03-19T19:37:09.498Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:09.498Z] [INFO] Found section: "Neurological Tests" at line 2
+[2025-03-19T19:37:09.498Z] [INFO] Found section: "Paracentesis (if applicable)" at line 8
+[2025-03-19T19:37:09.498Z] [INFO] Found section: "Thoracentesis (if applicable)" at line 12
+[2025-03-19T19:37:09.499Z] [INFO] Found section: "Lumbar Puncture" at line 16
+[2025-03-19T19:37:09.499Z] [INFO] Found section: "Cognitive Assessment Tools" at line 20
+[2025-03-19T19:37:09.499Z] [INFO] Found 5 sections in file: Neurological Tests, Paracentesis (if applicable), Thoracentesis (if applicable), Lumbar Puncture, Cognitive Assessment Tools
+[2025-03-19T19:37:09.499Z] [INFO] Detected sections: ["Neurological Tests","Paracentesis (if applicable)","Thoracentesis (if applicable)","Lumbar Puncture","Cognitive Assessment Tools"]
+[2025-03-19T19:37:09.499Z] [INFO] Attempting to insert section: "Neurological Tests"
+[2025-03-19T19:37:09.550Z] [INFO] Inserted/updated section: Neurological Tests (ID: 153)
+[2025-03-19T19:37:09.550Z] [INFO] Attempting to insert section: "Paracentesis (if applicable)"
+[2025-03-19T19:37:09.672Z] [INFO] Inserted/updated section: Paracentesis (if applicable) (ID: 154)
+[2025-03-19T19:37:09.673Z] [INFO] Attempting to insert section: "Thoracentesis (if applicable)"
+[2025-03-19T19:37:09.783Z] [INFO] Inserted/updated section: Thoracentesis (if applicable) (ID: 155)
+[2025-03-19T19:37:09.783Z] [INFO] Attempting to insert section: "Lumbar Puncture"
+[2025-03-19T19:37:09.913Z] [INFO] Inserted/updated section: Lumbar Puncture (ID: 156)
+[2025-03-19T19:37:09.914Z] [INFO] Attempting to insert section: "Cognitive Assessment Tools"
+[2025-03-19T19:37:09.961Z] [INFO] Inserted/updated section: Cognitive Assessment Tools (ID: 157)
+[2025-03-19T19:37:09.961Z] [INFO] Section ID map: {"Neurological Tests":153,"Paracentesis (if applicable)":154,"Thoracentesis (if applicable)":155,"Lumbar Puncture":156,"Cognitive Assessment Tools":157}
+[2025-03-19T19:37:09.962Z] [INFO] Prepared 14 items for insertion (filtered from 14 total items)
+[2025-03-19T19:37:10.635Z] [INFO] Inserted batch of 14 items (total: 14/14)
+[2025-03-19T19:37:10.636Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:11.171Z] [INFO] Completed parent-child relationship updates: 3 successful, 0 failed
+[2025-03-19T19:37:11.172Z] [INFO] Successfully processed file special-tests.md: inserted 14 items
+[2025-03-19T19:37:11.172Z] [INFO] Processing file: ecg.md
+[2025-03-19T19:37:11.172Z] [INFO] Preprocessing file: ecg.md
+[2025-03-19T19:37:11.172Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:11.173Z] [INFO] Found section: "ECG Findings" at line 2
+[2025-03-19T19:37:11.173Z] [INFO] Found section: "Interpretation" at line 9
+[2025-03-19T19:37:11.173Z] [INFO] Found 2 sections in file: ECG Findings, Interpretation
+[2025-03-19T19:37:11.173Z] [INFO] Detected sections: ["ECG Findings","Interpretation"]
+[2025-03-19T19:37:11.173Z] [INFO] Attempting to insert section: "ECG Findings"
+[2025-03-19T19:37:11.354Z] [INFO] Inserted/updated section: ECG Findings (ID: 158)
+[2025-03-19T19:37:11.354Z] [INFO] Attempting to insert section: "Interpretation"
+[2025-03-19T19:37:11.508Z] [INFO] Inserted/updated section: Interpretation (ID: 159)
+[2025-03-19T19:37:11.509Z] [INFO] Section ID map: {"ECG Findings":158,"Interpretation":159}
+[2025-03-19T19:37:11.509Z] [INFO] Prepared 8 items for insertion (filtered from 8 total items)
+[2025-03-19T19:37:11.684Z] [INFO] Inserted batch of 8 items (total: 8/8)
+[2025-03-19T19:37:11.684Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:11.685Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-19T19:37:11.685Z] [INFO] Successfully processed file ecg.md: inserted 8 items
+[2025-03-19T19:37:11.686Z] [INFO] Processing file: assessment.md
+[2025-03-19T19:37:11.686Z] [INFO] Preprocessing file: assessment.md
+[2025-03-19T19:37:11.686Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:11.687Z] [INFO] Found section: "Primary Diagnosis" at line 2
+[2025-03-19T19:37:11.687Z] [INFO] Found section: "Underlying Etiology (if identified)" at line 8
+[2025-03-19T19:37:11.687Z] [INFO] Found section: "Severity Assessment" at line 15
+[2025-03-19T19:37:11.687Z] [INFO] Found section: "Contributing Factors" at line 21
+[2025-03-19T19:37:11.688Z] [INFO] Found section: "Prognostic Indicators" at line 29
+[2025-03-19T19:37:11.688Z] [INFO] Found 5 sections in file: Primary Diagnosis, Underlying Etiology (if identified), Severity Assessment, Contributing Factors, Prognostic Indicators
+[2025-03-19T19:37:11.688Z] [INFO] Detected sections: ["Primary Diagnosis","Underlying Etiology (if identified)","Severity Assessment","Contributing Factors","Prognostic Indicators"]
+[2025-03-19T19:37:11.688Z] [INFO] Attempting to insert section: "Primary Diagnosis"
+[2025-03-19T19:37:11.745Z] [INFO] Inserted/updated section: Primary Diagnosis (ID: 160)
+[2025-03-19T19:37:11.747Z] [INFO] Attempting to insert section: "Underlying Etiology (if identified)"
+[2025-03-19T19:37:11.927Z] [INFO] Inserted/updated section: Underlying Etiology (if identified) (ID: 161)
+[2025-03-19T19:37:11.928Z] [INFO] Attempting to insert section: "Severity Assessment"
+[2025-03-19T19:37:12.077Z] [INFO] Inserted/updated section: Severity Assessment (ID: 162)
+[2025-03-19T19:37:12.078Z] [INFO] Attempting to insert section: "Contributing Factors"
+[2025-03-19T19:37:12.132Z] [INFO] Inserted/updated section: Contributing Factors (ID: 163)
+[2025-03-19T19:37:12.133Z] [INFO] Attempting to insert section: "Prognostic Indicators"
+[2025-03-19T19:37:12.332Z] [INFO] Inserted/updated section: Prognostic Indicators (ID: 164)
+[2025-03-19T19:37:12.333Z] [INFO] Section ID map: {"Primary Diagnosis":160,"Underlying Etiology (if identified)":161,"Severity Assessment":162,"Contributing Factors":163,"Prognostic Indicators":164}
+[2025-03-19T19:37:12.334Z] [INFO] Prepared 22 items for insertion (filtered from 22 total items)
+[2025-03-19T19:37:12.558Z] [INFO] Inserted batch of 22 items (total: 22/22)
+[2025-03-19T19:37:12.559Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:13.087Z] [INFO] Completed parent-child relationship updates: 3 successful, 0 failed
+[2025-03-19T19:37:13.088Z] [INFO] Successfully processed file assessment.md: inserted 22 items
+[2025-03-19T19:37:13.088Z] [INFO] Processing file: plan.md
+[2025-03-19T19:37:13.089Z] [INFO] Preprocessing file: plan.md
+[2025-03-19T19:37:13.089Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:13.089Z] [INFO] Found section: "Immediate Interventions" at line 2
+[2025-03-19T19:37:13.089Z] [INFO] Found section: "Empirical Treatment" at line 14
+[2025-03-19T19:37:13.089Z] [INFO] Found section: "Supportive Care" at line 19
+[2025-03-19T19:37:13.089Z] [INFO] Found section: "Diagnostic Plan" at line 29
+[2025-03-19T19:37:13.089Z] [INFO] Found section: "Treatment of Underlying Cause" at line 34
+[2025-03-19T19:37:13.089Z] [INFO] Found 5 sections in file: Immediate Interventions, Empirical Treatment, Supportive Care, Diagnostic Plan, Treatment of Underlying Cause
+[2025-03-19T19:37:13.089Z] [INFO] Detected sections: ["Immediate Interventions","Empirical Treatment","Supportive Care","Diagnostic Plan","Treatment of Underlying Cause"]
+[2025-03-19T19:37:13.089Z] [INFO] Attempting to insert section: "Immediate Interventions"
+[2025-03-19T19:37:13.272Z] [INFO] Inserted/updated section: Immediate Interventions (ID: 165)
+[2025-03-19T19:37:13.273Z] [INFO] Attempting to insert section: "Empirical Treatment"
+[2025-03-19T19:37:13.459Z] [INFO] Inserted/updated section: Empirical Treatment (ID: 166)
+[2025-03-19T19:37:13.460Z] [INFO] Attempting to insert section: "Supportive Care"
+[2025-03-19T19:37:13.653Z] [INFO] Inserted/updated section: Supportive Care (ID: 167)
+[2025-03-19T19:37:13.653Z] [INFO] Attempting to insert section: "Diagnostic Plan"
+[2025-03-19T19:37:13.702Z] [INFO] Inserted/updated section: Diagnostic Plan (ID: 168)
+[2025-03-19T19:37:13.703Z] [INFO] Attempting to insert section: "Treatment of Underlying Cause"
+[2025-03-19T19:37:13.759Z] [INFO] Inserted/updated section: Treatment of Underlying Cause (ID: 169)
+[2025-03-19T19:37:13.759Z] [INFO] Section ID map: {"Immediate Interventions":165,"Empirical Treatment":166,"Supportive Care":167,"Diagnostic Plan":168,"Treatment of Underlying Cause":169}
+[2025-03-19T19:37:13.760Z] [INFO] Prepared 25 items for insertion (filtered from 25 total items)
+[2025-03-19T19:37:13.992Z] [INFO] Inserted batch of 25 items (total: 25/25)
+[2025-03-19T19:37:13.993Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:15.853Z] [INFO] Completed parent-child relationship updates: 10 successful, 0 failed
+[2025-03-19T19:37:15.854Z] [INFO] Successfully processed file plan.md: inserted 25 items
+[2025-03-19T19:37:15.855Z] [INFO] Processing file: disposition.md
+[2025-03-19T19:37:15.855Z] [INFO] Preprocessing file: disposition.md
+[2025-03-19T19:37:15.856Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:15.857Z] [INFO] Found section: "Disposition Decision" at line 2
+[2025-03-19T19:37:15.857Z] [INFO] Found section: "Consults Obtained/Recommended" at line 10
+[2025-03-19T19:37:15.857Z] [INFO] Found section: "Follow-up Recommendations" at line 16
+[2025-03-19T19:37:15.859Z] [INFO] Found section: "Special Considerations" at line 21
+[2025-03-19T19:37:15.859Z] [INFO] Found 4 sections in file: Disposition Decision, Consults Obtained/Recommended, Follow-up Recommendations, Special Considerations
+[2025-03-19T19:37:15.860Z] [INFO] Detected sections: ["Disposition Decision","Consults Obtained/Recommended","Follow-up Recommendations","Special Considerations"]
+[2025-03-19T19:37:15.860Z] [INFO] Attempting to insert section: "Disposition Decision"
+[2025-03-19T19:37:16.060Z] [INFO] Inserted/updated section: Disposition Decision (ID: 170)
+[2025-03-19T19:37:16.061Z] [INFO] Attempting to insert section: "Consults Obtained/Recommended"
+[2025-03-19T19:37:16.219Z] [INFO] Inserted/updated section: Consults Obtained/Recommended (ID: 171)
+[2025-03-19T19:37:16.220Z] [INFO] Attempting to insert section: "Follow-up Recommendations"
+[2025-03-19T19:37:16.392Z] [INFO] Inserted/updated section: Follow-up Recommendations (ID: 172)
+[2025-03-19T19:37:16.392Z] [INFO] Attempting to insert section: "Special Considerations"
+[2025-03-19T19:37:16.522Z] [INFO] Inserted/updated section: Special Considerations (ID: 173)
+[2025-03-19T19:37:16.522Z] [INFO] Section ID map: {"Disposition Decision":170,"Consults Obtained/Recommended":171,"Follow-up Recommendations":172,"Special Considerations":173}
+[2025-03-19T19:37:16.523Z] [INFO] Prepared 15 items for insertion (filtered from 15 total items)
+[2025-03-19T19:37:16.755Z] [INFO] Inserted batch of 15 items (total: 15/15)
+[2025-03-19T19:37:16.756Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:17.035Z] [INFO] Completed parent-child relationship updates: 3 successful, 0 failed
+[2025-03-19T19:37:17.036Z] [INFO] Successfully processed file disposition.md: inserted 15 items
+[2025-03-19T19:37:17.037Z] [INFO] Processing file: patient-education.md
+[2025-03-19T19:37:17.038Z] [INFO] Preprocessing file: patient-education.md
+[2025-03-19T19:37:17.038Z] [INFO] Using title as initial section: "Main" at line 0
+[2025-03-19T19:37:17.039Z] [INFO] Found section: "Explanation to Patient/Family" at line 2
+[2025-03-19T19:37:17.039Z] [INFO] Found section: "Education Points for Caregivers" at line 9
+[2025-03-19T19:37:17.039Z] [INFO] Found section: "Follow-up Instructions" at line 20
+[2025-03-19T19:37:17.039Z] [INFO] Found 3 sections in file: Explanation to Patient/Family, Education Points for Caregivers, Follow-up Instructions
+[2025-03-19T19:37:17.040Z] [INFO] Detected sections: ["Explanation to Patient/Family","Education Points for Caregivers","Follow-up Instructions"]
+[2025-03-19T19:37:17.040Z] [INFO] Attempting to insert section: "Explanation to Patient/Family"
+[2025-03-19T19:37:17.166Z] [INFO] Inserted/updated section: Explanation to Patient/Family (ID: 174)
+[2025-03-19T19:37:17.167Z] [INFO] Attempting to insert section: "Education Points for Caregivers"
+[2025-03-19T19:37:17.265Z] [INFO] Inserted/updated section: Education Points for Caregivers (ID: 175)
+[2025-03-19T19:37:17.265Z] [INFO] Attempting to insert section: "Follow-up Instructions"
+[2025-03-19T19:37:17.399Z] [INFO] Inserted/updated section: Follow-up Instructions (ID: 176)
+[2025-03-19T19:37:17.400Z] [INFO] Section ID map: {"Explanation to Patient/Family":174,"Education Points for Caregivers":175,"Follow-up Instructions":176}
+[2025-03-19T19:37:17.400Z] [INFO] Prepared 17 items for insertion (filtered from 17 total items)
+[2025-03-19T19:37:17.534Z] [INFO] Inserted batch of 17 items (total: 17/17)
+[2025-03-19T19:37:17.534Z] [INFO] Updating parent-child relationships...
+[2025-03-19T19:37:17.824Z] [INFO] Completed parent-child relationship updates: 4 successful, 0 failed
+[2025-03-19T19:37:17.825Z] [INFO] Successfully processed file patient-education.md: inserted 17 items
+[2025-03-19T19:37:17.826Z] [INFO] Completed processing chapter Ch13_Confusion: 18 files processed, 0 files had errors
+[2025-03-19T19:37:17.826Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors
+[2025-03-19T19:37:17.827Z] [INFO] Migration completed in 31.208 seconds

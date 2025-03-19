@@ -97,37 +97,31 @@ async function insertCategories() {
 }
 
 /**
- * Process a single markdown file and directly insert into database
+ * Generate a path string for an item based on its position in the hierarchy
  */
-async function processMarkdownFile(filePath, chapterId, categoryId) {
+function generatePath(parentPath, itemPosition) {
+  return parentPath ? `${parentPath}.${itemPosition}` : `${itemPosition}`;
+}
+
+/**
+ * Pre-process a markdown file to extract the hierarchical structure
+ * and generate materialized paths for all items
+ */
+function preprocessMarkdownFile(filePath) {
   const fileName = path.basename(filePath);
-  log(`Processing file: ${fileName}`);
+  log(`Preprocessing file: ${fileName}`);
 
   try {
     // Read file content
     const content = fs.readFileSync(filePath, 'utf8');
     const lines = content.split('\n');
 
+    const items = [];
     let currentSection = null;
-    let currentSectionId = null;
+    let itemCounter = 0;
 
-    // Track most recent item at each indent level (simplified approach)
-    let previousItemsByIndent = {};
-
-    // Track all headers (## / ### / ####) in the same simplified structure
-    let currentHeadersByLevel = {
-      2: { text: null, id: null },
-      3: { text: null, id: null },
-      4: { text: null, id: null },
-    };
-
-    // Treat special headers (##, ###, etc.) as items with specific indentation levels
-    // This simplifies the hierarchy model
-    const headerIndentMap = {
-      2: -2, // ## headers are level -2 (above all items)
-      3: -1, // ### headers are level -1 (between ## and top-level items)
-      4: 0, // #### headers are level 0 (same as top-level items)
-    };
+    // Track the hierarchy using a stack-like structure
+    let hierarchyStack = [];
 
     // Process the file line by line
     for (let i = 0; i < lines.length; i++) {
@@ -137,10 +131,20 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
       // Skip empty lines
       if (!trimmedLine) continue;
 
-      // Skip the title line (# 1. History)
-      if (trimmedLine.startsWith('# ')) continue;
+      // Extract title from first line (# 1. History)
+      if (i === 0 && trimmedLine.startsWith('# ')) {
+        // Store an initial section name from the main title if needed
+        const titleMatch = trimmedLine.match(/^# \d+\.\s+(.+)$/);
+        if (titleMatch && !currentSection) {
+          currentSection = 'Main';
+          log(
+            `Using title as initial section: "${currentSection}" at line ${i}`
+          );
+        }
+        continue;
+      }
 
-      // Process all header levels
+      // Process section headers - CRITICAL FIX HERE
       const headerMatch = trimmedLine.match(/^(#{2,4})\s+(.+)$/);
       if (headerMatch) {
         const headerMarkers = headerMatch[1];
@@ -149,114 +153,47 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
 
         // For ## (level 2), create a new section
         if (headerLevel === 2) {
-          try {
-            // Insert section
-            const { data: sections, error } = await supabase
-              .from('sections')
-              .upsert({
-                chapter_id: chapterId,
-                category_id: categoryId,
-                title: headerTitle,
-                display_order: i,
-              })
-              .select();
-
-            if (error) throw error;
-
-            currentSection = headerTitle;
-            currentSectionId = sections[0].id;
-
-            // Reset all tracking for new section
-            previousItemsByIndent = {};
-            currentHeadersByLevel = {
-              2: { text: headerTitle, id: null },
-              3: { text: null, id: null },
-              4: { text: null, id: null },
-            };
-
+          // Store the exact heading text as the section name
+          currentSection = headerTitle;
+          log(`Found section: "${currentSection}" at line ${i}`);
+          hierarchyStack = []; // Reset hierarchy for new section
+          itemCounter = 0;
+        } else {
+          // For ### and #### levels, create header items
+          if (!currentSection) {
             log(
-              `Inserted/updated section: ${headerTitle} (ID: ${currentSectionId})`
+              `Warning: Found header without a parent section at line ${i}, using default section`,
+              'warn'
             );
-          } catch (error) {
-            logError(`Error creating section ${headerTitle}`, error);
-            currentSection = null;
-            currentSectionId = null;
-          }
-        }
-        // For ### and #### levels, create header items with appropriate parent links
-        else if (headerLevel === 3 || headerLevel === 4) {
-          if (!currentSectionId) continue; // Skip if no current section
-
-          currentHeadersByLevel[headerLevel] = { text: headerTitle, id: null };
-
-          // Reset deeper headers
-          for (let h = headerLevel + 1; h <= 4; h++) {
-            currentHeadersByLevel[h] = { text: null, id: null };
+            currentSection = 'Default Section';
           }
 
-          // Calculate effective indent level (negative for headers - see headerIndentMap)
-          const effectiveIndentLevel = headerIndentMap[headerLevel];
+          const indentLevel = headerLevel - 3; // Convert to indent levels
 
-          // Find parent based on indent levels
-          let parentId = null;
+          // Adjust stack for this level
+          hierarchyStack = hierarchyStack.slice(0, indentLevel);
 
-          // For headers, we look for the closest higher-level header as parent
-          for (let h = headerLevel - 1; h >= 2; h--) {
-            if (currentHeadersByLevel[h].id) {
-              parentId = currentHeadersByLevel[h].id;
-              break;
-            }
-          }
+          // Add to hierarchy
+          itemCounter++;
+          const position = itemCounter;
 
-          // If we couldn't find a parent header, get closest item in the indent hierarchy
-          if (parentId === null) {
-            // Look at previous indent levels
-            for (
-              let indent = effectiveIndentLevel - 1;
-              indent >= -2;
-              indent--
-            ) {
-              if (previousItemsByIndent[indent]) {
-                parentId = previousItemsByIndent[indent];
-                break;
-              }
-            }
-          }
+          // Calculate path
+          const parentPath =
+            hierarchyStack.length > 0 ? hierarchyStack.join('.') : '';
+          const path = generatePath(parentPath, position);
 
-          // Insert header as a checklist item with is_header flag
-          try {
-            const { data, error } = await supabase
-              .from('checklist_items')
-              .insert({
-                section_id: currentSectionId,
-                parent_item_id: parentId,
-                display_order: i * 10,
-                item_text: headerTitle,
-                indent_level: effectiveIndentLevel, // Use mapped header indentation
-                is_header: true,
-                header_level: headerLevel,
-                has_text_input: false,
-                input_label: null,
-                input_placeholder: null,
-                input_unit: null,
-                icd10_code: null,
-              })
-              .select();
+          hierarchyStack.push(position);
 
-            if (error) throw error;
-
-            const headerId = data[0].id;
-            currentHeadersByLevel[headerLevel].id = headerId;
-
-            // Also store in previousItemsByIndent for consistency
-            previousItemsByIndent[effectiveIndentLevel] = headerId;
-
-            log(
-              `Inserted header: ${headerTitle} (level ${headerLevel}, ID: ${headerId})`
-            );
-          } catch (error) {
-            logError(`Error inserting header: ${headerTitle}`, error);
-          }
+          items.push({
+            lineNumber: i,
+            section: currentSection,
+            type: 'header',
+            headerLevel,
+            title: headerTitle,
+            itemText: headerTitle,
+            indentLevel,
+            path,
+          });
         }
 
         continue;
@@ -264,117 +201,346 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
 
       // Process checklist items
       const checklistMatch = line.match(/^(\s*)- \[ \] (.+)$/);
-      if (checklistMatch && currentSectionId) {
+      if (checklistMatch) {
+        if (!currentSection) {
+          log(
+            `Warning: Found checklist item without a section at line ${i}, using default section`,
+            'warn'
+          );
+          currentSection = 'Default Section';
+        }
+
         const indentStr = checklistMatch[1];
         // Calculate indent level based on spaces (usually 2 spaces per level)
         const indentLevel = Math.floor(indentStr.length / 2);
         const itemText = checklistMatch[2].trim();
 
+        // Adjust stack for this level
+        hierarchyStack = hierarchyStack.slice(0, indentLevel);
+
+        // Add to hierarchy
+        itemCounter++;
+        const position = itemCounter;
+
+        // Calculate path
+        const parentPath =
+          hierarchyStack.length > 0 ? hierarchyStack.join('.') : '';
+        const path = generatePath(parentPath, position);
+
+        hierarchyStack.push(position);
+
         // Process the item text to extract components
         const processedItem = processItemText(itemText);
 
-        // Find parent ID based on indentation level
-        let parentId = null;
+        items.push({
+          lineNumber: i,
+          section: currentSection,
+          type: 'item',
+          itemText: processedItem.itemText,
+          indentLevel,
+          hasTextInput: processedItem.hasTextInput,
+          inputLabel: processedItem.inputLabel,
+          inputPlaceholder: processedItem.inputPlaceholder,
+          inputUnit: processedItem.inputUnit,
+          icd10Code: processedItem.icd10Code,
+          path,
+        });
 
-        // Look for parents at all previous indent levels
-        for (let prevIndent = indentLevel - 1; prevIndent >= -2; prevIndent--) {
-          if (previousItemsByIndent[prevIndent]) {
-            parentId = previousItemsByIndent[prevIndent];
-            break;
+        // Handle multiple inputs (if comma-separated with multiple blanks)
+        if (
+          itemText.includes(',') &&
+          (itemText.match(/_+/g) || []).length > 1
+        ) {
+          const multiItems = splitMultipleInputs(itemText);
+
+          // Skip first one as it's already added
+          for (let j = 1; j < multiItems.length; j++) {
+            const subItem = multiItems[j];
+            itemCounter++;
+            const subPosition = itemCounter;
+            const subPath = generatePath(path, j);
+
+            items.push({
+              lineNumber: i,
+              section: currentSection,
+              type: 'subitem',
+              parentPath: path,
+              itemText: subItem.itemText,
+              indentLevel: indentLevel + 1,
+              hasTextInput: subItem.hasTextInput,
+              inputLabel: subItem.inputLabel,
+              inputPlaceholder: subItem.inputPlaceholder,
+              inputUnit: subItem.inputUnit,
+              icd10Code: subItem.icd10Code,
+              path: subPath,
+            });
           }
-        }
-
-        // If no parent was found via indentation, use the closest header
-        if (parentId === null) {
-          // Try finding the deepest header as parent
-          for (let h = 4; h >= 2; h--) {
-            if (currentHeadersByLevel[h].id) {
-              parentId = currentHeadersByLevel[h].id;
-              break;
-            }
-          }
-        }
-
-        // Insert the checklist item
-        try {
-          const { data, error } = await supabase
-            .from('checklist_items')
-            .insert({
-              section_id: currentSectionId,
-              parent_item_id: parentId,
-              display_order: i * 10,
-              item_text: processedItem.itemText,
-              indent_level: indentLevel,
-              is_header: false,
-              header_level: null,
-              has_text_input: processedItem.hasTextInput,
-              input_label: processedItem.inputLabel,
-              input_placeholder: processedItem.inputPlaceholder,
-              input_unit: processedItem.inputUnit,
-              icd10_code: processedItem.icd10Code,
-            })
-            .select();
-
-          if (error) throw error;
-
-          const itemId = data[0].id;
-
-          // Store this item's ID for potential children to reference
-          previousItemsByIndent[indentLevel] = itemId;
-
-          // Clear any deeper indent levels since they belong to previous items
-          for (let deeper = indentLevel + 1; deeper <= 10; deeper++) {
-            previousItemsByIndent[deeper] = null;
-          }
-
-          log(
-            `Inserted item: "${itemText.substring(
-              0,
-              30
-            )}..." (ID: ${itemId}, indent: ${indentLevel})`
-          );
-
-          // Handle multiple inputs (if comma-separated with multiple blanks)
-          if (
-            itemText.includes(',') &&
-            (itemText.match(/_+/g) || []).length > 1
-          ) {
-            const multiItems = splitMultipleInputs(itemText);
-
-            // Skip first one as it's already inserted
-            for (let j = 1; j < multiItems.length; j++) {
-              const subItem = multiItems[j];
-
-              const { error: subError } = await supabase
-                .from('checklist_items')
-                .insert({
-                  section_id: currentSectionId,
-                  parent_item_id: itemId, // Parent is the main item
-                  display_order: i * 10 + j,
-                  item_text: subItem.itemText,
-                  indent_level: indentLevel + 1, // One level deeper
-                  is_header: false,
-                  header_level: null,
-                  has_text_input: subItem.hasTextInput,
-                  input_label: subItem.inputLabel,
-                  input_placeholder: subItem.inputPlaceholder,
-                  input_unit: subItem.inputUnit,
-                  icd10_code: subItem.icd10Code,
-                });
-
-              if (subError) throw subError;
-              log(
-                `Inserted sub-item: "${subItem.itemText.substring(0, 30)}..."`
-              );
-            }
-          }
-        } catch (error) {
-          logError(`Error inserting checklist item: ${itemText}`, error);
         }
       }
     }
 
-    log(`Completed processing file: ${fileName}`);
+    // Get unique sections and log them
+    const sections = [...new Set(items.map((item) => item.section))];
+    log(`Found ${sections.length} sections in file: ${sections.join(', ')}`);
+
+    // Check for items without sections
+    const itemsWithoutSection = items.filter(
+      (item) => !item.section || item.section.trim() === ''
+    );
+    if (itemsWithoutSection.length > 0) {
+      log(
+        `Warning: Found ${itemsWithoutSection.length} items without a section`,
+        'warn'
+      );
+    }
+
+    return { items, sections };
+  } catch (error) {
+    logError(`Error preprocessing file ${filePath}`, error);
+    return { items: [], sections: [] };
+  }
+}
+
+/**
+ * Batch insert items into the database
+ */
+async function batchInsertItems(items, sectionIdMap) {
+  const BATCH_SIZE = 100;
+  let insertedCount = 0;
+
+  // Map to track inserted items by path
+  const itemIdByPath = {};
+
+  // Log section map for debugging
+  log(`Section ID map: ${JSON.stringify(sectionIdMap)}`);
+
+  // Prepare all items for insertion - filter out items with missing section IDs
+  const itemsToInsert = items
+    .map((item) => {
+      const sectionId = sectionIdMap[item.section];
+
+      if (!sectionId) {
+        log(
+          `Warning: No section ID found for item in section "${item.section}" - item will be skipped`,
+          'warn'
+        );
+        return null;
+      }
+
+      return {
+        section_id: sectionId,
+        display_order: item.lineNumber * 10,
+        item_text: item.itemText,
+        indent_level: item.indentLevel,
+        is_header: item.type === 'header',
+        header_level: item.type === 'header' ? item.headerLevel : null,
+        has_text_input: item.hasTextInput || false,
+        input_label: item.inputLabel,
+        input_placeholder: item.inputPlaceholder,
+        input_unit: item.inputUnit,
+        icd10_code: item.icd10Code,
+        path: item.path,
+      };
+    })
+    .filter(Boolean); // Remove null items
+
+  log(
+    `Prepared ${itemsToInsert.length} items for insertion (filtered from ${items.length} total items)`
+  );
+
+  if (itemsToInsert.length === 0) {
+    log(`No valid items to insert after filtering`, 'warn');
+    return { insertedCount: 0, itemIdByPath: {} };
+  }
+
+  // Insert items in batches
+  for (let i = 0; i < itemsToInsert.length; i += BATCH_SIZE) {
+    const batch = itemsToInsert.slice(i, i + BATCH_SIZE);
+
+    try {
+      const { data, error } = await supabase
+        .from('checklist_items')
+        .insert(batch)
+        .select('id, path');
+
+      if (error) throw error;
+
+      // Map each item's path to its ID
+      data.forEach((item) => {
+        itemIdByPath[item.path] = item.id;
+      });
+
+      insertedCount += data.length;
+      log(
+        `Inserted batch of ${data.length} items (total: ${insertedCount}/${itemsToInsert.length})`
+      );
+    } catch (error) {
+      logError(`Error inserting batch of items`, error);
+      throw error;
+    }
+  }
+
+  return { insertedCount, itemIdByPath };
+}
+
+/**
+ * Update parent-child relationships using the path information
+ */
+
+async function updateParentChildRelationships(itemIdByPath) {
+  log('Updating parent-child relationships...');
+
+  if (Object.keys(itemIdByPath).length === 0) {
+    log('No items to update parent-child relationships for', 'warn');
+    return;
+  }
+
+  // For each item, find its parent using its path
+  let successCount = 0;
+  let errorCount = 0;
+
+  for (const [path, id] of Object.entries(itemIdByPath)) {
+    // Skip root items
+    if (!path.includes('.')) continue;
+
+    // Extract parent path
+    const lastDotIndex = path.lastIndexOf('.');
+    const parentPath = path.substring(0, lastDotIndex);
+
+    // Find parent ID
+    const parentId = itemIdByPath[parentPath];
+    if (!parentId) {
+      log(`Warning: No parent found for path ${path}`, 'warn');
+      continue;
+    }
+
+    // Use update instead of upsert to preserve all other fields
+    try {
+      const { error } = await supabase
+        .from('checklist_items')
+        .update({ parent_item_id: parentId })
+        .eq('id', id);
+
+      if (error) {
+        errorCount++;
+        logError(
+          `Error updating parent-child relationship for item ${id}`,
+          error
+        );
+      } else {
+        successCount++;
+      }
+    } catch (error) {
+      errorCount++;
+      logError(
+        `Error updating parent-child relationship for item ${id}`,
+        error
+      );
+    }
+  }
+
+  log(
+    `Completed parent-child relationship updates: ${successCount} successful, ${errorCount} failed`
+  );
+}
+/**
+ * Process a single markdown file and insert into database
+ */
+async function processMarkdownFile(filePath, chapterId, categoryId) {
+  const fileName = path.basename(filePath);
+  log(`Processing file: ${fileName}`);
+
+  try {
+    // Preprocess file to extract structure and generate paths
+    const { items, sections } = preprocessMarkdownFile(filePath);
+
+    if (items.length === 0) {
+      log(`No items found in ${fileName}`, 'warn');
+      return false;
+    }
+
+    // Debug log all detected sections
+    log(`Detected sections: ${JSON.stringify(sections)}`);
+
+    // Create section mapping
+    const sectionIdMap = {};
+
+    for (let i = 0; i < sections.length; i++) {
+      const sectionTitle = sections[i];
+
+      // Skip empty or null section titles
+      if (!sectionTitle || sectionTitle.trim() === '') {
+        log(`Warning: Empty section title found, skipping`, 'warn');
+        continue;
+      }
+
+      log(`Attempting to insert section: "${sectionTitle}"`);
+
+      try {
+        // Insert section
+        const { data: sectionData, error: sectionError } = await supabase
+          .from('sections')
+          .upsert({
+            chapter_id: chapterId,
+            category_id: categoryId,
+            title: sectionTitle,
+            display_order: i * 10,
+          })
+          .select();
+
+        if (sectionError) {
+          log(
+            `Error inserting section "${sectionTitle}": ${sectionError.message}`,
+            'error'
+          );
+          continue;
+        }
+
+        if (!sectionData || sectionData.length === 0) {
+          log(
+            `No data returned when inserting section "${sectionTitle}"`,
+            'error'
+          );
+          continue;
+        }
+
+        sectionIdMap[sectionTitle] = sectionData[0].id;
+        log(
+          `Inserted/updated section: ${sectionTitle} (ID: ${sectionData[0].id})`
+        );
+      } catch (error) {
+        log(
+          `Exception when inserting section "${sectionTitle}": ${error.message}`,
+          'error'
+        );
+        continue;
+      }
+    }
+
+    // Check if we have any valid sections before proceeding
+    if (Object.keys(sectionIdMap).length === 0) {
+      log(`No valid sections were created, skipping item insertion`, 'error');
+      return false;
+    }
+
+    // Batch insert all items
+    const { insertedCount, itemIdByPath } = await batchInsertItems(
+      items,
+      sectionIdMap
+    );
+
+    // If no items were inserted, consider this a failure
+    if (insertedCount === 0) {
+      log(`No items were inserted for file ${fileName}`, 'error');
+      return false;
+    }
+
+    // Update parent-child relationships
+    await updateParentChildRelationships(itemIdByPath);
+
+    log(
+      `Successfully processed file ${fileName}: inserted ${insertedCount} items`
+    );
     return true;
   } catch (error) {
     logError(`Error processing file ${filePath}`, error);
@@ -382,6 +548,9 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
   }
 }
 
+/**
+ * Process a single chapter directory
+ */
 /**
  * Process a single chapter directory
  */
@@ -399,19 +568,44 @@ async function processChapter(chapterDir, categoryMap) {
     const chapterNumber = parseInt(chapterMatch[1], 10);
     const chapterTitle = chapterMatch[2].replace(/_/g, ' ');
 
-    // Insert chapter
-    const { data: chapters, error: chapterError } = await supabase
+    // Check if chapter already exists and handle it properly
+    log(`Checking if chapter ${chapterNumber} exists...`);
+    const { data: existingChapters, error: checkError } = await supabase
       .from('chapters')
-      .upsert({
-        chapter_number: chapterNumber,
-        title: chapterTitle,
-      })
-      .select();
+      .select('id')
+      .eq('chapter_number', chapterNumber);
 
-    if (chapterError) throw chapterError;
+    if (checkError) throw checkError;
 
-    const chapterId = chapters[0].id;
-    log(`Inserted/updated chapter: ${chapterTitle} (ID: ${chapterId})`);
+    let chapterId;
+
+    if (existingChapters && existingChapters.length > 0) {
+      // Chapter exists, use its ID
+      chapterId = existingChapters[0].id;
+      log(`Found existing chapter with ID: ${chapterId}`);
+
+      // Update the chapter title if needed
+      const { error: updateError } = await supabase
+        .from('chapters')
+        .update({ title: chapterTitle })
+        .eq('id', chapterId);
+
+      if (updateError) throw updateError;
+      log(`Updated chapter: ${chapterTitle} (ID: ${chapterId})`);
+    } else {
+      // Chapter doesn't exist, insert it
+      const { data: newChapter, error: insertError } = await supabase
+        .from('chapters')
+        .insert({
+          chapter_number: chapterNumber,
+          title: chapterTitle,
+        })
+        .select();
+
+      if (insertError) throw insertError;
+      chapterId = newChapter[0].id;
+      log(`Inserted new chapter: ${chapterTitle} (ID: ${chapterId})`);
+    }
 
     // Process each markdown file in the chapter directory
     const files = fs
@@ -422,6 +616,9 @@ async function processChapter(chapterDir, categoryMap) {
         const orderB = config.categories[b]?.order || 999;
         return orderA - orderB;
       });
+
+    let successCount = 0;
+    let errorCount = 0;
 
     for (const file of files) {
       const categoryInfo = config.categories[file];
@@ -438,15 +635,23 @@ async function processChapter(chapterDir, categoryMap) {
         continue;
       }
 
-      await processMarkdownFile(
+      const success = await processMarkdownFile(
         path.join(chapterDir, file),
         chapterId,
         categoryId
       );
+
+      if (success) {
+        successCount++;
+      } else {
+        errorCount++;
+      }
     }
 
-    log(`Completed processing chapter: ${chapterName}`);
-    return true;
+    log(
+      `Completed processing chapter ${chapterName}: ${successCount} files processed, ${errorCount} files had errors`
+    );
+    return errorCount === 0; // Chapter is successful only if all files processed without errors
   } catch (error) {
     logError(`Error processing chapter ${chapterName}`, error);
     return false;
@@ -476,6 +681,11 @@ async function migrateData() {
             IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
                            WHERE table_name = 'checklist_items' AND column_name = 'header_level') THEN
               ALTER TABLE checklist_items ADD COLUMN header_level INTEGER;
+            END IF;
+            
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                           WHERE table_name = 'checklist_items' AND column_name = 'path') THEN
+              ALTER TABLE checklist_items ADD COLUMN path TEXT;
             END IF;
           END $$;
         `,

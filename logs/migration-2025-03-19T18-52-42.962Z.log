@@ -1,0 +1,66 @@
+[2025-03-19T18:52:42.962Z] [INFO] Starting migration...
+[2025-03-19T18:52:42.964Z] [INFO] Ensuring database schema has required columns...
+[2025-03-19T18:52:43.110Z] [WARN] Warning: Could not verify schema columns. If they do not exist, the migration may fail.
+[2025-03-19T18:52:43.111Z] [WARN] Error details: Could not find the function public.execute_sql(sql_query) in the schema cache
+[2025-03-19T18:52:43.111Z] [INFO] Inserting categories...
+[2025-03-19T18:52:43.207Z] [INFO] All categories already exist, skipping insertion
+[2025-03-19T18:52:43.207Z] [INFO] Found 1 chapter directories to process
+[2025-03-19T18:52:43.207Z] [INFO] Processing chapter: Ch13_Confusion
+[2025-03-19T18:52:43.309Z] [INFO] Inserted/updated chapter: Confusion (ID: 572)
+[2025-03-19T18:52:43.309Z] [INFO] Processing file: history.md
+[2025-03-19T18:52:43.310Z] [INFO] Preprocessing file: history.md
+[2025-03-19T18:52:43.358Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/history.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.358Z] [INFO] Processing file: alarm-features.md
+[2025-03-19T18:52:43.358Z] [INFO] Preprocessing file: alarm-features.md
+[2025-03-19T18:52:43.409Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/alarm-features.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.409Z] [INFO] Processing file: medications.md
+[2025-03-19T18:52:43.410Z] [INFO] Preprocessing file: medications.md
+[2025-03-19T18:52:43.508Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/medications.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.509Z] [INFO] Processing file: diet.md
+[2025-03-19T18:52:43.509Z] [INFO] Preprocessing file: diet.md
+[2025-03-19T18:52:43.556Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/diet.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.556Z] [INFO] Processing file: review-systems.md
+[2025-03-19T18:52:43.556Z] [INFO] Preprocessing file: review-systems.md
+[2025-03-19T18:52:43.603Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/review-systems.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.603Z] [INFO] Processing file: collateral-history.md
+[2025-03-19T18:52:43.604Z] [INFO] Preprocessing file: collateral-history.md
+[2025-03-19T18:52:43.657Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/collateral-history.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.657Z] [INFO] Processing file: risk-factors.md
+[2025-03-19T18:52:43.657Z] [INFO] Preprocessing file: risk-factors.md
+[2025-03-19T18:52:43.709Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/risk-factors.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.709Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-19T18:52:43.709Z] [INFO] Preprocessing file: differential-diagnosis.md
+[2025-03-19T18:52:43.759Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/differential-diagnosis.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.759Z] [INFO] Processing file: past-medical.md
+[2025-03-19T18:52:43.759Z] [INFO] Preprocessing file: past-medical.md
+[2025-03-19T18:52:43.804Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/past-medical.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.805Z] [INFO] Processing file: physical-exam.md
+[2025-03-19T18:52:43.805Z] [INFO] Preprocessing file: physical-exam.md
+[2025-03-19T18:52:43.850Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/physical-exam.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.850Z] [INFO] Processing file: lab-studies.md
+[2025-03-19T18:52:43.850Z] [INFO] Preprocessing file: lab-studies.md
+[2025-03-19T18:52:43.907Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/lab-studies.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.907Z] [INFO] Processing file: imaging.md
+[2025-03-19T18:52:43.907Z] [INFO] Preprocessing file: imaging.md
+[2025-03-19T18:52:43.959Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/imaging.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:43.960Z] [INFO] Processing file: special-tests.md
+[2025-03-19T18:52:43.960Z] [INFO] Preprocessing file: special-tests.md
+[2025-03-19T18:52:44.014Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/special-tests.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.015Z] [INFO] Processing file: ecg.md
+[2025-03-19T18:52:44.015Z] [INFO] Preprocessing file: ecg.md
+[2025-03-19T18:52:44.068Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/ecg.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.069Z] [INFO] Processing file: assessment.md
+[2025-03-19T18:52:44.069Z] [INFO] Preprocessing file: assessment.md
+[2025-03-19T18:52:44.128Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/assessment.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.129Z] [INFO] Processing file: plan.md
+[2025-03-19T18:52:44.130Z] [INFO] Preprocessing file: plan.md
+[2025-03-19T18:52:44.180Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/plan.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.181Z] [INFO] Processing file: disposition.md
+[2025-03-19T18:52:44.181Z] [INFO] Preprocessing file: disposition.md
+[2025-03-19T18:52:44.235Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/disposition.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.236Z] [INFO] Processing file: patient-education.md
+[2025-03-19T18:52:44.236Z] [INFO] Preprocessing file: patient-education.md
+[2025-03-19T18:52:44.296Z] [ERROR] Error processing file /Users/lucas/Documents/markdown_1-185/1-18/Ch13_Confusion/patient-education.md: Could not find the function public.begin_transaction without parameters in the schema cache
+[2025-03-19T18:52:44.297Z] [INFO] Completed processing chapter Ch13_Confusion: 0 files processed, 18 files had errors
+[2025-03-19T18:52:44.298Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors
+[2025-03-19T18:52:44.298Z] [INFO] Migration completed in 1.336 seconds

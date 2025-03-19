@@ -1,4 +1,4 @@
-// tools/db-migration/clear-tables.js
+// tools/db-migration/clear-tables.mjs
 import { createClient } from '@supabase/supabase-js';
 import config from './config.mjs';
 
@@ -72,7 +72,7 @@ async function clearTables() {
         );
       }
     } else if (chapter) {
-      // Get chapter ID
+      // Get chapter ID regardless of whether it has sections
       const { data: chapters, error: chaptersError } = await supabase
         .from('chapters')
         .select('id')
@@ -91,10 +91,11 @@ async function clearTables() {
 
         if (sectionsError) throw sectionsError;
 
-        if (sections && sections.length > 0) {
-          const sectionIds = sections.map((s) => s.id);
+        if (!isTestMode) {
+          // Delete items for this chapter even if there are no sections
+          if (sections && sections.length > 0) {
+            const sectionIds = sections.map((s) => s.id);
 
-          if (!isTestMode) {
             // Delete checklist items for these sections
             const { error: itemsError } = await supabase
               .from('checklist_items')
@@ -112,22 +113,27 @@ async function clearTables() {
 
             if (deleteSectionsError) throw deleteSectionsError;
             console.log(`Deleted sections for chapter ${chapter}`);
-
-            // Delete chapter
-            const { error: deleteChapterError } = await supabase
-              .from('chapters')
-              .delete()
-              .eq('id', chapterId);
-
-            if (deleteChapterError) throw deleteChapterError;
-            console.log(`Deleted chapter ${chapter}`);
           } else {
-            console.log(
-              `[TEST] Would delete ${sectionIds.length} sections and their checklist items for chapter ${chapter}`
-            );
+            console.log(`No sections found for chapter ${chapter}`);
           }
+
+          // Always attempt to delete the chapter itself
+          const { error: deleteChapterError } = await supabase
+            .from('chapters')
+            .delete()
+            .eq('id', chapterId);
+
+          if (deleteChapterError) throw deleteChapterError;
+          console.log(`Deleted chapter ${chapter}`);
         } else {
-          console.log(`No sections found for chapter ${chapter}`);
+          if (sections && sections.length > 0) {
+            console.log(
+              `[TEST] Would delete ${sections.length} sections and their checklist items for chapter ${chapter}`
+            );
+          } else {
+            console.log(`[TEST] No sections found for chapter ${chapter}`);
+          }
+          console.log(`[TEST] Would delete chapter ${chapter}`);
         }
       } else {
         console.log(`Chapter ${chapter} not found`);
