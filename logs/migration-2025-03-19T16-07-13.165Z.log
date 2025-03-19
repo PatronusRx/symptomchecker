@@ -1,0 +1,1159 @@
+[2025-03-19T16:07:13.165Z] [INFO] Starting migration...
+[2025-03-19T16:07:13.166Z] [INFO] Ensuring database schema has required columns...
+[2025-03-19T16:07:13.262Z] [WARN] Warning: Could not verify schema columns. If they do not exist, the migration may fail.
+[2025-03-19T16:07:13.262Z] [WARN] Error details: Could not find the function public.execute_sql(sql_query) in the schema cache
+[2025-03-19T16:07:13.262Z] [INFO] Inserting categories...
+[2025-03-19T16:07:13.314Z] [INFO] All categories already exist, skipping insertion
+[2025-03-19T16:07:13.316Z] [INFO] Found 185 chapter directories to process
+[2025-03-19T16:07:13.316Z] [INFO] Processing chapter: Ch100_Factitious Disorders and Malingering
+[2025-03-19T16:07:13.372Z] [ERROR] Error processing chapter Ch100_Factitious Disorders and Malingering: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.372Z] [INFO] Processing chapter: Ch101_Suicidal Behavior
+[2025-03-19T16:07:13.427Z] [ERROR] Error processing chapter Ch101_Suicidal Behavior: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.427Z] [INFO] Processing chapter: Ch102_Arthritis
+[2025-03-19T16:07:13.483Z] [ERROR] Error processing chapter Ch102_Arthritis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.483Z] [INFO] Processing chapter: Ch103_Tendinopathy and Bursitis
+[2025-03-19T16:07:13.537Z] [ERROR] Error processing chapter Ch103_Tendinopathy and Bursitis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.538Z] [INFO] Processing chapter: Ch104_Musculoskeletal Back Pain
+[2025-03-19T16:07:13.598Z] [ERROR] Error processing chapter Ch104_Musculoskeletal Back Pain: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.600Z] [INFO] Processing chapter: Ch105_Systemic Lupus Erythematosus and the Vasculitides
+[2025-03-19T16:07:13.651Z] [ERROR] Error processing chapter Ch105_Systemic Lupus Erythematosus and the Vasculitides: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.652Z] [INFO] Processing chapter: Ch106_Allergy, Anaphylaxis, and Angioedema
+[2025-03-19T16:07:13.711Z] [ERROR] Error processing chapter Ch106_Allergy, Anaphylaxis, and Angioedema: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.711Z] [INFO] Processing chapter: Ch107_Dermatologic Presentations
+[2025-03-19T16:07:13.770Z] [ERROR] Error processing chapter Ch107_Dermatologic Presentations: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.770Z] [INFO] Processing chapter: Ch108_Blood and Blood Components
+[2025-03-19T16:07:13.823Z] [ERROR] Error processing chapter Ch108_Blood and Blood Components: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.823Z] [INFO] Processing chapter: Ch109_Anemia and Polycythemia
+[2025-03-19T16:07:13.877Z] [ERROR] Error processing chapter Ch109_Anemia and Polycythemia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.877Z] [INFO] Processing chapter: Ch10_Cyanosis
+[2025-03-19T16:07:13.924Z] [ERROR] Error processing chapter Ch10_Cyanosis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.924Z] [INFO] Processing chapter: Ch110_White Blood Cell Disorders
+[2025-03-19T16:07:13.972Z] [ERROR] Error processing chapter Ch110_White Blood Cell Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:13.973Z] [INFO] Processing chapter: Ch111_Disorders of Hemostasis
+[2025-03-19T16:07:14.026Z] [ERROR] Error processing chapter Ch111_Disorders of Hemostasis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.026Z] [INFO] Processing chapter: Ch112_Oncologic Emergencies
+[2025-03-19T16:07:14.075Z] [ERROR] Error processing chapter Ch112_Oncologic Emergencies: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.075Z] [INFO] Processing chapter: Ch113_Acid-Base Disorders
+[2025-03-19T16:07:14.128Z] [ERROR] Error processing chapter Ch113_Acid-Base Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.128Z] [INFO] Processing chapter: Ch114_Electrolyte Disorders
+[2025-03-19T16:07:14.185Z] [ERROR] Error processing chapter Ch114_Electrolyte Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.186Z] [INFO] Processing chapter: Ch115_Diabetes Mellitus and Disorders of Glucose Homeostasis
+[2025-03-19T16:07:14.241Z] [ERROR] Error processing chapter Ch115_Diabetes Mellitus and Disorders of Glucose Homeostasis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.242Z] [INFO] Processing chapter: Ch116_Rhabdomyolysis
+[2025-03-19T16:07:14.299Z] [ERROR] Error processing chapter Ch116_Rhabdomyolysis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.300Z] [INFO] Processing chapter: Ch117_Thyroid and Adrenal Disorders
+[2025-03-19T16:07:14.351Z] [ERROR] Error processing chapter Ch117_Thyroid and Adrenal Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.353Z] [INFO] Processing chapter: Ch118_Bacteria
+[2025-03-19T16:07:14.416Z] [ERROR] Error processing chapter Ch118_Bacteria: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.417Z] [INFO] Processing chapter: Ch119_Viruses
+[2025-03-19T16:07:14.472Z] [ERROR] Error processing chapter Ch119_Viruses: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.473Z] [INFO] Processing chapter: Ch11_Syncope
+[2025-03-19T16:07:14.524Z] [ERROR] Error processing chapter Ch11_Syncope: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.525Z] [INFO] Processing chapter: Ch120_Coronaviruses
+[2025-03-19T16:07:14.576Z] [ERROR] Error processing chapter Ch120_Coronaviruses: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.577Z] [INFO] Processing chapter: Ch121_HIV
+[2025-03-19T16:07:14.629Z] [ERROR] Error processing chapter Ch121_HIV: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.630Z] [INFO] Processing chapter: Ch122_Parasites
+[2025-03-19T16:07:14.685Z] [ERROR] Error processing chapter Ch122_Parasites: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.686Z] [INFO] Processing chapter: Ch123_Tickborne Illnesses
+[2025-03-19T16:07:14.746Z] [ERROR] Error processing chapter Ch123_Tickborne Illnesses: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.746Z] [INFO] Processing chapter: Ch124_Tuberculosis
+[2025-03-19T16:07:14.801Z] [ERROR] Error processing chapter Ch124_Tuberculosis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.802Z] [INFO] Processing chapter: Ch125_Bone and Joint Infections
+[2025-03-19T16:07:14.851Z] [ERROR] Error processing chapter Ch125_Bone and Joint Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.851Z] [INFO] Processing chapter: Ch126_Skin and Soft Tissue Infections
+[2025-03-19T16:07:14.897Z] [ERROR] Error processing chapter Ch126_Skin and Soft Tissue Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.898Z] [INFO] Processing chapter: Ch127_Sepsis Syndrome
+[2025-03-19T16:07:14.945Z] [ERROR] Error processing chapter Ch127_Sepsis Syndrome: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:14.946Z] [INFO] Processing chapter: Ch128_Hypothermia, Frostbite, and Nonfreezing Cold Injuries
+[2025-03-19T16:07:15.009Z] [ERROR] Error processing chapter Ch128_Hypothermia, Frostbite, and Nonfreezing Cold Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.010Z] [INFO] Processing chapter: Ch129_Heat Illness
+[2025-03-19T16:07:15.063Z] [ERROR] Error processing chapter Ch129_Heat Illness: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.064Z] [INFO] Processing chapter: Ch12_Depressed Consciousness and Coma
+[2025-03-19T16:07:15.122Z] [ERROR] Error processing chapter Ch12_Depressed Consciousness and Coma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.123Z] [INFO] Processing chapter: Ch130_Electrical and Lightning Injuries
+[2025-03-19T16:07:15.178Z] [ERROR] Error processing chapter Ch130_Electrical and Lightning Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.179Z] [INFO] Processing chapter: Ch131_Scuba Diving and Dysbarism
+[2025-03-19T16:07:15.235Z] [ERROR] Error processing chapter Ch131_Scuba Diving and Dysbarism: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.236Z] [INFO] Processing chapter: Ch132_High-Altitude Medicine
+[2025-03-19T16:07:15.285Z] [ERROR] Error processing chapter Ch132_High-Altitude Medicine: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.286Z] [INFO] Processing chapter: Ch133_Drowning
+[2025-03-19T16:07:15.335Z] [ERROR] Error processing chapter Ch133_Drowning: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.335Z] [INFO] Processing chapter: Ch134_Radiation Injuries
+[2025-03-19T16:07:15.386Z] [ERROR] Error processing chapter Ch134_Radiation Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.386Z] [INFO] Processing chapter: Ch135_Care of the Poisoned Patient
+[2025-03-19T16:07:15.443Z] [ERROR] Error processing chapter Ch135_Care of the Poisoned Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.444Z] [INFO] Processing chapter: Ch136_Toxic Alcohols
+[2025-03-19T16:07:15.495Z] [ERROR] Error processing chapter Ch136_Toxic Alcohols: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.495Z] [INFO] Processing chapter: Ch137_Alcohol-Related Disease
+[2025-03-19T16:07:15.543Z] [ERROR] Error processing chapter Ch137_Alcohol-Related Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.543Z] [INFO] Processing chapter: Ch138_Acetaminophen
+[2025-03-19T16:07:15.592Z] [ERROR] Error processing chapter Ch138_Acetaminophen: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.592Z] [INFO] Processing chapter: Ch139_Aspirin and Nonsteroidal Agents
+[2025-03-19T16:07:15.646Z] [ERROR] Error processing chapter Ch139_Aspirin and Nonsteroidal Agents: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.647Z] [INFO] Processing chapter: Ch13_Confusion
+[2025-03-19T16:07:15.695Z] [ERROR] Error processing chapter Ch13_Confusion: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.695Z] [INFO] Processing chapter: Ch140_Anticholinergics
+[2025-03-19T16:07:15.745Z] [ERROR] Error processing chapter Ch140_Anticholinergics: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.746Z] [INFO] Processing chapter: Ch141_Antidepressants
+[2025-03-19T16:07:15.822Z] [ERROR] Error processing chapter Ch141_Antidepressants: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.822Z] [INFO] Processing chapter: Ch142_Cardiovascular Drugs
+[2025-03-19T16:07:15.870Z] [ERROR] Error processing chapter Ch142_Cardiovascular Drugs: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.871Z] [INFO] Processing chapter: Ch143_Caustics
+[2025-03-19T16:07:15.924Z] [ERROR] Error processing chapter Ch143_Caustics: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.925Z] [INFO] Processing chapter: Ch144_Cocaine and Other Sympathomimetics
+[2025-03-19T16:07:15.974Z] [ERROR] Error processing chapter Ch144_Cocaine and Other Sympathomimetics: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:15.975Z] [INFO] Processing chapter: Ch145_THC and Hallucinogens
+[2025-03-19T16:07:16.024Z] [ERROR] Error processing chapter Ch145_THC and Hallucinogens: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:16.025Z] [INFO] Processing chapter: Ch146_Iron and Heavy Metals
+[2025-03-19T16:07:16.087Z] [ERROR] Error processing chapter Ch146_Iron and Heavy Metals: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:16.088Z] [INFO] Processing chapter: Ch147_Hydrocarbons
+[2025-03-19T16:07:16.142Z] [ERROR] Error processing chapter Ch147_Hydrocarbons: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:16.143Z] [INFO] Processing chapter: Ch148_Inhaled Toxins
+[2025-03-19T16:07:16.195Z] [ERROR] Error processing chapter Ch148_Inhaled Toxins: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:16.195Z] [INFO] Processing chapter: Ch149_Lithium
+[2025-03-19T16:07:16.253Z] [ERROR] Error processing chapter Ch149_Lithium: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:16.254Z] [INFO] Processing chapter: Ch14_Seizures
+[2025-03-19T16:07:16.340Z] [INFO] Inserted/updated chapter: Seizures (ID: 437)
+[2025-03-19T16:07:16.342Z] [INFO] Processing file: history.md
+[2025-03-19T16:07:16.405Z] [INFO] Inserted/updated section: Onset (ID: 880)
+[2025-03-19T16:07:16.459Z] [INFO] Inserted item: "Abrupt onset..." (ID: 6452)
+[2025-03-19T16:07:16.526Z] [INFO] Inserted item: "Preceding events..." (ID: 6453)
+[2025-03-19T16:07:16.625Z] [INFO] Inserted item: "Sleep deprivation..." (ID: 6454)
+[2025-03-19T16:07:16.685Z] [INFO] Inserted item: "Missed medications..." (ID: 6455)
+[2025-03-19T16:07:16.737Z] [INFO] Inserted item: "New medications..." (ID: 6456)
+[2025-03-19T16:07:16.797Z] [INFO] Inserted item: "Alcohol use..." (ID: 6457)
+[2025-03-19T16:07:16.854Z] [INFO] Inserted item: "Substance use..." (ID: 6458)
+[2025-03-19T16:07:16.911Z] [INFO] Inserted item: "Infections..." (ID: 6459)
+[2025-03-19T16:07:16.964Z] [INFO] Inserted item: "Other inciting events: _____..." (ID: 6460)
+[2025-03-19T16:07:17.012Z] [INFO] Inserted/updated section: Aura (Focal Seizures) (ID: 881)
+[2025-03-19T16:07:17.061Z] [INFO] Inserted item: "Perception alterations:..." (ID: 6461)
+[2025-03-19T16:07:17.111Z] [INFO] Inserted item: "Visual: _____..." (ID: 6462)
+[2025-03-19T16:07:17.167Z] [INFO] Inserted item: "Smell: _____..." (ID: 6463)
+[2025-03-19T16:07:17.221Z] [INFO] Inserted item: "Tactile: _____..." (ID: 6464)
+[2025-03-19T16:07:17.274Z] [INFO] Inserted item: "Auditory: _____..." (ID: 6465)
+[2025-03-19T16:07:17.330Z] [INFO] Inserted item: "Gastric heave: _____..." (ID: 6466)
+[2025-03-19T16:07:17.388Z] [INFO] Inserted item: "Impending doom: _____..." (ID: 6467)
+[2025-03-19T16:07:17.462Z] [INFO] Inserted item: "Anxiety: _____..." (ID: 6468)
+[2025-03-19T16:07:17.520Z] [INFO] Inserted item: "Irrational fear: _____..." (ID: 6469)
+[2025-03-19T16:07:17.573Z] [INFO] Inserted/updated section: Duration (ID: 882)
+[2025-03-19T16:07:17.631Z] [INFO] Inserted item: "Duration of seizure: _____ sec..." (ID: 6470)
+[2025-03-19T16:07:17.684Z] [INFO] Inserted item: "Self-limited (<60-120 seconds)..." (ID: 6471)
+[2025-03-19T16:07:17.736Z] [INFO] Inserted item: "Prolonged (>5 minutes, status ..." (ID: 6472)
+[2025-03-19T16:07:17.793Z] [INFO] Inserted/updated section: Characteristics (ID: 883)
+[2025-03-19T16:07:17.846Z] [INFO] Inserted item: "Alteration of consciousness..." (ID: 6473)
+[2025-03-19T16:07:17.901Z] [INFO] Inserted item: "Focal aware (consciousness pre..." (ID: 6474)
+[2025-03-19T16:07:17.951Z] [INFO] Inserted item: "Focal impaired awareness..." (ID: 6475)
+[2025-03-19T16:07:18.007Z] [INFO] Inserted item: "Generalized (consciousness los..." (ID: 6476)
+[2025-03-19T16:07:18.058Z] [INFO] Inserted item: "Purposeless, stereotypic movem..." (ID: 6477)
+[2025-03-19T16:07:18.108Z] [INFO] Inserted item: "Non-suppressible movements..." (ID: 6478)
+[2025-03-19T16:07:18.157Z] [INFO] Inserted item: "Automatisms..." (ID: 6479)
+[2025-03-19T16:07:18.215Z] [INFO] Inserted item: "Oral movements (lip smacking, ..." (ID: 6480)
+[2025-03-19T16:07:18.266Z] [INFO] Inserted item: "Repetitive vocalizations..." (ID: 6481)
+[2025-03-19T16:07:18.324Z] [INFO] Inserted item: "Finger movements..." (ID: 6482)
+[2025-03-19T16:07:18.389Z] [INFO] Inserted item: "Picking at sheets/clothing..." (ID: 6483)
+[2025-03-19T16:07:18.450Z] [INFO] Inserted/updated section: Postictal State (ID: 884)
+[2025-03-19T16:07:18.506Z] [INFO] Inserted item: "Duration: _____ minutes/hours..." (ID: 6484)
+[2025-03-19T16:07:18.565Z] [INFO] Inserted item: "Manifestations:..." (ID: 6485)
+[2025-03-19T16:07:18.619Z] [INFO] Inserted item: "Lethargy..." (ID: 6486)
+[2025-03-19T16:07:18.668Z] [INFO] Inserted item: "Confusion..." (ID: 6487)
+[2025-03-19T16:07:18.724Z] [INFO] Inserted item: "Impaired recollection..." (ID: 6488)
+[2025-03-19T16:07:18.777Z] [INFO] Inserted item: "Transient neurologic deficit (..." (ID: 6489)
+[2025-03-19T16:07:18.828Z] [INFO] Inserted item: "Sensory deficit..." (ID: 6490)
+[2025-03-19T16:07:18.891Z] [INFO] Inserted item: "Motor deficit..." (ID: 6491)
+[2025-03-19T16:07:18.948Z] [INFO] Inserted item: "Visual deficit..." (ID: 6492)
+[2025-03-19T16:07:19.002Z] [INFO] Inserted item: "Cognitive deficit..." (ID: 6493)
+[2025-03-19T16:07:19.052Z] [INFO] Inserted item: "Emotional changes..." (ID: 6494)
+[2025-03-19T16:07:19.104Z] [INFO] Inserted/updated section: Recent Events (ID: 885)
+[2025-03-19T16:07:19.156Z] [INFO] Inserted item: "Recent illness..." (ID: 6495)
+[2025-03-19T16:07:19.206Z] [INFO] Inserted item: "Recent trauma..." (ID: 6496)
+[2025-03-19T16:07:19.262Z] [INFO] Inserted item: "Sleep deprivation..." (ID: 6497)
+[2025-03-19T16:07:19.311Z] [INFO] Inserted item: "Missed antiseizure medications..." (ID: 6498)
+[2025-03-19T16:07:19.362Z] [INFO] Inserted item: "Change in dosing regimen..." (ID: 6499)
+[2025-03-19T16:07:19.412Z] [INFO] Inserted item: "Change in ictal pattern..." (ID: 6500)
+[2025-03-19T16:07:19.480Z] [INFO] Inserted item: "In women of reproductive age:..." (ID: 6501)
+[2025-03-19T16:07:19.540Z] [INFO] Inserted item: "Catamenial exacerbation (seizu..." (ID: 6502)
+[2025-03-19T16:07:19.594Z] [INFO] Inserted item: "Pregnancy (affecting drug clea..." (ID: 6503)
+[2025-03-19T16:07:19.595Z] [INFO] Completed processing file: history.md
+[2025-03-19T16:07:19.596Z] [INFO] Processing file: alarm-features.md
+[2025-03-19T16:07:19.654Z] [INFO] Inserted/updated section: Critical Diagnoses (ID: 886)
+[2025-03-19T16:07:19.703Z] [INFO] Inserted item: "Status epilepticus..." (ID: 6504)
+[2025-03-19T16:07:19.758Z] [INFO] Inserted item: "Convulsive..." (ID: 6505)
+[2025-03-19T16:07:19.812Z] [INFO] Inserted item: "Nonconvulsive..." (ID: 6506)
+[2025-03-19T16:07:19.862Z] [INFO] Inserted item: "Specialized treatment conditio..." (ID: 6507)
+[2025-03-19T16:07:19.920Z] [INFO] Inserted item: "Eclampsia (seizures after 20 w..." (ID: 6508)
+[2025-03-19T16:07:19.976Z] [INFO] Inserted item: "Toxic ingestion:..." (ID: 6509)
+[2025-03-19T16:07:20.028Z] [INFO] Inserted item: "Isoniazid..." (ID: 6510)
+[2025-03-19T16:07:20.158Z] [INFO] Inserted item: "Lithium..." (ID: 6511)
+[2025-03-19T16:07:20.215Z] [INFO] Inserted item: "Tricyclic antidepressants..." (ID: 6512)
+[2025-03-19T16:07:20.276Z] [INFO] Inserted item: "Hypoglycemia..." (ID: 6513)
+[2025-03-19T16:07:20.336Z] [INFO] Inserted item: "Hyponatremia..." (ID: 6514)
+[2025-03-19T16:07:20.388Z] [INFO] Inserted item: "Hypocalcemia..." (ID: 6515)
+[2025-03-19T16:07:20.438Z] [INFO] Inserted item: "Increased intracranial pressur..." (ID: 6516)
+[2025-03-19T16:07:20.491Z] [INFO] Inserted/updated section: Emergent Diagnoses (ID: 887)
+[2025-03-19T16:07:20.551Z] [INFO] Inserted item: "Infection..." (ID: 6517)
+[2025-03-19T16:07:20.604Z] [INFO] Inserted item: "Acute brain injury:..." (ID: 6518)
+[2025-03-19T16:07:20.664Z] [INFO] Inserted item: "Ischemic stroke..." (ID: 6519)
+[2025-03-19T16:07:20.719Z] [INFO] Inserted item: "Hemorrhagic stroke..." (ID: 6520)
+[2025-03-19T16:07:20.776Z] [INFO] Inserted item: "Traumatic brain injury..." (ID: 6521)
+[2025-03-19T16:07:20.835Z] [INFO] Inserted item: "Cerebral venous thrombosis..." (ID: 6522)
+[2025-03-19T16:07:20.893Z] [INFO] Inserted/updated section: Warning Signs (ID: 888)
+[2025-03-19T16:07:20.945Z] [INFO] Inserted item: "Persistent altered consciousne..." (ID: 6523)
+[2025-03-19T16:07:20.996Z] [INFO] Inserted item: "Evidence of ongoing subtle con..." (ID: 6524)
+[2025-03-19T16:07:21.050Z] [INFO] Inserted item: "Abnormal eye movements..." (ID: 6525)
+[2025-03-19T16:07:21.103Z] [INFO] Inserted item: "Facial myoclonus..." (ID: 6526)
+[2025-03-19T16:07:21.153Z] [INFO] Inserted item: "Persistent focal neurologic de..." (ID: 6527)
+[2025-03-19T16:07:21.206Z] [INFO] Inserted item: "Severe headache..." (ID: 6528)
+[2025-03-19T16:07:21.261Z] [INFO] Inserted item: "Thunderclap headache (maximum ..." (ID: 6529)
+[2025-03-19T16:07:21.319Z] [INFO] Inserted item: "Associated neurologic deficits..." (ID: 6530)
+[2025-03-19T16:07:21.370Z] [INFO] Inserted item: "Meningismus..." (ID: 6531)
+[2025-03-19T16:07:21.425Z] [INFO] Inserted item: "Fever..." (ID: 6532)
+[2025-03-19T16:07:21.481Z] [INFO] Inserted/updated section: High-Risk Populations for Nonconvulsive Status Epilepticus (ID: 889)
+[2025-03-19T16:07:21.531Z] [INFO] Inserted item: "Acute brain injury..." (ID: 6533)
+[2025-03-19T16:07:21.587Z] [INFO] Inserted item: "Remote brain injury..." (ID: 6534)
+[2025-03-19T16:07:21.665Z] [INFO] Inserted item: "Prior craniotomy..." (ID: 6535)
+[2025-03-19T16:07:21.720Z] [INFO] Inserted item: "Toxic exposure..." (ID: 6536)
+[2025-03-19T16:07:21.780Z] [INFO] Inserted item: "Sepsis..." (ID: 6537)
+[2025-03-19T16:07:21.837Z] [INFO] Inserted item: "Renal failure..." (ID: 6538)
+[2025-03-19T16:07:21.885Z] [INFO] Inserted item: "Liver failure..." (ID: 6539)
+[2025-03-19T16:07:21.886Z] [INFO] Completed processing file: alarm-features.md
+[2025-03-19T16:07:21.886Z] [INFO] Processing file: medications.md
+[2025-03-19T16:07:21.935Z] [INFO] Inserted/updated section: Current Antiseizure Medications (ID: 890)
+[2025-03-19T16:07:21.984Z] [INFO] Inserted item: "First-line agents:..." (ID: 6540)
+[2025-03-19T16:07:22.034Z] [INFO] Inserted item: "Benzodiazepines:..." (ID: 6541)
+[2025-03-19T16:07:22.088Z] [INFO] Inserted item: "Diazepam: _____ mg..." (ID: 6542)
+[2025-03-19T16:07:22.141Z] [INFO] Inserted item: "Lorazepam: _____ mg..." (ID: 6543)
+[2025-03-19T16:07:22.196Z] [INFO] Inserted item: "Midazolam: _____ mg..." (ID: 6544)
+[2025-03-19T16:07:22.248Z] [INFO] Inserted item: "Second-line agents:..." (ID: 6545)
+[2025-03-19T16:07:22.298Z] [INFO] Inserted item: "Levetiracetam: _____ mg..." (ID: 6546)
+[2025-03-19T16:07:22.351Z] [INFO] Inserted item: "Fosphenytoin: _____ mg..." (ID: 6547)
+[2025-03-19T16:07:22.404Z] [INFO] Inserted item: "Lacosamide: _____ mg..." (ID: 6548)
+[2025-03-19T16:07:22.460Z] [INFO] Inserted item: "Phenobarbital: _____ mg..." (ID: 6549)
+[2025-03-19T16:07:22.512Z] [INFO] Inserted item: "Phenytoin: _____ mg..." (ID: 6550)
+[2025-03-19T16:07:22.567Z] [INFO] Inserted item: "Valproic acid: _____ mg..." (ID: 6551)
+[2025-03-19T16:07:22.619Z] [INFO] Inserted item: "Other antiseizure drugs:..." (ID: 6552)
+[2025-03-19T16:07:22.668Z] [INFO] Inserted item: "Carbamazepine: _____ mg..." (ID: 6553)
+[2025-03-19T16:07:22.727Z] [INFO] Inserted item: "Lamotrigine: _____ mg..." (ID: 6554)
+[2025-03-19T16:07:22.803Z] [INFO] Inserted item: "Topiramate: _____ mg..." (ID: 6555)
+[2025-03-19T16:07:22.866Z] [INFO] Inserted item: "Oxcarbazepine: _____ mg..." (ID: 6556)
+[2025-03-19T16:07:22.924Z] [INFO] Inserted item: "Other: _____ mg..." (ID: 6557)
+[2025-03-19T16:07:23.027Z] [INFO] Inserted/updated section: Medication Compliance (ID: 891)
+[2025-03-19T16:07:23.080Z] [INFO] Inserted item: "Last dose taken: _____..." (ID: 6558)
+[2025-03-19T16:07:23.135Z] [INFO] Inserted item: "Missed doses..." (ID: 6559)
+[2025-03-19T16:07:23.196Z] [INFO] Inserted item: "Subtherapeutic level documente..." (ID: 6560)
+[2025-03-19T16:07:23.252Z] [INFO] Inserted item: "Dose recently changed..." (ID: 6561)
+[2025-03-19T16:07:23.311Z] [INFO] Inserted/updated section: Other Medications (ID: 892)
+[2025-03-19T16:07:23.365Z] [INFO] Inserted item: "Medications with epileptogenic..." (ID: 6562)
+[2025-03-19T16:07:23.418Z] [INFO] Inserted item: "Lithium..." (ID: 6563)
+[2025-03-19T16:07:23.479Z] [INFO] Inserted item: "Other: _____..." (ID: 6564)
+[2025-03-19T16:07:23.539Z] [INFO] Inserted item: "Medications with potential dru..." (ID: 6565)
+[2025-03-19T16:07:23.539Z] [INFO] Completed processing file: medications.md
+[2025-03-19T16:07:23.540Z] [INFO] Processing file: diet.md
+[2025-03-19T16:07:23.592Z] [INFO] Inserted/updated section: Nutritional Status (ID: 893)
+[2025-03-19T16:07:23.641Z] [INFO] Inserted item: "Malnutrition (risk factor for ..." (ID: 6566)
+[2025-03-19T16:07:23.691Z] [INFO] Inserted item: "Chronic alcoholism (risk facto..." (ID: 6567)
+[2025-03-19T16:07:23.747Z] [INFO] Inserted item: "Water intoxication (risk for h..." (ID: 6568)
+[2025-03-19T16:07:23.797Z] [INFO] Inserted item: "Recent dietary changes: _____..." (ID: 6569)
+[2025-03-19T16:07:23.847Z] [INFO] Inserted/updated section: Fluid Intake (ID: 894)
+[2025-03-19T16:07:23.903Z] [INFO] Inserted item: "Excessive water intake..." (ID: 6570)
+[2025-03-19T16:07:23.966Z] [INFO] Inserted item: "Inadequate intake..." (ID: 6571)
+[2025-03-19T16:07:24.015Z] [INFO] Inserted item: "Normal intake..." (ID: 6572)
+[2025-03-19T16:07:24.064Z] [INFO] Inserted/updated section: Dietary Restrictions (ID: 895)
+[2025-03-19T16:07:24.127Z] [INFO] Inserted item: "Specific diet related to seizu..." (ID: 6573)
+[2025-03-19T16:07:24.179Z] [INFO] Inserted/updated section: Alcohol Consumption (ID: 896)
+[2025-03-19T16:07:24.229Z] [INFO] Inserted item: "Recent alcohol intake..." (ID: 6574)
+[2025-03-19T16:07:24.278Z] [INFO] Inserted item: "Chronic alcohol use..." (ID: 6575)
+[2025-03-19T16:07:24.279Z] [INFO] Completed processing file: diet.md
+[2025-03-19T16:07:24.279Z] [INFO] Processing file: review-systems.md
+[2025-03-19T16:07:24.340Z] [INFO] Inserted/updated section: Neurological (ID: 897)
+[2025-03-19T16:07:24.396Z] [INFO] Inserted item: "Headache..." (ID: 6576)
+[2025-03-19T16:07:24.448Z] [INFO] Inserted item: "Vision changes..." (ID: 6577)
+[2025-03-19T16:07:24.499Z] [INFO] Inserted item: "Confusion..." (ID: 6578)
+[2025-03-19T16:07:24.551Z] [INFO] Inserted item: "Altered mental status..." (ID: 6579)
+[2025-03-19T16:07:24.601Z] [INFO] Inserted item: "Dizziness/vertigo..." (ID: 6580)
+[2025-03-19T16:07:24.662Z] [INFO] Inserted item: "Weakness..." (ID: 6581)
+[2025-03-19T16:07:24.711Z] [INFO] Inserted item: "Numbness..." (ID: 6582)
+[2025-03-19T16:07:24.792Z] [INFO] Inserted item: "Gait disturbances..." (ID: 6583)
+[2025-03-19T16:07:24.843Z] [INFO] Inserted/updated section: Cardiovascular (ID: 898)
+[2025-03-19T16:07:24.905Z] [INFO] Inserted item: "Palpitations..." (ID: 6584)
+[2025-03-19T16:07:24.962Z] [INFO] Inserted item: "Chest pain..." (ID: 6585)
+[2025-03-19T16:07:25.020Z] [INFO] Inserted item: "Syncope..." (ID: 6586)
+[2025-03-19T16:07:25.084Z] [INFO] Inserted item: "Orthostatic symptoms..." (ID: 6587)
+[2025-03-19T16:07:25.135Z] [INFO] Inserted/updated section: Respiratory (ID: 899)
+[2025-03-19T16:07:25.190Z] [INFO] Inserted item: "Dyspnea..." (ID: 6588)
+[2025-03-19T16:07:25.256Z] [INFO] Inserted item: "Aspiration..." (ID: 6589)
+[2025-03-19T16:07:25.314Z] [INFO] Inserted item: "Respiratory changes during eve..." (ID: 6590)
+[2025-03-19T16:07:25.369Z] [INFO] Inserted/updated section: Gastrointestinal (ID: 900)
+[2025-03-19T16:07:25.422Z] [INFO] Inserted item: "Nausea..." (ID: 6591)
+[2025-03-19T16:07:25.477Z] [INFO] Inserted item: "Vomiting..." (ID: 6592)
+[2025-03-19T16:07:25.532Z] [INFO] Inserted item: "Epigastric rising sensation..." (ID: 6593)
+[2025-03-19T16:07:25.591Z] [INFO] Inserted/updated section: Genitourinary (ID: 901)
+[2025-03-19T16:07:25.653Z] [INFO] Inserted item: "Urinary incontinence..." (ID: 6594)
+[2025-03-19T16:07:25.705Z] [INFO] Inserted/updated section: Musculoskeletal (ID: 902)
+[2025-03-19T16:07:25.760Z] [INFO] Inserted item: "Back pain..." (ID: 6595)
+[2025-03-19T16:07:25.820Z] [INFO] Inserted item: "Shoulder pain (potential dislo..." (ID: 6596)
+[2025-03-19T16:07:25.875Z] [INFO] Inserted item: "Tongue injury..." (ID: 6597)
+[2025-03-19T16:07:25.927Z] [INFO] Inserted item: "Other injury during seizure..." (ID: 6598)
+[2025-03-19T16:07:25.978Z] [INFO] Inserted/updated section: Constitutional (ID: 903)
+[2025-03-19T16:07:26.029Z] [INFO] Inserted item: "Fever..." (ID: 6599)
+[2025-03-19T16:07:26.087Z] [INFO] Inserted item: "Fatigue..." (ID: 6600)
+[2025-03-19T16:07:26.141Z] [INFO] Inserted item: "Recent weight changes..." (ID: 6601)
+[2025-03-19T16:07:26.189Z] [INFO] Inserted/updated section: Psychiatric (ID: 904)
+[2025-03-19T16:07:26.240Z] [INFO] Inserted item: "Emotional changes..." (ID: 6602)
+[2025-03-19T16:07:26.291Z] [INFO] Inserted item: "Déjà vu..." (ID: 6603)
+[2025-03-19T16:07:26.348Z] [INFO] Inserted item: "Hallucinations..." (ID: 6604)
+[2025-03-19T16:07:26.415Z] [INFO] Inserted item: "Illusions..." (ID: 6605)
+[2025-03-19T16:07:26.478Z] [INFO] Inserted item: "Perceptual distortions..." (ID: 6606)
+[2025-03-19T16:07:26.478Z] [INFO] Completed processing file: review-systems.md
+[2025-03-19T16:07:26.479Z] [INFO] Processing file: collateral-history.md
+[2025-03-19T16:07:26.535Z] [INFO] Inserted/updated section: Bystander Information (ID: 905)
+[2025-03-19T16:07:26.587Z] [INFO] Inserted item: "Event witnessed..." (ID: 6607)
+[2025-03-19T16:07:26.637Z] [INFO] Inserted item: "Name of witness: _____..." (ID: 6608)
+[2025-03-19T16:07:26.684Z] [INFO] Inserted item: "Relationship to patient: _____..." (ID: 6609)
+[2025-03-19T16:07:26.734Z] [INFO] Inserted item: "Detailed description of event ..." (ID: 6610)
+[2025-03-19T16:07:26.787Z] [INFO] Inserted item: "Duration of seizure activity o..." (ID: 6611)
+[2025-03-19T16:07:26.843Z] [INFO] Inserted item: "Description of movements..." (ID: 6612)
+[2025-03-19T16:07:26.902Z] [INFO] Inserted item: "Tonic phase (stiffening)..." (ID: 6613)
+[2025-03-19T16:07:26.969Z] [INFO] Inserted item: "Clonic phase (rhythmic jerking..." (ID: 6614)
+[2025-03-19T16:07:27.033Z] [INFO] Inserted item: "Automatisms observed..." (ID: 6615)
+[2025-03-19T16:07:27.090Z] [INFO] Inserted item: "Loss of consciousness observed..." (ID: 6616)
+[2025-03-19T16:07:27.146Z] [INFO] Inserted item: "Preceding aura reported by pat..." (ID: 6617)
+[2025-03-19T16:07:27.211Z] [INFO] Inserted item: "Postictal behavior observed..." (ID: 6618)
+[2025-03-19T16:07:27.302Z] [INFO] Inserted/updated section: EMS Report (ID: 906)
+[2025-03-19T16:07:27.368Z] [INFO] Inserted item: "Seizure ongoing at arrival..." (ID: 6619)
+[2025-03-19T16:07:27.436Z] [INFO] Inserted item: "Seizure terminated before arri..." (ID: 6620)
+[2025-03-19T16:07:27.491Z] [INFO] Inserted item: "Interventions performed:..." (ID: 6621)
+[2025-03-19T16:07:27.542Z] [INFO] Inserted item: "Airway management..." (ID: 6622)
+[2025-03-19T16:07:27.598Z] [INFO] Inserted item: "Medications administered: ____..." (ID: 6623)
+[2025-03-19T16:07:27.649Z] [INFO] Inserted item: "Vital signs documented: _____..." (ID: 6624)
+[2025-03-19T16:07:27.711Z] [INFO] Inserted/updated section: Previous Medical Records (ID: 907)
+[2025-03-19T16:07:27.761Z] [INFO] Inserted item: "Previous similar events..." (ID: 6625)
+[2025-03-19T16:07:27.811Z] [INFO] Inserted item: "Known epilepsy diagnosis..." (ID: 6626)
+[2025-03-19T16:07:27.861Z] [INFO] Inserted item: "Prior EEG findings: _____..." (ID: 6627)
+[2025-03-19T16:07:27.911Z] [INFO] Inserted item: "Prior imaging findings: _____..." (ID: 6628)
+[2025-03-19T16:07:27.961Z] [INFO] Inserted item: "Previous antiseizure drug regi..." (ID: 6629)
+[2025-03-19T16:07:27.962Z] [INFO] Completed processing file: collateral-history.md
+[2025-03-19T16:07:27.962Z] [INFO] Processing file: risk-factors.md
+[2025-03-19T16:07:28.017Z] [INFO] Inserted/updated section: Demographic Factors (ID: 908)
+[2025-03-19T16:07:28.077Z] [INFO] Inserted item: "Age:..." (ID: 6630)
+[2025-03-19T16:07:28.138Z] [INFO] Inserted item: "Infant (high risk for febrile ..." (ID: 6631)
+[2025-03-19T16:07:28.221Z] [INFO] Inserted item: ">75 years (high risk for struc..." (ID: 6632)
+[2025-03-19T16:07:28.272Z] [INFO] Inserted item: "Gender..." (ID: 6633)
+[2025-03-19T16:07:28.328Z] [INFO] Inserted/updated section: Neurological Factors (ID: 909)
+[2025-03-19T16:07:28.380Z] [INFO] Inserted item: "Known brain lesions..." (ID: 6634)
+[2025-03-19T16:07:28.436Z] [INFO] Inserted item: "Structural brain disease..." (ID: 6635)
+[2025-03-19T16:07:28.494Z] [INFO] Inserted item: "Neurodegenerative disease..." (ID: 6636)
+[2025-03-19T16:07:28.548Z] [INFO] Inserted item: "Previous brain injury..." (ID: 6637)
+[2025-03-19T16:07:28.602Z] [INFO] Inserted item: "Prior neuroimaging abnormaliti..." (ID: 6638)
+[2025-03-19T16:07:28.671Z] [INFO] Inserted item: "Prior EEG abnormalities..." (ID: 6639)
+[2025-03-19T16:07:28.721Z] [INFO] Inserted item: "History of epilepsy..." (ID: 6640)
+[2025-03-19T16:07:28.772Z] [INFO] Inserted item: "Nocturnal seizures..." (ID: 6641)
+[2025-03-19T16:07:28.823Z] [INFO] Inserted/updated section: Medical Conditions (ID: 910)
+[2025-03-19T16:07:28.875Z] [INFO] Inserted item: "HIV-positive status..." (ID: 6642)
+[2025-03-19T16:07:28.928Z] [INFO] Inserted item: "Renal disease..." (ID: 6643)
+[2025-03-19T16:07:28.978Z] [INFO] Inserted item: "Hepatic disease..." (ID: 6644)
+[2025-03-19T16:07:29.029Z] [INFO] Inserted item: "Pregnancy (>20 weeks or <8 wee..." (ID: 6645)
+[2025-03-19T16:07:29.079Z] [INFO] Inserted/updated section: Modifiable Factors (ID: 911)
+[2025-03-19T16:07:29.136Z] [INFO] Inserted item: "Sleep deprivation..." (ID: 6646)
+[2025-03-19T16:07:29.188Z] [INFO] Inserted item: "Alcohol use..." (ID: 6647)
+[2025-03-19T16:07:29.242Z] [INFO] Inserted item: "Substance use..." (ID: 6648)
+[2025-03-19T16:07:29.303Z] [INFO] Inserted item: "Medication non-compliance..." (ID: 6649)
+[2025-03-19T16:07:29.364Z] [INFO] Inserted item: "Recent medication changes with..." (ID: 6650)
+[2025-03-19T16:07:29.425Z] [INFO] Inserted/updated section: Exposure Risk (ID: 912)
+[2025-03-19T16:07:29.481Z] [INFO] Inserted item: "Toxin exposure..." (ID: 6651)
+[2025-03-19T16:07:29.532Z] [INFO] Inserted item: "Medication with seizure-loweri..." (ID: 6652)
+[2025-03-19T16:07:29.533Z] [INFO] Completed processing file: risk-factors.md
+[2025-03-19T16:07:29.534Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-19T16:07:29.585Z] [INFO] Inserted/updated section: Cardiac (ID: 913)
+[2025-03-19T16:07:29.644Z] [INFO] Inserted item: "Vasodepressive (vagal) syncope..." (ID: 6653)
+[2025-03-19T16:07:29.697Z] [INFO] Inserted item: "Orthostatic syncope..." (ID: 6654)
+[2025-03-19T16:07:29.763Z] [INFO] Inserted item: "Cardiogenic syncope..." (ID: 6655)
+[2025-03-19T16:07:29.829Z] [INFO] Inserted/updated section: Neurologic (ID: 914)
+[2025-03-19T16:07:29.891Z] [INFO] Inserted item: "Stroke..." (ID: 6656)
+[2025-03-19T16:07:29.947Z] [INFO] Inserted item: "Transient ischemic attack..." (ID: 6657)
+[2025-03-19T16:07:30.074Z] [INFO] Inserted item: "Limb-shaking TIA..." (ID: 6658)
+[2025-03-19T16:07:30.126Z] [INFO] Inserted item: "Complicated migraine..." (ID: 6659)
+[2025-03-19T16:07:30.178Z] [INFO] Inserted item: "Movement disorders:..." (ID: 6660)
+[2025-03-19T16:07:30.233Z] [INFO] Inserted item: "Chorea..." (ID: 6661)
+[2025-03-19T16:07:30.294Z] [INFO] Inserted item: "Dystonia..." (ID: 6662)
+[2025-03-19T16:07:30.348Z] [INFO] Inserted item: "Subcortical myoclonus..." (ID: 6663)
+[2025-03-19T16:07:30.412Z] [INFO] Inserted item: "Tremors..." (ID: 6664)
+[2025-03-19T16:07:30.488Z] [INFO] Inserted item: "Parasomnias..." (ID: 6665)
+[2025-03-19T16:07:30.547Z] [INFO] Inserted item: "Extensor or flexor posturing f..." (ID: 6666)
+[2025-03-19T16:07:30.609Z] [INFO] Inserted/updated section: Toxicologic (ID: 915)
+[2025-03-19T16:07:30.671Z] [INFO] Inserted item: "Intoxication/inebriation..." (ID: 6667)
+[2025-03-19T16:07:30.722Z] [INFO] Inserted item: "Over sedation/over analgesia..." (ID: 6668)
+[2025-03-19T16:07:30.780Z] [INFO] Inserted item: "Extrapyramidal symptoms..." (ID: 6669)
+[2025-03-19T16:07:30.833Z] [INFO] Inserted/updated section: Metabolic (ID: 916)
+[2025-03-19T16:07:30.889Z] [INFO] Inserted item: "Hypoglycemia..." (ID: 6670)
+[2025-03-19T16:07:30.939Z] [INFO] Inserted item: "Hyperglycemia..." (ID: 6671)
+[2025-03-19T16:07:30.990Z] [INFO] Inserted item: "Thyrotoxicosis..." (ID: 6672)
+[2025-03-19T16:07:31.044Z] [INFO] Inserted item: "Delirium tremens..." (ID: 6673)
+[2025-03-19T16:07:31.097Z] [INFO] Inserted/updated section: Infectious (ID: 917)
+[2025-03-19T16:07:31.150Z] [INFO] Inserted item: "Meningoencephalitis..." (ID: 6674)
+[2025-03-19T16:07:31.206Z] [INFO] Inserted item: "Tetanus..." (ID: 6675)
+[2025-03-19T16:07:31.264Z] [INFO] Inserted/updated section: Psychiatric (ID: 918)
+[2025-03-19T16:07:31.326Z] [INFO] Inserted item: "Nonepileptic spells/pseudoseiz..." (ID: 6676)
+[2025-03-19T16:07:31.388Z] [INFO] Inserted item: "Prolonged duration (>20 minute..." (ID: 6677)
+[2025-03-19T16:07:31.441Z] [INFO] Inserted item: ""Stop-and-go" pattern..." (ID: 6678)
+[2025-03-19T16:07:31.490Z] [INFO] Inserted item: "Forward pelvic thrusting..." (ID: 6679)
+[2025-03-19T16:07:31.541Z] [INFO] Inserted item: "Horizontal head shaking..." (ID: 6680)
+[2025-03-19T16:07:31.604Z] [INFO] Inserted item: "Bilateral asynchronous convuls..." (ID: 6681)
+[2025-03-19T16:07:31.659Z] [INFO] Inserted item: "Shorter postictal period relat..." (ID: 6682)
+[2025-03-19T16:07:31.719Z] [INFO] Inserted item: "Avoidance of noxious stimuli..." (ID: 6683)
+[2025-03-19T16:07:31.771Z] [INFO] Inserted item: "Preserved recollection of even..." (ID: 6684)
+[2025-03-19T16:07:31.865Z] [INFO] Inserted item: "Lack of reactive leukocytosis..." (ID: 6685)
+[2025-03-19T16:07:31.919Z] [INFO] Inserted item: "Lack of lactic acidosis..." (ID: 6686)
+[2025-03-19T16:07:31.987Z] [INFO] Inserted item: "Conversion disorder..." (ID: 6687)
+[2025-03-19T16:07:32.046Z] [INFO] Inserted item: "Panic attacks..." (ID: 6688)
+[2025-03-19T16:07:32.137Z] [INFO] Inserted item: "Cataplexy..." (ID: 6689)
+[2025-03-19T16:07:32.138Z] [INFO] Completed processing file: differential-diagnosis.md
+[2025-03-19T16:07:32.139Z] [INFO] Processing file: past-medical.md
+[2025-03-19T16:07:32.191Z] [INFO] Inserted/updated section: Neurologic History (ID: 919)
+[2025-03-19T16:07:32.248Z] [INFO] Inserted item: "Epilepsy..." (ID: 6690)
+[2025-03-19T16:07:32.296Z] [INFO] Inserted item: "Type: _____..." (ID: 6691)
+[2025-03-19T16:07:32.347Z] [INFO] Inserted item: "Age of onset: _____..." (ID: 6692)
+[2025-03-19T16:07:32.401Z] [INFO] Inserted item: "Seizure frequency: _____..." (ID: 6693)
+[2025-03-19T16:07:32.452Z] [INFO] Inserted item: "Previous seizures..." (ID: 6694)
+[2025-03-19T16:07:32.517Z] [INFO] Inserted item: "First seizure within past 2 ye..." (ID: 6695)
+[2025-03-19T16:07:32.569Z] [INFO] Inserted item: "Prior brain injury:..." (ID: 6696)
+[2025-03-19T16:07:32.618Z] [INFO] Inserted item: "Traumatic..." (ID: 6697)
+[2025-03-19T16:07:32.671Z] [INFO] Inserted item: "Vascular..." (ID: 6698)
+[2025-03-19T16:07:32.723Z] [INFO] Inserted item: "Infectious..." (ID: 6699)
+[2025-03-19T16:07:32.776Z] [INFO] Inserted item: "Neoplastic..." (ID: 6700)
+[2025-03-19T16:07:32.838Z] [INFO] Inserted item: "Neurodegenerative disease..." (ID: 6701)
+[2025-03-19T16:07:32.890Z] [INFO] Inserted item: "Previous intracranial hemorrha..." (ID: 6702)
+[2025-03-19T16:07:33.004Z] [INFO] Inserted item: "History of malignancy..." (ID: 6703)
+[2025-03-19T16:07:33.058Z] [INFO] Inserted item: "History of neurosurgical proce..." (ID: 6704)
+[2025-03-19T16:07:33.112Z] [INFO] Inserted item: "Prior EEG abnormalities..." (ID: 6705)
+[2025-03-19T16:07:33.166Z] [INFO] Inserted item: "Prior neuroimaging abnormaliti..." (ID: 6706)
+[2025-03-19T16:07:33.217Z] [INFO] Inserted/updated section: Medical Comorbidities (ID: 920)
+[2025-03-19T16:07:33.278Z] [INFO] Inserted item: "Renal disease..." (ID: 6707)
+[2025-03-19T16:07:33.329Z] [INFO] Inserted item: "Hepatic disease..." (ID: 6708)
+[2025-03-19T16:07:33.387Z] [INFO] Inserted item: "HIV/AIDS..." (ID: 6709)
+[2025-03-19T16:07:33.446Z] [INFO] Inserted item: "Cardiac disease..." (ID: 6710)
+[2025-03-19T16:07:33.496Z] [INFO] Inserted item: "Hypertension (I10)..." (ID: 6711)
+[2025-03-19T16:07:33.547Z] [INFO] Inserted item: "Diabetes mellitus (E11.9)..." (ID: 6712)
+[2025-03-19T16:07:33.606Z] [INFO] Inserted item: "Clotting disorder..." (ID: 6713)
+[2025-03-19T16:07:33.669Z] [INFO] Inserted item: "Hypercoagulability..." (ID: 6714)
+[2025-03-19T16:07:33.747Z] [INFO] Inserted item: "Hypocoagulability..." (ID: 6715)
+[2025-03-19T16:07:33.803Z] [INFO] Inserted item: "Immunocompromised state..." (ID: 6716)
+[2025-03-19T16:07:33.866Z] [INFO] Inserted item: "Pregnancy..." (ID: 6717)
+[2025-03-19T16:07:33.867Z] [INFO] Completed processing file: past-medical.md
+[2025-03-19T16:07:33.867Z] [INFO] Processing file: physical-exam.md
+[2025-03-19T16:07:33.928Z] [INFO] Inserted/updated section: Vital Signs (ID: 921)
+[2025-03-19T16:07:33.984Z] [INFO] Inserted item: "Temperature: _____ °F/°C..." (ID: 6718)
+[2025-03-19T16:07:34.034Z] [INFO] Inserted item: "Fever..." (ID: 6719)
+[2025-03-19T16:07:34.080Z] [INFO] Inserted item: "Post-ictal low-grade temperatu..." (ID: 6720)
+[2025-03-19T16:07:34.135Z] [INFO] Inserted item: "Blood pressure: _____ mmHg..." (ID: 6721)
+[2025-03-19T16:07:34.193Z] [INFO] Inserted item: "Heart rate: _____ bpm..." (ID: 6722)
+[2025-03-19T16:07:34.247Z] [INFO] Inserted item: "Respiratory rate: _____ breath..." (ID: 6723)
+[2025-03-19T16:07:34.300Z] [INFO] Inserted item: "Oxygen saturation: _____ %..." (ID: 6724)
+[2025-03-19T16:07:34.351Z] [INFO] Inserted item: "Orthostatic vitals:..." (ID: 6725)
+[2025-03-19T16:07:34.407Z] [INFO] Inserted item: "Supine position:..." (ID: 6726)
+[2025-03-19T16:07:34.457Z] [INFO] Inserted item: "BP: _____ mmHg..." (ID: 6727)
+[2025-03-19T16:07:34.513Z] [INFO] Inserted item: "HR: _____ bpm..." (ID: 6728)
+[2025-03-19T16:07:34.564Z] [INFO] Inserted item: "Standing position:..." (ID: 6729)
+[2025-03-19T16:07:34.614Z] [INFO] Inserted item: "BP: _____ mmHg..." (ID: 6730)
+[2025-03-19T16:07:34.668Z] [INFO] Inserted item: "HR: _____ bpm..." (ID: 6731)
+[2025-03-19T16:07:34.715Z] [INFO] Inserted/updated section: General (ID: 922)
+[2025-03-19T16:07:34.768Z] [INFO] Inserted item: "Level of consciousness..." (ID: 6732)
+[2025-03-19T16:07:34.820Z] [INFO] Inserted item: "Alert..." (ID: 6733)
+[2025-03-19T16:07:34.869Z] [INFO] Inserted item: "Confused..." (ID: 6734)
+[2025-03-19T16:07:34.931Z] [INFO] Inserted item: "Lethargic..." (ID: 6735)
+[2025-03-19T16:07:34.982Z] [INFO] Inserted item: "Obtunded..." (ID: 6736)
+[2025-03-19T16:07:35.037Z] [INFO] Inserted item: "Comatose..." (ID: 6737)
+[2025-03-19T16:07:35.098Z] [INFO] Inserted item: "Glasgow Coma Scale: _____..." (ID: 6738)
+[2025-03-19T16:07:35.157Z] [INFO] Inserted/updated section: HEENT (ID: 923)
+[2025-03-19T16:07:35.215Z] [INFO] Inserted item: "Pupils:..." (ID: 6739)
+[2025-03-19T16:07:35.273Z] [INFO] Inserted item: "Size: _____..." (ID: 6740)
+[2025-03-19T16:07:35.330Z] [INFO] Inserted item: "Reactivity: _____..." (ID: 6741)
+[2025-03-19T16:07:35.387Z] [INFO] Inserted item: "Symmetry: _____..." (ID: 6742)
+[2025-03-19T16:07:35.455Z] [INFO] Inserted item: "Nystagmus..." (ID: 6743)
+[2025-03-19T16:07:35.513Z] [INFO] Inserted item: "Tongue injury..." (ID: 6744)
+[2025-03-19T16:07:35.564Z] [INFO] Inserted item: "Oral trauma..." (ID: 6745)
+[2025-03-19T16:07:35.646Z] [INFO] Inserted item: "Facial trauma..." (ID: 6746)
+[2025-03-19T16:07:35.697Z] [INFO] Inserted item: "Nuchal rigidity..." (ID: 6747)
+[2025-03-19T16:07:35.745Z] [INFO] Inserted/updated section: Cardiovascular (ID: 924)
+[2025-03-19T16:07:35.805Z] [INFO] Inserted item: "Heart rhythm:..." (ID: 6748)
+[2025-03-19T16:07:35.861Z] [INFO] Inserted item: "Regular..." (ID: 6749)
+[2025-03-19T16:07:35.913Z] [INFO] Inserted item: "Irregular..." (ID: 6750)
+[2025-03-19T16:07:35.971Z] [INFO] Inserted item: "Murmurs/gallops/rubs..." (ID: 6751)
+[2025-03-19T16:07:36.027Z] [INFO] Inserted/updated section: Respiratory (ID: 925)
+[2025-03-19T16:07:36.079Z] [INFO] Inserted item: "Airway patency..." (ID: 6752)
+[2025-03-19T16:07:36.139Z] [INFO] Inserted item: "Breathing pattern..." (ID: 6753)
+[2025-03-19T16:07:36.192Z] [INFO] Inserted item: "Adventitious sounds..." (ID: 6754)
+[2025-03-19T16:07:36.244Z] [INFO] Inserted/updated section: Neurological (ID: 926)
+[2025-03-19T16:07:36.299Z] [INFO] Inserted item: "Mental status:..." (ID: 6755)
+[2025-03-19T16:07:36.363Z] [INFO] Inserted item: "Orientation: _____..." (ID: 6756)
+[2025-03-19T16:07:36.432Z] [INFO] Inserted item: "Attention: _____..." (ID: 6757)
+[2025-03-19T16:07:36.490Z] [INFO] Inserted item: "Memory: _____..." (ID: 6758)
+[2025-03-19T16:07:36.548Z] [INFO] Inserted item: "Cranial nerves: _____..." (ID: 6759)
+[2025-03-19T16:07:36.612Z] [INFO] Inserted item: "Sensory exam:..." (ID: 6760)
+[2025-03-19T16:07:36.668Z] [INFO] Inserted item: "Upper extremities:..." (ID: 6761)
+[2025-03-19T16:07:36.727Z] [INFO] Inserted item: "Right: _____..." (ID: 6762)
+[2025-03-19T16:07:36.780Z] [INFO] Inserted item: "Left: _____..." (ID: 6763)
+[2025-03-19T16:07:36.832Z] [INFO] Inserted item: "Lower extremities:..." (ID: 6764)
+[2025-03-19T16:07:36.903Z] [INFO] Inserted item: "Right: _____..." (ID: 6765)
+[2025-03-19T16:07:36.953Z] [INFO] Inserted item: "Left: _____..." (ID: 6766)
+[2025-03-19T16:07:37.010Z] [INFO] Inserted item: "Reflexes (0-4+):..." (ID: 6767)
+[2025-03-19T16:07:37.063Z] [INFO] Inserted item: "Biceps:..." (ID: 6768)
+[2025-03-19T16:07:37.113Z] [INFO] Inserted item: "Right: _____..." (ID: 6769)
+[2025-03-19T16:07:37.161Z] [INFO] Inserted item: "Left: _____..." (ID: 6770)
+[2025-03-19T16:07:37.236Z] [INFO] Inserted item: "Triceps:..." (ID: 6771)
+[2025-03-19T16:07:37.290Z] [INFO] Inserted item: "Right: _____..." (ID: 6772)
+[2025-03-19T16:07:37.343Z] [INFO] Inserted item: "Left: _____..." (ID: 6773)
+[2025-03-19T16:07:37.399Z] [INFO] Inserted item: "Brachioradialis:..." (ID: 6774)
+[2025-03-19T16:07:37.453Z] [INFO] Inserted item: "Right: _____..." (ID: 6775)
+[2025-03-19T16:07:37.508Z] [INFO] Inserted item: "Left: _____..." (ID: 6776)
+[2025-03-19T16:07:37.558Z] [INFO] Inserted item: "Patellar:..." (ID: 6777)
+[2025-03-19T16:07:37.619Z] [INFO] Inserted item: "Right: _____..." (ID: 6778)
+[2025-03-19T16:07:37.696Z] [INFO] Inserted item: "Left: _____..." (ID: 6779)
+[2025-03-19T16:07:37.750Z] [INFO] Inserted item: "Achilles:..." (ID: 6780)
+[2025-03-19T16:07:37.805Z] [INFO] Inserted item: "Right: _____..." (ID: 6781)
+[2025-03-19T16:07:37.855Z] [INFO] Inserted item: "Left: _____..." (ID: 6782)
+[2025-03-19T16:07:37.907Z] [INFO] Inserted item: "Plantar reflex:..." (ID: 6783)
+[2025-03-19T16:07:37.963Z] [INFO] Inserted item: "Right: _____..." (ID: 6784)
+[2025-03-19T16:07:38.022Z] [INFO] Inserted item: "Left: _____..." (ID: 6785)
+[2025-03-19T16:07:38.078Z] [INFO] Inserted item: "Coordination: _____..." (ID: 6786)
+[2025-03-19T16:07:38.129Z] [INFO] Inserted item: "Gait: _____..." (ID: 6787)
+[2025-03-19T16:07:38.186Z] [INFO] Inserted item: "Persistent focal deficit (Todd..." (ID: 6788)
+[2025-03-19T16:07:38.237Z] [INFO] Inserted header: Motor: (level 3, ID: 6789)
+[2025-03-19T16:07:38.293Z] [INFO] Inserted item: "Strength:..." (ID: 6790)
+[2025-03-19T16:07:38.350Z] [INFO] Inserted item: "Upper extremities:..." (ID: 6791)
+[2025-03-19T16:07:38.406Z] [INFO] Inserted item: "Right: _____..." (ID: 6792)
+[2025-03-19T16:07:38.454Z] [INFO] Inserted item: "Left: _____..." (ID: 6793)
+[2025-03-19T16:07:38.500Z] [INFO] Inserted item: "Lower extremities:..." (ID: 6794)
+[2025-03-19T16:07:38.552Z] [INFO] Inserted item: "Right: _____..." (ID: 6795)
+[2025-03-19T16:07:38.646Z] [INFO] Inserted item: "Left: _____..." (ID: 6796)
+[2025-03-19T16:07:38.703Z] [INFO] Inserted item: "Tone:..." (ID: 6797)
+[2025-03-19T16:07:38.764Z] [INFO] Inserted item: "Normal..." (ID: 6798)
+[2025-03-19T16:07:38.821Z] [INFO] Inserted item: "Increased..." (ID: 6799)
+[2025-03-19T16:07:38.872Z] [INFO] Inserted item: "Decreased..." (ID: 6800)
+[2025-03-19T16:07:38.924Z] [INFO] Inserted/updated section: Skin (ID: 927)
+[2025-03-19T16:07:38.977Z] [INFO] Inserted item: "Evidence of trauma..." (ID: 6801)
+[2025-03-19T16:07:39.028Z] [INFO] Inserted item: "Stigmata of substance abuse..." (ID: 6802)
+[2025-03-19T16:07:39.116Z] [INFO] Inserted item: "Neurocutaneous syndromes..." (ID: 6803)
+[2025-03-19T16:07:39.166Z] [INFO] Inserted item: "Rash..." (ID: 6804)
+[2025-03-19T16:07:39.373Z] [INFO] Inserted/updated section: Evidence of Seizure Complications (ID: 928)
+[2025-03-19T16:07:39.428Z] [INFO] Inserted item: "Head trauma..." (ID: 6805)
+[2025-03-19T16:07:39.481Z] [INFO] Inserted item: "Tongue/oral injury..." (ID: 6806)
+[2025-03-19T16:07:39.538Z] [INFO] Inserted item: "Posterior shoulder dislocation..." (ID: 6807)
+[2025-03-19T16:07:39.599Z] [INFO] Inserted item: "Back pain..." (ID: 6808)
+[2025-03-19T16:07:39.663Z] [INFO] Inserted item: "Other injuries: _____..." (ID: 6809)
+[2025-03-19T16:07:39.664Z] [INFO] Completed processing file: physical-exam.md
+[2025-03-19T16:07:39.664Z] [INFO] Processing file: lab-studies.md
+[2025-03-19T16:07:39.717Z] [INFO] Inserted/updated section: Essential Studies (ID: 929)
+[2025-03-19T16:07:39.779Z] [INFO] Inserted item: "Serum glucose: _____ mg/dL..." (ID: 6810)
+[2025-03-19T16:07:39.830Z] [INFO] Inserted item: "Hypoglycemia (<45 mg/dL)..." (ID: 6811)
+[2025-03-19T16:07:39.882Z] [INFO] Inserted item: "Sodium: _____ mmol/L..." (ID: 6812)
+[2025-03-19T16:07:39.935Z] [INFO] Inserted item: "Pregnancy test (in women of re..." (ID: 6813)
+[2025-03-19T16:07:39.987Z] [INFO] Inserted/updated section: Extended Metabolic Assessment (ID: 930)
+[2025-03-19T16:07:40.044Z] [INFO] Inserted item: "Basic metabolic panel:..." (ID: 6814)
+[2025-03-19T16:07:40.098Z] [INFO] Inserted item: "Potassium: _____ mmol/L..." (ID: 6815)
+[2025-03-19T16:07:40.148Z] [INFO] Inserted item: "Chloride: _____ mmol/L..." (ID: 6816)
+[2025-03-19T16:07:40.199Z] [INFO] Inserted item: "Bicarbonate: _____ mmol/L..." (ID: 6817)
+[2025-03-19T16:07:40.255Z] [INFO] Inserted item: "BUN: _____ mg/dL..." (ID: 6818)
+[2025-03-19T16:07:40.328Z] [INFO] Inserted item: "Creatinine: _____ mg/dL..." (ID: 6819)
+[2025-03-19T16:07:40.380Z] [INFO] Inserted item: "Calcium: _____ mg/dL..." (ID: 6820)
+[2025-03-19T16:07:40.432Z] [INFO] Inserted item: "Magnesium: _____ mg/dL..." (ID: 6821)
+[2025-03-19T16:07:40.482Z] [INFO] Inserted item: "Phosphorus: _____ mg/dL..." (ID: 6822)
+[2025-03-19T16:07:40.535Z] [INFO] Inserted item: "Liver function tests:..." (ID: 6823)
+[2025-03-19T16:07:40.591Z] [INFO] Inserted item: "AST: _____ U/L..." (ID: 6824)
+[2025-03-19T16:07:40.641Z] [INFO] Inserted item: "ALT: _____ U/L..." (ID: 6825)
+[2025-03-19T16:07:40.690Z] [INFO] Inserted item: "Ammonia: _____ μmol/L..." (ID: 6826)
+[2025-03-19T16:07:40.741Z] [INFO] Inserted/updated section: Post-Convulsion Studies (ID: 931)
+[2025-03-19T16:07:40.797Z] [INFO] Inserted item: "Creatine kinase: _____ U/L..." (ID: 6827)
+[2025-03-19T16:07:40.851Z] [INFO] Inserted item: "Lactic acid: _____ mmol/L..." (ID: 6828)
+[2025-03-19T16:07:40.907Z] [INFO] Inserted item: "Blood gas analysis:..." (ID: 6829)
+[2025-03-19T16:07:40.960Z] [INFO] Inserted item: "pH: _____..." (ID: 6830)
+[2025-03-19T16:07:41.011Z] [INFO] Inserted item: "pCO₂: _____ mmHg..." (ID: 6831)
+[2025-03-19T16:07:41.079Z] [INFO] Inserted item: "pO₂: _____ mmHg..." (ID: 6832)
+[2025-03-19T16:07:41.135Z] [INFO] Inserted item: "HCO₃: _____ mmol/L..." (ID: 6833)
+[2025-03-19T16:07:41.192Z] [INFO] Inserted item: "Base excess: _____ mmol/L..." (ID: 6834)
+[2025-03-19T16:07:41.246Z] [INFO] Inserted item: "Anion gap: _____ mmol/L..." (ID: 6835)
+[2025-03-19T16:07:41.297Z] [INFO] Inserted/updated section: Hematology (ID: 932)
+[2025-03-19T16:07:41.347Z] [INFO] Inserted item: "Complete blood count:..." (ID: 6836)
+[2025-03-19T16:07:41.397Z] [INFO] Inserted item: "WBC: _____ K/μL..." (ID: 6837)
+[2025-03-19T16:07:41.458Z] [INFO] Inserted item: "Reactive leukocytosis (common ..." (ID: 6838)
+[2025-03-19T16:07:41.519Z] [INFO] Inserted item: "Hemoglobin: _____ g/dL..." (ID: 6839)
+[2025-03-19T16:07:41.587Z] [INFO] Inserted item: "Hematocrit: _____ %..." (ID: 6840)
+[2025-03-19T16:07:41.643Z] [INFO] Inserted item: "Platelets: _____ K/μL..." (ID: 6841)
+[2025-03-19T16:07:41.693Z] [INFO] Inserted/updated section: Infectious Disease Workup (ID: 933)
+[2025-03-19T16:07:41.757Z] [INFO] Inserted item: "Lumbar puncture (if indicated)..." (ID: 6842)
+[2025-03-19T16:07:41.809Z] [INFO] Inserted item: "Opening pressure: _____ cmH₂O..." (ID: 6843)
+[2025-03-19T16:07:41.871Z] [INFO] Inserted item: "Cell count: _____..." (ID: 6844)
+[2025-03-19T16:07:41.925Z] [INFO] Inserted item: "Protein: _____ mg/dL..." (ID: 6845)
+[2025-03-19T16:07:41.990Z] [INFO] Inserted item: "Glucose: _____ mg/dL..." (ID: 6846)
+[2025-03-19T16:07:42.046Z] [INFO] Inserted item: "Culture results: _____..." (ID: 6847)
+[2025-03-19T16:07:42.099Z] [INFO] Inserted item: "Respiratory viral testing:..." (ID: 6848)
+[2025-03-19T16:07:42.161Z] [INFO] Inserted item: "Influenza: _____..." (ID: 6849)
+[2025-03-19T16:07:42.220Z] [INFO] Inserted item: "RSV: _____..." (ID: 6850)
+[2025-03-19T16:07:42.276Z] [INFO] Inserted/updated section: Toxicology (ID: 934)
+[2025-03-19T16:07:42.325Z] [INFO] Inserted item: "Blood alcohol level: _____ mg/..." (ID: 6851)
+[2025-03-19T16:07:42.377Z] [INFO] Inserted item: "Urine drug screen: _____..." (ID: 6852)
+[2025-03-19T16:07:42.427Z] [INFO] Inserted item: "Specific drug levels (if indic..." (ID: 6853)
+[2025-03-19T16:07:42.484Z] [INFO] Inserted item: "Salicylates: _____ mg/dL..." (ID: 6854)
+[2025-03-19T16:07:42.546Z] [INFO] Inserted item: "Acetaminophen: _____ μg/mL..." (ID: 6855)
+[2025-03-19T16:07:42.600Z] [INFO] Inserted item: "Lithium: _____ mmol/L..." (ID: 6856)
+[2025-03-19T16:07:42.667Z] [INFO] Inserted/updated section: Antiseizure Drug Levels (ID: 935)
+[2025-03-19T16:07:42.732Z] [INFO] Inserted item: "Phenytoin: _____ μg/mL..." (ID: 6857)
+[2025-03-19T16:07:42.792Z] [INFO] Inserted item: "Carbamazepine: _____ μg/mL..." (ID: 6858)
+[2025-03-19T16:07:42.845Z] [INFO] Inserted item: "Valproic acid: _____ μg/mL..." (ID: 6859)
+[2025-03-19T16:07:42.904Z] [INFO] Inserted item: "Phenobarbital: _____ μg/mL..." (ID: 6860)
+[2025-03-19T16:07:42.958Z] [INFO] Inserted item: "Lamotrigine: _____ μg/mL..." (ID: 6861)
+[2025-03-19T16:07:43.010Z] [INFO] Inserted item: "Levetiracetam: _____ μg/mL..." (ID: 6862)
+[2025-03-19T16:07:43.073Z] [INFO] Inserted item: "Topiramate: _____ μg/mL..." (ID: 6863)
+[2025-03-19T16:07:43.136Z] [INFO] Inserted item: "Oxcarbazepine: _____ μg/mL..." (ID: 6864)
+[2025-03-19T16:07:43.137Z] [INFO] Completed processing file: lab-studies.md
+[2025-03-19T16:07:43.138Z] [INFO] Processing file: imaging.md
+[2025-03-19T16:07:43.204Z] [INFO] Inserted/updated section: Head CT (ID: 936)
+[2025-03-19T16:07:43.265Z] [INFO] Inserted item: "Non-contrast head CT..." (ID: 6865)
+[2025-03-19T16:07:43.324Z] [INFO] Inserted item: "Indicated for:..." (ID: 6866)
+[2025-03-19T16:07:43.382Z] [INFO] Inserted item: "New-onset seizure..." (ID: 6867)
+[2025-03-19T16:07:43.448Z] [INFO] Inserted item: "Age >40 years..." (ID: 6868)
+[2025-03-19T16:07:43.503Z] [INFO] Inserted item: "Coma..." (ID: 6869)
+[2025-03-19T16:07:43.555Z] [INFO] Inserted item: "Immunocompromised state..." (ID: 6870)
+[2025-03-19T16:07:43.607Z] [INFO] Inserted item: "Clotting disorder..." (ID: 6871)
+[2025-03-19T16:07:43.657Z] [INFO] Inserted item: "History of intracranial hemorr..." (ID: 6872)
+[2025-03-19T16:07:43.726Z] [INFO] Inserted item: "History of malignancy..." (ID: 6873)
+[2025-03-19T16:07:43.787Z] [INFO] Inserted item: "Severe/thunderclap headache..." (ID: 6874)
+[2025-03-19T16:07:43.843Z] [INFO] Inserted item: "Status epilepticus of unclear ..." (ID: 6875)
+[2025-03-19T16:07:43.900Z] [INFO] Inserted item: "Suspected trauma..." (ID: 6876)
+[2025-03-19T16:07:43.960Z] [INFO] Inserted item: "Persistent altered mental stat..." (ID: 6877)
+[2025-03-19T16:07:44.027Z] [INFO] Inserted item: "CT perfusion..." (ID: 6878)
+[2025-03-19T16:07:44.076Z] [INFO] Inserted item: "Indicated for:..." (ID: 6879)
+[2025-03-19T16:07:44.138Z] [INFO] Inserted item: "Evaluation of transient neurol..." (ID: 6880)
+[2025-03-19T16:07:44.210Z] [INFO] Inserted item: "Suspected acute ischemic strok..." (ID: 6881)
+[2025-03-19T16:07:44.265Z] [INFO] Inserted/updated section: MRI (ID: 937)
+[2025-03-19T16:07:44.328Z] [INFO] Inserted item: "Brain MRI..." (ID: 6882)
+[2025-03-19T16:07:44.381Z] [INFO] Inserted item: "Higher sensitivity for subtle ..." (ID: 6883)
+[2025-03-19T16:07:44.446Z] [INFO] Inserted item: "Increased diagnostic yield in ..." (ID: 6884)
+[2025-03-19T16:07:44.503Z] [INFO] Inserted item: "Indicated for patients with:..." (ID: 6885)
+[2025-03-19T16:07:44.559Z] [INFO] Inserted item: "Focal abnormal EEG..." (ID: 6886)
+[2025-03-19T16:07:44.613Z] [INFO] Inserted item: "Persistent neurologic deficits..." (ID: 6887)
+[2025-03-19T16:07:44.673Z] [INFO] Inserted item: "MRI with gadolinium..." (ID: 6888)
+[2025-03-19T16:07:44.727Z] [INFO] Inserted item: "T2 thin coronal views (through..." (ID: 6889)
+[2025-03-19T16:07:44.779Z] [INFO] Inserted/updated section: Other Imaging (ID: 938)
+[2025-03-19T16:07:44.833Z] [INFO] Inserted item: "Chest X-ray: _____..." (ID: 6890)
+[2025-03-19T16:07:44.835Z] [INFO] Completed processing file: imaging.md
+[2025-03-19T16:07:44.835Z] [INFO] Processing file: special-tests.md
+[2025-03-19T16:07:44.894Z] [INFO] Inserted/updated section: Electroencephalography (EEG) (ID: 939)
+[2025-03-19T16:07:44.953Z] [INFO] Inserted item: "Standard EEG..." (ID: 6891)
+[2025-03-19T16:07:45.014Z] [INFO] Inserted item: "Diagnosis of epilepsy in new-o..." (ID: 6892)
+[2025-03-19T16:07:45.074Z] [INFO] Inserted item: "Guiding decision on secondary ..." (ID: 6893)
+[2025-03-19T16:07:45.133Z] [INFO] Inserted item: "Continuous EEG monitoring..." (ID: 6894)
+[2025-03-19T16:07:45.188Z] [INFO] Inserted item: "Indicated for:..." (ID: 6895)
+[2025-03-19T16:07:45.255Z] [INFO] Inserted item: "Suspected nonconvulsive status..." (ID: 6896)
+[2025-03-19T16:07:45.310Z] [INFO] Inserted item: "Monitoring seizure activity..." (ID: 6897)
+[2025-03-19T16:07:45.362Z] [INFO] Inserted item: "Guiding third-line therapies a..." (ID: 6898)
+[2025-03-19T16:07:45.424Z] [INFO] Inserted item: "Differentiating seizures from ..." (ID: 6899)
+[2025-03-19T16:07:45.477Z] [INFO] Inserted item: "Limited montage or point-of-ca..." (ID: 6900)
+[2025-03-19T16:07:45.534Z] [INFO] Inserted item: "EEG findings:..." (ID: 6901)
+[2025-03-19T16:07:45.599Z] [INFO] Inserted item: "Normal..." (ID: 6902)
+[2025-03-19T16:07:45.655Z] [INFO] Inserted item: "Focal abnormalities..." (ID: 6903)
+[2025-03-19T16:07:45.720Z] [INFO] Inserted item: "Generalized abnormalities..." (ID: 6904)
+[2025-03-19T16:07:45.772Z] [INFO] Inserted item: "Epileptiform discharges..." (ID: 6905)
+[2025-03-19T16:07:45.832Z] [INFO] Inserted item: "Status epilepticus pattern..." (ID: 6906)
+[2025-03-19T16:07:45.896Z] [INFO] Inserted/updated section: Cerebrospinal Fluid Analysis (ID: 940)
+[2025-03-19T16:07:45.957Z] [INFO] Inserted item: "Indicated for:..." (ID: 6907)
+[2025-03-19T16:07:46.033Z] [INFO] Inserted item: "Immunocompromised patients..." (ID: 6908)
+[2025-03-19T16:07:46.086Z] [INFO] Inserted item: "Acute headache concerning for ..." (ID: 6909)
+[2025-03-19T16:07:46.138Z] [INFO] Inserted item: "Meningismus..." (ID: 6910)
+[2025-03-19T16:07:46.208Z] [INFO] Inserted item: "Persistent altered mental stat..." (ID: 6911)
+[2025-03-19T16:07:46.265Z] [INFO] Inserted item: "Fever without obvious source..." (ID: 6912)
+[2025-03-19T16:07:46.315Z] [INFO] Inserted/updated section: Other Neurophysiologic Testing (ID: 941)
+[2025-03-19T16:07:46.365Z] [INFO] Inserted item: "Video EEG monitoring..." (ID: 6913)
+[2025-03-19T16:07:46.513Z] [INFO] Inserted item: "Evoked potentials..." (ID: 6914)
+[2025-03-19T16:07:46.514Z] [INFO] Completed processing file: special-tests.md
+[2025-03-19T16:07:46.515Z] [INFO] Processing file: ecg.md
+[2025-03-19T16:07:46.572Z] [INFO] Inserted/updated section: ECG Findings (ID: 942)
+[2025-03-19T16:07:46.643Z] [INFO] Inserted item: "Rate: _____ bpm..." (ID: 6915)
+[2025-03-19T16:07:46.693Z] [INFO] Inserted item: "Rhythm:..." (ID: 6916)
+[2025-03-19T16:07:46.746Z] [INFO] Inserted item: "Sinus rhythm..." (ID: 6917)
+[2025-03-19T16:07:46.803Z] [INFO] Inserted item: "Sinus tachycardia (common in p..." (ID: 6918)
+[2025-03-19T16:07:46.855Z] [INFO] Inserted item: "Other: _____..." (ID: 6919)
+[2025-03-19T16:07:46.911Z] [INFO] Inserted item: "QRS duration: _____ ms..." (ID: 6920)
+[2025-03-19T16:07:46.963Z] [INFO] Inserted item: "QRS >0.1 second (possible tric..." (ID: 6921)
+[2025-03-19T16:07:47.019Z] [INFO] Inserted item: "QT interval: _____ ms..." (ID: 6922)
+[2025-03-19T16:07:47.082Z] [INFO] Inserted item: "Prolonged QT (common in peri-i..." (ID: 6923)
+[2025-03-19T16:07:47.146Z] [INFO] Inserted item: "PR interval: _____ ms..." (ID: 6924)
+[2025-03-19T16:07:47.196Z] [INFO] Inserted item: "Prolonged PR (common in peri-i..." (ID: 6925)
+[2025-03-19T16:07:47.250Z] [INFO] Inserted item: "ST segment:..." (ID: 6926)
+[2025-03-19T16:07:47.302Z] [INFO] Inserted item: "Normal..." (ID: 6927)
+[2025-03-19T16:07:47.358Z] [INFO] Inserted item: "Depression (can occur in peri-..." (ID: 6928)
+[2025-03-19T16:07:47.416Z] [INFO] Inserted item: "T wave:..." (ID: 6929)
+[2025-03-19T16:07:47.481Z] [INFO] Inserted item: "Normal..." (ID: 6930)
+[2025-03-19T16:07:47.533Z] [INFO] Inserted item: "Inversion (can occur in peri-i..." (ID: 6931)
+[2025-03-19T16:07:47.588Z] [INFO] Inserted item: "Rightward shift of terminal 40..." (ID: 6932)
+[2025-03-19T16:07:47.641Z] [INFO] Inserted item: "Prominent R wave in lead aVR (..." (ID: 6933)
+[2025-03-19T16:07:47.697Z] [INFO] Inserted item: "Delta wave..." (ID: 6934)
+[2025-03-19T16:07:47.756Z] [INFO] Inserted item: "Brugada pattern..." (ID: 6935)
+[2025-03-19T16:07:47.809Z] [INFO] Inserted item: "Heart block..." (ID: 6936)
+[2025-03-19T16:07:47.875Z] [INFO] Inserted/updated section: Cardiac Monitoring (ID: 943)
+[2025-03-19T16:07:47.931Z] [INFO] Inserted item: "Indicated for:..." (ID: 6937)
+[2025-03-19T16:07:47.984Z] [INFO] Inserted item: "History of cardiac disease..." (ID: 6938)
+[2025-03-19T16:07:48.038Z] [INFO] Inserted item: "Preceding/ongoing cardiac symp..." (ID: 6939)
+[2025-03-19T16:07:48.093Z] [INFO] Inserted item: "Ongoing seizures..." (ID: 6940)
+[2025-03-19T16:07:48.144Z] [INFO] Inserted item: "Suspected overdose..." (ID: 6941)
+[2025-03-19T16:07:48.145Z] [INFO] Completed processing file: ecg.md
+[2025-03-19T16:07:48.145Z] [INFO] Processing file: assessment.md
+[2025-03-19T16:07:48.192Z] [INFO] Inserted/updated section: Seizure Classification (ID: 944)
+[2025-03-19T16:07:48.240Z] [INFO] Inserted item: "Focal onset:..." (ID: 6942)
+[2025-03-19T16:07:48.310Z] [INFO] Inserted item: "Aware:..." (ID: 6943)
+[2025-03-19T16:07:48.371Z] [INFO] Inserted item: "Motor onset:..." (ID: 6944)
+[2025-03-19T16:07:48.432Z] [INFO] Inserted item: "Atonic..." (ID: 6945)
+[2025-03-19T16:07:48.483Z] [INFO] Inserted item: "Automatisms..." (ID: 6946)
+[2025-03-19T16:07:48.537Z] [INFO] Inserted item: "Clonic..." (ID: 6947)
+[2025-03-19T16:07:48.591Z] [INFO] Inserted item: "Epileptic spasms..." (ID: 6948)
+[2025-03-19T16:07:48.654Z] [INFO] Inserted item: "Hyperkinetic..." (ID: 6949)
+[2025-03-19T16:07:48.708Z] [INFO] Inserted item: "Myoclonic..." (ID: 6950)
+[2025-03-19T16:07:48.764Z] [INFO] Inserted item: "Tonic..." (ID: 6951)
+[2025-03-19T16:07:48.828Z] [INFO] Inserted item: "Non-motor onset:..." (ID: 6952)
+[2025-03-19T16:07:48.888Z] [INFO] Inserted item: "Automatisms..." (ID: 6953)
+[2025-03-19T16:07:48.941Z] [INFO] Inserted item: "Behavior arrest..." (ID: 6954)
+[2025-03-19T16:07:48.998Z] [INFO] Inserted item: "Cognitive..." (ID: 6955)
+[2025-03-19T16:07:49.058Z] [INFO] Inserted item: "Emotional..." (ID: 6956)
+[2025-03-19T16:07:49.109Z] [INFO] Inserted item: "Sensory..." (ID: 6957)
+[2025-03-19T16:07:49.172Z] [INFO] Inserted item: "Impaired awareness..." (ID: 6958)
+[2025-03-19T16:07:49.223Z] [INFO] Inserted item: "Focal to bilateral tonic-cloni..." (ID: 6959)
+[2025-03-19T16:07:49.274Z] [INFO] Inserted item: "Generalized onset:..." (ID: 6960)
+[2025-03-19T16:07:49.325Z] [INFO] Inserted item: "Motor:..." (ID: 6961)
+[2025-03-19T16:07:49.379Z] [INFO] Inserted item: "Atonic..." (ID: 6962)
+[2025-03-19T16:07:49.437Z] [INFO] Inserted item: "Clonic..." (ID: 6963)
+[2025-03-19T16:07:49.491Z] [INFO] Inserted item: "Epileptic spasms..." (ID: 6964)
+[2025-03-19T16:07:49.554Z] [INFO] Inserted item: "Myoclonic-atonic..." (ID: 6965)
+[2025-03-19T16:07:49.606Z] [INFO] Inserted item: "Myoclonic..." (ID: 6966)
+[2025-03-19T16:07:49.655Z] [INFO] Inserted item: "Myoclonic-tonic-clonic..." (ID: 6967)
+[2025-03-19T16:07:49.707Z] [INFO] Inserted item: "Tonic-clonic..." (ID: 6968)
+[2025-03-19T16:07:49.761Z] [INFO] Inserted item: "Tonic..." (ID: 6969)
+[2025-03-19T16:07:49.812Z] [INFO] Inserted item: "Non-motor (absence):..." (ID: 6970)
+[2025-03-19T16:07:49.864Z] [INFO] Inserted item: "Typical..." (ID: 6971)
+[2025-03-19T16:07:49.929Z] [INFO] Inserted item: "Atypical..." (ID: 6972)
+[2025-03-19T16:07:49.982Z] [INFO] Inserted item: "Myoclonic..." (ID: 6973)
+[2025-03-19T16:07:50.033Z] [INFO] Inserted item: "Eyelid myoclonia..." (ID: 6974)
+[2025-03-19T16:07:50.085Z] [INFO] Inserted item: "Unknown onset:..." (ID: 6975)
+[2025-03-19T16:07:50.141Z] [INFO] Inserted item: "Motor:..." (ID: 6976)
+[2025-03-19T16:07:50.195Z] [INFO] Inserted item: "Tonic-clonic..." (ID: 6977)
+[2025-03-19T16:07:50.247Z] [INFO] Inserted item: "Epileptic spasms..." (ID: 6978)
+[2025-03-19T16:07:50.299Z] [INFO] Inserted item: "Non-motor (absence)..." (ID: 6979)
+[2025-03-19T16:07:50.360Z] [INFO] Inserted item: "Unclassified..." (ID: 6980)
+[2025-03-19T16:07:50.414Z] [INFO] Inserted/updated section: Status Epilepticus Classification (ID: 945)
+[2025-03-19T16:07:50.466Z] [INFO] Inserted item: "Tonic-clonic status epilepticu..." (ID: 6981)
+[2025-03-19T16:07:50.523Z] [INFO] Inserted item: "Focal status epilepticus with ..." (ID: 6982)
+[2025-03-19T16:07:50.585Z] [INFO] Inserted item: "Absence status epilepticus (>1..." (ID: 6983)
+[2025-03-19T16:07:50.643Z] [INFO] Inserted/updated section: Etiology (ID: 946)
+[2025-03-19T16:07:50.693Z] [INFO] Inserted item: "Unprovoked seizure..." (ID: 6984)
+[2025-03-19T16:07:50.744Z] [INFO] Inserted item: "Acute symptomatic seizure..." (ID: 6985)
+[2025-03-19T16:07:50.799Z] [INFO] Inserted item: "Metabolic:..." (ID: 6986)
+[2025-03-19T16:07:50.862Z] [INFO] Inserted item: "Hypoglycemia..." (ID: 6987)
+[2025-03-19T16:07:50.921Z] [INFO] Inserted item: "Hyponatremia..." (ID: 6988)
+[2025-03-19T16:07:50.981Z] [INFO] Inserted item: "Hypocalcemia..." (ID: 6989)
+[2025-03-19T16:07:51.042Z] [INFO] Inserted item: "Hypomagnesemia..." (ID: 6990)
+[2025-03-19T16:07:51.097Z] [INFO] Inserted item: "Uremia..." (ID: 6991)
+[2025-03-19T16:07:51.148Z] [INFO] Inserted item: "Hepatic encephalopathy..." (ID: 6992)
+[2025-03-19T16:07:51.203Z] [INFO] Inserted item: "Toxic:..." (ID: 6993)
+[2025-03-19T16:07:51.256Z] [INFO] Inserted item: "Alcohol-related..." (ID: 6994)
+[2025-03-19T16:07:51.314Z] [INFO] Inserted item: "Drug toxicity..." (ID: 6995)
+[2025-03-19T16:07:51.366Z] [INFO] Inserted item: "Medication adverse effect..." (ID: 6996)
+[2025-03-19T16:07:51.424Z] [INFO] Inserted item: "Structural:..." (ID: 6997)
+[2025-03-19T16:07:51.479Z] [INFO] Inserted item: "Stroke..." (ID: 6998)
+[2025-03-19T16:07:51.532Z] [INFO] Inserted item: "Tumor..." (ID: 6999)
+[2025-03-19T16:07:51.593Z] [INFO] Inserted item: "Traumatic brain injury..." (ID: 7000)
+[2025-03-19T16:07:51.649Z] [INFO] Inserted item: "Infectious:..." (ID: 7001)
+[2025-03-19T16:07:51.701Z] [INFO] Inserted item: "Meningitis..." (ID: 7002)
+[2025-03-19T16:07:51.751Z] [INFO] Inserted item: "Encephalitis..." (ID: 7003)
+[2025-03-19T16:07:51.813Z] [INFO] Inserted item: "Abscess..." (ID: 7004)
+[2025-03-19T16:07:51.876Z] [INFO] Inserted item: "Eclampsia (in pregnant patient..." (ID: 7005)
+[2025-03-19T16:07:51.937Z] [INFO] Inserted item: "Febrile (in infants)..." (ID: 7006)
+[2025-03-19T16:07:52.004Z] [INFO] Inserted/updated section: Risk Assessment (ID: 947)
+[2025-03-19T16:07:52.067Z] [INFO] Inserted item: "Risk for seizure recurrence..." (ID: 7007)
+[2025-03-19T16:07:52.131Z] [INFO] Inserted item: "High risk (brain lesion, EEG a..." (ID: 7008)
+[2025-03-19T16:07:52.188Z] [INFO] Inserted item: "Low risk..." (ID: 7009)
+[2025-03-19T16:07:52.254Z] [INFO] Inserted item: "Need for secondary prophylaxis..." (ID: 7010)
+[2025-03-19T16:07:52.255Z] [INFO] Completed processing file: assessment.md
+[2025-03-19T16:07:52.256Z] [INFO] Processing file: plan.md
+[2025-03-19T16:07:52.309Z] [INFO] Inserted/updated section: Initial Management (ID: 948)
+[2025-03-19T16:07:52.363Z] [INFO] Inserted item: "Airway management:..." (ID: 7011)
+[2025-03-19T16:07:52.418Z] [INFO] Inserted item: "Lateral decubitus positioning..." (ID: 7012)
+[2025-03-19T16:07:52.471Z] [INFO] Inserted item: "Suction of oral secretions..." (ID: 7013)
+[2025-03-19T16:07:52.525Z] [INFO] Inserted item: "Nasopharyngeal airway..." (ID: 7014)
+[2025-03-19T16:07:52.587Z] [INFO] Inserted item: "Oxygen administration..." (ID: 7015)
+[2025-03-19T16:07:52.638Z] [INFO] Inserted item: "Endotracheal intubation (if ne..." (ID: 7016)
+[2025-03-19T16:07:52.688Z] [INFO] Inserted item: "Vitals monitoring:..." (ID: 7017)
+[2025-03-19T16:07:52.738Z] [INFO] Inserted item: "Continuous pulse oximetry..." (ID: 7018)
+[2025-03-19T16:07:52.794Z] [INFO] Inserted item: "Cardiac monitoring..." (ID: 7019)
+[2025-03-19T16:07:52.850Z] [INFO] Inserted item: "Blood pressure monitoring..." (ID: 7020)
+[2025-03-19T16:07:52.904Z] [INFO] Inserted item: "Protection from injury..." (ID: 7021)
+[2025-03-19T16:07:52.958Z] [INFO] Inserted item: "IV access..." (ID: 7022)
+[2025-03-19T16:07:53.007Z] [INFO] Inserted/updated section: Abortive Therapy for Active Seizures (ID: 949)
+[2025-03-19T16:07:53.133Z] [INFO] Inserted item: "First-line therapy (for seizur..." (ID: 7023)
+[2025-03-19T16:07:53.193Z] [INFO] Inserted item: "Benzodiazepines:..." (ID: 7024)
+[2025-03-19T16:07:53.247Z] [INFO] Inserted item: "Lorazepam IV 0.1 mg/kg (max 4 ..." (ID: 7025)
+[2025-03-19T16:07:53.302Z] [INFO] Inserted item: "Midazolam IM/IV/IN 0.2 mg/kg (..." (ID: 7026)
+[2025-03-19T16:07:53.364Z] [INFO] Inserted item: "Diazepam IV 0.15-0.2 mg/kg (ma..." (ID: 7027)
+[2025-03-19T16:07:53.434Z] [INFO] Inserted item: "Second-line therapy (if seizur..." (ID: 7028)
+[2025-03-19T16:07:53.487Z] [INFO] Inserted item: "Levetiracetam IV 1000-4500 mg ..." (ID: 7029)
+[2025-03-19T16:07:53.542Z] [INFO] Inserted item: "Fosphenytoin IV 10-20 mg PE/kg..." (ID: 7030)
+[2025-03-19T16:07:53.599Z] [INFO] Inserted item: "Valproic acid IV 20-40 mg/kg..." (ID: 7031)
+[2025-03-19T16:07:53.661Z] [INFO] Inserted item: "Phenobarbital IV 15-20 mg/kg..." (ID: 7032)
+[2025-03-19T16:07:53.714Z] [INFO] Inserted item: "Phenytoin IV 15-20 mg/kg..." (ID: 7033)
+[2025-03-19T16:07:53.765Z] [INFO] Inserted item: "Lacosamide IV 200-400 mg..." (ID: 7034)
+[2025-03-19T16:07:53.815Z] [INFO] Inserted item: "Third-line therapy (for refrac..." (ID: 7035)
+[2025-03-19T16:07:53.867Z] [INFO] Inserted item: "Ketamine..." (ID: 7036)
+[2025-03-19T16:07:53.928Z] [INFO] Inserted item: "Midazolam infusion..." (ID: 7037)
+[2025-03-19T16:07:53.982Z] [INFO] Inserted item: "Pentobarbital..." (ID: 7038)
+[2025-03-19T16:07:54.031Z] [INFO] Inserted item: "Propofol infusion..." (ID: 7039)
+[2025-03-19T16:07:54.080Z] [INFO] Inserted/updated section: Special Considerations (ID: 950)
+[2025-03-19T16:07:54.140Z] [INFO] Inserted item: "Eclampsia:..." (ID: 7040)
+[2025-03-19T16:07:54.188Z] [INFO] Inserted item: "IV magnesium 4-6 g..." (ID: 7041)
+[2025-03-19T16:07:54.244Z] [INFO] Inserted item: "Isoniazid overdose:..." (ID: 7042)
+[2025-03-19T16:07:54.322Z] [INFO] Inserted item: "Pyridoxine..." (ID: 7043)
+[2025-03-19T16:07:54.374Z] [INFO] Inserted item: "Hyponatremia:..." (ID: 7044)
+[2025-03-19T16:07:54.432Z] [INFO] Inserted item: "Hypertonic saline..." (ID: 7045)
+[2025-03-19T16:07:54.487Z] [INFO] Inserted/updated section: Treatment of Underlying Causes (ID: 951)
+[2025-03-19T16:07:54.540Z] [INFO] Inserted item: "Correction of metabolic abnorm..." (ID: 7046)
+[2025-03-19T16:07:54.602Z] [INFO] Inserted item: "Glucose for hypoglycemia..." (ID: 7047)
+[2025-03-19T16:07:54.663Z] [INFO] Inserted item: "Electrolyte correction..." (ID: 7048)
+[2025-03-19T16:07:54.718Z] [INFO] Inserted item: "Treatment of infections..." (ID: 7049)
+[2025-03-19T16:07:54.771Z] [INFO] Inserted item: "Management of toxin exposure..." (ID: 7050)
+[2025-03-19T16:07:54.823Z] [INFO] Inserted item: "Control of increased intracran..." (ID: 7051)
+[2025-03-19T16:07:54.874Z] [INFO] Inserted/updated section: Secondary Prophylaxis Considerations (ID: 952)
+[2025-03-19T16:07:54.931Z] [INFO] Inserted item: "For patients with high recurre..." (ID: 7052)
+[2025-03-19T16:07:54.988Z] [INFO] Inserted item: "Antiseizure medication initiat..." (ID: 7053)
+[2025-03-19T16:07:55.039Z] [INFO] Inserted item: "Dose adjustment of current reg..." (ID: 7054)
+[2025-03-19T16:07:55.092Z] [INFO] Inserted item: "Loading dose for subtherapeuti..." (ID: 7055)
+[2025-03-19T16:07:55.142Z] [INFO] Inserted item: "Phenytoin: _____..." (ID: 7056)
+[2025-03-19T16:07:55.210Z] [INFO] Inserted item: "Valproic acid: _____..." (ID: 7057)
+[2025-03-19T16:07:55.268Z] [INFO] Inserted item: "Other: _____..." (ID: 7058)
+[2025-03-19T16:07:55.270Z] [INFO] Completed processing file: plan.md
+[2025-03-19T16:07:55.270Z] [INFO] Processing file: disposition.md
+[2025-03-19T16:07:55.331Z] [INFO] Inserted/updated section: Discharge Criteria (ID: 953)
+[2025-03-19T16:07:55.387Z] [INFO] Inserted item: "Normal neurologic examination..." (ID: 7059)
+[2025-03-19T16:07:55.450Z] [INFO] Inserted item: "No significant medical comorbi..." (ID: 7060)
+[2025-03-19T16:07:55.503Z] [INFO] Inserted item: "No known structural brain dise..." (ID: 7061)
+[2025-03-19T16:07:55.555Z] [INFO] Inserted item: "Required no more than one dose..." (ID: 7062)
+[2025-03-19T16:07:55.623Z] [INFO] Inserted item: "Sufficient resources for follo..." (ID: 7063)
+[2025-03-19T16:07:55.674Z] [INFO] Inserted item: "Return to baseline mental stat..." (ID: 7064)
+[2025-03-19T16:07:55.726Z] [INFO] Inserted/updated section: Admission Criteria (ID: 954)
+[2025-03-19T16:07:55.783Z] [INFO] Inserted item: "Abnormal neurologic examinatio..." (ID: 7065)
+[2025-03-19T16:07:55.830Z] [INFO] Inserted item: "Medical or neurologic comorbid..." (ID: 7066)
+[2025-03-19T16:07:55.880Z] [INFO] Inserted item: "First-time seizure with diagno..." (ID: 7067)
+[2025-03-19T16:07:55.928Z] [INFO] Inserted item: "Status epilepticus..." (ID: 7068)
+[2025-03-19T16:07:55.994Z] [INFO] Inserted item: "Required multiple doses of ant..." (ID: 7069)
+[2025-03-19T16:07:56.047Z] [INFO] Inserted item: "Inability to comply with follo..." (ID: 7070)
+[2025-03-19T16:07:56.098Z] [INFO] Inserted item: "Persistent altered mental stat..." (ID: 7071)
+[2025-03-19T16:07:56.151Z] [INFO] Inserted item: "Lack of adequate home resource..." (ID: 7072)
+[2025-03-19T16:07:56.209Z] [INFO] Inserted/updated section: Follow-up Requirements (ID: 955)
+[2025-03-19T16:07:56.268Z] [INFO] Inserted item: "Neurology consultation..." (ID: 7073)
+[2025-03-19T16:07:56.339Z] [INFO] Inserted item: "Urgent (within 24-48 hours)..." (ID: 7074)
+[2025-03-19T16:07:56.399Z] [INFO] Inserted item: "Non-urgent (within 1-2 weeks)..." (ID: 7075)
+[2025-03-19T16:07:56.477Z] [INFO] Inserted item: "Primary care follow-up..." (ID: 7076)
+[2025-03-19T16:07:56.536Z] [INFO] Inserted item: "Outpatient EEG..." (ID: 7077)
+[2025-03-19T16:07:56.592Z] [INFO] Inserted item: "Outpatient neuroimaging..." (ID: 7078)
+[2025-03-19T16:07:56.660Z] [INFO] Inserted/updated section: Special Considerations (ID: 956)
+[2025-03-19T16:07:56.715Z] [INFO] Inserted item: "Immunocompromised patients..." (ID: 7079)
+[2025-03-19T16:07:56.770Z] [INFO] Inserted item: "Pregnant patients..." (ID: 7080)
+[2025-03-19T16:07:56.826Z] [INFO] Inserted item: "Pediatric patients..." (ID: 7081)
+[2025-03-19T16:07:56.879Z] [INFO] Inserted item: "Elderly patients..." (ID: 7082)
+[2025-03-19T16:07:56.930Z] [INFO] Inserted item: "Patients with known epilepsy w..." (ID: 7083)
+[2025-03-19T16:07:56.931Z] [INFO] Completed processing file: disposition.md
+[2025-03-19T16:07:56.931Z] [INFO] Processing file: patient-education.md
+[2025-03-19T16:07:56.985Z] [INFO] Inserted/updated section: Activity Restrictions (ID: 957)
+[2025-03-19T16:07:57.041Z] [INFO] Inserted item: "Driving restrictions..." (ID: 7084)
+[2025-03-19T16:07:57.103Z] [INFO] Inserted item: "State-specific guidance regard..." (ID: 7085)
+[2025-03-19T16:07:57.156Z] [INFO] Inserted item: "Avoidance of potentially dange..." (ID: 7086)
+[2025-03-19T16:07:57.206Z] [INFO] Inserted item: "Swimming..." (ID: 7087)
+[2025-03-19T16:07:57.256Z] [INFO] Inserted item: "Climbing ladders/heights..." (ID: 7088)
+[2025-03-19T16:07:57.307Z] [INFO] Inserted item: "Operating machinery..." (ID: 7089)
+[2025-03-19T16:07:57.358Z] [INFO] Inserted item: "Bathing unsupervised..." (ID: 7090)
+[2025-03-19T16:07:57.409Z] [INFO] Inserted/updated section: Seizure Precautions (ID: 958)
+[2025-03-19T16:07:57.462Z] [INFO] Inserted item: "Safety measures in home enviro..." (ID: 7091)
+[2025-03-19T16:07:57.523Z] [INFO] Inserted item: "Seizure first aid for family m..." (ID: 7092)
+[2025-03-19T16:07:57.574Z] [INFO] Inserted item: "Recognition of warning signs f..." (ID: 7093)
+[2025-03-19T16:07:57.628Z] [INFO] Inserted/updated section: Medication Education (ID: 959)
+[2025-03-19T16:07:57.676Z] [INFO] Inserted item: "Importance of medication compl..." (ID: 7094)
+[2025-03-19T16:07:57.728Z] [INFO] Inserted item: "Potential side effects of anti..." (ID: 7095)
+[2025-03-19T16:07:57.779Z] [INFO] Inserted item: "Drug-drug interactions..." (ID: 7096)
+[2025-03-19T16:07:57.834Z] [INFO] Inserted item: "Need for regular monitoring of..." (ID: 7097)
+[2025-03-19T16:07:57.887Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: 960)
+[2025-03-19T16:07:57.944Z] [INFO] Inserted item: "Sleep hygiene..." (ID: 7098)
+[2025-03-19T16:07:57.993Z] [INFO] Inserted item: "Stress management..." (ID: 7099)
+[2025-03-19T16:07:58.045Z] [INFO] Inserted item: "Alcohol limitation..." (ID: 7100)
+[2025-03-19T16:07:58.099Z] [INFO] Inserted item: "Avoidance of seizure triggers..." (ID: 7101)
+[2025-03-19T16:07:58.157Z] [INFO] Inserted/updated section: Follow-up Instructions (ID: 961)
+[2025-03-19T16:07:58.222Z] [INFO] Inserted item: "When to seek emergency care:..." (ID: 7102)
+[2025-03-19T16:07:58.288Z] [INFO] Inserted item: "Seizure lasting >5 minutes..." (ID: 7103)
+[2025-03-19T16:07:58.355Z] [INFO] Inserted item: "Repeated seizures without retu..." (ID: 7104)
+[2025-03-19T16:07:58.407Z] [INFO] Inserted item: "Injury during seizure..." (ID: 7105)
+[2025-03-19T16:07:58.457Z] [INFO] Inserted item: "Prolonged postictal state..." (ID: 7106)
+[2025-03-19T16:07:58.514Z] [INFO] Inserted item: "New neurologic deficits..." (ID: 7107)
+[2025-03-19T16:07:58.564Z] [INFO] Inserted item: "Importance of neurologist foll..." (ID: 7108)
+[2025-03-19T16:07:58.625Z] [INFO] Inserted item: "Information on how to track se..." (ID: 7109)
+[2025-03-19T16:07:58.678Z] [INFO] Inserted/updated section: Resources (ID: 962)
+[2025-03-19T16:07:58.730Z] [INFO] Inserted item: "Local epilepsy support groups..." (ID: 7110)
+[2025-03-19T16:07:58.789Z] [INFO] Inserted item: "Educational materials..." (ID: 7111)
+[2025-03-19T16:07:58.790Z] [INFO] Completed processing file: patient-education.md
+[2025-03-19T16:07:58.791Z] [INFO] Completed processing chapter: Ch14_Seizures
+[2025-03-19T16:07:58.792Z] [INFO] Processing chapter: Ch150_Antipsychotics
+[2025-03-19T16:07:58.844Z] [ERROR] Error processing chapter Ch150_Antipsychotics: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:58.844Z] [INFO] Processing chapter: Ch151_Opioids
+[2025-03-19T16:07:58.892Z] [ERROR] Error processing chapter Ch151_Opioids: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:58.893Z] [INFO] Processing chapter: Ch152_Pesticides
+[2025-03-19T16:07:58.940Z] [ERROR] Error processing chapter Ch152_Pesticides: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:58.940Z] [INFO] Processing chapter: Ch153_Plants, Herbal Medications, and Mushrooms
+[2025-03-19T16:07:58.988Z] [ERROR] Error processing chapter Ch153_Plants, Herbal Medications, and Mushrooms: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:58.989Z] [INFO] Processing chapter: Ch154_Sedative-Hypnotics
+[2025-03-19T16:07:59.044Z] [ERROR] Error processing chapter Ch154_Sedative-Hypnotics: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.044Z] [INFO] Processing chapter: Ch155_Care of the Pediatric Patient
+[2025-03-19T16:07:59.095Z] [ERROR] Error processing chapter Ch155_Care of the Pediatric Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.095Z] [INFO] Processing chapter: Ch156_Pediatric Airway Management
+[2025-03-19T16:07:59.144Z] [ERROR] Error processing chapter Ch156_Pediatric Airway Management: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.144Z] [INFO] Processing chapter: Ch157_Pediatric Sedation and Analgesia
+[2025-03-19T16:07:59.200Z] [ERROR] Error processing chapter Ch157_Pediatric Sedation and Analgesia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.200Z] [INFO] Processing chapter: Ch158_Pediatric Resuscitation
+[2025-03-19T16:07:59.251Z] [ERROR] Error processing chapter Ch158_Pediatric Resuscitation: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.252Z] [INFO] Processing chapter: Ch159_Neonatal Resuscitation
+[2025-03-19T16:07:59.311Z] [ERROR] Error processing chapter Ch159_Neonatal Resuscitation: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.312Z] [INFO] Processing chapter: Ch15_Dizziness and Vertigo
+[2025-03-19T16:07:59.362Z] [ERROR] Error processing chapter Ch15_Dizziness and Vertigo: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.363Z] [INFO] Processing chapter: Ch160_Pediatric Trauma
+[2025-03-19T16:07:59.418Z] [ERROR] Error processing chapter Ch160_Pediatric Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.419Z] [INFO] Processing chapter: Ch161_Pediatric Fever
+[2025-03-19T16:07:59.480Z] [ERROR] Error processing chapter Ch161_Pediatric Fever: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.481Z] [INFO] Processing chapter: Ch162_Pediatric Upper Airway Obstruction and Infections
+[2025-03-19T16:07:59.537Z] [ERROR] Error processing chapter Ch162_Pediatric Upper Airway Obstruction and Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.537Z] [INFO] Processing chapter: Ch163_Pediatric Lower Airway Obstruction
+[2025-03-19T16:07:59.602Z] [ERROR] Error processing chapter Ch163_Pediatric Lower Airway Obstruction: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.603Z] [INFO] Processing chapter: Ch164_Pediatric Lung Disease
+[2025-03-19T16:07:59.654Z] [ERROR] Error processing chapter Ch164_Pediatric Lung Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.654Z] [INFO] Processing chapter: Ch165_Pediatric Cardiac Disorders
+[2025-03-19T16:07:59.762Z] [ERROR] Error processing chapter Ch165_Pediatric Cardiac Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.763Z] [INFO] Processing chapter: Ch166_Pediatric Gastrointestinal Disorders
+[2025-03-19T16:07:59.813Z] [ERROR] Error processing chapter Ch166_Pediatric Gastrointestinal Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.813Z] [INFO] Processing chapter: Ch167_Pediatric Infectious Diarrheal Disease and Dehydration
+[2025-03-19T16:07:59.865Z] [ERROR] Error processing chapter Ch167_Pediatric Infectious Diarrheal Disease and Dehydration: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.865Z] [INFO] Processing chapter: Ch168_Pediatric Genitourinary and Renal Tract Disorders
+[2025-03-19T16:07:59.914Z] [ERROR] Error processing chapter Ch168_Pediatric Genitourinary and Renal Tract Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.915Z] [INFO] Processing chapter: Ch169_Pediatric Neurologic Disorders
+[2025-03-19T16:07:59.966Z] [ERROR] Error processing chapter Ch169_Pediatric Neurologic Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:07:59.966Z] [INFO] Processing chapter: Ch16_Headache
+[2025-03-19T16:08:00.020Z] [ERROR] Error processing chapter Ch16_Headache: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.021Z] [INFO] Processing chapter: Ch170_Pediatric Musculoskeletal Disorders
+[2025-03-19T16:08:00.073Z] [ERROR] Error processing chapter Ch170_Pediatric Musculoskeletal Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.073Z] [INFO] Processing chapter: Ch171_Pediatric Drug Therapy
+[2025-03-19T16:08:00.128Z] [ERROR] Error processing chapter Ch171_Pediatric Drug Therapy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.128Z] [INFO] Processing chapter: Ch172_Child Abuse
+[2025-03-19T16:08:00.196Z] [ERROR] Error processing chapter Ch172_Child Abuse: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.198Z] [INFO] Processing chapter: Ch173_Complications of Pregnancy
+[2025-03-19T16:08:00.255Z] [ERROR] Error processing chapter Ch173_Complications of Pregnancy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.256Z] [INFO] Processing chapter: Ch174_Medical Emergencies During Pregnancy
+[2025-03-19T16:08:00.308Z] [ERROR] Error processing chapter Ch174_Medical Emergencies During Pregnancy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.309Z] [INFO] Processing chapter: Ch175_Drug Therapy in Pregnancy
+[2025-03-19T16:08:00.358Z] [ERROR] Error processing chapter Ch175_Drug Therapy in Pregnancy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.359Z] [INFO] Processing chapter: Ch176_Labor and Delivery
+[2025-03-19T16:08:00.420Z] [ERROR] Error processing chapter Ch176_Labor and Delivery: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.421Z] [INFO] Processing chapter: Ch177_Trauma in Pregnancy
+[2025-03-19T16:08:00.484Z] [ERROR] Error processing chapter Ch177_Trauma in Pregnancy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.485Z] [INFO] Processing chapter: Ch178_Care of the Geriatric Patient
+[2025-03-19T16:08:00.542Z] [ERROR] Error processing chapter Ch178_Care of the Geriatric Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.542Z] [INFO] Processing chapter: Ch179_Geriatric Trauma
+[2025-03-19T16:08:00.592Z] [ERROR] Error processing chapter Ch179_Geriatric Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.593Z] [INFO] Processing chapter: Ch17_Diplopia
+[2025-03-19T16:08:00.644Z] [ERROR] Error processing chapter Ch17_Diplopia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.645Z] [INFO] Processing chapter: Ch180_Geriatric Drug Therapy
+[2025-03-19T16:08:00.696Z] [ERROR] Error processing chapter Ch180_Geriatric Drug Therapy: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.697Z] [INFO] Processing chapter: Ch181_Geriatric Abuse and Neglect
+[2025-03-19T16:08:00.760Z] [ERROR] Error processing chapter Ch181_Geriatric Abuse and Neglect: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.760Z] [INFO] Processing chapter: Ch182_The Immunocompromised Patient
+[2025-03-19T16:08:00.814Z] [ERROR] Error processing chapter Ch182_The Immunocompromised Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.814Z] [INFO] Processing chapter: Ch183_The Solid Organ Transplant Patient
+[2025-03-19T16:08:00.865Z] [ERROR] Error processing chapter Ch183_The Solid Organ Transplant Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.866Z] [INFO] Processing chapter: Ch184_The Morbidly Obese Patient
+[2025-03-19T16:08:00.919Z] [ERROR] Error processing chapter Ch184_The Morbidly Obese Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.920Z] [INFO] Processing chapter: Ch185_The Combative and Difficult Patient
+[2025-03-19T16:08:00.985Z] [ERROR] Error processing chapter Ch185_The Combative and Difficult Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:00.985Z] [INFO] Processing chapter: Ch18_Red and Painful Eye
+[2025-03-19T16:08:01.042Z] [ERROR] Error processing chapter Ch18_Red and Painful Eye: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.043Z] [INFO] Processing chapter: Ch19_Sore Throat
+[2025-03-19T16:08:01.109Z] [ERROR] Error processing chapter Ch19_Sore Throat: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.110Z] [INFO] Processing chapter: Ch1_Airway
+[2025-03-19T16:08:01.172Z] [ERROR] Error processing chapter Ch1_Airway: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.173Z] [INFO] Processing chapter: Ch20_Hemoptysis
+[2025-03-19T16:08:01.226Z] [ERROR] Error processing chapter Ch20_Hemoptysis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.227Z] [INFO] Processing chapter: Ch21_Dyspnea
+[2025-03-19T16:08:01.292Z] [ERROR] Error processing chapter Ch21_Dyspnea: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.293Z] [INFO] Processing chapter: Ch22_Chest Pain
+[2025-03-19T16:08:01.350Z] [ERROR] Error processing chapter Ch22_Chest Pain: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.351Z] [INFO] Processing chapter: Ch23_Abdominal Pain
+[2025-03-19T16:08:01.405Z] [ERROR] Error processing chapter Ch23_Abdominal Pain: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.405Z] [INFO] Processing chapter: Ch24_Jaundice
+[2025-03-19T16:08:01.456Z] [ERROR] Error processing chapter Ch24_Jaundice: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.457Z] [INFO] Processing chapter: Ch25_Nausea and Vomiting
+[2025-03-19T16:08:01.511Z] [ERROR] Error processing chapter Ch25_Nausea and Vomiting: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.512Z] [INFO] Processing chapter: Ch26_Gastrointestinal Bleeding
+[2025-03-19T16:08:01.583Z] [ERROR] Error processing chapter Ch26_Gastrointestinal Bleeding: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.583Z] [INFO] Processing chapter: Ch27_Diarrhea
+[2025-03-19T16:08:01.640Z] [ERROR] Error processing chapter Ch27_Diarrhea: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.640Z] [INFO] Processing chapter: Ch28_Constipation
+[2025-03-19T16:08:01.696Z] [ERROR] Error processing chapter Ch28_Constipation: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.697Z] [INFO] Processing chapter: Ch29_Acute Pelvic Pain
+[2025-03-19T16:08:01.755Z] [ERROR] Error processing chapter Ch29_Acute Pelvic Pain: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.755Z] [INFO] Processing chapter: Ch2_Mechanical Ventilation and Noninvasive Ventilatory_Support
+[2025-03-19T16:08:01.817Z] [ERROR] Error processing chapter Ch2_Mechanical Ventilation and Noninvasive Ventilatory_Support: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.817Z] [INFO] Processing chapter: Ch30_Vaginal Bleeding
+[2025-03-19T16:08:01.870Z] [ERROR] Error processing chapter Ch30_Vaginal Bleeding: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.871Z] [INFO] Processing chapter: Ch31_Back Pain
+[2025-03-19T16:08:01.935Z] [ERROR] Error processing chapter Ch31_Back Pain: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.935Z] [INFO] Processing chapter: Ch32_Multiple Trauma
+[2025-03-19T16:08:01.988Z] [ERROR] Error processing chapter Ch32_Multiple Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:01.989Z] [INFO] Processing chapter: Ch33_Head Trauma
+[2025-03-19T16:08:02.039Z] [ERROR] Error processing chapter Ch33_Head Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.040Z] [INFO] Processing chapter: Ch34_Facial Trauma
+[2025-03-19T16:08:02.096Z] [ERROR] Error processing chapter Ch34_Facial Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.097Z] [INFO] Processing chapter: Ch35_Spinal Trauma
+[2025-03-19T16:08:02.156Z] [ERROR] Error processing chapter Ch35_Spinal Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.157Z] [INFO] Processing chapter: Ch36_Neck Trauma
+[2025-03-19T16:08:02.210Z] [ERROR] Error processing chapter Ch36_Neck Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.211Z] [INFO] Processing chapter: Ch37_Thoracic Trauma
+[2025-03-19T16:08:02.264Z] [ERROR] Error processing chapter Ch37_Thoracic Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.264Z] [INFO] Processing chapter: Ch38_Abdominal Trauma
+[2025-03-19T16:08:02.325Z] [ERROR] Error processing chapter Ch38_Abdominal Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.326Z] [INFO] Processing chapter: Ch39_Genitourinary Trauma
+[2025-03-19T16:08:02.375Z] [ERROR] Error processing chapter Ch39_Genitourinary Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.376Z] [INFO] Processing chapter: Ch3_Shock
+[2025-03-19T16:08:02.446Z] [ERROR] Error processing chapter Ch3_Shock: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.447Z] [INFO] Processing chapter: Ch40_Peripheral Vascular Trauma
+[2025-03-19T16:08:02.504Z] [ERROR] Error processing chapter Ch40_Peripheral Vascular Trauma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.504Z] [INFO] Processing chapter: Ch41_General Principles of Orthopedic Injuries
+[2025-03-19T16:08:02.565Z] [ERROR] Error processing chapter Ch41_General Principles of Orthopedic Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.566Z] [INFO] Processing chapter: Ch42_Hand Injuries
+[2025-03-19T16:08:02.621Z] [ERROR] Error processing chapter Ch42_Hand Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.622Z] [INFO] Processing chapter: Ch43_Wrist and Forearm Injuries
+[2025-03-19T16:08:02.672Z] [ERROR] Error processing chapter Ch43_Wrist and Forearm Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.673Z] [INFO] Processing chapter: Ch44_Humerus and Elbow Injuries
+[2025-03-19T16:08:02.731Z] [ERROR] Error processing chapter Ch44_Humerus and Elbow Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.731Z] [INFO] Processing chapter: Ch45_Shoulder Injuries
+[2025-03-19T16:08:02.785Z] [ERROR] Error processing chapter Ch45_Shoulder Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.787Z] [INFO] Processing chapter: Ch46_Pelvic Injuries
+[2025-03-19T16:08:02.836Z] [ERROR] Error processing chapter Ch46_Pelvic Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.837Z] [INFO] Processing chapter: Ch47_Femur and Hip Injuries
+[2025-03-19T16:08:02.883Z] [ERROR] Error processing chapter Ch47_Femur and Hip Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.883Z] [INFO] Processing chapter: Ch48_Knee and Lower Leg Injuries
+[2025-03-19T16:08:02.936Z] [ERROR] Error processing chapter Ch48_Knee and Lower Leg Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.937Z] [INFO] Processing chapter: Ch49_Ankle and Foot Injuries
+[2025-03-19T16:08:02.993Z] [ERROR] Error processing chapter Ch49_Ankle and Foot Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:02.994Z] [INFO] Processing chapter: Ch4_Brain Resuscitation
+[2025-03-19T16:08:03.043Z] [ERROR] Error processing chapter Ch4_Brain Resuscitation: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.044Z] [INFO] Processing chapter: Ch50_Wound Management Principles
+[2025-03-19T16:08:03.093Z] [ERROR] Error processing chapter Ch50_Wound Management Principles: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.093Z] [INFO] Processing chapter: Ch51_Foreign Bodies
+[2025-03-19T16:08:03.146Z] [ERROR] Error processing chapter Ch51_Foreign Bodies: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.146Z] [INFO] Processing chapter: Ch52_Mammalian Bites
+[2025-03-19T16:08:03.198Z] [ERROR] Error processing chapter Ch52_Mammalian Bites: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.198Z] [INFO] Processing chapter: Ch53_Venomous Animal Injuries
+[2025-03-19T16:08:03.260Z] [ERROR] Error processing chapter Ch53_Venomous Animal Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.261Z] [INFO] Processing chapter: Ch54_Thermal Injuries
+[2025-03-19T16:08:03.311Z] [ERROR] Error processing chapter Ch54_Thermal Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.312Z] [INFO] Processing chapter: Ch55_Chemical Injuries
+[2025-03-19T16:08:03.365Z] [ERROR] Error processing chapter Ch55_Chemical Injuries: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.365Z] [INFO] Processing chapter: Ch56_Oral Medicine
+[2025-03-19T16:08:03.416Z] [ERROR] Error processing chapter Ch56_Oral Medicine: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.416Z] [INFO] Processing chapter: Ch57_Ophthalmology
+[2025-03-19T16:08:03.467Z] [ERROR] Error processing chapter Ch57_Ophthalmology: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.467Z] [INFO] Processing chapter: Ch58_Otolaryngology
+[2025-03-19T16:08:03.514Z] [ERROR] Error processing chapter Ch58_Otolaryngology: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.515Z] [INFO] Processing chapter: Ch59_Asthma
+[2025-03-19T16:08:03.566Z] [ERROR] Error processing chapter Ch59_Asthma: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.566Z] [INFO] Processing chapter: Ch5_Adult Resuscitaton
+[2025-03-19T16:08:03.616Z] [ERROR] Error processing chapter Ch5_Adult Resuscitaton: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.616Z] [INFO] Processing chapter: Ch60_Chronic Obstructive Pulmonary Disease
+[2025-03-19T16:08:03.666Z] [ERROR] Error processing chapter Ch60_Chronic Obstructive Pulmonary Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.667Z] [INFO] Processing chapter: Ch61_Upper Respiratory Tract Infections
+[2025-03-19T16:08:03.723Z] [ERROR] Error processing chapter Ch61_Upper Respiratory Tract Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.724Z] [INFO] Processing chapter: Ch62_Pneumonia
+[2025-03-19T16:08:03.777Z] [ERROR] Error processing chapter Ch62_Pneumonia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.778Z] [INFO] Processing chapter: Ch63_Pleural Disease
+[2025-03-19T16:08:03.829Z] [ERROR] Error processing chapter Ch63_Pleural Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.830Z] [INFO] Processing chapter: Ch64_Acute Coronary Syndromes
+[2025-03-19T16:08:03.888Z] [ERROR] Error processing chapter Ch64_Acute Coronary Syndromes: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.889Z] [INFO] Processing chapter: Ch65_Dysrhythmias
+[2025-03-19T16:08:03.947Z] [ERROR] Error processing chapter Ch65_Dysrhythmias: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:03.948Z] [INFO] Processing chapter: Ch66_Implantable Cardiac Devices
+[2025-03-19T16:08:04.000Z] [ERROR] Error processing chapter Ch66_Implantable Cardiac Devices: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.001Z] [INFO] Processing chapter: Ch67_Heart Failure
+[2025-03-19T16:08:04.057Z] [ERROR] Error processing chapter Ch67_Heart Failure: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.057Z] [INFO] Processing chapter: Ch68_Pericardial and Myocardial Disease
+[2025-03-19T16:08:04.101Z] [ERROR] Error processing chapter Ch68_Pericardial and Myocardial Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.101Z] [INFO] Processing chapter: Ch69_Infective Endocarditis and Valvular Heart Disease
+[2025-03-19T16:08:04.147Z] [ERROR] Error processing chapter Ch69_Infective Endocarditis and Valvular Heart Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.147Z] [INFO] Processing chapter: Ch6_Pain Management
+[2025-03-19T16:08:04.197Z] [ERROR] Error processing chapter Ch6_Pain Management: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.197Z] [INFO] Processing chapter: Ch70_Hypertension
+[2025-03-19T16:08:04.262Z] [ERROR] Error processing chapter Ch70_Hypertension: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.263Z] [INFO] Processing chapter: Ch71_Aortic Dissection
+[2025-03-19T16:08:04.361Z] [ERROR] Error processing chapter Ch71_Aortic Dissection: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.361Z] [INFO] Processing chapter: Ch72_Abdominal Aortic Aneurysm
+[2025-03-19T16:08:04.412Z] [ERROR] Error processing chapter Ch72_Abdominal Aortic Aneurysm: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.413Z] [INFO] Processing chapter: Ch73_Peripheral Arteriovascular Disease
+[2025-03-19T16:08:04.465Z] [ERROR] Error processing chapter Ch73_Peripheral Arteriovascular Disease: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.465Z] [INFO] Processing chapter: Ch74_Pulmonary Embolism and Deep Vein Thrombosis
+[2025-03-19T16:08:04.515Z] [ERROR] Error processing chapter Ch74_Pulmonary Embolism and Deep Vein Thrombosis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.515Z] [INFO] Processing chapter: Ch75_Esophagus, Stomach, and Duodenum
+[2025-03-19T16:08:04.566Z] [ERROR] Error processing chapter Ch75_Esophagus, Stomach, and Duodenum: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.567Z] [INFO] Processing chapter: Ch76_Liver and Biliary Tract Disorders
+[2025-03-19T16:08:04.618Z] [ERROR] Error processing chapter Ch76_Liver and Biliary Tract Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.619Z] [INFO] Processing chapter: Ch77_Pancreas
+[2025-03-19T16:08:04.682Z] [ERROR] Error processing chapter Ch77_Pancreas: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.683Z] [INFO] Processing chapter: Ch78_Small Intestine
+[2025-03-19T16:08:04.745Z] [ERROR] Error processing chapter Ch78_Small Intestine: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.746Z] [INFO] Processing chapter: Ch79_Acute Appendicitis
+[2025-03-19T16:08:04.805Z] [ERROR] Error processing chapter Ch79_Acute Appendicitis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.806Z] [INFO] Processing chapter: Ch7_Procedural Sedation and Analgesia
+[2025-03-19T16:08:04.862Z] [ERROR] Error processing chapter Ch7_Procedural Sedation and Analgesia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.863Z] [INFO] Processing chapter: Ch80_Gastroenteritis
+[2025-03-19T16:08:04.917Z] [ERROR] Error processing chapter Ch80_Gastroenteritis: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.918Z] [INFO] Processing chapter: Ch81_Large Intestine
+[2025-03-19T16:08:04.984Z] [ERROR] Error processing chapter Ch81_Large Intestine: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:04.984Z] [INFO] Processing chapter: Ch82_Anorectum
+[2025-03-19T16:08:05.040Z] [ERROR] Error processing chapter Ch82_Anorectum: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.041Z] [INFO] Processing chapter: Ch83_Renal Failure
+[2025-03-19T16:08:05.103Z] [ERROR] Error processing chapter Ch83_Renal Failure: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.104Z] [INFO] Processing chapter: Ch84_Sexually Transmitted Infections
+[2025-03-19T16:08:05.159Z] [ERROR] Error processing chapter Ch84_Sexually Transmitted Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.159Z] [INFO] Processing chapter: Ch85_Urologic Disorders
+[2025-03-19T16:08:05.211Z] [ERROR] Error processing chapter Ch85_Urologic Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.212Z] [INFO] Processing chapter: Ch86_Gynecologic Disorders
+[2025-03-19T16:08:05.275Z] [ERROR] Error processing chapter Ch86_Gynecologic Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.276Z] [INFO] Processing chapter: Ch87_Stroke
+[2025-03-19T16:08:05.328Z] [ERROR] Error processing chapter Ch87_Stroke: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.329Z] [INFO] Processing chapter: Ch88_Seizure
+[2025-03-19T16:08:05.385Z] [ERROR] Error processing chapter Ch88_Seizure: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.385Z] [INFO] Processing chapter: Ch89_Headache Disorders
+[2025-03-19T16:08:05.435Z] [ERROR] Error processing chapter Ch89_Headache Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.437Z] [INFO] Processing chapter: Ch8_Fever in the Adult Patient
+[2025-03-19T16:08:05.486Z] [ERROR] Error processing chapter Ch8_Fever in the Adult Patient: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.487Z] [INFO] Processing chapter: Ch90_Delirium and Dementia
+[2025-03-19T16:08:05.541Z] [ERROR] Error processing chapter Ch90_Delirium and Dementia: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.542Z] [INFO] Processing chapter: Ch91_Brain and Cranial Nerve Disorders
+[2025-03-19T16:08:05.594Z] [ERROR] Error processing chapter Ch91_Brain and Cranial Nerve Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.595Z] [INFO] Processing chapter: Ch92_Spinal Cord Disorders
+[2025-03-19T16:08:05.650Z] [ERROR] Error processing chapter Ch92_Spinal Cord Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.650Z] [INFO] Processing chapter: Ch93_Peripheral Nerve Disorders
+[2025-03-19T16:08:05.705Z] [ERROR] Error processing chapter Ch93_Peripheral Nerve Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.705Z] [INFO] Processing chapter: Ch94_Neuromuscular Disorders
+[2025-03-19T16:08:05.761Z] [ERROR] Error processing chapter Ch94_Neuromuscular Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.762Z] [INFO] Processing chapter: Ch95_Central Nervous System Infections
+[2025-03-19T16:08:05.808Z] [ERROR] Error processing chapter Ch95_Central Nervous System Infections: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.808Z] [INFO] Processing chapter: Ch96_Thought Disorders
+[2025-03-19T16:08:05.861Z] [ERROR] Error processing chapter Ch96_Thought Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.861Z] [INFO] Processing chapter: Ch97_Mood Disorders
+[2025-03-19T16:08:05.908Z] [ERROR] Error processing chapter Ch97_Mood Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.908Z] [INFO] Processing chapter: Ch98_Anxiety Disorders
+[2025-03-19T16:08:05.960Z] [ERROR] Error processing chapter Ch98_Anxiety Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:05.960Z] [INFO] Processing chapter: Ch99_Somatic Symptoms and Related Disorders
+[2025-03-19T16:08:06.021Z] [ERROR] Error processing chapter Ch99_Somatic Symptoms and Related Disorders: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:06.021Z] [INFO] Processing chapter: Ch9_Weakness
+[2025-03-19T16:08:06.081Z] [ERROR] Error processing chapter Ch9_Weakness: duplicate key value violates unique constraint "chapters_chapter_number_key"
+[2025-03-19T16:08:06.082Z] [INFO] Migration completed: 1 chapters processed successfully, 184 chapters had errors
+[2025-03-19T16:08:06.083Z] [INFO] Migration completed in 52.918 seconds

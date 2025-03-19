@@ -1,0 +1,87 @@
+[2025-03-19T15:37:57.435Z] [INFO] Starting migration...
+[2025-03-19T15:37:57.436Z] [INFO] Ensuring database schema has required columns...
+[2025-03-19T15:37:58.000Z] [WARN] Warning: Could not verify schema columns. If they do not exist, the migration may fail.
+[2025-03-19T15:37:58.000Z] [WARN] Error details: Could not find the function public.execute_sql(sql_query) in the schema cache
+[2025-03-19T15:37:58.001Z] [INFO] Inserting categories...
+[2025-03-19T15:37:58.243Z] [INFO] All categories already exist, skipping insertion
+[2025-03-19T15:37:58.247Z] [INFO] Found 185 chapter directories to process
+[2025-03-19T15:37:58.247Z] [INFO] Processing chapter: Ch100_Factitious Disorders and Malingering
+[2025-03-19T15:37:58.340Z] [INFO] Inserted/updated chapter: Factitious Disorders and Malingering (ID: 2)
+[2025-03-19T15:37:58.340Z] [INFO] Completed processing chapter: Ch100_Factitious Disorders and Malingering
+[2025-03-19T15:37:58.341Z] [INFO] Processing chapter: Ch101_Suicidal Behavior
+[2025-03-19T15:37:58.467Z] [INFO] Inserted/updated chapter: Suicidal Behavior (ID: 3)
+[2025-03-19T15:37:58.468Z] [INFO] Completed processing chapter: Ch101_Suicidal Behavior
+[2025-03-19T15:37:58.469Z] [INFO] Processing chapter: Ch102_Arthritis
+[2025-03-19T15:37:58.528Z] [INFO] Inserted/updated chapter: Arthritis (ID: 4)
+[2025-03-19T15:37:58.529Z] [INFO] Completed processing chapter: Ch102_Arthritis
+[2025-03-19T15:37:58.530Z] [INFO] Processing chapter: Ch103_Tendinopathy and Bursitis
+[2025-03-19T15:37:58.586Z] [INFO] Inserted/updated chapter: Tendinopathy and Bursitis (ID: 5)
+[2025-03-19T15:37:58.587Z] [INFO] Completed processing chapter: Ch103_Tendinopathy and Bursitis
+[2025-03-19T15:37:58.587Z] [INFO] Processing chapter: Ch104_Musculoskeletal Back Pain
+[2025-03-19T15:37:58.652Z] [INFO] Inserted/updated chapter: Musculoskeletal Back Pain (ID: 6)
+[2025-03-19T15:37:58.653Z] [INFO] Completed processing chapter: Ch104_Musculoskeletal Back Pain
+[2025-03-19T15:37:58.654Z] [INFO] Processing chapter: Ch105_Systemic Lupus Erythematosus and the Vasculitides
+[2025-03-19T15:37:58.712Z] [INFO] Inserted/updated chapter: Systemic Lupus Erythematosus and the Vasculitides (ID: 7)
+[2025-03-19T15:37:58.713Z] [INFO] Completed processing chapter: Ch105_Systemic Lupus Erythematosus and the Vasculitides
+[2025-03-19T15:37:58.713Z] [INFO] Processing chapter: Ch106_Allergy, Anaphylaxis, and Angioedema
+[2025-03-19T15:37:58.773Z] [INFO] Inserted/updated chapter: Allergy, Anaphylaxis, and Angioedema (ID: 8)
+[2025-03-19T15:37:58.773Z] [INFO] Completed processing chapter: Ch106_Allergy, Anaphylaxis, and Angioedema
+[2025-03-19T15:37:58.774Z] [INFO] Processing chapter: Ch107_Dermatologic Presentations
+[2025-03-19T15:37:58.827Z] [INFO] Inserted/updated chapter: Dermatologic Presentations (ID: 9)
+[2025-03-19T15:37:58.828Z] [INFO] Completed processing chapter: Ch107_Dermatologic Presentations
+[2025-03-19T15:37:58.828Z] [INFO] Processing chapter: Ch108_Blood and Blood Components
+[2025-03-19T15:37:58.883Z] [INFO] Inserted/updated chapter: Blood and Blood Components (ID: 10)
+[2025-03-19T15:37:58.886Z] [INFO] Completed processing chapter: Ch108_Blood and Blood Components
+[2025-03-19T15:37:58.887Z] [INFO] Processing chapter: Ch109_Anemia and Polycythemia
+[2025-03-19T15:37:58.949Z] [INFO] Inserted/updated chapter: Anemia and Polycythemia (ID: 11)
+[2025-03-19T15:37:58.950Z] [INFO] Completed processing chapter: Ch109_Anemia and Polycythemia
+[2025-03-19T15:37:58.950Z] [INFO] Processing chapter: Ch10_Cyanosis
+[2025-03-19T15:37:59.018Z] [INFO] Inserted/updated chapter: Cyanosis (ID: 12)
+[2025-03-19T15:37:59.020Z] [INFO] Processing file: history.md
+[2025-03-19T15:37:59.143Z] [INFO] Inserted/updated section: Onset and Characteristics (ID: 70)
+[2025-03-19T15:37:59.216Z] [INFO] Inserted item: "Onset of cyanosis (new vs. rec..." (ID: 465)
+[2025-03-19T15:37:59.276Z] [INFO] Inserted item: "Duration of symptoms..." (ID: 466)
+[2025-03-19T15:37:59.337Z] [INFO] Inserted item: "Time of day when symptoms occu..." (ID: 467)
+[2025-03-19T15:37:59.399Z] [INFO] Inserted item: "Previous episodes..." (ID: 468)
+[2025-03-19T15:37:59.476Z] [INFO] Inserted/updated section: Precipitating/Alleviating Factors (ID: 71)
+[2025-03-19T15:37:59.545Z] [INFO] Inserted item: "Exposure to cold air or water..." (ID: 469)
+[2025-03-19T15:37:59.600Z] [INFO] Inserted item: "High altitude exposure..." (ID: 470)
+[2025-03-19T15:37:59.792Z] [INFO] Inserted item: "Exercise in patients with card..." (ID: 471)
+[2025-03-19T15:37:59.854Z] [INFO] Inserted item: "Exposure to chemicals or fumes..." (ID: 472)
+[2025-03-19T15:37:59.919Z] [INFO] Inserted item: "Aniline or azo dyes..." (ID: 473)
+[2025-03-19T15:37:59.979Z] [INFO] Inserted item: "Shoe polish..." (ID: 474)
+[2025-03-19T15:38:00.031Z] [INFO] Inserted item: "Nitrates..." (ID: 475)
+[2025-03-19T15:38:00.092Z] [INFO] Inserted item: "Well water (nitrates)..." (ID: 476)
+[2025-03-19T15:38:00.144Z] [INFO] Inserted/updated section: Quality (ID: 72)
+[2025-03-19T15:38:00.212Z] [INFO] Inserted item: "Central cyanosis (perioral ski..." (ID: 477)
+[2025-03-19T15:38:00.270Z] [INFO] Inserted item: "Peripheral cyanosis (extremiti..." (ID: 478)
+[2025-03-19T15:38:00.328Z] [INFO] Inserted item: "Differential cyanosis (upper/l..." (ID: 479)
+[2025-03-19T15:38:00.396Z] [INFO] Inserted/updated section: Radiation (ID: 73)
+[2025-03-19T15:38:00.449Z] [INFO] Inserted item: "Distribution of cyanosis:..." (ID: 480)
+[2025-03-19T15:38:00.502Z] [INFO] Inserted item: "Localized to extremities..." (ID: 481)
+[2025-03-19T15:38:00.553Z] [INFO] Inserted item: "Generalized over body..." (ID: 482)
+[2025-03-19T15:38:00.605Z] [INFO] Inserted/updated section: Severity (ID: 74)
+[2025-03-19T15:38:00.665Z] [INFO] Inserted item: "Asymptomatic..." (ID: 483)
+[2025-03-19T15:38:00.714Z] [INFO] Inserted item: "Mild symptoms..." (ID: 484)
+[2025-03-19T15:38:00.763Z] [INFO] Inserted item: "Moderate symptoms..." (ID: 485)
+[2025-03-19T15:38:00.817Z] [INFO] Inserted item: "Severe symptoms..." (ID: 486)
+[2025-03-19T15:38:00.869Z] [INFO] Inserted/updated section: Timing (ID: 75)
+[2025-03-19T15:38:00.923Z] [INFO] Inserted item: "Constant..." (ID: 487)
+[2025-03-19T15:38:00.979Z] [INFO] Inserted item: "Intermittent..." (ID: 488)
+[2025-03-19T15:38:01.044Z] [INFO] Inserted item: "Episodic ("tet spells" in tetr..." (ID: 489)
+[2025-03-19T15:38:01.104Z] [INFO] Inserted item: "Worsening over time..." (ID: 490)
+[2025-03-19T15:38:01.172Z] [INFO] Inserted/updated section: Associated Symptoms (ID: 76)
+[2025-03-19T15:38:01.231Z] [INFO] Inserted item: "Dyspnea..." (ID: 491)
+[2025-03-19T15:38:01.281Z] [INFO] Inserted item: "Fatigue..." (ID: 492)
+[2025-03-19T15:38:01.330Z] [INFO] Inserted item: "Chest discomfort..." (ID: 493)
+[2025-03-19T15:38:01.380Z] [INFO] Inserted item: "Decreased exercise tolerance..." (ID: 494)
+[2025-03-19T15:38:01.432Z] [INFO] Inserted item: "Headaches..." (ID: 495)
+[2025-03-19T15:38:01.497Z] [INFO] Inserted item: "Weakness..." (ID: 496)
+[2025-03-19T15:38:01.548Z] [INFO] Inserted item: "Dizziness..." (ID: 497)
+[2025-03-19T15:38:01.601Z] [INFO] Inserted item: "Altered mental status..." (ID: 498)
+[2025-03-19T15:38:01.666Z] [INFO] Inserted item: "Lethargy..." (ID: 499)
+[2025-03-19T15:38:01.716Z] [INFO] Inserted item: "Seizures..." (ID: 500)
+[2025-03-19T15:38:01.770Z] [INFO] Inserted item: "In infants:..." (ID: 501)
+[2025-03-19T15:38:01.820Z] [INFO] Inserted item: "Difficulty feeding..." (ID: 502)
+[2025-03-19T15:38:01.877Z] [INFO] Inserted item: "Sweating..." (ID: 503)
+[2025-03-19T15:38:01.944Z] [INFO] Inserted item: "Lethargy..." (ID: 504)

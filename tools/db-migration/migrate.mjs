@@ -111,17 +111,22 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
     let currentSection = null;
     let currentSectionId = null;
 
-    // Track header hierarchy
-    let currentHeaders = {
-      2: null, // ## level
-      3: null, // ### level
-      4: null, // #### level
+    // Track most recent item at each indent level (simplified approach)
+    let previousItemsByIndent = {};
+
+    // Track all headers (## / ### / ####) in the same simplified structure
+    let currentHeadersByLevel = {
+      2: { text: null, id: null },
+      3: { text: null, id: null },
+      4: { text: null, id: null },
     };
 
-    let currentHeaderIds = {
-      2: null,
-      3: null,
-      4: null,
+    // Treat special headers (##, ###, etc.) as items with specific indentation levels
+    // This simplifies the hierarchy model
+    const headerIndentMap = {
+      2: -2, // ## headers are level -2 (above all items)
+      3: -1, // ### headers are level -1 (between ## and top-level items)
+      4: 0, // #### headers are level 0 (same as top-level items)
     };
 
     // Process the file line by line
@@ -161,9 +166,13 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
             currentSection = headerTitle;
             currentSectionId = sections[0].id;
 
-            // Reset header tracking for new section
-            currentHeaders = { 2: headerTitle, 3: null, 4: null };
-            currentHeaderIds = { 2: null, 3: null, 4: null };
+            // Reset all tracking for new section
+            previousItemsByIndent = {};
+            currentHeadersByLevel = {
+              2: { text: headerTitle, id: null },
+              3: { text: null, id: null },
+              4: { text: null, id: null },
+            };
 
             log(
               `Inserted/updated section: ${headerTitle} (ID: ${currentSectionId})`
@@ -174,38 +183,56 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
             currentSectionId = null;
           }
         }
-        // For ### and #### levels, create special header items
+        // For ### and #### levels, create header items with appropriate parent links
         else if (headerLevel === 3 || headerLevel === 4) {
           if (!currentSectionId) continue; // Skip if no current section
 
-          // Track the header at this level
-          currentHeaders[headerLevel] = headerTitle;
+          currentHeadersByLevel[headerLevel] = { text: headerTitle, id: null };
 
-          // Reset all deeper header levels
+          // Reset deeper headers
           for (let h = headerLevel + 1; h <= 4; h++) {
-            currentHeaders[h] = null;
-            currentHeaderIds[h] = null;
+            currentHeadersByLevel[h] = { text: null, id: null };
           }
 
-          // Find parent header
-          let parentHeaderId = null;
+          // Calculate effective indent level (negative for headers - see headerIndentMap)
+          const effectiveIndentLevel = headerIndentMap[headerLevel];
+
+          // Find parent based on indent levels
+          let parentId = null;
+
+          // For headers, we look for the closest higher-level header as parent
           for (let h = headerLevel - 1; h >= 2; h--) {
-            if (currentHeaderIds[h]) {
-              parentHeaderId = currentHeaderIds[h];
+            if (currentHeadersByLevel[h].id) {
+              parentId = currentHeadersByLevel[h].id;
               break;
             }
           }
 
-          // Insert header item
+          // If we couldn't find a parent header, get closest item in the indent hierarchy
+          if (parentId === null) {
+            // Look at previous indent levels
+            for (
+              let indent = effectiveIndentLevel - 1;
+              indent >= -2;
+              indent--
+            ) {
+              if (previousItemsByIndent[indent]) {
+                parentId = previousItemsByIndent[indent];
+                break;
+              }
+            }
+          }
+
+          // Insert header as a checklist item with is_header flag
           try {
             const { data, error } = await supabase
               .from('checklist_items')
               .insert({
                 section_id: currentSectionId,
-                parent_item_id: parentHeaderId,
+                parent_item_id: parentId,
                 display_order: i * 10,
                 item_text: headerTitle,
-                indent_level: headerLevel - 2, // Adjust indent based on header level
+                indent_level: effectiveIndentLevel, // Use mapped header indentation
                 is_header: true,
                 header_level: headerLevel,
                 has_text_input: false,
@@ -218,10 +245,14 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
 
             if (error) throw error;
 
-            // IMPORTANT: Update the header ID mapping with the database ID
-            currentHeaderIds[headerLevel] = data[0].id;
+            const headerId = data[0].id;
+            currentHeadersByLevel[headerLevel].id = headerId;
+
+            // Also store in previousItemsByIndent for consistency
+            previousItemsByIndent[effectiveIndentLevel] = headerId;
+
             log(
-              `Inserted header: ${headerTitle} (level ${headerLevel}, ID: ${data[0].id})`
+              `Inserted header: ${headerTitle} (level ${headerLevel}, ID: ${headerId})`
             );
           } catch (error) {
             logError(`Error inserting header: ${headerTitle}`, error);
@@ -236,27 +267,33 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
       if (checklistMatch && currentSectionId) {
         const indentStr = checklistMatch[1];
         // Calculate indent level based on spaces (usually 2 spaces per level)
-        const baseIndentLevel = Math.floor(indentStr.length / 2);
+        const indentLevel = Math.floor(indentStr.length / 2);
         const itemText = checklistMatch[2].trim();
-
-        // Find the active header for this item
-        let parentHeaderId = null;
-
-        // Find the most relevant header for this item
-        // Start with deepest header (4) and work backwards
-        for (let h = 4; h >= 2; h--) {
-          if (currentHeaderIds[h]) {
-            parentHeaderId = currentHeaderIds[h];
-            break;
-          }
-        }
 
         // Process the item text to extract components
         const processedItem = processItemText(itemText);
 
-        // Calculate adjusted indent level
-        // If we're under a ### or #### header, adjust base level
-        const adjustedIndentLevel = baseIndentLevel;
+        // Find parent ID based on indentation level
+        let parentId = null;
+
+        // Look for parents at all previous indent levels
+        for (let prevIndent = indentLevel - 1; prevIndent >= -2; prevIndent--) {
+          if (previousItemsByIndent[prevIndent]) {
+            parentId = previousItemsByIndent[prevIndent];
+            break;
+          }
+        }
+
+        // If no parent was found via indentation, use the closest header
+        if (parentId === null) {
+          // Try finding the deepest header as parent
+          for (let h = 4; h >= 2; h--) {
+            if (currentHeadersByLevel[h].id) {
+              parentId = currentHeadersByLevel[h].id;
+              break;
+            }
+          }
+        }
 
         // Insert the checklist item
         try {
@@ -264,10 +301,10 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
             .from('checklist_items')
             .insert({
               section_id: currentSectionId,
-              parent_item_id: parentHeaderId,
+              parent_item_id: parentId,
               display_order: i * 10,
               item_text: processedItem.itemText,
-              indent_level: adjustedIndentLevel,
+              indent_level: indentLevel,
               is_header: false,
               header_level: null,
               has_text_input: processedItem.hasTextInput,
@@ -281,8 +318,20 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
           if (error) throw error;
 
           const itemId = data[0].id;
+
+          // Store this item's ID for potential children to reference
+          previousItemsByIndent[indentLevel] = itemId;
+
+          // Clear any deeper indent levels since they belong to previous items
+          for (let deeper = indentLevel + 1; deeper <= 10; deeper++) {
+            previousItemsByIndent[deeper] = null;
+          }
+
           log(
-            `Inserted item: "${itemText.substring(0, 30)}..." (ID: ${itemId})`
+            `Inserted item: "${itemText.substring(
+              0,
+              30
+            )}..." (ID: ${itemId}, indent: ${indentLevel})`
           );
 
           // Handle multiple inputs (if comma-separated with multiple blanks)
@@ -303,7 +352,7 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
                   parent_item_id: itemId, // Parent is the main item
                   display_order: i * 10 + j,
                   item_text: subItem.itemText,
-                  indent_level: adjustedIndentLevel + 1, // One level deeper
+                  indent_level: indentLevel + 1, // One level deeper
                   is_header: false,
                   header_level: null,
                   has_text_input: subItem.hasTextInput,

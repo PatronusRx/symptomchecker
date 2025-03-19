@@ -53,16 +53,22 @@ type ChecklistItem = {
   parent_item_id: number | null;
   display_order: number;
   item_text: string;
+  indent_level: number;
+  is_header: boolean;
+  header_level: number | null;
   has_text_input: boolean;
   input_label: string | null;
   input_placeholder: string | null;
   input_unit: string | null;
+  icd10_code: string | null;
+  // UI state properties
   isCompleted?: boolean;
   response?: '+' | '-' | 'NA' | null;
   notes?: string;
   selectedOptions?: { [key: string]: string | string[] };
   detailNotes?: { [key: string]: string };
   childItems?: ChecklistItem[];
+  isExpanded?: boolean;
 };
 
 // State type for tracking responses
@@ -178,7 +184,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         setSections(sectionsData || []);
 
         if (sectionsData && sectionsData.length > 0) {
-          // Fetch checklist items for this chapter
+          // Fetch all checklist items for this chapter
           const { data: itemsData, error: itemsError } = await supabase
             .from('checklist_items')
             .select('*')
@@ -198,6 +204,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             isCompleted: false,
             response: null,
             notes: '',
+            isExpanded: false,
           }));
 
           setChecklistItems(initializedItems);
@@ -215,6 +222,54 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       fetchData();
     }
   }, [chapterSlug]);
+
+  // Build nested hierarchy of checklist items
+  const buildNestedItemsHierarchy = (items: ChecklistItem[]) => {
+    // Map for quick item lookup by ID
+    const itemMap = new Map<number, ChecklistItem>();
+    items.forEach((item) => {
+      itemMap.set(item.id, { ...item, childItems: [] });
+    });
+
+    // Build the tree
+    const rootItems: ChecklistItem[] = [];
+
+    // First pass - attach children to parents
+    items.forEach((item) => {
+      const mappedItem = itemMap.get(item.id);
+      if (!mappedItem) return;
+
+      if (item.parent_item_id === null) {
+        // This is a top-level item
+        rootItems.push(mappedItem);
+      } else if (itemMap.has(item.parent_item_id)) {
+        // This is a child item, attach to parent
+        const parent = itemMap.get(item.parent_item_id);
+        if (parent) {
+          if (!parent.childItems) {
+            parent.childItems = [];
+          }
+          parent.childItems.push(mappedItem);
+        }
+      } else {
+        // Orphaned item - attach to root
+        rootItems.push(mappedItem);
+      }
+    });
+
+    // Sort each level by display_order
+    const sortChildren = (items: ChecklistItem[]) => {
+      items.sort((a, b) => a.display_order - b.display_order);
+      items.forEach((item) => {
+        if (item.childItems && item.childItems.length > 0) {
+          sortChildren(item.childItems);
+        }
+      });
+    };
+
+    sortChildren(rootItems);
+    return rootItems;
+  };
 
   // Get items for the active category
   const getItemsByCategory = (categoryId: number | null) => {
@@ -248,28 +303,12 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           .filter((item) => item.section_id === section.id)
           .sort((a, b) => a.display_order - b.display_order);
 
-        // Create a hierarchical structure
-        // First get all parent items (items with no parent_item_id)
-        const parentItems = sectionItems.filter(
-          (item) => item.parent_item_id === null
-        );
-
-        // For each parent item, find its children
-        const itemsWithHierarchy = parentItems.map((parentItem) => {
-          // Find children of this parent
-          const childItems = sectionItems.filter(
-            (item) => item.parent_item_id === parentItem.id
-          );
-
-          return {
-            ...parentItem,
-            childItems: childItems,
-          };
-        });
+        // Create an organized hierarchy of items
+        const nestedItems = buildNestedItemsHierarchy(sectionItems);
 
         return {
           section,
-          items: itemsWithHierarchy,
+          items: nestedItems,
         };
       })
       .filter((group) => group.items.length > 0); // Only include sections with items
@@ -366,6 +405,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
     // Trigger autosave
     triggerAutosave();
+  };
+
+  // Toggle item expansion state
+  const toggleItemExpansion = (itemId: number) => {
+    setChecklistItems((items) =>
+      items.map((item) =>
+        item.id === itemId ? { ...item, isExpanded: !item.isExpanded } : item
+      )
+    );
   };
 
   // Handle detail option selection
@@ -1167,6 +1215,7 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
           isCompleted: false,
           selectedOptions: {},
           detailNotes: {},
+          isExpanded: true,
         }))
       );
 
@@ -1187,6 +1236,147 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
   const hasCategoryCompletedItems = (categoryId: number) => {
     const categoryItems = getItemsByCategory(categoryId);
     return categoryItems.some((item) => item.isCompleted);
+  };
+
+  // Recursive checklist item rendering function
+  const renderChecklistItem = (item: ChecklistItem, depth = 0) => {
+    // Determine border color based on response
+    let borderColorClass = 'border-gray-100';
+    if (item.response === '+') {
+      borderColorClass = 'border-green-200';
+    } else if (item.response === '-') {
+      borderColorClass = 'border-red-200';
+    } else if (item.response === 'NA') {
+      borderColorClass = 'border-gray-300';
+    }
+
+    // Special styling for header items
+    const isHeader = item.is_header;
+
+    // Indentation style based on depth
+    const indentClass = depth > 0 ? `ml-${Math.min(depth * 4, 12)}` : ''; // max indent of ml-12
+
+    return (
+      <div key={item.id} className={indentClass}>
+        {isHeader ? (
+          // Render header-style item
+          <div className="px-3 py-2 bg-gray-100 rounded-md mt-4 mb-2 text-gray-800 font-medium">
+            {item.item_text}
+          </div>
+        ) : (
+          // Render regular checklist item
+          <div
+            className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
+          >
+            <div className="flex flex-wrap items-start mb-2">
+              <div className="flex-1 mr-2">
+                <div className="text-gray-900 font-medium mb-1">
+                  {item.item_text}
+                </div>
+              </div>
+
+              <div className="flex space-x-1">
+                <button
+                  className={`p-1 rounded-full ${
+                    item.response === '+'
+                      ? 'bg-green-100 text-green-700 border-2 border-green-500'
+                      : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
+                  }`}
+                  onClick={() =>
+                    handleResponseChange(
+                      item.id,
+                      item.response === '+' ? null : '+'
+                    )
+                  }
+                  title="Present / Yes"
+                >
+                  <PlusCircle size={18} />
+                </button>
+                <button
+                  className={`p-1 rounded-full ${
+                    item.response === '-'
+                      ? 'bg-red-100 text-red-700 border-2 border-red-500'
+                      : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
+                  }`}
+                  onClick={() =>
+                    handleResponseChange(
+                      item.id,
+                      item.response === '-' ? null : '-'
+                    )
+                  }
+                  title="Absent / No"
+                >
+                  <MinusCircle size={18} />
+                </button>
+                <button
+                  className={`p-1 rounded-full ${
+                    item.response === 'NA'
+                      ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                  onClick={() =>
+                    handleResponseChange(
+                      item.id,
+                      item.response === 'NA' ? null : 'NA'
+                    )
+                  }
+                  title="Not Applicable"
+                >
+                  <HelpCircle size={18} />
+                </button>
+
+                {/* Add expand/collapse button if item has children */}
+                {item.childItems && item.childItems.length > 0 && (
+                  <button
+                    className="p-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    onClick={() => toggleItemExpansion(item.id)}
+                    title={item.isExpanded ? 'Collapse' : 'Expand'}
+                  >
+                    {item.isExpanded ? (
+                      <ChevronDown size={18} />
+                    ) : (
+                      <ChevronRight size={18} />
+                    )}
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Notes input field - shown for '+' and '-' responses */}
+            {(item.response === '+' || item.response === '-') && (
+              <div className="mt-2">
+                <textarea
+                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  rows={2}
+                  placeholder={
+                    item.response === '+'
+                      ? 'Add details about this finding...'
+                      : 'Add notes about this negative finding...'
+                  }
+                  value={item.notes || ''}
+                  onChange={(e) => handleNotesChange(item.id, e.target.value)}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Recursively render children if this item has children and is expanded */}
+        {item.childItems &&
+          item.childItems.length > 0 &&
+          (item.isExpanded || item.response === '+') && (
+            <div
+              className={`mb-4 ${
+                item.response === '+' ? 'border-l-2 border-green-200 pl-4' : ''
+              }`}
+            >
+              {item.childItems.map((childItem) =>
+                renderChecklistItem(childItem, depth + 1)
+              )}
+            </div>
+          )}
+      </div>
+    );
   };
 
   if (loading) {
@@ -1480,225 +1670,10 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
                       {/* Section Items */}
                       <div className="p-3 bg-white rounded-b-md">
-                        {sectionGroup.items.map((item) => {
-                          // Determine border color based on response
-                          let borderColorClass = 'border-gray-100';
-                          if (item.response === '+') {
-                            borderColorClass = 'border-green-200';
-                          } else if (item.response === '-') {
-                            borderColorClass = 'border-red-200';
-                          } else if (item.response === 'NA') {
-                            borderColorClass = 'border-gray-300';
-                          }
-
-                          return (
-                            <React.Fragment key={item.id}>
-                              <div
-                                className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
-                              >
-                                <div className="flex flex-wrap items-start mb-2">
-                                  <div className="flex-1 mr-2">
-                                    <div className="text-gray-900 font-medium mb-1">
-                                      {item.item_text}
-                                    </div>
-                                  </div>
-
-                                  <div className="flex space-x-1">
-                                    <button
-                                      className={`p-1 rounded-full ${
-                                        item.response === '+'
-                                          ? 'bg-green-100 text-green-700 border-2 border-green-500'
-                                          : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
-                                      }`}
-                                      onClick={() =>
-                                        handleResponseChange(
-                                          item.id,
-                                          item.response === '+' ? null : '+'
-                                        )
-                                      }
-                                      title="Present / Yes"
-                                    >
-                                      <PlusCircle size={18} />
-                                    </button>
-                                    <button
-                                      className={`p-1 rounded-full ${
-                                        item.response === '-'
-                                          ? 'bg-red-100 text-red-700 border-2 border-red-500'
-                                          : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
-                                      }`}
-                                      onClick={() =>
-                                        handleResponseChange(
-                                          item.id,
-                                          item.response === '-' ? null : '-'
-                                        )
-                                      }
-                                      title="Absent / No"
-                                    >
-                                      <MinusCircle size={18} />
-                                    </button>
-                                    <button
-                                      className={`p-1 rounded-full ${
-                                        item.response === 'NA'
-                                          ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
-                                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                      }`}
-                                      onClick={() =>
-                                        handleResponseChange(
-                                          item.id,
-                                          item.response === 'NA' ? null : 'NA'
-                                        )
-                                      }
-                                      title="Not Applicable"
-                                    >
-                                      <HelpCircle size={18} />
-                                    </button>
-                                  </div>
-                                </div>
-
-                                {/* Notes input field - shown for '+' and '-' responses */}
-                                {(item.response === '+' ||
-                                  item.response === '-') && (
-                                  <div className="mt-2">
-                                    <textarea
-                                      className="w-full p-2 border border-gray-300 rounded-md text-sm"
-                                      rows={2}
-                                      placeholder={
-                                        item.response === '+'
-                                          ? 'Add details about this finding...'
-                                          : 'Add notes about this negative finding...'
-                                      }
-                                      value={item.notes || ''}
-                                      onChange={(e) =>
-                                        handleNotesChange(
-                                          item.id,
-                                          e.target.value
-                                        )
-                                      }
-                                    />
-                                  </div>
-                                )}
-                              </div>
-
-                              {/* Render child items if parent is selected as positive */}
-                              {item.response === '+' &&
-                                item.childItems &&
-                                item.childItems.length > 0 && (
-                                  <div className="ml-6 mb-4 border-l-2 border-green-200 pl-4">
-                                    {item.childItems.map((childItem) => {
-                                      // Determine border color for child item
-                                      let childBorderColorClass =
-                                        'border-gray-100';
-                                      if (childItem.response === '+') {
-                                        childBorderColorClass =
-                                          'border-green-200';
-                                      } else if (childItem.response === '-') {
-                                        childBorderColorClass =
-                                          'border-red-200';
-                                      } else if (childItem.response === 'NA') {
-                                        childBorderColorClass =
-                                          'border-gray-300';
-                                      }
-
-                                      return (
-                                        <div
-                                          key={childItem.id}
-                                          className={`p-3 hover:bg-gray-50 transition-all duration-150 rounded-md mb-2 shadow-sm border-l-4 ${childBorderColorClass} border border-gray-100`}
-                                        >
-                                          <div className="flex flex-wrap items-start mb-2">
-                                            <div className="flex-1 mr-2">
-                                              <div className="text-gray-800 mb-1">
-                                                {childItem.item_text}
-                                              </div>
-                                            </div>
-
-                                            <div className="flex space-x-1">
-                                              <button
-                                                className={`p-1 rounded-full ${
-                                                  childItem.response === '+'
-                                                    ? 'bg-green-100 text-green-700 border-2 border-green-500'
-                                                    : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
-                                                }`}
-                                                onClick={() =>
-                                                  handleResponseChange(
-                                                    childItem.id,
-                                                    childItem.response === '+'
-                                                      ? null
-                                                      : '+'
-                                                  )
-                                                }
-                                                title="Present / Yes"
-                                              >
-                                                <PlusCircle size={16} />
-                                              </button>
-                                              <button
-                                                className={`p-1 rounded-full ${
-                                                  childItem.response === '-'
-                                                    ? 'bg-red-100 text-red-700 border-2 border-red-500'
-                                                    : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
-                                                }`}
-                                                onClick={() =>
-                                                  handleResponseChange(
-                                                    childItem.id,
-                                                    childItem.response === '-'
-                                                      ? null
-                                                      : '-'
-                                                  )
-                                                }
-                                                title="Absent / No"
-                                              >
-                                                <MinusCircle size={16} />
-                                              </button>
-                                              <button
-                                                className={`p-1 rounded-full ${
-                                                  childItem.response === 'NA'
-                                                    ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
-                                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                                }`}
-                                                onClick={() =>
-                                                  handleResponseChange(
-                                                    childItem.id,
-                                                    childItem.response === 'NA'
-                                                      ? null
-                                                      : 'NA'
-                                                  )
-                                                }
-                                                title="Not Applicable"
-                                              >
-                                                <HelpCircle size={16} />
-                                              </button>
-                                            </div>
-                                          </div>
-
-                                          {/* Notes input field for child item */}
-                                          {(childItem.response === '+' ||
-                                            childItem.response === '-') && (
-                                            <div className="mt-2">
-                                              <textarea
-                                                className="w-full p-2 border border-gray-300 rounded-md text-sm"
-                                                rows={2}
-                                                placeholder={
-                                                  childItem.response === '+'
-                                                    ? 'Add details about this finding...'
-                                                    : 'Add notes about this negative finding...'
-                                                }
-                                                value={childItem.notes || ''}
-                                                onChange={(e) =>
-                                                  handleNotesChange(
-                                                    childItem.id,
-                                                    e.target.value
-                                                  )
-                                                }
-                                              />
-                                            </div>
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                )}
-                            </React.Fragment>
-                          );
-                        })}
+                        {/* Render top-level items with recursive function */}
+                        {sectionGroup.items.map((item) =>
+                          renderChecklistItem(item)
+                        )}
                       </div>
                     </div>
                   )
