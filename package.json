@@ -9,10 +9,9 @@
     "lint": "next lint",
     "migrate": "node tools/db-migration/migrate.mjs",
     "migrate:test": "node tools/db-migration/migrate.mjs --test",
-    "migrate:chapter": "node tools/db-migration/migrate.mjs --chapter",
+    "migrate:chapter": "node tools/db-migration/migrate.mjs --chapter=",
     "test:parser": "node tools/db-migration/test-parser.mjs",
-    "clear:db": "node tools/db-migration/clear-tables.mjs",
-    "check:db": "node tools/db-migration/check-db.mjs"
+    "clear:db": "node tools/db-migration/clear-tables.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",

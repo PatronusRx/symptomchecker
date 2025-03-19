@@ -16,9 +16,13 @@ export default {
   // Directory for logs
   logsDir: './logs',
 
-  // Supabase configuration
+  // Supabase configuration - using service role key for migration
   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+  // IMPORTANT: Use the service role key for migrations to bypass RLS
+  supabaseKey:
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    '',
 
   // Enable verbose logging
   verbose: true,

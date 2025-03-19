@@ -1,0 +1,164 @@
+[2025-03-19T01:44:03.843Z] [INFO] Starting migration from JSON to database...
+[2025-03-19T01:44:03.844Z] [INFO] Inserting categories...
+[2025-03-19T01:44:04.181Z] [INFO] Inserted 18 categories
+[2025-03-19T01:44:04.182Z] [INFO] Found 1 JSON files to process
+[2025-03-19T01:44:04.182Z] [INFO] Processing JSON file: /Users/lucas/Lucas Projects/symptomchecker/tools/db-migration/json/Ch9_Weakness.json
+[2025-03-19T01:44:04.245Z] [INFO] Inserted/updated chapter: Weakness (ID: 1)
+[2025-03-19T01:44:04.344Z] [INFO] Processing category: History
+[2025-03-19T01:44:04.455Z] [INFO] Inserted/updated section: Onset (ID: 1)
+[2025-03-19T01:44:04.621Z] [INFO] Inserted 3 checklist items for section Onset
+[2025-03-19T01:44:04.674Z] [INFO] Inserted/updated section: Progression (ID: 2)
+[2025-03-19T01:44:04.819Z] [INFO] Inserted 3 checklist items for section Progression
+[2025-03-19T01:44:04.870Z] [INFO] Inserted/updated section: Quality (ID: 3)
+[2025-03-19T01:44:05.210Z] [INFO] Inserted 6 checklist items for section Quality
+[2025-03-19T01:44:05.261Z] [INFO] Inserted/updated section: Region/Radiation (ID: 4)
+[2025-03-19T01:44:05.943Z] [INFO] Inserted 13 checklist items for section Region/Radiation
+[2025-03-19T01:44:05.996Z] [INFO] Inserted/updated section: Severity (ID: 5)
+[2025-03-19T01:44:06.177Z] [INFO] Inserted 3 checklist items for section Severity
+[2025-03-19T01:44:06.232Z] [INFO] Inserted/updated section: Timing (ID: 6)
+[2025-03-19T01:44:06.521Z] [INFO] Inserted 4 checklist items for section Timing
+[2025-03-19T01:44:06.578Z] [INFO] Inserted/updated section: Exacerbating/Alleviating Factors (ID: 7)
+[2025-03-19T01:44:06.736Z] [INFO] Inserted 3 checklist items for section Exacerbating/Alleviating Factors
+[2025-03-19T01:44:06.788Z] [INFO] Inserted/updated section: Associated Symptoms (ID: 8)
+[2025-03-19T01:44:07.357Z] [INFO] Inserted 10 checklist items for section Associated Symptoms
+[2025-03-19T01:44:07.358Z] [INFO] Processing category: Alarm Features
+[2025-03-19T01:44:07.419Z] [INFO] Inserted/updated section: Critical Signs (ID: 9)
+[2025-03-19T01:44:07.883Z] [INFO] Inserted 9 checklist items for section Critical Signs
+[2025-03-19T01:44:07.935Z] [INFO] Inserted/updated section: Neurologic Red Flags (ID: 10)
+[2025-03-19T01:44:08.602Z] [INFO] Inserted 11 checklist items for section Neurologic Red Flags
+[2025-03-19T01:44:08.662Z] [INFO] Inserted/updated section: Neuromuscular Crisis (ID: 11)
+[2025-03-19T01:44:08.966Z] [INFO] Inserted 5 checklist items for section Neuromuscular Crisis
+[2025-03-19T01:44:08.967Z] [INFO] Processing category: Medications
+[2025-03-19T01:44:09.047Z] [INFO] Inserted/updated section: Current Medications (ID: 12)
+[2025-03-19T01:44:09.667Z] [INFO] Inserted 11 checklist items for section Current Medications
+[2025-03-19T01:44:09.718Z] [INFO] Inserted/updated section: Toxin Exposure (ID: 13)
+[2025-03-19T01:44:09.767Z] [INFO] Inserted 1 checklist items for section Toxin Exposure
+[2025-03-19T01:44:09.768Z] [INFO] Processing category: Diet
+[2025-03-19T01:44:09.826Z] [INFO] Inserted/updated section: Hydration Status (ID: 14)
+[2025-03-19T01:44:09.931Z] [INFO] Inserted 2 checklist items for section Hydration Status
+[2025-03-19T01:44:09.985Z] [INFO] Inserted/updated section: Nutritional Factors (ID: 15)
+[2025-03-19T01:44:10.090Z] [INFO] Inserted 2 checklist items for section Nutritional Factors
+[2025-03-19T01:44:10.091Z] [INFO] Processing category: Review of Systems
+[2025-03-19T01:44:10.153Z] [INFO] Inserted/updated section: Neurological (ID: 16)
+[2025-03-19T01:44:10.771Z] [INFO] Inserted 11 checklist items for section Neurological
+[2025-03-19T01:44:10.821Z] [INFO] Inserted/updated section: Cardiovascular (ID: 17)
+[2025-03-19T01:44:10.995Z] [INFO] Inserted 3 checklist items for section Cardiovascular
+[2025-03-19T01:44:11.050Z] [INFO] Inserted/updated section: Respiratory (ID: 18)
+[2025-03-19T01:44:11.151Z] [INFO] Inserted 2 checklist items for section Respiratory
+[2025-03-19T01:44:11.197Z] [INFO] Inserted/updated section: Gastrointestinal (ID: 19)
+[2025-03-19T01:44:11.299Z] [INFO] Inserted 2 checklist items for section Gastrointestinal
+[2025-03-19T01:44:11.351Z] [INFO] Inserted/updated section: Genitourinary (ID: 20)
+[2025-03-19T01:44:11.592Z] [INFO] Inserted 4 checklist items for section Genitourinary
+[2025-03-19T01:44:11.643Z] [INFO] Inserted/updated section: Musculoskeletal (ID: 21)
+[2025-03-19T01:44:12.000Z] [INFO] Inserted 7 checklist items for section Musculoskeletal
+[2025-03-19T01:44:12.049Z] [INFO] Inserted/updated section: Skin (ID: 22)
+[2025-03-19T01:44:12.144Z] [INFO] Inserted 2 checklist items for section Skin
+[2025-03-19T01:44:12.193Z] [INFO] Inserted/updated section: Autonomic (ID: 23)
+[2025-03-19T01:44:12.521Z] [INFO] Inserted 6 checklist items for section Autonomic
+[2025-03-19T01:44:12.522Z] [INFO] Processing category: Collateral History
+[2025-03-19T01:44:12.586Z] [INFO] Inserted/updated section: Witness Accounts (ID: 24)
+[2025-03-19T01:44:12.693Z] [INFO] Inserted 2 checklist items for section Witness Accounts
+[2025-03-19T01:44:12.743Z] [INFO] Inserted/updated section: Prior Episodes (ID: 25)
+[2025-03-19T01:44:12.853Z] [INFO] Inserted 2 checklist items for section Prior Episodes
+[2025-03-19T01:44:12.853Z] [INFO] Processing category: Risk Factors
+[2025-03-19T01:44:12.903Z] [INFO] Inserted/updated section: Patient Demographics (ID: 26)
+[2025-03-19T01:44:13.011Z] [INFO] Inserted 2 checklist items for section Patient Demographics
+[2025-03-19T01:44:13.080Z] [INFO] Inserted/updated section: Vascular Risk Factors (ID: 27)
+[2025-03-19T01:44:13.135Z] [INFO] Inserted 1 checklist items for section Vascular Risk Factors
+[2025-03-19T01:44:13.197Z] [INFO] Inserted/updated section: Infection Risk (ID: 28)
+[2025-03-19T01:44:13.416Z] [INFO] Inserted 4 checklist items for section Infection Risk
+[2025-03-19T01:44:13.480Z] [INFO] Inserted/updated section: Neuromuscular Risk Factors (ID: 29)
+[2025-03-19T01:44:13.643Z] [INFO] Inserted 3 checklist items for section Neuromuscular Risk Factors
+[2025-03-19T01:44:13.643Z] [INFO] Processing category: Differential Diagnosis
+[2025-03-19T01:44:13.693Z] [INFO] Inserted/updated section: Critical Diagnoses (ID: 30)
+[2025-03-19T01:44:15.325Z] [INFO] Inserted 31 checklist items for section Critical Diagnoses
+[2025-03-19T01:44:15.378Z] [INFO] Inserted/updated section: Emergent Diagnoses (ID: 31)
+[2025-03-19T01:44:16.211Z] [INFO] Inserted 16 checklist items for section Emergent Diagnoses
+[2025-03-19T01:44:16.270Z] [INFO] Inserted/updated section: Non-neurologic Causes (ID: 32)
+[2025-03-19T01:44:17.019Z] [INFO] Inserted 14 checklist items for section Non-neurologic Causes
+[2025-03-19T01:44:17.019Z] [INFO] Processing category: Past Medical History
+[2025-03-19T01:44:17.075Z] [INFO] Inserted/updated section: Neurological History (ID: 33)
+[2025-03-19T01:44:17.440Z] [INFO] Inserted 7 checklist items for section Neurological History
+[2025-03-19T01:44:17.495Z] [INFO] Inserted/updated section: Cardiac History (ID: 34)
+[2025-03-19T01:44:17.597Z] [INFO] Inserted 2 checklist items for section Cardiac History
+[2025-03-19T01:44:17.654Z] [INFO] Inserted/updated section: Other Medical Conditions (ID: 35)
+[2025-03-19T01:44:17.934Z] [INFO] Inserted 5 checklist items for section Other Medical Conditions
+[2025-03-19T01:44:17.934Z] [INFO] Processing category: Physical Exam
+[2025-03-19T01:44:17.994Z] [INFO] Inserted/updated section: Vital Signs (ID: 36)
+[2025-03-19T01:44:18.285Z] [INFO] Inserted 5 checklist items for section Vital Signs
+[2025-03-19T01:44:18.341Z] [INFO] Inserted/updated section: Orthostatic Vitals (ID: 37)
+[2025-03-19T01:44:18.660Z] [INFO] Inserted 6 checklist items for section Orthostatic Vitals
+[2025-03-19T01:44:18.712Z] [INFO] Inserted/updated section: General (ID: 38)
+[2025-03-19T01:44:18.866Z] [INFO] Inserted 3 checklist items for section General
+[2025-03-19T01:44:18.927Z] [INFO] Inserted/updated section: Neurological Exam (ID: 39)
+[2025-03-19T01:44:22.687Z] [INFO] Inserted 67 checklist items for section Neurological Exam
+[2025-03-19T01:44:22.738Z] [INFO] Inserted/updated section: Cardiovascular Exam (ID: 40)
+[2025-03-19T01:44:23.036Z] [INFO] Inserted 5 checklist items for section Cardiovascular Exam
+[2025-03-19T01:44:23.086Z] [INFO] Inserted/updated section: Respiratory Exam (ID: 41)
+[2025-03-19T01:44:23.188Z] [INFO] Inserted 2 checklist items for section Respiratory Exam
+[2025-03-19T01:44:23.189Z] [INFO] Processing category: Lab Studies
+[2025-03-19T01:44:23.239Z] [INFO] Inserted/updated section: Basic Studies (ID: 42)
+[2025-03-19T01:44:23.920Z] [INFO] Inserted 13 checklist items for section Basic Studies
+[2025-03-19T01:44:23.972Z] [INFO] Inserted/updated section: Cardiac Markers (ID: 43)
+[2025-03-19T01:44:24.036Z] [INFO] Inserted 1 checklist items for section Cardiac Markers
+[2025-03-19T01:44:24.086Z] [INFO] Inserted/updated section: Metabolic Studies (ID: 44)
+[2025-03-19T01:44:24.253Z] [INFO] Inserted 3 checklist items for section Metabolic Studies
+[2025-03-19T01:44:24.302Z] [INFO] Inserted/updated section: Muscle Studies (ID: 45)
+[2025-03-19T01:44:24.352Z] [INFO] Inserted 1 checklist items for section Muscle Studies
+[2025-03-19T01:44:24.399Z] [INFO] Inserted/updated section: Inflammatory Markers (ID: 46)
+[2025-03-19T01:44:24.502Z] [INFO] Inserted 2 checklist items for section Inflammatory Markers
+[2025-03-19T01:44:24.503Z] [INFO] Processing category: Imaging
+[2025-03-19T01:44:24.558Z] [INFO] Inserted/updated section: Head Imaging (ID: 47)
+[2025-03-19T01:44:24.763Z] [INFO] Inserted 4 checklist items for section Head Imaging
+[2025-03-19T01:44:24.825Z] [INFO] Inserted/updated section: Spine Imaging (ID: 48)
+[2025-03-19T01:44:25.343Z] [INFO] Inserted 9 checklist items for section Spine Imaging
+[2025-03-19T01:44:25.344Z] [INFO] Processing category: Special Tests
+[2025-03-19T01:44:25.394Z] [INFO] Inserted/updated section: Pulmonary Function Tests (ID: 49)
+[2025-03-19T01:44:25.493Z] [INFO] Inserted 2 checklist items for section Pulmonary Function Tests
+[2025-03-19T01:44:25.543Z] [INFO] Inserted/updated section: Lumbar Puncture (ID: 50)
+[2025-03-19T01:44:25.795Z] [INFO] Inserted 5 checklist items for section Lumbar Puncture
+[2025-03-19T01:44:25.857Z] [INFO] Inserted/updated section: Other Tests (ID: 51)
+[2025-03-19T01:44:25.960Z] [INFO] Inserted 2 checklist items for section Other Tests
+[2025-03-19T01:44:25.961Z] [INFO] Processing category: ECG
+[2025-03-19T01:44:26.012Z] [INFO] Inserted/updated section: ECG Findings (ID: 52)
+[2025-03-19T01:44:26.496Z] [INFO] Inserted 8 checklist items for section ECG Findings
+[2025-03-19T01:44:26.497Z] [INFO] Processing category: Assessment
+[2025-03-19T01:44:26.549Z] [INFO] Inserted/updated section: Neuromuscular Classification (ID: 53)
+[2025-03-19T01:44:27.239Z] [INFO] Inserted 13 checklist items for section Neuromuscular Classification
+[2025-03-19T01:44:27.299Z] [INFO] Inserted/updated section: Pattern Classification (ID: 54)
+[2025-03-19T01:44:27.994Z] [INFO] Inserted 13 checklist items for section Pattern Classification
+[2025-03-19T01:44:28.046Z] [INFO] Inserted/updated section: Systemic vs. Focal (ID: 55)
+[2025-03-19T01:44:28.151Z] [INFO] Inserted 2 checklist items for section Systemic vs. Focal
+[2025-03-19T01:44:28.211Z] [INFO] Inserted/updated section: Severity Assessment (ID: 56)
+[2025-03-19T01:44:28.421Z] [INFO] Inserted 4 checklist items for section Severity Assessment
+[2025-03-19T01:44:28.477Z] [INFO] Inserted/updated section: Progression (ID: 57)
+[2025-03-19T01:44:28.624Z] [INFO] Inserted 3 checklist items for section Progression
+[2025-03-19T01:44:28.625Z] [INFO] Processing category: Plan
+[2025-03-19T01:44:28.681Z] [INFO] Inserted/updated section: Immediate Management (ID: 58)
+[2025-03-19T01:44:29.031Z] [INFO] Inserted 7 checklist items for section Immediate Management
+[2025-03-19T01:44:29.087Z] [INFO] Inserted/updated section: Neurological Management (ID: 59)
+[2025-03-19T01:44:29.262Z] [INFO] Inserted 3 checklist items for section Neurological Management
+[2025-03-19T01:44:29.315Z] [INFO] Inserted/updated section: Targeted Treatments (ID: 60)
+[2025-03-19T01:44:29.628Z] [INFO] Inserted 6 checklist items for section Targeted Treatments
+[2025-03-19T01:44:29.678Z] [INFO] Inserted/updated section: Additional Diagnostic Testing (ID: 61)
+[2025-03-19T01:44:29.995Z] [INFO] Inserted 5 checklist items for section Additional Diagnostic Testing
+[2025-03-19T01:44:29.996Z] [INFO] Processing category: Disposition
+[2025-03-19T01:44:30.048Z] [INFO] Inserted/updated section: Admission Criteria (ID: 62)
+[2025-03-19T01:44:30.484Z] [INFO] Inserted 8 checklist items for section Admission Criteria
+[2025-03-19T01:44:30.540Z] [INFO] Inserted/updated section: Level of Care (ID: 63)
+[2025-03-19T01:44:30.800Z] [INFO] Inserted 5 checklist items for section Level of Care
+[2025-03-19T01:44:30.851Z] [INFO] Inserted/updated section: Discharge Criteria (ID: 64)
+[2025-03-19T01:44:31.017Z] [INFO] Inserted 3 checklist items for section Discharge Criteria
+[2025-03-19T01:44:31.070Z] [INFO] Inserted/updated section: Follow-up (ID: 65)
+[2025-03-19T01:44:31.245Z] [INFO] Inserted 3 checklist items for section Follow-up
+[2025-03-19T01:44:31.246Z] [INFO] Processing category: Patient Education
+[2025-03-19T01:44:31.297Z] [INFO] Inserted/updated section: Disease Information (ID: 66)
+[2025-03-19T01:44:31.458Z] [INFO] Inserted 3 checklist items for section Disease Information
+[2025-03-19T01:44:31.519Z] [INFO] Inserted/updated section: Warning Signs (ID: 67)
+[2025-03-19T01:44:31.792Z] [INFO] Inserted 5 checklist items for section Warning Signs
+[2025-03-19T01:44:31.847Z] [INFO] Inserted/updated section: Medication Instructions (ID: 68)
+[2025-03-19T01:44:32.021Z] [INFO] Inserted 3 checklist items for section Medication Instructions
+[2025-03-19T01:44:32.070Z] [INFO] Inserted/updated section: Follow-up Instructions (ID: 69)
+[2025-03-19T01:44:32.178Z] [INFO] Inserted 2 checklist items for section Follow-up Instructions
+[2025-03-19T01:44:32.179Z] [INFO] Completed processing file: /Users/lucas/Lucas Projects/symptomchecker/tools/db-migration/json/Ch9_Weakness.json
+[2025-03-19T01:44:32.179Z] [INFO] Migration completed: 1 files processed successfully, 0 files had errors

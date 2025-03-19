@@ -1,0 +1,5811 @@
+{
+  "number": 9,
+  "title": "Weakness",
+  "categories": [
+    {
+      "fileName": "history.md",
+      "category": {
+        "name": "History",
+        "order": 1
+      },
+      "sections": [
+        {
+          "title": "Onset",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Sudden onset",
+              "text": "Sudden onset",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Gradual onset",
+              "text": "Gradual onset",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Episodic",
+              "text": "Episodic",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Progression",
+          "items": [
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Progressive",
+              "text": "Progressive",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Fluctuating",
+              "text": "Fluctuating",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Stable",
+              "text": "Stable",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Quality",
+          "items": [
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Global weakness",
+              "text": "Global weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "Focal weakness",
+              "text": "Focal weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Fatigue",
+              "text": "Fatigue",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Poor energy",
+              "text": "Poor energy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "Lethargy",
+              "text": "Lethargy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "General malaise",
+              "text": "General malaise",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Region/Radiation",
+          "items": [
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Unilateral weakness",
+              "text": "Unilateral weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 22,
+                  "indentLevel": 1,
+                  "raw": "Affecting face",
+                  "text": "Affecting face",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 23,
+                  "indentLevel": 1,
+                  "raw": "Affecting arm/hand",
+                  "text": "Affecting arm/hand",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 24,
+                  "indentLevel": 1,
+                  "raw": "Affecting leg",
+                  "text": "Affecting leg",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 25,
+              "indentLevel": 0,
+              "raw": "Bilateral weakness",
+              "text": "Bilateral weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 26,
+                  "indentLevel": 1,
+                  "raw": "Upper extremities only",
+                  "text": "Upper extremities only",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 27,
+                  "indentLevel": 1,
+                  "raw": "Lower extremities only",
+                  "text": "Lower extremities only",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 28,
+                  "indentLevel": 1,
+                  "raw": "All four extremities",
+                  "text": "All four extremities",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 29,
+                  "indentLevel": 1,
+                  "raw": "Proximal muscles",
+                  "text": "Proximal muscles",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 30,
+                  "indentLevel": 1,
+                  "raw": "Distal muscles",
+                  "text": "Distal muscles",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 31,
+              "indentLevel": 0,
+              "raw": "Facial weakness only",
+              "text": "Facial weakness only",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 32,
+                  "indentLevel": 1,
+                  "raw": "Unilateral",
+                  "text": "Unilateral",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 33,
+                  "indentLevel": 1,
+                  "raw": "Bilateral",
+                  "text": "Bilateral",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Severity",
+          "items": [
+            {
+              "lineNumber": 36,
+              "indentLevel": 0,
+              "raw": "Mild (decreased dexterity)",
+              "text": "Mild (decreased dexterity)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 37,
+              "indentLevel": 0,
+              "raw": "Moderate (paresis)",
+              "text": "Moderate (paresis)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 38,
+              "indentLevel": 0,
+              "raw": "Severe (plegia)",
+              "text": "Severe (plegia)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Timing",
+          "items": [
+            {
+              "lineNumber": 41,
+              "indentLevel": 0,
+              "raw": "Worse later in the day",
+              "text": "Worse later in the day",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 42,
+              "indentLevel": 0,
+              "raw": "Constant",
+              "text": "Constant",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 43,
+              "indentLevel": 0,
+              "raw": "Intermittent",
+              "text": "Intermittent",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 44,
+              "indentLevel": 0,
+              "raw": "Duration: _____",
+              "text": "Duration: _____",
+              "hasTextInput": true,
+              "inputLabel": "Duration",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Exacerbating/Alleviating Factors",
+          "items": [
+            {
+              "lineNumber": 47,
+              "indentLevel": 0,
+              "raw": "Worsened by activity",
+              "text": "Worsened by activity",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 48,
+              "indentLevel": 0,
+              "raw": "Improves with rest",
+              "text": "Improves with rest",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 49,
+              "indentLevel": 0,
+              "raw": "Other factors: _____",
+              "text": "Other factors: _____",
+              "hasTextInput": true,
+              "inputLabel": "Other factors",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Associated Symptoms",
+          "items": [
+            {
+              "lineNumber": 52,
+              "indentLevel": 0,
+              "raw": "Sensory disturbances",
+              "text": "Sensory disturbances",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 53,
+              "indentLevel": 0,
+              "raw": "Headache",
+              "text": "Headache",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 54,
+              "indentLevel": 0,
+              "raw": "Visual disturbances",
+              "text": "Visual disturbances",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 55,
+              "indentLevel": 0,
+              "raw": "Speech difficulties",
+              "text": "Speech difficulties",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 56,
+              "indentLevel": 0,
+              "raw": "Swallowing difficulties",
+              "text": "Swallowing difficulties",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 57,
+              "indentLevel": 0,
+              "raw": "Double vision",
+              "text": "Double vision",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 58,
+              "indentLevel": 0,
+              "raw": "Vertigo",
+              "text": "Vertigo",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 59,
+              "indentLevel": 0,
+              "raw": "Nausea/vomiting",
+              "text": "Nausea/vomiting",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 60,
+              "indentLevel": 0,
+              "raw": "Bowel/bladder dysfunction",
+              "text": "Bowel/bladder dysfunction",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 61,
+              "indentLevel": 0,
+              "raw": "Respiratory difficulties",
+              "text": "Respiratory difficulties",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "alarm-features.md",
+      "category": {
+        "name": "Alarm Features",
+        "order": 2
+      },
+      "sections": [
+        {
+          "title": "Critical Signs",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Respiratory compromise",
+              "text": "Respiratory compromise",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Airway protective mechanism compromise",
+              "text": "Airway protective mechanism compromise",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Vital sign abnormalities",
+              "text": "Vital sign abnormalities",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 6,
+                  "indentLevel": 1,
+                  "raw": "Bradycardia",
+                  "text": "Bradycardia",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 7,
+                  "indentLevel": 1,
+                  "raw": "Tachycardia",
+                  "text": "Tachycardia",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 8,
+                  "indentLevel": 1,
+                  "raw": "Tachypnea",
+                  "text": "Tachypnea",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 9,
+                  "indentLevel": 1,
+                  "raw": "Fever",
+                  "text": "Fever",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 10,
+                  "indentLevel": 1,
+                  "raw": "Hypothermia",
+                  "text": "Hypothermia",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 11,
+                  "indentLevel": 1,
+                  "raw": "Hypotension",
+                  "text": "Hypotension",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Neurologic Red Flags",
+          "items": [
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "Acute onset of focal weakness",
+              "text": "Acute onset of focal weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Sudden onset headache with unilateral weakness",
+              "text": "Sudden onset headache with unilateral weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Midline back pain with lower extremity weakness",
+              "text": "Midline back pain with lower extremity weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "New quadriparesis/quadriplegia with hypotension",
+              "text": "New quadriparesis/quadriplegia with hypotension",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Rapidly ascending weakness",
+              "text": "Rapidly ascending weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 19,
+              "indentLevel": 0,
+              "raw": "UMN signs with new weakness",
+              "text": "UMN signs with new weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Bladder/bowel involvement",
+              "text": "Bladder/bowel involvement",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 21,
+                  "indentLevel": 1,
+                  "raw": "Urinary retention",
+                  "text": "Urinary retention",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 22,
+                  "indentLevel": 1,
+                  "raw": "Incontinence",
+                  "text": "Incontinence",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 23,
+                  "indentLevel": 1,
+                  "raw": "Loss of perianal sensation",
+                  "text": "Loss of perianal sensation",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 24,
+                  "indentLevel": 1,
+                  "raw": "Decreased rectal tone",
+                  "text": "Decreased rectal tone",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Neuromuscular Crisis",
+          "items": [
+            {
+              "lineNumber": 27,
+              "indentLevel": 0,
+              "raw": "Neck muscle weakness",
+              "text": "Neck muscle weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 28,
+              "indentLevel": 0,
+              "raw": "Pharyngeal muscle weakness",
+              "text": "Pharyngeal muscle weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 29,
+              "indentLevel": 0,
+              "raw": "Diaphragmatic weakness",
+              "text": "Diaphragmatic weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 30,
+              "indentLevel": 0,
+              "raw": "Progressive muscle weakness",
+              "text": "Progressive muscle weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 31,
+              "indentLevel": 0,
+              "raw": "Respiratory muscle fatigue",
+              "text": "Respiratory muscle fatigue",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "medications.md",
+      "category": {
+        "name": "Medications",
+        "order": 3
+      },
+      "sections": [
+        {
+          "title": "Current Medications",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Multiple medications with potential interactions",
+              "text": "Multiple medications with potential interactions",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Acetylcholinesterase inhibitors",
+              "text": "Acetylcholinesterase inhibitors",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Medications that may worsen NMJ disease",
+              "text": "Medications that may worsen NMJ disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 6,
+                  "indentLevel": 1,
+                  "raw": "Aminoglycosides",
+                  "text": "Aminoglycosides",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 7,
+                  "indentLevel": 1,
+                  "raw": "Quinolones",
+                  "text": "Quinolones",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 8,
+                  "indentLevel": 1,
+                  "raw": "Beta blockers",
+                  "text": "Beta blockers",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "HMG-CoA reductase inhibitors (statins)",
+              "text": "HMG-CoA reductase inhibitors (statins)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Medication reactions",
+              "text": "Medication reactions",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 11,
+              "indentLevel": 0,
+              "raw": "Medication interactions",
+              "text": "Medication interactions",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 12,
+              "indentLevel": 0,
+              "raw": "Sedative medications",
+              "text": "Sedative medications",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Other medications: _____",
+              "text": "Other medications: _____",
+              "hasTextInput": true,
+              "inputLabel": "Other medications",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Toxin Exposure",
+          "items": [
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Organophosphate exposure",
+              "text": "Organophosphate exposure",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "diet.md",
+      "category": {
+        "name": "Diet",
+        "order": 4
+      },
+      "sections": [
+        {
+          "title": "Hydration Status",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Signs of dehydration",
+              "text": "Signs of dehydration",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Poor oral intake",
+              "text": "Poor oral intake",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Nutritional Factors",
+          "items": [
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Recent weight loss",
+              "text": "Recent weight loss",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Poor nutritional status",
+              "text": "Poor nutritional status",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "review-systems.md",
+      "category": {
+        "name": "Review of Systems",
+        "order": 5
+      },
+      "sections": [
+        {
+          "title": "Neurological",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Headache",
+              "text": "Headache",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Visual field loss",
+              "text": "Visual field loss",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Diplopia",
+              "text": "Diplopia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "Dizziness/vertigo",
+              "text": "Dizziness/vertigo",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Speech changes",
+              "text": "Speech changes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 8,
+                  "indentLevel": 1,
+                  "raw": "Dysarthria",
+                  "text": "Dysarthria",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 9,
+                  "indentLevel": 1,
+                  "raw": "Aphasia (expressive or receptive)",
+                  "text": "Aphasia (expressive or receptive)",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Sensory disturbances",
+              "text": "Sensory disturbances",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 11,
+              "indentLevel": 0,
+              "raw": "Coordination problems",
+              "text": "Coordination problems",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 12,
+              "indentLevel": 0,
+              "raw": "Neglect",
+              "text": "Neglect",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Trouble swallowing (dysphagia)",
+              "text": "Trouble swallowing (dysphagia)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Cardiovascular",
+          "items": [
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Orthopnea",
+              "text": "Orthopnea",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "Signs of congestive heart failure",
+              "text": "Signs of congestive heart failure",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Chest pain",
+              "text": "Chest pain",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Respiratory",
+          "items": [
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Shortness of breath",
+              "text": "Shortness of breath",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 22,
+              "indentLevel": 0,
+              "raw": "Pulmonary insufficiency",
+              "text": "Pulmonary insufficiency",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Gastrointestinal",
+          "items": [
+            {
+              "lineNumber": 25,
+              "indentLevel": 0,
+              "raw": "Gastrointestinal dysmotility",
+              "text": "Gastrointestinal dysmotility",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Nausea/vomiting",
+              "text": "Nausea/vomiting",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Genitourinary",
+          "items": [
+            {
+              "lineNumber": 29,
+              "indentLevel": 0,
+              "raw": "Dysuria",
+              "text": "Dysuria",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 30,
+              "indentLevel": 0,
+              "raw": "Frequency",
+              "text": "Frequency",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 31,
+              "indentLevel": 0,
+              "raw": "Urinary retention",
+              "text": "Urinary retention",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 32,
+              "indentLevel": 0,
+              "raw": "Urinary incontinence",
+              "text": "Urinary incontinence",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Musculoskeletal",
+          "items": [
+            {
+              "lineNumber": 35,
+              "indentLevel": 0,
+              "raw": "Muscle cramps",
+              "text": "Muscle cramps",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 36,
+              "indentLevel": 0,
+              "raw": "Fasciculations",
+              "text": "Fasciculations",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 37,
+              "indentLevel": 0,
+              "raw": "Muscle tenderness",
+              "text": "Muscle tenderness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 38,
+              "indentLevel": 0,
+              "raw": "Difficulty with fine movements",
+              "text": "Difficulty with fine movements",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 39,
+              "indentLevel": 0,
+              "raw": "Trouble raising arms above head",
+              "text": "Trouble raising arms above head",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 40,
+              "indentLevel": 0,
+              "raw": "Difficulty climbing stairs",
+              "text": "Difficulty climbing stairs",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 41,
+              "indentLevel": 0,
+              "raw": "Difficulty rising from chair",
+              "text": "Difficulty rising from chair",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Skin",
+          "items": [
+            {
+              "lineNumber": 44,
+              "indentLevel": 0,
+              "raw": "Skin changes",
+              "text": "Skin changes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 45,
+              "indentLevel": 0,
+              "raw": "Mucous membrane changes",
+              "text": "Mucous membrane changes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Autonomic",
+          "items": [
+            {
+              "lineNumber": 48,
+              "indentLevel": 0,
+              "raw": "Abnormal pupillary response",
+              "text": "Abnormal pupillary response",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 49,
+              "indentLevel": 0,
+              "raw": "Dry mouth",
+              "text": "Dry mouth",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 50,
+              "indentLevel": 0,
+              "raw": "Fluctuations in heart rate",
+              "text": "Fluctuations in heart rate",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 51,
+              "indentLevel": 0,
+              "raw": "Fluctuations in blood pressure",
+              "text": "Fluctuations in blood pressure",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 52,
+              "indentLevel": 0,
+              "raw": "Anhidrosis",
+              "text": "Anhidrosis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 53,
+              "indentLevel": 0,
+              "raw": "Bladder dysmotility",
+              "text": "Bladder dysmotility",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "collateral-history.md",
+      "category": {
+        "name": "Collateral History",
+        "order": 6
+      },
+      "sections": [
+        {
+          "title": "Witness Accounts",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Observed progression of symptoms",
+              "text": "Observed progression of symptoms",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Observed fluctuations in severity",
+              "text": "Observed fluctuations in severity",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Prior Episodes",
+          "items": [
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Previous similar episodes",
+              "text": "Previous similar episodes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Chronic or recurrent symptoms",
+              "text": "Chronic or recurrent symptoms",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "risk-factors.md",
+      "category": {
+        "name": "Risk Factors",
+        "order": 7
+      },
+      "sections": [
+        {
+          "title": "Patient Demographics",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Elder patient",
+              "text": "Elder patient",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Multiple medical problems",
+              "text": "Multiple medical problems",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Vascular Risk Factors",
+          "items": [
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Known cardiovascular disease",
+              "text": "Known cardiovascular disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Infection Risk",
+          "items": [
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Recent infection",
+              "text": "Recent infection",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 11,
+                  "indentLevel": 1,
+                  "raw": "Bacterial",
+                  "text": "Bacterial",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 12,
+                  "indentLevel": 1,
+                  "raw": "Viral",
+                  "text": "Viral",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 13,
+                  "indentLevel": 1,
+                  "raw": "Rickettsial",
+                  "text": "Rickettsial",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Neuromuscular Risk Factors",
+          "items": [
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Known neuromuscular disease",
+              "text": "Known neuromuscular disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "Prior neurologic insult",
+              "text": "Prior neurologic insult",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Stimulant withdrawal",
+              "text": "Stimulant withdrawal",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "differential-diagnosis.md",
+      "category": {
+        "name": "Differential Diagnosis",
+        "order": 8
+      },
+      "sections": [
+        {
+          "title": "Critical Diagnoses",
+          "items": [
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Ischemic cerebrovascular accident",
+              "text": "Ischemic cerebrovascular accident",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Hemorrhagic cerebrovascular accident",
+              "text": "Hemorrhagic cerebrovascular accident",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Ischemic cerebrovascular accident",
+              "text": "Ischemic cerebrovascular accident",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Hemorrhagic cerebrovascular accident",
+              "text": "Hemorrhagic cerebrovascular accident",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Vertebrobasilar insufficiency",
+              "text": "Vertebrobasilar insufficiency",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Spinal cord ischemia",
+              "text": "Spinal cord ischemia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "Spinal cord compression",
+              "text": "Spinal cord compression",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 15,
+                  "indentLevel": 1,
+                  "raw": "Disk",
+                  "text": "Disk",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 16,
+                  "indentLevel": 1,
+                  "raw": "Abscess",
+                  "text": "Abscess",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 17,
+                  "indentLevel": 1,
+                  "raw": "Hematoma",
+                  "text": "Hematoma",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Anterior cord syndrome",
+              "text": "Anterior cord syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 19,
+              "indentLevel": 0,
+              "raw": "Central cord syndrome",
+              "text": "Central cord syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Brown-Séquard hemicord syndrome",
+              "text": "Brown-Séquard hemicord syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Cauda equina syndrome",
+              "text": "Cauda equina syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 24,
+              "indentLevel": 0,
+              "raw": "Guillain-Barré syndrome",
+              "text": "Guillain-Barré syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 25,
+              "indentLevel": 0,
+              "raw": "Radiculopathy",
+              "text": "Radiculopathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Plexopathy",
+              "text": "Plexopathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 27,
+              "indentLevel": 0,
+              "raw": "Peripheral neuropathy",
+              "text": "Peripheral neuropathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 30,
+              "indentLevel": 0,
+              "raw": "Myasthenic crisis",
+              "text": "Myasthenic crisis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 31,
+              "indentLevel": 0,
+              "raw": "Cholinergic crisis",
+              "text": "Cholinergic crisis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 32,
+              "indentLevel": 0,
+              "raw": "Botulism",
+              "text": "Botulism",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 33,
+              "indentLevel": 0,
+              "raw": "Tick paralysis",
+              "text": "Tick paralysis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 34,
+              "indentLevel": 0,
+              "raw": "Organophosphate poisoning",
+              "text": "Organophosphate poisoning",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 35,
+              "indentLevel": 0,
+              "raw": "Eaton-Lambert syndrome",
+              "text": "Eaton-Lambert syndrome",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 38,
+              "indentLevel": 0,
+              "raw": "Rhabdomyolysis",
+              "text": "Rhabdomyolysis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 39,
+              "indentLevel": 0,
+              "raw": "Inflammatory myopathy",
+              "text": "Inflammatory myopathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 40,
+                  "indentLevel": 1,
+                  "raw": "Polymyositis",
+                  "text": "Polymyositis",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 41,
+                  "indentLevel": 1,
+                  "raw": "Dermatomyositis",
+                  "text": "Dermatomyositis",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 42,
+              "indentLevel": 0,
+              "raw": "Channelopathies",
+              "text": "Channelopathies",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 43,
+                  "indentLevel": 1,
+                  "raw": "Hyperkalemic periodic paralysis",
+                  "text": "Hyperkalemic periodic paralysis",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 44,
+                  "indentLevel": 1,
+                  "raw": "Hypokalemic periodic paralysis",
+                  "text": "Hypokalemic periodic paralysis",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Emergent Diagnoses",
+          "items": [
+            {
+              "lineNumber": 48,
+              "indentLevel": 0,
+              "raw": "Tumor",
+              "text": "Tumor",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 49,
+              "indentLevel": 0,
+              "raw": "Abscess",
+              "text": "Abscess",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 50,
+              "indentLevel": 0,
+              "raw": "Demyelination",
+              "text": "Demyelination",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 51,
+              "indentLevel": 0,
+              "raw": "Complex migraine",
+              "text": "Complex migraine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 54,
+              "indentLevel": 0,
+              "raw": "Demyelination",
+              "text": "Demyelination",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 57,
+              "indentLevel": 0,
+              "raw": "Transverse myelitis",
+              "text": "Transverse myelitis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 58,
+              "indentLevel": 0,
+              "raw": "Disk compression",
+              "text": "Disk compression",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 59,
+              "indentLevel": 0,
+              "raw": "Spondylosis",
+              "text": "Spondylosis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 60,
+              "indentLevel": 0,
+              "raw": "Syringomyelia",
+              "text": "Syringomyelia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 63,
+              "indentLevel": 0,
+              "raw": "Compressive plexopathy",
+              "text": "Compressive plexopathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 64,
+                  "indentLevel": 1,
+                  "raw": "Hematoma",
+                  "text": "Hematoma",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 65,
+                  "indentLevel": 1,
+                  "raw": "Aneurysm",
+                  "text": "Aneurysm",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 66,
+              "indentLevel": 0,
+              "raw": "Paraneoplastic neuropathy",
+              "text": "Paraneoplastic neuropathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 67,
+              "indentLevel": 0,
+              "raw": "Uremic neuropathy",
+              "text": "Uremic neuropathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 68,
+              "indentLevel": 0,
+              "raw": "Cranial polyneuropathy",
+              "text": "Cranial polyneuropathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 71,
+              "indentLevel": 0,
+              "raw": "Inflammatory myositis",
+              "text": "Inflammatory myositis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Non-neurologic Causes",
+          "items": [
+            {
+              "lineNumber": 74,
+              "indentLevel": 0,
+              "raw": "Dehydration",
+              "text": "Dehydration",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 75,
+              "indentLevel": 0,
+              "raw": "Electrolyte imbalance",
+              "text": "Electrolyte imbalance",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 76,
+              "indentLevel": 0,
+              "raw": "Anemia or polycythemia",
+              "text": "Anemia or polycythemia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 77,
+              "indentLevel": 0,
+              "raw": "Myocardial ischemia",
+              "text": "Myocardial ischemia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 78,
+              "indentLevel": 0,
+              "raw": "Decreased cardiac function",
+              "text": "Decreased cardiac function",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 79,
+              "indentLevel": 0,
+              "raw": "Vasodilatory shock",
+              "text": "Vasodilatory shock",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 80,
+              "indentLevel": 0,
+              "raw": "Infection",
+              "text": "Infection",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 81,
+                  "indentLevel": 1,
+                  "raw": "Local",
+                  "text": "Local",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 82,
+                  "indentLevel": 1,
+                  "raw": "Systemic",
+                  "text": "Systemic",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 83,
+              "indentLevel": 0,
+              "raw": "Endocrinopathy",
+              "text": "Endocrinopathy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 84,
+              "indentLevel": 0,
+              "raw": "Toxin-mediated disorder",
+              "text": "Toxin-mediated disorder",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 85,
+              "indentLevel": 0,
+              "raw": "Mitochondrial dysfunction",
+              "text": "Mitochondrial dysfunction",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 86,
+              "indentLevel": 0,
+              "raw": "Sedative effects",
+              "text": "Sedative effects",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 87,
+              "indentLevel": 0,
+              "raw": "Stimulant withdrawal",
+              "text": "Stimulant withdrawal",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "past-medical.md",
+      "category": {
+        "name": "Past Medical History",
+        "order": 9
+      },
+      "sections": [
+        {
+          "title": "Neurological History",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Prior stroke",
+              "text": "Prior stroke",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Prior transient ischemic attack",
+              "text": "Prior transient ischemic attack",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Multiple sclerosis",
+              "text": "Multiple sclerosis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "Demyelinating disease",
+              "text": "Demyelinating disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Prior weakness episodes",
+              "text": "Prior weakness episodes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Neuromuscular disorders",
+              "text": "Neuromuscular disorders",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Myasthenia gravis",
+              "text": "Myasthenia gravis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Cardiac History",
+          "items": [
+            {
+              "lineNumber": 12,
+              "indentLevel": 0,
+              "raw": "Cardiovascular disease",
+              "text": "Cardiovascular disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Congestive heart failure",
+              "text": "Congestive heart failure",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Other Medical Conditions",
+          "items": [
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Diabetes",
+              "text": "Diabetes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "Chronic kidney disease",
+              "text": "Chronic kidney disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Chronic infectious disease",
+              "text": "Chronic infectious disease",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 19,
+              "indentLevel": 0,
+              "raw": "Malignancy",
+              "text": "Malignancy",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Autoimmune disorders",
+              "text": "Autoimmune disorders",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "physical-exam.md",
+      "category": {
+        "name": "Physical Exam",
+        "order": 10
+      },
+      "sections": [
+        {
+          "title": "Vital Signs",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Temperature: _____ °F",
+              "text": "Temperature: _____ °F",
+              "hasTextInput": true,
+              "inputLabel": "Temperature",
+              "inputPlaceholder": null,
+              "inputUnit": "°F",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Heart rate: _____ bpm",
+              "text": "Heart rate: _____ bpm",
+              "hasTextInput": true,
+              "inputLabel": "Heart rate",
+              "inputPlaceholder": null,
+              "inputUnit": "bpm",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Respiratory rate: _____ breaths/min",
+              "text": "Respiratory rate: _____ breaths/min",
+              "hasTextInput": true,
+              "inputLabel": "Respiratory rate",
+              "inputPlaceholder": null,
+              "inputUnit": "breaths/min",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "Blood pressure: _____ mmHg",
+              "text": "Blood pressure: _____ mmHg",
+              "hasTextInput": true,
+              "inputLabel": "Blood pressure",
+              "inputPlaceholder": null,
+              "inputUnit": "mmHg",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Oxygen saturation: _____ %",
+              "text": "Oxygen saturation: _____ %",
+              "hasTextInput": true,
+              "inputLabel": "Oxygen saturation",
+              "inputPlaceholder": null,
+              "inputUnit": "%",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Orthostatic Vitals",
+          "items": [
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Supine position:",
+              "text": "Supine position:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 11,
+                  "indentLevel": 1,
+                  "raw": "BP: _____ mmHg",
+                  "text": "BP: _____ mmHg",
+                  "hasTextInput": true,
+                  "inputLabel": "BP",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mmHg",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 12,
+                  "indentLevel": 1,
+                  "raw": "HR: _____ bpm",
+                  "text": "HR: _____ bpm",
+                  "hasTextInput": true,
+                  "inputLabel": "HR",
+                  "inputPlaceholder": null,
+                  "inputUnit": "bpm",
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Standing position:",
+              "text": "Standing position:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 14,
+                  "indentLevel": 1,
+                  "raw": "BP: _____ mmHg",
+                  "text": "BP: _____ mmHg",
+                  "hasTextInput": true,
+                  "inputLabel": "BP",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mmHg",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 15,
+                  "indentLevel": 1,
+                  "raw": "HR: _____ bpm",
+                  "text": "HR: _____ bpm",
+                  "hasTextInput": true,
+                  "inputLabel": "HR",
+                  "inputPlaceholder": null,
+                  "inputUnit": "bpm",
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "General",
+          "items": [
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Level of consciousness: _____",
+              "text": "Level of consciousness: _____",
+              "hasTextInput": true,
+              "inputLabel": "Level of consciousness",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 19,
+              "indentLevel": 0,
+              "raw": "Mental status: _____",
+              "text": "Mental status: _____",
+              "hasTextInput": true,
+              "inputLabel": "Mental status",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Skin and mucous membranes: _____",
+              "text": "Skin and mucous membranes: _____",
+              "hasTextInput": true,
+              "inputLabel": "Skin and mucous membranes",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Neurological Exam",
+          "items": [
+            {
+              "lineNumber": 24,
+              "indentLevel": 0,
+              "raw": "CN III (Oculomotor)",
+              "text": "CN III (Oculomotor)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 25,
+                  "indentLevel": 1,
+                  "raw": "Ptosis",
+                  "text": "Ptosis",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 26,
+                  "indentLevel": 1,
+                  "raw": "Pupillary response",
+                  "text": "Pupillary response",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 27,
+              "indentLevel": 0,
+              "raw": "CN V (Trigeminal): _____",
+              "text": "CN V (Trigeminal): _____",
+              "hasTextInput": true,
+              "inputLabel": "CN V (Trigeminal)",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 28,
+              "indentLevel": 0,
+              "raw": "CN VI (Abducens): _____",
+              "text": "CN VI (Abducens): _____",
+              "hasTextInput": true,
+              "inputLabel": "CN VI (Abducens)",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 29,
+              "indentLevel": 0,
+              "raw": "CN VII (Facial)",
+              "text": "CN VII (Facial)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 30,
+                  "indentLevel": 1,
+                  "raw": "Facial symmetry",
+                  "text": "Facial symmetry",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 31,
+                  "indentLevel": 1,
+                  "raw": "Upper face weakness",
+                  "text": "Upper face weakness",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 32,
+                  "indentLevel": 1,
+                  "raw": "Lower face weakness",
+                  "text": "Lower face weakness",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 33,
+                  "indentLevel": 1,
+                  "raw": "Nasolabial fold effacement",
+                  "text": "Nasolabial fold effacement",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 34,
+              "indentLevel": 0,
+              "raw": "CN VIII (Vestibulocochlear): _____",
+              "text": "CN VIII (Vestibulocochlear): _____",
+              "hasTextInput": true,
+              "inputLabel": "CN VIII (Vestibulocochlear)",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 35,
+              "indentLevel": 0,
+              "raw": "CN IX (Glossopharyngeal): _____",
+              "text": "CN IX (Glossopharyngeal): _____",
+              "hasTextInput": true,
+              "inputLabel": "CN IX (Glossopharyngeal)",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 36,
+              "indentLevel": 0,
+              "raw": "CN XII (Hypoglossal): _____",
+              "text": "CN XII (Hypoglossal): _____",
+              "hasTextInput": true,
+              "inputLabel": "CN XII (Hypoglossal)",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 39,
+              "indentLevel": 0,
+              "raw": "Muscle bulk: _____",
+              "text": "Muscle bulk: _____",
+              "hasTextInput": true,
+              "inputLabel": "Muscle bulk",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 40,
+              "indentLevel": 0,
+              "raw": "Muscle tone: _____",
+              "text": "Muscle tone: _____",
+              "hasTextInput": true,
+              "inputLabel": "Muscle tone",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 41,
+              "indentLevel": 0,
+              "raw": "Fasciculations",
+              "text": "Fasciculations",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 42,
+              "indentLevel": 0,
+              "raw": "Tremor",
+              "text": "Tremor",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 43,
+              "indentLevel": 0,
+              "raw": "Spasticity",
+              "text": "Spasticity",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 44,
+                  "indentLevel": 1,
+                  "raw": "Upper extremity extension",
+                  "text": "Upper extremity extension",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 45,
+                  "indentLevel": 1,
+                  "raw": "Lower extremity flexion",
+                  "text": "Lower extremity flexion",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 48,
+              "indentLevel": 0,
+              "raw": "Facial muscles: _____",
+              "text": "Facial muscles: _____",
+              "hasTextInput": true,
+              "inputLabel": "Facial muscles",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 50,
+              "indentLevel": 0,
+              "raw": "Upper extremities:",
+              "text": "Upper extremities:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 51,
+                  "indentLevel": 1,
+                  "raw": "Proximal:",
+                  "text": "Proximal:",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 54,
+                  "indentLevel": 1,
+                  "raw": "Distal:",
+                  "text": "Distal:",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 58,
+              "indentLevel": 0,
+              "raw": "Lower extremities:",
+              "text": "Lower extremities:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 59,
+                  "indentLevel": 1,
+                  "raw": "Proximal:",
+                  "text": "Proximal:",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 62,
+                  "indentLevel": 1,
+                  "raw": "Distal:",
+                  "text": "Distal:",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 66,
+              "indentLevel": 0,
+              "raw": "Neck muscles: _____",
+              "text": "Neck muscles: _____",
+              "hasTextInput": true,
+              "inputLabel": "Neck muscles",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 67,
+              "indentLevel": 0,
+              "raw": "Respiratory muscles: _____",
+              "text": "Respiratory muscles: _____",
+              "hasTextInput": true,
+              "inputLabel": "Respiratory muscles",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 70,
+              "indentLevel": 0,
+              "raw": "Biceps:",
+              "text": "Biceps:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 71,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 72,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 73,
+              "indentLevel": 0,
+              "raw": "Triceps:",
+              "text": "Triceps:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 74,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 75,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 76,
+              "indentLevel": 0,
+              "raw": "Patellar:",
+              "text": "Patellar:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 77,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 78,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 79,
+              "indentLevel": 0,
+              "raw": "Achilles:",
+              "text": "Achilles:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 80,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 81,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 82,
+              "indentLevel": 0,
+              "raw": "Babinski sign:",
+              "text": "Babinski sign:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 83,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 84,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 85,
+              "indentLevel": 0,
+              "raw": "Hoffmann sign:",
+              "text": "Hoffmann sign:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 86,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 87,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 90,
+              "indentLevel": 0,
+              "raw": "Light touch: _____",
+              "text": "Light touch: _____",
+              "hasTextInput": true,
+              "inputLabel": "Light touch",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 91,
+              "indentLevel": 0,
+              "raw": "Pinprick:",
+              "text": "Pinprick:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 92,
+                  "indentLevel": 1,
+                  "raw": "Upper extremities: _____",
+                  "text": "Upper extremities: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Upper extremities",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 93,
+                  "indentLevel": 1,
+                  "raw": "Lower extremities: _____",
+                  "text": "Lower extremities: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Lower extremities",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 94,
+                  "indentLevel": 1,
+                  "raw": "Dermatome level: _____",
+                  "text": "Dermatome level: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Dermatome level",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 95,
+              "indentLevel": 0,
+              "raw": "Proprioception: _____",
+              "text": "Proprioception: _____",
+              "hasTextInput": true,
+              "inputLabel": "Proprioception",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 96,
+              "indentLevel": 0,
+              "raw": "Vibration: _____",
+              "text": "Vibration: _____",
+              "hasTextInput": true,
+              "inputLabel": "Vibration",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 97,
+              "indentLevel": 0,
+              "raw": "Perianal sensation: _____",
+              "text": "Perianal sensation: _____",
+              "hasTextInput": true,
+              "inputLabel": "Perianal sensation",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 100,
+              "indentLevel": 0,
+              "raw": "Finger-to-nose:",
+              "text": "Finger-to-nose:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 101,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 102,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 103,
+              "indentLevel": 0,
+              "raw": "Heel-to-shin:",
+              "text": "Heel-to-shin:",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 104,
+                  "indentLevel": 1,
+                  "raw": "Right: _____",
+                  "text": "Right: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Right",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 105,
+                  "indentLevel": 1,
+                  "raw": "Left: _____",
+                  "text": "Left: _____",
+                  "hasTextInput": true,
+                  "inputLabel": "Left",
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 106,
+              "indentLevel": 0,
+              "raw": "Rapid alternating movements: _____",
+              "text": "Rapid alternating movements: _____",
+              "hasTextInput": true,
+              "inputLabel": "Rapid alternating movements",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 109,
+              "indentLevel": 0,
+              "raw": "Pronator drift",
+              "text": "Pronator drift",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 110,
+              "indentLevel": 0,
+              "raw": "Nystagmus",
+              "text": "Nystagmus",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 111,
+              "indentLevel": 0,
+              "raw": "Cerebellar findings",
+              "text": "Cerebellar findings",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 112,
+              "indentLevel": 0,
+              "raw": "Gait: _____",
+              "text": "Gait: _____",
+              "hasTextInput": true,
+              "inputLabel": "Gait",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 113,
+              "indentLevel": 0,
+              "raw": "Rectal tone: _____",
+              "text": "Rectal tone: _____",
+              "hasTextInput": true,
+              "inputLabel": "Rectal tone",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Cardiovascular Exam",
+          "items": [
+            {
+              "lineNumber": 116,
+              "indentLevel": 0,
+              "raw": "Heart sounds: _____",
+              "text": "Heart sounds: _____",
+              "hasTextInput": true,
+              "inputLabel": "Heart sounds",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 117,
+              "indentLevel": 0,
+              "raw": "Murmurs: _____",
+              "text": "Murmurs: _____",
+              "hasTextInput": true,
+              "inputLabel": "Murmurs",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 118,
+              "indentLevel": 0,
+              "raw": "Jugular venous distension: _____",
+              "text": "Jugular venous distension: _____",
+              "hasTextInput": true,
+              "inputLabel": "Jugular venous distension",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 119,
+              "indentLevel": 0,
+              "raw": "Peripheral pulses: _____",
+              "text": "Peripheral pulses: _____",
+              "hasTextInput": true,
+              "inputLabel": "Peripheral pulses",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 120,
+              "indentLevel": 0,
+              "raw": "Edema: _____",
+              "text": "Edema: _____",
+              "hasTextInput": true,
+              "inputLabel": "Edema",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Respiratory Exam",
+          "items": [
+            {
+              "lineNumber": 123,
+              "indentLevel": 0,
+              "raw": "Respiratory effort: _____",
+              "text": "Respiratory effort: _____",
+              "hasTextInput": true,
+              "inputLabel": "Respiratory effort",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 124,
+              "indentLevel": 0,
+              "raw": "Breath sounds: _____",
+              "text": "Breath sounds: _____",
+              "hasTextInput": true,
+              "inputLabel": "Breath sounds",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "lab-studies.md",
+      "category": {
+        "name": "Lab Studies",
+        "order": 11
+      },
+      "sections": [
+        {
+          "title": "Basic Studies",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Complete blood count",
+              "text": "Complete blood count",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 4,
+                  "indentLevel": 1,
+                  "raw": "Hemoglobin: _____ g/dL",
+                  "text": "Hemoglobin: _____ g/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "Hemoglobin",
+                  "inputPlaceholder": null,
+                  "inputUnit": "g/dL",
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Basic metabolic panel",
+              "text": "Basic metabolic panel",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 6,
+                  "indentLevel": 1,
+                  "raw": "Glucose: _____ mg/dL",
+                  "text": "Glucose: _____ mg/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "Glucose",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mg/dL",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 7,
+                  "indentLevel": 1,
+                  "raw": "Sodium: _____ mmol/L",
+                  "text": "Sodium: _____ mmol/L",
+                  "hasTextInput": true,
+                  "inputLabel": "Sodium",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mmol/L",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 8,
+                  "indentLevel": 1,
+                  "raw": "Potassium: _____ mmol/L",
+                  "text": "Potassium: _____ mmol/L",
+                  "hasTextInput": true,
+                  "inputLabel": "Potassium",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mmol/L",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 9,
+                  "indentLevel": 1,
+                  "raw": "Calcium: _____ mg/dL",
+                  "text": "Calcium: _____ mg/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "Calcium",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mg/dL",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 10,
+                  "indentLevel": 1,
+                  "raw": "BUN: _____ mg/dL",
+                  "text": "BUN: _____ mg/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "BUN",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mg/dL",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 11,
+                  "indentLevel": 1,
+                  "raw": "Creatinine: _____ mg/dL",
+                  "text": "Creatinine: _____ mg/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "Creatinine",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mg/dL",
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 12,
+                  "indentLevel": 1,
+                  "raw": "CO2: _____ mmol/L",
+                  "text": "CO2: _____ mmol/L",
+                  "hasTextInput": true,
+                  "inputLabel": "CO2",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mmol/L",
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Liver function tests",
+              "text": "Liver function tests",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 14,
+                  "indentLevel": 1,
+                  "raw": "Bilirubin: _____ mg/dL",
+                  "text": "Bilirubin: _____ mg/dL",
+                  "hasTextInput": true,
+                  "inputLabel": "Bilirubin",
+                  "inputPlaceholder": null,
+                  "inputUnit": "mg/dL",
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Urinalysis: _____",
+              "text": "Urinalysis: _____",
+              "hasTextInput": true,
+              "inputLabel": "Urinalysis",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Cardiac Markers",
+          "items": [
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Troponin: _____ ng/mL",
+              "text": "Troponin: _____ ng/mL",
+              "hasTextInput": true,
+              "inputLabel": "Troponin",
+              "inputPlaceholder": null,
+              "inputUnit": "ng/mL",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Metabolic Studies",
+          "items": [
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Lactate: _____ mmol/L",
+              "text": "Lactate: _____ mmol/L",
+              "hasTextInput": true,
+              "inputLabel": "Lactate",
+              "inputPlaceholder": null,
+              "inputUnit": "mmol/L",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 22,
+              "indentLevel": 0,
+              "raw": "Ammonia: _____ μmol/L",
+              "text": "Ammonia: _____ μmol/L",
+              "hasTextInput": true,
+              "inputLabel": "Ammonia",
+              "inputPlaceholder": null,
+              "inputUnit": "μmol/L",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 23,
+              "indentLevel": 0,
+              "raw": "Ketones: _____",
+              "text": "Ketones: _____",
+              "hasTextInput": true,
+              "inputLabel": "Ketones",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Muscle Studies",
+          "items": [
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Creatine kinase: _____ U/L",
+              "text": "Creatine kinase: _____ U/L",
+              "hasTextInput": true,
+              "inputLabel": "Creatine kinase",
+              "inputPlaceholder": null,
+              "inputUnit": "U/L",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Inflammatory Markers",
+          "items": [
+            {
+              "lineNumber": 29,
+              "indentLevel": 0,
+              "raw": "ESR: _____ mm/hr",
+              "text": "ESR: _____ mm/hr",
+              "hasTextInput": true,
+              "inputLabel": "ESR",
+              "inputPlaceholder": null,
+              "inputUnit": "mm/hr",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 30,
+              "indentLevel": 0,
+              "raw": "CRP: _____ mg/L",
+              "text": "CRP: _____ mg/L",
+              "hasTextInput": true,
+              "inputLabel": "CRP",
+              "inputPlaceholder": null,
+              "inputUnit": "mg/L",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "imaging.md",
+      "category": {
+        "name": "Imaging",
+        "order": 12
+      },
+      "sections": [
+        {
+          "title": "Head Imaging",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "CT head without contrast",
+              "text": "CT head without contrast",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "CT head with contrast",
+              "text": "CT head with contrast",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "MRI brain without contrast",
+              "text": "MRI brain without contrast",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "MRI brain with contrast",
+              "text": "MRI brain with contrast",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Spine Imaging",
+          "items": [
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Cervical spine X-ray",
+              "text": "Cervical spine X-ray",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Thoracic spine X-ray",
+              "text": "Thoracic spine X-ray",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 11,
+              "indentLevel": 0,
+              "raw": "Lumbar spine X-ray",
+              "text": "Lumbar spine X-ray",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 12,
+              "indentLevel": 0,
+              "raw": "CT cervical spine",
+              "text": "CT cervical spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "CT thoracic spine",
+              "text": "CT thoracic spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "CT lumbar spine",
+              "text": "CT lumbar spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "MRI cervical spine",
+              "text": "MRI cervical spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "MRI thoracic spine",
+              "text": "MRI thoracic spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "MRI lumbar spine",
+              "text": "MRI lumbar spine",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "special-tests.md",
+      "category": {
+        "name": "Special Tests",
+        "order": 13
+      },
+      "sections": [
+        {
+          "title": "Pulmonary Function Tests",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Forced vital capacity: _____ L",
+              "text": "Forced vital capacity: _____ L",
+              "hasTextInput": true,
+              "inputLabel": "Forced vital capacity",
+              "inputPlaceholder": null,
+              "inputUnit": "L",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Negative inspiratory force: _____ cmH2O",
+              "text": "Negative inspiratory force: _____ cmH2O",
+              "hasTextInput": true,
+              "inputLabel": "Negative inspiratory force",
+              "inputPlaceholder": null,
+              "inputUnit": "cmH2O",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Lumbar Puncture",
+          "items": [
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Opening pressure: _____ cmH2O",
+              "text": "Opening pressure: _____ cmH2O",
+              "hasTextInput": true,
+              "inputLabel": "Opening pressure",
+              "inputPlaceholder": null,
+              "inputUnit": "cmH2O",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "CSF appearance: _____",
+              "text": "CSF appearance: _____",
+              "hasTextInput": true,
+              "inputLabel": "CSF appearance",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "CSF protein: _____ mg/dL",
+              "text": "CSF protein: _____ mg/dL",
+              "hasTextInput": true,
+              "inputLabel": "CSF protein",
+              "inputPlaceholder": null,
+              "inputUnit": "mg/dL",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "CSF glucose: _____ mg/dL",
+              "text": "CSF glucose: _____ mg/dL",
+              "hasTextInput": true,
+              "inputLabel": "CSF glucose",
+              "inputPlaceholder": null,
+              "inputUnit": "mg/dL",
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 11,
+              "indentLevel": 0,
+              "raw": "CSF cell count: _____ cells/μL",
+              "text": "CSF cell count: _____ cells/μL",
+              "hasTextInput": true,
+              "inputLabel": "CSF cell count",
+              "inputPlaceholder": null,
+              "inputUnit": "cells/μL",
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Other Tests",
+          "items": [
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "Tensilon test",
+              "text": "Tensilon test",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Ice pack test",
+              "text": "Ice pack test",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ecg.md",
+      "category": {
+        "name": "ECG",
+        "order": 14
+      },
+      "sections": [
+        {
+          "title": "ECG Findings",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Normal sinus rhythm",
+              "text": "Normal sinus rhythm",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Bradycardia",
+              "text": "Bradycardia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Tachycardia",
+              "text": "Tachycardia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "Signs of ischemia",
+              "text": "Signs of ischemia",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "ST segment changes",
+              "text": "ST segment changes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "T wave changes",
+              "text": "T wave changes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Conduction abnormalities",
+              "text": "Conduction abnormalities",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Arrhythmias",
+              "text": "Arrhythmias",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "assessment.md",
+      "category": {
+        "name": "Assessment",
+        "order": 15
+      },
+      "sections": [
+        {
+          "title": "Neuromuscular Classification",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Upper Motor Neuron (UMN) lesion",
+              "text": "Upper Motor Neuron (UMN) lesion",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 4,
+                  "indentLevel": 1,
+                  "raw": "Cerebral cortex",
+                  "text": "Cerebral cortex",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 5,
+                  "indentLevel": 1,
+                  "raw": "Corona radiata",
+                  "text": "Corona radiata",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 6,
+                  "indentLevel": 1,
+                  "raw": "Internal capsule",
+                  "text": "Internal capsule",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 7,
+                  "indentLevel": 1,
+                  "raw": "Brainstem",
+                  "text": "Brainstem",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 8,
+                  "indentLevel": 1,
+                  "raw": "Spinal cord",
+                  "text": "Spinal cord",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Lower Motor Neuron (LMN) lesion",
+              "text": "Lower Motor Neuron (LMN) lesion",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 11,
+                  "indentLevel": 1,
+                  "raw": "Anterior horn cell",
+                  "text": "Anterior horn cell",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 12,
+                  "indentLevel": 1,
+                  "raw": "Nerve root",
+                  "text": "Nerve root",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 13,
+                  "indentLevel": 1,
+                  "raw": "Plexus",
+                  "text": "Plexus",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 14,
+                  "indentLevel": 1,
+                  "raw": "Peripheral nerve",
+                  "text": "Peripheral nerve",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Neuromuscular Junction disorder",
+              "text": "Neuromuscular Junction disorder",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Myofiber disorder",
+              "text": "Myofiber disorder",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Pattern Classification",
+          "items": [
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Unilateral weakness",
+              "text": "Unilateral weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 22,
+                  "indentLevel": 1,
+                  "raw": "With ipsilateral facial involvement",
+                  "text": "With ipsilateral facial involvement",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 23,
+                  "indentLevel": 1,
+                  "raw": "With contralateral facial involvement",
+                  "text": "With contralateral facial involvement",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 24,
+                  "indentLevel": 1,
+                  "raw": "Without facial involvement",
+                  "text": "Without facial involvement",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Bilateral weakness",
+              "text": "Bilateral weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 27,
+                  "indentLevel": 1,
+                  "raw": "Lower extremities only",
+                  "text": "Lower extremities only",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 28,
+                  "indentLevel": 1,
+                  "raw": "Upper extremities only",
+                  "text": "Upper extremities only",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 29,
+                  "indentLevel": 1,
+                  "raw": "All four extremities",
+                  "text": "All four extremities",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 30,
+                  "indentLevel": 1,
+                  "raw": "Proximal portions of extremities",
+                  "text": "Proximal portions of extremities",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 31,
+                  "indentLevel": 1,
+                  "raw": "Distal portions of extremities",
+                  "text": "Distal portions of extremities",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 33,
+              "indentLevel": 0,
+              "raw": "Facial weakness",
+              "text": "Facial weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 34,
+                  "indentLevel": 1,
+                  "raw": "Isolated facial weakness",
+                  "text": "Isolated facial weakness",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 35,
+                  "indentLevel": 1,
+                  "raw": "Facial weakness not limited to CN VII",
+                  "text": "Facial weakness not limited to CN VII",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Systemic vs. Focal",
+          "items": [
+            {
+              "lineNumber": 38,
+              "indentLevel": 0,
+              "raw": "Systemic cause",
+              "text": "Systemic cause",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 39,
+              "indentLevel": 0,
+              "raw": "Focal neurologic cause",
+              "text": "Focal neurologic cause",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Severity Assessment",
+          "items": [
+            {
+              "lineNumber": 42,
+              "indentLevel": 0,
+              "raw": "Mild",
+              "text": "Mild",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 43,
+              "indentLevel": 0,
+              "raw": "Moderate",
+              "text": "Moderate",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 44,
+              "indentLevel": 0,
+              "raw": "Severe",
+              "text": "Severe",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 45,
+              "indentLevel": 0,
+              "raw": "Life-threatening",
+              "text": "Life-threatening",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Progression",
+          "items": [
+            {
+              "lineNumber": 48,
+              "indentLevel": 0,
+              "raw": "Rapid progression",
+              "text": "Rapid progression",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 49,
+              "indentLevel": 0,
+              "raw": "Slow progression",
+              "text": "Slow progression",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 50,
+              "indentLevel": 0,
+              "raw": "Static",
+              "text": "Static",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "plan.md",
+      "category": {
+        "name": "Plan",
+        "order": 16
+      },
+      "sections": [
+        {
+          "title": "Immediate Management",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Airway protection",
+              "text": "Airway protection",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 4,
+                  "indentLevel": 1,
+                  "raw": "Endotracheal intubation",
+                  "text": "Endotracheal intubation",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 5,
+                  "indentLevel": 1,
+                  "raw": "Avoid succinylcholine if suspected denervation >3 days",
+                  "text": "Avoid succinylcholine if suspected denervation >3 days",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 6,
+                  "indentLevel": 1,
+                  "raw": "Consider rocuronium for neuromuscular blockade",
+                  "text": "Consider rocuronium for neuromuscular blockade",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Hemodynamic support",
+              "text": "Hemodynamic support",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 9,
+                  "indentLevel": 1,
+                  "raw": "Volume resuscitation",
+                  "text": "Volume resuscitation",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 10,
+                  "indentLevel": 1,
+                  "raw": "Pressor support",
+                  "text": "Pressor support",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Neurological Management",
+          "items": [
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Neurology consultation",
+              "text": "Neurology consultation",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 14,
+              "indentLevel": 0,
+              "raw": "Neurosurgical consultation",
+              "text": "Neurosurgical consultation",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Neurointerventional consultation",
+              "text": "Neurointerventional consultation",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Targeted Treatments",
+          "items": [
+            {
+              "lineNumber": 18,
+              "indentLevel": 0,
+              "raw": "Fluid resuscitation for rhabdomyolysis",
+              "text": "Fluid resuscitation for rhabdomyolysis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 19,
+              "indentLevel": 0,
+              "raw": "Electrolyte replacement",
+              "text": "Electrolyte replacement",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Medication adjustments",
+              "text": "Medication adjustments",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 21,
+                  "indentLevel": 1,
+                  "raw": "Discontinue medications potentially exacerbating weakness",
+                  "text": "Discontinue medications potentially exacerbating weakness",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 22,
+              "indentLevel": 0,
+              "raw": "Treatment of infectious causes",
+              "text": "Treatment of infectious causes",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 23,
+              "indentLevel": 0,
+              "raw": "Management of metabolic disturbances",
+              "text": "Management of metabolic disturbances",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Additional Diagnostic Testing",
+          "items": [
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Electromyography (EMG)",
+              "text": "Electromyography (EMG)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 27,
+              "indentLevel": 0,
+              "raw": "Nerve conduction studies (NCS)",
+              "text": "Nerve conduction studies (NCS)",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 28,
+              "indentLevel": 0,
+              "raw": "Lumbar puncture",
+              "text": "Lumbar puncture",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 29,
+              "indentLevel": 0,
+              "raw": "Additional laboratory studies",
+              "text": "Additional laboratory studies",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 30,
+              "indentLevel": 0,
+              "raw": "Additional imaging studies",
+              "text": "Additional imaging studies",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "disposition.md",
+      "category": {
+        "name": "Disposition",
+        "order": 17
+      },
+      "sections": [
+        {
+          "title": "Admission Criteria",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Generalized weakness with systemic illness",
+              "text": "Generalized weakness with systemic illness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "New UMN weakness",
+              "text": "New UMN weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Severe or progressive LMN or myofiber weakness",
+              "text": "Severe or progressive LMN or myofiber weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 6,
+              "indentLevel": 0,
+              "raw": "Respiratory compromise or risk",
+              "text": "Respiratory compromise or risk",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 7,
+              "indentLevel": 0,
+              "raw": "Suspicion for ascending paralysis",
+              "text": "Suspicion for ascending paralysis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Central vascular lesion",
+              "text": "Central vascular lesion",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 9,
+                  "indentLevel": 1,
+                  "raw": "Thrombotic",
+                  "text": "Thrombotic",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 10,
+                  "indentLevel": 1,
+                  "raw": "Hemorrhagic",
+                  "text": "Hemorrhagic",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Level of Care",
+          "items": [
+            {
+              "lineNumber": 13,
+              "indentLevel": 0,
+              "raw": "Intensive care unit",
+              "text": "Intensive care unit",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": [
+                {
+                  "lineNumber": 14,
+                  "indentLevel": 1,
+                  "raw": "For respiratory monitoring",
+                  "text": "For respiratory monitoring",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                },
+                {
+                  "lineNumber": 15,
+                  "indentLevel": 1,
+                  "raw": "For neurological monitoring",
+                  "text": "For neurological monitoring",
+                  "hasTextInput": false,
+                  "inputLabel": null,
+                  "inputPlaceholder": null,
+                  "inputUnit": null,
+                  "icd10Code": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Step-down unit",
+              "text": "Step-down unit",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "General medical/neurological floor",
+              "text": "General medical/neurological floor",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Discharge Criteria",
+          "items": [
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Mild LMN or myofiber weakness of benign origin",
+              "text": "Mild LMN or myofiber weakness of benign origin",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Non-progressive condition",
+              "text": "Non-progressive condition",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 22,
+              "indentLevel": 0,
+              "raw": "Adequate outpatient follow-up",
+              "text": "Adequate outpatient follow-up",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Follow-up",
+          "items": [
+            {
+              "lineNumber": 25,
+              "indentLevel": 0,
+              "raw": "Primary care: _____",
+              "text": "Primary care: _____",
+              "hasTextInput": true,
+              "inputLabel": "Primary care",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 26,
+              "indentLevel": 0,
+              "raw": "Neurology: _____",
+              "text": "Neurology: _____",
+              "hasTextInput": true,
+              "inputLabel": "Neurology",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 27,
+              "indentLevel": 0,
+              "raw": "Other specialty: _____",
+              "text": "Other specialty: _____",
+              "hasTextInput": true,
+              "inputLabel": "Other specialty",
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "patient-education.md",
+      "category": {
+        "name": "Patient Education",
+        "order": 18
+      },
+      "sections": [
+        {
+          "title": "Disease Information",
+          "items": [
+            {
+              "lineNumber": 3,
+              "indentLevel": 0,
+              "raw": "Explanation of diagnosis",
+              "text": "Explanation of diagnosis",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 4,
+              "indentLevel": 0,
+              "raw": "Expected course of illness",
+              "text": "Expected course of illness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 5,
+              "indentLevel": 0,
+              "raw": "Prognosis discussion",
+              "text": "Prognosis discussion",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Warning Signs",
+          "items": [
+            {
+              "lineNumber": 8,
+              "indentLevel": 0,
+              "raw": "Respiratory distress",
+              "text": "Respiratory distress",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 9,
+              "indentLevel": 0,
+              "raw": "Worsening weakness",
+              "text": "Worsening weakness",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 10,
+              "indentLevel": 0,
+              "raw": "Swallowing difficulties",
+              "text": "Swallowing difficulties",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 11,
+              "indentLevel": 0,
+              "raw": "Change in mental status",
+              "text": "Change in mental status",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 12,
+              "indentLevel": 0,
+              "raw": "When to seek emergency care",
+              "text": "When to seek emergency care",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Medication Instructions",
+          "items": [
+            {
+              "lineNumber": 15,
+              "indentLevel": 0,
+              "raw": "Medication regimen explained",
+              "text": "Medication regimen explained",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 16,
+              "indentLevel": 0,
+              "raw": "Potential side effects discussed",
+              "text": "Potential side effects discussed",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 17,
+              "indentLevel": 0,
+              "raw": "Medications to avoid",
+              "text": "Medications to avoid",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Follow-up Instructions",
+          "items": [
+            {
+              "lineNumber": 20,
+              "indentLevel": 0,
+              "raw": "Follow-up appointments scheduled",
+              "text": "Follow-up appointments scheduled",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            },
+            {
+              "lineNumber": 21,
+              "indentLevel": 0,
+              "raw": "Rehabilitation plan discussed",
+              "text": "Rehabilitation plan discussed",
+              "hasTextInput": false,
+              "inputLabel": null,
+              "inputPlaceholder": null,
+              "inputUnit": null,
+              "icd10Code": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

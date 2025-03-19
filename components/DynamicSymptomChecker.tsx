@@ -62,6 +62,7 @@ type ChecklistItem = {
   notes?: string;
   selectedOptions?: { [key: string]: string | string[] };
   detailNotes?: { [key: string]: string };
+  childItems?: ChecklistItem[];
 };
 
 // State type for tracking responses
@@ -242,13 +243,33 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Create an array of sections with their items
     return categorySections
       .map((section) => {
+        // Get all items for this section
         const sectionItems = checklistItems
           .filter((item) => item.section_id === section.id)
           .sort((a, b) => a.display_order - b.display_order);
 
+        // Create a hierarchical structure
+        // First get all parent items (items with no parent_item_id)
+        const parentItems = sectionItems.filter(
+          (item) => item.parent_item_id === null
+        );
+
+        // For each parent item, find its children
+        const itemsWithHierarchy = parentItems.map((parentItem) => {
+          // Find children of this parent
+          const childItems = sectionItems.filter(
+            (item) => item.parent_item_id === parentItem.id
+          );
+
+          return {
+            ...parentItem,
+            childItems: childItems,
+          };
+        });
+
         return {
           section,
-          items: sectionItems,
+          items: itemsWithHierarchy,
         };
       })
       .filter((group) => group.items.length > 0); // Only include sections with items
@@ -278,7 +299,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           text = beforeUnderscore + item.notes + afterUnderscore;
         } else {
           // The underscores are at the end or there's no word after them
-          text = text.replace(/_{2,}/g, item.notes);
+          text = text.replace(/\s*_{2,}\s*/g, ' ').trim();
         }
       } else {
         // If no notes, completely remove the underscores and any surrounding spaces
@@ -1209,7 +1230,8 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                 <code className="bg-red-100 px-1 rounded">{chapterSlug}</code>
               </li>
               <li>
-                Make sure you've added sample data to your Supabase database
+                Make sure you&apos;ve added sample data to your Supabase
+                database
               </li>
               <li>Check that your environment variables are set correctly</li>
             </ul>
@@ -1484,89 +1506,211 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                           }
 
                           return (
-                            <div
-                              key={item.id}
-                              className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
-                            >
-                              <div className="flex flex-wrap items-start mb-2">
-                                <div className="flex-1 mr-2">
-                                  <div className="text-gray-900 font-medium mb-1">
-                                    {item.item_text}
+                            <React.Fragment key={item.id}>
+                              <div
+                                className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
+                              >
+                                <div className="flex flex-wrap items-start mb-2">
+                                  <div className="flex-1 mr-2">
+                                    <div className="text-gray-900 font-medium mb-1">
+                                      {item.item_text}
+                                    </div>
+                                  </div>
+
+                                  <div className="flex space-x-1">
+                                    <button
+                                      className={`p-1 rounded-full ${
+                                        item.response === '+'
+                                          ? 'bg-green-100 text-green-700 border-2 border-green-500'
+                                          : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
+                                      }`}
+                                      onClick={() =>
+                                        handleResponseChange(
+                                          item.id,
+                                          item.response === '+' ? null : '+'
+                                        )
+                                      }
+                                      title="Present / Yes"
+                                    >
+                                      <PlusCircle size={18} />
+                                    </button>
+                                    <button
+                                      className={`p-1 rounded-full ${
+                                        item.response === '-'
+                                          ? 'bg-red-100 text-red-700 border-2 border-red-500'
+                                          : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
+                                      }`}
+                                      onClick={() =>
+                                        handleResponseChange(
+                                          item.id,
+                                          item.response === '-' ? null : '-'
+                                        )
+                                      }
+                                      title="Absent / No"
+                                    >
+                                      <MinusCircle size={18} />
+                                    </button>
+                                    <button
+                                      className={`p-1 rounded-full ${
+                                        item.response === 'NA'
+                                          ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
+                                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                      }`}
+                                      onClick={() =>
+                                        handleResponseChange(
+                                          item.id,
+                                          item.response === 'NA' ? null : 'NA'
+                                        )
+                                      }
+                                      title="Not Applicable"
+                                    >
+                                      <HelpCircle size={18} />
+                                    </button>
                                   </div>
                                 </div>
 
-                                <div className="flex space-x-1">
-                                  <button
-                                    className={`p-1 rounded-full ${
-                                      item.response === '+'
-                                        ? 'bg-green-100 text-green-700 border-2 border-green-500'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(
-                                        item.id,
-                                        item.response === '+' ? null : '+'
-                                      )
-                                    }
-                                    title="Present / Yes"
-                                  >
-                                    <PlusCircle size={18} />
-                                  </button>
-                                  <button
-                                    className={`p-1 rounded-full ${
-                                      item.response === '-'
-                                        ? 'bg-red-100 text-red-700 border-2 border-red-500'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(
-                                        item.id,
-                                        item.response === '-' ? null : '-'
-                                      )
-                                    }
-                                    title="Absent / No"
-                                  >
-                                    <MinusCircle size={18} />
-                                  </button>
-                                  <button
-                                    className={`p-1 rounded-full ${
-                                      item.response === 'NA'
-                                        ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                    }`}
-                                    onClick={() =>
-                                      handleResponseChange(
-                                        item.id,
-                                        item.response === 'NA' ? null : 'NA'
-                                      )
-                                    }
-                                    title="Not Applicable"
-                                  >
-                                    <HelpCircle size={18} />
-                                  </button>
-                                </div>
+                                {/* Notes input field - shown for '+' and '-' responses */}
+                                {(item.response === '+' ||
+                                  item.response === '-') && (
+                                  <div className="mt-2">
+                                    <textarea
+                                      className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                                      rows={2}
+                                      placeholder={
+                                        item.response === '+'
+                                          ? 'Add details about this finding...'
+                                          : 'Add notes about this negative finding...'
+                                      }
+                                      value={item.notes || ''}
+                                      onChange={(e) =>
+                                        handleNotesChange(
+                                          item.id,
+                                          e.target.value
+                                        )
+                                      }
+                                    />
+                                  </div>
+                                )}
                               </div>
 
-                              {/* Notes input field - shown for '+' and '-' responses */}
-                              {(item.response === '+' ||
-                                item.response === '-') && (
-                                <div className="mt-2">
-                                  <textarea
-                                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
-                                    rows={2}
-                                    placeholder={
-                                      item.response === '+'
-                                        ? 'Add details about this finding...'
-                                        : 'Add notes about this negative finding...'
-                                    }
-                                    value={item.notes || ''}
-                                    onChange={(e) =>
-                                      handleNotesChange(item.id, e.target.value)
-                                    }
-                                  />
-                                </div>
-                              )}
-                            </div>
+                              {/* Render child items if parent is selected as positive */}
+                              {item.response === '+' &&
+                                item.childItems &&
+                                item.childItems.length > 0 && (
+                                  <div className="ml-6 mb-4 border-l-2 border-green-200 pl-4">
+                                    {item.childItems.map((childItem) => {
+                                      // Determine border color for child item
+                                      let childBorderColorClass =
+                                        'border-gray-100';
+                                      if (childItem.response === '+') {
+                                        childBorderColorClass =
+                                          'border-green-200';
+                                      } else if (childItem.response === '-') {
+                                        childBorderColorClass =
+                                          'border-red-200';
+                                      } else if (childItem.response === 'NA') {
+                                        childBorderColorClass =
+                                          'border-gray-300';
+                                      }
+
+                                      return (
+                                        <div
+                                          key={childItem.id}
+                                          className={`p-3 hover:bg-gray-50 transition-all duration-150 rounded-md mb-2 shadow-sm border-l-4 ${childBorderColorClass} border border-gray-100`}
+                                        >
+                                          <div className="flex flex-wrap items-start mb-2">
+                                            <div className="flex-1 mr-2">
+                                              <div className="text-gray-800 mb-1">
+                                                {childItem.item_text}
+                                              </div>
+                                            </div>
+
+                                            <div className="flex space-x-1">
+                                              <button
+                                                className={`p-1 rounded-full ${
+                                                  childItem.response === '+'
+                                                    ? 'bg-green-100 text-green-700 border-2 border-green-500'
+                                                    : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
+                                                }`}
+                                                onClick={() =>
+                                                  handleResponseChange(
+                                                    childItem.id,
+                                                    childItem.response === '+'
+                                                      ? null
+                                                      : '+'
+                                                  )
+                                                }
+                                                title="Present / Yes"
+                                              >
+                                                <PlusCircle size={16} />
+                                              </button>
+                                              <button
+                                                className={`p-1 rounded-full ${
+                                                  childItem.response === '-'
+                                                    ? 'bg-red-100 text-red-700 border-2 border-red-500'
+                                                    : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
+                                                }`}
+                                                onClick={() =>
+                                                  handleResponseChange(
+                                                    childItem.id,
+                                                    childItem.response === '-'
+                                                      ? null
+                                                      : '-'
+                                                  )
+                                                }
+                                                title="Absent / No"
+                                              >
+                                                <MinusCircle size={16} />
+                                              </button>
+                                              <button
+                                                className={`p-1 rounded-full ${
+                                                  childItem.response === 'NA'
+                                                    ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
+                                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                }`}
+                                                onClick={() =>
+                                                  handleResponseChange(
+                                                    childItem.id,
+                                                    childItem.response === 'NA'
+                                                      ? null
+                                                      : 'NA'
+                                                  )
+                                                }
+                                                title="Not Applicable"
+                                              >
+                                                <HelpCircle size={16} />
+                                              </button>
+                                            </div>
+                                          </div>
+
+                                          {/* Notes input field for child item */}
+                                          {(childItem.response === '+' ||
+                                            childItem.response === '-') && (
+                                            <div className="mt-2">
+                                              <textarea
+                                                className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                                                rows={2}
+                                                placeholder={
+                                                  childItem.response === '+'
+                                                    ? 'Add details about this finding...'
+                                                    : 'Add notes about this negative finding...'
+                                                }
+                                                value={childItem.notes || ''}
+                                                onChange={(e) =>
+                                                  handleNotesChange(
+                                                    childItem.id,
+                                                    e.target.value
+                                                  )
+                                                }
+                                              />
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                )}
+                            </React.Fragment>
                           );
                         })}
                       </div>
