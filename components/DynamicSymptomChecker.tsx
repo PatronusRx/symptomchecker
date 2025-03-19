@@ -285,29 +285,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Check if the item text contains underscores
     if (text.includes('___')) {
       if (item.notes && item.notes.trim() !== '') {
-        // Find the position of underscores
-        const underscoreIndex = text.indexOf('___');
-
-        // Find the position of the last space before the end
-        const lastSpaceIndex = text.lastIndexOf(' ');
-
-        if (underscoreIndex >= 0 && lastSpaceIndex > underscoreIndex) {
-          // There's a word after the underscores
-          // Replace just the underscores, preserving the last word
-          const beforeUnderscore = text.substring(0, underscoreIndex);
-          const afterUnderscore = text.substring(text.indexOf('___') + 3);
-          text = beforeUnderscore + item.notes + afterUnderscore;
-        } else {
-          // The underscores are at the end or there's no word after them
-          text = text.replace(/\s*_{2,}\s*/g, ' ').trim();
-        }
+        // Replace all underscore sequences with the user's notes
+        text = text.replace(/_{2,}/g, item.notes);
       } else {
-        // If no notes, completely remove the underscores and any surrounding spaces
+        // If no notes, remove the underscores
         text = text.replace(/\s*_{2,}\s*/g, ' ').trim();
       }
     } else if (item.notes && item.notes.trim() !== '') {
-      // If no underscores but notes exist, append them in parentheses
-      text += ` (${item.notes})`;
+      // If no underscores but notes exist, append them without parentheses
+      text += ` ${item.notes}`;
     }
 
     return text;
