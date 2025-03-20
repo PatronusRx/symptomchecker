@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
-import { Chapter } from '@/types/symptom-types';
+//import { Chapter } from '@/types/symptom-types';
 
 export default function SymptomPage() {
   const { symptom } = useParams();
