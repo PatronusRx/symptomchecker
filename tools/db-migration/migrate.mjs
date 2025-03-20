@@ -1,14 +1,9 @@
 // tools/db-migration/migrate.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { createClient } from '@supabase/supabase-js';
 import config from './config.mjs';
 import { processItemText, splitMultipleInputs } from './parser.mjs';
-
-// Get directory name for ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Initialize Supabase client
 const supabase = createClient(config.supabaseUrl, config.supabaseKey);
@@ -64,7 +59,7 @@ async function insertCategories() {
 
     // Prepare categories that don't already exist
     const categoriesToInsert = Object.entries(config.categories)
-      .map(([_, { name, order }]) => ({
+      .map(([, { name, order }]) => ({
         title: name,
         display_order: order,
       }))
@@ -159,7 +154,7 @@ function preprocessMarkdownFile(filePath) {
           hierarchyStack = []; // Reset hierarchy for new section
           itemCounter = 0;
         } else {
-          // For ### and #### levels, create header items
+          // For ### and #### levels, treat them as nested items with proper hierarchy
           if (!currentSection) {
             log(
               `Warning: Found header without a parent section at line ${i}, using default section`,
@@ -168,10 +163,19 @@ function preprocessMarkdownFile(filePath) {
             currentSection = 'Default Section';
           }
 
+          // Convert header level to equivalent markdown list indentation level
+          // ### (level 3) = indent level 0
+          // #### (level 4) = indent level 1
           const indentLevel = headerLevel - 3; // Convert to indent levels
 
-          // Adjust stack for this level
-          hierarchyStack = hierarchyStack.slice(0, indentLevel);
+          // IMPROVED HIERARCHY MANAGEMENT: First clear existing items at this level and deeper
+          if (indentLevel === 0) {
+            // For level 0 headers, clear all hierarchy
+            hierarchyStack = [];
+          } else {
+            // For deeper headers, only keep parents
+            hierarchyStack = hierarchyStack.slice(0, indentLevel);
+          }
 
           // Add to hierarchy
           itemCounter++;
@@ -181,6 +185,10 @@ function preprocessMarkdownFile(filePath) {
           const parentPath =
             hierarchyStack.length > 0 ? hierarchyStack.join('.') : '';
           const path = generatePath(parentPath, position);
+
+          log(
+            `Header "${headerTitle}" with path ${path}, level: ${indentLevel}, parent: ${parentPath}`
+          );
 
           hierarchyStack.push(position);
 
@@ -228,27 +236,16 @@ function preprocessMarkdownFile(filePath) {
             `  - Line ${i}, Indent level: ${indentLevel}, Spaces: ${indentStr.length}`
           );
           log(`  - Current hierarchy stack: [${hierarchyStack.join(', ')}]`);
-
-          // Add special markers for these items
-          if (itemText.includes('Orientation assessment')) {
-            log(`  - MARKER: This is the parent item`);
-          } else {
-            log(`  - MARKER: This should be a child of Orientation assessment`);
-          }
         }
 
-        // CRITICAL FIX: Reset hierarchy stack for top-level items
+        // IMPROVED HIERARCHY MANAGEMENT: More consistent handling that better preserves nesting
         if (indentLevel === 0) {
-          // Always clear the stack for top-level items
+          // Top-level items reset hierarchy
           hierarchyStack = [];
-        } else if (indentLevel === 1) {
-          // For first-level children, only keep the parent
-          // This makes sure we have the right parent (not accumulating incorrectly)
-          if (hierarchyStack.length > 1) {
-            hierarchyStack = [hierarchyStack[0]];
-          }
         } else {
-          // For deeper nesting, maintain proper parent hierarchy
+          // For nested items, maintain proper parent hierarchy
+          // The key fix: only keep the stack elements that represent valid parents
+          // If current indent is 2, keep only the first 2 levels of the hierarchy
           hierarchyStack = hierarchyStack.slice(0, indentLevel);
         }
 
@@ -305,7 +302,6 @@ function preprocessMarkdownFile(filePath) {
           for (let j = 1; j < multiItems.length; j++) {
             const subItem = multiItems[j];
             itemCounter++;
-            const subPosition = itemCounter;
             const subPath = generatePath(path, j);
 
             items.push({
@@ -445,6 +441,22 @@ async function updateParentChildRelationships(itemIdByPath) {
   // For each item, find its parent using its path
   let successCount = 0;
   let errorCount = 0;
+
+  // Log the path structure for debugging
+  log(
+    `Path structure (first 10 paths): ${Object.keys(itemIdByPath)
+      .slice(0, 10)
+      .join(', ')}`
+  );
+
+  // Sort paths to help visualize the hierarchy
+  const sortedPaths = Object.keys(itemIdByPath).sort();
+  log(`Hierarchical structure (first 20 sorted paths):`);
+  sortedPaths.slice(0, 20).forEach((path) => {
+    const depth = path.split('.').length - 1;
+    const indent = '  '.repeat(depth);
+    log(`${indent}${path} -> ${itemIdByPath[path]}`);
+  });
 
   for (const [path, id] of Object.entries(itemIdByPath)) {
     // Skip root items
