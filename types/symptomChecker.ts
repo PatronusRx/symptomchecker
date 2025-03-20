@@ -1,28 +1,28 @@
 export type Chapter = {
-  id: number;
+  id: string;
   chapter_number: number;
   title: string;
 };
 
 export type Category = {
-  id: number;
+  id: string;
   category_number: number;
   title: string;
   display_order: number;
 };
 
 export type Section = {
-  id: number;
-  chapter_id: number;
-  category_id: number;
+  id: string;
+  chapter_id: string;
+  category_id: string;
   title: string;
   display_order: number;
 };
 
 export type ChecklistItem = {
-  id: number;
-  section_id: number;
-  parent_item_id: number | null;
+  id: string;
+  section_id: string;
+  parent_item_id: string | null;
   display_order: number;
   item_text: string;
   indent_level: number;
@@ -33,6 +33,7 @@ export type ChecklistItem = {
   input_placeholder: string | null;
   input_unit: string | null;
   icd10_code: string | null;
+  path: string | null;
   // UI state properties
   isCompleted?: boolean;
   response?: '+' | '-' | 'NA' | null;
@@ -44,7 +45,7 @@ export type ChecklistItem = {
 };
 
 export type ResponseState = {
-  [key: number]: {
+  [key: string]: {
     response: '+' | '-' | 'NA' | null;
     notes: string;
     selected_options?: { [key: string]: string | string[] };

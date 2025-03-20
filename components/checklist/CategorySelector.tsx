@@ -4,9 +4,9 @@ import { ClipboardEdit } from 'lucide-react';
 
 interface CategorySelectorProps {
   categories: Category[];
-  activeCategory: number | null;
-  setActiveCategory: (id: number) => void;
-  hasCategoryCompletedItems: (id: number) => boolean;
+  activeCategory: string | null;
+  setActiveCategory: (id: string) => void;
+  hasCategoryCompletedItems: (id: string) => boolean;
   isSidebarCollapsed: boolean;
 }
 

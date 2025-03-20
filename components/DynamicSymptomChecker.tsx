@@ -1,24 +1,16 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
-  PlusCircle,
-  MinusCircle,
-  HelpCircle,
   ClipboardEdit,
-  Save,
   FileText,
   Menu,
   X,
-  Check,
   Clipboard,
   RefreshCw,
-  Search,
-  ChevronRight,
-  ChevronDown,
   User,
+  ChevronRight,
   ChevronLeft,
   Clock,
-  ChevronUp,
 } from 'lucide-react';
 import {
   Chapter,
@@ -28,16 +20,8 @@ import {
   ResponseState,
 } from '../types/symptomChecker';
 import ChecklistItemComponent from './checklist/ChecklistItem';
-import CategorySelector from './checklist/CategorySelector';
 import SoapNoteDisplay from './soap/SoapNoteDisplay';
-import {
-  generateSoapNoteWithItems as generateSoapNote,
-  generateSubjectiveSectionWithItems,
-  generateObjectiveSectionWithItems,
-  generateAssessmentSectionWithItems,
-  generatePlanSectionWithItems,
-  processItemText,
-} from './soap/SoapNoteGenerationUtils';
+import { processItemText } from './soap/SoapNoteGenerationUtils';
 import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
 
 // Initialize Supabase client
@@ -63,7 +47,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [responses, setResponses] = useState<ResponseState>({});
 
   // State for the active category
-  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   // State for SOAP note
   const [generatedNote, setGeneratedNote] = useState({
@@ -190,10 +174,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             isCompleted: false,
             response: null,
             notes: '',
-            isExpanded: true, // Default to expanded for better visibility
+            isExpanded: false, // Default to expanded for better visibility
           }));
 
           setChecklistItems(initializedItems);
+
+          // Set the first category as active if none is selected
+          if (categoriesData && categoriesData.length > 0 && !activeCategory) {
+            setActiveCategory(categoriesData[0].id);
+          }
         }
 
         setLoading(false);
@@ -207,7 +196,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     if (chapterSlug) {
       fetchData();
     }
-  }, [chapterSlug]);
+  }, [chapterSlug, activeCategory]);
 
   // Add useEffect to initialize expansion state when items are first loaded
   useEffect(() => {
@@ -233,7 +222,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   // Build nested hierarchy of checklist items
   const buildNestedItemsHierarchy = useCallback((items: ChecklistItem[]) => {
     // Map for quick item lookup by ID
-    const itemMap = new Map<number, ChecklistItem>();
+    const itemMap = new Map<string, ChecklistItem>();
 
     // First pass: create all items with empty children arrays
     items.forEach((item) => {
@@ -249,7 +238,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // For debugging: check all parent IDs exist
     const missingParents = items
       .filter((item) => item.parent_item_id !== null)
-      .filter((item) => !itemMap.has(item.parent_item_id));
+      .filter((item) => !itemMap.has(item.parent_item_id!));
 
     if (missingParents.length > 0) {
       console.warn(
@@ -260,33 +249,89 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // Second pass: build the tree
     const rootItems: ChecklistItem[] = [];
 
-    // Attach children to parents
-    items.forEach((item) => {
-      const mappedItem = itemMap.get(item.id);
-      if (!mappedItem) return;
+    // Create a Map to store items by indent level for easier hierarchy building
+    const itemsByIndentLevel: Map<number, ChecklistItem[]> = new Map();
 
-      if (item.parent_item_id === null) {
-        // This is a top-level item
-        rootItems.push(mappedItem);
-      } else if (itemMap.has(item.parent_item_id)) {
-        // This is a child item, attach to parent
-        const parent = itemMap.get(item.parent_item_id);
-        if (parent) {
-          if (!parent.childItems) {
-            parent.childItems = [];
-          }
-          parent.childItems.push(mappedItem);
-        }
-      } else {
-        // Orphaned item (parent doesn't exist) - attach to root level
-        console.warn(
-          `Item ${item.id} (${item.item_text}) has parent_item_id ${item.parent_item_id} which doesn't exist - attaching to root`
-        );
+    // Group items by indent level
+    items.forEach((item) => {
+      const level = item.indent_level || 0;
+      if (!itemsByIndentLevel.has(level)) {
+        itemsByIndentLevel.set(level, []);
+      }
+      itemsByIndentLevel.get(level)?.push(item);
+    });
+
+    // Sort each level by display_order
+    itemsByIndentLevel.forEach((levelItems) => {
+      levelItems.sort((a, b) => a.display_order - b.display_order);
+    });
+
+    // Process items from lowest indent level to highest
+    const indentLevels = Array.from(itemsByIndentLevel.keys()).sort(
+      (a, b) => a - b
+    );
+
+    // Add all root items (indent level 0) to the root array
+    const rootLevelItems = itemsByIndentLevel.get(0) || [];
+    rootLevelItems.forEach((item) => {
+      const mappedItem = itemMap.get(item.id);
+      if (mappedItem) {
         rootItems.push(mappedItem);
       }
     });
 
-    // Sort each level by display_order
+    // Start with level 1 since we already added level 0 items to rootItems
+    for (let levelIndex = 1; levelIndex < indentLevels.length; levelIndex++) {
+      const currentLevel = indentLevels[levelIndex];
+      const currentLevelItems = itemsByIndentLevel.get(currentLevel) || [];
+      const previousLevel = indentLevels[levelIndex - 1];
+
+      currentLevelItems.forEach((item) => {
+        // Find the closest parent in the previous level
+        // A parent is the item that comes before this one in display order and has a lower indent level
+        const potentialParents = (itemsByIndentLevel.get(previousLevel) || [])
+          .filter(
+            (potentialParent) =>
+              potentialParent.display_order < item.display_order
+          )
+          .sort((a, b) => b.display_order - a.display_order); // Sort in reverse to get the closest one first
+
+        if (potentialParents.length > 0) {
+          const closestParent = potentialParents[0];
+          const mappedItem = itemMap.get(item.id);
+          const mappedParent = itemMap.get(closestParent.id);
+
+          if (mappedItem && mappedParent) {
+            if (!mappedParent.childItems) {
+              mappedParent.childItems = [];
+            }
+            mappedParent.childItems.push(mappedItem);
+          }
+        } else if (item.parent_item_id && itemMap.has(item.parent_item_id)) {
+          // Try to use explicit parent ID if available
+          const mappedItem = itemMap.get(item.id);
+          const mappedParent = itemMap.get(item.parent_item_id);
+
+          if (mappedItem && mappedParent) {
+            if (!mappedParent.childItems) {
+              mappedParent.childItems = [];
+            }
+            mappedParent.childItems.push(mappedItem);
+          }
+        } else {
+          // Fallback: attach to root if no parent found
+          const mappedItem = itemMap.get(item.id);
+          if (mappedItem) {
+            console.warn(
+              `Item ${item.id} (${item.item_text}) has no parent - attaching to root`
+            );
+            rootItems.push(mappedItem);
+          }
+        }
+      });
+    }
+
+    // Final sort of all children arrays by display_order
     const sortChildren = (items: ChecklistItem[]) => {
       items.sort((a, b) => a.display_order - b.display_order);
       items.forEach((item) => {
@@ -306,7 +351,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Get items for the active category
   const getItemsByCategory = useCallback(
-    (categoryId: number | null) => {
+    (categoryId: string | null) => {
       if (!categoryId) return [];
 
       // Get sections for this category
@@ -324,7 +369,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Group items by section for the active category
   const getItemsBySectionForCategory = useCallback(
-    (categoryId: number | null) => {
+    (categoryId: string | null) => {
       if (!categoryId) return [];
 
       // Get sections for this category
@@ -363,7 +408,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Handle response change (+/-/NA)
   const handleResponseChange = useCallback(
-    (itemId: number, value: '+' | '-' | 'NA' | null) => {
+    (itemId: string, value: '+' | '-' | 'NA' | null) => {
       // Update the responses state
       setResponses((prev) => ({
         ...prev,
@@ -388,7 +433,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         setChecklistItems(updatedItems);
 
         // Immediately regenerate SOAP note with the updated items
-        const updatedNote = generateSoapNote(updatedItems);
+        const updatedNote = generateSoapNote();
         setGeneratedNote(updatedNote);
       }
 
@@ -400,7 +445,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Handle notes change
   const handleNotesChange = useCallback(
-    (itemId: number, notes: string) => {
+    (itemId: string, notes: string) => {
       setResponses((prev) => ({
         ...prev,
         [itemId]: {
@@ -423,7 +468,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         setChecklistItems(updatedItems);
 
         // Immediately regenerate SOAP note with the updated items
-        const updatedNote = generateSoapNote(updatedItems);
+        const updatedNote = generateSoapNote();
         setGeneratedNote(updatedNote);
       }
 
@@ -435,12 +480,12 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Toggle item expansion state
   const toggleItemExpansion = useCallback(
-    (itemId: number) => {
+    (itemId: string) => {
       // First create a deep copy of all items to avoid mutation issues
       const allItems = [...checklistItems];
 
       // Find and update the specific item
-      const updateItem = (items) => {
+      const updateItem = (items: ChecklistItem[]) => {
         return items.map((item) => {
           if (item.id === itemId) {
             // Found the item, toggle its expansion state
@@ -462,7 +507,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   // Handle detail option selection
   const handleDetailOptionChange = useCallback(
     (
-      itemId: number,
+      itemId: string,
       detailKey: string,
       option: string,
       isSelected: boolean
@@ -510,7 +555,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
       // Immediately regenerate SOAP note with the updated items
       setTimeout(() => {
-        const updatedNote = generateSoapNote(checklistItems);
+        const updatedNote = generateSoapNote();
         setGeneratedNote(updatedNote);
       }, 0);
     },
@@ -519,7 +564,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Handle detail notes change
   const handleDetailNoteChange = useCallback(
-    (itemId: number, detailKey: string, option: string, note: string) => {
+    (itemId: string, detailKey: string, option: string, note: string) => {
       setChecklistItems((items) =>
         items.map((item) => {
           if (item.id === itemId) {
@@ -542,7 +587,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
       // Immediately regenerate SOAP note with the updated items
       setTimeout(() => {
-        const updatedNote = generateSoapNote(checklistItems);
+        const updatedNote = generateSoapNote();
         setGeneratedNote(updatedNote);
       }, 0);
     },
@@ -620,7 +665,7 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
   // Check if category has any completed questions
   const hasCategoryCompletedItems = useCallback(
-    (categoryId: number) => {
+    (categoryId: string) => {
       const categoryItems = getItemsByCategory(categoryId);
       return categoryItems.some((item) => item.isCompleted);
     },
@@ -638,7 +683,6 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
           handleNotesChange={handleNotesChange}
           toggleItemExpansion={toggleItemExpansion}
           renderChecklistItem={renderChecklistItem}
-          processItemText={processItemText}
           depth={depth}
         />
       );
@@ -661,7 +705,7 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
   // Generate SOAP note with specific items (for immediate updates)
   const generateSoapNoteWithItems = (items: ChecklistItem[]) => {
-    return generateSoapNoteWithItems(
+    return SoapNoteGenerator.generateNote(
       items,
       categories,
       sections,

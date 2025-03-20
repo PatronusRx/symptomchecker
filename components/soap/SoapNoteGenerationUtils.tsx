@@ -1,11 +1,11 @@
-import { ChecklistItem } from '../../types/symptomChecker';
+import { ChecklistItem as ChecklistItemType } from '../../types/symptomChecker';
 import { SoapNote } from './SoapNoteGenerator';
 
 // Import or define types here (adjust as needed)
 type ChecklistItem = {
-  id: number;
-  section_id: number;
-  parent_item_id: number | null;
+  id: string;
+  section_id: string;
+  parent_item_id: string | null;
   display_order: number;
   item_text: string;
   has_text_input: boolean;
@@ -21,22 +21,21 @@ type ChecklistItem = {
 };
 
 type Chapter = {
-  id: number;
+  id: string;
   chapter_number: number;
   title: string;
 };
 
 type Category = {
-  id: number;
-  category_number: number;
+  id: string;
   title: string;
   display_order: number;
 };
 
 type Section = {
-  id: number;
-  chapter_id: number;
-  category_id: number;
+  id: string;
+  chapter_id: string;
+  category_id: string;
   title: string;
   display_order: number;
 };
@@ -96,7 +95,7 @@ export const generateSubjectiveSectionWithItems = (
   );
 
   // Store which items belong to which categories for deduplication
-  const categoryItemMap = new Map<string, Set<number>>();
+  const categoryItemMap = new Map<string, Set<string>>();
 
   // Preprocess to determine which items belong to which categories
   subjectiveCategories.forEach((categoryTerm) => {
@@ -131,7 +130,7 @@ export const generateSubjectiveSectionWithItems = (
     const pastMedicalItems = categoryItemMap.get('past medical history')!;
 
     // Find duplicate items
-    const duplicateItems = new Set<number>();
+    const duplicateItems = new Set<string>();
     historyItems.forEach((itemId) => {
       if (pastMedicalItems.has(itemId)) {
         duplicateItems.add(itemId);
@@ -412,7 +411,7 @@ export const generateAssessmentSectionWithItems = (
   const relevantItems = items.filter((item) => item.response === '+');
 
   // Track which items have been included already
-  const processedItemIds = new Set<number>();
+  const processedItemIds = new Set<string>();
 
   // Find all categories that have items
   const categoriesWithItems = assessmentCategories.filter((categoryTerm) => {

@@ -1,4 +1,9 @@
-import { ChecklistItem, Chapter, Category, Section } from '../types'; // You may need to create a types file or adjust the import path
+import {
+  ChecklistItem,
+  Chapter,
+  Category,
+  Section,
+} from '../../types/symptomChecker';
 
 import {
   generateSubjectiveSectionWithItems,

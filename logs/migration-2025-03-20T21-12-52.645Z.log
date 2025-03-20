@@ -1,0 +1,774 @@
+[2025-03-20T21:12:52.645Z] [INFO] Starting migration...
+[2025-03-20T21:12:52.646Z] [INFO] Ensuring database schema has required columns...
+[2025-03-20T21:12:52.915Z] [INFO] Schema columns verified/updated successfully
+[2025-03-20T21:12:52.916Z] [INFO] Inserting categories...
+[2025-03-20T21:12:53.283Z] [INFO] Inserted 18 categories
+[2025-03-20T21:12:53.284Z] [INFO] Found 1 chapter directories to process
+[2025-03-20T21:12:53.284Z] [INFO] Processing chapter: Ch14_Seizures
+[2025-03-20T21:12:53.284Z] [INFO] Checking if chapter 14 exists...
+[2025-03-20T21:12:53.510Z] [INFO] Inserted new chapter: Seizures (ID: 54b72b2a-db0e-49a5-9686-21e64164a653)
+[2025-03-20T21:12:53.512Z] [INFO] Processing file: history.md
+[2025-03-20T21:12:53.514Z] [INFO] Starting transaction for file: history.md
+[2025-03-20T21:12:53.514Z] [INFO] Preprocessing file: history.md
+[2025-03-20T21:12:53.515Z] [INFO] Found section: "Onset" at line 2
+[2025-03-20T21:12:53.517Z] [INFO] Found section: "Aura (Focal Seizures)" at line 13
+[2025-03-20T21:12:53.517Z] [INFO] Found section: "Duration" at line 24
+[2025-03-20T21:12:53.517Z] [INFO] Found section: "Characteristics" at line 29
+[2025-03-20T21:12:53.517Z] [INFO] Found section: "Postictal State" at line 42
+[2025-03-20T21:12:53.517Z] [INFO] Found section: "Recent Events" at line 55
+[2025-03-20T21:12:53.517Z] [INFO] Found 6 sections in file: Onset, Aura (Focal Seizures), Duration, Characteristics, Postictal State, Recent Events
+[2025-03-20T21:12:53.517Z] [INFO] Attempting to insert section: "Onset"
+[2025-03-20T21:12:53.602Z] [INFO] Inserted/updated section: Onset (ID: 1977a8f5-76de-4d74-8255-2243d68da016)
+[2025-03-20T21:12:53.602Z] [INFO] Attempting to insert section: "Aura (Focal Seizures)"
+[2025-03-20T21:12:53.734Z] [INFO] Inserted/updated section: Aura (Focal Seizures) (ID: 083a9ee4-eba4-4d53-9e9a-2ef803a540b0)
+[2025-03-20T21:12:53.735Z] [INFO] Attempting to insert section: "Duration"
+[2025-03-20T21:12:53.819Z] [INFO] Inserted/updated section: Duration (ID: 08a0c6db-29a2-4429-9196-e5656e4134a2)
+[2025-03-20T21:12:53.820Z] [INFO] Attempting to insert section: "Characteristics"
+[2025-03-20T21:12:53.908Z] [INFO] Inserted/updated section: Characteristics (ID: e733b982-eedc-4551-b823-f05d4951190b)
+[2025-03-20T21:12:53.909Z] [INFO] Attempting to insert section: "Postictal State"
+[2025-03-20T21:12:54.003Z] [INFO] Inserted/updated section: Postictal State (ID: d34c7150-341a-40d5-93f5-f141a034014a)
+[2025-03-20T21:12:54.004Z] [INFO] Attempting to insert section: "Recent Events"
+[2025-03-20T21:12:54.086Z] [INFO] Inserted/updated section: Recent Events (ID: 497a3b91-4d63-4b0b-936b-403298be902c)
+[2025-03-20T21:12:54.087Z] [INFO] Section ID map: {"Onset":"1977a8f5-76de-4d74-8255-2243d68da016","Aura (Focal Seizures)":"083a9ee4-eba4-4d53-9e9a-2ef803a540b0","Duration":"08a0c6db-29a2-4429-9196-e5656e4134a2","Characteristics":"e733b982-eedc-4551-b823-f05d4951190b","Postictal State":"d34c7150-341a-40d5-93f5-f141a034014a","Recent Events":"497a3b91-4d63-4b0b-936b-403298be902c"}
+[2025-03-20T21:12:54.087Z] [INFO] Prepared 52 items for insertion (filtered from 52 total items)
+[2025-03-20T21:12:54.224Z] [INFO] Inserted batch of 52 items (total: 52/52)
+[2025-03-20T21:12:54.225Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:12:54.225Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 2.1, 2.2, 2.3
+[2025-03-20T21:12:54.225Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:12:54.226Z] [INFO] 1 -> aef0cc9a-d569-4a57-a44d-d781345bd74d
+[2025-03-20T21:12:54.226Z] [INFO]   1.1 -> d034e1ff-e297-45ab-bf4e-2513ce1c65bd
+[2025-03-20T21:12:54.226Z] [INFO]   1.2 -> 37a23288-c7a7-47d6-b67f-81913f511fee
+[2025-03-20T21:12:54.227Z] [INFO]   1.3 -> de313491-856a-4196-850a-0a7e984f13f5
+[2025-03-20T21:12:54.227Z] [INFO]   1.4 -> 6f8b21fd-ea12-49d8-837e-1dad04017b9b
+[2025-03-20T21:12:54.228Z] [INFO]   1.5 -> 6a0dab75-94de-4b79-8ef3-294e297e8961
+[2025-03-20T21:12:54.228Z] [INFO]   1.6 -> 6f5b94c7-2114-4ae0-84a6-517c8282181e
+[2025-03-20T21:12:54.228Z] [INFO]   1.7 -> 77db5704-2f6c-4aec-993a-5f4df84113e0
+[2025-03-20T21:12:54.228Z] [INFO]   1.8 -> e1cb62cb-e70e-48a1-91da-965614fe0974
+[2025-03-20T21:12:54.229Z] [INFO] 2 -> bd742b0c-a9a8-4bac-8d7f-7db708e0a56a
+[2025-03-20T21:12:54.229Z] [INFO]   2.1 -> 07720dd4-e0e3-42cd-b347-4d6a3f38a994
+[2025-03-20T21:12:54.229Z] [INFO]   2.2 -> 1f6f05d9-16f2-43ab-89e1-5cb192fd392f
+[2025-03-20T21:12:54.229Z] [INFO]   2.3 -> 9f291a48-78fb-4567-b4e6-5700e9798988
+[2025-03-20T21:12:54.229Z] [INFO]   2.4 -> 94ea0bb8-83e0-44e9-9568-71680679bee3
+[2025-03-20T21:12:54.229Z] [INFO]   2.5 -> 44ab933a-2f25-450f-8ee8-7dfbb2600415
+[2025-03-20T21:12:54.229Z] [INFO]   2.6 -> f0b2759a-b7c9-4d78-bfcf-6b82a043f130
+[2025-03-20T21:12:54.229Z] [INFO]   2.7 -> b60e768f-25d5-480a-aa79-8dceeab97fd8
+[2025-03-20T21:12:54.229Z] [INFO]   2.8 -> 56678114-c467-40fd-9685-34ed9c3aa0f5
+[2025-03-20T21:12:54.229Z] [INFO]   2.9 -> e5aa03e2-7318-410d-8f78-acc5d1d55160
+[2025-03-20T21:12:54.229Z] [INFO] 3 -> 799010b6-d481-4ee7-87b2-9356e98f9e8f
+[2025-03-20T21:12:56.235Z] [INFO] Completed parent-child relationship updates: 23 successful, 0 failed
+[2025-03-20T21:12:56.236Z] [INFO] Successfully processed file history.md: inserted 52 items
+[2025-03-20T21:12:56.237Z] [INFO] Processing file: alarm-features.md
+[2025-03-20T21:12:56.238Z] [INFO] Starting transaction for file: alarm-features.md
+[2025-03-20T21:12:56.238Z] [INFO] Preprocessing file: alarm-features.md
+[2025-03-20T21:12:56.240Z] [INFO] Found section: "Critical Diagnoses" at line 2
+[2025-03-20T21:12:56.240Z] [INFO] Found section: "Emergent Diagnoses" at line 17
+[2025-03-20T21:12:56.241Z] [INFO] Found section: "Warning Signs" at line 25
+[2025-03-20T21:12:56.242Z] [INFO] Found section: "High-Risk Populations for Nonconvulsive Status Epilepticus" at line 37
+[2025-03-20T21:12:56.242Z] [INFO] Found 4 sections in file: Critical Diagnoses, Emergent Diagnoses, Warning Signs, High-Risk Populations for Nonconvulsive Status Epilepticus
+[2025-03-20T21:12:56.243Z] [INFO] Attempting to insert section: "Critical Diagnoses"
+[2025-03-20T21:12:56.329Z] [INFO] Inserted/updated section: Critical Diagnoses (ID: 1cb7b272-cb1f-4d38-ba90-3cf20b5c1118)
+[2025-03-20T21:12:56.331Z] [INFO] Attempting to insert section: "Emergent Diagnoses"
+[2025-03-20T21:12:56.428Z] [INFO] Inserted/updated section: Emergent Diagnoses (ID: 0f382c38-c021-48fd-9010-cba5967465c0)
+[2025-03-20T21:12:56.429Z] [INFO] Attempting to insert section: "Warning Signs"
+[2025-03-20T21:12:56.524Z] [INFO] Inserted/updated section: Warning Signs (ID: 750bd59b-87a3-4213-8278-4adb25991f72)
+[2025-03-20T21:12:56.525Z] [INFO] Attempting to insert section: "High-Risk Populations for Nonconvulsive Status Epilepticus"
+[2025-03-20T21:12:56.636Z] [INFO] Inserted/updated section: High-Risk Populations for Nonconvulsive Status Epilepticus (ID: a2fa6eaa-bc71-4d2c-9688-5044009befd1)
+[2025-03-20T21:12:56.637Z] [INFO] Section ID map: {"Critical Diagnoses":"1cb7b272-cb1f-4d38-ba90-3cf20b5c1118","Emergent Diagnoses":"0f382c38-c021-48fd-9010-cba5967465c0","Warning Signs":"750bd59b-87a3-4213-8278-4adb25991f72","High-Risk Populations for Nonconvulsive Status Epilepticus":"a2fa6eaa-bc71-4d2c-9688-5044009befd1"}
+[2025-03-20T21:12:56.637Z] [INFO] Prepared 36 items for insertion (filtered from 36 total items)
+[2025-03-20T21:12:56.799Z] [INFO] Inserted batch of 36 items (total: 36/36)
+[2025-03-20T21:12:56.800Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:12:56.800Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 1.1, 1.2
+[2025-03-20T21:12:56.801Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:12:56.801Z] [INFO] 1 -> 33eac108-04ca-4277-b41f-f2e12f8242f4
+[2025-03-20T21:12:56.802Z] [INFO]   1.1 -> a7af5fe7-fafd-4f89-9bf3-789455dbab8b
+[2025-03-20T21:12:56.802Z] [INFO]   1.2 -> 8790975f-4bc6-4d86-8c7b-494eddd0513b
+[2025-03-20T21:12:56.802Z] [INFO] 2 -> a584397b-963c-4873-9c26-67ef874cd60d
+[2025-03-20T21:12:56.803Z] [INFO]   2.1 -> b673c806-b7f8-40e1-bdc6-be49e9026bba
+[2025-03-20T21:12:56.803Z] [INFO]   2.2 -> c4e85c31-a554-4b41-8255-777f72a90338
+[2025-03-20T21:12:56.803Z] [INFO]     2.2.1 -> fd250fea-2741-4d5f-8037-ab2b4c545941
+[2025-03-20T21:12:56.804Z] [INFO]     2.2.2 -> f4ba83a4-5b62-4b42-956d-4cd06d43b1d1
+[2025-03-20T21:12:56.805Z] [INFO]     2.2.3 -> 1051310a-e839-4047-94bc-2d3c8332aaa0
+[2025-03-20T21:12:56.805Z] [INFO]   2.3 -> 650ceed9-b28c-4ba8-bfa2-68c95be8265f
+[2025-03-20T21:12:56.805Z] [INFO]   2.4 -> 574348c2-9ef1-4a09-82d8-6e58f5b2a60b
+[2025-03-20T21:12:56.805Z] [INFO]   2.5 -> d7e85de5-f3d1-4a10-8b8c-de1c371f9c15
+[2025-03-20T21:12:56.805Z] [INFO]   2.6 -> cb3a6a98-4713-4e06-abe8-db627e820880
+[2025-03-20T21:12:56.805Z] [INFO] 3 -> 13b5effc-b784-410c-acd5-ea19632f50be
+[2025-03-20T21:12:56.805Z] [INFO] 4 -> 9d7636dc-9900-4d12-9c5b-c4b25bdf5ca6
+[2025-03-20T21:12:56.805Z] [INFO] 5 -> 651fb846-46a3-403f-9a48-4aee9f61ae31
+[2025-03-20T21:12:56.805Z] [INFO] 6 -> 573a89c8-eb91-4aff-a02d-ea1e30e7122d
+[2025-03-20T21:12:56.805Z] [INFO] 7 -> 43115c34-98f4-4730-aeb3-64d485f23a7e
+[2025-03-20T21:12:56.805Z] [INFO] 8 -> 9e59e2b3-eb43-4d3d-ab82-fb5af063f9e8
+[2025-03-20T21:12:57.718Z] [INFO] Completed parent-child relationship updates: 11 successful, 0 failed
+[2025-03-20T21:12:57.719Z] [INFO] Successfully processed file alarm-features.md: inserted 36 items
+[2025-03-20T21:12:57.720Z] [INFO] Processing file: medications.md
+[2025-03-20T21:12:57.720Z] [INFO] Starting transaction for file: medications.md
+[2025-03-20T21:12:57.721Z] [INFO] Preprocessing file: medications.md
+[2025-03-20T21:12:57.723Z] [INFO] Found section: "Current Antiseizure Medications" at line 2
+[2025-03-20T21:12:57.723Z] [INFO] Found section: "Medication Compliance" at line 22
+[2025-03-20T21:12:57.724Z] [INFO] Found section: "Other Medications" at line 28
+[2025-03-20T21:12:57.725Z] [INFO] Found 3 sections in file: Current Antiseizure Medications, Medication Compliance, Other Medications
+[2025-03-20T21:12:57.725Z] [INFO] Attempting to insert section: "Current Antiseizure Medications"
+[2025-03-20T21:12:57.826Z] [INFO] Inserted/updated section: Current Antiseizure Medications (ID: e1cd0131-8103-49b1-87da-bcd8a613532e)
+[2025-03-20T21:12:57.827Z] [INFO] Attempting to insert section: "Medication Compliance"
+[2025-03-20T21:12:57.915Z] [INFO] Inserted/updated section: Medication Compliance (ID: 8f7b61ca-9776-48c0-b55f-93ce14663bd9)
+[2025-03-20T21:12:57.916Z] [INFO] Attempting to insert section: "Other Medications"
+[2025-03-20T21:12:58.011Z] [INFO] Inserted/updated section: Other Medications (ID: 9f8f4e5a-d072-4a17-aeff-8ab47822d59b)
+[2025-03-20T21:12:58.013Z] [INFO] Section ID map: {"Current Antiseizure Medications":"e1cd0131-8103-49b1-87da-bcd8a613532e","Medication Compliance":"8f7b61ca-9776-48c0-b55f-93ce14663bd9","Other Medications":"9f8f4e5a-d072-4a17-aeff-8ab47822d59b"}
+[2025-03-20T21:12:58.013Z] [INFO] Prepared 26 items for insertion (filtered from 26 total items)
+[2025-03-20T21:12:58.138Z] [INFO] Inserted batch of 26 items (total: 26/26)
+[2025-03-20T21:12:58.139Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:12:58.140Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 1.1, 1.1.1, 1.1.2, 1.1.3, 2.1, 2.2
+[2025-03-20T21:12:58.140Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:12:58.140Z] [INFO] 1 -> 37aca369-b6f0-4608-b978-4731b5297b7a
+[2025-03-20T21:12:58.141Z] [INFO]   1.1 -> 78ce43c3-5f40-401c-95c8-7490d4060e4c
+[2025-03-20T21:12:58.141Z] [INFO]     1.1.1 -> d5ca5d91-23e3-480f-b692-b6c806665cd8
+[2025-03-20T21:12:58.142Z] [INFO]     1.1.2 -> 1190fd97-a505-4afe-819b-8b9455913ea9
+[2025-03-20T21:12:58.142Z] [INFO]     1.1.3 -> 06b4c27d-49f9-4c3c-a464-7e1cc670e24d
+[2025-03-20T21:12:58.142Z] [INFO]   1.2 -> 67a49acc-45dd-4af2-af22-0ebd97de41ff
+[2025-03-20T21:12:58.143Z] [INFO] 2 -> 2ffd03ba-ac6f-46f8-a093-8bbad5b720fa
+[2025-03-20T21:12:58.143Z] [INFO]   2.1 -> db4b1f85-7ab5-4109-85b6-740fc47f4433
+[2025-03-20T21:12:58.143Z] [INFO]   2.2 -> ea0bf743-4e18-4347-a9f6-5c189283fd58
+[2025-03-20T21:12:58.144Z] [INFO]   2.3 -> b3acb9f4-a8ff-48bb-8365-86e01391b625
+[2025-03-20T21:12:58.145Z] [INFO]   2.4 -> fe44359e-beb3-4528-b8b2-097e9f010c55
+[2025-03-20T21:12:58.145Z] [INFO]   2.5 -> d98b3ada-33b7-470a-95f2-69e163274adf
+[2025-03-20T21:12:58.146Z] [INFO]   2.6 -> 878bd236-74bf-4cee-802b-be0fc9139ebc
+[2025-03-20T21:12:58.146Z] [INFO] 3 -> fb325274-e612-42f7-bc7e-7cb35a604759
+[2025-03-20T21:12:58.146Z] [INFO]   3.1 -> 4e25f1ce-b956-44d2-8395-b5addf2ded9f
+[2025-03-20T21:12:58.146Z] [INFO]   3.2 -> 5c14a53b-6825-4f08-8f3e-f802e4d044e1
+[2025-03-20T21:12:58.146Z] [INFO]   3.3 -> cdc84801-195d-4be3-b701-ed355bb00004
+[2025-03-20T21:12:58.147Z] [INFO]   3.4 -> 87df89c0-854e-4f7a-92fb-a4efe6747223
+[2025-03-20T21:12:58.147Z] [INFO]   3.5 -> 03e27873-076b-4f1b-b1a1-b390735a6364
+[2025-03-20T21:12:58.147Z] [INFO] 4 -> b81e510e-e902-4ed9-8ae4-b9164f2fb3fa
+[2025-03-20T21:12:59.454Z] [INFO] Completed parent-child relationship updates: 16 successful, 0 failed
+[2025-03-20T21:12:59.455Z] [INFO] Successfully processed file medications.md: inserted 26 items
+[2025-03-20T21:12:59.456Z] [INFO] Processing file: diet.md
+[2025-03-20T21:12:59.457Z] [INFO] Starting transaction for file: diet.md
+[2025-03-20T21:12:59.457Z] [INFO] Preprocessing file: diet.md
+[2025-03-20T21:12:59.459Z] [INFO] Found section: "Nutritional Status" at line 2
+[2025-03-20T21:12:59.459Z] [INFO] Found section: "Fluid Intake" at line 8
+[2025-03-20T21:12:59.460Z] [INFO] Found section: "Dietary Restrictions" at line 13
+[2025-03-20T21:12:59.461Z] [INFO] Found section: "Alcohol Consumption" at line 16
+[2025-03-20T21:12:59.461Z] [INFO] Found 4 sections in file: Nutritional Status, Fluid Intake, Dietary Restrictions, Alcohol Consumption
+[2025-03-20T21:12:59.462Z] [INFO] Attempting to insert section: "Nutritional Status"
+[2025-03-20T21:12:59.551Z] [INFO] Inserted/updated section: Nutritional Status (ID: 8f73f20a-ed94-4be2-a3a8-d96204740014)
+[2025-03-20T21:12:59.551Z] [INFO] Attempting to insert section: "Fluid Intake"
+[2025-03-20T21:12:59.643Z] [INFO] Inserted/updated section: Fluid Intake (ID: e605e2e5-bd12-4811-9ba7-0512a4f9adbb)
+[2025-03-20T21:12:59.644Z] [INFO] Attempting to insert section: "Dietary Restrictions"
+[2025-03-20T21:12:59.733Z] [INFO] Inserted/updated section: Dietary Restrictions (ID: 481ef628-2a74-4210-9993-f1f42b6b4232)
+[2025-03-20T21:12:59.734Z] [INFO] Attempting to insert section: "Alcohol Consumption"
+[2025-03-20T21:12:59.829Z] [INFO] Inserted/updated section: Alcohol Consumption (ID: 5e81e06a-d3d2-44ab-8779-f2c3f83492d0)
+[2025-03-20T21:12:59.830Z] [INFO] Section ID map: {"Nutritional Status":"8f73f20a-ed94-4be2-a3a8-d96204740014","Fluid Intake":"e605e2e5-bd12-4811-9ba7-0512a4f9adbb","Dietary Restrictions":"481ef628-2a74-4210-9993-f1f42b6b4232","Alcohol Consumption":"5e81e06a-d3d2-44ab-8779-f2c3f83492d0"}
+[2025-03-20T21:12:59.830Z] [INFO] Prepared 10 items for insertion (filtered from 10 total items)
+[2025-03-20T21:12:59.936Z] [INFO] Inserted batch of 10 items (total: 10/10)
+[2025-03-20T21:12:59.937Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:12:59.938Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4
+[2025-03-20T21:12:59.938Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:12:59.939Z] [INFO] 1 -> 936957fd-9119-4052-8225-ffeed816da1b
+[2025-03-20T21:12:59.939Z] [INFO] 2 -> f659f741-e030-48fc-a9f2-36328dfb2a98
+[2025-03-20T21:12:59.940Z] [INFO] 3 -> 4e24ee59-5ceb-46ec-8ac4-98a73140498d
+[2025-03-20T21:12:59.940Z] [INFO] 4 -> 3efa10ca-4d39-45e6-96d3-c5566586d090
+[2025-03-20T21:12:59.941Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-20T21:12:59.941Z] [INFO] Successfully processed file diet.md: inserted 10 items
+[2025-03-20T21:12:59.942Z] [INFO] Processing file: review-systems.md
+[2025-03-20T21:12:59.943Z] [INFO] Starting transaction for file: review-systems.md
+[2025-03-20T21:12:59.943Z] [INFO] Preprocessing file: review-systems.md
+[2025-03-20T21:12:59.944Z] [INFO] Found section: "Neurological" at line 2
+[2025-03-20T21:12:59.945Z] [INFO] Found section: "Cardiovascular" at line 12
+[2025-03-20T21:12:59.945Z] [INFO] Found section: "Respiratory" at line 18
+[2025-03-20T21:12:59.945Z] [INFO] Found section: "Gastrointestinal" at line 23
+[2025-03-20T21:12:59.945Z] [INFO] Found section: "Genitourinary" at line 28
+[2025-03-20T21:12:59.946Z] [INFO] Found section: "Musculoskeletal" at line 31
+[2025-03-20T21:12:59.946Z] [INFO] Found section: "Constitutional" at line 37
+[2025-03-20T21:12:59.946Z] [INFO] Found section: "Psychiatric" at line 42
+[2025-03-20T21:12:59.946Z] [INFO] Found 8 sections in file: Neurological, Cardiovascular, Respiratory, Gastrointestinal, Genitourinary, Musculoskeletal, Constitutional, Psychiatric
+[2025-03-20T21:12:59.946Z] [INFO] Attempting to insert section: "Neurological"
+[2025-03-20T21:13:00.038Z] [INFO] Inserted/updated section: Neurological (ID: 61537afc-eda9-40cb-96fa-139e654bd7f2)
+[2025-03-20T21:13:00.039Z] [INFO] Attempting to insert section: "Cardiovascular"
+[2025-03-20T21:13:00.149Z] [INFO] Inserted/updated section: Cardiovascular (ID: 5b6e31b9-16c8-4bf6-8192-1f246e78b783)
+[2025-03-20T21:13:00.149Z] [INFO] Attempting to insert section: "Respiratory"
+[2025-03-20T21:13:00.244Z] [INFO] Inserted/updated section: Respiratory (ID: 07774ab0-458f-41c7-80a3-42d5e6d66df4)
+[2025-03-20T21:13:00.245Z] [INFO] Attempting to insert section: "Gastrointestinal"
+[2025-03-20T21:13:00.338Z] [INFO] Inserted/updated section: Gastrointestinal (ID: e908d666-11b6-4bb1-8a30-07e62dc9a428)
+[2025-03-20T21:13:00.339Z] [INFO] Attempting to insert section: "Genitourinary"
+[2025-03-20T21:13:00.453Z] [INFO] Inserted/updated section: Genitourinary (ID: a04ea2c6-6671-485f-b6a0-0239b4404089)
+[2025-03-20T21:13:00.453Z] [INFO] Attempting to insert section: "Musculoskeletal"
+[2025-03-20T21:13:00.553Z] [INFO] Inserted/updated section: Musculoskeletal (ID: e0c028a2-14f6-49cb-926a-1e1461dca465)
+[2025-03-20T21:13:00.553Z] [INFO] Attempting to insert section: "Constitutional"
+[2025-03-20T21:13:00.642Z] [INFO] Inserted/updated section: Constitutional (ID: 93c722e6-f004-45d9-b92f-a030b92f0afc)
+[2025-03-20T21:13:00.643Z] [INFO] Attempting to insert section: "Psychiatric"
+[2025-03-20T21:13:00.732Z] [INFO] Inserted/updated section: Psychiatric (ID: a7d5aff6-f852-4580-bf84-9f1ecda74279)
+[2025-03-20T21:13:00.733Z] [INFO] Section ID map: {"Neurological":"61537afc-eda9-40cb-96fa-139e654bd7f2","Cardiovascular":"5b6e31b9-16c8-4bf6-8192-1f246e78b783","Respiratory":"07774ab0-458f-41c7-80a3-42d5e6d66df4","Gastrointestinal":"e908d666-11b6-4bb1-8a30-07e62dc9a428","Genitourinary":"a04ea2c6-6671-485f-b6a0-0239b4404089","Musculoskeletal":"e0c028a2-14f6-49cb-926a-1e1461dca465","Constitutional":"93c722e6-f004-45d9-b92f-a030b92f0afc","Psychiatric":"a7d5aff6-f852-4580-bf84-9f1ecda74279"}
+[2025-03-20T21:13:00.733Z] [INFO] Prepared 31 items for insertion (filtered from 31 total items)
+[2025-03-20T21:13:00.858Z] [INFO] Inserted batch of 31 items (total: 31/31)
+[2025-03-20T21:13:00.859Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:00.860Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8
+[2025-03-20T21:13:00.860Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:00.861Z] [INFO] 1 -> 67db0ff1-fb67-4be2-a8e0-2a4264061130
+[2025-03-20T21:13:00.861Z] [INFO] 2 -> 31a32b1f-691c-4bf0-9a6f-98831e8830a8
+[2025-03-20T21:13:00.862Z] [INFO] 3 -> 14b2fb63-6bb2-45b5-aa82-9a7ea1fc4059
+[2025-03-20T21:13:00.862Z] [INFO] 4 -> e734ec21-044a-47be-840b-5815eca8c8a1
+[2025-03-20T21:13:00.862Z] [INFO] 5 -> 61fa3966-235e-4b4b-b1cf-0cf5766f09f7
+[2025-03-20T21:13:00.863Z] [INFO] 6 -> d3c31f05-bd98-4d72-b4eb-258188bd4e72
+[2025-03-20T21:13:00.863Z] [INFO] 7 -> d06df512-877a-4f11-b00e-a3b7d22a1f90
+[2025-03-20T21:13:00.863Z] [INFO] 8 -> 7f138830-e655-4f89-966b-026bcd7a8d2f
+[2025-03-20T21:13:00.864Z] [INFO] Completed parent-child relationship updates: 0 successful, 0 failed
+[2025-03-20T21:13:00.864Z] [INFO] Successfully processed file review-systems.md: inserted 31 items
+[2025-03-20T21:13:00.864Z] [INFO] Processing file: collateral-history.md
+[2025-03-20T21:13:00.864Z] [INFO] Starting transaction for file: collateral-history.md
+[2025-03-20T21:13:00.864Z] [INFO] Preprocessing file: collateral-history.md
+[2025-03-20T21:13:00.865Z] [INFO] Found section: "Bystander Information" at line 2
+[2025-03-20T21:13:00.865Z] [INFO] Found section: "EMS Report" at line 16
+[2025-03-20T21:13:00.865Z] [INFO] Found section: "Previous Medical Records" at line 24
+[2025-03-20T21:13:00.865Z] [INFO] Found 3 sections in file: Bystander Information, EMS Report, Previous Medical Records
+[2025-03-20T21:13:00.865Z] [INFO] Attempting to insert section: "Bystander Information"
+[2025-03-20T21:13:00.960Z] [INFO] Inserted/updated section: Bystander Information (ID: bd948704-1181-4ded-9ce3-0b4a95768ee2)
+[2025-03-20T21:13:00.961Z] [INFO] Attempting to insert section: "EMS Report"
+[2025-03-20T21:13:01.049Z] [INFO] Inserted/updated section: EMS Report (ID: 1bc7b4ce-8438-447c-92dc-e1dc31d57a92)
+[2025-03-20T21:13:01.050Z] [INFO] Attempting to insert section: "Previous Medical Records"
+[2025-03-20T21:13:01.147Z] [INFO] Inserted/updated section: Previous Medical Records (ID: 69b7cadb-55bc-4d0d-8c67-c68485dfe087)
+[2025-03-20T21:13:01.148Z] [INFO] Section ID map: {"Bystander Information":"bd948704-1181-4ded-9ce3-0b4a95768ee2","EMS Report":"1bc7b4ce-8438-447c-92dc-e1dc31d57a92","Previous Medical Records":"69b7cadb-55bc-4d0d-8c67-c68485dfe087"}
+[2025-03-20T21:13:01.149Z] [INFO] Prepared 23 items for insertion (filtered from 23 total items)
+[2025-03-20T21:13:01.265Z] [INFO] Inserted batch of 23 items (total: 23/23)
+[2025-03-20T21:13:01.266Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:01.267Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 1.1, 1.2, 4.1
+[2025-03-20T21:13:01.267Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:01.268Z] [INFO] 1 -> b606fe7a-6b44-4eec-8e30-3a1bb6741ce6
+[2025-03-20T21:13:01.268Z] [INFO]   1.1 -> ff291460-a9b3-402a-aa07-bfe9c91732b0
+[2025-03-20T21:13:01.269Z] [INFO]   1.2 -> 5dd67e2e-3522-40ff-b586-7ce776902e35
+[2025-03-20T21:13:01.269Z] [INFO] 2 -> cd15bc52-f45f-4aad-a5c8-630c40d0a5d9
+[2025-03-20T21:13:01.269Z] [INFO] 3 -> 97245e90-2027-4e1b-8610-22ef73378522
+[2025-03-20T21:13:01.270Z] [INFO]   3.1 -> fb10c1a9-f79c-4d4f-bbf2-cf81d4695823
+[2025-03-20T21:13:01.270Z] [INFO]   3.2 -> ba8c0372-b892-494e-9743-131722e12eb7
+[2025-03-20T21:13:01.271Z] [INFO]   3.3 -> a19d63fa-cd98-41ba-bab0-12d70620683f
+[2025-03-20T21:13:01.271Z] [INFO] 4 -> a804584e-94a7-497d-82a7-cf2f45006f8c
+[2025-03-20T21:13:01.272Z] [INFO]   4.1 -> d9f10859-fe92-4c29-9929-0b2c35e578a7
+[2025-03-20T21:13:01.272Z] [INFO]   4.2 -> 7534b54d-ef7b-4aa1-be26-a67d76d04338
+[2025-03-20T21:13:01.272Z] [INFO]   4.3 -> c269651b-dfc1-4b63-9437-40d694484cc0
+[2025-03-20T21:13:01.273Z] [INFO] 5 -> 256163c1-002b-48dc-94e7-0330077377b3
+[2025-03-20T21:13:01.273Z] [INFO] 6 -> 9b698a58-ff10-4489-ac93-a595fc4d4486
+[2025-03-20T21:13:01.274Z] [INFO] 7 -> 60eeefe3-c2f1-4a33-a0cd-fe6ec1e85997
+[2025-03-20T21:13:01.943Z] [INFO] Completed parent-child relationship updates: 8 successful, 0 failed
+[2025-03-20T21:13:01.944Z] [INFO] Successfully processed file collateral-history.md: inserted 23 items
+[2025-03-20T21:13:01.945Z] [INFO] Processing file: risk-factors.md
+[2025-03-20T21:13:01.946Z] [INFO] Starting transaction for file: risk-factors.md
+[2025-03-20T21:13:01.947Z] [INFO] Preprocessing file: risk-factors.md
+[2025-03-20T21:13:01.948Z] [INFO] Found section: "Demographic Factors" at line 2
+[2025-03-20T21:13:01.948Z] [INFO] Found section: "Neurological Factors" at line 8
+[2025-03-20T21:13:01.949Z] [INFO] Found section: "Medical Conditions" at line 18
+[2025-03-20T21:13:01.950Z] [INFO] Found section: "Modifiable Factors" at line 24
+[2025-03-20T21:13:01.950Z] [INFO] Found section: "Exposure Risk" at line 31
+[2025-03-20T21:13:01.951Z] [INFO] Found 5 sections in file: Demographic Factors, Neurological Factors, Medical Conditions, Modifiable Factors, Exposure Risk
+[2025-03-20T21:13:01.951Z] [INFO] Attempting to insert section: "Demographic Factors"
+[2025-03-20T21:13:02.043Z] [INFO] Inserted/updated section: Demographic Factors (ID: d9f6e236-3748-48a1-9f3f-18287362cddb)
+[2025-03-20T21:13:02.044Z] [INFO] Attempting to insert section: "Neurological Factors"
+[2025-03-20T21:13:02.140Z] [INFO] Inserted/updated section: Neurological Factors (ID: 4a0c8207-f83f-4a68-ae62-8039c2eeb63d)
+[2025-03-20T21:13:02.141Z] [INFO] Attempting to insert section: "Medical Conditions"
+[2025-03-20T21:13:02.232Z] [INFO] Inserted/updated section: Medical Conditions (ID: aedf48ef-7599-4c44-b4e3-52f3f2c835e6)
+[2025-03-20T21:13:02.233Z] [INFO] Attempting to insert section: "Modifiable Factors"
+[2025-03-20T21:13:02.350Z] [INFO] Inserted/updated section: Modifiable Factors (ID: 31daad5f-a9fd-4176-9501-3b93067a2518)
+[2025-03-20T21:13:02.351Z] [INFO] Attempting to insert section: "Exposure Risk"
+[2025-03-20T21:13:02.438Z] [INFO] Inserted/updated section: Exposure Risk (ID: d99bb8bd-7389-4023-8bba-0338235a781e)
+[2025-03-20T21:13:02.439Z] [INFO] Section ID map: {"Demographic Factors":"d9f6e236-3748-48a1-9f3f-18287362cddb","Neurological Factors":"4a0c8207-f83f-4a68-ae62-8039c2eeb63d","Medical Conditions":"aedf48ef-7599-4c44-b4e3-52f3f2c835e6","Modifiable Factors":"31daad5f-a9fd-4176-9501-3b93067a2518","Exposure Risk":"d99bb8bd-7389-4023-8bba-0338235a781e"}
+[2025-03-20T21:13:02.439Z] [INFO] Prepared 23 items for insertion (filtered from 23 total items)
+[2025-03-20T21:13:02.548Z] [INFO] Inserted batch of 23 items (total: 23/23)
+[2025-03-20T21:13:02.549Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:02.550Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 1.1, 1.2
+[2025-03-20T21:13:02.550Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:02.551Z] [INFO] 1 -> 6d1883b8-b32f-4d1e-8521-1cb007b4802c
+[2025-03-20T21:13:02.551Z] [INFO]   1.1 -> 81b9736e-47c6-4dd9-8cdc-66d3df931058
+[2025-03-20T21:13:02.552Z] [INFO]   1.2 -> 97f2e305-8906-4f6b-b590-87d97eb31cd8
+[2025-03-20T21:13:02.552Z] [INFO] 2 -> 87b0ba81-b65a-4bf6-a3b2-f14be92b5bca
+[2025-03-20T21:13:02.552Z] [INFO] 3 -> 57c83a79-a8f7-4e40-9edc-31693fb82321
+[2025-03-20T21:13:02.553Z] [INFO] 4 -> 6fb75ba6-6925-40cd-b4bf-e9e74e555f19
+[2025-03-20T21:13:02.553Z] [INFO] 5 -> 561c0d4a-663b-41a1-af9a-3fc248b5b2a9
+[2025-03-20T21:13:02.553Z] [INFO] 6 -> 41be48e0-a6fe-4ac8-b390-b60ee00fe3c9
+[2025-03-20T21:13:02.554Z] [INFO] 7 -> cc36c187-a8b8-4bdc-8871-1fefa208d54c
+[2025-03-20T21:13:02.554Z] [INFO] 8 -> dbf72231-e1ac-4718-b1a1-bc46cb472a84
+[2025-03-20T21:13:02.712Z] [INFO] Completed parent-child relationship updates: 2 successful, 0 failed
+[2025-03-20T21:13:02.713Z] [INFO] Successfully processed file risk-factors.md: inserted 23 items
+[2025-03-20T21:13:02.714Z] [INFO] Processing file: differential-diagnosis.md
+[2025-03-20T21:13:02.714Z] [INFO] Starting transaction for file: differential-diagnosis.md
+[2025-03-20T21:13:02.715Z] [INFO] Preprocessing file: differential-diagnosis.md
+[2025-03-20T21:13:02.716Z] [INFO] Found section: "Cardiac" at line 2
+[2025-03-20T21:13:02.717Z] [INFO] Found section: "Neurologic" at line 7
+[2025-03-20T21:13:02.717Z] [INFO] Found section: "Toxicologic" at line 20
+[2025-03-20T21:13:02.718Z] [INFO] Found section: "Metabolic" at line 25
+[2025-03-20T21:13:02.718Z] [INFO] Found section: "Infectious" at line 31
+[2025-03-20T21:13:02.719Z] [INFO] Found section: "Psychiatric" at line 35
+[2025-03-20T21:13:02.719Z] [INFO] Found 6 sections in file: Cardiac, Neurologic, Toxicologic, Metabolic, Infectious, Psychiatric
+[2025-03-20T21:13:02.720Z] [INFO] Attempting to insert section: "Cardiac"
+[2025-03-20T21:13:02.920Z] [INFO] Inserted/updated section: Cardiac (ID: 62753030-726f-4144-9aa9-f9b25922d09f)
+[2025-03-20T21:13:02.921Z] [INFO] Attempting to insert section: "Neurologic"
+[2025-03-20T21:13:03.017Z] [INFO] Inserted/updated section: Neurologic (ID: cec4e366-a863-42ab-b03f-d81e0eb41d45)
+[2025-03-20T21:13:03.018Z] [INFO] Attempting to insert section: "Toxicologic"
+[2025-03-20T21:13:03.120Z] [INFO] Inserted/updated section: Toxicologic (ID: 6bb03443-f88e-4a92-9030-38a5bdf9d65e)
+[2025-03-20T21:13:03.121Z] [INFO] Attempting to insert section: "Metabolic"
+[2025-03-20T21:13:03.215Z] [INFO] Inserted/updated section: Metabolic (ID: 341be020-f5c5-4999-afb8-b23f2ddcc77d)
+[2025-03-20T21:13:03.216Z] [INFO] Attempting to insert section: "Infectious"
+[2025-03-20T21:13:03.300Z] [INFO] Inserted/updated section: Infectious (ID: ddcd3f01-1f1a-4740-8698-7a780c9c20c9)
+[2025-03-20T21:13:03.300Z] [INFO] Attempting to insert section: "Psychiatric"
+[2025-03-20T21:13:03.390Z] [INFO] Inserted/updated section: Psychiatric (ID: 79ea9497-1328-4184-95d6-6622570dbb5f)
+[2025-03-20T21:13:03.390Z] [INFO] Section ID map: {"Cardiac":"62753030-726f-4144-9aa9-f9b25922d09f","Neurologic":"cec4e366-a863-42ab-b03f-d81e0eb41d45","Toxicologic":"6bb03443-f88e-4a92-9030-38a5bdf9d65e","Metabolic":"341be020-f5c5-4999-afb8-b23f2ddcc77d","Infectious":"ddcd3f01-1f1a-4740-8698-7a780c9c20c9","Psychiatric":"79ea9497-1328-4184-95d6-6622570dbb5f"}
+[2025-03-20T21:13:03.391Z] [INFO] Prepared 37 items for insertion (filtered from 37 total items)
+[2025-03-20T21:13:03.511Z] [INFO] Inserted batch of 37 items (total: 37/37)
+[2025-03-20T21:13:03.512Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:03.513Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 2.1, 4.1, 4.2, 4.3
+[2025-03-20T21:13:03.513Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:03.514Z] [INFO] 1 -> 5364fe7f-3e2e-43de-9944-137223d60947
+[2025-03-20T21:13:03.514Z] [INFO]   1.1 -> 6966f6a8-d060-4ab3-bff8-c374d5168d92
+[2025-03-20T21:13:03.515Z] [INFO]   1.10 -> 764671db-773c-4b9f-babe-ff6773765603
+[2025-03-20T21:13:03.515Z] [INFO]   1.2 -> 9b0b7152-5508-47f5-8643-c854269df2fc
+[2025-03-20T21:13:03.515Z] [INFO]   1.3 -> 451bc283-0ca8-4112-95ed-f66cd4f61299
+[2025-03-20T21:13:03.516Z] [INFO]   1.4 -> 742def77-3507-49f6-b9d8-be971c9979bb
+[2025-03-20T21:13:03.516Z] [INFO]   1.5 -> 299799b4-a387-4b65-8e62-47b80f3c1d18
+[2025-03-20T21:13:03.516Z] [INFO]   1.6 -> d3287fab-91c4-4ff3-b265-cdf0be984c3e
+[2025-03-20T21:13:03.517Z] [INFO]   1.7 -> c68219ee-d526-4243-9b60-6ec9bd58bcd5
+[2025-03-20T21:13:03.517Z] [INFO]   1.8 -> a778ad6c-f5c7-4c8a-a242-d0c71259c6bc
+[2025-03-20T21:13:03.518Z] [INFO]   1.9 -> 4f53e66a-a755-4b61-b68b-08f0bcfac51a
+[2025-03-20T21:13:03.518Z] [INFO] 2 -> c30a472c-47cf-42bd-ab89-b3b517eb57d9
+[2025-03-20T21:13:03.518Z] [INFO]   2.1 -> 36d9ce98-767a-418c-9d22-3b94f402c95c
+[2025-03-20T21:13:03.518Z] [INFO] 3 -> ca2dead1-4fb8-4719-9c6c-cd7490e2e84f
+[2025-03-20T21:13:03.519Z] [INFO] 4 -> 8b6799a4-4f5c-40d1-9cdd-68256dfb5b61
+[2025-03-20T21:13:03.519Z] [INFO]   4.1 -> d70a92eb-6f71-410e-90d5-dd68877a928c
+[2025-03-20T21:13:03.519Z] [INFO]   4.2 -> a87e32c6-b300-4023-b1ed-de1ae04145bd
+[2025-03-20T21:13:03.519Z] [INFO]   4.3 -> c61f2f94-72a7-4eea-80a8-05dafb03b5e8
+[2025-03-20T21:13:03.519Z] [INFO]   4.4 -> 1cc2d0bd-c634-40dd-a7d1-46f9fb6f8c98
+[2025-03-20T21:13:03.519Z] [INFO] 5 -> 23a9cb13-ca69-42c4-9e7a-fa85357a5d92
+[2025-03-20T21:13:04.694Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-20T21:13:04.696Z] [INFO] Successfully processed file differential-diagnosis.md: inserted 37 items
+[2025-03-20T21:13:04.697Z] [INFO] Processing file: past-medical.md
+[2025-03-20T21:13:04.698Z] [INFO] Starting transaction for file: past-medical.md
+[2025-03-20T21:13:04.698Z] [INFO] Preprocessing file: past-medical.md
+[2025-03-20T21:13:04.699Z] [INFO] Found section: "Neurologic History" at line 2
+[2025-03-20T21:13:04.701Z] [INFO] Found section: "Medical Comorbidities" at line 21
+[2025-03-20T21:13:04.702Z] [INFO] Found 2 sections in file: Neurologic History, Medical Comorbidities
+[2025-03-20T21:13:04.702Z] [INFO] Attempting to insert section: "Neurologic History"
+[2025-03-20T21:13:04.792Z] [INFO] Inserted/updated section: Neurologic History (ID: 7c09e4bb-3245-49ac-a143-b1a13cd210fb)
+[2025-03-20T21:13:04.792Z] [INFO] Attempting to insert section: "Medical Comorbidities"
+[2025-03-20T21:13:04.890Z] [INFO] Inserted/updated section: Medical Comorbidities (ID: d925ca1e-56c5-4aa0-a051-09a9e07800f9)
+[2025-03-20T21:13:04.891Z] [INFO] Section ID map: {"Neurologic History":"7c09e4bb-3245-49ac-a143-b1a13cd210fb","Medical Comorbidities":"d925ca1e-56c5-4aa0-a051-09a9e07800f9"}
+[2025-03-20T21:13:04.892Z] [INFO] Prepared 28 items for insertion (filtered from 28 total items)
+[2025-03-20T21:13:05.007Z] [INFO] Inserted batch of 28 items (total: 28/28)
+[2025-03-20T21:13:05.008Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:05.008Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 9, 1.1
+[2025-03-20T21:13:05.009Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:05.009Z] [INFO] 1 -> 70f26368-8aa9-4585-83bc-7d70b1a7024e
+[2025-03-20T21:13:05.010Z] [INFO]   1.1 -> 7b1b73d4-b6a0-4249-ab07-6184d901f589
+[2025-03-20T21:13:05.010Z] [INFO]   1.2 -> 64cbb64b-cf63-454f-9515-353698ff125f
+[2025-03-20T21:13:05.010Z] [INFO]   1.3 -> e18d49a7-4f49-4d98-b210-b6cb2997a498
+[2025-03-20T21:13:05.011Z] [INFO] 2 -> 1f8a26b3-744d-4fbf-a453-1dd88dd15964
+[2025-03-20T21:13:05.011Z] [INFO]   2.1 -> fa678e19-b3ef-42e4-aa6c-4039de2f706a
+[2025-03-20T21:13:05.011Z] [INFO] 3 -> 0dbf840a-f390-47ea-88eb-3e0c005ffb31
+[2025-03-20T21:13:05.012Z] [INFO]   3.1 -> ed6125ed-1fcc-4537-80b3-a21570b40885
+[2025-03-20T21:13:05.013Z] [INFO]   3.2 -> 1dd0388b-3c18-4f08-b8ca-7fc8ac8a220b
+[2025-03-20T21:13:05.013Z] [INFO]   3.3 -> 905b5b1d-2de8-49bd-a32e-08665c215c16
+[2025-03-20T21:13:05.013Z] [INFO]   3.4 -> 596f2999-3ce2-4f79-997e-65e712713cba
+[2025-03-20T21:13:05.013Z] [INFO] 4 -> ab49f8bb-244b-4cee-9dc8-c1fc41f1ab94
+[2025-03-20T21:13:05.013Z] [INFO] 5 -> 67f48b50-0488-47cc-bf09-d2490829fa8b
+[2025-03-20T21:13:05.013Z] [INFO] 6 -> 28985583-7ae5-4309-b57b-3b095e92c618
+[2025-03-20T21:13:05.013Z] [INFO] 7 -> 4edd0be9-e233-45bf-a624-00e0b35bc407
+[2025-03-20T21:13:05.013Z] [INFO]   7.1 -> 3ee44db1-c908-487d-be78-5919fc332117
+[2025-03-20T21:13:05.013Z] [INFO]   7.2 -> 36e66024-5dd1-46cd-8d2a-1f0fba3f0716
+[2025-03-20T21:13:05.013Z] [INFO] 8 -> 61d84b23-f583-4829-ac21-702e4768d006
+[2025-03-20T21:13:05.014Z] [INFO] 9 -> 8aa8279b-d8fd-4d2f-938e-e17c2b7eedb1
+[2025-03-20T21:13:05.774Z] [INFO] Completed parent-child relationship updates: 10 successful, 0 failed
+[2025-03-20T21:13:05.774Z] [INFO] Successfully processed file past-medical.md: inserted 28 items
+[2025-03-20T21:13:05.775Z] [INFO] Processing file: physical-exam.md
+[2025-03-20T21:13:05.775Z] [INFO] Starting transaction for file: physical-exam.md
+[2025-03-20T21:13:05.775Z] [INFO] Preprocessing file: physical-exam.md
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "Vital Signs" at line 2
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "General" at line 18
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "HEENT" at line 27
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "Cardiovascular" at line 38
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "Respiratory" at line 44
+[2025-03-20T21:13:05.775Z] [INFO] Found section: "Neurological" at line 49
+[2025-03-20T21:13:05.776Z] [INFO] Found section: "Skin" at line 97
+[2025-03-20T21:13:05.776Z] [INFO] Found section: "Evidence of Seizure Complications" at line 103
+[2025-03-20T21:13:05.776Z] [INFO] Found 8 sections in file: Vital Signs, General, HEENT, Cardiovascular, Respiratory, Neurological, Skin, Evidence of Seizure Complications
+[2025-03-20T21:13:05.776Z] [INFO] Attempting to insert section: "Vital Signs"
+[2025-03-20T21:13:05.876Z] [INFO] Inserted/updated section: Vital Signs (ID: 73964f2f-97d6-438e-9a62-7e4936449db2)
+[2025-03-20T21:13:05.876Z] [INFO] Attempting to insert section: "General"
+[2025-03-20T21:13:05.963Z] [INFO] Inserted/updated section: General (ID: 31fdfe3e-2fa9-41d0-93a0-9d6395a64fac)
+[2025-03-20T21:13:05.963Z] [INFO] Attempting to insert section: "HEENT"
+[2025-03-20T21:13:06.048Z] [INFO] Inserted/updated section: HEENT (ID: 43b4ee4b-8e38-477f-a136-d13c7eb146e5)
+[2025-03-20T21:13:06.049Z] [INFO] Attempting to insert section: "Cardiovascular"
+[2025-03-20T21:13:06.142Z] [INFO] Inserted/updated section: Cardiovascular (ID: cb9551c9-adb2-45c9-9b4c-5023c3516fe8)
+[2025-03-20T21:13:06.142Z] [INFO] Attempting to insert section: "Respiratory"
+[2025-03-20T21:13:06.231Z] [INFO] Inserted/updated section: Respiratory (ID: ff51fbaa-dcb7-46df-8181-2c85e2556b34)
+[2025-03-20T21:13:06.232Z] [INFO] Attempting to insert section: "Neurological"
+[2025-03-20T21:13:06.318Z] [INFO] Inserted/updated section: Neurological (ID: a56dcd14-4a47-44e1-863e-132ca32794a7)
+[2025-03-20T21:13:06.319Z] [INFO] Attempting to insert section: "Skin"
+[2025-03-20T21:13:06.416Z] [INFO] Inserted/updated section: Skin (ID: 8eab3117-875d-4eb8-bd6c-1a9eeb0c96f2)
+[2025-03-20T21:13:06.417Z] [INFO] Attempting to insert section: "Evidence of Seizure Complications"
+[2025-03-20T21:13:06.504Z] [INFO] Inserted/updated section: Evidence of Seizure Complications (ID: e5bb8a8c-b95c-4c0c-abe1-9de244842d89)
+[2025-03-20T21:13:06.505Z] [INFO] Section ID map: {"Vital Signs":"73964f2f-97d6-438e-9a62-7e4936449db2","General":"31fdfe3e-2fa9-41d0-93a0-9d6395a64fac","HEENT":"43b4ee4b-8e38-477f-a136-d13c7eb146e5","Cardiovascular":"cb9551c9-adb2-45c9-9b4c-5023c3516fe8","Respiratory":"ff51fbaa-dcb7-46df-8181-2c85e2556b34","Neurological":"a56dcd14-4a47-44e1-863e-132ca32794a7","Skin":"8eab3117-875d-4eb8-bd6c-1a9eeb0c96f2","Evidence of Seizure Complications":"e5bb8a8c-b95c-4c0c-abe1-9de244842d89"}
+[2025-03-20T21:13:06.505Z] [INFO] Prepared 92 items for insertion (filtered from 92 total items)
+[2025-03-20T21:13:06.677Z] [INFO] Inserted batch of 92 items (total: 92/92)
+[2025-03-20T21:13:06.678Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:06.678Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 9, 1.1
+[2025-03-20T21:13:06.678Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:06.678Z] [INFO] 1 -> 6816af3a-c0a5-4516-b0be-f44ccff4fd2c
+[2025-03-20T21:13:06.678Z] [INFO]   1.1 -> 472bb5cb-5bcf-4ce7-bb69-c0de87fb126d
+[2025-03-20T21:13:06.678Z] [INFO]   1.2 -> 71e40c39-6a1c-4697-baba-97b036f62582
+[2025-03-20T21:13:06.678Z] [INFO]   1.3 -> bc6e4ccc-04d6-43f4-9e08-2305e1fc5845
+[2025-03-20T21:13:06.678Z] [INFO]   1.4 -> d03d1c64-bcb0-4636-b18c-13f886257721
+[2025-03-20T21:13:06.679Z] [INFO]   1.5 -> e3d19ad0-a8c8-4ae9-8585-84b0b9372c6e
+[2025-03-20T21:13:06.679Z] [INFO] 2 -> 2bd314e8-d7a2-465f-9073-55788de278ec
+[2025-03-20T21:13:06.679Z] [INFO] 3 -> 099407e3-3739-4fe5-924e-5993358fadef
+[2025-03-20T21:13:06.679Z] [INFO]   3.1 -> 040afe1b-bfa5-49c0-9ac5-9dafcba18b29
+[2025-03-20T21:13:06.679Z] [INFO]     3.1.1 -> a9f109aa-78bb-4ae5-ac2e-355e62c03514
+[2025-03-20T21:13:06.679Z] [INFO]       3.1.1.1 -> 413c4315-15fb-497e-8f1c-1bcf87553d48
+[2025-03-20T21:13:06.679Z] [INFO]       3.1.1.2 -> a307c774-b4e3-4c48-a35d-74c921bb4424
+[2025-03-20T21:13:06.680Z] [INFO]     3.1.2 -> 85f9b55e-4d00-44be-8f51-91a7de71db39
+[2025-03-20T21:13:06.680Z] [INFO]       3.1.2.1 -> ae9eb197-d239-4c05-945b-c7874d825558
+[2025-03-20T21:13:06.680Z] [INFO]       3.1.2.2 -> d77cdd83-b20e-4f9f-b588-0271807d03d1
+[2025-03-20T21:13:06.680Z] [INFO]   3.2 -> 7bafeb37-b69b-46aa-855b-a8f9c653af8f
+[2025-03-20T21:13:06.680Z] [INFO]     3.2.1 -> 27a76069-471e-4316-b468-a0c72c5df659
+[2025-03-20T21:13:06.680Z] [INFO]     3.2.2 -> 2e3be5dd-9e7f-48e7-84c0-7f98ab4f8a1f
+[2025-03-20T21:13:06.680Z] [INFO]     3.2.3 -> 89edf448-291e-4bd2-a696-6fd695f1d6f2
+[2025-03-20T21:13:06.680Z] [INFO] 4 -> 3fe60ec1-1bff-4f0c-9364-f09afc052c79
+[2025-03-20T21:13:10.153Z] [INFO] Completed parent-child relationship updates: 43 successful, 0 failed
+[2025-03-20T21:13:10.154Z] [INFO] Successfully processed file physical-exam.md: inserted 92 items
+[2025-03-20T21:13:10.155Z] [INFO] Processing file: lab-studies.md
+[2025-03-20T21:13:10.156Z] [INFO] Starting transaction for file: lab-studies.md
+[2025-03-20T21:13:10.156Z] [INFO] Preprocessing file: lab-studies.md
+[2025-03-20T21:13:10.157Z] [INFO] Found section: "Essential Studies" at line 2
+[2025-03-20T21:13:10.158Z] [INFO] Found section: "Extended Metabolic Assessment" at line 8
+[2025-03-20T21:13:10.160Z] [INFO] Found section: "Post-Convulsion Studies" at line 23
+[2025-03-20T21:13:10.161Z] [INFO] Found section: "Hematology" at line 34
+[2025-03-20T21:13:10.161Z] [INFO] Found section: "Infectious Disease Workup" at line 42
+[2025-03-20T21:13:10.161Z] [INFO] Found section: "Toxicology" at line 53
+[2025-03-20T21:13:10.161Z] [INFO] Found section: "Antiseizure Drug Levels" at line 61
+[2025-03-20T21:13:10.162Z] [INFO] Found 7 sections in file: Essential Studies, Extended Metabolic Assessment, Post-Convulsion Studies, Hematology, Infectious Disease Workup, Toxicology, Antiseizure Drug Levels
+[2025-03-20T21:13:10.162Z] [INFO] Attempting to insert section: "Essential Studies"
+[2025-03-20T21:13:10.257Z] [INFO] Inserted/updated section: Essential Studies (ID: 554e9e01-848e-4da7-9af5-2e934143abdc)
+[2025-03-20T21:13:10.257Z] [INFO] Attempting to insert section: "Extended Metabolic Assessment"
+[2025-03-20T21:13:10.346Z] [INFO] Inserted/updated section: Extended Metabolic Assessment (ID: afda3a5e-065a-437f-8d32-5b38034c2445)
+[2025-03-20T21:13:10.347Z] [INFO] Attempting to insert section: "Post-Convulsion Studies"
+[2025-03-20T21:13:10.439Z] [INFO] Inserted/updated section: Post-Convulsion Studies (ID: 8f2cf02e-6eff-409c-8dfb-b7b70bd39983)
+[2025-03-20T21:13:10.440Z] [INFO] Attempting to insert section: "Hematology"
+[2025-03-20T21:13:10.532Z] [INFO] Inserted/updated section: Hematology (ID: 248f769c-4bbe-4a32-a80c-ecadf6096c8c)
+[2025-03-20T21:13:10.533Z] [INFO] Attempting to insert section: "Infectious Disease Workup"
+[2025-03-20T21:13:10.634Z] [INFO] Inserted/updated section: Infectious Disease Workup (ID: ce5ec1df-8805-4d1e-8b8a-8cff0d0bf50d)
+[2025-03-20T21:13:10.634Z] [INFO] Attempting to insert section: "Toxicology"
+[2025-03-20T21:13:10.725Z] [INFO] Inserted/updated section: Toxicology (ID: 19aa60d2-f8e1-46c1-99f1-f48bdfad2b9a)
+[2025-03-20T21:13:10.726Z] [INFO] Attempting to insert section: "Antiseizure Drug Levels"
+[2025-03-20T21:13:10.811Z] [INFO] Inserted/updated section: Antiseizure Drug Levels (ID: 9e22d2c8-e488-4c8b-8437-0f0a2ced4198)
+[2025-03-20T21:13:10.811Z] [INFO] Section ID map: {"Essential Studies":"554e9e01-848e-4da7-9af5-2e934143abdc","Extended Metabolic Assessment":"afda3a5e-065a-437f-8d32-5b38034c2445","Post-Convulsion Studies":"8f2cf02e-6eff-409c-8dfb-b7b70bd39983","Hematology":"248f769c-4bbe-4a32-a80c-ecadf6096c8c","Infectious Disease Workup":"ce5ec1df-8805-4d1e-8b8a-8cff0d0bf50d","Toxicology":"19aa60d2-f8e1-46c1-99f1-f48bdfad2b9a","Antiseizure Drug Levels":"9e22d2c8-e488-4c8b-8437-0f0a2ced4198"}
+[2025-03-20T21:13:10.811Z] [INFO] Prepared 55 items for insertion (filtered from 55 total items)
+[2025-03-20T21:13:10.950Z] [INFO] Inserted batch of 55 items (total: 55/55)
+[2025-03-20T21:13:10.951Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:10.951Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 1.1, 1.2
+[2025-03-20T21:13:10.951Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:10.952Z] [INFO] 1 -> 91e347cd-c3a4-4f3a-9264-4d129c41f314
+[2025-03-20T21:13:10.952Z] [INFO]   1.1 -> 80f097b7-4095-4a6e-bffd-e142a43c17c2
+[2025-03-20T21:13:10.952Z] [INFO]     1.1.1 -> 5d9b5914-c0e5-4dc3-b36e-aaaeac88b71d
+[2025-03-20T21:13:10.952Z] [INFO]   1.2 -> ef6b11f1-04f2-42f9-940f-ad4c24c9b44b
+[2025-03-20T21:13:10.952Z] [INFO]   1.3 -> 5b9b674d-ad76-4a2f-a72f-0df580b4a678
+[2025-03-20T21:13:10.953Z] [INFO]   1.4 -> 4d0f1cb8-4e03-4bfb-99a7-4467450f8173
+[2025-03-20T21:13:10.953Z] [INFO]   1.5 -> c7f52979-0bb7-4145-8a04-6bff225a7f57
+[2025-03-20T21:13:10.953Z] [INFO] 2 -> f0c2f879-fc8c-45c8-b49f-f3d68e07fbdd
+[2025-03-20T21:13:10.953Z] [INFO]   2.1 -> 41e25ae8-cf9e-45bb-8582-d2b6a887c50b
+[2025-03-20T21:13:10.953Z] [INFO]   2.2 -> ad0fb5e2-6c1d-4d3e-8b91-56f263a8d67b
+[2025-03-20T21:13:10.953Z] [INFO] 3 -> 35e8ba66-d5ed-461c-91b1-c2b4b8824248
+[2025-03-20T21:13:10.953Z] [INFO]   3.1 -> 14a6f7af-cf91-4c8c-80c2-a68fa1cf724d
+[2025-03-20T21:13:10.953Z] [INFO]   3.2 -> c958156f-1024-44cc-83fa-c4d0a2e0f644
+[2025-03-20T21:13:10.953Z] [INFO]   3.3 -> 4a86c69b-7ecd-4451-8d8d-2732ce196eb6
+[2025-03-20T21:13:10.953Z] [INFO]   3.4 -> ed07f729-3aa0-40bd-bac3-086c7ad9be8e
+[2025-03-20T21:13:10.954Z] [INFO]   3.5 -> b679c478-2d37-466b-b53b-8b1c40f13126
+[2025-03-20T21:13:10.954Z] [INFO] 4 -> b2798b39-a3c7-49ea-8aca-17d3a307aba9
+[2025-03-20T21:13:10.955Z] [INFO] 5 -> ed63d582-01de-4c3a-9422-efd9bb954038
+[2025-03-20T21:13:10.955Z] [INFO]   5.1 -> ea238dfb-72f6-4fc6-880f-3b73dc58a2fe
+[2025-03-20T21:13:10.955Z] [INFO]   5.2 -> 6627de52-2952-4a24-8cf0-d02275bc9469
+[2025-03-20T21:13:12.154Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-20T21:13:12.155Z] [INFO] Successfully processed file lab-studies.md: inserted 55 items
+[2025-03-20T21:13:12.155Z] [INFO] Processing file: imaging.md
+[2025-03-20T21:13:12.155Z] [INFO] Starting transaction for file: imaging.md
+[2025-03-20T21:13:12.155Z] [INFO] Preprocessing file: imaging.md
+[2025-03-20T21:13:12.156Z] [INFO] Found section: "Head CT" at line 2
+[2025-03-20T21:13:12.156Z] [INFO] Found section: "MRI" at line 21
+[2025-03-20T21:13:12.156Z] [INFO] Found section: "Other Imaging" at line 31
+[2025-03-20T21:13:12.156Z] [INFO] Found 3 sections in file: Head CT, MRI, Other Imaging
+[2025-03-20T21:13:12.156Z] [INFO] Attempting to insert section: "Head CT"
+[2025-03-20T21:13:12.252Z] [INFO] Inserted/updated section: Head CT (ID: cf9de037-e69e-4986-9299-6e1bcf115667)
+[2025-03-20T21:13:12.252Z] [INFO] Attempting to insert section: "MRI"
+[2025-03-20T21:13:12.353Z] [INFO] Inserted/updated section: MRI (ID: 9e4317a8-58eb-41d4-9217-02a2a547244a)
+[2025-03-20T21:13:12.354Z] [INFO] Attempting to insert section: "Other Imaging"
+[2025-03-20T21:13:12.450Z] [INFO] Inserted/updated section: Other Imaging (ID: 437b16ee-a1ca-4199-8934-75807092a337)
+[2025-03-20T21:13:12.451Z] [INFO] Section ID map: {"Head CT":"cf9de037-e69e-4986-9299-6e1bcf115667","MRI":"9e4317a8-58eb-41d4-9217-02a2a547244a","Other Imaging":"437b16ee-a1ca-4199-8934-75807092a337"}
+[2025-03-20T21:13:12.451Z] [INFO] Prepared 26 items for insertion (filtered from 26 total items)
+[2025-03-20T21:13:12.562Z] [INFO] Inserted batch of 26 items (total: 26/26)
+[2025-03-20T21:13:12.562Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:12.563Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 1.1, 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.1.6
+[2025-03-20T21:13:12.563Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:12.563Z] [INFO] 1 -> 1a2c2268-7929-4c69-9ad9-75ed2e3b8c5c
+[2025-03-20T21:13:12.563Z] [INFO]   1.1 -> 3a18d0f6-3f8a-40c5-9241-8230538b5375
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.1 -> 15b9faca-219d-4486-9b3e-c6fb25b54baf
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.10 -> 1a1d1b01-0471-4460-b434-c45adc7d28e2
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.11 -> 04083bd7-e48b-433a-9ef6-362f3e114584
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.2 -> 57e6390c-b57e-4418-a8d6-1e83b9b3fb87
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.3 -> bc6200fc-3f22-4fa3-8b29-fab71dda9652
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.4 -> 34722913-87ec-44b4-bb5e-2582b50ee52f
+[2025-03-20T21:13:12.564Z] [INFO]     1.1.5 -> 2fa50cdf-9c5e-4238-828a-a2a54c741edb
+[2025-03-20T21:13:12.565Z] [INFO]     1.1.6 -> 6e2cabe9-4f9f-4bb3-a532-23dc183eec48
+[2025-03-20T21:13:12.565Z] [INFO]     1.1.7 -> 5e4ce198-9180-496c-acef-b93bbe0150ea
+[2025-03-20T21:13:12.565Z] [INFO]     1.1.8 -> e2571f85-7962-42cf-8729-242cbc74dfd3
+[2025-03-20T21:13:12.565Z] [INFO]     1.1.9 -> aa7bc155-cc08-4250-92cb-1f15d8078e83
+[2025-03-20T21:13:12.566Z] [INFO]   1.2 -> cb73db4b-590e-4250-b064-5fc21de8e060
+[2025-03-20T21:13:12.566Z] [INFO]   1.3 -> eee3506a-6fb0-4205-bad9-d3026bd9f30b
+[2025-03-20T21:13:12.566Z] [INFO]     1.3.1 -> a1bb89e8-beac-42fc-91a6-9356816e40bf
+[2025-03-20T21:13:12.566Z] [INFO]     1.3.2 -> c750a15c-39ea-4d5e-8e2f-8a3d54365cf8
+[2025-03-20T21:13:12.566Z] [INFO] 2 -> 9f5fe9bf-3da8-4b6d-bfcc-77a82507e150
+[2025-03-20T21:13:12.566Z] [INFO]   2.1 -> cfa03805-1b5a-4f25-803a-d5565d26d72c
+[2025-03-20T21:13:12.566Z] [INFO]     2.1.1 -> e9ed8d19-6207-4c58-afeb-1a0ad592d0ee
+[2025-03-20T21:13:14.099Z] [INFO] Completed parent-child relationship updates: 19 successful, 0 failed
+[2025-03-20T21:13:14.100Z] [INFO] Successfully processed file imaging.md: inserted 26 items
+[2025-03-20T21:13:14.101Z] [INFO] Processing file: special-tests.md
+[2025-03-20T21:13:14.102Z] [INFO] Starting transaction for file: special-tests.md
+[2025-03-20T21:13:14.103Z] [INFO] Preprocessing file: special-tests.md
+[2025-03-20T21:13:14.104Z] [INFO] Found section: "Electroencephalography (EEG)" at line 2
+[2025-03-20T21:13:14.105Z] [INFO] Found section: "Cerebrospinal Fluid Analysis" at line 20
+[2025-03-20T21:13:14.106Z] [INFO] Found section: "Other Neurophysiologic Testing" at line 28
+[2025-03-20T21:13:14.107Z] [INFO] Found 3 sections in file: Electroencephalography (EEG), Cerebrospinal Fluid Analysis, Other Neurophysiologic Testing
+[2025-03-20T21:13:14.107Z] [INFO] Attempting to insert section: "Electroencephalography (EEG)"
+[2025-03-20T21:13:14.202Z] [INFO] Inserted/updated section: Electroencephalography (EEG) (ID: 7ffae54b-49d7-41bb-a73a-4ef57ad6455e)
+[2025-03-20T21:13:14.203Z] [INFO] Attempting to insert section: "Cerebrospinal Fluid Analysis"
+[2025-03-20T21:13:14.299Z] [INFO] Inserted/updated section: Cerebrospinal Fluid Analysis (ID: 96c69f6a-8949-4c3b-a2d4-88e7885b1696)
+[2025-03-20T21:13:14.299Z] [INFO] Attempting to insert section: "Other Neurophysiologic Testing"
+[2025-03-20T21:13:14.392Z] [INFO] Inserted/updated section: Other Neurophysiologic Testing (ID: 59b60d5f-d48c-4a4f-91be-eb2c8b9e91b4)
+[2025-03-20T21:13:14.393Z] [INFO] Section ID map: {"Electroencephalography (EEG)":"7ffae54b-49d7-41bb-a73a-4ef57ad6455e","Cerebrospinal Fluid Analysis":"96c69f6a-8949-4c3b-a2d4-88e7885b1696","Other Neurophysiologic Testing":"59b60d5f-d48c-4a4f-91be-eb2c8b9e91b4"}
+[2025-03-20T21:13:14.393Z] [INFO] Prepared 24 items for insertion (filtered from 24 total items)
+[2025-03-20T21:13:14.517Z] [INFO] Inserted batch of 24 items (total: 24/24)
+[2025-03-20T21:13:14.517Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:14.518Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 1.1, 1.2, 2.1, 2.1.1, 2.1.2, 2.1.3
+[2025-03-20T21:13:14.518Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:14.518Z] [INFO] 1 -> 21eb5dd9-0537-40c9-ad09-faee4a33935c
+[2025-03-20T21:13:14.518Z] [INFO]   1.1 -> 37939c58-6479-48a8-a371-218c33f44eee
+[2025-03-20T21:13:14.518Z] [INFO]   1.2 -> 5fbf0870-e02f-4605-b482-d1be267c7dea
+[2025-03-20T21:13:14.518Z] [INFO]   1.3 -> 5b2d28fa-7768-4dc8-8ae3-049f832ce7bd
+[2025-03-20T21:13:14.518Z] [INFO]   1.4 -> ef1ff14a-59da-40f3-9e7f-65362f14cdc2
+[2025-03-20T21:13:14.518Z] [INFO]   1.5 -> 38d9f4ab-f958-4eb0-86c9-c911be88e8cb
+[2025-03-20T21:13:14.518Z] [INFO] 2 -> ce62cedb-d415-4486-9afa-e3922af76dca
+[2025-03-20T21:13:14.518Z] [INFO]   2.1 -> fd9a37ab-ca79-48aa-bcfc-57bd080dc87c
+[2025-03-20T21:13:14.518Z] [INFO]     2.1.1 -> 99f30a81-e61b-45f0-a0d1-ae090be5a992
+[2025-03-20T21:13:14.518Z] [INFO]     2.1.2 -> 2dec7658-8294-442d-8ddb-94ddbd349a14
+[2025-03-20T21:13:14.518Z] [INFO]     2.1.3 -> 1153748a-1938-444f-a269-ae5fe2384007
+[2025-03-20T21:13:14.518Z] [INFO]     2.1.4 -> a82213e1-af84-430e-a357-816f1f01acc4
+[2025-03-20T21:13:14.518Z] [INFO] 3 -> cba3e33e-9fa8-40a5-a50f-42a99e706dad
+[2025-03-20T21:13:14.518Z] [INFO] 4 -> bb93e057-452d-487d-bc93-ee0d745afd20
+[2025-03-20T21:13:14.518Z] [INFO]   4.1 -> 44abc22d-75e7-44ff-aff3-08eaca266716
+[2025-03-20T21:13:14.518Z] [INFO]   4.2 -> 4f5de2e2-ef5d-40cd-b417-6cc698edcc8e
+[2025-03-20T21:13:14.519Z] [INFO]   4.3 -> 17b76af3-1459-4e4e-8eb7-84e71e089b61
+[2025-03-20T21:13:14.519Z] [INFO]   4.4 -> 359a17e1-a30a-4da2-aaa4-03d7ade7f970
+[2025-03-20T21:13:14.519Z] [INFO]   4.5 -> 2f6b0cc2-628a-4dbd-97f2-763c166669dd
+[2025-03-20T21:13:15.776Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-20T21:13:15.777Z] [INFO] Successfully processed file special-tests.md: inserted 24 items
+[2025-03-20T21:13:15.777Z] [INFO] Processing file: ecg.md
+[2025-03-20T21:13:15.777Z] [INFO] Starting transaction for file: ecg.md
+[2025-03-20T21:13:15.778Z] [INFO] Preprocessing file: ecg.md
+[2025-03-20T21:13:15.779Z] [INFO] Found section: "ECG Findings" at line 2
+[2025-03-20T21:13:15.779Z] [INFO] Found section: "Cardiac Monitoring" at line 26
+[2025-03-20T21:13:15.779Z] [INFO] Found 2 sections in file: ECG Findings, Cardiac Monitoring
+[2025-03-20T21:13:15.780Z] [INFO] Attempting to insert section: "ECG Findings"
+[2025-03-20T21:13:15.875Z] [INFO] Inserted/updated section: ECG Findings (ID: 35be28d1-4156-44e6-aa6d-968f2d8b3c01)
+[2025-03-20T21:13:15.876Z] [INFO] Attempting to insert section: "Cardiac Monitoring"
+[2025-03-20T21:13:15.961Z] [INFO] Inserted/updated section: Cardiac Monitoring (ID: d0e813c5-c9f4-49d9-8704-f8f49c7aa501)
+[2025-03-20T21:13:15.962Z] [INFO] Section ID map: {"ECG Findings":"35be28d1-4156-44e6-aa6d-968f2d8b3c01","Cardiac Monitoring":"d0e813c5-c9f4-49d9-8704-f8f49c7aa501"}
+[2025-03-20T21:13:15.963Z] [INFO] Prepared 27 items for insertion (filtered from 27 total items)
+[2025-03-20T21:13:16.079Z] [INFO] Inserted batch of 27 items (total: 27/27)
+[2025-03-20T21:13:16.080Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:16.080Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+[2025-03-20T21:13:16.080Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:16.080Z] [INFO] 1 -> cbbdf056-fe8c-4bb5-8cff-15050b7dbe02
+[2025-03-20T21:13:16.080Z] [INFO]   1.1 -> 211af95a-ba12-4941-aa80-36341dc99c88
+[2025-03-20T21:13:16.081Z] [INFO]   1.2 -> b67a18ab-ee43-47ad-8de1-59055d3332d7
+[2025-03-20T21:13:16.081Z] [INFO]   1.3 -> 0703daa7-a792-4121-91ac-371cf9bf23aa
+[2025-03-20T21:13:16.081Z] [INFO]   1.4 -> d0eeb1a6-3adf-4b30-8d8e-937eb0f1d5b4
+[2025-03-20T21:13:16.081Z] [INFO] 10 -> dfbff127-55ed-4d9f-a697-f4a7544552de
+[2025-03-20T21:13:16.081Z] [INFO] 11 -> 39bce98c-fbc9-4416-9207-fa4fc03c9305
+[2025-03-20T21:13:16.081Z] [INFO] 2 -> d2c15d15-c628-4799-85fd-2693d85a4daf
+[2025-03-20T21:13:16.081Z] [INFO]   2.1 -> 33aaaa4a-1369-4a38-924f-32b393bbdece
+[2025-03-20T21:13:16.081Z] [INFO]   2.2 -> c453986d-600b-449f-a414-88bfeadafb4c
+[2025-03-20T21:13:16.081Z] [INFO]   2.3 -> 5644e330-be37-4306-8177-842b0e2ba0b3
+[2025-03-20T21:13:16.081Z] [INFO] 3 -> 21b33e02-3368-49e1-9190-d8705c43cfc5
+[2025-03-20T21:13:16.082Z] [INFO]   3.1 -> 2fb640d4-b72d-4537-9ef4-48ce006ca554
+[2025-03-20T21:13:16.082Z] [INFO] 4 -> f0fdfa0f-5474-4639-9549-fbfbd62bbf7c
+[2025-03-20T21:13:16.082Z] [INFO]   4.1 -> d118f6de-f8fa-497d-9a4a-2923986bcadb
+[2025-03-20T21:13:16.082Z] [INFO] 5 -> 21164bc9-33be-4bbd-9ae2-005f0bd826ce
+[2025-03-20T21:13:16.082Z] [INFO]   5.1 -> 2074c9ac-4541-43eb-b3b0-b98b49df5aad
+[2025-03-20T21:13:16.082Z] [INFO] 6 -> 5738a217-9a66-4ab4-85ee-c93a462620dd
+[2025-03-20T21:13:16.082Z] [INFO]   6.1 -> e01dcb4f-7d1f-47e0-b0d6-d94a3ff3c475
+[2025-03-20T21:13:16.082Z] [INFO]   6.2 -> adcd513e-bdc7-4fb2-965b-674abe5336ef
+[2025-03-20T21:13:17.271Z] [INFO] Completed parent-child relationship updates: 15 successful, 0 failed
+[2025-03-20T21:13:17.271Z] [INFO] Successfully processed file ecg.md: inserted 27 items
+[2025-03-20T21:13:17.272Z] [INFO] Processing file: assessment.md
+[2025-03-20T21:13:17.272Z] [INFO] Starting transaction for file: assessment.md
+[2025-03-20T21:13:17.272Z] [INFO] Preprocessing file: assessment.md
+[2025-03-20T21:13:17.272Z] [INFO] Found section: "Seizure Classification" at line 2
+[2025-03-20T21:13:17.272Z] [INFO] Found section: "Status Epilepticus Classification" at line 43
+[2025-03-20T21:13:17.272Z] [INFO] Found section: "Etiology" at line 48
+[2025-03-20T21:13:17.272Z] [INFO] Found section: "Risk Assessment" at line 73
+[2025-03-20T21:13:17.272Z] [INFO] Found 4 sections in file: Seizure Classification, Status Epilepticus Classification, Etiology, Risk Assessment
+[2025-03-20T21:13:17.272Z] [INFO] Attempting to insert section: "Seizure Classification"
+[2025-03-20T21:13:17.363Z] [INFO] Inserted/updated section: Seizure Classification (ID: 800a29de-3aab-4790-b88d-7f3874e7ec00)
+[2025-03-20T21:13:17.363Z] [INFO] Attempting to insert section: "Status Epilepticus Classification"
+[2025-03-20T21:13:17.464Z] [INFO] Inserted/updated section: Status Epilepticus Classification (ID: afa6d0d0-3f66-4294-b9e9-24ff461ea967)
+[2025-03-20T21:13:17.464Z] [INFO] Attempting to insert section: "Etiology"
+[2025-03-20T21:13:17.546Z] [INFO] Inserted/updated section: Etiology (ID: 76e1b87d-8466-479d-b91f-9348399c3673)
+[2025-03-20T21:13:17.547Z] [INFO] Attempting to insert section: "Risk Assessment"
+[2025-03-20T21:13:17.636Z] [INFO] Inserted/updated section: Risk Assessment (ID: 20b650b5-9879-46b4-a57f-e88e69bc4e5f)
+[2025-03-20T21:13:17.638Z] [INFO] Section ID map: {"Seizure Classification":"800a29de-3aab-4790-b88d-7f3874e7ec00","Status Epilepticus Classification":"afa6d0d0-3f66-4294-b9e9-24ff461ea967","Etiology":"76e1b87d-8466-479d-b91f-9348399c3673","Risk Assessment":"20b650b5-9879-46b4-a57f-e88e69bc4e5f"}
+[2025-03-20T21:13:17.639Z] [INFO] Prepared 69 items for insertion (filtered from 69 total items)
+[2025-03-20T21:13:17.786Z] [INFO] Inserted batch of 69 items (total: 69/69)
+[2025-03-20T21:13:17.787Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:17.788Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 1.1, 1.1.1, 1.1.1.1, 1.1.1.2, 1.1.1.3, 1.1.1.4, 1.1.1.5
+[2025-03-20T21:13:17.789Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:17.789Z] [INFO] 1 -> 3b9f7cc1-4fff-46e2-bc4f-8a467a3a1488
+[2025-03-20T21:13:17.789Z] [INFO]   1.1 -> 7baae2dc-8a86-4d16-980c-ae58faa0c359
+[2025-03-20T21:13:17.789Z] [INFO]     1.1.1 -> 4672e899-d18e-4baf-babe-321f24da8f91
+[2025-03-20T21:13:17.789Z] [INFO]       1.1.1.1 -> 98da0b73-44fa-4481-ab15-afc4e14ebc5f
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.2 -> 10b84be3-cd47-437d-8d83-ac7b62034a24
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.3 -> ad563c67-54e7-4778-996b-e8d2a13509f5
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.4 -> 9ceccb04-cb04-4066-b74b-bfa3c5c059d9
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.5 -> 89ebcadb-a69d-4940-9c92-6e2971a277f9
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.6 -> f32085ab-5952-4a3e-b769-7c885fc316d8
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.1.7 -> 51969d13-eb3e-4f75-a99f-127ec8eb7fc8
+[2025-03-20T21:13:17.790Z] [INFO]     1.1.2 -> 1dd75c55-e04c-4fce-8b06-0f27e8a5b1c6
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.2.1 -> 46c327a5-fd53-437c-b01d-15d63ccd74be
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.2.2 -> 5f3d8195-28e1-40c4-89c0-c9ac334d77fa
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.2.3 -> 2f65365c-e1cb-417b-ac17-dff33e0a01af
+[2025-03-20T21:13:17.790Z] [INFO]       1.1.2.4 -> 9e7705da-cf1d-4b0f-a618-209be222db98
+[2025-03-20T21:13:17.791Z] [INFO]       1.1.2.5 -> 1682a031-cf89-4ac0-a32b-2eafa836b70a
+[2025-03-20T21:13:17.791Z] [INFO]   1.2 -> 2385d11b-a76c-4906-a9b6-1357fbf00c06
+[2025-03-20T21:13:17.791Z] [INFO]   1.3 -> ea49b41a-3243-4a3a-82f4-9ba857cb5cbe
+[2025-03-20T21:13:17.791Z] [INFO] 2 -> f963eb9e-78d4-47fb-8bd1-28f3c41a14fb
+[2025-03-20T21:13:17.792Z] [INFO]   2.1 -> 67a8aa30-f270-4465-ab04-814323713c18
+[2025-03-20T21:13:21.670Z] [INFO] Completed parent-child relationship updates: 46 successful, 0 failed
+[2025-03-20T21:13:21.671Z] [INFO] Successfully processed file assessment.md: inserted 69 items
+[2025-03-20T21:13:21.671Z] [INFO] Processing file: plan.md
+[2025-03-20T21:13:21.671Z] [INFO] Starting transaction for file: plan.md
+[2025-03-20T21:13:21.672Z] [INFO] Preprocessing file: plan.md
+[2025-03-20T21:13:21.672Z] [INFO] Found section: "Initial Management" at line 2
+[2025-03-20T21:13:21.672Z] [INFO] Found section: "Abortive Therapy for Active Seizures" at line 16
+[2025-03-20T21:13:21.672Z] [INFO] Found section: "Special Considerations" at line 35
+[2025-03-20T21:13:21.672Z] [INFO] Found section: "Treatment of Underlying Causes" at line 43
+[2025-03-20T21:13:21.673Z] [INFO] Found section: "Secondary Prophylaxis Considerations" at line 51
+[2025-03-20T21:13:21.673Z] [INFO] Found 5 sections in file: Initial Management, Abortive Therapy for Active Seizures, Special Considerations, Treatment of Underlying Causes, Secondary Prophylaxis Considerations
+[2025-03-20T21:13:21.673Z] [INFO] Attempting to insert section: "Initial Management"
+[2025-03-20T21:13:21.787Z] [INFO] Inserted/updated section: Initial Management (ID: 9f29b04c-d840-41fe-b7e0-06c157bd952f)
+[2025-03-20T21:13:21.788Z] [INFO] Attempting to insert section: "Abortive Therapy for Active Seizures"
+[2025-03-20T21:13:21.887Z] [INFO] Inserted/updated section: Abortive Therapy for Active Seizures (ID: 410858b4-077f-4285-ad36-585d6f707847)
+[2025-03-20T21:13:21.888Z] [INFO] Attempting to insert section: "Special Considerations"
+[2025-03-20T21:13:21.985Z] [INFO] Inserted/updated section: Special Considerations (ID: ed771842-8569-457f-a97c-ea07cb67ee32)
+[2025-03-20T21:13:21.985Z] [INFO] Attempting to insert section: "Treatment of Underlying Causes"
+[2025-03-20T21:13:22.079Z] [INFO] Inserted/updated section: Treatment of Underlying Causes (ID: 049d8430-39e1-4c21-91b6-b65df39a6a64)
+[2025-03-20T21:13:22.080Z] [INFO] Attempting to insert section: "Secondary Prophylaxis Considerations"
+[2025-03-20T21:13:22.191Z] [INFO] Inserted/updated section: Secondary Prophylaxis Considerations (ID: 8a9ad886-7079-483b-b952-0ebc8069bd04)
+[2025-03-20T21:13:22.192Z] [INFO] Section ID map: {"Initial Management":"9f29b04c-d840-41fe-b7e0-06c157bd952f","Abortive Therapy for Active Seizures":"410858b4-077f-4285-ad36-585d6f707847","Special Considerations":"ed771842-8569-457f-a97c-ea07cb67ee32","Treatment of Underlying Causes":"049d8430-39e1-4c21-91b6-b65df39a6a64","Secondary Prophylaxis Considerations":"8a9ad886-7079-483b-b952-0ebc8069bd04"}
+[2025-03-20T21:13:22.192Z] [INFO] Prepared 48 items for insertion (filtered from 48 total items)
+[2025-03-20T21:13:22.333Z] [INFO] Inserted batch of 48 items (total: 48/48)
+[2025-03-20T21:13:22.333Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:22.333Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 1.1, 1.2, 1.3, 1.4, 1.5, 2.1
+[2025-03-20T21:13:22.333Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:22.333Z] [INFO] 1 -> 926f9488-fd07-41b1-a3d0-1c50a2e6e8f7
+[2025-03-20T21:13:22.333Z] [INFO]   1.1 -> 167d963e-88a3-47e3-b5b8-59182c7ab849
+[2025-03-20T21:13:22.333Z] [INFO]     1.1.1 -> 72c99635-e71e-47d6-ac40-0c5a6ad1a03b
+[2025-03-20T21:13:22.333Z] [INFO]     1.1.2 -> b459ad65-5a89-4a1b-8d11-ef5126c0088a
+[2025-03-20T21:13:22.333Z] [INFO]     1.1.3 -> a611e22e-cab4-458b-b5bc-80b8497fe54f
+[2025-03-20T21:13:22.333Z] [INFO]   1.2 -> 30175b89-da64-45e8-89fb-c30d4b481c73
+[2025-03-20T21:13:22.333Z] [INFO]   1.3 -> 2022b16b-0514-4ec6-963d-46784159e57d
+[2025-03-20T21:13:22.333Z] [INFO]   1.4 -> 74451b6d-a8b1-4cc7-b6a4-665e0b2218ce
+[2025-03-20T21:13:22.333Z] [INFO]   1.5 -> e7e88ac7-7d20-4ad7-beff-38ece3afd739
+[2025-03-20T21:13:22.333Z] [INFO] 2 -> 2ca46d64-f6b0-4b53-9d00-a082f5292fb8
+[2025-03-20T21:13:22.333Z] [INFO]   2.1 -> add84b1b-5628-4afd-acf9-8463bdccf561
+[2025-03-20T21:13:22.333Z] [INFO]   2.2 -> 4242f290-f28a-49c4-83a2-5c4b53728b74
+[2025-03-20T21:13:22.333Z] [INFO]   2.3 -> c96a5249-2355-4050-b5c9-7fce04542c7d
+[2025-03-20T21:13:22.333Z] [INFO]   2.4 -> bbcf8c39-ebe1-49ee-abe4-2b066ad00cdd
+[2025-03-20T21:13:22.333Z] [INFO]   2.5 -> f5325132-16ca-4b54-b5f3-5edccad9f50b
+[2025-03-20T21:13:22.334Z] [INFO]   2.6 -> 42a878b9-1984-46a7-a1b8-ae67b04ad6a6
+[2025-03-20T21:13:22.334Z] [INFO] 3 -> 4cb84e66-e5e3-42af-bacb-ef3b670e25ea
+[2025-03-20T21:13:22.334Z] [INFO]   3.1 -> 1c9d49ca-ebd9-4fac-be4c-a0a36befc147
+[2025-03-20T21:13:22.334Z] [INFO]   3.2 -> 1a7df5d5-52a9-4bd2-ab23-77be6c81d893
+[2025-03-20T21:13:22.334Z] [INFO]   3.3 -> 18722cbc-9793-4129-9762-ad75c91ae4b5
+[2025-03-20T21:13:23.836Z] [INFO] Completed parent-child relationship updates: 18 successful, 0 failed
+[2025-03-20T21:13:23.837Z] [INFO] Successfully processed file plan.md: inserted 48 items
+[2025-03-20T21:13:23.837Z] [INFO] Processing file: disposition.md
+[2025-03-20T21:13:23.838Z] [INFO] Starting transaction for file: disposition.md
+[2025-03-20T21:13:23.838Z] [INFO] Preprocessing file: disposition.md
+[2025-03-20T21:13:23.840Z] [INFO] Found section: "Discharge Criteria" at line 2
+[2025-03-20T21:13:23.840Z] [INFO] Found section: "Admission Criteria" at line 10
+[2025-03-20T21:13:23.841Z] [INFO] Found section: "Follow-up Requirements" at line 20
+[2025-03-20T21:13:23.841Z] [INFO] Found section: "Special Considerations" at line 28
+[2025-03-20T21:13:23.842Z] [INFO] Found 4 sections in file: Discharge Criteria, Admission Criteria, Follow-up Requirements, Special Considerations
+[2025-03-20T21:13:23.842Z] [INFO] Attempting to insert section: "Discharge Criteria"
+[2025-03-20T21:13:23.942Z] [INFO] Inserted/updated section: Discharge Criteria (ID: 8a8fed19-8460-4e35-847f-8778efcc5103)
+[2025-03-20T21:13:23.943Z] [INFO] Attempting to insert section: "Admission Criteria"
+[2025-03-20T21:13:24.075Z] [INFO] Inserted/updated section: Admission Criteria (ID: b77b4921-e098-45d4-afc8-9837b847226c)
+[2025-03-20T21:13:24.075Z] [INFO] Attempting to insert section: "Follow-up Requirements"
+[2025-03-20T21:13:24.175Z] [INFO] Inserted/updated section: Follow-up Requirements (ID: f4f87644-3fd5-4bc7-8e5f-e0b186213d59)
+[2025-03-20T21:13:24.176Z] [INFO] Attempting to insert section: "Special Considerations"
+[2025-03-20T21:13:24.273Z] [INFO] Inserted/updated section: Special Considerations (ID: 91f7ae3b-fafc-4785-b155-dd825f7ff6bf)
+[2025-03-20T21:13:24.273Z] [INFO] Section ID map: {"Discharge Criteria":"8a8fed19-8460-4e35-847f-8778efcc5103","Admission Criteria":"b77b4921-e098-45d4-afc8-9837b847226c","Follow-up Requirements":"f4f87644-3fd5-4bc7-8e5f-e0b186213d59","Special Considerations":"91f7ae3b-fafc-4785-b155-dd825f7ff6bf"}
+[2025-03-20T21:13:24.273Z] [INFO] Prepared 25 items for insertion (filtered from 25 total items)
+[2025-03-20T21:13:24.410Z] [INFO] Inserted batch of 25 items (total: 25/25)
+[2025-03-20T21:13:24.410Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:24.410Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 5, 6, 7, 8, 1.1, 1.2
+[2025-03-20T21:13:24.411Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:24.411Z] [INFO] 1 -> 24202950-4fa8-46fb-b0ed-9da270ef1677
+[2025-03-20T21:13:24.411Z] [INFO]   1.1 -> e58fc7c5-9e8d-43a3-89aa-798fefae6351
+[2025-03-20T21:13:24.411Z] [INFO]   1.2 -> 1106eb67-f23c-46ae-a4d8-72d1b3bafd19
+[2025-03-20T21:13:24.411Z] [INFO] 2 -> 28f15a8a-b523-4a5a-8cab-59530afae3c9
+[2025-03-20T21:13:24.411Z] [INFO] 3 -> d94ce3b7-915d-4bb5-a6c5-aa3e3720ddb4
+[2025-03-20T21:13:24.411Z] [INFO] 4 -> 2b8185c6-4820-462c-ad55-886fca1f07e7
+[2025-03-20T21:13:24.411Z] [INFO] 5 -> abb0b944-92ed-4c4c-9443-0fd5ac9e82df
+[2025-03-20T21:13:24.411Z] [INFO] 6 -> dc618365-5961-46f9-b7b5-76aaf1ea4a5f
+[2025-03-20T21:13:24.411Z] [INFO] 7 -> 957cc4f5-0f5c-49ec-bf74-62ec739dec8f
+[2025-03-20T21:13:24.411Z] [INFO] 8 -> ffd9e040-f48d-4e60-b271-ff56a81337c4
+[2025-03-20T21:13:24.643Z] [INFO] Completed parent-child relationship updates: 2 successful, 0 failed
+[2025-03-20T21:13:24.644Z] [INFO] Successfully processed file disposition.md: inserted 25 items
+[2025-03-20T21:13:24.644Z] [INFO] Processing file: patient-education.md
+[2025-03-20T21:13:24.644Z] [INFO] Starting transaction for file: patient-education.md
+[2025-03-20T21:13:24.644Z] [INFO] Preprocessing file: patient-education.md
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Activity Restrictions" at line 2
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Seizure Precautions" at line 11
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Medication Education" at line 16
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Lifestyle Modifications" at line 22
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Follow-up Instructions" at line 28
+[2025-03-20T21:13:24.645Z] [INFO] Found section: "Resources" at line 38
+[2025-03-20T21:13:24.645Z] [INFO] Found 6 sections in file: Activity Restrictions, Seizure Precautions, Medication Education, Lifestyle Modifications, Follow-up Instructions, Resources
+[2025-03-20T21:13:24.646Z] [INFO] Attempting to insert section: "Activity Restrictions"
+[2025-03-20T21:13:24.743Z] [INFO] Inserted/updated section: Activity Restrictions (ID: 760893f4-b7ae-4d14-a868-f32897e0142f)
+[2025-03-20T21:13:24.744Z] [INFO] Attempting to insert section: "Seizure Precautions"
+[2025-03-20T21:13:24.907Z] [INFO] Inserted/updated section: Seizure Precautions (ID: 66d634ae-033d-4692-b745-364f0cf6714d)
+[2025-03-20T21:13:24.908Z] [INFO] Attempting to insert section: "Medication Education"
+[2025-03-20T21:13:25.007Z] [INFO] Inserted/updated section: Medication Education (ID: 22fdd502-61f2-429c-a695-470a8c986b8f)
+[2025-03-20T21:13:25.008Z] [INFO] Attempting to insert section: "Lifestyle Modifications"
+[2025-03-20T21:13:25.110Z] [INFO] Inserted/updated section: Lifestyle Modifications (ID: cfd914dd-1109-449a-a093-c0a2abf187b6)
+[2025-03-20T21:13:25.110Z] [INFO] Attempting to insert section: "Follow-up Instructions"
+[2025-03-20T21:13:25.199Z] [INFO] Inserted/updated section: Follow-up Instructions (ID: 71ee2b66-b54c-43f8-8764-901af0e359b1)
+[2025-03-20T21:13:25.199Z] [INFO] Attempting to insert section: "Resources"
+[2025-03-20T21:13:25.293Z] [INFO] Inserted/updated section: Resources (ID: f12ec643-e16a-4262-bc52-d567c44af6e6)
+[2025-03-20T21:13:25.293Z] [INFO] Section ID map: {"Activity Restrictions":"760893f4-b7ae-4d14-a868-f32897e0142f","Seizure Precautions":"66d634ae-033d-4692-b745-364f0cf6714d","Medication Education":"22fdd502-61f2-429c-a695-470a8c986b8f","Lifestyle Modifications":"cfd914dd-1109-449a-a093-c0a2abf187b6","Follow-up Instructions":"71ee2b66-b54c-43f8-8764-901af0e359b1","Resources":"f12ec643-e16a-4262-bc52-d567c44af6e6"}
+[2025-03-20T21:13:25.293Z] [INFO] Prepared 28 items for insertion (filtered from 28 total items)
+[2025-03-20T21:13:25.404Z] [INFO] Inserted batch of 28 items (total: 28/28)
+[2025-03-20T21:13:25.404Z] [INFO] Updating parent-child relationships based on paths...
+[2025-03-20T21:13:25.405Z] [INFO] Path structure (first 10 paths): 1, 2, 3, 4, 1.1, 2.1, 2.2, 2.3, 2.4, 1.2
+[2025-03-20T21:13:25.405Z] [INFO] Hierarchical structure (first 20 sorted paths):
+[2025-03-20T21:13:25.405Z] [INFO] 1 -> 1a15bcc0-6916-47ee-b121-f8ac4827caed
+[2025-03-20T21:13:25.405Z] [INFO]   1.1 -> 16aad571-6cdc-434e-9953-2053e2c506f9
+[2025-03-20T21:13:25.405Z] [INFO]   1.2 -> db17fd93-6c8c-4739-982e-26ae84dd6171
+[2025-03-20T21:13:25.405Z] [INFO]   1.3 -> 4fa80f0a-d100-45e3-94f5-6a4b1e4a90eb
+[2025-03-20T21:13:25.405Z] [INFO]   1.4 -> d4a8797f-8f07-496e-8ba4-79c5b2affa4c
+[2025-03-20T21:13:25.405Z] [INFO]   1.5 -> 7b1016e3-1c08-4f1c-99ff-de6b742c96bc
+[2025-03-20T21:13:25.405Z] [INFO] 2 -> bb8bb7d0-f543-4863-96bd-5d73525c731a
+[2025-03-20T21:13:25.406Z] [INFO]   2.1 -> 26c6f2e5-d15d-4d96-b7e1-9b601882e0b8
+[2025-03-20T21:13:25.406Z] [INFO]   2.2 -> 45b1426d-2c81-4dc7-90b2-2799bc7eaa4e
+[2025-03-20T21:13:25.406Z] [INFO]   2.3 -> 7b1da780-4b15-453b-b646-954746ec091f
+[2025-03-20T21:13:25.406Z] [INFO]   2.4 -> 4d8df2cf-b3a2-47e0-8e35-ffa0de5366b4
+[2025-03-20T21:13:25.406Z] [INFO] 3 -> 0841bdae-382f-49df-ab31-67d51f05ef09
+[2025-03-20T21:13:25.406Z] [INFO] 4 -> c41542e9-23c5-45ef-bc9e-0d770887608f
+[2025-03-20T21:13:26.140Z] [INFO] Completed parent-child relationship updates: 9 successful, 0 failed
+[2025-03-20T21:13:26.140Z] [INFO] Successfully processed file patient-education.md: inserted 28 items
+[2025-03-20T21:13:26.142Z] [INFO] Completed processing chapter Ch14_Seizures: 18 files processed, 0 files had errors
+[2025-03-20T21:13:26.142Z] [INFO] Migration completed: 1 chapters processed successfully, 0 chapters had errors
+[2025-03-20T21:13:26.142Z] [INFO] Migration completed in 33.497 seconds
