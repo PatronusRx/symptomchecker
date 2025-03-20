@@ -1,149 +1,58 @@
-// tools/db-migration/clear-tables.mjs
 import { createClient } from '@supabase/supabase-js';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import dotenv from 'dotenv';
 import config from './config.mjs';
 
+// Setup path for .env file
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load environment variables
+dotenv.config({ path: join(__dirname, '../../.env.local') });
+
+// Initialize Supabase client
 const supabase = createClient(config.supabaseUrl, config.supabaseKey);
 
+/**
+ * Log function for consistent logging
+ */
+function log(message, type = 'info') {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] [${type.toUpperCase()}] ${message}`);
+}
+
+/**
+ * Clear all data from the tables in the database
+ */
 async function clearTables() {
-  const args = process.argv.slice(2);
-  const isTestMode = args.includes('--test');
-  const deleteAll = args.includes('--all');
-  const chapter = args
-    .find((arg) => arg.startsWith('--chapter='))
-    ?.split('=')[1];
-
-  console.log('Database cleanup script');
-  console.log('----------------------');
-
-  if (isTestMode) {
-    console.log('TEST MODE: No data will be deleted');
-  }
-
-  if (deleteAll) {
-    console.log('Will delete ALL data from tables');
-  } else if (chapter) {
-    console.log(`Will delete data for chapter: ${chapter}`);
-  } else {
-    console.log('No deletion parameters specified. Use:');
-    console.log('  --all         Delete all data');
-    console.log('  --chapter=N   Delete specific chapter (e.g., --chapter=11)');
-    console.log('  --test        Test mode (no actual deletion)');
-    process.exit(0);
-  }
-
-  if (!isTestMode) {
-    console.log('\nWARNING: This will DELETE data from your database!');
-    console.log('Press Ctrl+C to cancel or wait 5 seconds to continue...');
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-  }
+  log('Starting to clear data from database tables...');
 
   try {
-    if (deleteAll) {
-      if (!isTestMode) {
-        // Delete in the correct order to respect foreign key constraints
-        const { error: itemsError } = await supabase
-          .from('checklist_items')
-          .delete()
-          .neq('id', 0);
-        if (itemsError) throw itemsError;
-        console.log('Deleted all checklist items');
+    // Using a single command to truncate all tables in the correct order
+    // TRUNCATE with CASCADE automatically truncates all tables with foreign key references
+    log('Truncating all tables...');
+    const { error } = await supabase.rpc('execute_sql', {
+      sql_query: `
+        TRUNCATE TABLE checklist_items, sections, chapters, categories
+        RESTART IDENTITY CASCADE;
+      `,
+    });
 
-        const { error: sectionsError } = await supabase
-          .from('sections')
-          .delete()
-          .neq('id', 0);
-        if (sectionsError) throw sectionsError;
-        console.log('Deleted all sections');
+    if (error) throw error;
 
-        const { error: chaptersError } = await supabase
-          .from('chapters')
-          .delete()
-          .neq('id', 0);
-        if (chaptersError) throw chaptersError;
-        console.log('Deleted all chapters');
-
-        // Categories are often reused, so we might want to keep them
-        console.log(
-          'Note: Categories were preserved. Use SQL directly if you need to delete them.'
-        );
-      } else {
-        console.log(
-          '[TEST] Would delete all checklist_items, sections, and chapters'
-        );
-      }
-    } else if (chapter) {
-      // Get chapter ID regardless of whether it has sections
-      const { data: chapters, error: chaptersError } = await supabase
-        .from('chapters')
-        .select('id')
-        .eq('chapter_number', chapter);
-
-      if (chaptersError) throw chaptersError;
-
-      if (chapters && chapters.length > 0) {
-        const chapterId = chapters[0].id;
-
-        // Get sections for this chapter
-        const { data: sections, error: sectionsError } = await supabase
-          .from('sections')
-          .select('id')
-          .eq('chapter_id', chapterId);
-
-        if (sectionsError) throw sectionsError;
-
-        if (!isTestMode) {
-          // Delete items for this chapter even if there are no sections
-          if (sections && sections.length > 0) {
-            const sectionIds = sections.map((s) => s.id);
-
-            // Delete checklist items for these sections
-            const { error: itemsError } = await supabase
-              .from('checklist_items')
-              .delete()
-              .in('section_id', sectionIds);
-
-            if (itemsError) throw itemsError;
-            console.log(`Deleted checklist items for chapter ${chapter}`);
-
-            // Delete sections
-            const { error: deleteSectionsError } = await supabase
-              .from('sections')
-              .delete()
-              .eq('chapter_id', chapterId);
-
-            if (deleteSectionsError) throw deleteSectionsError;
-            console.log(`Deleted sections for chapter ${chapter}`);
-          } else {
-            console.log(`No sections found for chapter ${chapter}`);
-          }
-
-          // Always attempt to delete the chapter itself
-          const { error: deleteChapterError } = await supabase
-            .from('chapters')
-            .delete()
-            .eq('id', chapterId);
-
-          if (deleteChapterError) throw deleteChapterError;
-          console.log(`Deleted chapter ${chapter}`);
-        } else {
-          if (sections && sections.length > 0) {
-            console.log(
-              `[TEST] Would delete ${sections.length} sections and their checklist items for chapter ${chapter}`
-            );
-          } else {
-            console.log(`[TEST] No sections found for chapter ${chapter}`);
-          }
-          console.log(`[TEST] Would delete chapter ${chapter}`);
-        }
-      } else {
-        console.log(`Chapter ${chapter} not found`);
-      }
-    }
-
-    console.log('Database cleanup completed successfully');
+    log('All table data has been cleared successfully.');
   } catch (error) {
-    console.error('Error during database cleanup:', error);
+    log(`Error clearing table data: ${error.message}`, 'error');
+    if (config.verbose && error.stack) {
+      log(error.stack, 'error');
+    }
+    process.exit(1);
   }
 }
 
-clearTables().catch(console.error);
+// Run the clearTables function
+clearTables().catch((err) => {
+  console.error('Unhandled error:', err);
+  process.exit(1);
+});
