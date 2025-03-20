@@ -53,22 +53,39 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
     headerClass = 'text-gray-700 font-medium';
   }
 
-  // Indentation style based on indent_level from the database or depth
-  const indentLevel = item.indent_level || depth;
-  const indentClass =
-    indentLevel > 0 ? `ml-${Math.min(indentLevel * 4, 12)}` : ''; // max indent of ml-12
-
   // Check if this item has children
   const hasChildren = item.childItems && item.childItems.length > 0;
 
-  // Style for nested lists
+  // Indentation style based on indent_level from the database or depth
+  const indentLevel = item.indent_level || depth;
+
+  // Create a progressive indentation system
+  let indentClass = '';
+  if (indentLevel > 0) {
+    indentClass = `ml-${Math.min(indentLevel * 5, 15)}`; // Increased indentation
+  }
+
+  // Enhanced nesting visualization with shadows and background
+  const itemDepthClass =
+    indentLevel > 0 ? `depth-level-${Math.min(indentLevel, 5)}` : '';
+
+  // Shadow intensity based on nesting level
+  const shadowClass = indentLevel > 0 ? `shadow-md` : 'shadow-sm';
+
+  // Enhanced style for nested lists with visual connectors
   const nestedItemClass = hasChildren
     ? item.response === '+'
-      ? 'border-l-2 border-green-200 pl-4'
-      : item.indent_level > 0 || item.response === '-'
-      ? 'border-l-2 border-gray-100 pl-4'
-      : ''
+      ? 'border-l-2 border-green-300 pl-5 ml-3 mt-2'
+      : 'border-l-2 border-gray-200 pl-5 ml-3 mt-2'
     : '';
+
+  // Background color subtle variation based on depth
+  const bgColorClass =
+    indentLevel === 0
+      ? 'bg-white'
+      : indentLevel === 1
+      ? 'bg-gray-50'
+      : 'bg-white';
 
   // Extract the label part from items with blanks (e.g., "Temperature: _____ °F/°C" -> "Temperature:")
   const getLabelFromText = () => {
@@ -95,30 +112,42 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
       {isHeader ? (
         // Render header-style item
         <div
-          className={`px-3 py-2 bg-gray-100 rounded-md mt-4 mb-2 ${headerClass}`}
+          className={`px-4 py-3 bg-blue-50 rounded-md mt-4 mb-3 ${headerClass} ${shadowClass}`}
         >
           {item.item_text}
         </div>
       ) : (
         // Render regular checklist item
         <div
-          className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
+          className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 
+            ${shadowClass} border-l-4 ${borderColorClass} border border-gray-100 
+            ${bgColorClass} ${itemDepthClass}`}
+          style={{
+            // Add subtle border to better visualize the hierarchy
+            borderColor: indentLevel > 0 ? 'rgba(209, 213, 219, 0.8)' : '',
+          }}
         >
           <div className="flex flex-wrap items-start mb-2">
             <div className="flex-1 mr-2">
               <div className="text-gray-900 font-medium mb-1 flex items-start">
                 {indentLevel > 0 && (
                   <CornerDownRight
-                    size={14}
-                    className="mr-1 mt-1 text-gray-400"
+                    size={16}
+                    className="mr-2 mt-1 text-blue-400"
                   />
                 )}
-                <span>{item.item_text}</span>
+                <span
+                  style={{
+                    opacity: indentLevel > 0 ? 0.9 : 1, // Subtle opacity change for nested items
+                  }}
+                >
+                  {item.item_text}
+                </span>
               </div>
 
               {/* Input field for items with blanks */}
               {hasBlankField && (
-                <div className="mt-1 pl-4">
+                <div className="mt-2 pl-4 border-l-2 border-gray-100 ml-1">
                   <label className="block text-sm text-gray-600 mb-1">
                     {getLabelFromText()}
                   </label>
@@ -213,7 +242,7 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
           {/* Notes input field - shown for '+' and '-' responses - but only if not already has blank field */}
           {(item.response === '+' || item.response === '-') &&
             !hasBlankField && (
-              <div className="mt-2">
+              <div className="mt-2 border-l-2 border-gray-100 pl-4">
                 <textarea
                   className="w-full p-2 border border-gray-300 rounded-md text-sm"
                   rows={2}
@@ -230,7 +259,7 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
         </div>
       )}
 
-      {/* Render children conditionally based on expansion state */}
+      {/* Render children with enhanced visual connector */}
       {hasChildren && (
         <div
           className={`mb-4 ${nestedItemClass}`}

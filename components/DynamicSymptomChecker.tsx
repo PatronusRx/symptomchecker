@@ -17,11 +17,9 @@ import {
   Category,
   Section,
   ChecklistItem,
-  ResponseState,
 } from '../types/symptomChecker';
 import ChecklistItemComponent from './checklist/ChecklistItem';
 import SoapNoteDisplay from './soap/SoapNoteDisplay';
-import { processItemText } from './soap/SoapNoteGenerationUtils';
 import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
 
 // Initialize Supabase client
@@ -42,9 +40,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [categories, setCategories] = useState<Category[]>([]);
   const [sections, setSections] = useState<Section[]>([]);
   const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([]);
-
-  // State for user responses
-  const [responses, setResponses] = useState<ResponseState>({});
 
   // State for the active category
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -73,6 +68,157 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     mrn: '',
     visitDate: new Date().toISOString().split('T')[0],
   });
+
+  // Function to update SOAP note - separate from state updates for better performance
+  const updateSoapNote = useCallback(() => {
+    const noteData = SoapNoteGenerator.generateNote(
+      checklistItems,
+      categories,
+      sections,
+      chapter,
+      duration
+    );
+    setGeneratedNote(noteData);
+  }, [checklistItems, categories, sections, chapter, duration]);
+
+  // Get sections for the active category
+  const getActiveCategorySections = useCallback(() => {
+    if (!activeCategory) return [];
+    return sections
+      .filter((section) => section.category_id === activeCategory)
+      .sort((a, b) => a.display_order - b.display_order);
+  }, [sections, activeCategory]);
+
+  // Get items for the active category grouped by section
+  const getItemsBySectionForCategory = useCallback(() => {
+    const categorySections = getActiveCategorySections();
+    if (categorySections.length === 0) return [];
+
+    // Create an array of sections with their items
+    return categorySections
+      .map((section) => {
+        // Get all items for this section
+        const sectionItems = checklistItems
+          .filter((item) => item.section_id === section.id)
+          .sort((a, b) => a.display_order - b.display_order);
+
+        return {
+          section,
+          items: sectionItems,
+        };
+      })
+      .filter((group) => group.items.length > 0); // Only include sections with items
+  }, [checklistItems, getActiveCategorySections]);
+
+  // Build nested hierarchy of checklist items
+  const buildNestedItemsHierarchy = useCallback((items: ChecklistItem[]) => {
+    // Map for quick item lookup by ID
+    const itemMap = new Map<string, ChecklistItem>();
+
+    // First pass: create all items with empty children arrays
+    items.forEach((item) => {
+      itemMap.set(item.id, {
+        ...item,
+        childItems: [],
+        isExpanded: item.isExpanded !== undefined ? item.isExpanded : true,
+      });
+    });
+
+    // Second pass: build the tree
+    const rootItems: ChecklistItem[] = [];
+
+    // Create a Map to store items by indent level
+    const itemsByIndentLevel: Map<number, ChecklistItem[]> = new Map();
+
+    // Group items by indent level
+    items.forEach((item) => {
+      const level = item.indent_level || 0;
+      if (!itemsByIndentLevel.has(level)) {
+        itemsByIndentLevel.set(level, []);
+      }
+      itemsByIndentLevel.get(level)?.push(item);
+    });
+
+    // Sort each level by display_order
+    itemsByIndentLevel.forEach((levelItems) => {
+      levelItems.sort((a, b) => a.display_order - b.display_order);
+    });
+
+    // Process items from lowest indent level to highest
+    const indentLevels = Array.from(itemsByIndentLevel.keys()).sort(
+      (a, b) => a - b
+    );
+
+    // Add all root items (indent level 0) to the root array
+    const rootLevelItems = itemsByIndentLevel.get(0) || [];
+    rootLevelItems.forEach((item) => {
+      const mappedItem = itemMap.get(item.id);
+      if (mappedItem) {
+        rootItems.push(mappedItem);
+      }
+    });
+
+    // Start with level 1 since we already added level 0 items to rootItems
+    for (let levelIndex = 1; levelIndex < indentLevels.length; levelIndex++) {
+      const currentLevel = indentLevels[levelIndex];
+      const currentLevelItems = itemsByIndentLevel.get(currentLevel) || [];
+      const previousLevel = indentLevels[levelIndex - 1];
+
+      currentLevelItems.forEach((item) => {
+        // Find the closest parent in the previous level
+        const potentialParents = (itemsByIndentLevel.get(previousLevel) || [])
+          .filter(
+            (potentialParent) =>
+              potentialParent.display_order < item.display_order
+          )
+          .sort((a, b) => b.display_order - a.display_order); // Sort in reverse to get the closest one first
+
+        if (potentialParents.length > 0) {
+          const closestParent = potentialParents[0];
+          const mappedItem = itemMap.get(item.id);
+          const mappedParent = itemMap.get(closestParent.id);
+
+          if (mappedItem && mappedParent) {
+            if (!mappedParent.childItems) {
+              mappedParent.childItems = [];
+            }
+            mappedParent.childItems.push(mappedItem);
+          }
+        } else if (item.parent_item_id && itemMap.has(item.parent_item_id)) {
+          // Try to use explicit parent ID if available
+          const mappedItem = itemMap.get(item.id);
+          const mappedParent = itemMap.get(item.parent_item_id);
+
+          if (mappedItem && mappedParent) {
+            if (!mappedParent.childItems) {
+              mappedParent.childItems = [];
+            }
+            mappedParent.childItems.push(mappedItem);
+          }
+        } else {
+          // Fallback: attach to root if no parent found
+          const mappedItem = itemMap.get(item.id);
+          if (mappedItem) {
+            rootItems.push(mappedItem);
+          }
+        }
+      });
+    }
+
+    // Final sort of all children arrays by display_order
+    const sortChildren = (items: ChecklistItem[]) => {
+      items.sort((a, b) => a.display_order - b.display_order);
+      items.forEach((item) => {
+        if (item.childItems && item.childItems.length > 0) {
+          sortChildren(item.childItems);
+        }
+      });
+    };
+
+    sortChildren(rootItems);
+
+    return rootItems;
+  }, []);
 
   // Fetch data from Supabase
   useEffect(() => {
@@ -196,7 +342,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     if (chapterSlug) {
       fetchData();
     }
-  }, [chapterSlug, activeCategory]);
+  }, [chapterSlug]);
+
+  // Separate effect to handle active category changes without refetching
+  useEffect(() => {
+    // Set the first category as active if none is selected
+    if (categories.length > 0 && !activeCategory) {
+      setActiveCategory(categories[0].id);
+    }
+  }, [categories, activeCategory]);
 
   // Add useEffect to initialize expansion state when items are first loaded
   useEffect(() => {
@@ -208,195 +362,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           isExpanded: true, // Start expanded for better visibility
         }))
       );
-
-      // Debug logging to check parent-child relationships
-      const itemsWithParent = checklistItems.filter(
-        (item) => item.parent_item_id !== null
-      );
-      console.log(
-        `Items with parent: ${itemsWithParent.length} out of ${checklistItems.length}`
-      );
     }
-  }, [loading, checklistItems.length]);
+  }, [loading]);
 
-  // Build nested hierarchy of checklist items
-  const buildNestedItemsHierarchy = useCallback((items: ChecklistItem[]) => {
-    // Map for quick item lookup by ID
-    const itemMap = new Map<string, ChecklistItem>();
-
-    // First pass: create all items with empty children arrays
-    items.forEach((item) => {
-      // Create a clean copy with childItems array and preserve expansion state
-      itemMap.set(item.id, {
-        ...item,
-        childItems: [],
-        // Keep existing expansion state or default to expanded
-        isExpanded: item.isExpanded !== undefined ? item.isExpanded : true,
-      });
-    });
-
-    // For debugging: check all parent IDs exist
-    const missingParents = items
-      .filter((item) => item.parent_item_id !== null)
-      .filter((item) => !itemMap.has(item.parent_item_id!));
-
-    if (missingParents.length > 0) {
-      console.warn(
-        `Warning: Found ${missingParents.length} items with missing parent references`
-      );
+  // Update SOAP note whenever relevant state changes
+  useEffect(() => {
+    if (!loading && checklistItems.length > 0) {
+      updateSoapNote();
     }
-
-    // Second pass: build the tree
-    const rootItems: ChecklistItem[] = [];
-
-    // Create a Map to store items by indent level for easier hierarchy building
-    const itemsByIndentLevel: Map<number, ChecklistItem[]> = new Map();
-
-    // Group items by indent level
-    items.forEach((item) => {
-      const level = item.indent_level || 0;
-      if (!itemsByIndentLevel.has(level)) {
-        itemsByIndentLevel.set(level, []);
-      }
-      itemsByIndentLevel.get(level)?.push(item);
-    });
-
-    // Sort each level by display_order
-    itemsByIndentLevel.forEach((levelItems) => {
-      levelItems.sort((a, b) => a.display_order - b.display_order);
-    });
-
-    // Process items from lowest indent level to highest
-    const indentLevels = Array.from(itemsByIndentLevel.keys()).sort(
-      (a, b) => a - b
-    );
-
-    // Add all root items (indent level 0) to the root array
-    const rootLevelItems = itemsByIndentLevel.get(0) || [];
-    rootLevelItems.forEach((item) => {
-      const mappedItem = itemMap.get(item.id);
-      if (mappedItem) {
-        rootItems.push(mappedItem);
-      }
-    });
-
-    // Start with level 1 since we already added level 0 items to rootItems
-    for (let levelIndex = 1; levelIndex < indentLevels.length; levelIndex++) {
-      const currentLevel = indentLevels[levelIndex];
-      const currentLevelItems = itemsByIndentLevel.get(currentLevel) || [];
-      const previousLevel = indentLevels[levelIndex - 1];
-
-      currentLevelItems.forEach((item) => {
-        // Find the closest parent in the previous level
-        // A parent is the item that comes before this one in display order and has a lower indent level
-        const potentialParents = (itemsByIndentLevel.get(previousLevel) || [])
-          .filter(
-            (potentialParent) =>
-              potentialParent.display_order < item.display_order
-          )
-          .sort((a, b) => b.display_order - a.display_order); // Sort in reverse to get the closest one first
-
-        if (potentialParents.length > 0) {
-          const closestParent = potentialParents[0];
-          const mappedItem = itemMap.get(item.id);
-          const mappedParent = itemMap.get(closestParent.id);
-
-          if (mappedItem && mappedParent) {
-            if (!mappedParent.childItems) {
-              mappedParent.childItems = [];
-            }
-            mappedParent.childItems.push(mappedItem);
-          }
-        } else if (item.parent_item_id && itemMap.has(item.parent_item_id)) {
-          // Try to use explicit parent ID if available
-          const mappedItem = itemMap.get(item.id);
-          const mappedParent = itemMap.get(item.parent_item_id);
-
-          if (mappedItem && mappedParent) {
-            if (!mappedParent.childItems) {
-              mappedParent.childItems = [];
-            }
-            mappedParent.childItems.push(mappedItem);
-          }
-        } else {
-          // Fallback: attach to root if no parent found
-          const mappedItem = itemMap.get(item.id);
-          if (mappedItem) {
-            console.warn(
-              `Item ${item.id} (${item.item_text}) has no parent - attaching to root`
-            );
-            rootItems.push(mappedItem);
-          }
-        }
-      });
-    }
-
-    // Final sort of all children arrays by display_order
-    const sortChildren = (items: ChecklistItem[]) => {
-      items.sort((a, b) => a.display_order - b.display_order);
-      items.forEach((item) => {
-        if (item.childItems && item.childItems.length > 0) {
-          sortChildren(item.childItems);
-        }
-      });
-    };
-
-    sortChildren(rootItems);
-
-    // Log the resulting hierarchy for debugging
-    console.log(`Built hierarchy with ${rootItems.length} root items`);
-
-    return rootItems;
-  }, []);
-
-  // Get items for the active category
-  const getItemsByCategory = useCallback(
-    (categoryId: string | null) => {
-      if (!categoryId) return [];
-
-      // Get sections for this category
-      const categorySections = sections.filter(
-        (section) => section.category_id === categoryId
-      );
-
-      // Get checklist items for these sections
-      return checklistItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-    },
-    [checklistItems, sections]
-  );
-
-  // Group items by section for the active category
-  const getItemsBySectionForCategory = useCallback(
-    (categoryId: string | null) => {
-      if (!categoryId) return [];
-
-      // Get sections for this category
-      const categorySections = sections
-        .filter((section) => section.category_id === categoryId)
-        .sort((a, b) => a.display_order - b.display_order);
-
-      // Create an array of sections with their items
-      return categorySections
-        .map((section) => {
-          // Get all items for this section
-          const sectionItems = checklistItems
-            .filter((item) => item.section_id === section.id)
-            .sort((a, b) => a.display_order - b.display_order);
-
-          // Create an organized hierarchy of items
-          const nestedItems = buildNestedItemsHierarchy(sectionItems);
-
-          return {
-            section,
-            items: nestedItems,
-          };
-        })
-        .filter((group) => group.items.length > 0); // Only include sections with items
-    },
-    [checklistItems, sections, buildNestedItemsHierarchy]
-  );
+  }, [checklistItems, loading, updateSoapNote]);
 
   // Trigger autosave animation
   const triggerAutosave = useCallback(() => {
@@ -406,193 +380,56 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }, 1500);
   }, []);
 
-  // Handle response change (+/-/NA)
-  const handleResponseChange = useCallback(
-    (itemId: string, value: '+' | '-' | 'NA' | null) => {
-      // Update the responses state
-      setResponses((prev) => ({
-        ...prev,
-        [itemId]: {
-          ...prev[itemId],
-          response: value,
-        },
-      }));
+  // Generic function to update checklist items with optimized state handling
+  const updateChecklistItem = useCallback(
+    (itemId: string, updates: Partial<ChecklistItem>) => {
+      setChecklistItems((prevItems) => {
+        const updatedItems = prevItems.map((item) =>
+          item.id === itemId ? { ...item, ...updates } : item
+        );
 
-      // Also update the checklistItems to mark as completed
-      const updatedItems = [...checklistItems];
-      const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
-
-      if (itemIndex !== -1) {
-        updatedItems[itemIndex] = {
-          ...updatedItems[itemIndex],
-          response: value,
-          isCompleted: true,
-        };
-
-        // Update state
-        setChecklistItems(updatedItems);
-
-        // Immediately regenerate SOAP note with the updated items
-        const updatedNote = generateSoapNote();
-        setGeneratedNote(updatedNote);
-      }
+        // Return new array
+        return updatedItems;
+      });
 
       // Trigger autosave
       triggerAutosave();
     },
-    [checklistItems, setResponses, triggerAutosave]
+    [triggerAutosave]
+  );
+
+  // Handle response change (+/-/NA)
+  const handleResponseChange = useCallback(
+    (itemId: string, value: '+' | '-' | 'NA' | null) => {
+      // Update the item with new response
+      updateChecklistItem(itemId, {
+        response: value,
+        isCompleted: value !== null,
+      });
+    },
+    [updateChecklistItem]
   );
 
   // Handle notes change
   const handleNotesChange = useCallback(
     (itemId: string, notes: string) => {
-      setResponses((prev) => ({
-        ...prev,
-        [itemId]: {
-          ...prev[itemId],
-          notes,
-        },
-      }));
-
-      // Also update in checklistItems
-      const updatedItems = [...checklistItems];
-      const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
-
-      if (itemIndex !== -1) {
-        updatedItems[itemIndex] = {
-          ...updatedItems[itemIndex],
-          notes,
-        };
-
-        // Update state
-        setChecklistItems(updatedItems);
-
-        // Immediately regenerate SOAP note with the updated items
-        const updatedNote = generateSoapNote();
-        setGeneratedNote(updatedNote);
-      }
-
-      // Trigger autosave
-      triggerAutosave();
+      // Update the item with new notes
+      updateChecklistItem(itemId, { notes });
     },
-    [checklistItems, setResponses, triggerAutosave]
+    [updateChecklistItem]
   );
 
   // Toggle item expansion state
-  const toggleItemExpansion = useCallback(
-    (itemId: string) => {
-      // First create a deep copy of all items to avoid mutation issues
-      const allItems = [...checklistItems];
-
-      // Find and update the specific item
-      const updateItem = (items: ChecklistItem[]) => {
-        return items.map((item) => {
-          if (item.id === itemId) {
-            // Found the item, toggle its expansion state
-            return { ...item, isExpanded: !item.isExpanded };
-          }
-          return item;
-        });
-      };
-
-      // Update the actual checklist items in state
-      setChecklistItems(updateItem(allItems));
-
-      // Log for debugging
-      console.log(`Toggled expansion for item ${itemId}`);
-    },
-    [checklistItems]
-  );
-
-  // Handle detail option selection
-  const handleDetailOptionChange = useCallback(
-    (
-      itemId: string,
-      detailKey: string,
-      option: string,
-      isSelected: boolean
-    ) => {
-      setChecklistItems((items) =>
-        items.map((item) => {
-          if (item.id === itemId) {
-            // Initialize selectedOptions if not existing
-            const currentSelectedOptions = item.selectedOptions || {};
-
-            // Get the current options for this detail key
-            const currentOptions = currentSelectedOptions[detailKey] || [];
-
-            let updatedOptions;
-
-            if (Array.isArray(currentOptions)) {
-              // For multi-select details
-              if (isSelected) {
-                // Add to array if not already there
-                updatedOptions = currentOptions.includes(option)
-                  ? currentOptions
-                  : [...currentOptions, option];
-              } else {
-                // Remove from array if present
-                updatedOptions = currentOptions.filter((opt) => opt !== option);
-              }
-            } else {
-              // For single-select details
-              updatedOptions = isSelected ? option : '';
-            }
-
-            const updatedItem = {
-              ...item,
-              selectedOptions: {
-                ...currentSelectedOptions,
-                [detailKey]: updatedOptions,
-              },
-            };
-
-            return updatedItem;
-          }
-          return item;
-        })
-      );
-
-      // Immediately regenerate SOAP note with the updated items
-      setTimeout(() => {
-        const updatedNote = generateSoapNote();
-        setGeneratedNote(updatedNote);
-      }, 0);
-    },
-    [checklistItems]
-  );
-
-  // Handle detail notes change
-  const handleDetailNoteChange = useCallback(
-    (itemId: string, detailKey: string, option: string, note: string) => {
-      setChecklistItems((items) =>
-        items.map((item) => {
-          if (item.id === itemId) {
-            // Initialize detail notes if not existing
-            const currentDetailNotes = item.detailNotes || {};
-
-            const updatedItem = {
-              ...item,
-              detailNotes: {
-                ...currentDetailNotes,
-                [`${detailKey}-${option}`]: note,
-              },
-            };
-
-            return updatedItem;
-          }
-          return item;
-        })
-      );
-
-      // Immediately regenerate SOAP note with the updated items
-      setTimeout(() => {
-        const updatedNote = generateSoapNote();
-        setGeneratedNote(updatedNote);
-      }, 0);
-    },
-    [checklistItems]
-  );
+  const toggleItemExpansion = useCallback((itemId: string) => {
+    setChecklistItems((items) => {
+      return items.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, isExpanded: !item.isExpanded };
+        }
+        return item;
+      });
+    });
+  }, []);
 
   // Calculate completion percentage
   const calculateCompletion = useCallback(() => {
@@ -602,6 +439,37 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     const totalItems = checklistItems.length;
     return totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
   }, [checklistItems]);
+
+  // Render function for checklist items (updated to use component)
+  const renderChecklistItem = useCallback(
+    (item: ChecklistItem, depth = 0) => {
+      return (
+        <ChecklistItemComponent
+          key={item.id}
+          item={item}
+          handleResponseChange={handleResponseChange}
+          handleNotesChange={handleNotesChange}
+          toggleItemExpansion={toggleItemExpansion}
+          renderChecklistItem={renderChecklistItem}
+          depth={depth}
+        />
+      );
+    },
+    [handleResponseChange, handleNotesChange, toggleItemExpansion]
+  );
+
+  // Generate SOAP note
+  const generateSoapNote = useCallback(() => {
+    const noteData = SoapNoteGenerator.generateNote(
+      checklistItems,
+      categories,
+      sections,
+      chapter,
+      duration
+    );
+    setGeneratedNote(noteData);
+    return noteData;
+  }, [checklistItems, categories, sections, chapter, duration]);
 
   // Handle copy to clipboard
   const copyToClipboard = useCallback(() => {
@@ -650,8 +518,6 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
         }))
       );
 
-      setResponses({});
-
       setPatientInfo({
         name: 'New Patient',
         dob: '',
@@ -666,53 +532,29 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
   // Check if category has any completed questions
   const hasCategoryCompletedItems = useCallback(
     (categoryId: string) => {
-      const categoryItems = getItemsByCategory(categoryId);
+      const categoryItems = checklistItems.filter((item) => {
+        const section = sections.find((s) => s.id === item.section_id);
+        return section && section.category_id === categoryId;
+      });
       return categoryItems.some((item) => item.isCompleted);
     },
-    [getItemsByCategory]
+    [checklistItems, sections]
   );
 
-  // Render function for checklist items (updated to use component)
-  const renderChecklistItem = useCallback(
-    (item: ChecklistItem, depth = 0) => {
-      return (
-        <ChecklistItemComponent
-          key={item.id}
-          item={item}
-          handleResponseChange={handleResponseChange}
-          handleNotesChange={handleNotesChange}
-          toggleItemExpansion={toggleItemExpansion}
-          renderChecklistItem={renderChecklistItem}
-          depth={depth}
-        />
-      );
-    },
-    [handleResponseChange, handleNotesChange, toggleItemExpansion]
-  );
+  // Get the count of completed items for the active category
+  const getActiveCategoryStats = useCallback(() => {
+    if (!activeCategory) return { completed: 0, total: 0 };
 
-  // Replace the inline SOAP note generation methods with the imported ones
-  const generateSoapNote = () => {
-    const noteData = SoapNoteGenerator.generateNote(
-      checklistItems,
-      categories,
-      sections,
-      chapter,
-      duration
-    );
-    setGeneratedNote(noteData);
-    return noteData;
-  };
+    const categoryItems = checklistItems.filter((item) => {
+      const section = sections.find((s) => s.id === item.section_id);
+      return section && section.category_id === activeCategory;
+    });
 
-  // Generate SOAP note with specific items (for immediate updates)
-  const generateSoapNoteWithItems = (items: ChecklistItem[]) => {
-    return SoapNoteGenerator.generateNote(
-      items,
-      categories,
-      sections,
-      chapter,
-      duration
-    );
-  };
+    const completed = categoryItems.filter((item) => item.isCompleted).length;
+    const total = categoryItems.length;
+
+    return { completed, total };
+  }, [checklistItems, sections, activeCategory]);
 
   if (loading) {
     return (
@@ -980,39 +822,33 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                     'Questions'}
                 </h2>
                 <div className="text-sm text-blue-600">
-                  {
-                    getItemsByCategory(activeCategory).filter(
-                      (item) => item.isCompleted
-                    ).length
-                  }
-                  /{getItemsByCategory(activeCategory).length} completed
+                  {getActiveCategoryStats().completed}/
+                  {getActiveCategoryStats().total} completed
                 </div>
               </div>
 
               <div className="divide-y divide-gray-100">
-                {getItemsBySectionForCategory(activeCategory).map(
-                  (sectionGroup) => (
-                    <div
-                      key={sectionGroup.section.id}
-                      className="border-b border-gray-200 mb-3"
-                    >
-                      {/* Section Title */}
-                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
-                        <h3 className="text-md font-semibold text-blue-700">
-                          {sectionGroup.section.title}
-                        </h3>
-                      </div>
-
-                      {/* Section Items */}
-                      <div className="p-3 bg-white rounded-b-md">
-                        {/* Render top-level items with recursive function */}
-                        {sectionGroup.items.map((item) =>
-                          renderChecklistItem(item)
-                        )}
-                      </div>
+                {getItemsBySectionForCategory().map((sectionGroup) => (
+                  <div
+                    key={sectionGroup.section.id}
+                    className="border-b border-gray-200 mb-3"
+                  >
+                    {/* Section Title */}
+                    <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                      <h3 className="text-md font-semibold text-blue-700">
+                        {sectionGroup.section.title}
+                      </h3>
                     </div>
-                  )
-                )}
+
+                    {/* Section Items */}
+                    <div className="p-4 bg-white rounded-b-md">
+                      {/* Render top-level items with recursive function */}
+                      {buildNestedItemsHierarchy(sectionGroup.items).map(
+                        (item) => renderChecklistItem(item)
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
