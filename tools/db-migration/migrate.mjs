@@ -470,7 +470,113 @@ function preprocessMarkdownFile(filePath) {
 function postProcessItems(items) {
   log('Post-processing items to fix known hierarchy issues...');
 
-  // Fix Orientation assessment hierarchy
+  // STEP 1: Analyze the items to identify potential parent-child patterns
+  // Common parent-child patterns in medical checklists
+  const parentChildPatterns = [
+    // Pattern 1: Parent ends with ":" and children follow with specific pattern
+    {
+      parentPattern: /:$/, // Parent items often end with colon
+      childrenPatterns: [
+        /^[A-Z][a-z]+:/, // Children start with a capitalized word followed by colon (e.g., "Person:", "Place:")
+      ],
+      description: 'Parent with colon followed by labeled children',
+    },
+    // Pattern 2: Assessment patterns (specific to orientation assessment but could exist elsewhere)
+    {
+      parentPattern: /assessment/i,
+      childrenPatterns: [
+        /^[A-Z][a-z]+:/, // Children are labeled like "Person:", "Place:", etc.
+      ],
+      description: 'Assessment parent with labeled children',
+    },
+    // Pattern 3: General pattern for lists (e.g., "First-line agents:" followed by medication names)
+    {
+      parentPattern: /agents:|medications:|symptoms:|findings:/i,
+      childrenPatterns: [
+        /^[A-Za-z]+:/, // Children are medication/symptom names with colon
+      ],
+      description: 'List of items with labeled subitems',
+    },
+  ];
+
+  // Find all potential parent items
+  const potentialParents = items.filter((item) => {
+    for (const pattern of parentChildPatterns) {
+      if (pattern.parentPattern.test(item.itemText)) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  log(`Found ${potentialParents.length} potential parent items to analyze`);
+
+  // For each potential parent, find and fix its children
+  for (const parent of potentialParents) {
+    const parentIndex = items.indexOf(parent);
+    const parentIndent = parent.indentLevel;
+
+    // Find children that appear after the parent and have higher indent level
+    const children = items.filter((item, index) => {
+      // Only consider items after the parent
+      if (index <= parentIndex) return false;
+
+      // Must have higher indent level than parent
+      if (item.indentLevel <= parentIndent) return false;
+
+      // Check if this matches any child pattern for this parent
+      for (const pattern of parentChildPatterns) {
+        if (pattern.parentPattern.test(parent.itemText)) {
+          for (const childPattern of pattern.childrenPatterns) {
+            if (childPattern.test(item.itemText)) {
+              return true;
+            }
+          }
+        }
+      }
+
+      // Also allow children that are within 5 items of the parent and have indent level exactly parent+1
+      // This captures common nesting patterns even if they don't match specific text patterns
+      const isCloseToParent = index < parentIndex + 6; // Within 5 items
+      const isDirectChild = item.indentLevel === parentIndent + 1;
+      return isCloseToParent && isDirectChild;
+    });
+
+    if (children.length > 0) {
+      log(
+        `Found parent item: "${parent.itemText}" with ${children.length} potential children`
+      );
+
+      // Check if children paths already correctly reference parent path
+      let needsFix = false;
+      children.forEach((child) => {
+        if (!child.path.startsWith(parent.path + '.')) {
+          needsFix = true;
+          log(
+            `Child "${child.itemText}" needs path fix (${child.path} should start with ${parent.path}.)`
+          );
+        }
+      });
+
+      // Fix children paths if needed
+      if (needsFix) {
+        log(
+          `Fixing paths for ${children.length} children of "${parent.itemText}"`
+        );
+
+        children.forEach((child, i) => {
+          const oldPath = child.path;
+          const childPosition = i + 1; // Use 1-based index for child positions
+          const newPath = `${parent.path}.${childPosition}`;
+
+          log(`Fixing path for "${child.itemText}": ${oldPath} -> ${newPath}`);
+          child.path = newPath;
+        });
+      }
+    }
+  }
+
+  // The original specific Orientation assessment fix as a fallback
   let orientationAssessmentItem = null;
   let orientationChildren = [];
 
@@ -629,43 +735,186 @@ async function updateParentChildRelationships(itemIdByPath) {
     log(`${indent}${path} -> ${itemIdByPath[path]}`);
   });
 
+  // GENERALIZED FIX: First identify all parent-child relationships with common patterns
+  // This will find all potential parent items and their children based on text patterns
+  const patternFixMap = new Map(); // Maps child IDs to their correct parent IDs
+
+  // Define patterns to look for (more general than just orientation assessment)
+  const hierarchyPatterns = [
+    {
+      parentPattern: /assessment/i,
+      childPatterns: [/^(Person|Place|Time|Situation):/i],
+      description: 'Assessment pattern (like Orientation assessment)',
+    },
+    {
+      parentPattern: /agents:/i,
+      childPatterns: [/^[A-Za-z]+:/],
+      description: 'Medication agents pattern',
+    },
+    {
+      parentPattern: /symptoms:/i,
+      childPatterns: [/^[A-Za-z]+:/],
+      description: 'Symptoms list pattern',
+    },
+    {
+      parentPattern: /:$/, // Any item ending with a colon
+      childPatterns: [/^[A-Za-z]+:/], // Any item starting with a word followed by colon
+      description: 'Generic parent-child pattern with labeled items',
+    },
+  ];
+
+  // Build a map of item IDs to their text for pattern matching
+  const itemTextMap = new Map(); // Maps item IDs to their text
+
+  // First, fetch the text for all items
+  try {
+    const { data: allItems, error: fetchError } = await supabase
+      .from('checklist_items')
+      .select('id, item_text, path, indent_level')
+      .order('path');
+
+    if (!fetchError && allItems && allItems.length > 0) {
+      log(`Loaded ${allItems.length} items for pattern analysis`);
+
+      // Create item text map and analyze patterns
+      allItems.forEach((item) => {
+        itemTextMap.set(item.id, {
+          text: item.text,
+          path: item.path,
+          indentLevel: item.indent_level,
+        });
+      });
+
+      // Group items by their paths to identify parent-child relationships
+      const itemsByPath = new Map();
+      allItems.forEach((item) => {
+        itemsByPath.set(item.path, item);
+      });
+
+      // Find parent-child pairs that match our patterns
+      for (const item of allItems) {
+        // Skip items that don't match any parent pattern
+        const matchingPatterns = hierarchyPatterns.filter((pattern) =>
+          pattern.parentPattern.test(item.item_text)
+        );
+
+        if (matchingPatterns.length === 0) continue;
+
+        // This item looks like a parent, search for potential children
+        log(
+          `Found potential parent item: "${item.item_text}" (ID: ${item.id})`
+        );
+
+        // Look for children with higher indent level and matching patterns
+        const potentialChildren = allItems.filter(
+          (childItem) =>
+            childItem.id !== item.id &&
+            childItem.indent_level > item.indent_level &&
+            matchingPatterns.some((pattern) =>
+              pattern.childPatterns.some((childPattern) =>
+                childPattern.test(childItem.item_text)
+              )
+            )
+        );
+
+        if (potentialChildren.length > 0) {
+          log(
+            `Found ${potentialChildren.length} potential children for "${item.item_text}"`
+          );
+
+          // Add these to our fix map
+          potentialChildren.forEach((child) => {
+            patternFixMap.set(child.id, item.id);
+          });
+        }
+      }
+    }
+  } catch (error) {
+    log(`Error performing pattern analysis: ${error.message}`, 'warn');
+  }
+
+  // Orientation assessment specific lookup (as a fallback)
+  let orientationAssessmentId = null;
+  let personPlaceTimeIds = [];
+
+  try {
+    // Direct lookup by text to find the correct orientation assessment item
+    const { data: orientationItems, error: orientationError } = await supabase
+      .from('checklist_items')
+      .select('id, item_text, path')
+      .ilike('item_text', 'Orientation assessment%');
+
+    if (!orientationError && orientationItems && orientationItems.length > 0) {
+      orientationAssessmentId = orientationItems[0].id;
+      log(
+        `DIRECT LOOKUP: Found Orientation assessment: ID ${orientationAssessmentId}, Text: "${orientationItems[0].item_text}"`
+      );
+
+      // Find the Person/Place/Time/Situation items directly by text
+      const { data: childItems, error: childError } = await supabase
+        .from('checklist_items')
+        .select('id, item_text')
+        .or(
+          'item_text.ilike.Person:%,item_text.ilike.Place:%,item_text.ilike.Time:%,item_text.ilike.Situation:%'
+        );
+
+      if (!childError && childItems && childItems.length > 0) {
+        personPlaceTimeIds = childItems.map((item) => item.id);
+
+        log(
+          `DIRECT LOOKUP: Found ${childItems.length} orientation child items:`
+        );
+        childItems.forEach((item) => {
+          log(`  - ID: ${item.id}, Text: "${item.item_text}"`);
+        });
+
+        // Add these to our pattern fix map
+        personPlaceTimeIds.forEach((childId) => {
+          patternFixMap.set(childId, orientationAssessmentId);
+        });
+      }
+    }
+  } catch (error) {
+    log(
+      `Error performing direct lookup for orientation items: ${error.message}`,
+      'warn'
+    );
+  }
+
   // First pass: collect information about orientation assessment-related items
   let orientationAssessmentPath = null;
-  let orientationAssessmentId = null;
   let orientationChildrenPaths = [];
 
   for (const [path, id] of Object.entries(itemIdByPath)) {
-    // Check if this path contains item text (we'd need to fetch from DB)
-    // For now we'll use the path format to guess
-    if (path.includes('Orientation') || path.match(/\d+$/)) {
-      // Fetch the item from DB to check its text
-      try {
-        const { data, error } = await supabase
-          .from('checklist_items')
-          .select('item_text')
-          .eq('id', id)
-          .single();
+    // Check if this path contains item text
+    try {
+      const { data, error } = await supabase
+        .from('checklist_items')
+        .select('item_text')
+        .eq('id', id)
+        .single();
 
-        if (!error && data) {
-          if (data.item_text.includes('Orientation assessment')) {
-            orientationAssessmentPath = path;
-            orientationAssessmentId = id;
-            log(`Found Orientation assessment path: ${path} -> ID: ${id}`);
-          } else if (
-            data.item_text.includes('Person:') ||
-            data.item_text.includes('Place:') ||
-            data.item_text.includes('Time:') ||
-            data.item_text.includes('Situation:')
-          ) {
-            orientationChildrenPaths.push(path);
-            log(
-              `Found orientation child path: ${path} -> ID: ${id} (${data.item_text})`
-            );
+      if (!error && data) {
+        if (data.item_text.includes('Orientation assessment')) {
+          orientationAssessmentPath = path;
+          if (!orientationAssessmentId) {
+            orientationAssessmentId = id; // Use this as fallback if direct lookup failed
           }
+          log(`Found Orientation assessment path: ${path} -> ID: ${id}`);
+        } else if (
+          data.item_text.includes('Person:') ||
+          data.item_text.includes('Place:') ||
+          data.item_text.includes('Time:') ||
+          data.item_text.includes('Situation:')
+        ) {
+          orientationChildrenPaths.push(path);
+          log(
+            `Found orientation child path: ${path} -> ID: ${id} (${data.item_text})`
+          );
         }
-      } catch (error) {
-        log(`Error checking item text: ${error.message}`, 'warn');
       }
+    } catch (error) {
+      log(`Error checking item text: ${error.message}`, 'warn');
     }
   }
 
@@ -676,9 +925,29 @@ async function updateParentChildRelationships(itemIdByPath) {
 
     let parentId = null;
     let specialFix = false;
+    let fixSource = '';
 
+    // GENERAL PATTERN FIX: Check if this item is in our pattern fix map
+    if (patternFixMap.has(id)) {
+      parentId = patternFixMap.get(id);
+      specialFix = true;
+      fixSource = 'pattern';
+      log(
+        `PATTERN FIX: Using detected pattern to set item ${id} parent to ${parentId}`
+      );
+    }
+    // DIRECT FIX: If this is one of our Person/Place/Time/Situation items from direct lookup
+    else if (orientationAssessmentId && personPlaceTimeIds.includes(id)) {
+      // Apply the direct fix - use the orientation assessment as parent regardless of path
+      parentId = orientationAssessmentId;
+      specialFix = true;
+      fixSource = 'direct';
+      log(
+        `DIRECT FIX: Forcing orientation child item ${id} to have parent ${orientationAssessmentId} (bypassing path logic)`
+      );
+    }
     // Check if this is an orientation child that needs special handling
-    if (
+    else if (
       orientationAssessmentId &&
       orientationChildrenPaths.includes(path) &&
       !path.startsWith(orientationAssessmentPath + '.')
@@ -686,8 +955,9 @@ async function updateParentChildRelationships(itemIdByPath) {
       // Apply special fix - use the orientation assessment as parent
       parentId = orientationAssessmentId;
       specialFix = true;
+      fixSource = 'path';
       log(
-        `Applying special fix for orientation child: ${path} -> parent: ${orientationAssessmentPath}`
+        `PATH FIX: Setting orientation child ${path} parent to ${orientationAssessmentPath}`
       );
     } else {
       // Normal case - extract parent path
@@ -720,6 +990,7 @@ async function updateParentChildRelationships(itemIdByPath) {
         successCount++;
         if (specialFix) {
           specialFixCount++;
+          log(`Successfully applied ${fixSource} fix for item ${id}`);
         }
       }
     } catch (error) {
@@ -735,44 +1006,80 @@ async function updateParentChildRelationships(itemIdByPath) {
     `Completed parent-child relationship updates: ${successCount} successful (including ${specialFixCount} special fixes), ${errorCount} failed`
   );
 
-  // Verification step - check for specific orientation assessment hierarchy
-  if (orientationAssessmentId) {
-    log(`VERIFICATION: Checking final Orientation assessment hierarchy...`);
+  // Final verification for pattern-based hierarchies
+  const patternVerifications = [
+    {
+      parentPattern: 'assessment',
+      childPatterns: ['Person:', 'Place:', 'Time:', 'Situation:'],
+      description: 'Orientation assessment pattern',
+    },
+    {
+      parentPattern: 'agents:',
+      childPatterns: ['Benzodiazepines:'],
+      description: 'Medication agents pattern',
+    },
+  ];
 
+  // Verify a few key patterns to ensure they're working properly
+  for (const verification of patternVerifications) {
     try {
-      // Get the orientation assessment children from DB
-      const { data, error } = await supabase
+      // Find parent items matching this pattern
+      const { data: parentItems, error: parentError } = await supabase
         .from('checklist_items')
         .select('id, item_text')
-        .eq('parent_item_id', orientationAssessmentId);
+        .ilike('item_text', `%${verification.parentPattern}%`)
+        .limit(5);
 
-      if (error) throw error;
-
-      log(
-        `Found ${data.length} children for Orientation assessment in database:`
-      );
-      data.forEach((item) => {
-        log(` - Child item: ${item.item_text} (ID: ${item.id})`);
-      });
-
-      // Check if we have all expected children
-      const expectedChildren = ['Person:', 'Place:', 'Time:', 'Situation:'];
-      const missingChildren = expectedChildren.filter(
-        (text) => !data.some((item) => item.item_text.includes(text))
-      );
-
-      if (missingChildren.length > 0) {
+      if (!parentError && parentItems && parentItems.length > 0) {
         log(
-          `WARNING: Missing expected children: ${missingChildren.join(', ')}`,
-          'warn'
+          `VERIFICATION: Checking ${verification.description} parent-child relationships...`
         );
-      } else {
-        log(`SUCCESS: All expected children found for Orientation assessment!`);
+
+        for (const parentItem of parentItems) {
+          // Get children for this parent
+          const { data: children, error: childError } = await supabase
+            .from('checklist_items')
+            .select('id, item_text')
+            .eq('parent_item_id', parentItem.id);
+
+          if (!childError) {
+            log(
+              `Parent "${parentItem.item_text}" (ID: ${parentItem.id}) has ${
+                children?.length || 0
+              } children`
+            );
+
+            if (children && children.length > 0) {
+              // Check if expected child patterns are present
+              const foundPatterns = verification.childPatterns.filter(
+                (pattern) =>
+                  children.some((child) => child.item_text.includes(pattern))
+              );
+
+              log(
+                `Found ${foundPatterns.length}/${verification.childPatterns.length} expected child patterns`
+              );
+
+              if (foundPatterns.length === verification.childPatterns.length) {
+                log(`✓ SUCCESS: All expected children found for this pattern`);
+              } else if (foundPatterns.length > 0) {
+                log(
+                  `⚠️ PARTIAL SUCCESS: Some expected children found for this pattern`
+                );
+              } else {
+                log(
+                  `✗ FAILURE: No expected children found for this pattern`,
+                  'warn'
+                );
+              }
+            }
+          }
+        }
       }
     } catch (error) {
-      logError(
-        `Error during verification of Orientation assessment hierarchy`,
-        error
+      log(
+        `Error during verification of ${verification.description}: ${error.message}`,
+        'warn'
       );
     }
   }
