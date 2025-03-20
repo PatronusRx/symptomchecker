@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
   PlusCircle,
@@ -18,67 +18,32 @@ import {
   User,
   ChevronLeft,
   Clock,
+  ChevronUp,
 } from 'lucide-react';
+import {
+  Chapter,
+  Category,
+  Section,
+  ChecklistItem,
+  ResponseState,
+} from '../types/symptomChecker';
+import ChecklistItemComponent from './checklist/ChecklistItem';
+import CategorySelector from './checklist/CategorySelector';
+import SoapNoteDisplay from './soap/SoapNoteDisplay';
+import {
+  generateSoapNoteWithItems as generateSoapNote,
+  generateSubjectiveSectionWithItems,
+  generateObjectiveSectionWithItems,
+  generateAssessmentSectionWithItems,
+  generatePlanSectionWithItems,
+  processItemText,
+} from './soap/SoapNoteGenerationUtils';
+import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Types based on the database schema
-type Chapter = {
-  id: number;
-  chapter_number: number;
-  title: string;
-};
-
-type Category = {
-  id: number;
-  category_number: number;
-  title: string;
-  display_order: number;
-};
-
-type Section = {
-  id: number;
-  chapter_id: number;
-  category_id: number;
-  title: string;
-  display_order: number;
-};
-
-type ChecklistItem = {
-  id: number;
-  section_id: number;
-  parent_item_id: number | null;
-  display_order: number;
-  item_text: string;
-  indent_level: number;
-  is_header: boolean;
-  header_level: number | null;
-  has_text_input: boolean;
-  input_label: string | null;
-  input_placeholder: string | null;
-  input_unit: string | null;
-  icd10_code: string | null;
-  // UI state properties
-  isCompleted?: boolean;
-  response?: '+' | '-' | 'NA' | null;
-  notes?: string;
-  selectedOptions?: { [key: string]: string | string[] };
-  detailNotes?: { [key: string]: string };
-  childItems?: ChecklistItem[];
-  isExpanded?: boolean;
-};
-
-// State type for tracking responses
-type ResponseState = {
-  [key: number]: {
-    response: '+' | '-' | 'NA' | null;
-    notes: string;
-    selected_options?: { [key: string]: string | string[] };
-  };
-};
 
 // Define props for the component
 interface DynamicSymptomCheckerProps {
@@ -126,7 +91,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   });
 
   // Fetch data from Supabase
-  // Inside the existing useEffect that fetches data (around line 146)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -208,13 +172,25 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           // Add debug log here after fetching checklist items
           console.log('Items data:', itemsData);
 
+          // Count items with parent relationships for debugging
+          const itemsWithParents = (itemsData || []).filter(
+            (item) => item.parent_item_id !== null
+          );
+          console.log(
+            `Found ${
+              itemsWithParents.length
+            } items with parent relationships out of ${
+              itemsData?.length || 0
+            } total items`
+          );
+
           // Initialize with isCompleted property
           const initializedItems = (itemsData || []).map((item) => ({
             ...item,
             isCompleted: false,
             response: null,
             notes: '',
-            isExpanded: false,
+            isExpanded: true, // Default to expanded for better visibility
           }));
 
           setChecklistItems(initializedItems);
@@ -240,7 +216,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       setChecklistItems((items) =>
         items.map((item) => ({
           ...item,
-          isExpanded: false, // Start collapsed, change to true if you want them expanded by default
+          isExpanded: true, // Start expanded for better visibility
         }))
       );
 
@@ -255,21 +231,33 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   }, [loading, checklistItems.length]);
 
   // Build nested hierarchy of checklist items
-  const buildNestedItemsHierarchy = (items: ChecklistItem[]) => {
+  const buildNestedItemsHierarchy = useCallback((items: ChecklistItem[]) => {
     // Map for quick item lookup by ID
     const itemMap = new Map<number, ChecklistItem>();
 
-    // First create all items with empty children arrays and preserve existing expansion state
+    // First pass: create all items with empty children arrays
     items.forEach((item) => {
+      // Create a clean copy with childItems array and preserve expansion state
       itemMap.set(item.id, {
         ...item,
         childItems: [],
-        // Initialize with existing expansion state or default to false
-        isExpanded: item.isExpanded !== undefined ? item.isExpanded : false,
+        // Keep existing expansion state or default to expanded
+        isExpanded: item.isExpanded !== undefined ? item.isExpanded : true,
       });
     });
 
-    // Build the tree
+    // For debugging: check all parent IDs exist
+    const missingParents = items
+      .filter((item) => item.parent_item_id !== null)
+      .filter((item) => !itemMap.has(item.parent_item_id));
+
+    if (missingParents.length > 0) {
+      console.warn(
+        `Warning: Found ${missingParents.length} items with missing parent references`
+      );
+    }
+
+    // Second pass: build the tree
     const rootItems: ChecklistItem[] = [];
 
     // Attach children to parents
@@ -290,7 +278,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           parent.childItems.push(mappedItem);
         }
       } else {
-        // Orphaned item - attach to root level
+        // Orphaned item (parent doesn't exist) - attach to root level
+        console.warn(
+          `Item ${item.id} (${item.item_text}) has parent_item_id ${item.parent_item_id} which doesn't exist - attaching to root`
+        );
         rootItems.push(mappedItem);
       }
     });
@@ -306,917 +297,269 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     };
 
     sortChildren(rootItems);
+
+    // Log the resulting hierarchy for debugging
+    console.log(`Built hierarchy with ${rootItems.length} root items`);
+
     return rootItems;
-  };
+  }, []);
 
   // Get items for the active category
-  const getItemsByCategory = (categoryId: number | null) => {
-    if (!categoryId) return [];
+  const getItemsByCategory = useCallback(
+    (categoryId: number | null) => {
+      if (!categoryId) return [];
 
-    // Get sections for this category
-    const categorySections = sections.filter(
-      (section) => section.category_id === categoryId
-    );
+      // Get sections for this category
+      const categorySections = sections.filter(
+        (section) => section.category_id === categoryId
+      );
 
-    // Get checklist items for these sections
-    return checklistItems.filter((item) =>
-      categorySections.some((section) => section.id === item.section_id)
-    );
-  };
+      // Get checklist items for these sections
+      return checklistItems.filter((item) =>
+        categorySections.some((section) => section.id === item.section_id)
+      );
+    },
+    [checklistItems, sections]
+  );
 
   // Group items by section for the active category
-  const getItemsBySectionForCategory = (categoryId: number | null) => {
-    if (!categoryId) return [];
+  const getItemsBySectionForCategory = useCallback(
+    (categoryId: number | null) => {
+      if (!categoryId) return [];
 
-    // Get sections for this category
-    const categorySections = sections
-      .filter((section) => section.category_id === categoryId)
-      .sort((a, b) => a.display_order - b.display_order);
+      // Get sections for this category
+      const categorySections = sections
+        .filter((section) => section.category_id === categoryId)
+        .sort((a, b) => a.display_order - b.display_order);
 
-    // Create an array of sections with their items
-    return categorySections
-      .map((section) => {
-        // Get all items for this section
-        const sectionItems = checklistItems
-          .filter((item) => item.section_id === section.id)
-          .sort((a, b) => a.display_order - b.display_order);
+      // Create an array of sections with their items
+      return categorySections
+        .map((section) => {
+          // Get all items for this section
+          const sectionItems = checklistItems
+            .filter((item) => item.section_id === section.id)
+            .sort((a, b) => a.display_order - b.display_order);
 
-        // Create an organized hierarchy of items
-        const nestedItems = buildNestedItemsHierarchy(sectionItems);
+          // Create an organized hierarchy of items
+          const nestedItems = buildNestedItemsHierarchy(sectionItems);
 
-        return {
-          section,
-          items: nestedItems,
-        };
-      })
-      .filter((group) => group.items.length > 0); // Only include sections with items
-  };
-
-  // Helper function to process item text and replace underscores with notes
-  const processItemText = (
-    item: ChecklistItem,
-    makeLowercase = true
-  ): string => {
-    let text = makeLowercase ? item.item_text.toLowerCase() : item.item_text;
-
-    // Check if the item text contains underscores
-    if (text.includes('___')) {
-      if (item.notes && item.notes.trim() !== '') {
-        // Replace all underscore sequences with the user's notes
-        text = text.replace(/_{2,}/g, item.notes);
-      } else {
-        // If no notes, remove the underscores
-        text = text.replace(/\s*_{2,}\s*/g, ' ').trim();
-      }
-    } else if (item.notes && item.notes.trim() !== '') {
-      // If no underscores but notes exist, append them without parentheses
-      text += ` ${item.notes}`;
-    }
-
-    return text;
-  };
-
-  // Handle response change (+/-/NA)
-  const handleResponseChange = (
-    itemId: number,
-    value: '+' | '-' | 'NA' | null
-  ) => {
-    // Update the responses state
-    setResponses((prev) => ({
-      ...prev,
-      [itemId]: {
-        ...prev[itemId],
-        response: value,
-      },
-    }));
-
-    // Also update the checklistItems to mark as completed
-    const updatedItems = [...checklistItems];
-    const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
-
-    if (itemIndex !== -1) {
-      updatedItems[itemIndex] = {
-        ...updatedItems[itemIndex],
-        response: value,
-        isCompleted: true,
-      };
-
-      // Update state
-      setChecklistItems(updatedItems);
-
-      // Immediately regenerate SOAP note with the updated items
-      const updatedNote = generateSoapNoteWithItems(updatedItems);
-      setGeneratedNote(updatedNote);
-    }
-
-    // Trigger autosave
-    triggerAutosave();
-  };
-
-  // Handle notes change
-  const handleNotesChange = (itemId: number, notes: string) => {
-    setResponses((prev) => ({
-      ...prev,
-      [itemId]: {
-        ...prev[itemId],
-        notes,
-      },
-    }));
-
-    // Also update in checklistItems
-    const updatedItems = [...checklistItems];
-    const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
-
-    if (itemIndex !== -1) {
-      updatedItems[itemIndex] = {
-        ...updatedItems[itemIndex],
-        notes,
-      };
-
-      // Update state
-      setChecklistItems(updatedItems);
-
-      // Immediately regenerate SOAP note with the updated items
-      const updatedNote = generateSoapNoteWithItems(updatedItems);
-      setGeneratedNote(updatedNote);
-    }
-
-    // Trigger autosave
-    triggerAutosave();
-  };
-
-  // Toggle item expansion state
-  const toggleItemExpansion = (itemId: number) => {
-    setChecklistItems((prevItems) => {
-      // Create a deep copy to ensure we don't mutate state
-      return prevItems.map((item) => {
-        if (item.id === itemId) {
-          // Toggle expansion state for the clicked item
-          return { ...item, isExpanded: !item.isExpanded };
-        }
-        return item;
-      });
-    });
-  };
-
-  // Handle detail option selection
-  const handleDetailOptionChange = (
-    itemId: number,
-    detailKey: string,
-    option: string,
-    isSelected: boolean
-  ) => {
-    setChecklistItems((items) =>
-      items.map((item) => {
-        if (item.id === itemId) {
-          // Initialize selectedOptions if not existing
-          const currentSelectedOptions = item.selectedOptions || {};
-
-          // Get the current options for this detail key
-          const currentOptions = currentSelectedOptions[detailKey] || [];
-
-          let updatedOptions;
-
-          if (Array.isArray(currentOptions)) {
-            // For multi-select details
-            if (isSelected) {
-              // Add to array if not already there
-              updatedOptions = currentOptions.includes(option)
-                ? currentOptions
-                : [...currentOptions, option];
-            } else {
-              // Remove from array if present
-              updatedOptions = currentOptions.filter((opt) => opt !== option);
-            }
-          } else {
-            // For single-select details
-            updatedOptions = isSelected ? option : '';
-          }
-
-          const updatedItem = {
-            ...item,
-            selectedOptions: {
-              ...currentSelectedOptions,
-              [detailKey]: updatedOptions,
-            },
+          return {
+            section,
+            items: nestedItems,
           };
-
-          return updatedItem;
-        }
-        return item;
-      })
-    );
-
-    // Immediately regenerate SOAP note with the updated items
-    setTimeout(() => {
-      const updatedNote = generateSoapNoteWithItems(checklistItems);
-      setGeneratedNote(updatedNote);
-    }, 0);
-  };
-
-  // Handle detail notes change
-  const handleDetailNoteChange = (
-    itemId: number,
-    detailKey: string,
-    option: string,
-    note: string
-  ) => {
-    setChecklistItems((items) =>
-      items.map((item) => {
-        if (item.id === itemId) {
-          // Initialize detail notes if not existing
-          const currentDetailNotes = item.detailNotes || {};
-
-          const updatedItem = {
-            ...item,
-            detailNotes: {
-              ...currentDetailNotes,
-              [`${detailKey}-${option}`]: note,
-            },
-          };
-
-          return updatedItem;
-        }
-        return item;
-      })
-    );
-
-    // Immediately regenerate SOAP note with the updated items
-    setTimeout(() => {
-      const updatedNote = generateSoapNoteWithItems(checklistItems);
-      setGeneratedNote(updatedNote);
-    }, 0);
-  };
+        })
+        .filter((group) => group.items.length > 0); // Only include sections with items
+    },
+    [checklistItems, sections, buildNestedItemsHierarchy]
+  );
 
   // Trigger autosave animation
-  const triggerAutosave = () => {
+  const triggerAutosave = useCallback(() => {
     setIsAutoSaving(true);
     setTimeout(() => {
       setIsAutoSaving(false);
     }, 1500);
-  };
+  }, []);
 
-  // Generate SOAP note
-  const generateSoapNote = () => {
-    // Generate each section of the SOAP note
-    const subjective = generateSubjectiveSection();
-    const objective = generateObjectiveSection();
-    const assessment = generateAssessmentSection();
-    const plan = generatePlanSection();
+  // Handle response change (+/-/NA)
+  const handleResponseChange = useCallback(
+    (itemId: number, value: '+' | '-' | 'NA' | null) => {
+      // Update the responses state
+      setResponses((prev) => ({
+        ...prev,
+        [itemId]: {
+          ...prev[itemId],
+          response: value,
+        },
+      }));
 
-    // Set the complete SOAP note
-    setGeneratedNote({
-      subjective,
-      objective,
-      assessment,
-      plan,
-    });
+      // Also update the checklistItems to mark as completed
+      const updatedItems = [...checklistItems];
+      const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
 
-    // Return the full note text for clipboard copying
-    return {
-      subjective,
-      objective,
-      assessment,
-      plan,
-    };
-  };
+      if (itemIndex !== -1) {
+        updatedItems[itemIndex] = {
+          ...updatedItems[itemIndex],
+          response: value,
+          isCompleted: true,
+        };
 
-  // Generate SOAP note with specific items (for immediate updates)
-  const generateSoapNoteWithItems = (items: ChecklistItem[]) => {
-    // Generate each section of the SOAP note
-    const subjective = generateSubjectiveSectionWithItems(items);
-    const objective = generateObjectiveSectionWithItems(items);
-    const assessment = generateAssessmentSectionWithItems(items);
-    const plan = generatePlanSectionWithItems(items);
+        // Update state
+        setChecklistItems(updatedItems);
 
-    // Return the complete SOAP note
-    return {
-      subjective,
-      objective,
-      assessment,
-      plan,
-    };
-  };
+        // Immediately regenerate SOAP note with the updated items
+        const updatedNote = generateSoapNote(updatedItems);
+        setGeneratedNote(updatedNote);
+      }
 
-  // Helper methods for SOAP note generation
-  const generateSubjectiveSection = () => {
-    return generateSubjectiveSectionWithItems(checklistItems);
-  };
+      // Trigger autosave
+      triggerAutosave();
+    },
+    [checklistItems, setResponses, triggerAutosave]
+  );
 
-  const generateSubjectiveSectionWithItems = (items: ChecklistItem[]) => {
-    // Start with patient's chief complaint
-    let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
-      duration || 'unspecified'
-    } duration.\n\n`;
+  // Handle notes change
+  const handleNotesChange = useCallback(
+    (itemId: number, notes: string) => {
+      setResponses((prev) => ({
+        ...prev,
+        [itemId]: {
+          ...prev[itemId],
+          notes,
+        },
+      }));
 
-    // Define subjective categories in the exact order they should appear
-    const subjectiveCategories = [
-      'history',
-      'alarm features',
-      'medications',
-      'diet',
-      'review of systems',
-      'collateral history',
-      'risk factors',
-      'past medical history',
-    ];
+      // Also update in checklistItems
+      const updatedItems = [...checklistItems];
+      const itemIndex = updatedItems.findIndex((item) => item.id === itemId);
 
-    // Get all positive and negative findings from all sections
-    const relevantItems = items.filter(
-      (item) => item.response === '+' || item.response === '-'
-    );
+      if (itemIndex !== -1) {
+        updatedItems[itemIndex] = {
+          ...updatedItems[itemIndex],
+          notes,
+        };
 
-    // Store which items belong to which categories for deduplication
-    const categoryItemMap = new Map<string, Set<number>>();
+        // Update state
+        setChecklistItems(updatedItems);
 
-    // Preprocess to determine which items belong to which categories
-    subjectiveCategories.forEach((categoryTerm) => {
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
+        // Immediately regenerate SOAP note with the updated items
+        const updatedNote = generateSoapNote(updatedItems);
+        setGeneratedNote(updatedNote);
+      }
 
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
+      // Trigger autosave
+      triggerAutosave();
+    },
+    [checklistItems, setResponses, triggerAutosave]
+  );
 
-      const categoryItems = relevantItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
+  // Toggle item expansion state
+  const toggleItemExpansion = useCallback(
+    (itemId: number) => {
+      // First create a deep copy of all items to avoid mutation issues
+      const allItems = [...checklistItems];
 
-      // Store item IDs for this category
-      categoryItemMap.set(
-        categoryTerm,
-        new Set(categoryItems.map((item) => item.id))
-      );
-    });
-
-    // Deduplication: check for items that appear in multiple categories
-    // For 'history' and 'past medical history' overlap:
-    if (
-      categoryItemMap.has('history') &&
-      categoryItemMap.has('past medical history')
-    ) {
-      const historyItems = categoryItemMap.get('history')!;
-      const pastMedicalItems = categoryItemMap.get('past medical history')!;
-
-      // Find duplicate items
-      const duplicateItems = new Set<number>();
-      historyItems.forEach((itemId) => {
-        if (pastMedicalItems.has(itemId)) {
-          duplicateItems.add(itemId);
-        }
-      });
-
-      // Remove duplicates from the general history category
-      duplicateItems.forEach((itemId) => {
-        historyItems.delete(itemId);
-      });
-
-      categoryItemMap.set('history', historyItems);
-    }
-
-    // Find all categories that have items after deduplication
-    const categoriesWithItems = subjectiveCategories.filter((categoryTerm) => {
-      const categoryItems = categoryItemMap.get(categoryTerm);
-      return categoryItems && categoryItems.size > 0;
-    });
-
-    // Process each category in the defined order
-    for (let i = 0; i < subjectiveCategories.length; i++) {
-      const categoryTerm = subjectiveCategories[i];
-
-      // Skip if this category has no items after deduplication
-      const categoryItemIds = categoryItemMap.get(categoryTerm);
-      if (!categoryItemIds || categoryItemIds.size === 0) continue;
-
-      // Find categories that match this term
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) continue;
-
-      // Get sections that belong to this category
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
-
-      if (categorySections.length === 0) continue;
-
-      // Get items for these sections that are in our deduplicated set
-      const categoryItems = relevantItems.filter(
-        (item) =>
-          categoryItemIds.has(item.id) &&
-          categorySections.some((section) => section.id === item.section_id)
-      );
-
-      if (categoryItems.length === 0) continue;
-
-      // Add category header (capitalize first letter)
-      const displayCategoryName =
-        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
-      section += `${displayCategoryName}:\n`;
-
-      // Group items by their section
-      const sectionGroups = new Map();
-      categoryItems.forEach((item: ChecklistItem) => {
-        const sectionId = item.section_id;
-        if (!sectionGroups.has(sectionId)) {
-          const section = categorySections.find((s) => s.id === sectionId);
-          sectionGroups.set(sectionId, {
-            section,
-            positiveItems: [],
-            negativeItems: [],
-          });
-        }
-
-        const group = sectionGroups.get(sectionId);
-        if (item.response === '+') {
-          group.positiveItems.push(item);
-        } else if (item.response === '-') {
-          group.negativeItems.push(item);
-        }
-      });
-
-      // Format each section's findings
-      sectionGroups.forEach((group) => {
-        if (
-          group.section &&
-          (group.positiveItems.length > 0 || group.negativeItems.length > 0)
-        ) {
-          section += `\n${group.section.title}: `;
-
-          // Add positive findings
-          if (group.positiveItems.length > 0) {
-            section += `Patient reports ${group.positiveItems
-              .map((item: ChecklistItem) => {
-                const text = processItemText(item);
-                return text;
-              })
-              .join(', ')}.`;
+      // Find and update the specific item
+      const updateItem = (items) => {
+        return items.map((item) => {
+          if (item.id === itemId) {
+            // Found the item, toggle its expansion state
+            return { ...item, isExpanded: !item.isExpanded };
           }
+          return item;
+        });
+      };
 
-          // Add negative findings
-          if (group.negativeItems.length > 0) {
-            if (group.positiveItems.length > 0) {
-              section += ' ';
+      // Update the actual checklist items in state
+      setChecklistItems(updateItem(allItems));
+
+      // Log for debugging
+      console.log(`Toggled expansion for item ${itemId}`);
+    },
+    [checklistItems]
+  );
+
+  // Handle detail option selection
+  const handleDetailOptionChange = useCallback(
+    (
+      itemId: number,
+      detailKey: string,
+      option: string,
+      isSelected: boolean
+    ) => {
+      setChecklistItems((items) =>
+        items.map((item) => {
+          if (item.id === itemId) {
+            // Initialize selectedOptions if not existing
+            const currentSelectedOptions = item.selectedOptions || {};
+
+            // Get the current options for this detail key
+            const currentOptions = currentSelectedOptions[detailKey] || [];
+
+            let updatedOptions;
+
+            if (Array.isArray(currentOptions)) {
+              // For multi-select details
+              if (isSelected) {
+                // Add to array if not already there
+                updatedOptions = currentOptions.includes(option)
+                  ? currentOptions
+                  : [...currentOptions, option];
+              } else {
+                // Remove from array if present
+                updatedOptions = currentOptions.filter((opt) => opt !== option);
+              }
+            } else {
+              // For single-select details
+              updatedOptions = isSelected ? option : '';
             }
-            section += `Patient denies ${group.negativeItems
-              .map((item: ChecklistItem) => {
-                const text = processItemText(item);
-                return text;
-              })
-              .join(', ')}.`;
+
+            const updatedItem = {
+              ...item,
+              selectedOptions: {
+                ...currentSelectedOptions,
+                [detailKey]: updatedOptions,
+              },
+            };
+
+            return updatedItem;
           }
-        }
-      });
-
-      // Check if this is the last category with items
-      const isLastCategoryWithItems =
-        categoriesWithItems.indexOf(categoryTerm) ===
-        categoriesWithItems.length - 1;
-
-      // Add spacing between categories - only add a single newline after each category
-      // and an extra newline between different categories
-      if (!isLastCategoryWithItems) {
-        section += '\n\n';
-      } else {
-        // For the last category, just add a single newline at the end
-        section += '\n';
-      }
-    }
-
-    return section;
-  };
-
-  const generateObjectiveSection = () => {
-    return generateObjectiveSectionWithItems(checklistItems);
-  };
-
-  const generateObjectiveSectionWithItems = (items: ChecklistItem[]) => {
-    // Start with a brief introduction
-    let section = 'On examination:\n\n';
-
-    // Define objective categories in the exact order they should appear
-    const objectiveCategories = [
-      'physical exam',
-      'examination',
-      'lab studies',
-      'imaging',
-      'special tests',
-      'ecg',
-    ];
-
-    // Get all positive findings from all sections
-    const relevantItems = items.filter((item) => item.response === '+');
-
-    // Find all categories that have items
-    const categoriesWithItems = objectiveCategories.filter((categoryTerm) => {
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) return false;
-
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
-
-      if (categorySections.length === 0) return false;
-
-      return relevantItems.some((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-    });
-
-    if (categoriesWithItems.length === 0) {
-      return 'No significant objective findings documented.';
-    }
-
-    // Process each category in the defined order
-    for (let i = 0; i < objectiveCategories.length; i++) {
-      const categoryTerm = objectiveCategories[i];
-
-      // Find categories that match this term
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) continue;
-
-      // Get sections that belong to this category
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
-
-      if (categorySections.length === 0) continue;
-
-      // Get items for these sections
-      const categoryItems = relevantItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-
-      if (categoryItems.length === 0) continue;
-
-      // Add category header (capitalize first letter)
-      const displayCategoryName =
-        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
-      section += `${displayCategoryName}:\n`;
-
-      // Group items by their section
-      const sectionGroups = new Map();
-      categoryItems.forEach((item: ChecklistItem) => {
-        const sectionId = item.section_id;
-        if (!sectionGroups.has(sectionId)) {
-          const section = categorySections.find((s) => s.id === sectionId);
-          sectionGroups.set(sectionId, {
-            section,
-            items: [],
-          });
-        }
-
-        const group = sectionGroups.get(sectionId);
-        group.items.push(item);
-      });
-
-      // Format each section's findings
-      sectionGroups.forEach((group) => {
-        if (group.section && group.items.length > 0) {
-          section += `\n${group.section.title}: `;
-
-          const itemsList = group.items
-            .map((item: ChecklistItem) => {
-              return processItemText(item);
-            })
-            .join(', ');
-
-          section += itemsList + '.';
-        }
-      });
-
-      // Check if this is the last category with items
-      const isLastCategoryWithItems =
-        categoriesWithItems.indexOf(categoryTerm) ===
-        categoriesWithItems.length - 1;
-
-      // Add spacing between categories - only add a single newline after each category
-      // and an extra newline between different categories
-      if (!isLastCategoryWithItems) {
-        section += '\n\n';
-      } else {
-        // For the last category, just add a single newline at the end
-        section += '\n';
-      }
-    }
-
-    return section;
-  };
-
-  const generateAssessmentSection = () => {
-    return generateAssessmentSectionWithItems(checklistItems);
-  };
-
-  const generateAssessmentSectionWithItems = (items: ChecklistItem[]) => {
-    // Start with patient's chief complaint
-    let section = `Patient presents with ${chapter?.title || 'symptoms'} of ${
-      duration || 'unspecified'
-    } duration.\n\n`;
-
-    // Define assessment categories in the exact order they should appear
-    const assessmentCategories = [
-      'differential diagnosis',
-      'assessment',
-      'diagnosis',
-    ];
-
-    // Get all positive findings from all sections
-    const relevantItems = items.filter((item) => item.response === '+');
-
-    // Track which items have been included already
-    const processedItemIds = new Set<number>();
-
-    // Find all categories that have items
-    const categoriesWithItems = assessmentCategories.filter((categoryTerm) => {
-      const matchingCategoryIds = categories
-        .filter((category) => {
-          const categoryTitle = category.title.toLowerCase();
-
-          // For "diagnosis", match only if it's exactly "diagnosis", not "differential diagnosis"
-          if (categoryTerm === 'diagnosis') {
-            return (
-              categoryTitle === 'diagnosis' ||
-              (categoryTitle.includes('diagnosis') &&
-                !categoryTitle.includes('differential'))
-            );
-          }
-
-          return categoryTitle.includes(categoryTerm.toLowerCase());
+          return item;
         })
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) return false;
-
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
       );
 
-      if (categorySections.length === 0) return false;
+      // Immediately regenerate SOAP note with the updated items
+      setTimeout(() => {
+        const updatedNote = generateSoapNote(checklistItems);
+        setGeneratedNote(updatedNote);
+      }, 0);
+    },
+    [checklistItems]
+  );
 
-      return relevantItems.some((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-    });
+  // Handle detail notes change
+  const handleDetailNoteChange = useCallback(
+    (itemId: number, detailKey: string, option: string, note: string) => {
+      setChecklistItems((items) =>
+        items.map((item) => {
+          if (item.id === itemId) {
+            // Initialize detail notes if not existing
+            const currentDetailNotes = item.detailNotes || {};
 
-    if (categoriesWithItems.length === 0) {
-      return `${section}Differential diagnoses pending further evaluation.`;
-    }
+            const updatedItem = {
+              ...item,
+              detailNotes: {
+                ...currentDetailNotes,
+                [`${detailKey}-${option}`]: note,
+              },
+            };
 
-    // Process each category in the defined order
-    for (let i = 0; i < assessmentCategories.length; i++) {
-      const categoryTerm = assessmentCategories[i];
-
-      // Find categories that match this term
-      const matchingCategoryIds = categories
-        .filter((category) => {
-          const categoryTitle = category.title.toLowerCase();
-
-          // For "diagnosis", match only if it's exactly "diagnosis", not "differential diagnosis"
-          if (categoryTerm === 'diagnosis') {
-            return (
-              categoryTitle === 'diagnosis' ||
-              (categoryTitle.includes('diagnosis') &&
-                !categoryTitle.includes('differential'))
-            );
+            return updatedItem;
           }
-
-          return categoryTitle.includes(categoryTerm.toLowerCase());
+          return item;
         })
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) continue;
-
-      // Get sections that belong to this category
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
       );
 
-      if (categorySections.length === 0) continue;
-
-      // Get items for these sections that haven't been processed already
-      const categoryItems = relevantItems.filter(
-        (item) =>
-          !processedItemIds.has(item.id) &&
-          categorySections.some((section) => section.id === item.section_id)
-      );
-
-      if (categoryItems.length === 0) continue;
-
-      // Mark these items as processed
-      categoryItems.forEach((item) => processedItemIds.add(item.id));
-
-      // Add category header (capitalize first letter)
-      const displayCategoryName =
-        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
-      section += `${displayCategoryName}:`;
-
-      // Group items by their section
-      const sectionGroups = new Map();
-      categoryItems.forEach((item: ChecklistItem) => {
-        const sectionId = item.section_id;
-        if (!sectionGroups.has(sectionId)) {
-          const section = categorySections.find((s) => s.id === sectionId);
-          sectionGroups.set(sectionId, {
-            section,
-            items: [],
-          });
-        }
-
-        const group = sectionGroups.get(sectionId);
-        group.items.push(item);
-      });
-
-      // Format each section's findings
-      const sectionGroupsArray = Array.from(sectionGroups.values());
-      sectionGroupsArray.forEach((group, sectionIndex) => {
-        if (group.section && group.items.length > 0) {
-          let sectionText = ` ${group.section.title}: `;
-
-          const itemsList = group.items
-            .map((item: ChecklistItem) => {
-              return processItemText(item, false);
-            })
-            .join(', ');
-
-          sectionText += itemsList + '.';
-          section += sectionText;
-
-          // Add a newline between sections within the same category
-          if (sectionIndex < sectionGroupsArray.length - 1) {
-            section += '\n\n';
-          }
-        }
-      });
-
-      // Check if this is the last category with items
-      const isLastCategoryWithItems =
-        categoriesWithItems.indexOf(categoryTerm) ===
-        categoriesWithItems.length - 1;
-
-      // Add spacing between categories
-      if (!isLastCategoryWithItems) {
-        section += '\n\n';
-      } else {
-        // For the last category, just add a single newline at the end
-        section += '\n';
-      }
-    }
-
-    return section;
-  };
-
-  const generatePlanSection = () => {
-    return generatePlanSectionWithItems(checklistItems);
-  };
-
-  const generatePlanSectionWithItems = (items: ChecklistItem[]) => {
-    // Start with a brief introduction
-    let section = 'The management plan includes:\n\n';
-
-    // Define plan categories in the exact order they should appear
-    const planCategories = ['plan', 'disposition', 'patient education'];
-
-    // Get all positive findings from all sections
-    const relevantItems = items.filter((item) => item.response === '+');
-
-    // Find all categories that have items
-    const categoriesWithItems = planCategories.filter((categoryTerm) => {
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) return false;
-
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
-
-      if (categorySections.length === 0) return false;
-
-      return relevantItems.some((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-    });
-
-    // If no plan items found, add default recommendations
-    if (categoriesWithItems.length === 0) {
-      section +=
-        '• Appropriate diagnostic tests based on clinical presentation\n';
-      section += '• Symptomatic management\n';
-      section += '• Follow-up evaluation based on symptom progression';
-      return section;
-    }
-
-    // Process each category in the defined order
-    for (let i = 0; i < planCategories.length; i++) {
-      const categoryTerm = planCategories[i];
-
-      // Find categories that match this term
-      const matchingCategoryIds = categories
-        .filter((category) =>
-          category.title.toLowerCase().includes(categoryTerm.toLowerCase())
-        )
-        .map((category) => category.id);
-
-      if (matchingCategoryIds.length === 0) continue;
-
-      // Get sections that belong to this category
-      const categorySections = sections.filter((section) =>
-        matchingCategoryIds.includes(section.category_id)
-      );
-
-      if (categorySections.length === 0) continue;
-
-      // Get items for these sections
-      const categoryItems = relevantItems.filter((item) =>
-        categorySections.some((section) => section.id === item.section_id)
-      );
-
-      if (categoryItems.length === 0) continue;
-
-      // Add category header (capitalize first letter)
-      const displayCategoryName =
-        categoryTerm.charAt(0).toUpperCase() + categoryTerm.slice(1);
-      section += `${displayCategoryName}:\n`;
-
-      // Group items by their section
-      const sectionGroups = new Map();
-      categoryItems.forEach((item: ChecklistItem) => {
-        const sectionId = item.section_id;
-        if (!sectionGroups.has(sectionId)) {
-          const section = categorySections.find((s) => s.id === sectionId);
-          sectionGroups.set(sectionId, {
-            section,
-            items: [],
-          });
-        }
-
-        const group = sectionGroups.get(sectionId);
-        group.items.push(item);
-      });
-
-      // Format each section's findings
-      sectionGroups.forEach((group) => {
-        if (group.section && group.items.length > 0) {
-          section += `\n${group.section.title}: `;
-
-          const itemsList = group.items
-            .map((item: ChecklistItem) => {
-              return processItemText(item);
-            })
-            .join(', ');
-
-          section += itemsList + '.';
-        }
-      });
-
-      // Check if this is the last category with items
-      const isLastCategoryWithItems =
-        categoriesWithItems.indexOf(categoryTerm) ===
-        categoriesWithItems.length - 1;
-
-      // Add spacing between categories
-      if (!isLastCategoryWithItems) {
-        section += '\n\n';
-      } else {
-        // For the last category, just add a single newline at the end
-        section += '\n';
-      }
-    }
-
-    return section;
-  };
+      // Immediately regenerate SOAP note with the updated items
+      setTimeout(() => {
+        const updatedNote = generateSoapNote(checklistItems);
+        setGeneratedNote(updatedNote);
+      }, 0);
+    },
+    [checklistItems]
+  );
 
   // Calculate completion percentage
-  const calculateCompletion = () => {
+  const calculateCompletion = useCallback(() => {
     const completedItems = checklistItems.filter(
       (item) => item.isCompleted
     ).length;
     const totalItems = checklistItems.length;
     return totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
-  };
+  }, [checklistItems]);
 
   // Handle copy to clipboard
-  const copyToClipboard = () => {
+  const copyToClipboard = useCallback(() => {
     const soapText = `SOAP NOTE - ${patientInfo.name} (${patientInfo.mrn}) - ${
       patientInfo.visitDate
     }
@@ -1241,10 +584,10 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
       .catch((err) => {
         console.error('Failed to copy: ', err);
       });
-  };
+  }, [patientInfo, generatedNote]);
 
   // Clear all responses (new patient)
-  const clearAllResponses = () => {
+  const clearAllResponses = useCallback(() => {
     if (
       window.confirm(
         'Are you sure you want to clear all responses? This will reset the form for a new patient.'
@@ -1273,160 +616,57 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
       setDuration('');
     }
-  };
+  }, []);
 
   // Check if category has any completed questions
-  const hasCategoryCompletedItems = (categoryId: number) => {
-    const categoryItems = getItemsByCategory(categoryId);
-    return categoryItems.some((item) => item.isCompleted);
+  const hasCategoryCompletedItems = useCallback(
+    (categoryId: number) => {
+      const categoryItems = getItemsByCategory(categoryId);
+      return categoryItems.some((item) => item.isCompleted);
+    },
+    [getItemsByCategory]
+  );
+
+  // Render function for checklist items (updated to use component)
+  const renderChecklistItem = useCallback(
+    (item: ChecklistItem, depth = 0) => {
+      return (
+        <ChecklistItemComponent
+          key={item.id}
+          item={item}
+          handleResponseChange={handleResponseChange}
+          handleNotesChange={handleNotesChange}
+          toggleItemExpansion={toggleItemExpansion}
+          renderChecklistItem={renderChecklistItem}
+          processItemText={processItemText}
+          depth={depth}
+        />
+      );
+    },
+    [handleResponseChange, handleNotesChange, toggleItemExpansion]
+  );
+
+  // Replace the inline SOAP note generation methods with the imported ones
+  const generateSoapNote = () => {
+    const noteData = SoapNoteGenerator.generateNote(
+      checklistItems,
+      categories,
+      sections,
+      chapter,
+      duration
+    );
+    setGeneratedNote(noteData);
+    return noteData;
   };
 
-  // Recursive checklist item rendering function
-  const renderChecklistItem = (item: ChecklistItem, depth = 0) => {
-    // Determine border color based on response
-    let borderColorClass = 'border-gray-100';
-    if (item.response === '+') {
-      borderColorClass = 'border-green-200';
-    } else if (item.response === '-') {
-      borderColorClass = 'border-red-200';
-    } else if (item.response === 'NA') {
-      borderColorClass = 'border-gray-300';
-    }
-
-    // Special styling for header items
-    const isHeader = item.is_header;
-
-    // Indentation style based on depth
-    const indentClass = depth > 0 ? `ml-${Math.min(depth * 4, 12)}` : ''; // max indent of ml-12
-
-    // Check if this item has children
-    const hasChildren = item.childItems && item.childItems.length > 0;
-
-    return (
-      <div key={item.id} className={indentClass}>
-        {isHeader ? (
-          // Render header-style item
-          <div className="px-3 py-2 bg-gray-100 rounded-md mt-4 mb-2 text-gray-800 font-medium">
-            {item.item_text}
-          </div>
-        ) : (
-          // Render regular checklist item
-          <div
-            className={`p-4 hover:bg-gray-50 transition-all duration-150 rounded-md mb-3 shadow-sm border-l-4 ${borderColorClass} border border-gray-100`}
-          >
-            <div className="flex flex-wrap items-start mb-2">
-              <div className="flex-1 mr-2">
-                <div className="text-gray-900 font-medium mb-1">
-                  {item.item_text}
-                </div>
-              </div>
-
-              <div className="flex space-x-1">
-                <button
-                  className={`p-1 rounded-full ${
-                    item.response === '+'
-                      ? 'bg-green-100 text-green-700 border-2 border-green-500'
-                      : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
-                  }`}
-                  onClick={() =>
-                    handleResponseChange(
-                      item.id,
-                      item.response === '+' ? null : '+'
-                    )
-                  }
-                  title="Present / Yes"
-                >
-                  <PlusCircle size={18} />
-                </button>
-                <button
-                  className={`p-1 rounded-full ${
-                    item.response === '-'
-                      ? 'bg-red-100 text-red-700 border-2 border-red-500'
-                      : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
-                  }`}
-                  onClick={() =>
-                    handleResponseChange(
-                      item.id,
-                      item.response === '-' ? null : '-'
-                    )
-                  }
-                  title="Absent / No"
-                >
-                  <MinusCircle size={18} />
-                </button>
-                <button
-                  className={`p-1 rounded-full ${
-                    item.response === 'NA'
-                      ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                  onClick={() =>
-                    handleResponseChange(
-                      item.id,
-                      item.response === 'NA' ? null : 'NA'
-                    )
-                  }
-                  title="Not Applicable"
-                >
-                  <HelpCircle size={18} />
-                </button>
-
-                {/* Only show expand/collapse button if item has children */}
-                {hasChildren && (
-                  <button
-                    className="p-1 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent event bubbling
-                      toggleItemExpansion(item.id);
-                    }}
-                    title={item.isExpanded ? 'Collapse' : 'Expand'}
-                  >
-                    {item.isExpanded ? (
-                      <ChevronDown size={18} />
-                    ) : (
-                      <ChevronRight size={18} />
-                    )}
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Notes input field - shown for '+' and '-' responses */}
-            {(item.response === '+' || item.response === '-') && (
-              <div className="mt-2">
-                <textarea
-                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
-                  rows={2}
-                  placeholder={
-                    item.response === '+'
-                      ? 'Add details about this finding...'
-                      : 'Add notes about this negative finding...'
-                  }
-                  value={item.notes || ''}
-                  onChange={(e) => handleNotesChange(item.id, e.target.value)}
-                />
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Render children conditionally based on both expansion state and response */}
-        {hasChildren && (
-          <div
-            className={`mb-4 ${
-              item.response === '+' ? 'border-l-2 border-green-200 pl-4' : ''
-            }`}
-            style={{
-              display:
-                item.isExpanded || item.response === '+' ? 'block' : 'none',
-            }}
-          >
-            {item.childItems.map((childItem) =>
-              renderChecklistItem(childItem, depth + 1)
-            )}
-          </div>
-        )}
-      </div>
+  // Generate SOAP note with specific items (for immediate updates)
+  const generateSoapNoteWithItems = (items: ChecklistItem[]) => {
+    return generateSoapNoteWithItems(
+      items,
+      categories,
+      sections,
+      chapter,
+      duration
     );
   };
 
@@ -1744,45 +984,10 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
           </div>
 
           <div className="flex-1 overflow-y-auto p-4">
-            {/* Subjective Section */}
-            <div className="mb-6">
-              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                SUBJECTIVE
-              </h3>
-              <div className="whitespace-pre-wrap text-sm">
-                {generatedNote.subjective || 'No subjective data recorded yet.'}
-              </div>
-            </div>
-
-            {/* Objective Section */}
-            <div className="mb-6">
-              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                OBJECTIVE
-              </h3>
-              <div className="whitespace-pre-wrap text-sm">
-                {generatedNote.objective || 'No objective data recorded yet.'}
-              </div>
-            </div>
-
-            {/* Assessment Section */}
-            <div className="mb-6">
-              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                ASSESSMENT
-              </h3>
-              <div className="whitespace-pre-wrap text-sm">
-                {generatedNote.assessment || 'No assessment data recorded yet.'}
-              </div>
-            </div>
-
-            {/* Plan Section */}
-            <div className="mb-6">
-              <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                PLAN
-              </h3>
-              <div className="whitespace-pre-wrap text-sm">
-                {generatedNote.plan || 'No plan data recorded yet.'}
-              </div>
-            </div>
+            <SoapNoteDisplay
+              soapNote={generatedNote}
+              patientInfo={patientInfo}
+            />
           </div>
         </aside>
 
@@ -1801,48 +1006,11 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
               </div>
 
               <div className="p-4">
-                {/* Subjective Section */}
-                <div className="mb-6">
-                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                    SUBJECTIVE
-                  </h3>
-                  <div className="whitespace-pre-wrap text-sm">
-                    {generatedNote.subjective ||
-                      'No subjective data recorded yet.'}
-                  </div>
-                </div>
-
-                {/* Objective Section */}
-                <div className="mb-6">
-                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                    OBJECTIVE
-                  </h3>
-                  <div className="whitespace-pre-wrap text-sm">
-                    {generatedNote.objective ||
-                      'No objective data recorded yet.'}
-                  </div>
-                </div>
-
-                {/* Assessment Section */}
-                <div className="mb-6">
-                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                    ASSESSMENT
-                  </h3>
-                  <div className="whitespace-pre-wrap text-sm">
-                    {generatedNote.assessment ||
-                      'No assessment data recorded yet.'}
-                  </div>
-                </div>
-
-                {/* Plan Section */}
-                <div className="mb-6">
-                  <h3 className="text-md font-bold text-gray-700 mb-2 pb-1 border-b border-gray-200">
-                    PLAN
-                  </h3>
-                  <div className="whitespace-pre-wrap text-sm">
-                    {generatedNote.plan || 'No plan data recorded yet.'}
-                  </div>
-                </div>
+                <SoapNoteDisplay
+                  soapNote={generatedNote}
+                  patientInfo={patientInfo}
+                  isMobile={true}
+                />
               </div>
 
               {/* Bottom action bar */}
