@@ -11,7 +11,8 @@
     "migrate:test": "node tools/db-migration/migrate.mjs --test",
     "migrate:chapter": "node tools/db-migration/migrate.mjs --chapter=",
     "test:parser": "node tools/db-migration/test-parser.mjs",
-    "clear:db": "node tools/db-migration/clear-tables.mjs"
+    "clear:db": "node tools/db-migration/clear-tables.mjs",
+    "migrate:full": "npm run clear:db && npm run migrate && node verify-fix-hierarchies-simple.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",

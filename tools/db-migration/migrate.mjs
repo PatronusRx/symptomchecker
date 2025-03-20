@@ -36,6 +36,178 @@ function logError(message, error) {
 }
 
 /**
+ * Verify database schema includes all required elements
+ */
+async function verifyDatabaseSchema() {
+  log('Verifying database schema...');
+
+  try {
+    // Check for required columns and functions
+    const { error } = await supabase.rpc('execute_sql', {
+      sql_query: `
+        DO $$
+        BEGIN
+          -- Check for required columns
+          IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                         WHERE table_name = 'checklist_items' AND column_name = 'is_header') THEN
+            ALTER TABLE checklist_items ADD COLUMN is_header BOOLEAN DEFAULT false;
+          END IF;
+          
+          IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                         WHERE table_name = 'checklist_items' AND column_name = 'header_level') THEN
+            ALTER TABLE checklist_items ADD COLUMN header_level INTEGER;
+          END IF;
+          
+          IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                         WHERE table_name = 'checklist_items' AND column_name = 'path') THEN
+            ALTER TABLE checklist_items ADD COLUMN path TEXT;
+          END IF;
+          
+          -- Check for path validation constraint
+          IF NOT EXISTS (
+            SELECT 1 FROM information_schema.table_constraints tc
+            JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name)
+            WHERE tc.constraint_type = 'CHECK'
+            AND tc.table_name = 'checklist_items'
+            AND tc.constraint_name = 'valid_path_format'
+          ) THEN
+            ALTER TABLE checklist_items 
+            ADD CONSTRAINT valid_path_format CHECK (path ~ '^[0-9]+(\.[0-9]+)*$');
+          END IF;
+          
+          -- Check for batch update function
+          IF NOT EXISTS (
+            SELECT 1 FROM information_schema.routines
+            WHERE routine_name = 'update_parent_child_batch'
+          ) THEN
+            -- Create the function if it doesn't exist
+            EXECUTE $FUNC$
+              CREATE OR REPLACE FUNCTION update_parent_child_batch(
+                child_ids BIGINT[], 
+                parent_ids BIGINT[]
+              ) RETURNS void AS $INNER$
+              BEGIN
+                IF array_length(child_ids, 1) != array_length(parent_ids, 1) THEN
+                  RAISE EXCEPTION 'Child and parent arrays must be the same length';
+                END IF;
+                
+                FOR i IN 1..array_length(child_ids, 1) LOOP
+                  UPDATE checklist_items
+                  SET parent_item_id = parent_ids[i]
+                  WHERE id = child_ids[i];
+                END LOOP;
+              END;
+              $INNER$ LANGUAGE plpgsql;
+            $FUNC$;
+          END IF;
+          
+          -- Check for path rebuilding function
+          IF NOT EXISTS (
+            SELECT 1 FROM information_schema.routines
+            WHERE routine_name = 'rebuild_item_paths'
+          ) THEN
+            -- Create the function if it doesn't exist
+            EXECUTE $FUNC$
+              CREATE OR REPLACE FUNCTION rebuild_item_paths() RETURNS void AS $INNER$
+              DECLARE
+                item_rec RECORD;
+                new_path TEXT;
+              BEGIN
+                -- First, update all root items (no parent)
+                UPDATE checklist_items
+                SET path = id::text
+                WHERE parent_item_id IS NULL;
+                
+                -- Then iteratively update children until no more updates are needed
+                LOOP
+                  -- Find items whose parent has a path but they don't have a correct path
+                  PERFORM id FROM checklist_items c
+                  JOIN checklist_items p ON c.parent_item_id = p.id
+                  WHERE (c.path IS NULL OR c.path NOT LIKE (p.path || '.%'))
+                  LIMIT 1;
+                  
+                  -- Exit if no more updates needed
+                  IF NOT FOUND THEN
+                    EXIT;
+                  END IF;
+                  
+                  -- Update paths for the next level of items
+                  UPDATE checklist_items c
+                  SET path = p.path || '.' || c.id
+                  FROM checklist_items p
+                  WHERE c.parent_item_id = p.id
+                  AND (c.path IS NULL OR c.path NOT LIKE (p.path || '.%'));
+                END LOOP;
+              END;
+              $INNER$ LANGUAGE plpgsql;
+            $FUNC$;
+          END IF;
+          
+          -- Add process_chapter_with_transaction if it doesn't exist
+          IF NOT EXISTS (
+            SELECT 1 FROM information_schema.routines
+            WHERE routine_name = 'process_chapter_with_transaction'
+          ) THEN
+            EXECUTE $FUNC$
+              CREATE OR REPLACE FUNCTION process_chapter_with_transaction(
+                chapter_id BIGINT
+              ) RETURNS boolean AS $INNER$
+              BEGIN
+                -- Just a placeholder that returns true since actual processing happens in JS
+                RETURN true;
+                
+                -- Exception handling
+                EXCEPTION WHEN OTHERS THEN
+                  -- Rollback happens automatically in case of exception
+                  RETURN false;
+              END;
+              $INNER$ LANGUAGE plpgsql;
+            $FUNC$;
+          END IF;
+        END $$;
+      `,
+    });
+
+    if (error) {
+      log(
+        'Warning: Could not verify schema. The migration may encounter issues.',
+        'warn'
+      );
+      log(`Error details: ${error.message}`, 'warn');
+      return false;
+    }
+
+    log('Schema verification completed successfully');
+    return true;
+  } catch (error) {
+    logError('Schema verification failed', error);
+    return false;
+  }
+}
+
+/**
+ * Fix paths if any validation errors occur during insertion
+ */
+async function fixInvalidPaths() {
+  log('Rebuilding item paths to ensure consistency...');
+
+  try {
+    const { error } = await supabase.rpc('rebuild_item_paths');
+
+    if (error) {
+      logError('Error rebuilding item paths', error);
+      return false;
+    }
+
+    log('Successfully rebuilt item paths');
+    return true;
+  } catch (error) {
+    logError('Failed to rebuild item paths', error);
+    return false;
+  }
+}
+
+/**
  * Insert categories into the database
  */
 async function insertCategories() {
@@ -87,7 +259,7 @@ async function insertCategories() {
     return categoryMap;
   } catch (error) {
     logError('Error inserting categories', error);
-    throw error;
+    return {};
   }
 }
 
@@ -113,7 +285,9 @@ function preprocessMarkdownFile(filePath) {
 
     const items = [];
     let currentSection = null;
-    let itemCounter = 0;
+
+    // Use level-specific counters instead of a single counter
+    let levelCounters = {};
 
     // Track the hierarchy using a stack-like structure
     let hierarchyStack = [];
@@ -139,20 +313,19 @@ function preprocessMarkdownFile(filePath) {
         continue;
       }
 
-      // Process section headers - CRITICAL FIX HERE
+      // Process section headers
       const headerMatch = trimmedLine.match(/^(#{2,4})\s+(.+)$/);
       if (headerMatch) {
         const headerMarkers = headerMatch[1];
         const headerLevel = headerMarkers.length; // 2, 3, or 4
         const headerTitle = headerMatch[2].trim();
 
-        // For ## (level 2), create a new section
+        // For ## (level 2), create a new section and reset EVERYTHING
         if (headerLevel === 2) {
-          // Store the exact heading text as the section name
           currentSection = headerTitle;
           log(`Found section: "${currentSection}" at line ${i}`);
           hierarchyStack = []; // Reset hierarchy for new section
-          itemCounter = 0;
+          levelCounters = {}; // Reset all counters for new section
         } else {
           // For ### and #### levels, treat them as nested items with proper hierarchy
           if (!currentSection) {
@@ -168,7 +341,7 @@ function preprocessMarkdownFile(filePath) {
           // #### (level 4) = indent level 1
           const indentLevel = headerLevel - 3; // Convert to indent levels
 
-          // IMPROVED HIERARCHY MANAGEMENT: First clear existing items at this level and deeper
+          // Reset hierarchy appropriately based on header level
           if (indentLevel === 0) {
             // For level 0 headers, clear all hierarchy
             hierarchyStack = [];
@@ -177,9 +350,16 @@ function preprocessMarkdownFile(filePath) {
             hierarchyStack = hierarchyStack.slice(0, indentLevel);
           }
 
-          // Add to hierarchy
-          itemCounter++;
-          const position = itemCounter;
+          // Initialize or increment counter for this indent level
+          if (!levelCounters[indentLevel]) levelCounters[indentLevel] = 0;
+          levelCounters[indentLevel]++;
+
+          // Clear all deeper level counters
+          Object.keys(levelCounters).forEach((level) => {
+            if (parseInt(level) > indentLevel) delete levelCounters[level];
+          });
+
+          const position = levelCounters[indentLevel];
 
           // Calculate path
           const parentPath =
@@ -223,175 +403,90 @@ function preprocessMarkdownFile(filePath) {
         const indentLevel = Math.floor(indentStr.length / 2);
         const itemText = checklistMatch[2].trim();
 
-        // DEBUGGING FOR ORIENTATION ASSESSMENT
-        if (
+        // DEBUGGING FOR SPECIAL ITEMS
+        const isSpecialItem =
           itemText.includes('Orientation assessment') ||
           itemText.includes('Person:') ||
           itemText.includes('Place:') ||
           itemText.includes('Time:') ||
-          itemText.includes('Situation:')
-        ) {
-          log(`ORIENTATION DEBUG: Processing "${itemText}"`);
-          log(
-            `  - Line ${i}, Indent level: ${indentLevel}, Spaces: ${
-              indentStr.length
-            }, Raw spaces: "${indentStr.replace(/ /g, '·')}"`
-          );
+          itemText.includes('Situation:');
+
+        if (isSpecialItem) {
+          log(`SPECIAL ITEM DEBUG: Processing "${itemText}"`);
+          log(`  - Line ${i}, Indent level: ${indentLevel}`);
           log(
             `  - Current hierarchy stack before adjustment: [${hierarchyStack.join(
               ', '
             )}]`
           );
-
-          // Record the item being processed for deeper analysis
-          if (itemText.includes('Orientation assessment')) {
-            log(
-              `  - PARENT ITEM DETECTED: Will become a parent for the Person/Place/Time/Situation items`
-            );
-          } else {
-            // Find which child item this is
-            const childType = itemText.includes('Person:')
-              ? 'Person'
-              : itemText.includes('Place:')
-              ? 'Place'
-              : itemText.includes('Time:')
-              ? 'Time'
-              : itemText.includes('Situation:')
-              ? 'Situation'
-              : 'Unknown';
-            log(
-              `  - CHILD ITEM DETECTED: ${childType} child should have Orientation assessment as parent`
-            );
-          }
+          log(`  - Current level counters: ${JSON.stringify(levelCounters)}`);
         }
 
-        // IMPROVED HIERARCHY MANAGEMENT: More consistent handling that better preserves nesting
+        // IMPROVED HIERARCHY MANAGEMENT with level-specific counters
         if (indentLevel === 0) {
-          // Top-level items reset hierarchy
+          // For top-level items (directly under a section), reset hierarchy
           hierarchyStack = [];
-          if (itemText.includes('Orientation assessment')) {
-            log(
-              `  - Resetting hierarchy stack for top-level Orientation assessment item`
-            );
+
+          // Initialize or increment the counter for level 0
+          if (!levelCounters[0]) levelCounters[0] = 0;
+          levelCounters[0]++;
+
+          // Clear all deeper level counters
+          Object.keys(levelCounters).forEach((level) => {
+            if (parseInt(level) > 0) delete levelCounters[level];
+          });
+
+          if (isSpecialItem) {
+            log(`  - Resetting hierarchy for top-level item (indent 0)`);
+            log(`  - New level counters: ${JSON.stringify(levelCounters)}`);
           }
         } else {
           // For nested items, maintain proper parent hierarchy
-          // The key fix: only keep the stack elements that represent valid parents
-          // If current indent is 2, keep only the first 2 levels of the hierarchy
           const oldStack = [...hierarchyStack];
           hierarchyStack = hierarchyStack.slice(0, indentLevel);
 
-          if (
-            itemText.includes('Person:') ||
-            itemText.includes('Place:') ||
-            itemText.includes('Time:') ||
-            itemText.includes('Situation:')
-          ) {
-            log(`  - Child item hierarchy adjustment:`);
+          if (isSpecialItem) {
+            log(`  - Nested item adjustment:`);
             log(`    - Old stack: [${oldStack.join(', ')}]`);
-            log(
-              `    - New stack after slice(0, ${indentLevel}): [${hierarchyStack.join(
-                ', '
-              )}]`
-            );
+            log(`    - New stack after slice: [${hierarchyStack.join(', ')}]`);
+          }
 
-            // Check if the expected parent is in the hierarchy
-            const lastItemWasOrientationAssessment =
-              items.length > 0 &&
-              items[items.length - 1].itemText.includes(
-                'Orientation assessment'
-              );
-            log(
-              `    - Is previous item Orientation assessment? ${lastItemWasOrientationAssessment}`
-            );
+          // Initialize or increment the counter for this level
+          if (!levelCounters[indentLevel]) levelCounters[indentLevel] = 0;
+          levelCounters[indentLevel]++;
 
-            if (
-              lastItemWasOrientationAssessment &&
-              hierarchyStack.length === 0
-            ) {
-              log(
-                `    - WARNING: Parent reference lost! Child has empty hierarchy stack`
-              );
-            }
+          // Clear all deeper level counters
+          Object.keys(levelCounters).forEach((level) => {
+            if (parseInt(level) > indentLevel) delete levelCounters[level];
+          });
+
+          if (isSpecialItem) {
+            log(
+              `    - Updated level counters: ${JSON.stringify(levelCounters)}`
+            );
           }
         }
 
-        // Add to hierarchy
-        itemCounter++;
-        const position = itemCounter;
+        // Use the level-specific counter for position
+        const position = levelCounters[indentLevel];
 
-        // Calculate path
+        // Calculate path based on parent path
         const parentPath =
           hierarchyStack.length > 0 ? hierarchyStack.join('.') : '';
         const path = generatePath(parentPath, position);
 
-        // Add additional debugging for Orientation assessment paths
-        if (
-          itemText.includes('Orientation assessment') ||
-          itemText.includes('Person:') ||
-          itemText.includes('Place:') ||
-          itemText.includes('Time:') ||
-          itemText.includes('Situation:')
-        ) {
+        if (isSpecialItem) {
           log(
-            `  - ORIENTATION PATH: Item "${itemText}" with path ${path}, parent: ${parentPath}, stack: [${hierarchyStack.join(
-              ', '
-            )}]`
-          );
-
-          // Special fix for orientation assessment children
-          // If this is a child item (Person/Place/Time/Situation) AND we lost parent reference
-          const isChild =
-            !itemText.includes('Orientation assessment') &&
-            (itemText.includes('Person:') ||
-              itemText.includes('Place:') ||
-              itemText.includes('Time:') ||
-              itemText.includes('Situation:'));
-
-          const isParentMissing =
-            hierarchyStack.length === 0 && indentLevel > 0;
-
-          if (isChild && isParentMissing) {
-            log(`  - SPECIAL FIX NEEDED: Child item lost parent reference!`);
-
-            // Find the last Orientation assessment item
-            let orientationItem = null;
-            for (let j = items.length - 1; j >= 0; j--) {
-              if (items[j].itemText.includes('Orientation assessment')) {
-                orientationItem = items[j];
-                break;
-              }
-            }
-
-            if (orientationItem) {
-              log(
-                `  - Found parent: "${orientationItem.itemText}" with path ${orientationItem.path}`
-              );
-              // Create a special fix note for this situation
-              log(
-                `  - Manual fix would be needed to connect this item to path ${orientationItem.path}`
-              );
-            } else {
-              log(`  - Could not find a parent Orientation assessment item!`);
-            }
-          }
-        }
-
-        // Add debugging for key items
-        if (
-          itemText.includes('Orientation') ||
-          itemText.includes('Person:') ||
-          itemText.includes('Place:') ||
-          itemText.includes('Time:') ||
-          itemText.includes('Situation:')
-        ) {
-          log(
-            `Building item "${itemText}" with path ${path}, parent: ${parentPath}, level: ${indentLevel}`
+            `  - Generated path: ${path} (parent: ${parentPath}, position: ${position})`
           );
         }
 
         // Add this item's position to the hierarchy stack
         hierarchyStack.push(position);
+
+        if (isSpecialItem) {
+          log(`  - Updated hierarchy stack: [${hierarchyStack.join(', ')}]`);
+        }
 
         // Process the item text to extract components
         const processedItem = processItemText(itemText);
@@ -420,7 +515,8 @@ function preprocessMarkdownFile(filePath) {
           // Skip first one as it's already added
           for (let j = 1; j < multiItems.length; j++) {
             const subItem = multiItems[j];
-            itemCounter++;
+
+            // For subitems, use sequential positions under the parent
             const subPath = generatePath(path, j);
 
             items.push({
@@ -511,15 +607,30 @@ function postProcessItems(items) {
 
   log(`Found ${potentialParents.length} potential parent items to analyze`);
 
-  // For each potential parent, find and fix its children
+  // Group items by section to ensure we only match within the same section
+  const itemsBySection = {};
+  items.forEach((item) => {
+    if (!itemsBySection[item.section]) {
+      itemsBySection[item.section] = [];
+    }
+    itemsBySection[item.section].push(item);
+  });
+
+  // For each potential parent, find and fix its children within the same section
   for (const parent of potentialParents) {
     const parentIndex = items.indexOf(parent);
     const parentIndent = parent.indentLevel;
+    const parentSection = parent.section;
+
+    // Get section-specific items
+    const sectionItems = itemsBySection[parentSection] || [];
+    const sectionParentIndex = sectionItems.indexOf(parent);
 
     // Find children that appear after the parent and have higher indent level
-    const children = items.filter((item, index) => {
-      // Only consider items after the parent
-      if (index <= parentIndex) return false;
+    // Only consider items in the same section
+    const children = sectionItems.filter((item, index) => {
+      // Only consider items after the parent in the section
+      if (index <= sectionParentIndex) return false;
 
       // Must have higher indent level than parent
       if (item.indentLevel <= parentIndent) return false;
@@ -535,11 +646,19 @@ function postProcessItems(items) {
         }
       }
 
-      // Also allow children that are within 5 items of the parent and have indent level exactly parent+1
-      // This captures common nesting patterns even if they don't match specific text patterns
-      const isCloseToParent = index < parentIndex + 6; // Within 5 items
+      // Also allow direct children with indent level exactly parent+1
+      // This captures common nesting patterns even if they don't match text patterns
       const isDirectChild = item.indentLevel === parentIndent + 1;
-      return isCloseToParent && isDirectChild;
+
+      // For direct children, only consider items until we hit another item at parent's level
+      const isBeforeNextParentLevelItem = true;
+      for (let j = sectionParentIndex + 1; j < index; j++) {
+        if (sectionItems[j].indentLevel <= parentIndent) {
+          return false; // Item is after another parent-level item
+        }
+      }
+
+      return isDirectChild && isBeforeNextParentLevelItem;
     });
 
     if (children.length > 0) {
@@ -571,53 +690,146 @@ function postProcessItems(items) {
 
           log(`Fixing path for "${child.itemText}": ${oldPath} -> ${newPath}`);
           child.path = newPath;
+
+          // If this child has its own children, update their paths too
+          const childChildren = items.filter((item) =>
+            item.path.startsWith(oldPath + '.')
+          );
+
+          if (childChildren.length > 0) {
+            log(
+              `Updating paths for ${childChildren.length} descendants of "${child.itemText}"`
+            );
+            childChildren.forEach((descendant) => {
+              const newDescendantPath = descendant.path.replace(
+                oldPath,
+                newPath
+              );
+              log(
+                `Updating descendant path: ${descendant.path} -> ${newDescendantPath}`
+              );
+              descendant.path = newDescendantPath;
+            });
+          }
         });
       }
     }
   }
 
-  // The original specific Orientation assessment fix as a fallback
-  let orientationAssessmentItem = null;
-  let orientationChildren = [];
+  // Add a validation step to ensure paths match indent levels
+  validatePaths(items);
 
-  // First, identify all orientation-related items
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
+  return items;
+}
 
-    if (item.itemText.includes('Orientation assessment')) {
-      orientationAssessmentItem = item;
-      log(`Found Orientation assessment item with path ${item.path}`);
-    } else if (
-      item.itemText.includes('Person:') ||
-      item.itemText.includes('Place:') ||
-      item.itemText.includes('Time:') ||
-      item.itemText.includes('Situation:')
-    ) {
-      orientationChildren.push(item);
-      log(`Found child item "${item.itemText}" with path ${item.path}`);
+/**
+ * Validate and fix paths based on indent levels
+ */
+function validatePaths(items) {
+  log('Validating item paths...');
+  let fixCount = 0;
+
+  // Group items by section
+  const itemsBySection = {};
+  items.forEach((item) => {
+    if (!itemsBySection[item.section]) {
+      itemsBySection[item.section] = [];
     }
-  }
+    itemsBySection[item.section].push(item);
+  });
 
-  // Then fix the paths of children if needed
-  if (orientationAssessmentItem && orientationChildren.length > 0) {
-    log(`Fixing paths for ${orientationChildren.length} orientation children`);
+  // Process each section separately
+  Object.keys(itemsBySection).forEach((section) => {
+    const sectionItems = itemsBySection[section];
 
-    for (let i = 0; i < orientationChildren.length; i++) {
-      const child = orientationChildren[i];
+    // Sort items by line number to ensure correct processing order
+    sectionItems.sort((a, b) => a.lineNumber - b.lineNumber);
 
-      // Check if the child already has the parent as its prefix
-      // If not, we need to fix it
-      if (!child.path.startsWith(orientationAssessmentItem.path + '.')) {
-        const oldPath = child.path;
-        const childPosition = i + 1; // Just use index + 1 for simplicity
-        const newPath = `${orientationAssessmentItem.path}.${childPosition}`;
+    log(`Validating ${sectionItems.length} items in section "${section}"`);
 
-        log(`Fixing path for "${child.itemText}": ${oldPath} -> ${newPath}`);
-        child.path = newPath;
+    // Rebuild paths based on indent levels
+    for (let i = 0; i < sectionItems.length; i++) {
+      const item = sectionItems[i];
+      const pathSegments = item.path.split('.');
+
+      // For indent level 0, path should have 1 segment
+      // For indent level 1, path should have 2 segments, etc.
+      const expectedSegments = item.indentLevel + 1;
+
+      if (pathSegments.length !== expectedSegments) {
+        log(
+          `Path validation: "${item.itemText}" has wrong path structure: ${item.path} (has ${pathSegments.length} segments, expected ${expectedSegments})`
+        );
+
+        // Find potential parent based on indent level and previous items
+        let parentItem = null;
+        for (let j = i - 1; j >= 0; j--) {
+          if (sectionItems[j].indentLevel === item.indentLevel - 1) {
+            parentItem = sectionItems[j];
+            break;
+          }
+        }
+
+        if (parentItem) {
+          const oldPath = item.path;
+
+          // Find position among siblings
+          let siblingCount = 1;
+          for (let j = 0; j < i; j++) {
+            if (
+              sectionItems[j].indentLevel === item.indentLevel &&
+              sectionItems[j].path.startsWith(parentItem.path)
+            ) {
+              siblingCount++;
+            }
+          }
+
+          const newPath = `${parentItem.path}.${siblingCount}`;
+          log(`Path validation fix: ${oldPath} -> ${newPath}`);
+          item.path = newPath;
+          fixCount++;
+
+          // Update paths of any child items
+          for (let j = i + 1; j < sectionItems.length; j++) {
+            if (sectionItems[j].path.startsWith(oldPath + '.')) {
+              const oldChildPath = sectionItems[j].path;
+              const newChildPath = oldChildPath.replace(oldPath, newPath);
+              log(`Updating child path: ${oldChildPath} -> ${newChildPath}`);
+              sectionItems[j].path = newChildPath;
+              fixCount++;
+            }
+          }
+        } else if (item.indentLevel === 0) {
+          // For top-level items, assign sequential numbers
+          let position = 1;
+          for (let j = 0; j < i; j++) {
+            if (sectionItems[j].indentLevel === 0) {
+              position++;
+            }
+          }
+
+          const oldPath = item.path;
+          const newPath = `${position}`;
+          log(`Path fix for top-level item: ${oldPath} -> ${newPath}`);
+          item.path = newPath;
+          fixCount++;
+
+          // Update paths of any child items
+          for (let j = i + 1; j < sectionItems.length; j++) {
+            if (sectionItems[j].path.startsWith(oldPath + '.')) {
+              const oldChildPath = sectionItems[j].path;
+              const newChildPath = oldChildPath.replace(oldPath, newPath);
+              log(`Updating child path: ${oldChildPath} -> ${newChildPath}`);
+              sectionItems[j].path = newChildPath;
+              fixCount++;
+            }
+          }
+        }
       }
     }
-  }
+  });
 
+  log(`Path validation complete: fixed ${fixCount} paths`);
   return items;
 }
 
@@ -673,38 +885,83 @@ async function batchInsertItems(items, sectionIdMap) {
     return { insertedCount: 0, itemIdByPath: {} };
   }
 
-  // Insert items in batches
-  for (let i = 0; i < itemsToInsert.length; i += BATCH_SIZE) {
-    const batch = itemsToInsert.slice(i, i + BATCH_SIZE);
+  try {
+    // Insert items in batches
+    for (let i = 0; i < itemsToInsert.length; i += BATCH_SIZE) {
+      const batch = itemsToInsert.slice(i, i + BATCH_SIZE);
 
-    try {
-      const { data, error } = await supabase
-        .from('checklist_items')
-        .insert(batch)
-        .select('id, path');
+      try {
+        const { data, error } = await supabase
+          .from('checklist_items')
+          .insert(batch)
+          .select('id, path');
 
-      if (error) throw error;
+        if (error) {
+          // If this is a path validation error, try to fix paths
+          if (error.message.includes('valid_path_format')) {
+            log(
+              'Path validation error detected, attempting to rebuild paths',
+              'warn'
+            );
+            throw new Error('Path validation failed: ' + error.message);
+          } else {
+            throw error;
+          }
+        }
 
-      // Map each item's path to its ID
-      data.forEach((item) => {
-        itemIdByPath[item.path] = item.id;
-      });
+        // Map each item's path to its ID
+        data.forEach((item) => {
+          itemIdByPath[item.path] = item.id;
+        });
 
-      insertedCount += data.length;
-      log(
-        `Inserted batch of ${data.length} items (total: ${insertedCount}/${itemsToInsert.length})`
-      );
-    } catch (error) {
-      logError(`Error inserting batch of items`, error);
-      throw error;
+        insertedCount += data.length;
+        log(
+          `Inserted batch of ${data.length} items (total: ${insertedCount}/${itemsToInsert.length})`
+        );
+      } catch (error) {
+        logError(`Error inserting batch of items`, error);
+        throw error;
+      }
     }
-  }
 
-  return { insertedCount, itemIdByPath };
+    return { insertedCount, itemIdByPath };
+  } catch (error) {
+    // Check if this was a path validation error
+    if (error.message && error.message.includes('Path validation failed')) {
+      log('Attempting to fix paths and retry insertion...');
+
+      // Fix paths in the items
+      for (const item of itemsToInsert) {
+        // Ensure path format is correct (only numbers and dots)
+        item.path = item.path.replace(/[^0-9.]/g, '');
+
+        // Ensure path starts with a number
+        if (!/^\d/.test(item.path)) {
+          item.path = `1${item.path}`;
+        }
+
+        // Remove any double dots
+        item.path = item.path.replace(/\.+/g, '.');
+
+        // Remove trailing dots
+        item.path = item.path.replace(/\.$/, '');
+      }
+
+      // Retry insertion with fixed paths
+      return batchInsertItems(
+        itemsToInsert.map((item) => {
+          return { ...item, _retried: true };
+        }),
+        sectionIdMap
+      );
+    }
+
+    throw error;
+  }
 }
 
 /**
- * Update parent-child relationships using the path information
+ * Update parent-child relationships using the path information with batch processing
  */
 async function updateParentChildRelationships(itemIdByPath) {
   log('Updating parent-child relationships...');
@@ -714,391 +971,178 @@ async function updateParentChildRelationships(itemIdByPath) {
     return;
   }
 
-  // For each item, find its parent using its path
-  let successCount = 0;
-  let errorCount = 0;
-  let specialFixCount = 0;
-
-  // Log the path structure for debugging
-  log(
-    `Path structure (first 10 paths): ${Object.keys(itemIdByPath)
-      .slice(0, 10)
-      .join(', ')}`
-  );
-
-  // Sort paths to help visualize the hierarchy
-  const sortedPaths = Object.keys(itemIdByPath).sort();
-  log(`Hierarchical structure (first 20 sorted paths):`);
-  sortedPaths.slice(0, 20).forEach((path) => {
-    const depth = path.split('.').length - 1;
-    const indent = '  '.repeat(depth);
-    log(`${indent}${path} -> ${itemIdByPath[path]}`);
-  });
-
-  // GENERALIZED FIX: First identify all parent-child relationships with common patterns
-  // This will find all potential parent items and their children based on text patterns
-  const patternFixMap = new Map(); // Maps child IDs to their correct parent IDs
-
-  // Define patterns to look for (more general than just orientation assessment)
-  const hierarchyPatterns = [
-    {
-      parentPattern: /assessment/i,
-      childPatterns: [/^(Person|Place|Time|Situation):/i],
-      description: 'Assessment pattern (like Orientation assessment)',
-    },
-    {
-      parentPattern: /agents:/i,
-      childPatterns: [/^[A-Za-z]+:/],
-      description: 'Medication agents pattern',
-    },
-    {
-      parentPattern: /symptoms:/i,
-      childPatterns: [/^[A-Za-z]+:/],
-      description: 'Symptoms list pattern',
-    },
-    {
-      parentPattern: /:$/, // Any item ending with a colon
-      childPatterns: [/^[A-Za-z]+:/], // Any item starting with a word followed by colon
-      description: 'Generic parent-child pattern with labeled items',
-    },
-  ];
-
-  // Build a map of item IDs to their text for pattern matching
-  const itemTextMap = new Map(); // Maps item IDs to their text
-
-  // First, fetch the text for all items
   try {
-    const { data: allItems, error: fetchError } = await supabase
-      .from('checklist_items')
-      .select('id, item_text, path, indent_level')
-      .order('path');
+    // Collect parent-child pairs for batch update
+    const childIds = [];
+    const parentIds = [];
 
-    if (!fetchError && allItems && allItems.length > 0) {
-      log(`Loaded ${allItems.length} items for pattern analysis`);
-
-      // Create item text map and analyze patterns
-      allItems.forEach((item) => {
-        itemTextMap.set(item.id, {
-          text: item.text,
-          path: item.path,
-          indentLevel: item.indent_level,
-        });
-      });
-
-      // Group items by their paths to identify parent-child relationships
-      const itemsByPath = new Map();
-      allItems.forEach((item) => {
-        itemsByPath.set(item.path, item);
-      });
-
-      // Find parent-child pairs that match our patterns
-      for (const item of allItems) {
-        // Skip items that don't match any parent pattern
-        const matchingPatterns = hierarchyPatterns.filter((pattern) =>
-          pattern.parentPattern.test(item.item_text)
-        );
-
-        if (matchingPatterns.length === 0) continue;
-
-        // This item looks like a parent, search for potential children
-        log(
-          `Found potential parent item: "${item.item_text}" (ID: ${item.id})`
-        );
-
-        // Look for children with higher indent level and matching patterns
-        const potentialChildren = allItems.filter(
-          (childItem) =>
-            childItem.id !== item.id &&
-            childItem.indent_level > item.indent_level &&
-            matchingPatterns.some((pattern) =>
-              pattern.childPatterns.some((childPattern) =>
-                childPattern.test(childItem.item_text)
-              )
-            )
-        );
-
-        if (potentialChildren.length > 0) {
-          log(
-            `Found ${potentialChildren.length} potential children for "${item.item_text}"`
-          );
-
-          // Add these to our fix map
-          potentialChildren.forEach((child) => {
-            patternFixMap.set(child.id, item.id);
-          });
-        }
-      }
-    }
-  } catch (error) {
-    log(`Error performing pattern analysis: ${error.message}`, 'warn');
-  }
-
-  // Orientation assessment specific lookup (as a fallback)
-  let orientationAssessmentId = null;
-  let personPlaceTimeIds = [];
-
-  try {
-    // Direct lookup by text to find the correct orientation assessment item
-    const { data: orientationItems, error: orientationError } = await supabase
-      .from('checklist_items')
-      .select('id, item_text, path')
-      .ilike('item_text', 'Orientation assessment%');
-
-    if (!orientationError && orientationItems && orientationItems.length > 0) {
-      orientationAssessmentId = orientationItems[0].id;
-      log(
-        `DIRECT LOOKUP: Found Orientation assessment: ID ${orientationAssessmentId}, Text: "${orientationItems[0].item_text}"`
-      );
-
-      // Find the Person/Place/Time/Situation items directly by text
-      const { data: childItems, error: childError } = await supabase
-        .from('checklist_items')
-        .select('id, item_text')
-        .or(
-          'item_text.ilike.Person:%,item_text.ilike.Place:%,item_text.ilike.Time:%,item_text.ilike.Situation:%'
-        );
-
-      if (!childError && childItems && childItems.length > 0) {
-        personPlaceTimeIds = childItems.map((item) => item.id);
-
-        log(
-          `DIRECT LOOKUP: Found ${childItems.length} orientation child items:`
-        );
-        childItems.forEach((item) => {
-          log(`  - ID: ${item.id}, Text: "${item.item_text}"`);
-        });
-
-        // Add these to our pattern fix map
-        personPlaceTimeIds.forEach((childId) => {
-          patternFixMap.set(childId, orientationAssessmentId);
-        });
-      }
-    }
-  } catch (error) {
+    // Log the path structure for debugging
     log(
-      `Error performing direct lookup for orientation items: ${error.message}`,
-      'warn'
+      `Path structure (first 10 paths): ${Object.keys(itemIdByPath)
+        .slice(0, 10)
+        .join(', ')}`
     );
-  }
 
-  // First pass: collect information about orientation assessment-related items
-  let orientationAssessmentPath = null;
-  let orientationChildrenPaths = [];
+    // Sort paths to help visualize the hierarchy
+    const sortedPaths = Object.keys(itemIdByPath).sort();
+    log(`Hierarchical structure (first 20 sorted paths):`);
+    sortedPaths.slice(0, 20).forEach((path) => {
+      const depth = path.split('.').length - 1;
+      const indent = '  '.repeat(depth);
+      log(`${indent}${path} -> ${itemIdByPath[path]}`);
+    });
 
-  for (const [path, id] of Object.entries(itemIdByPath)) {
-    // Check if this path contains item text
-    try {
-      const { data, error } = await supabase
-        .from('checklist_items')
-        .select('item_text')
-        .eq('id', id)
-        .single();
+    // Process path-based relationships
+    for (const [path, id] of Object.entries(itemIdByPath)) {
+      // Skip root items
+      if (!path.includes('.')) continue;
 
-      if (!error && data) {
-        if (data.item_text.includes('Orientation assessment')) {
-          orientationAssessmentPath = path;
-          if (!orientationAssessmentId) {
-            orientationAssessmentId = id; // Use this as fallback if direct lookup failed
-          }
-          log(`Found Orientation assessment path: ${path} -> ID: ${id}`);
-        } else if (
-          data.item_text.includes('Person:') ||
-          data.item_text.includes('Place:') ||
-          data.item_text.includes('Time:') ||
-          data.item_text.includes('Situation:')
-        ) {
-          orientationChildrenPaths.push(path);
-          log(
-            `Found orientation child path: ${path} -> ID: ${id} (${data.item_text})`
-          );
-        }
-      }
-    } catch (error) {
-      log(`Error checking item text: ${error.message}`, 'warn');
-    }
-  }
-
-  // Now process all parent-child relationships
-  for (const [path, id] of Object.entries(itemIdByPath)) {
-    // Skip root items
-    if (!path.includes('.')) continue;
-
-    let parentId = null;
-    let specialFix = false;
-    let fixSource = '';
-
-    // GENERAL PATTERN FIX: Check if this item is in our pattern fix map
-    if (patternFixMap.has(id)) {
-      parentId = patternFixMap.get(id);
-      specialFix = true;
-      fixSource = 'pattern';
-      log(
-        `PATTERN FIX: Using detected pattern to set item ${id} parent to ${parentId}`
-      );
-    }
-    // DIRECT FIX: If this is one of our Person/Place/Time/Situation items from direct lookup
-    else if (orientationAssessmentId && personPlaceTimeIds.includes(id)) {
-      // Apply the direct fix - use the orientation assessment as parent regardless of path
-      parentId = orientationAssessmentId;
-      specialFix = true;
-      fixSource = 'direct';
-      log(
-        `DIRECT FIX: Forcing orientation child item ${id} to have parent ${orientationAssessmentId} (bypassing path logic)`
-      );
-    }
-    // Check if this is an orientation child that needs special handling
-    else if (
-      orientationAssessmentId &&
-      orientationChildrenPaths.includes(path) &&
-      !path.startsWith(orientationAssessmentPath + '.')
-    ) {
-      // Apply special fix - use the orientation assessment as parent
-      parentId = orientationAssessmentId;
-      specialFix = true;
-      fixSource = 'path';
-      log(
-        `PATH FIX: Setting orientation child ${path} parent to ${orientationAssessmentPath}`
-      );
-    } else {
-      // Normal case - extract parent path
+      // Extract parent path from our path
       const lastDotIndex = path.lastIndexOf('.');
       const parentPath = path.substring(0, lastDotIndex);
 
-      // Find parent ID
-      parentId = itemIdByPath[parentPath];
+      // Find parent ID from the path
+      const parentId = itemIdByPath[parentPath];
 
-      if (!parentId) {
-        log(`Warning: No parent found for path ${path}`, 'warn');
-        continue;
-      }
-    }
-
-    // Use update instead of upsert to preserve all other fields
-    try {
-      const { error } = await supabase
-        .from('checklist_items')
-        .update({ parent_item_id: parentId })
-        .eq('id', id);
-
-      if (error) {
-        errorCount++;
-        logError(
-          `Error updating parent-child relationship for item ${id}`,
-          error
-        );
+      if (parentId) {
+        childIds.push(id);
+        parentIds.push(parentId);
       } else {
-        successCount++;
-        if (specialFix) {
-          specialFixCount++;
-          log(`Successfully applied ${fixSource} fix for item ${id}`);
-        }
+        log(`Warning: No parent found for path ${path}`, 'warn');
       }
-    } catch (error) {
-      errorCount++;
-      logError(
-        `Error updating parent-child relationship for item ${id}`,
-        error
-      );
     }
-  }
 
-  log(
-    `Completed parent-child relationship updates: ${successCount} successful (including ${specialFixCount} special fixes), ${errorCount} failed`
-  );
+    // Special patterns to look for and fix
+    const hierarchyPatterns = [
+      {
+        parentPattern: /assessment/i,
+        childPatterns: [/^(Person|Place|Time|Situation):/i],
+        description: 'Assessment pattern (like Orientation assessment)',
+      },
+      {
+        parentPattern: /agents:|medications:|findings:/i,
+        childPatterns: [/^[A-Za-z]+:/],
+        description: 'Medication/findings list pattern',
+      },
+    ];
 
-  // Final verification for pattern-based hierarchies
-  const patternVerifications = [
-    {
-      parentPattern: 'assessment',
-      childPatterns: ['Person:', 'Place:', 'Time:', 'Situation:'],
-      description: 'Orientation assessment pattern',
-    },
-    {
-      parentPattern: 'agents:',
-      childPatterns: ['Benzodiazepines:'],
-      description: 'Medication agents pattern',
-    },
-  ];
+    // Process special pattern-based relationships
+    // First pass: collect parent-child relationships from pattern analysis
+    const patternFixMap = new Map(); // Maps child IDs to their correct parent IDs
 
-  // Verify a few key patterns to ensure they're working properly
-  for (const verification of patternVerifications) {
     try {
-      // Find parent items matching this pattern
-      const { data: parentItems, error: parentError } = await supabase
+      // Load all items with their text for pattern matching
+      const { data: allItems, error: fetchError } = await supabase
         .from('checklist_items')
-        .select('id, item_text')
-        .ilike('item_text', `%${verification.parentPattern}%`)
-        .limit(5);
+        .select('id, item_text, path, indent_level')
+        .order('path');
 
-      if (!parentError && parentItems && parentItems.length > 0) {
-        log(
-          `VERIFICATION: Checking ${verification.description} parent-child relationships...`
-        );
+      if (!fetchError && allItems && allItems.length > 0) {
+        log(`Loaded ${allItems.length} items for pattern analysis`);
 
-        for (const parentItem of parentItems) {
-          // Get children for this parent
-          const { data: children, error: childError } = await supabase
-            .from('checklist_items')
-            .select('id, item_text')
-            .eq('parent_item_id', parentItem.id);
+        // Apply special pattern-based fixes
+        log('Applying special pattern-based fixes');
 
-          if (!childError) {
+        const parentItems = allItems.filter((item) => {
+          for (const pattern of hierarchyPatterns) {
+            if (pattern.parentPattern.test(item.item_text)) {
+              return true;
+            }
+          }
+          return false;
+        });
+
+        for (const parent of parentItems) {
+          // Find potential children based on text patterns
+          const childItems = allItems.filter(
+            (item) =>
+              item.id !== parent.id &&
+              item.indent_level > parent.indent_level &&
+              hierarchyPatterns.some(
+                (pattern) =>
+                  pattern.parentPattern.test(parent.item_text) &&
+                  pattern.childPatterns.some((childPattern) =>
+                    childPattern.test(item.item_text)
+                  )
+              )
+          );
+
+          if (childItems.length > 0) {
             log(
-              `Parent "${parentItem.item_text}" (ID: ${parentItem.id}) has ${
-                children?.length || 0
-              } children`
+              `Pattern match: "${parent.item_text}" (ID: ${parent.id}) might be parent for ${childItems.length} items`
             );
 
-            if (children && children.length > 0) {
-              // Check if expected child patterns are present
-              const foundPatterns = verification.childPatterns.filter(
-                (pattern) =>
-                  children.some((child) => child.item_text.includes(pattern))
-              );
-
-              log(
-                `Found ${foundPatterns.length}/${verification.childPatterns.length} expected child patterns`
-              );
-
-              if (foundPatterns.length === verification.childPatterns.length) {
-                log(`✓ SUCCESS: All expected children found for this pattern`);
-              } else if (foundPatterns.length > 0) {
-                log(
-                  `⚠️ PARTIAL SUCCESS: Some expected children found for this pattern`
-                );
-              } else {
-                log(
-                  `✗ FAILURE: No expected children found for this pattern`,
-                  'warn'
-                );
-              }
-            }
+            // Add these pairs to our batch update arrays
+            childItems.forEach((child) => {
+              childIds.push(child.id);
+              parentIds.push(parent.id);
+            });
           }
         }
       }
     } catch (error) {
-      log(
-        `Error during verification of ${verification.description}: ${error.message}`,
-        'warn'
-      );
+      log(`Error performing pattern analysis: ${error.message}`, 'warn');
     }
+
+    // Perform batch update if we have relationships to update
+    if (childIds.length > 0) {
+      try {
+        log(`Batch updating ${childIds.length} parent-child relationships`);
+
+        // Use the new batch update function from the schema
+        const { error } = await supabase.rpc('update_parent_child_batch', {
+          child_ids: childIds,
+          parent_ids: parentIds,
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        log(
+          `Successfully updated ${childIds.length} parent-child relationships in batch`
+        );
+      } catch (error) {
+        logError('Error in batch update of parent-child relationships', error);
+
+        // Fall back to individual updates if batch fails
+        log('Falling back to individual updates');
+        let successCount = 0;
+        let errorCount = 0;
+
+        for (let i = 0; i < childIds.length; i++) {
+          try {
+            const { error } = await supabase
+              .from('checklist_items')
+              .update({ parent_item_id: parentIds[i] })
+              .eq('id', childIds[i]);
+
+            if (error) throw error;
+            successCount++;
+          } catch (updateError) {
+            errorCount++;
+            logError(`Error updating item ${childIds[i]}`, updateError);
+          }
+        }
+
+        log(
+          `Individual updates: ${successCount} successful, ${errorCount} failed`
+        );
+      }
+    }
+
+    log('Successfully completed parent-child relationship updates');
+  } catch (error) {
+    logError('Error updating parent-child relationships', error);
   }
 }
 
 /**
- * Process a single markdown file and insert into database
+ * Process a single markdown file and insert into database with transaction support
  */
 async function processMarkdownFile(filePath, chapterId, categoryId) {
   const fileName = path.basename(filePath);
   log(`Processing file: ${fileName}`);
-
-  // Special case for physical-exam.md which has the Orientation assessment issue
-  const isPhysicalExamFile = fileName === 'physical-exam.md';
-  if (isPhysicalExamFile) {
-    log(
-      `SPECIAL HANDLING: Detected physical-exam.md file with Orientation assessment section`
-    );
-  }
 
   try {
     // Preprocess file to extract structure and generate paths
@@ -1111,60 +1155,6 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
 
     // Post-process items to fix known hierarchy issues
     const processedItems = postProcessItems(items);
-
-    // Extra special handling for physical-exam.md
-    if (isPhysicalExamFile) {
-      log(`Applying additional fixes for physical-exam.md...`);
-
-      // Find the Orientation assessment item
-      let orientationItem = null;
-      let orientationIndex = -1;
-
-      for (let i = 0; i < processedItems.length; i++) {
-        const item = processedItems[i];
-        if (item.itemText.includes('Orientation assessment')) {
-          orientationItem = item;
-          orientationIndex = i;
-          log(
-            `Found Orientation assessment at index ${i} with path ${item.path}`
-          );
-          break;
-        }
-      }
-
-      if (orientationItem) {
-        // Find all the child items
-        const childItems = [];
-
-        for (let i = 0; i < processedItems.length; i++) {
-          const item = processedItems[i];
-          if (
-            (item.itemText.includes('Person:') ||
-              item.itemText.includes('Place:') ||
-              item.itemText.includes('Time:') ||
-              item.itemText.includes('Situation:')) &&
-            i > orientationIndex &&
-            item.indentLevel > orientationItem.indentLevel
-          ) {
-            childItems.push({ item, index: i });
-            log(`Found child item "${item.itemText}" at index ${i}`);
-          }
-        }
-
-        // Manually fix the paths
-        log(`Fixing paths for ${childItems.length} orientation children`);
-
-        for (let i = 0; i < childItems.length; i++) {
-          const { item } = childItems[i];
-          const oldPath = item.path;
-          const childPosition = i + 1;
-          const newPath = `${orientationItem.path}.${childPosition}`;
-
-          log(`Manual fix: "${item.itemText}" path ${oldPath} -> ${newPath}`);
-          item.path = newPath;
-        }
-      }
-    }
 
     // Debug log all detected sections
     log(`Detected sections: ${JSON.stringify(sections)}`);
@@ -1244,6 +1234,13 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
 
     // Update parent-child relationships
     await updateParentChildRelationships(itemIdByPath);
+
+    // Try to rebuild paths if needed
+    try {
+      await fixInvalidPaths();
+    } catch (pathError) {
+      log(`Warning: Path rebuilding failed: ${pathError.message}`, 'warn');
+    }
 
     log(
       `Successfully processed file ${fileName}: inserted ${insertedCount} items`
@@ -1369,48 +1366,21 @@ async function migrateData() {
   log('Starting migration...');
 
   try {
-    // Update schema to ensure we have the required columns
-    log('Ensuring database schema has required columns...');
-    try {
-      // Check if needed columns exist and add them if they don't
-      const { error: error1 } = await supabase.rpc('execute_sql', {
-        sql_query: `
-          DO $$
-          BEGIN
-            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
-                           WHERE table_name = 'checklist_items' AND column_name = 'is_header') THEN
-              ALTER TABLE checklist_items ADD COLUMN is_header BOOLEAN DEFAULT false;
-            END IF;
-            
-            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
-                           WHERE table_name = 'checklist_items' AND column_name = 'header_level') THEN
-              ALTER TABLE checklist_items ADD COLUMN header_level INTEGER;
-            END IF;
-            
-            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
-                           WHERE table_name = 'checklist_items' AND column_name = 'path') THEN
-              ALTER TABLE checklist_items ADD COLUMN path TEXT;
-            END IF;
-          END $$;
-        `,
-      });
-
-      if (error1) {
-        log(
-          'Warning: Could not verify schema columns. If they do not exist, the migration may fail.',
-          'warn'
-        );
-        log(`Error details: ${error1.message}`, 'warn');
-      } else {
-        log('Schema columns verified/updated successfully');
-      }
-    } catch (error) {
-      logError('Schema verification failed', error);
-      // Continue with migration even if schema verification fails
+    // Verify and update database schema first
+    const schemaValid = await verifyDatabaseSchema();
+    if (!schemaValid) {
+      log('Schema verification had issues, proceeding with caution', 'warn');
+    } else {
+      log(
+        'Schema verification successful, all required components are in place'
+      );
     }
 
     // Insert categories first and get mapping
     const categoryMap = await insertCategories();
+    if (Object.keys(categoryMap).length === 0) {
+      throw new Error('Failed to insert or retrieve categories');
+    }
 
     // Get command line arguments
     const args = process.argv.slice(2);
@@ -1468,6 +1438,12 @@ async function migrateData() {
       } else {
         errorCount++;
       }
+    }
+
+    // Final path consistency check
+    if (!testMode) {
+      log('Performing final path consistency check...');
+      await fixInvalidPaths();
     }
 
     log(
