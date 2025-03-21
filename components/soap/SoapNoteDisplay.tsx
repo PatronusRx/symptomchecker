@@ -22,7 +22,6 @@ interface SoapNoteDisplayProps {
 
 const SoapNoteDisplay: React.FC<SoapNoteDisplayProps> = ({
   soapNote,
-  patientInfo,
   isMobile = false,
 }) => {
   return (

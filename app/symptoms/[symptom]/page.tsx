@@ -5,11 +5,10 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
-//import { Chapter } from '@/types/symptom-types';
 
 export default function SymptomPage() {
   const { symptom } = useParams();
-  const symptomSlug = Array.isArray(symptom) ? symptom[0] : symptom;
+  const symptomSlug = Array.isArray(symptom) ? symptom[0] : (symptom as string);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -87,7 +86,8 @@ export default function SymptomPage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Symptom Not Found</h1>
           <p className="mb-4">
-            The symptom "{symptomSlug}" does not exist or is not yet supported.
+            The symptom &quot;{symptomSlug}&quot; does not exist or is not yet
+            supported.
           </p>
           <Link href="/" className="text-blue-500 hover:underline">
             Return Home

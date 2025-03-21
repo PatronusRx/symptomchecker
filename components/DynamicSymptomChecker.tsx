@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
@@ -350,7 +351,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     if (categories.length > 0 && !activeCategory) {
       setActiveCategory(categories[0].id);
     }
-  }, [categories, activeCategory]);
+  }, [categories]);
 
   // Add useEffect to initialize expansion state when items are first loaded
   useEffect(() => {
@@ -363,7 +364,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         }))
       );
     }
-  }, [loading]);
+  }, [loading, checklistItems.length]);
 
   // Update SOAP note whenever relevant state changes
   useEffect(() => {

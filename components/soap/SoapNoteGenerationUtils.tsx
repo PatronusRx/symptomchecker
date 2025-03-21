@@ -1,4 +1,4 @@
-import { ChecklistItem as ChecklistItemType } from '../../types/symptomChecker';
+// Removed unused import: import { ChecklistItem as ChecklistItemType } from '../../types/symptomChecker';
 import { SoapNote } from './SoapNoteGenerator';
 
 // Import or define types here (adjust as needed)
