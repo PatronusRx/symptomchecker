@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import SearchBox from '@/components/SearchBox';
 import SymptomCard from '@/components/SymptomCard';
+import MobileWarningModal from '@/components/MobileWarningModal';
 import { supabase } from '@/lib/supabase';
 import { Chapter } from '@/types/symptom-types';
 
@@ -12,6 +13,7 @@ export default function Home() {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showMobileWarning, setShowMobileWarning] = useState(false);
   const router = useRouter();
 
   // Define a mapping of symptom titles to Lucide icon names
@@ -72,6 +74,29 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Check if the device is mobile and if the warning was dismissed before
+    const checkIfMobile = () => {
+      // Simple check based on screen width
+      const isMobile = window.innerWidth < 768;
+
+      // Check if user has dismissed the warning before
+      const warningDismissed = localStorage.getItem('mobileWarningDismissed');
+
+      // Only show warning if mobile and not dismissed before
+      setShowMobileWarning(isMobile && !warningDismissed);
+    };
+
+    // Check on initial load
+    checkIfMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+
+    // Clean up event listener
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  useEffect(() => {
     const fetchChapters = async () => {
       try {
         setLoading(true);
@@ -126,6 +151,12 @@ export default function Home() {
     router.push(`/symptoms/${slug}`);
   };
 
+  // Handle closing the mobile warning modal
+  const handleCloseMobileWarning = () => {
+    // Modal component handles the localStorage setting now
+    setShowMobileWarning(false);
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -160,6 +191,10 @@ export default function Home() {
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {showMobileWarning && (
+        <MobileWarningModal onClose={handleCloseMobileWarning} />
+      )}
+
       <div className="container mx-auto px-4 py-12">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
