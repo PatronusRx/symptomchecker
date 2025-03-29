@@ -12,6 +12,10 @@ import {
   ChevronRight,
   ChevronLeft,
   Clock,
+  Filter,
+  Grid,
+  Layers,
+  List,
 } from 'lucide-react';
 import {
   Chapter,
@@ -44,6 +48,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // State for the active category
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  // State for section display settings
+  const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'grid' | 'compact' | 'list'>('grid');
+  const [gridColumns, setGridColumns] = useState(2);
 
   // State for SOAP note
   const [generatedNote, setGeneratedNote] = useState({
@@ -243,9 +252,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           throw chapterError;
         }
 
-        // Add debug log here after fetching chapters
-        console.log('Chapter data:', chaptersData);
-
         if (!chaptersData || chaptersData.length === 0) {
           throw new Error(`Chapter "${formattedSlug}" not found in database`);
         }
@@ -264,9 +270,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           throw categoriesError;
         }
 
-        // Add debug log here after fetching categories
-        console.log('Categories data:', categoriesData);
-
         setCategories(categoriesData || []);
 
         // Fetch sections for this chapter
@@ -279,9 +282,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         if (sectionsError) {
           throw sectionsError;
         }
-
-        // Add debug log here after fetching sections
-        console.log('Sections data:', sectionsData);
 
         setSections(sectionsData || []);
 
@@ -300,28 +300,13 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             throw itemsError;
           }
 
-          // Add debug log here after fetching checklist items
-          console.log('Items data:', itemsData);
-
-          // Count items with parent relationships for debugging
-          const itemsWithParents = (itemsData || []).filter(
-            (item) => item.parent_item_id !== null
-          );
-          console.log(
-            `Found ${
-              itemsWithParents.length
-            } items with parent relationships out of ${
-              itemsData?.length || 0
-            } total items`
-          );
-
           // Initialize with isCompleted property
           const initializedItems = (itemsData || []).map((item) => ({
             ...item,
             isCompleted: false,
             response: null,
             notes: '',
-            isExpanded: false, // Default to expanded for better visibility
+            isExpanded: true, // Default to expanded for better visibility
           }));
 
           setChecklistItems(initializedItems);
@@ -373,6 +358,25 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }
   }, [checklistItems, loading, updateSoapNote]);
 
+  // Automatically adjust grid columns based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setGridColumns(1);
+      } else if (width < 1200) {
+        setGridColumns(2);
+      } else {
+        setGridColumns(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Trigger autosave animation
   const triggerAutosave = useCallback(() => {
     setIsAutoSaving(true);
@@ -402,11 +406,43 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   // Handle response change (+/-/NA)
   const handleResponseChange = useCallback(
     (itemId: string, value: '+' | '-' | 'NA' | null) => {
-      // Update the item with new response
-      updateChecklistItem(itemId, {
-        response: value,
-        isCompleted: value !== null,
-      });
+      // Function to recursively update child items
+      const updateChildItems = (
+        items: ChecklistItem[],
+        parentId: string,
+        value: '+' | '-' | 'NA' | null
+      ): ChecklistItem[] => {
+        return items.map((item) => {
+          if (item.id === parentId) {
+            return {
+              ...item,
+              response: value,
+              isCompleted: value !== null,
+              childItems: item.childItems
+                ? updateChildItems(item.childItems, parentId, value)
+                : undefined,
+            };
+          }
+          if (item.childItems) {
+            return {
+              ...item,
+              childItems: updateChildItems(item.childItems, parentId, value),
+            };
+          }
+          return item;
+        });
+      };
+
+      // If the value is positive (+), update all child items as well
+      if (value === '+') {
+        setChecklistItems((items) => updateChildItems(items, itemId, value));
+      } else {
+        // For negative (-) or NA, only update the selected item
+        updateChecklistItem(itemId, {
+          response: value,
+          isCompleted: value !== null,
+        });
+      }
     },
     [updateChecklistItem]
   );
@@ -453,10 +489,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           toggleItemExpansion={toggleItemExpansion}
           renderChecklistItem={renderChecklistItem}
           depth={depth}
+          compact={viewMode === 'compact'}
         />
       );
     },
-    [handleResponseChange, handleNotesChange, toggleItemExpansion]
+    [handleResponseChange, handleNotesChange, toggleItemExpansion, viewMode]
   );
 
   // Generate SOAP note
@@ -557,6 +594,28 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
     return { completed, total };
   }, [checklistItems, sections, activeCategory]);
 
+  // Generate class for grid layout based on view mode and column count
+  const getGridClass = () => {
+    if (viewMode === 'list') return '';
+
+    // For grid or compact view, determine column count
+    switch (gridColumns) {
+      case 1:
+        return 'grid grid-cols-1 gap-4';
+      case 2:
+        return 'grid grid-cols-1 md:grid-cols-2 gap-4';
+      case 3:
+        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4';
+      default:
+        return 'grid grid-cols-1 md:grid-cols-2 gap-4';
+    }
+  };
+
+  // Handle changing the section
+  const handleSectionSelect = (sectionId: string) => {
+    setSelectedSection(selectedSection === sectionId ? null : sectionId);
+  };
+
   if (loading) {
     return (
       <div className="p-4 max-w-4xl mx-auto">
@@ -576,20 +635,6 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
           <h2 className="text-lg font-bold">Error</h2>
           <p>{error}</p>
-          <div className="mt-4">
-            <h3 className="font-semibold">Debugging Information</h3>
-            <ul className="list-disc pl-5 mt-2 text-sm">
-              <li>
-                Chapter slug:{' '}
-                <code className="bg-red-100 px-1 rounded">{chapterSlug}</code>
-              </li>
-              <li>
-                Make sure you&apos;ve added sample data to your Supabase
-                database
-              </li>
-              <li>Check that your environment variables are set correctly</li>
-            </ul>
-          </div>
         </div>
       </div>
     );
@@ -792,8 +837,8 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
 
         {/* Main Content - Checklist Items Display */}
         <main className="flex-1 overflow-y-auto">
-          <div className="max-w-3xl mx-auto p-4 md:p-6">
-            {/* Duration Input - Moved to center of layout */}
+          <div className="max-w-7xl mx-auto p-4">
+            {/* Duration Input */}
             <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
               <div className="flex items-center">
                 <Clock size={20} className="text-blue-500 mr-2" />
@@ -816,42 +861,166 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm">
-              <div className="px-4 py-3 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-blue-50 to-blue-100">
-                <h2 className="text-lg font-bold text-blue-800">
-                  {categories.find((c) => c.id === activeCategory)?.title ||
-                    'Questions'}
-                </h2>
-                <div className="text-sm text-blue-600">
-                  {getActiveCategoryStats().completed}/
-                  {getActiveCategoryStats().total} completed
+            {/* View Mode Controls */}
+            <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+              <div className="flex flex-wrap items-center justify-between">
+                <div>
+                  <h2 className="text-lg font-bold text-blue-800">
+                    {categories.find((c) => c.id === activeCategory)?.title ||
+                      'Questions'}
+                  </h2>
+                  <div className="text-sm text-blue-600">
+                    {getActiveCategoryStats().completed}/
+                    {getActiveCategoryStats().total} completed
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+                  <span className="text-sm text-gray-500">View:</span>
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-1.5 rounded ${
+                      viewMode === 'grid'
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                    title="Grid View"
+                  >
+                    <Grid size={18} />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('compact')}
+                    className={`p-1.5 rounded ${
+                      viewMode === 'compact'
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                    title="Compact View"
+                  >
+                    <Layers size={18} />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-1.5 rounded ${
+                      viewMode === 'list'
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                    title="List View"
+                  >
+                    <List size={18} />
+                  </button>
+
+                  <div className="hidden sm:flex items-center ml-2 border-l pl-2">
+                    <span className="text-sm text-gray-500 mr-1">Columns:</span>
+                    {[1, 2, 3].map((cols) => (
+                      <button
+                        key={cols}
+                        onClick={() => setGridColumns(cols)}
+                        className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
+                          gridColumns === cols
+                            ? 'bg-blue-100 text-blue-700'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {cols}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-
-              <div className="divide-y divide-gray-100">
-                {getItemsBySectionForCategory().map((sectionGroup) => (
-                  <div
-                    key={sectionGroup.section.id}
-                    className="border-b border-gray-200 mb-3"
-                  >
-                    {/* Section Title */}
-                    <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
-                      <h3 className="text-md font-semibold text-blue-700">
-                        {sectionGroup.section.title}
-                      </h3>
-                    </div>
-
-                    {/* Section Items */}
-                    <div className="p-4 bg-white rounded-b-md">
-                      {/* Render top-level items with recursive function */}
-                      {buildNestedItemsHierarchy(sectionGroup.items).map(
-                        (item) => renderChecklistItem(item)
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
+
+            {/* Tab navigation for sections */}
+            <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
+              {getActiveCategorySections().map((section) => (
+                <button
+                  key={section.id}
+                  className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedSection === section.id ||
+                    (!selectedSection && viewMode === 'list')
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => handleSectionSelect(section.id)}
+                >
+                  {section.title}
+                </button>
+              ))}
+              {selectedSection && (
+                <button
+                  className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                  onClick={() => setSelectedSection(null)}
+                >
+                  Show All
+                </button>
+              )}
+            </div>
+
+            {/* Checklist items in grid or list view */}
+            {viewMode === 'list' ? (
+              // List view (like original view)
+              <div className="divide-y divide-gray-100 bg-white rounded-b-lg shadow-sm">
+                {getItemsBySectionForCategory()
+                  .filter(
+                    (sectionGroup) =>
+                      !selectedSection ||
+                      sectionGroup.section.id === selectedSection
+                  )
+                  .map((sectionGroup) => (
+                    <div
+                      key={sectionGroup.section.id}
+                      className="border-b border-gray-200 mb-3"
+                    >
+                      {/* Section Title */}
+                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                        <h3 className="text-md font-semibold text-blue-700">
+                          {sectionGroup.section.title}
+                        </h3>
+                      </div>
+
+                      {/* Section Items */}
+                      <div className="p-4 bg-white rounded-b-md">
+                        {/* Render top-level items with recursive function */}
+                        {buildNestedItemsHierarchy(sectionGroup.items).map(
+                          (item) => renderChecklistItem(item)
+                        )}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              // Grid view
+              <div className={getGridClass()}>
+                {getItemsBySectionForCategory()
+                  .filter(
+                    (sectionGroup) =>
+                      !selectedSection ||
+                      sectionGroup.section.id === selectedSection
+                  )
+                  .map((sectionGroup) => (
+                    <div
+                      key={sectionGroup.section.id}
+                      className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
+                    >
+                      {/* Section Title */}
+                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
+                        <h3 className="text-md font-semibold text-blue-700">
+                          {sectionGroup.section.title}
+                        </h3>
+                      </div>
+
+                      {/* Section Items */}
+                      <div className="p-3">
+                        {/* Render top-level items with recursive function */}
+                        {buildNestedItemsHierarchy(sectionGroup.items).map(
+                          (item) => renderChecklistItem(item)
+                        )}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
         </main>
 

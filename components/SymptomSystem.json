@@ -1,0 +1,664 @@
+{
+  "General/Constitutional": {
+    "Fever": [
+      "Fever in the Adult Patient",
+      "Central Nervous System Infections",
+      "Bacteria",
+      "Viruses",
+      "Coronaviruses",
+      "HIV",
+      "Parasites",
+      "Tickborne Illnesses",
+      "Tuberculosis",
+      "Bone and Joint Infections",
+      "Skin and Soft Tissue Infections",
+      "Sepsis Syndrome",
+      "Pediatric Fever",
+      "Pneumonia",
+      "Infective Endocarditis and Valvular Heart Disease",
+      "Liver and Biliary Tract Disorders",
+      "Acute Appendicitis",
+      "Renal Failure",
+      "Sexually Transmitted Infections",
+      "Gynecologic Disorders",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Heat Illness",
+      "Care of the Poisoned Patient"
+    ],
+    "Fatigue": [
+      "Weakness",
+      "Anemia and Polycythemia",
+      "White Blood Cell Disorders",
+      "Oncologic Emergencies",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Thyroid and Adrenal Disorders",
+      "Heart Failure",
+      "Mood Disorders",
+      "Sepsis Syndrome"
+    ],
+    "Generalized weakness": [
+      "Weakness",
+      "Depressed Consciousness and Coma",
+      "Confusion",
+      "Stroke",
+      "Spinal Cord Disorders",
+      "Peripheral Nerve Disorders",
+      "Neuromuscular Disorders",
+      "Electrolyte Disorders",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Rhabdomyolysis",
+      "Sepsis Syndrome",
+      "Care of the Poisoned Patient"
+    ],
+    "Malaise": [
+      "Fever in the Adult Patient",
+      "Weakness",
+      "Anemia and Polycythemia",
+      "Oncologic Emergencies",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Thyroid and Adrenal Disorders",
+      "Sepsis Syndrome",
+      "Mood Disorders",
+      "Viruses",
+      "HIV"
+    ]
+  },
+  "Pain-Related": {
+    "Chest pain": [
+      "Chest Pain",
+      "Acute Coronary Syndromes",
+      "Dysrhythmias",
+      "Heart Failure",
+      "Pericardial and Myocardial Disease",
+      "Infective Endocarditis and Valvular Heart Disease",
+      "Aortic Dissection",
+      "Pulmonary Embolism and Deep Vein Thrombosis",
+      "Pneumonia",
+      "Pleural Disease",
+      "Asthma",
+      "Chronic Obstructive Pulmonary Disease",
+      "Esophagus, Stomach, and Duodenum",
+      "Musculoskeletal Back Pain",
+      "Thoracic Trauma",
+      "Anxiety Disorders",
+      "Cocaine and Other Sympathomimetics"
+    ]
+  },
+  "Respiratory": {
+    "Shortness of breath/dyspnea": [
+      "Dyspnea",
+      "Asthma",
+      "Chronic Obstructive Pulmonary Disease",
+      "Pneumonia",
+      "Pleural Disease",
+      "Acute Coronary Syndromes",
+      "Heart Failure",
+      "Pericardial and Myocardial Disease",
+      "Pulmonary Embolism and Deep Vein Thrombosis",
+      "Cyanosis",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Acid-Base Disorders",
+      "Anemia and Polycythemia",
+      "Rhabdomyolysis",
+      "Sepsis Syndrome",
+      "Heat Illness",
+      "Electrical and Lightning Injuries",
+      "Scuba Diving and Dysbarism",
+      "High-Altitude Medicine",
+      "Drowning",
+      "Inhaled Toxins",
+      "Airway",
+      "Mechanical Ventilation and Noninvasive Ventilatory Support",
+      "Thoracic Trauma",
+      "Neuromuscular Disorders",
+      "Pediatric Lower Airway Obstruction",
+      "Pediatric Lung Disease",
+      "Pediatric Cardiac Disorders",
+      "Medical Emergencies During Pregnancy"
+    ]
+  },
+  "Cardiovascular": {
+    "Chest pressure/tightness": [
+      "Chest Pain",
+      "Acute Coronary Syndromes",
+      "Dysrhythmias",
+      "Heart Failure",
+      "Pericardial and Myocardial Disease",
+      "Aortic Dissection",
+      "Pulmonary Embolism and Deep Vein Thrombosis",
+      "Asthma",
+      "Esophagus, Stomach, and Duodenum",
+      "Anxiety Disorders"
+    ]
+  },
+  "Gastrointestinal": {
+    "Excessive gas/flatulence": [
+      "Small Intestine",
+      "Large Intestine",
+      "Constipation"
+    ],
+    "Food poisoning symptoms": [
+      "Gastroenteritis",
+      "Pediatric Infectious Diarrheal Disease and Dehydration",
+      "Bacteria",
+      "Plants, Herbal Medications, and Mushrooms",
+      "Care of the Poisoned Patient"
+    ]
+  },
+  "Genitourinary": {
+    "Dysuria (painful urination)": [
+      "Renal Failure",
+      "Urologic Disorders",
+      "Sexually Transmitted Infections",
+      "Gynecologic Disorders",
+      "Pediatric Genitourinary and Renal Tract Disorders"
+    ],
+    "Urinary frequency": [
+      "Renal Failure",
+      "Urologic Disorders",
+      "Sexually Transmitted Infections",
+      "Gynecologic Disorders",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Pediatric Genitourinary and Renal Tract Disorders"
+    ],
+    "Urinary urgency": [
+      "Renal Failure",
+      "Urologic Disorders",
+      "Sexually Transmitted Infections",
+      "Gynecologic Disorders",
+      "Pediatric Genitourinary and Renal Tract Disorders"
+    ],
+    "Hematuria (blood in urine)": [
+      "Renal Failure",
+      "Urologic Disorders",
+      "Sexually Transmitted Infections",
+      "Disorders of Hemostasis",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Genitourinary Trauma",
+      "Pediatric Genitourinary and Renal Tract Disorders"
+    ],
+    "Urinary retention": [
+      "Urologic Disorders",
+      "Renal Failure",
+      "Spinal Cord Disorders",
+      "Anticholinergics",
+      "Opioids",
+      "Antidepressants"
+    ]
+  },
+  "Neurological": {
+    "Altered mental status": [
+      "Depressed Consciousness and Coma",
+      "Confusion",
+      "Seizures",
+      "Dizziness and Vertigo",
+      "Headache",
+      "Stroke",
+      "Seizure",
+      "Headache Disorders",
+      "Delirium and Dementia",
+      "Brain and Cranial Nerve Disorders",
+      "Spinal Cord Disorders",
+      "Neuromuscular Disorders",
+      "Central Nervous System Infections",
+      "Thought Disorders",
+      "Mood Disorders",
+      "Anxiety Disorders",
+      "Somatic Symptoms and Related Disorders",
+      "Factitious Disorders and Malingering",
+      "Suicidal Behavior",
+      "Acid-Base Disorders",
+      "Electrolyte Disorders",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Thyroid and Adrenal Disorders",
+      "Sepsis Syndrome",
+      "Hypothermia, Frostbite, and Nonfreezing Cold Injuries",
+      "Heat Illness",
+      "Electrical and Lightning Injuries",
+      "Scuba Diving and Dysbarism",
+      "High-Altitude Medicine",
+      "Drowning",
+      "Radiation Injuries",
+      "Care of the Poisoned Patient",
+      "Toxic Alcohols",
+      "Alcohol-Related Disease",
+      "Acetaminophen",
+      "Aspirin and Nonsteroidal Agents",
+      "Anticholinergics",
+      "Antidepressants",
+      "Cardiovascular Drugs",
+      "Cocaine and Other Sympathomimetics",
+      "THC and Hallucinogens",
+      "Hydrocarbons",
+      "Inhaled Toxins",
+      "Lithium",
+      "Antipsychotics",
+      "Opioids",
+      "Pesticides",
+      "Plants, Herbal Medications, and Mushrooms",
+      "Sedative-Hypnotics",
+      "Shock",
+      "Brain Resuscitation",
+      "Head Trauma",
+      "Medical Emergencies During Pregnancy",
+      "Care of the Geriatric Patient",
+      "The Immunocompromised Patient"
+    ]
+  },
+  "Musculoskeletal/Trauma": {
+    "Fall": [
+      "Multiple Trauma",
+      "Head Trauma",
+      "Facial Trauma",
+      "Spinal Trauma",
+      "Neck Trauma",
+      "Thoracic Trauma",
+      "Abdominal Trauma",
+      "Genitourinary Trauma",
+      "Peripheral Vascular Trauma",
+      "General Principles of Orthopedic Injuries",
+      "Pelvic Injuries",
+      "Femur and Hip Injuries",
+      "Syncope",
+      "Seizures",
+      "Dizziness and Vertigo",
+      "Weakness",
+      "Care of the Geriatric Patient",
+      "Geriatric Trauma",
+      "Pediatric Trauma"
+    ]
+  },
+  "Skin/Soft Tissue": {
+    "Rash": [
+      "Dermatologic Presentations",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Viruses",
+      "Coronaviruses",
+      "HIV",
+      "Tickborne Illnesses",
+      "Skin and Soft Tissue Infections",
+      "Sepsis Syndrome",
+      "Sexually Transmitted Infections",
+      "Drug Therapy in Pregnancy",
+      "Care of the Poisoned Patient",
+      "Pediatric Fever"
+    ]
+  },
+  "Allergy": {
+    "Allergic reaction": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Dermatologic Presentations",
+      "Asthma",
+      "Shock"
+    ],
+    "Anaphylaxis": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Shock",
+      "Airway",
+      "Dyspnea",
+      "Hypotension"
+    ],
+    "Angioedema": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Airway",
+      "Cardiovascular Drugs"
+    ],
+    "Hives/urticaria": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Dermatologic Presentations"
+    ],
+    "Local allergic reaction": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Dermatologic Presentations",
+      "Venomous Animal Injuries"
+    ]
+  },
+  "Immunology": {
+    "Post-immunization reaction": [
+      "Fever in the Adult Patient",
+      "Pediatric Fever",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Syncope"
+    ],
+    "Autoimmune reactions": [
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Arthritis",
+      "Dermatologic Presentations"
+    ],
+    "Immunodeficiency symptoms": [
+      "HIV",
+      "The Immunocompromised Patient",
+      "Oncologic Emergencies",
+      "Skin and Soft Tissue Infections",
+      "Pneumonia"
+    ]
+  },
+  "ENT": {
+    "Foreign body (ear)": ["Foreign Bodies", "Otolaryngology"],
+    "Foreign body (nose)": ["Foreign Bodies", "Otolaryngology"],
+    "Epistaxis (nosebleed)": [
+      "Otolaryngology",
+      "Disorders of Hemostasis",
+      "Hypertension",
+      "Head Trauma",
+      "Facial Trauma"
+    ],
+    "Hearing loss (sudden)": [
+      "Otolaryngology",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders"
+    ],
+    "Tinnitus (acute)": [
+      "Otolaryngology",
+      "Aspirin and Nonsteroidal Agents",
+      "Head Trauma"
+    ],
+    "Ear discharge": ["Otolaryngology", "Head Trauma"],
+    "Ear pain": ["Otolaryngology", "Upper Respiratory Tract Infections"],
+    "Throat pain": [
+      "Sore Throat",
+      "Upper Respiratory Tract Infections",
+      "Esophagus, Stomach, and Duodenum",
+      "Oral Medicine",
+      "Otolaryngology",
+      "Foreign Bodies"
+    ],
+    "Toothache/dental pain": [
+      "Oral Medicine",
+      "Infective Endocarditis and Valvular Heart Disease"
+    ],
+    "Facial swelling": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Oral Medicine",
+      "Otolaryngology",
+      "Skin and Soft Tissue Infections",
+      "Facial Trauma"
+    ],
+    "Facial pain": [
+      "Oral Medicine",
+      "Otolaryngology",
+      "Headache Disorders",
+      "Brain and Cranial Nerve Disorders",
+      "Facial Trauma",
+      "Acute Coronary Syndromes"
+    ]
+  },
+  "Eye": {
+    "Eye pain": [
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Headache Disorders",
+      "Brain and Cranial Nerve Disorders",
+      "Facial Trauma"
+    ],
+    "Foreign body (eye)": [
+      "Foreign Bodies",
+      "Ophthalmology",
+      "Red and Painful Eye"
+    ],
+    "Eye discharge": [
+      "Ophthalmology",
+      "Red and Painful Eye",
+      "Sexually Transmitted Infections"
+    ],
+    "Red eye": [
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Allergy, Anaphylaxis, and Angioedema"
+    ],
+    "Eye swelling": [
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Skin and Soft Tissue Infections",
+      "Facial Trauma"
+    ],
+    "Vision loss": [
+      "Ophthalmology",
+      "Red and Painful Eye",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders",
+      "Headache Disorders",
+      "Hypertension",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Toxic Alcohols"
+    ],
+    "Foreign body sensation in eye": [
+      "Foreign Bodies",
+      "Ophthalmology",
+      "Red and Painful Eye"
+    ],
+    "Double vision": [
+      "Diplopia",
+      "Ophthalmology",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders",
+      "Neuromuscular Disorders"
+    ]
+  },
+  "Psychiatric": {
+    "Anxiety": [
+      "Anxiety Disorders",
+      "Mood Disorders",
+      "Chest Pain",
+      "Dyspnea",
+      "Palpitations",
+      "Hyperventilation (related to Acid-Base)",
+      "Substance intoxication",
+      "Substance withdrawal",
+      "Thyroid and Adrenal Disorders"
+    ],
+    "Panic attack": [
+      "Anxiety Disorders",
+      "Chest Pain",
+      "Dyspnea",
+      "Palpitations",
+      "Dizziness and Vertigo",
+      "Hyperventilation (related to Acid-Base)"
+    ],
+    "Depression": [
+      "Mood Disorders",
+      "Suicidal Behavior",
+      "Somatic Symptoms and Related Disorders",
+      "Care of the Geriatric Patient"
+    ],
+    "Suicidal ideation": [
+      "Suicidal Behavior",
+      "Mood Disorders",
+      "Thought Disorders",
+      "Anxiety Disorders",
+      "Alcohol-Related Disease",
+      "Substance withdrawal",
+      "Care of the Poisoned Patient"
+    ],
+    "Homicidal ideation": [
+      "Thought Disorders",
+      "Mood Disorders",
+      "Substance intoxication",
+      "The Combative and Difficult Patient"
+    ]
+  },
+  "Endocrine/Metabolic": {
+    "Hypoglycemia": [
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Depressed Consciousness and Coma",
+      "Seizures",
+      "Alcohol-Related Disease",
+      "Sepsis Syndrome",
+      "Liver and Biliary Tract Disorders",
+      "Care of the Poisoned Patient"
+    ],
+    "Hyperglycemia": [
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Depressed Consciousness and Coma",
+      "Sepsis Syndrome",
+      "Pancreas",
+      "Medical Emergencies During Pregnancy",
+      "Oncologic Emergencies"
+    ],
+    "Diabetic ketoacidosis": [
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Acid-Base Disorders",
+      "Electrolyte Disorders",
+      "Nausea and Vomiting",
+      "Abdominal Pain",
+      "Depressed Consciousness and Coma"
+    ],
+    "Electrolyte abnormalities": [
+      "Electrolyte Disorders",
+      "Acid-Base Disorders",
+      "Renal Failure",
+      "Heart Failure",
+      "Liver and Biliary Tract Disorders",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Rhabdomyolysis",
+      "Dehydration",
+      "Diarrhea",
+      "Vomiting",
+      "Care of the Poisoned Patient",
+      "Alcohol-Related Disease",
+      "Cardiovascular Drugs",
+      "Oncologic Emergencies"
+    ],
+    "Thyroid crisis": [
+      "Thyroid and Adrenal Disorders",
+      "Fever in the Adult Patient",
+      "Dysrhythmias",
+      "Heart Failure",
+      "Altered mental status"
+    ]
+  },
+  "Toxicologic/Environmental": {
+    "Overdose": [
+      "Care of the Poisoned Patient",
+      "Toxic Alcohols",
+      "Acetaminophen",
+      "Aspirin and Nonsteroidal Agents",
+      "Anticholinergics",
+      "Antidepressants",
+      "Cardiovascular Drugs",
+      "Cocaine and Other Sympathomimetics",
+      "THC and Hallucinogens",
+      "Iron and Heavy Metals",
+      "Hydrocarbons",
+      "Inhaled Toxins",
+      "Lithium",
+      "Antipsychotics",
+      "Opioids",
+      "Pesticides",
+      "Plants, Herbal Medications, and Mushrooms",
+      "Sedative-Hypnotics",
+      "Suicidal Behavior"
+    ],
+    "Poisoning": [
+      "Care of the Poisoned Patient",
+      "Toxic Alcohols",
+      "Acetaminophen",
+      "Aspirin and Nonsteroidal Agents",
+      "Anticholinergics",
+      "Antidepressants",
+      "Cardiovascular Drugs",
+      "Caustics",
+      "Cocaine and Other Sympathomimetics",
+      "THC and Hallucinogens",
+      "Iron and Heavy Metals",
+      "Hydrocarbons",
+      "Inhaled Toxins",
+      "Lithium",
+      "Antipsychotics",
+      "Opioids",
+      "Pesticides",
+      "Plants, Herbal Medications, and Mushrooms",
+      "Sedative-Hypnotics"
+    ]
+  },
+  "Infectious Disease": {
+    "Fever with rash": [
+      "Fever in the Adult Patient",
+      "Pediatric Fever",
+      "Dermatologic Presentations",
+      "Viruses",
+      "Bacteria",
+      "Tickborne Illnesses",
+      "Sepsis Syndrome",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Drug Therapy in Pregnancy",
+      "Allergy, Anaphylaxis, and Angioedema"
+    ],
+    "Infectious disease exposure": [
+      "HIV",
+      "Tuberculosis",
+      "Coronaviruses",
+      "Bacteria",
+      "Viruses",
+      "Parasites",
+      "Sexually Transmitted Infections",
+      "Needlestick/sharps injury"
+    ],
+    "Sepsis concern": [
+      "Sepsis Syndrome",
+      "Shock",
+      "Fever in the Adult Patient",
+      "Pediatric Fever",
+      "Hypotension",
+      "Altered mental status",
+      "The Immunocompromised Patient",
+      "Care of the Geriatric Patient"
+    ]
+  },
+  "Obstetric/Gynecologic": {
+    "Pregnancy complications": [
+      "Complications of Pregnancy",
+      "Medical Emergencies During Pregnancy",
+      "Trauma in Pregnancy",
+      "Vaginal Bleeding",
+      "Abdominal Pain",
+      "Hypertension",
+      "Seizure",
+      "Shock"
+    ],
+    "Labor": [
+      "Labor and Delivery",
+      "Complications of Pregnancy",
+      "Abdominal Pain",
+      "Vaginal Bleeding"
+    ],
+    "Miscarriage/threatened miscarriage": [
+      "Complications of Pregnancy",
+      "Vaginal Bleeding",
+      "Abdominal Pain",
+      "Shock"
+    ],
+    "Postpartum complications": [
+      "Complications of Pregnancy",
+      "Medical Emergencies During Pregnancy",
+      "Vaginal Bleeding",
+      "Sepsis Syndrome",
+      "Pulmonary Embolism and Deep Vein Thrombosis",
+      "Hypertension",
+      "Mood Disorders"
+    ],
+    "Vaginal discharge": [
+      "Gynecologic Disorders",
+      "Sexually Transmitted Infections"
+    ],
+    "Menstrual pain": ["Acute Pelvic Pain", "Gynecologic Disorders"],
+    "Amenorrhea": [
+      "Gynecologic Disorders",
+      "Thyroid and Adrenal Disorders",
+      "Complications of Pregnancy"
+    ],
+    "Vaginal bleeding (abnormal)": [
+      "Vaginal Bleeding",
+      "Gynecologic Disorders",
+      "Complications of Pregnancy",
+      "Labor and Delivery",
+      "Disorders of Hemostasis",
+      "Genitourinary Trauma"
+    ]
+  }
+}
