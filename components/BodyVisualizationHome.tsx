@@ -46,6 +46,8 @@ interface SystemColorStyle {
   hover: string;
 }
 
+// --- Other interfaces (RegionStyle, SystemArea, SidePanel, HumanBodySVGProps) ---
+// (Keep these as they were)
 interface RegionStyle {
   fillOpacity: number;
   hoverFillOpacity: number;
@@ -130,12 +132,15 @@ export default function BodyVisualizationHome() {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
-  // Fetch symptom data from your JSON file
+  // Fetch symptom data
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/symptoms'); // Create this API endpoint
+        const response = await fetch('/api/symptoms');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         setMedicalData(data);
         setLoading(false);
@@ -144,69 +149,93 @@ export default function BodyVisualizationHome() {
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
   // Handle search functionality
   useEffect(() => {
     if (searchTerm.length >= 2 && Object.keys(medicalData).length > 0) {
+      const lowerSearchTerm = searchTerm.toLowerCase();
       const systems = Object.keys(medicalData).filter((system) =>
-        system.toLowerCase().includes(searchTerm.toLowerCase())
+        system.toLowerCase().includes(lowerSearchTerm)
       );
 
       const symptoms: SymptomResult[] = [];
       Object.entries(medicalData).forEach(([system, systemSymptoms]) => {
-        Object.keys(systemSymptoms).forEach((symptom) => {
-          if (symptom.toLowerCase().includes(searchTerm.toLowerCase())) {
-            symptoms.push({ system, symptom });
-          }
-        });
+        // Ensure systemSymptoms is an object before trying to get its keys
+        if (typeof systemSymptoms === 'object' && systemSymptoms !== null) {
+          Object.keys(systemSymptoms).forEach((symptom) => {
+            if (symptom.toLowerCase().includes(lowerSearchTerm)) {
+              symptoms.push({ system, symptom });
+            }
+          });
+        }
       });
 
       setSearchResults({ systems, symptoms });
       if (systems.length > 0 || symptoms.length > 0) {
         setView('search');
+      } else {
+        // Optional: Explicitly set view if search yields no results but term exists
+        // setView('search'); // Keep in search view to show "No results"
       }
-    } else if (searchTerm.length === 0 && view === 'search') {
+    } else if (searchTerm.length < 2 && view === 'search') {
+      // Change condition to < 2
       setView('body');
+      setSearchResults({ systems: [], symptoms: [] }); // Clear results when clearing search
     }
-  }, [searchTerm, medicalData, view]);
+  }, [searchTerm, medicalData, view]); // Removed view dependency if clearing search should always go back to body
 
-  const handleSystemClick = (system: string) => {
+  // ****** START OF FIX ****** (Previous fix maintained)
+  // Correctly define handleSystemClick
   const handleSystemClick = (system: string) => {
     setSelectedSystem(system);
     setView('system');
-  };
+  }; // <-- Ensure this closing brace exists and is correct
+
+  // Correctly define handleSymptomClick (now properly scoped after handleSystemClick)
   const handleSymptomClick = (symptom: string) => {
-    // Store the current system and symptom in sessionStorage
     if (typeof window !== 'undefined' && selectedSystem) {
       sessionStorage.setItem('currentSystem', selectedSystem);
       sessionStorage.setItem('currentSymptom', symptom);
     }
-
-    // Format the symptom name to be URL-friendly
     const slugifiedSymptom = symptom
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^\w\-]+/g, '')
       .replace(/\-\-+/g, '-');
-
-    // Navigate to the dynamic symptom checker page
     router.push(`/symptoms/${slugifiedSymptom}`);
-  };
+  }; // <-- Ensure this closing brace exists and is correct
 
+  // Correctly define handleBackClick (now properly scoped after handleSymptomClick)
   const handleBackClick = () => {
-    if (view === 'symptom') {
-  const handleBackClick = () => {
-    if (view === 'symptom') {
-      setView('system');
-    } else if (view === 'system' || view === 'search') {
+    // NO duplicate definition inside
+    if (view === 'system' || view === 'symptom') {
+      // Group conditions that lead back to a previous step
+      // If coming back from symptom view, go to system view
+      if (view === 'symptom') {
+        setView('system');
+        // Keep selectedSystem as is
+      }
+      // If coming back from system view OR search view, go to body view
+      else {
+        // view === 'system'
+        setView('body');
+        setSelectedSystem(null);
+        setSearchTerm(''); // Clear search term when going back to body
+        setSearchResults({ systems: [], symptoms: [] }); // Clear results
+      }
+    } else if (view === 'search') {
+      // Specifically handle back from search
       setView('body');
       setSelectedSystem(null);
-      setSearchTerm('');
+      setSearchTerm(''); // Clear search term
+      setSearchResults({ systems: [], symptoms: [] }); // Clear results
     }
-  };
+    // If view is 'body', clicking back does nothing (or could have other logic)
+  }; // <-- Ensure this closing brace exists and is correct
+
+  // Correctly define getSystemColor (now properly scoped after handleBackClick)
   const getSystemColor = (system: string): SystemColorStyle => {
     const colorMap: Record<string, SystemColorStyle> = {
       'General/Constitutional': {
@@ -292,7 +321,6 @@ export default function BodyVisualizationHome() {
         hover: 'hover:bg-pink-100',
       },
     };
-
     return (
       colorMap[system] || {
         bg: '#f5f5f5',
@@ -300,18 +328,28 @@ export default function BodyVisualizationHome() {
         hover: 'hover:bg-gray-100',
       }
     );
-  };
+  }; // <-- Ensure this closing brace exists and is correct
 
-  // Render the appropriate icon for a system
+  // Correctly define renderSystemIcon (now properly scoped after getSystemColor)
   const renderSystemIcon = (system: string, size = 18, color?: string) => {
     const IconComponent = systemIcons[system];
+    // Check if selectedSystem exists for border color fallback
+    const fallbackColor = selectedSystem
+      ? getSystemColor(selectedSystem).border
+      : '#9e9e9e';
     return IconComponent ? (
       <IconComponent
         size={size}
-        color={color || getSystemColor(system).border}
+        // Ensure color fallback works even if system is not in colorMap directly
+        color={
+          color ||
+          (systemIcons[system] ? getSystemColor(system).border : fallbackColor)
+        }
       />
     ) : null;
-  };
+  }; // <-- Ensure this closing brace exists and is correct
+
+  // ****** END OF FIX ****** (Previous fix maintained)
 
   if (loading) {
     return (
@@ -329,6 +367,7 @@ export default function BodyVisualizationHome() {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
       <div className="container mx-auto px-4 py-6">
+        {/* Header Section */}
         <div className="max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Medical Symptom Checker
@@ -337,7 +376,6 @@ export default function BodyVisualizationHome() {
             Identify potential causes for your symptoms by selecting a body
             system or searching
           </p>
-
           <div className="mb-8">
             <SearchBox
               value={searchTerm}
@@ -347,38 +385,51 @@ export default function BodyVisualizationHome() {
           </div>
         </div>
 
+        {/* Back Button (Conditional) */}
+        {(view === 'system' || view === 'search' || view === 'symptom') && (
+          <div className="max-w-4xl mx-auto mb-4">
+            <button
+              onClick={handleBackClick}
+              className="flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              {/* Icon can be added here if desired */}← Back
+            </button>
+          </div>
+        )}
+
         {/* Main Content Area */}
         <div className="max-w-6xl mx-auto">
+          {/* Body View */}
           {view === 'body' && (
             <div className="flex flex-col items-center">
               <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">
                 Select a body system
               </h2>
               <div className="w-full max-w-md mb-8">
+                {/* Ensure HumanBodySVG component is defined or imported correctly */}
                 <HumanBodySVG
                   onSystemClick={handleSystemClick}
                   renderSystemIcon={renderSystemIcon}
                 />
               </div>
-
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
                 {Object.keys(medicalData).map((system) => {
-                  const { bg, border, hover } = getSystemColor(system);
+                  const { border, hover } = getSystemColor(system);
                   return (
                     <button
                       key={system}
-                      className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border ${hover} flex items-center`}
-                      style={{ borderColor: border, borderLeftWidth: '4px' }}
+                      className={`bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition-shadow border-l-4 ${hover} flex items-center text-left dark:border-gray-700`}
+                      style={{ borderColor: border }}
                       onClick={() => handleSystemClick(system)}
                     >
                       <div className="mr-3 flex-shrink-0">
                         {renderSystemIcon(system, 22)}
                       </div>
                       <div className="flex-grow">
-                        <h3 className="font-medium text-gray-800 text-left">
+                        <h3 className="font-medium text-gray-800 dark:text-gray-200">
                           {system}
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                           {Object.keys(medicalData[system] || {}).length}{' '}
                           symptoms
                         </p>
@@ -390,45 +441,47 @@ export default function BodyVisualizationHome() {
             </div>
           )}
 
+          {/* Search View */}
           {view === 'search' && (
             <div className="max-w-4xl mx-auto">
-              <button
-                onClick={handleBackClick}
-                className="mb-4 flex items-center text-blue-600 hover:text-blue-800"
-              >
-                ← Back to Body View
-              </button>
-
-              <h2 className="text-xl font-semibold mb-6">
-                Search Results for "{searchTerm}"
+              {/* Back button moved above content area */}
+              <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
+                {/* ***** FIX 1: Replace " with &quot; ***** */}
+                Search Results for &quot;{searchTerm}&quot;
               </h2>
-
+              {searchResults.systems.length === 0 &&
+                searchResults.symptoms.length === 0 && (
+                  <div className="text-center py-8">
+                    <p className="text-gray-500 dark:text-gray-400">
+                      {/* ***** FIX 2: Replace " with &quot; ***** */}
+                      No systems or symptoms found matching &quot;{searchTerm}
+                      &quot;
+                    </p>
+                  </div>
+                )}
               {searchResults.systems.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-lg font-medium mb-3 text-gray-700">
-                    Body Systems
+                  <h3 className="text-xl font-medium mb-4 text-gray-700 dark:text-gray-300 border-b pb-2 dark:border-gray-700">
+                    Matching Body Systems
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {searchResults.systems.map((system) => {
-                      const { bg, border, hover } = getSystemColor(system);
+                      const { border, hover } = getSystemColor(system);
                       return (
                         <button
                           key={system}
-                          className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border ${hover} flex items-center`}
-                          style={{
-                            borderColor: border,
-                            borderLeftWidth: '4px',
-                          }}
+                          className={`bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition-shadow border-l-4 ${hover} flex items-center text-left dark:border-gray-700`}
+                          style={{ borderColor: border }}
                           onClick={() => handleSystemClick(system)}
                         >
                           <div className="mr-3 flex-shrink-0">
                             {renderSystemIcon(system, 20)}
                           </div>
                           <div className="flex-grow">
-                            <h4 className="font-medium text-gray-800 text-left">
+                            <h4 className="font-medium text-gray-800 dark:text-gray-200">
                               {system}
                             </h4>
-                            <p className="text-sm text-gray-500 mt-1">
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                               {Object.keys(medicalData[system] || {}).length}{' '}
                               symptoms
                             </p>
@@ -439,38 +492,41 @@ export default function BodyVisualizationHome() {
                   </div>
                 </div>
               )}
-
               {searchResults.symptoms.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-medium mb-3 text-gray-700">
-                    Symptoms
+                  <h3 className="text-xl font-medium mb-4 text-gray-700 dark:text-gray-300 border-b pb-2 dark:border-gray-700">
+                    Matching Symptoms
                   </h3>
-                  <div className="bg-white rounded-lg shadow border border-gray-200 divide-y divide-gray-200">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700">
                     {searchResults.symptoms.map(({ system, symptom }) => {
-                      const { bg, border } = getSystemColor(system);
+                      const { border } = getSystemColor(system);
                       return (
                         <div
                           key={`${system}-${symptom}`}
-                          className="p-4 hover:bg-blue-50 cursor-pointer transition-colors flex"
+                          className="p-4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer transition-colors flex items-center"
                           onClick={() => {
-                            handleSystemClick(system);
-                            handleSymptomClick(symptom);
+                            // When clicking a symptom from search, we need to set the selected system first
+                            setSelectedSystem(system); // Set the system context
+                            handleSymptomClick(symptom); // Then navigate/handle the symptom
                           }}
                         >
                           <div
                             className="w-1 mr-3 self-stretch rounded-full"
                             style={{ backgroundColor: border }}
                           ></div>
-                          <div className="mr-3 flex-shrink-0">
+                          <div className="mr-4 flex-shrink-0">
                             {renderSystemIcon(system, 18)}
                           </div>
-                          <div>
-                            <h4 className="font-medium text-gray-800">
+                          <div className="flex-grow">
+                            <h4 className="font-medium text-gray-800 dark:text-gray-200">
                               {symptom}
                             </h4>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
                               System: {system}
                             </p>
+                          </div>
+                          <div className="text-blue-500 dark:text-blue-400 ml-2">
+                            →
                           </div>
                         </div>
                       );
@@ -478,83 +534,97 @@ export default function BodyVisualizationHome() {
                   </div>
                 </div>
               )}
-
-              {searchResults.systems.length === 0 &&
-                searchResults.symptoms.length === 0 && (
-                  <div className="text-center py-8">
-                    <p className="text-gray-500">
-                      No results found for "{searchTerm}"
-                    </p>
-                  </div>
-                )}
             </div>
           )}
 
+          {/* System View */}
           {view === 'system' && selectedSystem && (
             <div className="max-w-4xl mx-auto">
-              <button
-                onClick={handleBackClick}
-                className="mb-4 flex items-center text-blue-600 hover:text-blue-800"
-              >
-                ← Back to Body View
-              </button>
-
+              {/* Back button moved above content area */}
               <div className="flex items-center mb-6">
                 <div className="mr-3">
-                  {renderSystemIcon(selectedSystem, 24)}
+                  {renderSystemIcon(selectedSystem, 28)}{' '}
+                  {/* Slightly larger icon */}
                 </div>
-                <h2 className="text-xl font-semibold">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {selectedSystem} Symptoms
                 </h2>
               </div>
 
-              <div className="bg-white rounded-lg shadow border border-gray-200 divide-y divide-gray-200">
-                {Object.keys(medicalData[selectedSystem] || {}).map(
-                  (symptom) => {
-                    const { border } = getSystemColor(selectedSystem);
-                    return (
-                      <div
-                        key={symptom}
-                        className="p-4 hover:bg-blue-50 cursor-pointer transition-colors flex"
-                        onClick={() => handleSymptomClick(symptom)}
-                      >
-                        <div
-                          className="w-1 mr-3 self-stretch rounded-full"
-                          style={{ backgroundColor: border }}
-                        ></div>
-                        <div className="flex-1">
-                          <h3 className="font-medium text-gray-800">
-                            {symptom}
-                          </h3>
-                          <p className="text-sm text-gray-500">
-                            {medicalData[selectedSystem][symptom]?.length || 0}{' '}
-                            related conditions
-                          </p>
-                        </div>
-                        <div className="text-blue-500">→</div>
-                      </div>
-                    );
-                  }
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700">
+                {Object.keys(medicalData[selectedSystem] || {}).length > 0 ? (
+                  Object.keys(medicalData[selectedSystem])
+                    .sort()
+                    .map(
+                      // Sort symptoms alphabetically
+                      (symptom) => {
+                        const { border } = getSystemColor(selectedSystem);
+                        const relatedConditionsCount =
+                          medicalData[selectedSystem][symptom]?.length || 0;
+                        return (
+                          <div
+                            key={symptom}
+                            className="p-4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer transition-colors flex items-center"
+                            onClick={() => handleSymptomClick(symptom)}
+                          >
+                            <div
+                              className="w-1 mr-3 self-stretch rounded-full"
+                              style={{ backgroundColor: border }}
+                            ></div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-gray-800 dark:text-gray-200">
+                                {symptom}
+                              </h3>
+                              <p className="text-sm text-gray-500 dark:text-gray-400">
+                                {relatedConditionsCount} related condition
+                                {relatedConditionsCount !== 1 ? 's' : ''}
+                              </p>
+                            </div>
+                            <div className="text-blue-500 dark:text-blue-400 ml-2">
+                              →
+                            </div>
+                          </div>
+                        );
+                      }
+                    )
+                ) : (
+                  <div className="p-4 text-center text-gray-500 dark:text-gray-400">
+                    No specific symptoms listed for this system.
+                  </div>
                 )}
               </div>
             </div>
           )}
+
+          {/* Symptom View Placeholder (if needed, or handled by navigation) */}
+          {view === 'symptom' && (
+            <div className="max-w-4xl mx-auto">
+              {/* Content for the symptom view would go here if not navigating away */}
+              {/* Usually, you navigate away, so this might just show a loading state */}
+              <p>Loading symptom details...</p>
+            </div>
+          )}
         </div>
 
+        {/* Disclaimer */}
         <div className="mt-16 text-center">
-          <div className="inline-block p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded-lg max-w-2xl mx-auto">
+          <div className="inline-block p-4 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded-lg max-w-2xl mx-auto shadow">
             <p className="text-sm">
               <strong>Disclaimer:</strong> This tool is for informational
-              purposes only and is not a substitute for professional medical
-              advice. Always consult with a qualified healthcare provider.
+              purposes only and does not constitute medical advice. It is not a
+              substitute for professional medical evaluation, diagnosis, or
+              treatment. Always consult with a qualified healthcare provider for
+              any health concerns.
             </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+} // <-- This is the final closing brace for BodyVisualizationHome
 
+// --- HumanBodySVG Component ---
+// (Keep this component as it was, it doesn't seem to have the parsing errors)
 function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
   // Create hover state for each region
   const [hoverRegion, setHoverRegion] = useState<string | null>(null);
@@ -616,7 +686,6 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
         stroke: '#03a9f4',
       },
     };
-
     const style = baseStyles[region] || {
       fillOpacity: 0.3,
       hoverFillOpacity: 0.6,
@@ -624,7 +693,6 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       stroke: '#9e9e9e',
     };
     const isHovered = hoverRegion === region;
-
     return {
       fillOpacity: isHovered ? style.hoverFillOpacity : style.fillOpacity,
       fill: style.fill,
@@ -676,10 +744,10 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       id: 'Musculoskeletal/Trauma',
       shape: 'multiple',
       paths: [
-        'M160,95 L140,95 L140,200 L160,200 Z', // Left arm
-        'M240,95 L260,95 L260,200 L240,200 Z', // Right arm
-        'M180,275 L160,350 L180,350 L200,275 Z', // Left leg
-        'M220,275 L240,350 L220,350 L200,275 Z', // Right leg
+        'M160,95 L140,95 L140,200 L160,200 Z',
+        'M240,95 L260,95 L260,200 L240,200 Z',
+        'M180,275 L160,350 L180,350 L200,275 Z',
+        'M220,275 L240,350 L220,350 L200,275 Z',
       ],
       text: { x: 150, y: 145, label: 'MSK' },
       icon: { x: 150, y: 125 },
@@ -742,7 +810,6 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
 
   return (
     <div className="relative">
-      {/* Human body image */}
       <div
         className="relative mx-auto"
         style={{ width: '400px', height: '500px' }}
@@ -762,6 +829,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
 
           {/* Clickable areas for body systems */}
           {systemAreas.map((area) => {
+            // Circle rendering
             if (
               area.shape === 'circle' &&
               area.coords?.cx &&
@@ -769,15 +837,18 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
               area.coords?.r
             ) {
               return (
-                <g key={area.id} className="cursor-pointer">
+                <g
+                  key={area.id}
+                  className="cursor-pointer"
+                  onClick={() => onSystemClick(area.id)}
+                  onMouseEnter={() => setHoverRegion(area.id)}
+                  onMouseLeave={() => setHoverRegion(null)}
+                >
                   <circle
                     cx={area.coords.cx}
                     cy={area.coords.cy}
                     r={area.coords.r}
                     style={getRegionStyle(area.id)}
-                    onMouseEnter={() => setHoverRegion(area.id)}
-                    onMouseLeave={() => setHoverRegion(null)}
-                    onClick={() => onSystemClick(area.id)}
                   />
                   <foreignObject
                     x={area.icon.x}
@@ -804,7 +875,9 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                   </text>
                 </g>
               );
-            } else if (
+            }
+            // Rect rendering
+            else if (
               area.shape === 'rect' &&
               area.coords?.x !== undefined &&
               area.coords?.y !== undefined &&
@@ -812,16 +885,19 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
               area.coords?.height !== undefined
             ) {
               return (
-                <g key={area.id} className="cursor-pointer">
+                <g
+                  key={area.id}
+                  className="cursor-pointer"
+                  onClick={() => onSystemClick(area.id)}
+                  onMouseEnter={() => setHoverRegion(area.id)}
+                  onMouseLeave={() => setHoverRegion(null)}
+                >
                   <rect
                     x={area.coords.x}
                     y={area.coords.y}
                     width={area.coords.width}
                     height={area.coords.height}
                     style={getRegionStyle(area.id)}
-                    onMouseEnter={() => setHoverRegion(area.id)}
-                    onMouseLeave={() => setHoverRegion(null)}
-                    onClick={() => onSystemClick(area.id)}
                   />
                   <foreignObject
                     x={area.icon.x}
@@ -864,17 +940,22 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                   )}
                 </g>
               );
-            } else if (area.shape === 'multiple' && area.paths) {
+            }
+            // Multiple path rendering
+            else if (area.shape === 'multiple' && area.paths) {
               return (
-                <g key={area.id} className="cursor-pointer">
+                <g
+                  key={area.id}
+                  className="cursor-pointer"
+                  onClick={() => onSystemClick(area.id)}
+                  onMouseEnter={() => setHoverRegion(area.id)}
+                  onMouseLeave={() => setHoverRegion(null)}
+                >
                   {area.paths.map((path, index) => (
                     <path
                       key={index}
                       d={path}
                       style={getRegionStyle(area.id)}
-                      onMouseEnter={() => setHoverRegion(area.id)}
-                      onMouseLeave={() => setHoverRegion(null)}
-                      onClick={() => onSystemClick(area.id)}
                     />
                   ))}
                   <foreignObject
@@ -907,27 +988,22 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
           })}
 
           {/* Side panel buttons with icons */}
-          {sidePanels.map((panel, index) => {
-            const baseStyles = {
-              fill: '#ffffff',
+          {sidePanels.map((panel) => {
+            const isHovered = hoverRegion === panel.id;
+            const style = {
+              fill: isHovered ? '#f0f0f0' : '#ffffff', // Lighter gray on hover
               stroke: '#cccccc',
               strokeWidth: 1,
               cursor: 'pointer',
-              filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.2))',
+              filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.15))',
+              transition: 'fill 0.2s ease',
             };
-
-            const isHovered = hoverRegion === panel.id;
-            const style = {
-              ...baseStyles,
-              fill: isHovered ? '#f5f5f5' : '#ffffff',
-            };
-
             return (
               <g
-                key={index}
+                key={panel.id}
+                onClick={() => onSystemClick(panel.id)}
                 onMouseEnter={() => setHoverRegion(panel.id)}
                 onMouseLeave={() => setHoverRegion(null)}
-                onClick={() => onSystemClick(panel.id)}
               >
                 <rect
                   x={panel.x}
@@ -943,6 +1019,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                   y={panel.y + (panel.label.length === 1 ? 12 : 5)}
                   width="16"
                   height="16"
+                  className="pointer-events-none"
                 >
                   <div className="h-full w-full flex items-center justify-center">
                     {renderSystemIcon(panel.id, 16)}

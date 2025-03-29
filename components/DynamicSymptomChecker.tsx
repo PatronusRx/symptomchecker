@@ -5,15 +5,11 @@ import { createClient } from '@supabase/supabase-js';
 import {
   ClipboardEdit,
   FileText,
-  Menu,
   X,
   Clipboard,
   RefreshCw,
   User,
-  ChevronRight,
-  ChevronLeft,
   Clock,
-  Filter,
   Grid,
   Layers,
   List,
@@ -382,7 +378,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const system = sessionStorage.getItem('currentSystem');
-      const symptom = sessionStorage.getItem('currentSymptom');
+      // Removed unused symptom variable
 
       if (system) {
         setSystemContext(system);
