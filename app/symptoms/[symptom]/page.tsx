@@ -157,19 +157,19 @@ export default function SymptomPage() {
   return (
     <div className="flex flex-col h-screen bg-gray-50">
       {/* Top Navigation */}
-      <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
+      <header className="bg-white shadow-sm px-3 md:px-4 py-2 md:py-3 flex justify-between items-center">
         <div className="flex items-center">
           {/* Back button to return to system view */}
           <button
-            className="mr-3 text-blue-500 hover:text-blue-700"
+            className="mr-2 md:mr-3 text-blue-500 hover:text-blue-700"
             onClick={handleBackClick}
             aria-label="Back to system view"
           >
-            <ArrowLeft size={24} />
+            <ArrowLeft size={20} className="md:w-6 md:h-6" />
           </button>
           <div className="flex items-center">
-            <ClipboardEdit className="text-blue-600 mr-2" size={24} />
-            <h1 className="text-xl font-bold text-gray-800">
+            <ClipboardEdit className="text-blue-600 mr-2 w-5 h-5 md:w-6 md:h-6" />
+            <h1 className="text-responsive-lg font-bold text-gray-800">
               {view === 'chapters'
                 ? 'Select a Chapter'
                 : selectedChapter?.title || 'Symptom'}{' '}
@@ -180,16 +180,18 @@ export default function SymptomPage() {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-hidden flex">
+      <div className="flex-1 overflow-hidden flex flex-col md:flex-row">
         {/* Sidebar with chapter list */}
-        <div className="w-64 bg-white border-r border-gray-200 overflow-y-auto">
-          <div className="p-4">
-            <h2 className="text-lg font-semibold mb-4">Related Chapters</h2>
+        <div className="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto">
+          <div className="p-3 md:p-4">
+            <h2 className="text-responsive font-semibold mb-3 md:mb-4">
+              Related Chapters
+            </h2>
             {chapters.map((chapter) => (
               <button
                 key={chapter.id}
                 onClick={() => handleChapterSelect(chapter)}
-                className={`w-full text-left px-4 py-2 rounded-md mb-1 ${
+                className={`w-full text-left px-3 md:px-4 py-2 rounded-md mb-1 text-responsive-sm ${
                   chapter.id === selectedChapter?.id
                     ? 'bg-blue-50 text-blue-700 font-medium border-l-4 border-blue-500'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -204,19 +206,21 @@ export default function SymptomPage() {
         {/* Main content */}
         <div className="flex-1 overflow-hidden">
           {view === 'chapters' ? (
-            <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">Select a Chapter</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="p-4 md:p-6">
+              <h2 className="text-responsive-xl font-semibold mb-4">
+                Select a Chapter
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {chapters.map((chapter) => (
                   <button
                     key={chapter.id}
                     onClick={() => handleChapterSelect(chapter)}
-                    className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow text-left"
+                    className="bg-white p-4 md:p-6 rounded-lg shadow hover:shadow-md transition-shadow text-left"
                   >
-                    <h3 className="text-lg font-medium text-gray-800 mb-2">
+                    <h3 className="text-responsive font-medium text-gray-800 mb-2">
                       {chapter.title}
                     </h3>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-responsive-xs text-gray-500">
                       Chapter {chapter.chapter_number}
                     </p>
                   </button>
@@ -224,11 +228,14 @@ export default function SymptomPage() {
               </div>
             </div>
           ) : (
-            <DynamicSymptomChecker
-              chapterSlug={
-                selectedChapter?.title.toLowerCase().replace(/\s+/g, '-') || ''
-              }
-            />
+            <div className="p-4 md:p-6">
+              <DynamicSymptomChecker
+                chapterSlug={
+                  selectedChapter?.title.toLowerCase().replace(/\s+/g, '-') ||
+                  ''
+                }
+              />
+            </div>
           )}
         </div>
       </div>

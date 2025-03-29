@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="container mx-auto px-4 py-2 md:py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
               <svg
                 viewBox="0 0 24 24"
@@ -38,30 +38,30 @@ export default function RootLayout({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-8 h-8 text-blue-500"
+                className="w-6 h-6 md:w-8 md:h-8 text-blue-500"
               >
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
               </svg>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
+              <span className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
                 SymptomDx
               </span>
             </Link>
-            <nav className="hidden md:flex space-x-6">
+            <nav className="hidden md:flex space-x-4 lg:space-x-6">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                className="text-sm lg:text-base text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Home
               </Link>
               <Link
                 href="#"
-                className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                className="text-sm lg:text-base text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 About
               </Link>
               <Link
                 href="#"
-                className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                className="text-sm lg:text-base text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Contact
               </Link>
@@ -74,7 +74,7 @@ export default function RootLayout({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-6 h-6"
+                className="w-5 h-5"
               >
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="6" x2="21" y2="6" />
@@ -84,31 +84,31 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="min-h-[calc(100vh-var(--header-height)-100px)]">
+        <main className="min-h-[calc(100vh-var(--header-height)-100px)] spacing-responsive">
           {children}
         </main>
 
-        <footer className="bg-gray-100 dark:bg-gray-900 py-8 mt-12">
+        <footer className="bg-gray-100 dark:bg-gray-900 py-6 md:py-8 mt-8 md:mt-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-gray-900 dark:text-white">
                   MedCheck
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                   A tool to help you understand your symptoms and find potential
                   causes.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-gray-900 dark:text-white">
                   Quick Links
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 md:space-y-2">
                   <li>
                     <Link
                       href="/"
-                      className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                      className="text-sm md:text-base text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
                     >
                       Home
                     </Link>
@@ -116,7 +116,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="#"
-                      className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                      className="text-sm md:text-base text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
                     >
                       About
                     </Link>
@@ -124,7 +124,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="#"
-                      className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                      className="text-sm md:text-base text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
                     >
                       Contact
                     </Link>
@@ -132,16 +132,16 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-gray-900 dark:text-white">
                   Disclaimer
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                   This tool is for informational purposes only and is not a
                   substitute for professional medical advice.
                 </p>
               </div>
             </div>
-            <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-6 text-center text-gray-600 dark:text-gray-400">
+            <div className="border-t border-gray-200 dark:border-gray-800 mt-6 md:mt-8 pt-4 md:pt-6 text-center text-sm md:text-base text-gray-600 dark:text-gray-400">
               <p>
                 &copy; {new Date().getFullYear()} MedCheck. All rights reserved.
               </p>
