@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import {
-  Search,
   Heart,
   Thermometer,
   Zap,
@@ -14,19 +12,90 @@ import {
   Layers,
   Ear,
   Eye,
-  FlaskConical,
   Circle,
   Baby,
   Skull,
   PieChart,
   Activity,
-  Stethoscope,
-  X,
+  LucideIcon,
 } from 'lucide-react';
 import SearchBox from '@/components/SearchBox';
 
+// Define interfaces for the data structure
+interface SymptomResult {
+  system: string;
+  symptom: string;
+}
+
+interface SymptomData {
+  [symptom: string]: string[]; // symptom name -> related conditions
+}
+
+interface MedicalData {
+  [system: string]: SymptomData; // system name -> symptoms
+}
+
+interface SearchResults {
+  systems: string[];
+  symptoms: SymptomResult[];
+}
+
+interface SystemColorStyle {
+  bg: string;
+  border: string;
+  hover: string;
+}
+
+interface RegionStyle {
+  fillOpacity: number;
+  hoverFillOpacity: number;
+  fill: string;
+  stroke: string;
+}
+
+interface SystemArea {
+  id: string;
+  shape: 'circle' | 'rect' | 'multiple';
+  coords?: {
+    cx?: number;
+    cy?: number;
+    r?: number;
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+  };
+  paths?: string[];
+  text: {
+    x: number;
+    y: number;
+    label: string;
+    rotate?: boolean;
+  };
+  icon: {
+    x: number;
+    y: number;
+  };
+}
+
+interface SidePanel {
+  id: string;
+  x: number;
+  y: number;
+  label: string[];
+}
+
+interface HumanBodySVGProps {
+  onSystemClick: (system: string) => void;
+  renderSystemIcon: (
+    system: string,
+    size?: number,
+    color?: string
+  ) => React.ReactNode;
+}
+
 // Map system names to their corresponding icons
-const systemIcons = {
+const systemIcons: Record<string, LucideIcon> = {
   'General/Constitutional': Thermometer,
   'Pain-Related': Zap,
   Respiratory: AudioWaveform,
@@ -36,8 +105,8 @@ const systemIcons = {
   Neurological: Brain,
   'Musculoskeletal/Trauma': Bone,
   'Skin/Soft Tissue': Layers,
-  Allergy: BadgeAlert,
-  Immunology: Shield,
+  Allergic: BadgeAlert,
+  Immunologic: Shield,
   ENT: Ear,
   Eye: Eye,
   Psychiatric: Brain,
@@ -47,17 +116,18 @@ const systemIcons = {
   'Obstetric/Gynecologic': Baby,
 };
 
+type ViewState = 'body' | 'system' | 'symptom' | 'search';
+
 export default function BodyVisualizationHome() {
-  const [selectedSystem, setSelectedSystem] = useState(null);
-  const [selectedSymptom, setSelectedSymptom] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState({
+  const [selectedSystem, setSelectedSystem] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchResults, setSearchResults] = useState<SearchResults>({
     systems: [],
     symptoms: [],
   });
-  const [view, setView] = useState('body'); // 'body', 'system', 'symptom', 'search'
-  const [medicalData, setMedicalData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [view, setView] = useState<ViewState>('body');
+  const [medicalData, setMedicalData] = useState<MedicalData>({});
+  const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
   // Fetch symptom data from your JSON file
@@ -85,7 +155,7 @@ export default function BodyVisualizationHome() {
         system.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
-      const symptoms = [];
+      const symptoms: SymptomResult[] = [];
       Object.entries(medicalData).forEach(([system, systemSymptoms]) => {
         Object.keys(systemSymptoms).forEach((symptom) => {
           if (symptom.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -101,15 +171,14 @@ export default function BodyVisualizationHome() {
     } else if (searchTerm.length === 0 && view === 'search') {
       setView('body');
     }
-  }, [searchTerm, medicalData]);
+  }, [searchTerm, medicalData, view]);
 
-  const handleSystemClick = (system) => {
+  const handleSystemClick = (system: string) => {
+  const handleSystemClick = (system: string) => {
     setSelectedSystem(system);
-    setSelectedSymptom(null);
     setView('system');
   };
-
-  const handleSymptomClick = (symptom) => {
+  const handleSymptomClick = (symptom: string) => {
     // Store the current system and symptom in sessionStorage
     if (typeof window !== 'undefined' && selectedSystem) {
       sessionStorage.setItem('currentSystem', selectedSystem);
@@ -129,18 +198,17 @@ export default function BodyVisualizationHome() {
 
   const handleBackClick = () => {
     if (view === 'symptom') {
+  const handleBackClick = () => {
+    if (view === 'symptom') {
       setView('system');
-      setSelectedSymptom(null);
     } else if (view === 'system' || view === 'search') {
       setView('body');
       setSelectedSystem(null);
       setSearchTerm('');
     }
   };
-
-  // Helper function to get system color
-  const getSystemColor = (system) => {
-    const colorMap = {
+  const getSystemColor = (system: string): SystemColorStyle => {
+    const colorMap: Record<string, SystemColorStyle> = {
       'General/Constitutional': {
         bg: '#e0f7fa',
         border: '#00bcd4',
@@ -186,8 +254,12 @@ export default function BodyVisualizationHome() {
         border: '#9c27b0',
         hover: 'hover:bg-purple-100',
       },
-      Allergy: { bg: '#f1f8e9', border: '#8bc34a', hover: 'hover:bg-lime-100' },
-      Immunology: {
+      Allergic: {
+        bg: '#f1f8e9',
+        border: '#8bc34a',
+        hover: 'hover:bg-lime-100',
+      },
+      Immunologic: {
         bg: '#f1f8e9',
         border: '#8bc34a',
         hover: 'hover:bg-lime-100',
@@ -231,7 +303,7 @@ export default function BodyVisualizationHome() {
   };
 
   // Render the appropriate icon for a system
-  const renderSystemIcon = (system, size = 18, color) => {
+  const renderSystemIcon = (system: string, size = 18, color?: string) => {
     const IconComponent = systemIcons[system];
     return IconComponent ? (
       <IconComponent
@@ -455,7 +527,7 @@ export default function BodyVisualizationHome() {
                             {symptom}
                           </h3>
                           <p className="text-sm text-gray-500">
-                            {medicalData[selectedSystem][symptom].length}{' '}
+                            {medicalData[selectedSystem][symptom]?.length || 0}{' '}
                             related conditions
                           </p>
                         </div>
@@ -483,12 +555,12 @@ export default function BodyVisualizationHome() {
   );
 }
 
-function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
+function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
   // Create hover state for each region
-  const [hoverRegion, setHoverRegion] = useState(null);
+  const [hoverRegion, setHoverRegion] = useState<string | null>(null);
 
-  const getRegionStyle = (region) => {
-    const baseStyles = {
+  const getRegionStyle = (region: string): React.CSSProperties => {
+    const baseStyles: Record<string, RegionStyle> = {
       Neurological: {
         fillOpacity: 0.3,
         hoverFillOpacity: 0.6,
@@ -564,7 +636,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
   };
 
   // Clickable areas for systems
-  const systemAreas = [
+  const systemAreas: SystemArea[] = [
     {
       id: 'Neurological',
       shape: 'circle',
@@ -636,7 +708,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
   ];
 
   // Side panels configuration with icons
-  const sidePanels = [
+  const sidePanels: SidePanel[] = [
     {
       id: 'General/Constitutional',
       x: 20,
@@ -690,7 +762,12 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
 
           {/* Clickable areas for body systems */}
           {systemAreas.map((area) => {
-            if (area.shape === 'circle') {
+            if (
+              area.shape === 'circle' &&
+              area.coords?.cx &&
+              area.coords?.cy &&
+              area.coords?.r
+            ) {
               return (
                 <g key={area.id} className="cursor-pointer">
                   <circle
@@ -727,7 +804,13 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
                   </text>
                 </g>
               );
-            } else if (area.shape === 'rect') {
+            } else if (
+              area.shape === 'rect' &&
+              area.coords?.x !== undefined &&
+              area.coords?.y !== undefined &&
+              area.coords?.width !== undefined &&
+              area.coords?.height !== undefined
+            ) {
               return (
                 <g key={area.id} className="cursor-pointer">
                   <rect
@@ -781,7 +864,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
                   )}
                 </g>
               );
-            } else if (area.shape === 'multiple') {
+            } else if (area.shape === 'multiple' && area.paths) {
               return (
                 <g key={area.id} className="cursor-pointer">
                   {area.paths.map((path, index) => (
