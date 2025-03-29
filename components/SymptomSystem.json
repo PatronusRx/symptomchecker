@@ -1456,7 +1456,7 @@
       "Aspirin and Nonsteroidal Agents"
     ]
   },
-  "Allergic/Immunologic": {
+  "Allergic": {
     "Allergic reaction": [
       "Allergy, Anaphylaxis, and Angioedema",
       "Dermatologic Presentations",
@@ -1484,19 +1484,185 @@
       "Dermatologic Presentations",
       "Venomous Animal Injuries"
     ],
+    "Allergic skin reaction": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Dermatologic Presentations"
+    ],
+    "Eye swelling": [
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Skin and Soft Tissue Infections",
+      "Facial Trauma"
+    ],
+    "Facial swelling": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Oral Medicine",
+      "Otolaryngology",
+      "Skin and Soft Tissue Infections",
+      "Facial Trauma"
+    ],
+    "Rash": [
+      "Dermatologic Presentations",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Viruses",
+      "Coronaviruses",
+      "HIV",
+      "Tickborne Illnesses",
+      "Skin and Soft Tissue Infections",
+      "Sepsis Syndrome",
+      "Sexually Transmitted Infections",
+      "Drug Therapy in Pregnancy",
+      "Care of the Poisoned Patient",
+      "Pediatric Fever"
+    ],
+    "Pruritus (itching)": [
+      "Dermatologic Presentations",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Liver and Biliary Tract Disorders",
+      "Renal Failure",
+      "Oncologic Emergencies",
+      "Parasites",
+      "HIV",
+      "Opioids"
+    ],
+    "Insect bite/sting": [
+      "Venomous Animal Injuries",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Dermatologic Presentations",
+      "Skin and Soft Tissue Infections"
+    ],
+    "Swelling (localized)": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Skin and Soft Tissue Infections",
+      "Bone and Joint Infections",
+      "Tendinopathy and Bursitis",
+      "General Principles of Orthopedic Injuries",
+      "Venomous Animal Injuries",
+      "Dermatologic Presentations",
+      "Abscess"
+    ]
+  },
+  "Immunologic": {
     "Post-immunization reaction": [
       "Fever in the Adult Patient",
       "Pediatric Fever",
       "Allergy, Anaphylaxis, and Angioedema",
       "Syncope"
+    ],
+    "Joint pain": [
+      "Arthritis",
+      "Tendinopathy and Bursitis",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Tickborne Illnesses",
+      "Bone and Joint Infections",
+      "Pediatric Musculoskeletal Disorders",
+      "General Principles of Orthopedic Injuries",
+      "Disorders of Hemostasis"
+    ],
+    "Rash": [
+      "Dermatologic Presentations",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Viruses",
+      "Coronaviruses",
+      "HIV",
+      "Tickborne Illnesses",
+      "Skin and Soft Tissue Infections",
+      "Sepsis Syndrome",
+      "Sexually Transmitted Infections",
+      "Drug Therapy in Pregnancy",
+      "Care of the Poisoned Patient",
+      "Pediatric Fever"
+    ],
+    "Fever": [
+      "Fever in the Adult Patient",
+      "Central Nervous System Infections",
+      "Bacteria",
+      "Viruses",
+      "Coronaviruses",
+      "HIV",
+      "Parasites",
+      "Tickborne Illnesses",
+      "Tuberculosis",
+      "Bone and Joint Infections",
+      "Skin and Soft Tissue Infections",
+      "Sepsis Syndrome",
+      "Pediatric Fever",
+      "Pneumonia",
+      "Infective Endocarditis and Valvular Heart Disease",
+      "Liver and Biliary Tract Disorders",
+      "Acute Appendicitis",
+      "Renal Failure",
+      "Sexually Transmitted Infections",
+      "Gynecologic Disorders",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Heat Illness",
+      "Care of the Poisoned Patient"
+    ],
+    "Generalized body pain": [
+      "Musculoskeletal Back Pain",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Rhabdomyolysis",
+      "Viruses",
+      "Tickborne Illnesses",
+      "Sepsis Syndrome",
+      "Somatic Symptoms and Related Disorders",
+      "Opioids"
+    ],
+    "Hematuria (blood in urine)": [
+      "Renal Failure",
+      "Urologic Disorders",
+      "Sexually Transmitted Infections",
+      "Disorders of Hemostasis",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Genitourinary Trauma",
+      "Pediatric Genitourinary and Renal Tract Disorders"
+    ],
+    "Red eye": [
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Allergy, Anaphylaxis, and Angioedema"
+    ],
+    "Skin lesion": [
+      "Dermatologic Presentations",
+      "Skin and Soft Tissue Infections",
+      "Venomous Animal Injuries",
+      "Sexually Transmitted Infections",
+      "HIV",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides"
+    ],
+    "Joint swelling": [
+      "Arthritis",
+      "Tendinopathy and Bursitis",
+      "Bone and Joint Infections",
+      "General Principles of Orthopedic Injuries",
+      "Disorders of Hemostasis",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Pediatric Musculoskeletal Disorders"
+    ],
+    "Hair loss (acute)": [
+      "Dermatologic Presentations",
+      "Thyroid and Adrenal Disorders",
+      "Oncologic Emergencies",
+      "Systemic Lupus Erythematosus and the Vasculitides"
+    ],
+    "Generalized edema": [
+      "Heart Failure",
+      "Liver and Biliary Tract Disorders",
+      "Renal Failure",
+      "Systemic Lupus Erythematosus and the Vasculitides",
+      "Rhabdomyolysis",
+      "Medical Emergencies During Pregnancy",
+      "The Morbidly Obese Patient"
     ]
   },
-  "ENT/Eye": {
-    "Foreign body (eye)": [
-      "Foreign Bodies",
-      "Ophthalmology",
-      "Red and Painful Eye"
-    ],
+  "ENT": {
     "Foreign body (ear)": ["Foreign Bodies", "Otolaryngology"],
     "Foreign body (nose)": ["Foreign Bodies", "Otolaryngology"],
     "Epistaxis (nosebleed)": [
@@ -1517,6 +1683,107 @@
       "Head Trauma"
     ],
     "Ear discharge": ["Otolaryngology", "Head Trauma"],
+    "Facial swelling": [
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Oral Medicine",
+      "Otolaryngology",
+      "Skin and Soft Tissue Infections",
+      "Facial Trauma"
+    ],
+    "Facial pain": [
+      "Oral Medicine",
+      "Otolaryngology",
+      "Headache Disorders",
+      "Brain and Cranial Nerve Disorders",
+      "Facial Trauma",
+      "Acute Coronary Syndromes"
+    ],
+    "Ear pain": ["Otolaryngology", "Upper Respiratory Tract Infections"],
+    "Throat pain": [
+      "Sore Throat",
+      "Upper Respiratory Tract Infections",
+      "Esophagus, Stomach, and Duodenum",
+      "Oral Medicine",
+      "Otolaryngology",
+      "Foreign Bodies"
+    ],
+    "Nasal congestion": [
+      "Upper Respiratory Tract Infections",
+      "Otolaryngology",
+      "Allergy, Anaphylaxis, and Angioedema"
+    ],
+    "Runny nose": [
+      "Upper Respiratory Tract Infections",
+      "Otolaryngology",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Head Trauma",
+      "Facial Trauma"
+    ],
+    "Sore throat": [
+      "Sore Throat",
+      "Upper Respiratory Tract Infections",
+      "Otolaryngology",
+      "Oral Medicine",
+      "HIV"
+    ],
+    "Neck pain": [
+      "Sore Throat",
+      "Neck Trauma",
+      "Spinal Trauma",
+      "Central Nervous System Infections",
+      "Tendinopathy and Bursitis",
+      "Musculoskeletal Back Pain",
+      "Upper Respiratory Tract Infections",
+      "Shoulder Injuries",
+      "Otolaryngology"
+    ],
+    "Toothache/dental pain": [
+      "Oral Medicine",
+      "Infective Endocarditis and Valvular Heart Disease"
+    ],
+    "Stridor": [
+      "Airway",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Pediatric Upper Airway Obstruction and Infections",
+      "Foreign Bodies",
+      "Upper Respiratory Tract Infections",
+      "Otolaryngology",
+      "Pediatric Airway Management"
+    ],
+    "Choking": [
+      "Airway",
+      "Foreign Bodies",
+      "Pediatric Airway Management",
+      "Pediatric Upper Airway Obstruction and Infections"
+    ],
+    "Foreign body sensation": [
+      "Foreign Bodies",
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Sore Throat",
+      "Otolaryngology",
+      "Airway",
+      "Pediatric Airway Management",
+      "Pediatric Upper Airway Obstruction and Infections"
+    ],
+    "Difficulty swallowing": [
+      "Airway",
+      "Sore Throat",
+      "Esophagus, Stomach, and Duodenum",
+      "Otolaryngology",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders",
+      "Neuromuscular Disorders",
+      "Allergy, Anaphylaxis, and Angioedema",
+      "Caustics"
+    ]
+  },
+  "Eye": {
+    "Foreign body (eye)": [
+      "Foreign Bodies",
+      "Ophthalmology",
+      "Red and Painful Eye"
+    ],
     "Eye discharge": [
       "Ophthalmology",
       "Red and Painful Eye",
@@ -1550,20 +1817,30 @@
       "Ophthalmology",
       "Red and Painful Eye"
     ],
-    "Facial swelling": [
-      "Allergy, Anaphylaxis, and Angioedema",
-      "Oral Medicine",
-      "Otolaryngology",
-      "Skin and Soft Tissue Infections",
-      "Facial Trauma"
-    ],
-    "Facial pain": [
-      "Oral Medicine",
-      "Otolaryngology",
+    "Eye pain": [
+      "Red and Painful Eye",
+      "Ophthalmology",
       "Headache Disorders",
       "Brain and Cranial Nerve Disorders",
-      "Facial Trauma",
-      "Acute Coronary Syndromes"
+      "Facial Trauma"
+    ],
+    "Vision changes": [
+      "Diplopia",
+      "Red and Painful Eye",
+      "Ophthalmology",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders",
+      "Headache Disorders",
+      "Diabetes Mellitus and Disorders of Glucose Homeostasis",
+      "Hypertension",
+      "Toxic Alcohols"
+    ],
+    "Double vision": [
+      "Diplopia",
+      "Ophthalmology",
+      "Stroke",
+      "Brain and Cranial Nerve Disorders",
+      "Neuromuscular Disorders"
     ]
   },
   "Psychiatric": {

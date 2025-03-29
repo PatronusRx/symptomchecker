@@ -622,9 +622,9 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
     {
       id: 'ENT',
       shape: 'circle',
-      coords: { cx: 180, cy: 35, r: 12 },
-      text: { x: 180, y: 35, label: 'ENT' },
-      icon: { x: 180, y: 35 },
+      coords: { cx: 160, cy: 35, r: 12 },
+      text: { x: 160, y: 35, label: 'ENT' },
+      icon: { x: 160, y: 35 },
     },
     {
       id: 'Eye',
@@ -643,9 +643,9 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }) {
       y: 30,
       label: ['General', 'Constitutional'],
     },
-    { id: 'Allergy', x: 310, y: 30, label: ['Allergy'] },
+    { id: 'Allergic', x: 310, y: 30, label: ['Allergic'] },
     { id: 'Pain-Related', x: 20, y: 90, label: ['Pain-Related'] },
-    { id: 'Immunology', x: 310, y: 90, label: ['Immunology'] },
+    { id: 'Immunologic', x: 310, y: 90, label: ['Immunologic'] },
     {
       id: 'Endocrine/Metabolic',
       x: 20,
