@@ -16,6 +16,22 @@ import {
   Grid,
   Layers,
   List,
+  AlertCircle,
+  Pill,
+  Apple,
+  Activity,
+  Users,
+  Shield,
+  GitBranch,
+  Calendar,
+  Stethoscope,
+  FlaskConical,
+  Image as ImageIcon,
+  FileSearch,
+  Heart,
+  CheckCircle,
+  LogOut,
+  BookOpen,
 } from 'lucide-react';
 import {
   Chapter,
@@ -36,6 +52,133 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 interface DynamicSymptomCheckerProps {
   chapterSlug: string;
 }
+
+// Top Category Navigation Component
+interface TopCategoryNavProps {
+  categories: Category[];
+  activeCategory: string | null;
+  setActiveCategory: (id: string) => void;
+  hasCategoryCompletedItems: (id: string) => boolean;
+  completionPercentage: number;
+}
+
+// Function to get the appropriate icon for a category
+const getCategoryIcon = (title: string, size: number = 20) => {
+  const lowerTitle = title.toLowerCase();
+
+  if (
+    lowerTitle.includes('history') &&
+    !lowerTitle.includes('collateral') &&
+    !lowerTitle.includes('past')
+  ) {
+    return <ClipboardEdit size={size} />;
+  } else if (lowerTitle.includes('alarm') || lowerTitle.includes('feature')) {
+    return <AlertCircle size={size} />;
+  } else if (lowerTitle.includes('medication')) {
+    return <Pill size={size} />;
+  } else if (lowerTitle.includes('diet')) {
+    return <Apple size={size} />;
+  } else if (lowerTitle.includes('review') || lowerTitle.includes('system')) {
+    return <Activity size={size} />;
+  } else if (lowerTitle.includes('collateral')) {
+    return <Users size={size} />;
+  } else if (lowerTitle.includes('risk') || lowerTitle.includes('factor')) {
+    return <Shield size={size} />;
+  } else if (
+    lowerTitle.includes('differential') ||
+    lowerTitle.includes('diagnosis')
+  ) {
+    return <GitBranch size={size} />;
+  } else if (lowerTitle.includes('past') && lowerTitle.includes('medical')) {
+    return <Calendar size={size} />;
+  } else if (lowerTitle.includes('physical') || lowerTitle.includes('exam')) {
+    return <Stethoscope size={size} />;
+  } else if (lowerTitle.includes('lab')) {
+    return <FlaskConical size={size} />;
+  } else if (lowerTitle.includes('imaging')) {
+    return <ImageIcon size={size} />;
+  } else if (lowerTitle.includes('special') || lowerTitle.includes('test')) {
+    return <FileSearch size={size} />;
+  } else if (lowerTitle.includes('ecg')) {
+    return <Heart size={size} />;
+  } else if (lowerTitle.includes('assessment')) {
+    return <CheckCircle size={size} />;
+  } else if (lowerTitle.includes('plan')) {
+    return <List size={size} />;
+  } else if (lowerTitle.includes('disposition')) {
+    return <LogOut size={size} />;
+  } else if (
+    lowerTitle.includes('patient') &&
+    lowerTitle.includes('education')
+  ) {
+    return <BookOpen size={size} />;
+  } else {
+    // Default icon
+    return <ClipboardEdit size={size} />;
+  }
+};
+
+// Top Category Navigation Component
+const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
+  categories,
+  activeCategory,
+  setActiveCategory,
+  hasCategoryCompletedItems,
+  completionPercentage,
+}) => {
+  return (
+    <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+      {/* Progress bar */}
+      <div className="px-4 pt-3">
+        <div className="bg-gray-100 h-2 rounded-full overflow-hidden">
+          <div
+            className="bg-blue-500 h-full rounded-full transition-all duration-500 ease-in-out"
+            style={{ width: `${completionPercentage}%` }}
+          ></div>
+        </div>
+        <div className="text-xs text-center mt-1 text-gray-500">
+          {completionPercentage}% complete
+        </div>
+      </div>
+
+      {/* Scrollable categories */}
+      <div className="overflow-x-auto no-scrollbar py-2 px-2">
+        <div className="flex space-x-2 min-w-max">
+          {categories.map((category) => {
+            const isActive = activeCategory === category.id;
+            const hasCompleted = hasCategoryCompletedItems(category.id);
+
+            return (
+              <button
+                key={category.id}
+                className={`flex flex-col items-center px-3 py-2 rounded-lg transition-colors ${
+                  isActive
+                    ? 'bg-blue-50 text-blue-700 border-b-2 border-blue-500'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                <div
+                  className={`relative ${
+                    isActive ? 'text-blue-600' : 'text-gray-400'
+                  }`}
+                >
+                  {getCategoryIcon(category.title)}
+                  {hasCompleted && !isActive && (
+                    <span className="absolute -top-1 -right-1 h-2 w-2 bg-green-500 rounded-full"></span>
+                  )}
+                </div>
+                <span className="mt-1 text-xs font-medium truncate max-w-[80px] text-center">
+                  {category.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   chapterSlug,
@@ -66,7 +209,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [duration, setDuration] = useState('');
-  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(false);
@@ -712,87 +854,23 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
         </div>
       </header>
 
+      {/* Top Category Navigation */}
+      <TopCategoryNav
+        categories={categories}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+        hasCategoryCompletedItems={hasCategoryCompletedItems}
+        completionPercentage={calculateCompletion()}
+      />
+
       {/* Main Content Area */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Left Sidebar - Categories Navigation */}
-        <aside
-          className={`bg-white shadow-sm hidden md:flex flex-col ${
-            isSidebarCollapsed ? 'w-16' : 'w-56'
-          } transition-all duration-300 overflow-hidden`}
-        >
-          {/* Collapse toggle */}
-          <button
-            className="p-2 text-gray-400 hover:text-gray-600 self-end"
-            onClick={() => setSidebarCollapsed(!isSidebarCollapsed)}
-          >
-            {isSidebarCollapsed ? (
-              <ChevronRight size={16} />
-            ) : (
-              <ChevronLeft size={16} />
-            )}
-          </button>
-
-          {/* Progress indicator */}
-          <div className={`mx-3 mb-4 ${isSidebarCollapsed ? 'mx-2' : 'mx-3'}`}>
-            <div className="bg-gray-100 h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-blue-500 h-full rounded-full"
-                style={{ width: `${calculateCompletion()}%` }}
-              ></div>
-            </div>
-            {!isSidebarCollapsed && (
-              <div className="text-xs text-center mt-1 text-gray-500">
-                {calculateCompletion()}% complete
-              </div>
-            )}
-          </div>
-
-          {/* Categories navigation */}
-          <nav className="flex-1 overflow-y-auto py-2">
-            {categories.map((category) => {
-              const isActive = activeCategory === category.id;
-              const hasCompleted = hasCategoryCompletedItems(category.id);
-
-              return (
-                <button
-                  key={category.id}
-                  className={`w-full text-left px-3 py-2 flex items-center ${
-                    isActive
-                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
-                      : 'border-l-4 border-transparent hover:bg-gray-50'
-                  } transition-colors`}
-                  onClick={() => setActiveCategory(category.id)}
-                >
-                  <span
-                    className={isActive ? 'text-blue-600' : 'text-gray-400'}
-                  >
-                    <ClipboardEdit size={18} />
-                  </span>
-
-                  {!isSidebarCollapsed && (
-                    <>
-                      <span className="ml-3 flex-1 truncate">
-                        {category.title}
-                      </span>
-
-                      {/* Status indicators */}
-                      {hasCompleted && !isActive && (
-                        <span className="h-2 w-2 bg-green-500 rounded-full"></span>
-                      )}
-                    </>
-                  )}
-                </button>
-              );
-            })}
-          </nav>
-        </aside>
-
+      <div className="flex-1 overflow-hidden">
         {/* Mobile Navigation Sidebar */}
         {showMobileNav && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
             <div className="absolute top-0 left-0 h-full w-64 bg-white shadow-lg z-50 overflow-y-auto">
               <div className="p-4 flex justify-between items-center border-b">
-                <h2 className="font-bold text-lg">Sections</h2>
+                <h2 className="font-bold text-lg">Categories</h2>
                 <button onClick={() => setShowMobileNav(false)}>
                   <X size={20} />
                 </button>
@@ -819,7 +897,7 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
                       <span
                         className={isActive ? 'text-blue-600' : 'text-gray-400'}
                       >
-                        <ClipboardEdit size={18} />
+                        {getCategoryIcon(category.title, 18)}
                       </span>
                       <span className="ml-3 flex-1">{category.title}</span>
 
@@ -835,211 +913,216 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
           </div>
         )}
 
-        {/* Main Content - Checklist Items Display */}
-        <main className="flex-1 overflow-y-auto">
-          <div className="max-w-7xl mx-auto p-4">
-            {/* Duration Input */}
-            <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-              <div className="flex items-center">
-                <Clock size={20} className="text-blue-500 mr-2" />
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Duration of Symptoms
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full p-2 border border-gray-300 rounded-md"
-                    placeholder="e.g., 2 days, 1 week, 3 months"
-                    value={duration}
-                    onChange={(e) => {
-                      setDuration(e.target.value);
-                      triggerAutosave();
-                      generateSoapNote();
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* View Mode Controls */}
-            <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-              <div className="flex flex-wrap items-center justify-between">
-                <div>
-                  <h2 className="text-lg font-bold text-blue-800">
-                    {categories.find((c) => c.id === activeCategory)?.title ||
-                      'Questions'}
-                  </h2>
-                  <div className="text-sm text-blue-600">
-                    {getActiveCategoryStats().completed}/
-                    {getActiveCategoryStats().total} completed
+        {/* Main Content Layout - Now a flex row with main + right sidebar */}
+        <div className="flex h-full">
+          {/* Main Content - Checklist Items Display */}
+          <main className="flex-1 overflow-y-auto">
+            <div className="max-w-7xl mx-auto p-4">
+              {/* Duration Input */}
+              <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+                <div className="flex items-center">
+                  <Clock size={20} className="text-blue-500 mr-2" />
+                  <div className="flex-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Duration of Symptoms
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                      placeholder="e.g., 2 days, 1 week, 3 months"
+                      value={duration}
+                      onChange={(e) => {
+                        setDuration(e.target.value);
+                        triggerAutosave();
+                        generateSoapNote();
+                      }}
+                    />
                   </div>
                 </div>
+              </div>
 
-                <div className="flex items-center space-x-2 mt-2 sm:mt-0">
-                  <span className="text-sm text-gray-500">View:</span>
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-1.5 rounded ${
-                      viewMode === 'grid'
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                    title="Grid View"
-                  >
-                    <Grid size={18} />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('compact')}
-                    className={`p-1.5 rounded ${
-                      viewMode === 'compact'
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                    title="Compact View"
-                  >
-                    <Layers size={18} />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-1.5 rounded ${
-                      viewMode === 'list'
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                    title="List View"
-                  >
-                    <List size={18} />
-                  </button>
+              {/* View Mode Controls */}
+              <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between">
+                  <div>
+                    <h2 className="text-lg font-bold text-blue-800">
+                      {categories.find((c) => c.id === activeCategory)?.title ||
+                        'Questions'}
+                    </h2>
+                    <div className="text-sm text-blue-600">
+                      {getActiveCategoryStats().completed}/
+                      {getActiveCategoryStats().total} completed
+                    </div>
+                  </div>
 
-                  <div className="hidden sm:flex items-center ml-2 border-l pl-2">
-                    <span className="text-sm text-gray-500 mr-1">Columns:</span>
-                    {[1, 2, 3].map((cols) => (
-                      <button
-                        key={cols}
-                        onClick={() => setGridColumns(cols)}
-                        className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
-                          gridColumns === cols
-                            ? 'bg-blue-100 text-blue-700'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
+                  <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+                    <span className="text-sm text-gray-500">View:</span>
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`p-1.5 rounded ${
+                        viewMode === 'grid'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      title="Grid View"
+                    >
+                      <Grid size={18} />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('compact')}
+                      className={`p-1.5 rounded ${
+                        viewMode === 'compact'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      title="Compact View"
+                    >
+                      <Layers size={18} />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`p-1.5 rounded ${
+                        viewMode === 'list'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      title="List View"
+                    >
+                      <List size={18} />
+                    </button>
+
+                    <div className="hidden sm:flex items-center ml-2 border-l pl-2">
+                      <span className="text-sm text-gray-500 mr-1">
+                        Columns:
+                      </span>
+                      {[1, 2, 3].map((cols) => (
+                        <button
+                          key={cols}
+                          onClick={() => setGridColumns(cols)}
+                          className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
+                            gridColumns === cols
+                              ? 'bg-blue-100 text-blue-700'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          {cols}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tab navigation for sections */}
+              <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
+                {getActiveCategorySections().map((section) => (
+                  <button
+                    key={section.id}
+                    className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                      selectedSection === section.id ||
+                      (!selectedSection && viewMode === 'list')
+                        ? 'bg-blue-100 text-blue-800'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                    onClick={() => handleSectionSelect(section.id)}
+                  >
+                    {section.title}
+                  </button>
+                ))}
+                {selectedSection && (
+                  <button
+                    className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                    onClick={() => setSelectedSection(null)}
+                  >
+                    Show All
+                  </button>
+                )}
+              </div>
+
+              {/* Checklist items in grid or list view */}
+              {viewMode === 'list' ? (
+                // List view (like original view)
+                <div className="divide-y divide-gray-100 bg-white rounded-b-lg shadow-sm">
+                  {getItemsBySectionForCategory()
+                    .filter(
+                      (sectionGroup) =>
+                        !selectedSection ||
+                        sectionGroup.section.id === selectedSection
+                    )
+                    .map((sectionGroup) => (
+                      <div
+                        key={sectionGroup.section.id}
+                        className="border-b border-gray-200 mb-3"
                       >
-                        {cols}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+                        {/* Section Title */}
+                        <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                          <h3 className="text-md font-semibold text-blue-700">
+                            {sectionGroup.section.title}
+                          </h3>
+                        </div>
 
-            {/* Tab navigation for sections */}
-            <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
-              {getActiveCategorySections().map((section) => (
-                <button
-                  key={section.id}
-                  className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    selectedSection === section.id ||
-                    (!selectedSection && viewMode === 'list')
-                      ? 'bg-blue-100 text-blue-800'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => handleSectionSelect(section.id)}
-                >
-                  {section.title}
-                </button>
-              ))}
-              {selectedSection && (
-                <button
-                  className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                  onClick={() => setSelectedSection(null)}
-                >
-                  Show All
-                </button>
+                        {/* Section Items */}
+                        <div className="p-4 bg-white rounded-b-md">
+                          {/* Render top-level items with recursive function */}
+                          {buildNestedItemsHierarchy(sectionGroup.items).map(
+                            (item) => renderChecklistItem(item)
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                // Grid view
+                <div className={getGridClass()}>
+                  {getItemsBySectionForCategory()
+                    .filter(
+                      (sectionGroup) =>
+                        !selectedSection ||
+                        sectionGroup.section.id === selectedSection
+                    )
+                    .map((sectionGroup) => (
+                      <div
+                        key={sectionGroup.section.id}
+                        className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
+                      >
+                        {/* Section Title */}
+                        <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
+                          <h3 className="text-md font-semibold text-blue-700">
+                            {sectionGroup.section.title}
+                          </h3>
+                        </div>
+
+                        {/* Section Items */}
+                        <div className="p-3">
+                          {/* Render top-level items with recursive function */}
+                          {buildNestedItemsHierarchy(sectionGroup.items).map(
+                            (item) => renderChecklistItem(item)
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                </div>
               )}
             </div>
+          </main>
 
-            {/* Checklist items in grid or list view */}
-            {viewMode === 'list' ? (
-              // List view (like original view)
-              <div className="divide-y divide-gray-100 bg-white rounded-b-lg shadow-sm">
-                {getItemsBySectionForCategory()
-                  .filter(
-                    (sectionGroup) =>
-                      !selectedSection ||
-                      sectionGroup.section.id === selectedSection
-                  )
-                  .map((sectionGroup) => (
-                    <div
-                      key={sectionGroup.section.id}
-                      className="border-b border-gray-200 mb-3"
-                    >
-                      {/* Section Title */}
-                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
-                        <h3 className="text-md font-semibold text-blue-700">
-                          {sectionGroup.section.title}
-                        </h3>
-                      </div>
+          {/* Right Sidebar - SOAP Note Preview */}
+          <aside className="bg-white shadow-sm hidden md:flex flex-col w-96 border-l border-gray-200 overflow-hidden">
+            <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
+              <h2 className="text-lg font-bold text-gray-800 flex items-center">
+                <FileText className="text-blue-600 mr-2" size={18} />
+                SOAP Note Preview
+              </h2>
+            </div>
 
-                      {/* Section Items */}
-                      <div className="p-4 bg-white rounded-b-md">
-                        {/* Render top-level items with recursive function */}
-                        {buildNestedItemsHierarchy(sectionGroup.items).map(
-                          (item) => renderChecklistItem(item)
-                        )}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            ) : (
-              // Grid view
-              <div className={getGridClass()}>
-                {getItemsBySectionForCategory()
-                  .filter(
-                    (sectionGroup) =>
-                      !selectedSection ||
-                      sectionGroup.section.id === selectedSection
-                  )
-                  .map((sectionGroup) => (
-                    <div
-                      key={sectionGroup.section.id}
-                      className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
-                    >
-                      {/* Section Title */}
-                      <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
-                        <h3 className="text-md font-semibold text-blue-700">
-                          {sectionGroup.section.title}
-                        </h3>
-                      </div>
-
-                      {/* Section Items */}
-                      <div className="p-3">
-                        {/* Render top-level items with recursive function */}
-                        {buildNestedItemsHierarchy(sectionGroup.items).map(
-                          (item) => renderChecklistItem(item)
-                        )}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            )}
-          </div>
-        </main>
-
-        {/* Right Sidebar - SOAP Note Preview */}
-        <aside className="bg-white shadow-sm hidden md:flex flex-col w-96 border-l border-gray-200 overflow-hidden">
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
-            <h2 className="text-lg font-bold text-gray-800 flex items-center">
-              <FileText className="text-blue-600 mr-2" size={18} />
-              SOAP Note Preview
-            </h2>
-          </div>
-
-          <div className="flex-1 overflow-y-auto p-4">
-            <SoapNoteDisplay
-              soapNote={generatedNote}
-              patientInfo={patientInfo}
-            />
-          </div>
-        </aside>
+            <div className="flex-1 overflow-y-auto p-4">
+              <SoapNoteDisplay
+                soapNote={generatedNote}
+                patientInfo={patientInfo}
+              />
+            </div>
+          </aside>
+        </div>
 
         {/* Mobile SOAP Note Preview */}
         {showMobilePreview && (
