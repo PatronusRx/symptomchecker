@@ -17,64 +17,80 @@ const getStoredNavContext = () => {
   return { system: null, symptom: null };
 };
 
-export default function SymptomPage() {
-  const { symptom } = useParams();
-  const router = useRouter();
-  const symptomSlug = Array.isArray(symptom) ? symptom[0] : (symptom as string);
+interface Chapter {
+  id: string;
+  title: string;
+  chapter_number: number;
+  content: string;
+}
 
+interface SymptomData {
+  [system: string]: {
+    [symptom: string]: string[];
+  };
+}
+
+interface DatabaseError {
+  message: string;
+  details: string;
+  hint: string;
+}
+
+export default function SymptomPage() {
+  const params = useParams();
+  const symptom = typeof params.symptom === 'string' ? params.symptom : null;
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [chapterExists, setChapterExists] = useState(false);
-  const [chapterTitle, setChapterTitle] = useState('');
-  const [chapters, setChapters] = useState([]);
-
-  // Navigation context
-  const [navContext, setNavContext] = useState(getStoredNavContext());
+  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
+  const [view, setView] = useState<'chapters' | 'checklist'>('chapters');
+  const navContext = getStoredNavContext();
 
   useEffect(() => {
     const checkChapterExists = async () => {
       try {
         setLoading(true);
+        setError(null);
 
-        // Format the slug for database query (replace hyphens with spaces and capitalize)
-        const formattedSlug = symptomSlug
-          .split('-')
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(' ');
+        // Get the system and symptom from sessionStorage
+        const { system, symptom } = getStoredNavContext();
 
-        // Query to check if chapter exists - use less strict matching
-        const { data, error } = await supabase
-          .from('chapters')
-          .select('id, title')
-          .ilike('title', `%${formattedSlug}%`);
-
-        if (error) {
-          setError(`Database error: ${error.message}`);
+        if (!system || !symptom) {
+          setError('Missing system or symptom context');
           setChapterExists(false);
-        } else if (data && data.length > 0) {
-          // Use the first matching result
-          setChapterExists(true);
-          setChapterTitle(data[0].title);
-
-          // Store the symptom title in sessionStorage for context
-          if (typeof window !== 'undefined') {
-            sessionStorage.setItem('currentSymptom', data[0].title);
-          }
-        } else {
-          setChapterExists(false);
-          setError(`Chapter "${formattedSlug}" not found in database`);
+          return;
         }
 
-        // Fetch all chapters for the sidebar
+        // Fetch the symptom data to get the chapters
+        const response = await fetch('/api/symptoms');
+        const symptomData = (await response.json()) as SymptomData;
+
+        // Check if the symptom exists in the system
+        if (!symptomData[system] || !symptomData[system][symptom]) {
+          setError('Symptom not found in the specified system');
+          setChapterExists(false);
+          return;
+        }
+
+        // Get the chapters for this symptom
+        const symptomChapters = symptomData[system][symptom];
+
+        // Fetch the chapter details from the database
         const { data: chaptersData, error: chaptersError } = await supabase
           .from('chapters')
-          .select('id, title, chapter_number')
-          .order('chapter_number');
+          .select('*')
+          .in('title', symptomChapters);
 
         if (chaptersError) {
-          console.error('Error fetching chapters:', chaptersError);
+          const dbError = chaptersError as DatabaseError;
+          console.error('Error fetching chapters:', dbError);
+          setError(`Database error: ${dbError.message}`);
+          setChapterExists(false);
         } else if (chaptersData) {
-          setChapters(chaptersData);
+          setChapters(chaptersData as Chapter[]);
+          setChapterExists(true);
         }
       } catch (err) {
         console.error('Unexpected error:', err);
@@ -89,18 +105,26 @@ export default function SymptomPage() {
       }
     };
 
-    if (symptomSlug) {
+    if (symptom) {
       checkChapterExists();
     }
-  }, [symptomSlug]);
+  }, [symptom]);
 
   // Go back to the system view (if system context exists) or home
   const handleBackClick = () => {
-    if (navContext.system) {
+    if (view === 'checklist') {
+      setView('chapters');
+      setSelectedChapter(null);
+    } else if (navContext.system) {
       router.push(`/?system=${encodeURIComponent(navContext.system)}`);
     } else {
       router.push('/');
     }
+  };
+
+  const handleChapterSelect = (chapter: Chapter) => {
+    setSelectedChapter(chapter);
+    setView('checklist');
   };
 
   if (loading) {
@@ -119,8 +143,8 @@ export default function SymptomPage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Symptom Not Found</h1>
           <p className="mb-4">
-            The symptom &quot;{symptomSlug}&quot; does not exist or is not yet
-            supported.
+            The symptom &quot;{symptom || 'unknown'}&quot; does not exist or is
+            not yet supported.
           </p>
           <Link href="/" className="text-blue-500 hover:underline">
             Return Home
@@ -131,52 +155,81 @@ export default function SymptomPage() {
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-gray-50">
+      {/* Top Navigation */}
       <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
+          {/* Back button to return to system view */}
           <button
-            onClick={handleBackClick}
             className="mr-3 text-blue-500 hover:text-blue-700"
+            onClick={handleBackClick}
+            aria-label="Back to system view"
           >
             <ArrowLeft size={24} />
           </button>
           <div className="flex items-center">
             <ClipboardEdit className="text-blue-600 mr-2" size={24} />
             <h1 className="text-xl font-bold text-gray-800">
-              {chapterTitle} Symptom Checker
+              {view === 'chapters'
+                ? 'Select a Chapter'
+                : selectedChapter?.title || 'Symptom'}{' '}
+              Checker
             </h1>
           </div>
         </div>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar with all chapters */}
-        <div className="w-64 bg-gray-50 border-r border-gray-200 hidden md:block overflow-y-auto">
-          <div className="p-4 border-b border-gray-200">
-            <h2 className="font-semibold text-gray-700">All Symptoms</h2>
-          </div>
-          <nav className="p-2">
-            {chapters.map((chapter: any) => (
-              <Link
+      {/* Main Content */}
+      <div className="flex-1 overflow-hidden flex">
+        {/* Sidebar with chapter list */}
+        <div className="w-64 bg-white border-r border-gray-200 overflow-y-auto">
+          <div className="p-4">
+            <h2 className="text-lg font-semibold mb-4">Related Chapters</h2>
+            {chapters.map((chapter) => (
+              <button
                 key={chapter.id}
-                href={`/symptoms/${chapter.title
-                  .toLowerCase()
-                  .replace(/\s+/g, '-')}`}
-                className={`block px-4 py-2 rounded-md mb-1 ${
-                  chapter.title === chapterTitle
+                onClick={() => handleChapterSelect(chapter)}
+                className={`w-full text-left px-4 py-2 rounded-md mb-1 ${
+                  chapter.id === selectedChapter?.id
                     ? 'bg-blue-50 text-blue-700 font-medium border-l-4 border-blue-500'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 {chapter.title}
-              </Link>
+              </button>
             ))}
-          </nav>
+          </div>
         </div>
 
-        {/* Main content with DynamicSymptomChecker */}
+        {/* Main content */}
         <div className="flex-1 overflow-hidden">
-          <DynamicSymptomChecker chapterSlug={symptomSlug} />
+          {view === 'chapters' ? (
+            <div className="p-6">
+              <h2 className="text-2xl font-semibold mb-4">Select a Chapter</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {chapters.map((chapter) => (
+                  <button
+                    key={chapter.id}
+                    onClick={() => handleChapterSelect(chapter)}
+                    className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow text-left"
+                  >
+                    <h3 className="text-lg font-medium text-gray-800 mb-2">
+                      {chapter.title}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      Chapter {chapter.chapter_number}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <DynamicSymptomChecker
+              chapterSlug={
+                selectedChapter?.title.toLowerCase().replace(/\s+/g, '-') || ''
+              }
+            />
+          )}
         </div>
       </div>
     </div>

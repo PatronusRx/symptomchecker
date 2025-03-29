@@ -110,7 +110,11 @@ export default function BodyVisualizationHome() {
   };
 
   const handleSymptomClick = (symptom) => {
-    setSelectedSymptom(symptom);
+    // Store the current system and symptom in sessionStorage
+    if (typeof window !== 'undefined' && selectedSystem) {
+      sessionStorage.setItem('currentSystem', selectedSystem);
+      sessionStorage.setItem('currentSymptom', symptom);
+    }
 
     // Format the symptom name to be URL-friendly
     const slugifiedSymptom = symptom
