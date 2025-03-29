@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 import {
   ClipboardEdit,
@@ -32,6 +33,7 @@ import {
   CheckCircle,
   LogOut,
   BookOpen,
+  ArrowLeft,
 } from 'lucide-react';
 import {
   Chapter,
@@ -183,6 +185,9 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
 const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   chapterSlug,
 }) => {
+  // Add router for navigation
+  const router = useRouter();
+
   // State for data from Supabase
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -212,6 +217,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(false);
+  const [systemContext, setSystemContext] = useState<string | null>(null);
 
   // Patient info state
   const [patientInfo, setPatientInfo] = useState({
@@ -371,6 +377,29 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
     return rootItems;
   }, []);
+
+  // Get navigation context from sessionStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const system = sessionStorage.getItem('currentSystem');
+      const symptom = sessionStorage.getItem('currentSymptom');
+
+      if (system) {
+        setSystemContext(system);
+      }
+    }
+  }, []);
+
+  // Handle navigation back to system view
+  const handleSystemBack = () => {
+    if (systemContext) {
+      // Navigate back to the system view with the context
+      router.push(`/?system=${encodeURIComponent(systemContext)}`);
+    } else {
+      // If no context, just go back to home
+      router.push('/');
+    }
+  };
 
   // Fetch data from Supabase
   useEffect(() => {
@@ -653,21 +682,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // Handle copy to clipboard
   const copyToClipboard = useCallback(() => {
-    const soapText = `SOAP NOTE - ${patientInfo.name} (${patientInfo.mrn}) - ${
-      patientInfo.visitDate
-    }
-    
-SUBJECTIVE:
-${generatedNote.subjective || 'No subjective data recorded.'}
-
-OBJECTIVE:
-${generatedNote.objective || 'No objective data recorded.'}
-
-ASSESSMENT:
-${generatedNote.assessment || 'No assessment data recorded.'}
-
-PLAN:
-${generatedNote.plan || 'No plan data recorded.'}`;
+    const soapText = SoapNoteGenerator.formatForClipboard(
+      generatedNote,
+      patientInfo
+    );
 
     navigator.clipboard
       .writeText(soapText)
@@ -787,11 +805,13 @@ ${generatedNote.plan || 'No plan data recorded.'}`;
       {/* Top Navigation */}
       <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
+          {/* Back button to return to system view */}
           <button
-            className="md:hidden mr-3 text-gray-500"
-            onClick={() => setShowMobileNav(true)}
+            className="mr-3 text-blue-500 hover:text-blue-700"
+            onClick={handleSystemBack}
+            aria-label="Back to system view"
           >
-            <Menu size={24} />
+            <ArrowLeft size={24} />
           </button>
           <div className="flex items-center">
             <ClipboardEdit className="text-blue-600 mr-2" size={24} />
