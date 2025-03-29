@@ -11,7 +11,7 @@ import {
   GitBranch,
   Calendar,
   Stethoscope,
-  Flask,
+  FlaskConical,
   Image,
   FileSearch,
   Heart,
@@ -62,9 +62,9 @@ const getCategoryIcon = (title: string) => {
   } else if (lowerTitle.includes('physical') || lowerTitle.includes('exam')) {
     return <Stethoscope size={20} />;
   } else if (lowerTitle.includes('lab')) {
-    return <Flask size={20} />;
+    return <FlaskConical size={20} />;
   } else if (lowerTitle.includes('imaging')) {
-    return <Image size={20} />;
+    return <Image size={20} aria-label="Imaging category icon" />;
   } else if (lowerTitle.includes('special') || lowerTitle.includes('test')) {
     return <FileSearch size={20} />;
   } else if (lowerTitle.includes('ecg')) {
