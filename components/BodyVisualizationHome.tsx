@@ -6,7 +6,7 @@ import {
   Heart,
   Thermometer,
   Zap,
-  Lungs,
+  AudioWaveform,
   BadgeAlert,
   Shield,
   Brain,
@@ -15,7 +15,7 @@ import {
   Ear,
   Eye,
   FlaskConical,
-  Virus,
+  Circle,
   Baby,
   Skull,
   PieChart,
@@ -29,7 +29,7 @@ import SearchBox from '@/components/SearchBox';
 const systemIcons = {
   'General/Constitutional': Thermometer,
   'Pain-Related': Zap,
-  Respiratory: Lungs,
+  Respiratory: AudioWaveform,
   Cardiovascular: Heart,
   Gastrointestinal: Activity,
   Genitourinary: Activity,
@@ -43,7 +43,7 @@ const systemIcons = {
   Psychiatric: Brain,
   'Endocrine/Metabolic': PieChart,
   'Toxicologic/Environmental': Skull,
-  'Infectious Disease': Virus,
+  'Infectious Disease': Circle,
   'Obstetric/Gynecologic': Baby,
 };
 
