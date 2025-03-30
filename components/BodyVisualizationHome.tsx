@@ -46,8 +46,6 @@ interface SystemColorStyle {
   hover: string;
 }
 
-// --- Other interfaces (RegionStyle, SystemArea, SidePanel, HumanBodySVGProps) ---
-// (Keep these as they were)
 interface RegionStyle {
   fillOpacity: number;
   hoverFillOpacity: number;
@@ -186,14 +184,13 @@ export default function BodyVisualizationHome() {
     }
   }, [searchTerm, medicalData]);
 
-  // ****** START OF FIX ****** (Previous fix maintained)
   // Correctly define handleSystemClick
   const handleSystemClick = (system: string) => {
     setSelectedSystem(system);
     setView('system');
-  }; // <-- Ensure this closing brace exists and is correct
+  };
 
-  // Correctly define handleSymptomClick (now properly scoped after handleSystemClick)
+  // Correctly define handleSymptomClick
   const handleSymptomClick = (symptom: string) => {
     if (typeof window !== 'undefined' && selectedSystem) {
       sessionStorage.setItem('currentSystem', selectedSystem);
@@ -205,11 +202,10 @@ export default function BodyVisualizationHome() {
       .replace(/[^\w\-]+/g, '')
       .replace(/\-\-+/g, '-');
     router.push(`/symptoms/${slugifiedSymptom}`);
-  }; // <-- Ensure this closing brace exists and is correct
+  };
 
-  // Correctly define handleBackClick (now properly scoped after handleSymptomClick)
+  // Correctly define handleBackClick
   const handleBackClick = () => {
-    // NO duplicate definition inside
     if (view === 'system' || view === 'symptom') {
       // Group conditions that lead back to a previous step
       // If coming back from symptom view, go to system view
@@ -233,9 +229,9 @@ export default function BodyVisualizationHome() {
       setSearchResults({ systems: [], symptoms: [] }); // Clear results
     }
     // If view is 'body', clicking back does nothing (or could have other logic)
-  }; // <-- Ensure this closing brace exists and is correct
+  };
 
-  // Correctly define getSystemColor (now properly scoped after handleBackClick)
+  // Correctly define getSystemColor
   const getSystemColor = (system: string): SystemColorStyle => {
     const colorMap: Record<string, SystemColorStyle> = {
       'General/Constitutional': {
@@ -328,9 +324,9 @@ export default function BodyVisualizationHome() {
         hover: 'hover:bg-gray-100',
       }
     );
-  }; // <-- Ensure this closing brace exists and is correct
+  };
 
-  // Correctly define renderSystemIcon (now properly scoped after getSystemColor)
+  // Correctly define renderSystemIcon
   const renderSystemIcon = (system: string, size = 18, color?: string) => {
     const IconComponent = systemIcons[system];
     // Check if selectedSystem exists for border color fallback
@@ -347,9 +343,7 @@ export default function BodyVisualizationHome() {
         }
       />
     ) : null;
-  }; // <-- Ensure this closing brace exists and is correct
-
-  // ****** END OF FIX ****** (Previous fix maintained)
+  };
 
   if (loading) {
     return (
@@ -366,17 +360,17 @@ export default function BodyVisualizationHome() {
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-4">
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Medical Symptom Checker
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 text-center">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 text-center">
             Identify potential causes for your symptoms by selecting a body
             system or searching
           </p>
-          <div className="mb-8">
+          <div className="mb-6">
             <SearchBox
               value={searchTerm}
               onChange={setSearchTerm}
@@ -402,17 +396,18 @@ export default function BodyVisualizationHome() {
           {/* Body View */}
           {view === 'body' && (
             <div className="flex flex-col items-center">
-              <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">
+              <h2 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300">
                 Select a body system
               </h2>
-              <div className="w-full max-w-md mb-8">
-                {/* Ensure HumanBodySVG component is defined or imported correctly */}
+              {/* Note: mb-0 was previously applied here, keeping it unless adjustments needed */}
+              <div className="w-full max-w-md mb-0">
                 <HumanBodySVG
                   onSystemClick={handleSystemClick}
                   renderSystemIcon={renderSystemIcon}
                 />
               </div>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
+              {/* Note: mt-4 is applied here, adjust if gap is now too small/large */}
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
                 {Object.keys(medicalData).map((system) => {
                   const { border, hover } = getSystemColor(system);
                   return (
@@ -608,8 +603,8 @@ export default function BodyVisualizationHome() {
           )}
         </div>
 
-        {/* Disclaimer */}
-        <div className="mt-16 text-center">
+        {/* Disclaimer - reduced top margin */}
+        <div className="mt-8 text-center">
           <div className="inline-block p-4 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded-lg max-w-2xl mx-auto shadow">
             <p className="text-sm">
               <strong>Disclaimer:</strong> This tool is for informational
@@ -623,10 +618,9 @@ export default function BodyVisualizationHome() {
       </div>
     </div>
   );
-} // <-- This is the final closing brace for BodyVisualizationHome
+}
 
 // --- HumanBodySVG Component ---
-// (Keep this component as it was, it doesn't seem to have the parsing errors)
 function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
   // Create hover state for each region
   const [hoverRegion, setHoverRegion] = useState<string | null>(null);
@@ -808,17 +802,23 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       label: ['Toxicologic', 'Environmental'],
     },
     { id: 'Obstetric/Gynecologic', x: 310, y: 270, label: ['OB/GYN'] },
-  ];
+  ]; // Make sure this closing bracket and semicolon are correct
+
+  // *** The error likely occurred somewhere between the line above and the line below ***
 
   return (
+    // Ensure nothing invalid is between the ]; and this return
     <div className="relative">
+      {/* CHANGE 1: Parent Div Height */}
       <div
         className="relative mx-auto"
-        style={{ width: '400px', height: '500px' }}
+        style={{ width: '400px', height: '400px' }} // Adjusted height
       >
         <svg
-          viewBox="0 0 400 500"
-          style={{ position: 'absolute', width: '100%', height: '100%' }}
+          // CHANGE 2: SVG ViewBox Height
+          viewBox="0 0 400 400" // Adjusted height
+          // CHANGE 3: SVG Style Height
+          style={{ position: 'absolute', width: '100%', height: '100%' }} // Adjusted height
         >
           {/* Anatomical Diagram Image */}
           <image
@@ -986,13 +986,14 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                 </g>
               );
             }
-            return null;
+            return null; // Added for completeness, ensures map always returns
           })}
 
           {/* Side panel buttons with icons */}
           {sidePanels.map((panel) => {
             const isHovered = hoverRegion === panel.id;
-            const style = {
+            const style: React.CSSProperties = {
+              // Added type explicitly
               fill: isHovered ? '#f0f0f0' : '#ffffff', // Lighter gray on hover
               stroke: '#cccccc',
               strokeWidth: 1,
@@ -1051,4 +1052,4 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       </div>
     </div>
   );
-}
+} // <-- Make sure this closing brace for the function is present and correct
