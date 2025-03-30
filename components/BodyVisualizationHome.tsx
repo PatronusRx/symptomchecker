@@ -18,6 +18,7 @@ import {
   PieChart,
   Activity,
   LucideIcon,
+  ChevronDown, // Added ChevronDown import
 } from 'lucide-react';
 import SearchBox from '@/components/SearchBox';
 
@@ -393,21 +394,31 @@ export default function BodyVisualizationHome() {
 
         {/* Main Content Area */}
         <div className="max-w-6xl mx-auto">
-          {/* Body View */}
+          {/* START: Updated Body View */}
           {view === 'body' && (
             <div className="flex flex-col items-center">
               <h2 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300">
                 Select a body system
               </h2>
-              {/* Note: mb-0 was previously applied here, keeping it unless adjustments needed */}
-              <div className="w-full max-w-md mb-0">
+              <div className="w-full max-w-md mb-0 relative">
+                {' '}
+                {/* Added relative positioning */}
                 <HumanBodySVG
                   onSystemClick={handleSystemClick}
                   renderSystemIcon={renderSystemIcon}
                 />
+                {/* Scroll indicator */}
+                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center pb-2 animate-bounce">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                    Scroll for more options
+                  </p>
+                  <ChevronDown className="h-5 w-5 text-blue-500" />
+                </div>
               </div>
-              {/* Note: mt-4 is applied here, adjust if gap is now too small/large */}
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
+
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
+                {' '}
+                {/* Changed mt-4 to mt-8 */}
                 {Object.keys(medicalData).map((system) => {
                   const { border, hover } = getSystemColor(system);
                   return (
@@ -435,6 +446,7 @@ export default function BodyVisualizationHome() {
               </div>
             </div>
           )}
+          {/* END: Updated Body View */}
 
           {/* Search View */}
           {view === 'search' && (
@@ -501,7 +513,7 @@ export default function BodyVisualizationHome() {
                               key={`${system}-${symptom}`}
                               className="p-4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer transition-colors flex items-center"
                               onClick={() => {
-                                setSelectedSystem(system);
+                                setSelectedSystem(system); // Set selected system before navigating
                                 handleSymptomClick(symptom);
                               }}
                             >
@@ -621,8 +633,8 @@ export default function BodyVisualizationHome() {
 }
 
 // --- HumanBodySVG Component ---
+// (This component remains unchanged from the second snippet provided)
 function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
-  // Create hover state for each region
   const [hoverRegion, setHoverRegion] = useState<string | null>(null);
 
   const getRegionStyle = (region: string): React.CSSProperties => {
@@ -699,7 +711,6 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
     };
   };
 
-  // Clickable areas for systems
   const systemAreas: SystemArea[] = [
     {
       id: 'Neurological',
@@ -771,7 +782,6 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
     },
   ];
 
-  // Side panels configuration with icons
   const sidePanels: SidePanel[] = [
     {
       id: 'General/Constitutional',
@@ -802,25 +812,18 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       label: ['Toxicologic', 'Environmental'],
     },
     { id: 'Obstetric/Gynecologic', x: 310, y: 270, label: ['OB/GYN'] },
-  ]; // Make sure this closing bracket and semicolon are correct
-
-  // *** The error likely occurred somewhere between the line above and the line below ***
+  ];
 
   return (
-    // Ensure nothing invalid is between the ]; and this return
     <div className="relative">
-      {/* CHANGE 1: Parent Div Height */}
       <div
         className="relative mx-auto"
-        style={{ width: '400px', height: '400px' }} // Adjusted height
+        style={{ width: '400px', height: '400px' }}
       >
         <svg
-          // CHANGE 2: SVG ViewBox Height
-          viewBox="0 0 400 400" // Adjusted height
-          // CHANGE 3: SVG Style Height
-          style={{ position: 'absolute', width: '100%', height: '100%' }} // Adjusted height
+          viewBox="0 0 400 400"
+          style={{ position: 'absolute', width: '100%', height: '100%' }}
         >
-          {/* Anatomical Diagram Image */}
           <image
             href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAQMAAAD58POIAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEcklEQVRIx32VTYtUVxSAn3PuuVW37tTtTJuO0+1IfpCQyWIWQZhZ6CKQZcBsQ0Y3rkSIuNGVi+y6yfgHbJBAEPyBIBLHRYwgJhhxYVzELAJZZoht30233a567923cN1ypsZqF+d+vOe959xzzvuCYXDiUBDqvUtuT6OWkx9vuL/oe2BzMYrDVe0c++Avc/Fqz+0UYBo88o+hDrWEu/7NbvE6BXAHqcGR3ZsAc3/l990G2Cy/IYCWP5oLT8HcRV7sBmBztQDt/d10KQRzJ5ZXU/8PYF+4nQOt5UqjAOafTbybAPuJ2gUwn/OsUwDz5/p/AZbLDgbIw8P+BrCPHfsAzJOuAZT1u1oG8/Dg1QDsvgMTEB7jdAkM2/v5GsyrR7eA/egdmAF5RpcA3cYpT2YgvNzfAoYPxwBkwZcbYO4Z3QbzMnc3gUFXAlCCf2CAfcWzBpi7lQKYR+MRYJiWBeCKugLm9YJfB4abwwZgkRc+mMdF7mcwXK34AugcTQHy+LMAc+fYS2DercxGYLi+VgAz+jTAfDc9C+bFhV4BDDslAaQDXwWYJz0DzOvDrFUAeVh2BdCpvhTAvJ7xCmCudx3QfP7wJZgH1f0C6BQ/AWCQNwFDLi1bYF5etwUwTJ8VQKpeCnCHEKFo4Y/NRwXQaT8FoHl3KvSlsIeJTpvY3NN9WQDD5e8FECm9UQCdOSRCvgB4rfouAYaLv1QBcEfdAvOLu34K5ud2XwGGpX/KADO6+Slo9u0E1JcHpwKjm/8AML8xBsxjIUaFQzp7CzRv/VoBINdoAZg7OoaoKXbWKY8C82JXqwr8/J8ZmK9sBHMnTWF/Dqv31O0xMC/21KoAq36VAebeTi4Bc/8EB3NEuFHtA/Nsbw3QvJh2YF4MoYvXX5FKUXNbcgxo3vtDAeT3xoE5wwY45IGW3jOAebN7vQLYvW2AeXsLmD2ZlEWKn/Xm0mGg+exWAdTXDxnMmbgBJ8mV9MCwdbFVAG0ufATmidYG8w1RsClmj9FuaUBz5+UK4KTe3ACzlrDtJGUkVHQRdE+VqAD67skRmCtF4lxcCwC1JPbpwWfAYNusC9A76QBCz+aQJ8GS4OaXbBXotH9TASRj9T6Y54kNyZpMisScTmZLQHP+aAXQbpXGwaWY2V0MlZJgdFBfHYPmbHMQ0PTaNTBfMRaLpTYKjiGOumAYd4yqAlKD1hGYN1Tk9kSj4iK2kdjYfhOo38kqANs6PQ7mbZFgC4pWXHRQwbLOXAGG0x8OMKxXYDY2TpDFKjuZKI6F2CbGW0CnYfMKYNNAJ8G8kDKWYpGZjFb0OBnHJNCZOjKoADbWww6Ys8oKaIklplnJFCurFVC/emYwCcq7DfPAZ3U1XjXKCodJC9qC6aJ+fnJQAQLUug7mC2lNVapxmqTFqqwm3wSaS/UBLMtHt8GcqR6nRmWLKllVWm2fB5qfniwmyb7QAzC3bI2fQvXrKh1+MZkpgE5tbyoAVjh1E9rnY/sX8sTuhsQxQSYAAAAASUVORK5CYII="
             x="145"
@@ -829,9 +832,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
             height="400"
           />
 
-          {/* Clickable areas for body systems */}
           {systemAreas.map((area) => {
-            // Circle rendering
             if (
               area.shape === 'circle' &&
               area.coords?.cx &&
@@ -877,9 +878,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                   </text>
                 </g>
               );
-            }
-            // Rect rendering
-            else if (
+            } else if (
               area.shape === 'rect' &&
               area.coords?.x !== undefined &&
               area.coords?.y !== undefined &&
@@ -942,9 +941,7 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                   )}
                 </g>
               );
-            }
-            // Multiple path rendering
-            else if (area.shape === 'multiple' && area.paths) {
+            } else if (area.shape === 'multiple' && area.paths) {
               return (
                 <g
                   key={area.id}
@@ -986,15 +983,13 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
                 </g>
               );
             }
-            return null; // Added for completeness, ensures map always returns
+            return null;
           })}
 
-          {/* Side panel buttons with icons */}
           {sidePanels.map((panel) => {
             const isHovered = hoverRegion === panel.id;
             const style: React.CSSProperties = {
-              // Added type explicitly
-              fill: isHovered ? '#f0f0f0' : '#ffffff', // Lighter gray on hover
+              fill: isHovered ? '#f0f0f0' : '#ffffff',
               stroke: '#cccccc',
               strokeWidth: 1,
               cursor: 'pointer',
@@ -1052,4 +1047,4 @@ function HumanBodySVG({ onSystemClick, renderSystemIcon }: HumanBodySVGProps) {
       </div>
     </div>
   );
-} // <-- Make sure this closing brace for the function is present and correct
+}
