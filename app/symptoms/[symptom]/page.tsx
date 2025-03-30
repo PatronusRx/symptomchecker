@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
-import { ClipboardEdit, ArrowLeft } from 'lucide-react';
+import { ClipboardEdit, ArrowLeft, BookOpen, X } from 'lucide-react';
 
 // Store currentSystem, currentSymptom in sessionStorage to maintain navigation context
 const getStoredNavContext = () => {
@@ -47,6 +47,7 @@ export default function SymptomPage() {
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
   const [view, setView] = useState<'chapters' | 'checklist'>('chapters');
   const navContext = getStoredNavContext();
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     const checkChapterExists = async () => {
@@ -110,6 +111,24 @@ export default function SymptomPage() {
     }
   }, [symptom]);
 
+  // Hide footer on mobile for this page
+  useEffect(() => {
+    // Add class to hide footer on mobile
+    document.body.classList.add('symptom-page-mobile');
+
+    // Clean up when component unmounts
+    return () => {
+      document.body.classList.remove('symptom-page-mobile');
+    };
+  }, []);
+
+  // Close mobile sidebar when switching to checklist view
+  useEffect(() => {
+    if (view === 'checklist') {
+      setMobileSidebarOpen(false);
+    }
+  }, [view]);
+
   // Go back to the system view (if system context exists) or home
   const handleBackClick = () => {
     if (view === 'checklist') {
@@ -125,6 +144,11 @@ export default function SymptomPage() {
   const handleChapterSelect = (chapter: Chapter) => {
     setSelectedChapter(chapter);
     setView('checklist');
+    setMobileSidebarOpen(false); // Close sidebar after selection on mobile
+  };
+
+  const toggleMobileSidebar = () => {
+    setMobileSidebarOpen(!mobileSidebarOpen);
   };
 
   if (loading) {
@@ -177,21 +201,64 @@ export default function SymptomPage() {
             </h1>
           </div>
         </div>
+
+        {/* Mobile toggle button for chapters - only in checklist view */}
+        {view === 'checklist' && (
+          <button
+            className="md:hidden text-blue-500 hover:text-blue-700"
+            onClick={toggleMobileSidebar}
+            aria-label="Show chapters"
+          >
+            <BookOpen size={20} />
+          </button>
+        )}
       </header>
+
+      {/* Mobile Sidebar Overlay */}
+      {mobileSidebarOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
+          <div className="absolute top-0 right-0 h-full w-64 bg-white shadow-lg z-50 overflow-y-auto">
+            <div className="p-3 flex justify-between items-center border-b">
+              <h2 className="font-bold text-lg">Related Chapters</h2>
+              <button
+                onClick={() => setMobileSidebarOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="p-3">
+              {chapters.map((chapter) => (
+                <button
+                  key={chapter.id}
+                  onClick={() => handleChapterSelect(chapter)}
+                  className={`w-full text-left px-3 py-2 rounded-md mb-1 text-responsive-sm ${
+                    chapter.id === selectedChapter?.id
+                      ? 'bg-blue-50 text-blue-700 font-medium border-l-4 border-blue-500'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {chapter.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <div className="flex-1 overflow-hidden flex flex-col md:flex-row">
-        {/* Sidebar with chapter list */}
-        <div className="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto">
-          <div className="p-3 md:p-4">
-            <h2 className="text-responsive font-semibold mb-3 md:mb-4">
+        {/* Sidebar with chapter list - hidden on mobile */}
+        <div className="hidden md:block md:w-64 bg-white border-r border-gray-200 overflow-y-auto">
+          <div className="p-4">
+            <h2 className="text-responsive font-semibold mb-4">
               Related Chapters
             </h2>
             {chapters.map((chapter) => (
               <button
                 key={chapter.id}
                 onClick={() => handleChapterSelect(chapter)}
-                className={`w-full text-left px-3 md:px-4 py-2 rounded-md mb-1 text-responsive-sm ${
+                className={`w-full text-left px-4 py-2 rounded-md mb-1 text-responsive-sm ${
                   chapter.id === selectedChapter?.id
                     ? 'bg-blue-50 text-blue-700 font-medium border-l-4 border-blue-500'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -203,8 +270,8 @@ export default function SymptomPage() {
           </div>
         </div>
 
-        {/* Main content */}
-        <div className="flex-1 overflow-hidden">
+        {/* Main content - full width on mobile */}
+        <div className="flex-1 overflow-y-auto">
           {view === 'chapters' ? (
             <div className="p-4 md:p-6">
               <h2 className="text-responsive-xl font-semibold mb-4">
@@ -228,7 +295,7 @@ export default function SymptomPage() {
               </div>
             </div>
           ) : (
-            <div className="p-4 md:p-6">
+            <div className="p-2 md:p-6">
               <DynamicSymptomChecker
                 chapterSlug={
                   selectedChapter?.title.toLowerCase().replace(/\s+/g, '-') ||
