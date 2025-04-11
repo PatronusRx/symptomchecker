@@ -82,7 +82,7 @@ export default function BodyVisualizationHome() {
       </header>
 
       {/* Main content */}
-      <main className="max-w-4xl mx-auto my-6 px-4">
+      <main className="max-w-6xl mx-auto my-4 px-1">
         {loading ? (
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
@@ -90,7 +90,7 @@ export default function BodyVisualizationHome() {
         ) : (
           <>
             {/* Developer tools - can be removed once things are working */}
-            <div className="mb-6 bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+            <div className="mb-4 bg-yellow-50 p-3 rounded-lg border border-yellow-200">
               <h2 className="text-lg font-medium text-yellow-800 mb-2">
                 Developer Tools
               </h2>
@@ -120,14 +120,14 @@ export default function BodyVisualizationHome() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
               {filteredApproaches.map((approach) => (
                 <button
                   key={approach}
-                  className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition-shadow text-left border-l-4 border-blue-500"
+                  className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow hover:shadow-md transition-shadow text-left border-l-4 border-blue-500"
                   onClick={() => handleApproachClick(approach)}
                 >
-                  <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+                  <h2 className="text-base font-medium text-gray-800 dark:text-white">
                     {approach}
                   </h2>
                 </button>
@@ -142,9 +142,9 @@ export default function BodyVisualizationHome() {
         )}
 
         {/* Disclaimer */}
-        <div className="mt-12 text-center">
-          <div className="inline-block p-4 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded-lg max-w-2xl mx-auto shadow">
-            <p className="text-sm">
+        <div className="mt-8 text-center">
+          <div className="inline-block p-3 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded-lg max-w-2xl mx-auto shadow">
+            <p className="text-xs">
               <strong>Disclaimer:</strong> This tool is for informational
               purposes only and does not constitute medical advice. It is not a
               substitute for professional medical evaluation, diagnosis, or

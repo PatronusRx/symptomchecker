@@ -247,9 +247,9 @@ export default function ApproachPage() {
       {/* Main Content */}
       <div className="flex-1 overflow-hidden">
         <div className="flex-1 overflow-y-auto">
-          <div className="p-4 md:p-6 max-w-4xl mx-auto">
+          <div className="p-1 md:p-2 w-full">
             {!chapterExists || error ? (
-              <div className="bg-white p-6 rounded-lg shadow">
+              <div className="bg-white p-4 rounded-lg shadow">
                 <h2 className="text-xl font-semibold mb-4 text-red-600">
                   Approach Not Found
                 </h2>
@@ -280,21 +280,21 @@ export default function ApproachPage() {
               </div>
             ) : (
               <>
-                <div className="bg-white p-6 rounded-lg shadow mb-6">
-                  <h2 className="text-xl font-semibold mb-4">
+                <div className="bg-white p-4 rounded-lg shadow mb-4">
+                  <h2 className="text-xl font-semibold mb-3">
                     About this approach
                   </h2>
                   <p>
                     This approach helps you diagnose and manage cases related to{' '}
                     {approach.toLowerCase()}.
                   </p>
-                  <div className="mt-4 p-3 bg-blue-50 rounded-md text-sm">
+                  <div className="mt-3 p-2 bg-blue-50 rounded-md text-sm">
                     <strong>Note:</strong> Chapter #{chapter?.chapter_number}:{' '}
                     {chapter?.title}
                   </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow">
+                <div className="bg-white p-4 rounded-lg shadow">
                   <DynamicSymptomChecker chapterSlug={approachParam || ''} />
                 </div>
               </>
