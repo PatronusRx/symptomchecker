@@ -11,7 +11,8 @@ dotenv.config({ path: join(__dirname, '../../.env.local') });
 
 export default {
   // Base path for markdown files
-  markdownBasePath: '/Users/lucas/Documents/markdown_1-185/1-18',
+  markdownBasePath:
+    '/Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches',
 
   // Directory for logs
   logsDir: './logs',

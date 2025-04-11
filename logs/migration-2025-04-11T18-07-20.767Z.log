@@ -1,0 +1,1606 @@
+[2025-04-11T18:07:20.768Z] [INFO] Starting migration...
+[2025-04-11T18:07:20.769Z] [INFO] Ensuring database schema has required columns...
+[2025-04-11T18:07:20.931Z] [INFO] Schema columns verified/updated successfully
+[2025-04-11T18:07:20.932Z] [INFO] Inserting categories...
+[2025-04-11T18:07:21.050Z] [INFO] All categories already exist, skipping insertion
+[2025-04-11T18:07:21.062Z] [INFO] Found 19 chapter directories to process
+[2025-04-11T18:07:21.062Z] [INFO] Processing chapter: Approach to acute coronary syndrome
+[2025-04-11T18:07:21.270Z] [INFO] Processing file: acute-coronary-syndrome-tracker.md
+[2025-04-11T18:07:21.271Z] [INFO] Starting transaction for file: acute-coronary-syndrome-tracker.md
+[2025-04-11T18:07:21.272Z] [INFO] Preprocessing file: acute-coronary-syndrome-tracker.md
+[2025-04-11T18:07:21.274Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:21.276Z] [INFO] Found section: "Provocation/Palliation" at line 14
+[2025-04-11T18:07:21.276Z] [INFO] Found section: "Quality" at line 29
+[2025-04-11T18:07:21.276Z] [INFO] Found section: "Radiation" at line 41
+[2025-04-11T18:07:21.276Z] [INFO] Found section: "Severity" at line 53
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Timing" at line 62
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Associated Symptoms" at line 73
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Current Medications" at line 119
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Medication Adherence" at line 180
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Medication Allergies" at line 185
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Cardiovascular" at line 222
+[2025-04-11T18:07:21.277Z] [INFO] Found section: "Respiratory" at line 234
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Gastrointestinal" at line 244
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Neurological" at line 254
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Renal" at line 265
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Endocrine" at line 273
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Hematologic" at line 280
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Psychiatric" at line 285
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Source of Collateral Information" at line 293
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "EMS Information" at line 303
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Witnessed Information" at line 324
+[2025-04-11T18:07:21.278Z] [INFO] Found section: "Modifiable Risk Factors" at line 335
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Non-modifiable Risk Factors" at line 360
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Cardiac-Specific Risk Assessment" at line 371
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Cardiac" at line 379
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Pulmonary" at line 402
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Gastrointestinal" at line 408
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Musculoskeletal" at line 416
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Other" at line 422
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Cardiac History" at line 430
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Other Medical History" at line 472
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Surgical History" at line 502
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Vital Signs" at line 509
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "General Appearance" at line 529
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "HEENT" at line 545
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Neck" at line 564
+[2025-04-11T18:07:21.279Z] [INFO] Found section: "Cardiovascular" at line 577
+[2025-04-11T18:07:21.280Z] [INFO] Found section: "Respiratory" at line 598
+[2025-04-11T18:07:21.280Z] [INFO] Found section: "Abdomen" at line 629
+[2025-04-11T18:07:21.280Z] [INFO] Found section: "Extremities" at line 660
+[2025-04-11T18:07:21.280Z] [INFO] Found section: "Neurological" at line 697
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Skin" at line 741
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Cardiac Markers" at line 758
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Blood Count" at line 780
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Coagulation" at line 786
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Chemistry" at line 793
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Lipid Panel" at line 806
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Liver Function" at line 813
+[2025-04-11T18:07:21.281Z] [INFO] Found section: "Inflammatory Markers" at line 822
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Arterial Blood Gas" at line 827
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Other" at line 836
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Chest X-ray" at line 846
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Echocardiography" at line 875
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Coronary Angiography" at line 907
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Cardiac CT/CT Angiography" at line 940
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Cardiac MRI" at line 951
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Other Imaging" at line 965
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Stress Testing" at line 976
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Nuclear Imaging" at line 993
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Stress Echocardiography" at line 1021
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Coronary CT Fractional Flow Reserve (FFRCT)" at line 1035
+[2025-04-11T18:07:21.282Z] [INFO] Found section: "Invasive FFR/iFR" at line 1040
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Intravascular Ultrasound (IVUS)" at line 1046
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Optical Coherence Tomography (OCT)" at line 1053
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "General Information" at line 1061
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Rate and Rhythm" at line 1065
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Intervals" at line 1080
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Axis" at line 1099
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Morphology" at line 1105
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Other Findings" at line 1138
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "ECG Interpretation" at line 1158
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Primary Diagnosis" at line 1184
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Clinical Assessment" at line 1200
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Complications" at line 1212
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Risk Stratification" at line 1239
+[2025-04-11T18:07:21.283Z] [INFO] Found section: "Immediate Management" at line 1248
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Reperfusion Strategy" at line 1286
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Hemodynamic Management" at line 1302
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Secondary Prevention" at line 1325
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Monitoring Plan" at line 1345
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Consults" at line 1357
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Admission" at line 1369
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Transfer" at line 1384
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Discharge" at line 1400
+[2025-04-11T18:07:21.284Z] [INFO] Found section: "Diagnosis" at line 1421
+[2025-04-11T18:07:21.285Z] [INFO] Found section: "Risk Factor Modification" at line 1432
+[2025-04-11T18:07:21.285Z] [INFO] Found section: "Medication Education" at line 1460
+[2025-04-11T18:07:21.285Z] [INFO] Found section: "Warning Signs Education" at line 1493
+[2025-04-11T18:07:21.285Z] [INFO] Found section: "Cardiac Rehabilitation" at line 1503
+[2025-04-11T18:07:21.285Z] [INFO] Found section: "Home Care Instructions" at line 1511
+[2025-04-11T18:07:21.285Z] [INFO] Found 85 sections in file: Onset, Provocation/Palliation, Quality, Radiation, Severity, Timing, Associated Symptoms, Current Medications, Medication Adherence, Medication Allergies, Cardiovascular, Respiratory, Gastrointestinal, Neurological, Renal, Endocrine, Hematologic, Psychiatric, Source of Collateral Information, EMS Information, Witnessed Information, Modifiable Risk Factors, Non-modifiable Risk Factors, Cardiac-Specific Risk Assessment, Cardiac, Pulmonary, Musculoskeletal, Other, Cardiac History, Other Medical History, Surgical History, Vital Signs, General Appearance, HEENT, Neck, Abdomen, Extremities, Skin, Cardiac Markers, Blood Count, Coagulation, Chemistry, Lipid Panel, Liver Function, Inflammatory Markers, Arterial Blood Gas, Chest X-ray, Echocardiography, Coronary Angiography, Cardiac CT/CT Angiography, Cardiac MRI, Other Imaging, Stress Testing, Nuclear Imaging, Stress Echocardiography, Coronary CT Fractional Flow Reserve (FFRCT), Invasive FFR/iFR, Intravascular Ultrasound (IVUS), Optical Coherence Tomography (OCT), General Information, Rate and Rhythm, Intervals, Axis, Morphology, Other Findings, ECG Interpretation, Primary Diagnosis, Clinical Assessment, Complications, Risk Stratification, Immediate Management, Reperfusion Strategy, Hemodynamic Management, Secondary Prevention, Monitoring Plan, Consults, Admission, Transfer, Discharge, Diagnosis, Risk Factor Modification, Medication Education, Warning Signs Education, Cardiac Rehabilitation, Home Care Instructions
+[2025-04-11T18:07:21.285Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to acute coronary syndrome/acute-coronary-syndrome-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:21.285Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:21.285Z] [INFO] Processing chapter: Approach to aortic emergencies
+[2025-04-11T18:07:21.425Z] [INFO] Processing file: aortic-emergencies-tracker.md
+[2025-04-11T18:07:21.425Z] [INFO] Starting transaction for file: aortic-emergencies-tracker.md
+[2025-04-11T18:07:21.426Z] [INFO] Preprocessing file: aortic-emergencies-tracker.md
+[2025-04-11T18:07:21.426Z] [INFO] Found section: "Onset" at line 3
+[2025-04-11T18:07:21.426Z] [INFO] Found section: "Provocation/Palliation" at line 10
+[2025-04-11T18:07:21.426Z] [INFO] Found section: "Quality" at line 21
+[2025-04-11T18:07:21.426Z] [INFO] Found section: "Region/Radiation" at line 30
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Severity" at line 45
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Time" at line 53
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Additional History Elements" at line 63
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Current Medications" at line 116
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Medication Compliance" at line 137
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Medication Allergies" at line 143
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Cardiovascular" at line 168
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Respiratory" at line 180
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Neurological" at line 189
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Gastrointestinal" at line 207
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Genitourinary" at line 219
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Musculoskeletal" at line 228
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Skin" at line 234
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Modifiable Risk Factors" at line 264
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Non-modifiable Risk Factors" at line 277
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Genetic/Congenital Risk Factors" at line 285
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Other Risk Factors" at line 294
+[2025-04-11T18:07:21.427Z] [INFO] Found section: "Aortic Pathologies" at line 305
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Other Cardiovascular Conditions" at line 320
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Non-Cardiovascular Conditions" at line 328
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Cardiovascular History" at line 342
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Surgical History" at line 362
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Other Medical History" at line 371
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Vital Signs" at line 382
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "General Appearance" at line 392
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "HEENT" at line 402
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Neck" at line 412
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Cardiovascular" at line 420
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Pulmonary" at line 437
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Abdominal" at line 457
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Extremities" at line 469
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Neurological" at line 500
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Skin" at line 543
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Cardiac Markers" at line 552
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Complete Blood Count" at line 558
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Coagulation Studies" at line 564
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Basic Metabolic Panel" at line 570
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Liver Function Tests" at line 580
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Inflammatory Markers" at line 587
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Arterial Blood Gas" at line 592
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Other Labs" at line 600
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "Chest X-ray" at line 607
+[2025-04-11T18:07:21.428Z] [INFO] Found section: "CT Angiography" at line 618
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "MRI/MRA" at line 643
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Echocardiography" at line 650
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Ultrasound" at line 672
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Aortography" at line 681
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "D-dimer" at line 687
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Genetic Testing" at line 692
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Aortic Tissue Testing" at line 698
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Inflammatory Markers Panel" at line 705
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Primary Diagnosis" at line 751
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Complications" at line 764
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Severity Assessment" at line 777
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Risk Stratification" at line 782
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Immediate Management" at line 791
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Surgical Management" at line 806
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Medical Management" at line 822
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Monitoring Plan" at line 833
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Consultations" at line 847
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Admission Details" at line 857
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Transfer Considerations" at line 869
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Outpatient Follow-up" at line 881
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Disease Information" at line 897
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Lifestyle Modifications" at line 910
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Medication Education" at line 927
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Genetic Implications" at line 944
+[2025-04-11T18:07:21.429Z] [INFO] Found section: "Follow-up Instructions" at line 951
+[2025-04-11T18:07:21.430Z] [INFO] Found 69 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Time, Additional History Elements, Current Medications, Medication Compliance, Medication Allergies, Cardiovascular, Respiratory, Neurological, Gastrointestinal, Genitourinary, Musculoskeletal, Skin, Modifiable Risk Factors, Non-modifiable Risk Factors, Genetic/Congenital Risk Factors, Other Risk Factors, Aortic Pathologies, Other Cardiovascular Conditions, Non-Cardiovascular Conditions, Cardiovascular History, Surgical History, Other Medical History, Vital Signs, General Appearance, HEENT, Neck, Pulmonary, Abdominal, Extremities, Cardiac Markers, Complete Blood Count, Coagulation Studies, Basic Metabolic Panel, Liver Function Tests, Inflammatory Markers, Arterial Blood Gas, Other Labs, Chest X-ray, CT Angiography, MRI/MRA, Echocardiography, Ultrasound, Aortography, D-dimer, Genetic Testing, Aortic Tissue Testing, Inflammatory Markers Panel, Primary Diagnosis, Complications, Severity Assessment, Risk Stratification, Immediate Management, Surgical Management, Medical Management, Monitoring Plan, Consultations, Admission Details, Transfer Considerations, Outpatient Follow-up, Disease Information, Lifestyle Modifications, Medication Education, Genetic Implications, Follow-up Instructions
+[2025-04-11T18:07:21.430Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to aortic emergencies/aortic-emergencies-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:21.430Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:21.430Z] [INFO] Processing chapter: Approach to cardiac arrhythmias
+[2025-04-11T18:07:21.578Z] [INFO] Processing file: cardiac-arrhythmia-assessment.md
+[2025-04-11T18:07:21.578Z] [INFO] Starting transaction for file: cardiac-arrhythmia-assessment.md
+[2025-04-11T18:07:21.579Z] [INFO] Preprocessing file: cardiac-arrhythmia-assessment.md
+[2025-04-11T18:07:21.580Z] [WARN] Warning: Found checklist item without a section at line 1, using default section
+[2025-04-11T18:07:21.580Z] [INFO] Found section: "Syncope and Pre-syncope" at line 60
+[2025-04-11T18:07:21.580Z] [INFO] Found section: "Associated Symptoms" at line 76
+[2025-04-11T18:07:21.580Z] [INFO] Found section: "Antiarrhythmics" at line 101
+[2025-04-11T18:07:21.580Z] [INFO] Found section: "Anticoagulation and Other Cardiac Medications" at line 119
+[2025-04-11T18:07:21.580Z] [INFO] Found section: "Medication Concerns" at line 138
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Stimulants" at line 151
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Dietary Habits" at line 164
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Cardiovascular and Respiratory" at line 185
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Other Systems" at line 200
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Witness Accounts" at line 225
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Additional Sources" at line 238
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Genetic and Family Factors" at line 249
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Personal Cardiac History" at line 258
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Lifestyle and Modifiable Factors" at line 268
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Tachyarrhythmias" at line 285
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Bradyarrhythmias and Conduction Disorders" at line 301
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Other Considerations" at line 312
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Cardiac History" at line 328
+[2025-04-11T18:07:21.581Z] [INFO] Found section: "Procedures and Interventions" at line 345
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Non-Cardiac History" at line 355
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Vital Signs" at line 366
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "General and Cardiovascular Exam" at line 381
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Other Systems" at line 422
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Blood Counts and Chemistry" at line 476
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Cardiac and Other Studies" at line 494
+[2025-04-11T18:07:21.582Z] [INFO] Found section: "Basic Imaging" at line 524
+[2025-04-11T18:07:21.582Z] [INFO] Found 26 sections in file: Default Section, Syncope and Pre-syncope, Associated Symptoms, Antiarrhythmics, Anticoagulation and Other Cardiac Medications, Medication Concerns, Stimulants, Dietary Habits, Cardiovascular and Respiratory, Other Systems, Witness Accounts, Additional Sources, Genetic and Family Factors, Personal Cardiac History, Lifestyle and Modifiable Factors, Tachyarrhythmias, Bradyarrhythmias and Conduction Disorders, Other Considerations, Cardiac History, Procedures and Interventions, Non-Cardiac History, Vital Signs, General and Cardiovascular Exam, Blood Counts and Chemistry, Cardiac and Other Studies, Basic Imaging
+[2025-04-11T18:07:21.582Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to cardiac arrhythmias/cardiac-arrhythmia-assessment.md: categoryMap is not defined
+[2025-04-11T18:07:21.582Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:21.582Z] [INFO] Processing chapter: Approach to chest pain
+[2025-04-11T18:07:21.737Z] [INFO] Processing file: chest-pain-symptom-tracker.md
+[2025-04-11T18:07:21.738Z] [INFO] Starting transaction for file: chest-pain-symptom-tracker.md
+[2025-04-11T18:07:21.738Z] [INFO] Preprocessing file: chest-pain-symptom-tracker.md
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Onset (OPQRST)" at line 1
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Provocation/Palliation (OPQRST)" at line 9
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Quality (OPQRST)" at line 25
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Radiation (OPQRST)" at line 34
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Severity (OPQRST)" at line 43
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Time (OPQRST)" at line 50
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Associated Symptoms" at line 60
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Current Medications" at line 90
+[2025-04-11T18:07:21.739Z] [INFO] Found section: "Medication Response" at line 117
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Cardiovascular" at line 144
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Respiratory" at line 154
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Gastrointestinal" at line 166
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Neurological" at line 176
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Musculoskeletal" at line 185
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Other" at line 193
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Modifiable Risk Factors" at line 219
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Non-modifiable Risk Factors" at line 245
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Other Cardiac Risk Factors" at line 255
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Cardiac" at line 267
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Vascular" at line 281
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Pulmonary" at line 286
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Gastrointestinal" at line 292
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Musculoskeletal" at line 300
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Psychological" at line 306
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Others" at line 310
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Cardiac History" at line 317
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Other Medical History" at line 346
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Surgical History" at line 370
+[2025-04-11T18:07:21.740Z] [INFO] Found section: "Vital Signs" at line 377
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "General Appearance" at line 394
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "HEENT" at line 403
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Cardiovascular" at line 411
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Pulmonary" at line 431
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Abdomen" at line 448
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Extremities" at line 461
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Skin" at line 484
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Neurological" at line 492
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Cardiac Markers" at line 520
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Complete Blood Count" at line 528
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Basic Metabolic Panel" at line 534
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Liver Function Tests" at line 544
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Lipid Panel" at line 551
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Coagulation Studies" at line 557
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Other" at line 563
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Chest X-ray" at line 580
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "CT Chest" at line 591
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Echocardiogram" at line 606
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Coronary Angiography" at line 625
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Other Imaging" at line 635
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Stress Testing" at line 650
+[2025-04-11T18:07:21.741Z] [INFO] Found section: "Pulmonary Function Tests" at line 665
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Cardiac Catheterization" at line 674
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Electrophysiology Studies" at line 688
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Other" at line 694
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Basic Information" at line 701
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Intervals" at line 719
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Axis" at line 725
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Ischemic Changes" at line 731
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Other Findings" at line 744
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Comparison" at line 763
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Primary Diagnosis" at line 769
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Probability Assessment" at line 779
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Severity Assessment" at line 791
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Differential Diagnoses" at line 805
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Immediate Management" at line 814
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Diagnostic Plan" at line 831
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Treatment Plan" at line 843
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Consultations" at line 880
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Admission Criteria" at line 887
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Discharge Criteria" at line 902
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Follow-up Planning" at line 911
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Transfer Considerations" at line 920
+[2025-04-11T18:07:21.742Z] [INFO] Found section: "Disease Information" at line 931
+[2025-04-11T18:07:21.743Z] [INFO] Found section: "Medication Education" at line 938
+[2025-04-11T18:07:21.743Z] [INFO] Found section: "Lifestyle Modifications" at line 948
+[2025-04-11T18:07:21.743Z] [INFO] Found section: "Warning Signs" at line 964
+[2025-04-11T18:07:21.743Z] [INFO] Found section: "Follow-up Instructions" at line 974
+[2025-04-11T18:07:21.743Z] [INFO] Found section: "Support Resources" at line 984
+[2025-04-11T18:07:21.743Z] [INFO] Found 71 sections in file: Onset (OPQRST), Provocation/Palliation (OPQRST), Quality (OPQRST), Radiation (OPQRST), Severity (OPQRST), Time (OPQRST), Associated Symptoms, Current Medications, Medication Response, Cardiovascular, Respiratory, Gastrointestinal, Neurological, Musculoskeletal, Other, Modifiable Risk Factors, Non-modifiable Risk Factors, Other Cardiac Risk Factors, Cardiac, Vascular, Pulmonary, Psychological, Others, Cardiac History, Other Medical History, Surgical History, Vital Signs, General Appearance, HEENT, Abdomen, Extremities, Skin, Cardiac Markers, Complete Blood Count, Basic Metabolic Panel, Liver Function Tests, Lipid Panel, Coagulation Studies, Chest X-ray, CT Chest, Echocardiogram, Coronary Angiography, Other Imaging, Stress Testing, Pulmonary Function Tests, Cardiac Catheterization, Electrophysiology Studies, Basic Information, Intervals, Axis, Ischemic Changes, Other Findings, Comparison, Primary Diagnosis, Probability Assessment, Severity Assessment, Differential Diagnoses, Immediate Management, Diagnostic Plan, Treatment Plan, Consultations, Admission Criteria, Discharge Criteria, Follow-up Planning, Transfer Considerations, Disease Information, Medication Education, Lifestyle Modifications, Warning Signs, Follow-up Instructions, Support Resources
+[2025-04-11T18:07:21.743Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to chest pain/chest-pain-symptom-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:21.743Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:21.743Z] [INFO] Processing chapter: Approach to dyspnea 
+[2025-04-11T18:07:21.878Z] [INFO] Processing file: dyspnea-symptom-tracker.md
+[2025-04-11T18:07:21.879Z] [INFO] Starting transaction for file: dyspnea-symptom-tracker.md
+[2025-04-11T18:07:21.879Z] [INFO] Preprocessing file: dyspnea-symptom-tracker.md
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Provocation/Palliation" at line 10
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Quality" at line 27
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Region/Radiation" at line 36
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Severity" at line 43
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Timing" at line 57
+[2025-04-11T18:07:21.880Z] [INFO] Found section: "Associated Symptoms" at line 69
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Respiratory Red Flags" at line 101
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Cardiac Red Flags" at line 113
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Severe Illness Indicators" at line 124
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Concerning History" at line 132
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Current Medications" at line 142
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Medication Adherence" at line 172
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Inhaler Technique" at line 185
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Medication Side Effects" at line 190
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Medication Allergies" at line 196
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Dietary Patterns" at line 204
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Fluid Intake" at line 216
+[2025-04-11T18:07:21.881Z] [INFO] Found section: "Salt Intake" at line 225
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Common Food Triggers" at line 232
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Meal Timing" at line 238
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Nutritional Concerns" at line 244
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Constitutional" at line 254
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "HEENT" at line 263
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Respiratory" at line 276
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Cardiovascular" at line 290
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Gastrointestinal" at line 301
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Genitourinary" at line 313
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Musculoskeletal" at line 323
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Neurological" at line 332
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Psychiatric" at line 345
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Skin" at line 353
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Endocrine" at line 363
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Hematologic/Lymphatic" at line 371
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Allergic/Immunologic" at line 378
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Information Source" at line 387
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Reliability" at line 397
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Prior Episodes" at line 406
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Baseline Status" at line 417
+[2025-04-11T18:07:21.882Z] [INFO] Found section: "Recent Changes" at line 428
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Home Environment" at line 436
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Respiratory Risk Factors" at line 450
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Cardiac Risk Factors" at line 480
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "General Risk Factors" at line 499
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Social Risk Factors" at line 522
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Pulmonary" at line 535
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Cardiac" at line 558
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Upper Airway" at line 571
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Systemic" at line 582
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Miscellaneous" at line 595
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Respiratory Conditions" at line 614
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Cardiovascular Conditions" at line 647
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Other Medical Conditions" at line 676
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Surgical History" at line 702
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Trauma History" at line 709
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Vital Signs" at line 717
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "General Appearance" at line 729
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "HEENT" at line 752
+[2025-04-11T18:07:21.883Z] [INFO] Found section: "Neck" at line 778
+[2025-04-11T18:07:21.884Z] [INFO] Found section: "Respiratory" at line 792
+[2025-04-11T18:07:21.884Z] [INFO] Found section: "Cardiovascular" at line 840
+[2025-04-11T18:07:21.884Z] [INFO] Found section: "Extremities" at line 863
+[2025-04-11T18:07:21.884Z] [INFO] Found 59 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, Respiratory Red Flags, Cardiac Red Flags, Severe Illness Indicators, Concerning History, Current Medications, Medication Adherence, Inhaler Technique, Medication Side Effects, Medication Allergies, Dietary Patterns, Fluid Intake, Salt Intake, Common Food Triggers, Meal Timing, Nutritional Concerns, Constitutional, HEENT, Respiratory, Cardiovascular, Gastrointestinal, Genitourinary, Musculoskeletal, Neurological, Psychiatric, Skin, Endocrine, Hematologic/Lymphatic, Allergic/Immunologic, Information Source, Reliability, Prior Episodes, Baseline Status, Recent Changes, Home Environment, Respiratory Risk Factors, Cardiac Risk Factors, General Risk Factors, Social Risk Factors, Pulmonary, Cardiac, Upper Airway, Systemic, Miscellaneous, Respiratory Conditions, Cardiovascular Conditions, Other Medical Conditions, Surgical History, Trauma History, Vital Signs, General Appearance, Neck, Extremities
+[2025-04-11T18:07:21.884Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to dyspnea /dyspnea-symptom-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:21.884Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:21.884Z] [INFO] Processing chapter: Approach to heart failure exacerbation
+[2025-04-11T18:07:22.098Z] [INFO] Processing file: heart-failure-exacerbation.md
+[2025-04-11T18:07:22.099Z] [INFO] Starting transaction for file: heart-failure-exacerbation.md
+[2025-04-11T18:07:22.100Z] [INFO] Preprocessing file: heart-failure-exacerbation.md
+[2025-04-11T18:07:22.102Z] [INFO] Found section: "Onset (OPQRST)" at line 1
+[2025-04-11T18:07:22.102Z] [INFO] Found section: "Provocation/Palliation (OPQRST)" at line 8
+[2025-04-11T18:07:22.102Z] [INFO] Found section: "Quality (OPQRST)" at line 21
+[2025-04-11T18:07:22.102Z] [INFO] Found section: "Region/Radiation (OPQRST)" at line 33
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Severity (OPQRST)" at line 45
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Timing (OPQRST)" at line 58
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Additional History" at line 69
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Heart Failure Medications" at line 114
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Diuretics" at line 145
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Other Cardiovascular Medications" at line 163
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Non-Cardiac Medications" at line 198
+[2025-04-11T18:07:22.103Z] [INFO] Found section: "Constitutional" at line 231
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Cardiovascular" at line 239
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Respiratory" at line 248
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Gastrointestinal" at line 262
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Genitourinary" at line 274
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Neurological" at line 283
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Psychiatric" at line 294
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Musculoskeletal" at line 301
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Endocrine" at line 307
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Skin" at line 314
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Hematologic" at line 321
+[2025-04-11T18:07:22.104Z] [INFO] Found section: "Modifiable Risk Factors" at line 354
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Non-modifiable Risk Factors" at line 377
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Heart Failure Specific Risk Factors" at line 384
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Primary Cardiac Causes" at line 405
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Non-Cardiac Causes" at line 420
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Precipitating Factors" at line 438
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Cardiac History" at line 455
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Non-Cardiac History" at line 486
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Surgical History" at line 521
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Family History" at line 529
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Vital Signs" at line 536
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "General Appearance" at line 548
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "HEENT" at line 563
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Neck" at line 573
+[2025-04-11T18:07:22.105Z] [INFO] Found section: "Cardiovascular" at line 579
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Pulmonary" at line 601
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Abdomen" at line 623
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Extremities" at line 639
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Neurological" at line 668
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Skin" at line 697
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Cardiac Biomarkers" at line 706
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Complete Blood Count" at line 718
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Chemistry" at line 728
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Liver Function Tests" at line 741
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Coagulation Studies" at line 750
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Arterial Blood Gas" at line 756
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Other Labs" at line 765
+[2025-04-11T18:07:22.106Z] [INFO] Found section: "Chest X-ray" at line 791
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Echocardiogram" at line 807
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Other Imaging" at line 856
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Cardiopulmonary Exercise Testing" at line 878
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "6-Minute Walk Test" at line 886
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Cardiac Catheterization" at line 904
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Pulmonary Function Tests" at line 918
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Sleep Study" at line 925
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Device Interrogation" at line 933
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Heart Failure Classification" at line 1014
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Heart Failure Exacerbation" at line 1036
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Clinical Profile" at line 1062
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Risk Stratification" at line 1068
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Pertinent Negatives" at line 1082
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Overall Assessment" at line 1088
+[2025-04-11T18:07:22.107Z] [INFO] Found section: "Immediate Management" at line 1097
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Monitoring" at line 1123
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Management of Precipitating Factors" at line 1136
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Medication Adjustments" at line 1150
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Discharge Planning" at line 1174
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Long-term Management" at line 1190
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Heart Failure Education" at line 1241
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Self-Care Management" at line 1250
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Lifestyle Modifications" at line 1264
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Advanced Care Planning" at line 1284
+[2025-04-11T18:07:22.108Z] [INFO] Found section: "Support Resources" at line 1293
+[2025-04-11T18:07:22.108Z] [INFO] Found 72 sections in file: Onset (OPQRST), Provocation/Palliation (OPQRST), Quality (OPQRST), Region/Radiation (OPQRST), Severity (OPQRST), Timing (OPQRST), Additional History, Heart Failure Medications, Diuretics, Other Cardiovascular Medications, Non-Cardiac Medications, Constitutional, Cardiovascular, Respiratory, Gastrointestinal, Genitourinary, Neurological, Psychiatric, Musculoskeletal, Endocrine, Skin, Hematologic, Modifiable Risk Factors, Non-modifiable Risk Factors, Heart Failure Specific Risk Factors, Primary Cardiac Causes, Non-Cardiac Causes, Precipitating Factors, Cardiac History, Non-Cardiac History, Surgical History, Family History, Vital Signs, General Appearance, HEENT, Neck, Pulmonary, Abdomen, Extremities, Cardiac Biomarkers, Complete Blood Count, Chemistry, Liver Function Tests, Coagulation Studies, Arterial Blood Gas, Other Labs, Chest X-ray, Echocardiogram, Other Imaging, Cardiopulmonary Exercise Testing, 6-Minute Walk Test, Cardiac Catheterization, Pulmonary Function Tests, Sleep Study, Device Interrogation, Heart Failure Classification, Heart Failure Exacerbation, Clinical Profile, Risk Stratification, Pertinent Negatives, Overall Assessment, Immediate Management, Monitoring, Management of Precipitating Factors, Medication Adjustments, Discharge Planning, Long-term Management, Heart Failure Education, Self-Care Management, Lifestyle Modifications, Advanced Care Planning, Support Resources
+[2025-04-11T18:07:22.108Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to heart failure exacerbation/heart-failure-exacerbation.md: categoryMap is not defined
+[2025-04-11T18:07:22.108Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.109Z] [INFO] Processing chapter: Approach to hypertensive emergencies
+[2025-04-11T18:07:22.254Z] [INFO] Processing file: hypertensive-emergency-soap.md
+[2025-04-11T18:07:22.255Z] [INFO] Starting transaction for file: hypertensive-emergency-soap.md
+[2025-04-11T18:07:22.255Z] [INFO] Preprocessing file: hypertensive-emergency-soap.md
+[2025-04-11T18:07:22.256Z] [WARN] Warning: Found checklist item without a section at line 1, using default section
+[2025-04-11T18:07:22.258Z] [INFO] Found 1 sections in file: Default Section
+[2025-04-11T18:07:22.258Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to hypertensive emergencies/hypertensive-emergency-soap.md: categoryMap is not defined
+[2025-04-11T18:07:22.258Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.258Z] [INFO] Processing chapter: Approach to palpitations
+[2025-04-11T18:07:22.396Z] [INFO] Processing file: palpitations-soap-note.md
+[2025-04-11T18:07:22.397Z] [INFO] Starting transaction for file: palpitations-soap-note.md
+[2025-04-11T18:07:22.398Z] [INFO] Preprocessing file: palpitations-soap-note.md
+[2025-04-11T18:07:22.399Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:22.400Z] [INFO] Found section: "Provocation/Palliation" at line 17
+[2025-04-11T18:07:22.400Z] [INFO] Found section: "Quality" at line 38
+[2025-04-11T18:07:22.400Z] [INFO] Found section: "Radiation/Region" at line 50
+[2025-04-11T18:07:22.401Z] [INFO] Found section: "Severity" at line 60
+[2025-04-11T18:07:22.401Z] [INFO] Found section: "Timing" at line 73
+[2025-04-11T18:07:22.402Z] [INFO] Found 6 sections in file: Onset, Provocation/Palliation, Quality, Radiation/Region, Severity, Timing
+[2025-04-11T18:07:22.402Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to palpitations/palpitations-soap-note.md: categoryMap is not defined
+[2025-04-11T18:07:22.402Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.402Z] [INFO] Processing chapter: Approach to peripheral edema
+[2025-04-11T18:07:22.550Z] [INFO] Processing file: peripheral-edema-tracker.md
+[2025-04-11T18:07:22.550Z] [INFO] Starting transaction for file: peripheral-edema-tracker.md
+[2025-04-11T18:07:22.550Z] [INFO] Preprocessing file: peripheral-edema-tracker.md
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Onset" at line 4
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Provocation/Palliation" at line 17
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Quality" at line 34
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Region/Radiation" at line 46
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Severity" at line 67
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Timing" at line 78
+[2025-04-11T18:07:22.551Z] [INFO] Found section: "Associated Symptoms" at line 91
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Cardiac Red Flags" at line 119
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Vascular Red Flags" at line 128
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Systemic Red Flags" at line 136
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Skin/Tissue Red Flags" at line 146
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Current Medications" at line 156
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Medication-Induced Edema" at line 179
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Medication Changes" at line 192
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Diuretic Response" at line 198
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Sodium Intake" at line 211
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Fluid Intake" at line 229
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Protein Intake" at line 237
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Specific Diets" at line 242
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Alcohol Consumption" at line 251
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Cardiovascular" at line 260
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Respiratory" at line 273
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Renal/Urologic" at line 285
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Hepatic/GI" at line 298
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Endocrine" at line 310
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Hematologic/Lymphatic" at line 319
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Integumentary" at line 328
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Neurologic" at line 337
+[2025-04-11T18:07:22.552Z] [INFO] Found section: "Family Reports" at line 348
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Medical Records" at line 358
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Other Healthcare Providers" at line 369
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Caregiver Reports" at line 379
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Home Monitoring Data" at line 386
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Cardiac Risk Factors" at line 394
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Venous/Lymphatic Risk Factors" at line 404
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Renal Risk Factors" at line 414
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Hepatic Risk Factors" at line 422
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Other Systemic Risk Factors" at line 430
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Cardiac Causes" at line 443
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Venous/Lymphatic Causes" at line 454
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Renal Causes" at line 463
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Hepatic Causes" at line 470
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Endocrine/Metabolic Causes" at line 475
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Medication-Induced" at line 481
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Miscellaneous Causes" at line 488
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Cardiovascular History" at line 496
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Venous/Lymphatic History" at line 517
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Renal History" at line 532
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Hepatic History" at line 545
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Endocrine History" at line 558
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Other Relevant History" at line 569
+[2025-04-11T18:07:22.553Z] [INFO] Found section: "Vital Signs" at line 584
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Edema Characteristics" at line 601
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Skin Examination" at line 641
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Cardiovascular Examination" at line 673
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Pulmonary Examination" at line 697
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Abdominal Examination" at line 717
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Neurological Examination" at line 736
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Vascular Examination" at line 762
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Complete Blood Count" at line 789
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Basic Metabolic Panel" at line 797
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Liver Function Tests" at line 807
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Cardiac Markers" at line 816
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Urinalysis" at line 822
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "24-Hour Urine Studies" at line 839
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Thyroid Function Tests" at line 844
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Coagulation Studies" at line 849
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Additional Labs" at line 855
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Chest Radiography" at line 871
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Venous Doppler Ultrasound" at line 892
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Lymphoscintigraphy" at line 915
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Abdominal Ultrasound" at line 929
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Echocardiography" at line 951
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Other Imaging" at line 969
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Cardiac Function Tests" at line 983
+[2025-04-11T18:07:22.554Z] [INFO] Found section: "Lymphatic Function Tests" at line 1002
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Venous Function Tests" at line 1013
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Renal Function Tests" at line 1024
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Hepatic Function Tests" at line 1030
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Skin/Tissue Tests" at line 1035
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Volume Status Assessment" at line 1044
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Basic Interpretation" at line 1059
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Chamber Abnormalities" at line 1084
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Ischemia/Infarction" at line 1091
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Conduction Abnormalities" at line 1105
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Other Findings" at line 1116
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Primary Diagnosis" at line 1134
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Contributing Factors" at line 1147
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Severity Assessment" at line 1158
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Clinical Staging" at line 1172
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Prognosis" at line 1193
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Immediate Interventions" at line 1211
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Medication Adjustments" at line 1236
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Activity and Rehabilitation" at line 1256
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Diet and Lifestyle Modifications" at line 1274
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Monitoring Plan" at line 1283
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Specialist Referrals" at line 1302
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Procedures/Interventions" at line 1312
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Follow-up Plan" at line 1324
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Admission Criteria (if applicable)" at line 1340
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Discharge Criteria (if inpatient)" at line 1357
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Contingency Plans" at line 1372
+[2025-04-11T18:07:22.555Z] [INFO] Found section: "Transportation Needs" at line 1383
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Disease Education" at line 1393
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Treatment Rationale" at line 1405
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Self-Management Skills" at line 1414
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Medication Education" at line 1433
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Lifestyle Modifications" at line 1441
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Follow-up Instructions" at line 1453
+[2025-04-11T18:07:22.556Z] [INFO] Found section: "Support Resources" at line 1463
+[2025-04-11T18:07:22.556Z] [INFO] Found 110 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, Cardiac Red Flags, Vascular Red Flags, Systemic Red Flags, Skin/Tissue Red Flags, Current Medications, Medication-Induced Edema, Medication Changes, Diuretic Response, Sodium Intake, Fluid Intake, Protein Intake, Specific Diets, Alcohol Consumption, Cardiovascular, Respiratory, Renal/Urologic, Hepatic/GI, Endocrine, Hematologic/Lymphatic, Integumentary, Neurologic, Family Reports, Medical Records, Other Healthcare Providers, Caregiver Reports, Home Monitoring Data, Cardiac Risk Factors, Venous/Lymphatic Risk Factors, Renal Risk Factors, Hepatic Risk Factors, Other Systemic Risk Factors, Cardiac Causes, Venous/Lymphatic Causes, Renal Causes, Hepatic Causes, Endocrine/Metabolic Causes, Medication-Induced, Miscellaneous Causes, Cardiovascular History, Venous/Lymphatic History, Renal History, Hepatic History, Endocrine History, Other Relevant History, Vital Signs, Edema Characteristics, Skin Examination, Cardiovascular Examination, Pulmonary Examination, Abdominal Examination, Neurological Examination, Vascular Examination, Complete Blood Count, Basic Metabolic Panel, Liver Function Tests, Cardiac Markers, Urinalysis, 24-Hour Urine Studies, Thyroid Function Tests, Coagulation Studies, Additional Labs, Chest Radiography, Venous Doppler Ultrasound, Lymphoscintigraphy, Abdominal Ultrasound, Echocardiography, Other Imaging, Cardiac Function Tests, Lymphatic Function Tests, Venous Function Tests, Renal Function Tests, Hepatic Function Tests, Skin/Tissue Tests, Volume Status Assessment, Basic Interpretation, Chamber Abnormalities, Ischemia/Infarction, Conduction Abnormalities, Other Findings, Primary Diagnosis, Contributing Factors, Severity Assessment, Clinical Staging, Prognosis, Immediate Interventions, Medication Adjustments, Activity and Rehabilitation, Diet and Lifestyle Modifications, Monitoring Plan, Specialist Referrals, Procedures/Interventions, Follow-up Plan, Admission Criteria (if applicable), Discharge Criteria (if inpatient), Contingency Plans, Transportation Needs, Disease Education, Treatment Rationale, Self-Management Skills, Medication Education, Lifestyle Modifications, Follow-up Instructions, Support Resources
+[2025-04-11T18:07:22.556Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to peripheral edema/peripheral-edema-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:22.556Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.556Z] [INFO] Processing chapter: Approach to swollen leg
+[2025-04-11T18:07:22.696Z] [INFO] Processing file: swollen-leg-evaluation.md
+[2025-04-11T18:07:22.697Z] [INFO] Starting transaction for file: swollen-leg-evaluation.md
+[2025-04-11T18:07:22.697Z] [INFO] Preprocessing file: swollen-leg-evaluation.md
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Provocation/Palliation" at line 15
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Quality" at line 33
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Region/Radiation" at line 44
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Severity" at line 58
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Timing" at line 70
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Associated Symptoms" at line 79
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Acute Concerns" at line 107
+[2025-04-11T18:07:22.698Z] [INFO] Found section: "Other Concerning Features" at line 125
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Current Medications" at line 139
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Medication Changes" at line 179
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Salt Intake" at line 188
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Fluid Intake" at line 200
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Protein Intake" at line 205
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Other Dietary Factors" at line 212
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Constitutional" at line 229
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Cardiovascular" at line 239
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Respiratory" at line 252
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Gastrointestinal" at line 265
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Genitourinary" at line 278
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Skin" at line 293
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Neurological" at line 302
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Hematologic" at line 310
+[2025-04-11T18:07:22.699Z] [INFO] Found section: "Endocrine" at line 316
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Family Observations" at line 325
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Caregiver Information" at line 334
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Previous Provider Documentation" at line 344
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Healthcare Facility Reports" at line 350
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Cardiovascular Risk Factors" at line 364
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Venous/Lymphatic Risk Factors" at line 379
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Systemic Disease Risk Factors" at line 390
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Other Risk Factors" at line 407
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Cardiac Causes" at line 426
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Venous/Lymphatic Causes" at line 433
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Systemic Disease Causes" at line 444
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Inflammatory/Infectious Causes" at line 453
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Traumatic/Structural Causes" at line 460
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Medication-Induced Causes" at line 468
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Other Causes" at line 477
+[2025-04-11T18:07:22.700Z] [INFO] Found section: "Cardiovascular History" at line 487
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Pulmonary History" at line 511
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Renal History" at line 520
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Hepatic History" at line 530
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Endocrine History" at line 542
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Oncologic History" at line 554
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Other Relevant History" at line 564
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Vital Signs" at line 574
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "General Appearance" at line 592
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Cardiovascular Exam" at line 600
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Pulmonary Exam" at line 614
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Abdominal Exam" at line 627
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Lower Extremity Exam" at line 640
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Vascular Exam" at line 694
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Neurological Exam" at line 717
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Complete Blood Count" at line 756
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Basic Metabolic Panel" at line 768
+[2025-04-11T18:07:22.701Z] [INFO] Found section: "Liver Function Tests" at line 779
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Cardiac Markers" at line 789
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Coagulation Studies" at line 795
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Inflammatory Markers" at line 802
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Thyroid Function" at line 807
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Urinalysis" at line 812
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Special Studies" at line 829
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Ultrasound" at line 843
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "X-ray" at line 886
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "CT Scan" at line 905
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "MRI" at line 931
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Lymphoscintigraphy" at line 942
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Echocardiography" at line 949
+[2025-04-11T18:07:22.702Z] [INFO] Found section: "Cardiac Function Tests" at line 967
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Venous Function Tests" at line 985
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Lymphatic Function Tests" at line 999
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Pulmonary Function Tests" at line 1006
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Biopsy" at line 1022
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Other Special Tests" at line 1034
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Basic Interpretation" at line 1047
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Chamber Findings" at line 1066
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Conduction Abnormalities" at line 1074
+[2025-04-11T18:07:22.703Z] [INFO] Found section: "Ischemic Changes" at line 1088
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Additional Findings" at line 1102
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Comparison" at line 1116
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Primary Diagnosis" at line 1123
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Supporting Evidence" at line 1146
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Alternative Diagnoses Considered" at line 1153
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Complications" at line 1163
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Disease Trajectory" at line 1178
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Medical Decision Making" at line 1189
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Immediate Interventions" at line 1205
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Primary Disease Management" at line 1234
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Medication Adjustments" at line 1256
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Lifestyle Modifications" at line 1268
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Consultations" at line 1287
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Additional Testing" at line 1299
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Interventional Procedures" at line 1310
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Follow-up Plans" at line 1325
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Home Care Services" at line 1340
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Level of Care Decision" at line 1357
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Return Precautions" at line 1369
+[2025-04-11T18:07:22.704Z] [INFO] Found section: "Work/Activity Restrictions" at line 1386
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Communication" at line 1399
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Condition Information" at line 1409
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Treatment Rationale" at line 1425
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Medication Education" at line 1438
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Self-Management Techniques" at line 1451
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Dietary Guidance" at line 1475
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Warning Signs" at line 1489
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Prevention Strategies" at line 1505
+[2025-04-11T18:07:22.705Z] [INFO] Found section: "Educational Resources" at line 1522
+[2025-04-11T18:07:22.705Z] [INFO] Found 108 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, Acute Concerns, Other Concerning Features, Current Medications, Medication Changes, Salt Intake, Fluid Intake, Protein Intake, Other Dietary Factors, Constitutional, Cardiovascular, Respiratory, Gastrointestinal, Genitourinary, Skin, Neurological, Hematologic, Endocrine, Family Observations, Caregiver Information, Previous Provider Documentation, Healthcare Facility Reports, Cardiovascular Risk Factors, Venous/Lymphatic Risk Factors, Systemic Disease Risk Factors, Other Risk Factors, Cardiac Causes, Venous/Lymphatic Causes, Systemic Disease Causes, Inflammatory/Infectious Causes, Traumatic/Structural Causes, Medication-Induced Causes, Other Causes, Cardiovascular History, Pulmonary History, Renal History, Hepatic History, Endocrine History, Oncologic History, Other Relevant History, Vital Signs, General Appearance, Cardiovascular Exam, Pulmonary Exam, Abdominal Exam, Lower Extremity Exam, Vascular Exam, Neurological Exam, Complete Blood Count, Basic Metabolic Panel, Liver Function Tests, Cardiac Markers, Coagulation Studies, Inflammatory Markers, Thyroid Function, Urinalysis, Special Studies, Ultrasound, X-ray, CT Scan, MRI, Lymphoscintigraphy, Echocardiography, Cardiac Function Tests, Venous Function Tests, Lymphatic Function Tests, Pulmonary Function Tests, Biopsy, Other Special Tests, Basic Interpretation, Chamber Findings, Conduction Abnormalities, Ischemic Changes, Additional Findings, Comparison, Primary Diagnosis, Supporting Evidence, Alternative Diagnoses Considered, Complications, Disease Trajectory, Medical Decision Making, Immediate Interventions, Primary Disease Management, Medication Adjustments, Lifestyle Modifications, Consultations, Additional Testing, Interventional Procedures, Follow-up Plans, Home Care Services, Level of Care Decision, Return Precautions, Work/Activity Restrictions, Communication, Condition Information, Treatment Rationale, Medication Education, Self-Management Techniques, Dietary Guidance, Warning Signs, Prevention Strategies, Educational Resources
+[2025-04-11T18:07:22.705Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to swollen leg/swollen-leg-evaluation.md: categoryMap is not defined
+[2025-04-11T18:07:22.705Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.705Z] [INFO] Processing chapter: Approach to syncope
+[2025-04-11T18:07:22.840Z] [INFO] Processing file: syncope-symptom-tracker.md
+[2025-04-11T18:07:22.840Z] [INFO] Starting transaction for file: syncope-symptom-tracker.md
+[2025-04-11T18:07:22.841Z] [INFO] Preprocessing file: syncope-symptom-tracker.md
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Onset" at line 3
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Provocation/Palliation" at line 13
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Quality" at line 37
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Radiation/Region/Related Symptoms" at line 60
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Severity/Time" at line 86
+[2025-04-11T18:07:22.842Z] [INFO] Found section: "Treatment" at line 98
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Antihypertensives" at line 138
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Cardiac Medications" at line 170
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Neurologic/Psychiatric Medications" at line 183
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Other Medications" at line 205
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Constitutional" at line 261
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Cardiovascular" at line 270
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Respiratory" at line 280
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Neurological" at line 289
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Gastrointestinal" at line 303
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Genitourinary" at line 315
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Endocrine" at line 325
+[2025-04-11T18:07:22.843Z] [INFO] Found section: "Hematologic" at line 336
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Psychiatric" at line 343
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Witness Account" at line 353
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Post-Event Observations" at line 388
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "First Responder Report" at line 408
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Cardiac Risk Factors" at line 424
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Neurologic Risk Factors" at line 440
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Metabolic Risk Factors" at line 450
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Situational Risk Factors" at line 460
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Medication Risk Factors" at line 474
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Age-Related Risk Factors" at line 483
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Cardiac Causes" at line 494
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Neurologic Causes" at line 520
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Metabolic/Other Causes" at line 539
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Psychiatric Causes" at line 553
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Cardiac History" at line 560
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Neurological History" at line 584
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Other Medical History" at line 600
+[2025-04-11T18:07:22.844Z] [INFO] Found section: "Surgical History" at line 629
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Vital Signs" at line 644
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "General Appearance" at line 670
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "HEENT" at line 680
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Neck" at line 704
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Cardiovascular" at line 716
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Respiratory" at line 735
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Abdominal" at line 745
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Extremities" at line 755
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Neurological" at line 779
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Hematology" at line 858
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Chemistry" at line 869
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Cardiac Markers" at line 889
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Endocrine" at line 895
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Toxicology" at line 906
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Other" at line 915
+[2025-04-11T18:07:22.845Z] [INFO] Found section: "Chest X-ray" at line 937
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Computed Tomography" at line 951
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Magnetic Resonance Imaging" at line 966
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Ultrasonography" at line 976
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Nuclear Medicine" at line 1004
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Cardiac Function Tests" at line 1018
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Cardiac Monitoring" at line 1060
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Autonomic Function Tests" at line 1084
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Neurological Tests" at line 1103
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Rate and Rhythm" at line 1117
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Intervals" at line 1135
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Conduction" at line 1142
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Axis" at line 1160
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Chamber Abnormalities" at line 1167
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "ST-T Wave Changes" at line 1173
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Other Findings" at line 1193
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Syncope Classification" at line 1219
+[2025-04-11T18:07:22.846Z] [INFO] Found section: "Risk Stratification" at line 1243
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Diagnostic Confidence" at line 1269
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Recurrence Risk" at line 1275
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Severity Assessment" at line 1286
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Immediate Management" at line 1293
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Diagnostic Plan" at line 1310
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Treatment Plan" at line 1327
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Safety Plan" at line 1355
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Admission Criteria" at line 1373
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Discharge Criteria" at line 1395
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Follow-up Plan" at line 1413
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Return Precautions" at line 1439
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "General Syncope Education" at line 1454
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Lifestyle Modifications" at line 1462
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Medication Instructions" at line 1485
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Safety Measures" at line 1501
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Follow-up Instructions" at line 1519
+[2025-04-11T18:07:22.847Z] [INFO] Found section: "Resources Provided" at line 1531
+[2025-04-11T18:07:22.848Z] [INFO] Found 82 sections in file: Onset, Provocation/Palliation, Quality, Radiation/Region/Related Symptoms, Severity/Time, Treatment, Antihypertensives, Cardiac Medications, Neurologic/Psychiatric Medications, Other Medications, Constitutional, Cardiovascular, Respiratory, Neurological, Gastrointestinal, Genitourinary, Endocrine, Hematologic, Psychiatric, Witness Account, Post-Event Observations, First Responder Report, Cardiac Risk Factors, Neurologic Risk Factors, Metabolic Risk Factors, Situational Risk Factors, Medication Risk Factors, Age-Related Risk Factors, Cardiac Causes, Neurologic Causes, Metabolic/Other Causes, Psychiatric Causes, Cardiac History, Neurological History, Other Medical History, Surgical History, Vital Signs, General Appearance, HEENT, Neck, Abdominal, Extremities, Hematology, Chemistry, Cardiac Markers, Toxicology, Other, Chest X-ray, Computed Tomography, Magnetic Resonance Imaging, Ultrasonography, Nuclear Medicine, Cardiac Function Tests, Cardiac Monitoring, Autonomic Function Tests, Neurological Tests, Rate and Rhythm, Intervals, Conduction, Axis, Chamber Abnormalities, ST-T Wave Changes, Other Findings, Syncope Classification, Risk Stratification, Diagnostic Confidence, Recurrence Risk, Severity Assessment, Immediate Management, Diagnostic Plan, Treatment Plan, Safety Plan, Admission Criteria, Discharge Criteria, Follow-up Plan, Return Precautions, General Syncope Education, Lifestyle Modifications, Medication Instructions, Safety Measures, Follow-up Instructions, Resources Provided
+[2025-04-11T18:07:22.848Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Cardiovascular Presentations/Approach to syncope/syncope-symptom-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:22.848Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:22.848Z] [INFO] Processing chapter: Approach to COPD exacerbation
+[2025-04-11T18:07:23.011Z] [INFO] Processing file: copd-exacerbation-tracker.md
+[2025-04-11T18:07:23.011Z] [INFO] Starting transaction for file: copd-exacerbation-tracker.md
+[2025-04-11T18:07:23.012Z] [INFO] Preprocessing file: copd-exacerbation-tracker.md
+[2025-04-11T18:07:23.013Z] [INFO] Found section: "Onset" at line 1
+[2025-04-11T18:07:23.013Z] [INFO] Found section: "Provocation/Palliation" at line 10
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "Quality" at line 21
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "Region/Radiation" at line 38
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "Severity" at line 45
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "Timing" at line 58
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "Associated Symptoms" at line 70
+[2025-04-11T18:07:23.014Z] [INFO] Found section: "COPD Maintenance Medications" at line 108
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Home Oxygen" at line 146
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Recent Medication Changes" at line 152
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Recent Steroid/Antibiotic Courses" at line 157
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Other Medications" at line 169
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "General" at line 200
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Respiratory" at line 209
+[2025-04-11T18:07:23.015Z] [INFO] Found section: "Cardiovascular" at line 220
+[2025-04-11T18:07:23.016Z] [INFO] Found section: "ENT" at line 229
+[2025-04-11T18:07:23.016Z] [INFO] Found section: "Gastrointestinal" at line 238
+[2025-04-11T18:07:23.016Z] [INFO] Found section: "Neurological" at line 247
+[2025-04-11T18:07:23.016Z] [INFO] Found section: "Psychiatric" at line 256
+[2025-04-11T18:07:23.016Z] [INFO] Found section: "Musculoskeletal" at line 263
+[2025-04-11T18:07:23.017Z] [INFO] Found section: "Tobacco Use" at line 305
+[2025-04-11T18:07:23.017Z] [INFO] Found section: "Occupational/Environmental Exposures" at line 320
+[2025-04-11T18:07:23.017Z] [INFO] Found section: "Medical Risk Factors" at line 332
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "COPD History" at line 341
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Respiratory Conditions" at line 382
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Cardiovascular Conditions" at line 397
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Other Comorbidities" at line 406
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Hospitalization History" at line 418
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Vital Signs" at line 431
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "General Appearance" at line 443
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "HEENT" at line 462
+[2025-04-11T18:07:23.018Z] [INFO] Found section: "Respiratory" at line 472
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Cardiovascular" at line 522
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Extremities" at line 545
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Neurological" at line 561
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Abdomen" at line 580
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Blood Tests" at line 590
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Arterial Blood Gas" at line 628
+[2025-04-11T18:07:23.019Z] [INFO] Found section: "Sputum Studies" at line 645
+[2025-04-11T18:07:23.020Z] [INFO] Found section: "Microbiology" at line 658
+[2025-04-11T18:07:23.020Z] [INFO] Found section: "Chest X-ray" at line 678
+[2025-04-11T18:07:23.020Z] [INFO] Found section: "Chest CT (if applicable)" at line 710
+[2025-04-11T18:07:23.020Z] [INFO] Found section: "Pulmonary Function Tests" at line 731
+[2025-04-11T18:07:23.020Z] [INFO] Found section: "Pulmonary Mechanics (if on ventilator)" at line 750
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Bedside Studies" at line 756
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "COPD Exacerbation Classification" at line 813
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Exacerbation Etiology" at line 819
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Complicating Factors" at line 831
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Acid-Base Status" at line 842
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Current GOLD Classification" at line 852
+[2025-04-11T18:07:23.021Z] [INFO] Found section: "Clinical Stability Assessment" at line 858
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Respiratory Support" at line 865
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Medications" at line 892
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Additional Interventions" at line 940
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Monitoring" at line 960
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Admission Criteria (if applicable)" at line 974
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Level of Care" at line 983
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Discharge Criteria (if applicable)" at line 990
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Home Care Needs" at line 999
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Follow-up" at line 1011
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Disease Understanding" at line 1023
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Medication Education" at line 1030
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Self-Management" at line 1042
+[2025-04-11T18:07:23.022Z] [INFO] Found section: "Lifestyle Modifications" at line 1052
+[2025-04-11T18:07:23.023Z] [INFO] Found section: "Support Resources" at line 1064
+[2025-04-11T18:07:23.023Z] [INFO] Found 62 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, COPD Maintenance Medications, Home Oxygen, Recent Medication Changes, Recent Steroid/Antibiotic Courses, Other Medications, General, Respiratory, Cardiovascular, ENT, Gastrointestinal, Neurological, Psychiatric, Musculoskeletal, Tobacco Use, Occupational/Environmental Exposures, Medical Risk Factors, COPD History, Respiratory Conditions, Cardiovascular Conditions, Other Comorbidities, Hospitalization History, Vital Signs, General Appearance, HEENT, Extremities, Abdomen, Blood Tests, Arterial Blood Gas, Sputum Studies, Microbiology, Chest X-ray, Chest CT (if applicable), Pulmonary Function Tests, Pulmonary Mechanics (if on ventilator), Bedside Studies, COPD Exacerbation Classification, Exacerbation Etiology, Complicating Factors, Acid-Base Status, Current GOLD Classification, Clinical Stability Assessment, Respiratory Support, Medications, Additional Interventions, Monitoring, Admission Criteria (if applicable), Level of Care, Discharge Criteria (if applicable), Home Care Needs, Follow-up, Disease Understanding, Medication Education, Self-Management, Lifestyle Modifications, Support Resources
+[2025-04-11T18:07:23.023Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to COPD exacerbation/copd-exacerbation-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:23.023Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.023Z] [INFO] Processing chapter: Approach to asthma exacerbation
+[2025-04-11T18:07:23.178Z] [INFO] Processing file: asthma-exacerbation-tracker.md
+[2025-04-11T18:07:23.178Z] [INFO] Starting transaction for file: asthma-exacerbation-tracker.md
+[2025-04-11T18:07:23.179Z] [INFO] Preprocessing file: asthma-exacerbation-tracker.md
+[2025-04-11T18:07:23.180Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:23.180Z] [INFO] Found section: "Provocation/Palliation" at line 17
+[2025-04-11T18:07:23.181Z] [INFO] Found section: "Quality" at line 36
+[2025-04-11T18:07:23.181Z] [INFO] Found section: "Radiation (Not typically applicable for asthma)" at line 49
+[2025-04-11T18:07:23.181Z] [INFO] Found section: "Severity" at line 57
+[2025-04-11T18:07:23.181Z] [INFO] Found section: "Timing" at line 74
+[2025-04-11T18:07:23.182Z] [INFO] Found section: "Current Asthma Medications" at line 125
+[2025-04-11T18:07:23.182Z] [INFO] Found section: "Medication Compliance" at line 167
+[2025-04-11T18:07:23.182Z] [INFO] Found section: "Recent Changes in Medications" at line 184
+[2025-04-11T18:07:23.183Z] [INFO] Found section: "Rescue Medication Use" at line 190
+[2025-04-11T18:07:23.183Z] [INFO] Found section: "Other Medications" at line 199
+[2025-04-11T18:07:23.183Z] [INFO] Found section: "Dietary History" at line 215
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Nutritional Status" at line 225
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Diet-Related Exacerbating Factors" at line 240
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Timing of Meals and Symptoms" at line 254
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Respiratory" at line 260
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Cardiovascular" at line 281
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "ENT" at line 298
+[2025-04-11T18:07:23.184Z] [INFO] Found section: "Gastrointestinal" at line 310
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Constitutional" at line 319
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Skin" at line 334
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Psychiatric" at line 343
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Information Source" at line 354
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Previous Similar Episodes" at line 370
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Home Management" at line 384
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Baseline Status" at line 391
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Environmental Factors" at line 398
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Environmental Exposures" at line 406
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Occupational Exposures" at line 430
+[2025-04-11T18:07:23.185Z] [INFO] Found section: "Infections" at line 443
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Other Triggers" at line 453
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Comorbid Conditions" at line 472
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Genetic Factors" at line 483
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Airway Disorders" at line 495
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Infectious Causes" at line 513
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Cardiac Causes" at line 524
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Pulmonary Vascular Causes" at line 531
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Other Considerations" at line 535
+[2025-04-11T18:07:23.186Z] [INFO] Found section: "Respiratory History" at line 552
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Allergic/Atopic History" at line 582
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Cardiovascular History" at line 595
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Other Medical Conditions" at line 604
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Surgical History" at line 614
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Previous Asthma-Related Events" at line 621
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Vital Signs" at line 634
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "General Appearance" at line 646
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Respiratory Exam" at line 673
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "Cardiovascular Exam" at line 724
+[2025-04-11T18:07:23.187Z] [INFO] Found section: "ENT Exam" at line 748
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Skin Exam" at line 769
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Extremities" at line 779
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Neurological Exam" at line 786
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Complete Blood Count (CBC)" at line 797
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Blood Chemistry" at line 808
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Arterial Blood Gas (ABG)" at line 820
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Inflammatory Markers" at line 829
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Respiratory Studies" at line 834
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Allergy Testing (if available)" at line 848
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Other Laboratory Tests" at line 852
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Chest X-ray" at line 860
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Chest CT (if performed)" at line 884
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Sinus Imaging (if relevant)" at line 900
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Other Imaging" at line 912
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Pulmonary Function Tests (PFTs)" at line 919
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Peak Flow Monitoring" at line 937
+[2025-04-11T18:07:23.188Z] [INFO] Found section: "Bronchoprovocation Testing (if available)" at line 947
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Exhaled Nitric Oxide (FeNO)" at line 960
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Allergy Testing (if performed)" at line 967
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Other Specialized Tests" at line 975
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Basic Information" at line 982
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "ECG Intervals" at line 996
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "ECG Findings" at line 1006
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Comparison to Prior ECGs" at line 1026
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Relevance to Asthma Exacerbation" at line 1033
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Asthma Exacerbation Severity" at line 1043
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Contributing Factors" at line 1062
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Response to Treatment" at line 1082
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Comorbidities Affecting Management" at line 1102
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Diagnostic Certainty" at line 1113
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Acute Management" at line 1122
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Monitoring Plan" at line 1163
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Long-term Management" at line 1182
+[2025-04-11T18:07:23.189Z] [INFO] Found section: "Trigger Management" at line 1201
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Consultations" at line 1211
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Additional Testing" at line 1225
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Discharge Criteria" at line 1237
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Hospital Admission Criteria" at line 1257
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Level of Care Determination" at line 1275
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Discharge Plan" at line 1286
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Transfer Considerations" at line 1301
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Disease Education" at line 1310
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Medication Education" at line 1321
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Trigger Avoidance" at line 1337
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Asthma Action Plan" at line 1354
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Self-Management Skills" at line 1369
+[2025-04-11T18:07:23.190Z] [INFO] Found section: "Additional Resources" at line 1379
+[2025-04-11T18:07:23.190Z] [INFO] Found 96 sections in file: Onset, Provocation/Palliation, Quality, Radiation (Not typically applicable for asthma), Severity, Timing, Current Asthma Medications, Medication Compliance, Recent Changes in Medications, Rescue Medication Use, Other Medications, Dietary History, Nutritional Status, Diet-Related Exacerbating Factors, Timing of Meals and Symptoms, Respiratory, Cardiovascular, ENT, Gastrointestinal, Constitutional, Skin, Psychiatric, Information Source, Previous Similar Episodes, Home Management, Baseline Status, Environmental Factors, Environmental Exposures, Occupational Exposures, Infections, Other Triggers, Comorbid Conditions, Genetic Factors, Airway Disorders, Infectious Causes, Cardiac Causes, Pulmonary Vascular Causes, Other Considerations, Respiratory History, Allergic/Atopic History, Cardiovascular History, Other Medical Conditions, Surgical History, Previous Asthma-Related Events, Vital Signs, General Appearance, Respiratory Exam, Cardiovascular Exam, ENT Exam, Skin Exam, Extremities, Neurological Exam, Complete Blood Count (CBC), Blood Chemistry, Arterial Blood Gas (ABG), Inflammatory Markers, Respiratory Studies, Allergy Testing (if available), Other Laboratory Tests, Chest X-ray, Chest CT (if performed), Sinus Imaging (if relevant), Other Imaging, Pulmonary Function Tests (PFTs), Peak Flow Monitoring, Bronchoprovocation Testing (if available), Exhaled Nitric Oxide (FeNO), Allergy Testing (if performed), Other Specialized Tests, Basic Information, ECG Intervals, ECG Findings, Comparison to Prior ECGs, Relevance to Asthma Exacerbation, Asthma Exacerbation Severity, Contributing Factors, Response to Treatment, Comorbidities Affecting Management, Diagnostic Certainty, Acute Management, Monitoring Plan, Long-term Management, Trigger Management, Consultations, Additional Testing, Discharge Criteria, Hospital Admission Criteria, Level of Care Determination, Discharge Plan, Transfer Considerations, Disease Education, Medication Education, Trigger Avoidance, Asthma Action Plan, Self-Management Skills, Additional Resources
+[2025-04-11T18:07:23.190Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to asthma exacerbation/asthma-exacerbation-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:23.190Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.191Z] [INFO] Processing chapter: Approach to cough
+[2025-04-11T18:07:23.330Z] [INFO] Processing file: cough-evaluation-tracker.md
+[2025-04-11T18:07:23.331Z] [INFO] Starting transaction for file: cough-evaluation-tracker.md
+[2025-04-11T18:07:23.331Z] [INFO] Preprocessing file: cough-evaluation-tracker.md
+[2025-04-11T18:07:23.333Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:23.333Z] [INFO] Found section: "Provocative/Palliative Factors" at line 9
+[2025-04-11T18:07:23.334Z] [INFO] Found section: "Quality" at line 26
+[2025-04-11T18:07:23.334Z] [INFO] Found section: "Radiation" at line 54
+[2025-04-11T18:07:23.334Z] [INFO] Found section: "Severity" at line 60
+[2025-04-11T18:07:23.334Z] [INFO] Found section: "Timing" at line 69
+[2025-04-11T18:07:23.335Z] [INFO] Found section: "Associated Symptoms" at line 81
+[2025-04-11T18:07:23.335Z] [INFO] Found section: "Constitutional" at line 174
+[2025-04-11T18:07:23.335Z] [INFO] Found section: "HEENT" at line 182
+[2025-04-11T18:07:23.335Z] [INFO] Found section: "Respiratory" at line 192
+[2025-04-11T18:07:23.336Z] [INFO] Found section: "Cardiovascular" at line 203
+[2025-04-11T18:07:23.337Z] [INFO] Found section: "Gastrointestinal" at line 212
+[2025-04-11T18:07:23.337Z] [INFO] Found section: "Neurological" at line 221
+[2025-04-11T18:07:23.337Z] [INFO] Found section: "Psychiatric" at line 228
+[2025-04-11T18:07:23.338Z] [INFO] Found section: "Infectious" at line 253
+[2025-04-11T18:07:23.339Z] [INFO] Found section: "Environmental/Occupational" at line 264
+[2025-04-11T18:07:23.339Z] [INFO] Found section: "Medical" at line 288
+[2025-04-11T18:07:23.339Z] [INFO] Found section: "Acute (< 3 weeks)" at line 312
+[2025-04-11T18:07:23.340Z] [INFO] Found section: "Subacute (3-8 weeks)" at line 324
+[2025-04-11T18:07:23.340Z] [INFO] Found section: "Chronic (> 8 weeks)" at line 331
+[2025-04-11T18:07:23.340Z] [INFO] Found section: "Vital Signs" at line 393
+[2025-04-11T18:07:23.340Z] [INFO] Found section: "General Appearance" at line 404
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "HEENT" at line 413
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Neck" at line 435
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Respiratory" at line 449
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Cardiovascular" at line 481
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Extremities" at line 497
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Abdominal" at line 508
+[2025-04-11T18:07:23.341Z] [INFO] Found section: "Neurological" at line 516
+[2025-04-11T18:07:23.342Z] [INFO] Found section: "Diagnostic" at line 689
+[2025-04-11T18:07:23.342Z] [INFO] Found section: "Therapeutic" at line 696
+[2025-04-11T18:07:23.342Z] [INFO] Found section: "Monitoring" at line 727
+[2025-04-11T18:07:23.342Z] [INFO] Found 28 sections in file: Onset, Provocative/Palliative Factors, Quality, Radiation, Severity, Timing, Associated Symptoms, Constitutional, HEENT, Respiratory, Cardiovascular, Gastrointestinal, Neurological, Psychiatric, Infectious, Environmental/Occupational, Medical, Acute (< 3 weeks), Subacute (3-8 weeks), Chronic (> 8 weeks), Vital Signs, General Appearance, Neck, Extremities, Abdominal, Diagnostic, Therapeutic, Monitoring
+[2025-04-11T18:07:23.342Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to cough/cough-evaluation-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:23.342Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.342Z] [INFO] Processing chapter: Approach to hemoptysis
+[2025-04-11T18:07:23.481Z] [INFO] Processing file: hemoptysis-tracker-revised.md
+[2025-04-11T18:07:23.481Z] [INFO] Starting transaction for file: hemoptysis-tracker-revised.md
+[2025-04-11T18:07:23.482Z] [INFO] Preprocessing file: hemoptysis-tracker-revised.md
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Onset" at line 3
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Provocation/Palliation" at line 11
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Quality" at line 23
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Region/Radiation" at line 33
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Severity" at line 42
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Timing" at line 53
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Volume Concerns" at line 69
+[2025-04-11T18:07:23.483Z] [INFO] Found section: "Respiratory Status" at line 73
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Hemodynamic Instability" at line 78
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Cancer Risk Factors" at line 83
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Immune Status" at line 89
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Other Concerning Features" at line 95
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Anticoagulant Use" at line 103
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Antiplatelet Agents" at line 113
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Pulmonary Medications" at line 120
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "NSAIDs" at line 126
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Immunosuppressants" at line 131
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Recent Medication Changes" at line 137
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Home Treatments" at line 142
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Recent Dietary Changes" at line 148
+[2025-04-11T18:07:23.484Z] [INFO] Found section: "Alcohol Consumption" at line 153
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Caffeine Intake" at line 160
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Fluid Intake" at line 167
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Weight Changes" at line 172
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Appetite" at line 177
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Supplements" at line 182
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Respiratory" at line 191
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Cardiovascular" at line 211
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Constitutional" at line 221
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Hematologic" at line 231
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "ENT" at line 240
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Gastrointestinal" at line 248
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Musculoskeletal" at line 256
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Neurological" at line 262
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Source of Information" at line 271
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Family Observations" at line 277
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Caregiver Observations" at line 282
+[2025-04-11T18:07:23.485Z] [INFO] Found section: "Previous Medical Records" at line 287
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "EMS Report" at line 292
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Recent Healthcare Encounters" at line 297
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Smoking History" at line 303
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Environmental/Occupational Exposures" at line 315
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Travel History" at line 325
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "TB Exposure" at line 331
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Family History" at line 338
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Infectious Disease Risk" at line 346
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Airway Sources" at line 353
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Infectious Causes" at line 360
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Neoplastic Causes" at line 370
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Vascular Causes" at line 378
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Cardiac Causes" at line 384
+[2025-04-11T18:07:23.486Z] [INFO] Found section: "Autoimmune/Inflammatory" at line 389
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Coagulation Disorders" at line 396
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Other Conditions" at line 403
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Pulmonary Conditions" at line 411
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Cardiovascular Conditions" at line 422
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Bleeding Disorders" at line 430
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Malignancies" at line 437
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Infectious Diseases" at line 443
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Autoimmune Conditions" at line 449
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Surgical History" at line 456
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Vital Signs" at line 463
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "General Appearance" at line 471
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "HEENT" at line 479
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Neck" at line 494
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Respiratory" at line 505
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Cardiovascular" at line 542
+[2025-04-11T18:07:23.487Z] [INFO] Found section: "Abdominal" at line 556
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Extremities" at line 574
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Skin" at line 586
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Neurological" at line 599
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Complete Blood Count" at line 605
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Coagulation Studies" at line 617
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Comprehensive Metabolic Panel" at line 623
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Arterial Blood Gas" at line 640
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Sputum Studies" at line 649
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "TB Testing" at line 658
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Additional Studies" at line 663
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Chest X-ray" at line 681
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Chest CT" at line 696
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "CT Angiography" at line 713
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Ventilation/Perfusion Scan" at line 726
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "PET Scan" at line 730
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Ultrasound" at line 735
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Bronchoscopy" at line 741
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Pulmonary Function Tests" at line 761
+[2025-04-11T18:07:23.488Z] [INFO] Found section: "Echocardiogram" at line 769
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Thoracentesis" at line 782
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Autoimmune Serologies" at line 792
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Rate and Rhythm" at line 803
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Intervals and Measurements" at line 814
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Chamber Assessment" at line 824
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "ST-T Changes" at line 830
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Other Findings" at line 836
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Comparison" at line 848
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Primary Diagnosis" at line 852
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Secondary Diagnoses" at line 861
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Severity Assessment" at line 866
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Stability Assessment" at line 872
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Risk Stratification" at line 878
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Clinical Reasoning" at line 884
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Clinical Course" at line 889
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Immediate Interventions" at line 897
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Further Diagnostic Testing" at line 905
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Treatment Approach" at line 911
+[2025-04-11T18:07:23.489Z] [INFO] Found section: "Procedural Interventions" at line 936
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Specialty Referrals" at line 942
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Follow-up Timeline" at line 951
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Admission vs. Discharge Criteria" at line 958
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Level of Care" at line 973
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Admission Indications" at line 980
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Discharge Planning" at line 984
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Return Precautions" at line 991
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Follow-up Appointments" at line 999
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Condition Explanation" at line 1005
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Warning Signs" at line 1010
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Medication Instructions" at line 1018
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Activity Restrictions" at line 1030
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Smoking Cessation" at line 1037
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Follow-up Importance" at line 1046
+[2025-04-11T18:07:23.490Z] [INFO] Found section: "Additional Resources" at line 1052
+[2025-04-11T18:07:23.490Z] [INFO] Found 118 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Volume Concerns, Respiratory Status, Hemodynamic Instability, Cancer Risk Factors, Immune Status, Other Concerning Features, Anticoagulant Use, Antiplatelet Agents, Pulmonary Medications, NSAIDs, Immunosuppressants, Recent Medication Changes, Home Treatments, Recent Dietary Changes, Alcohol Consumption, Caffeine Intake, Fluid Intake, Weight Changes, Appetite, Supplements, Respiratory, Cardiovascular, Constitutional, Hematologic, ENT, Gastrointestinal, Musculoskeletal, Neurological, Source of Information, Family Observations, Caregiver Observations, Previous Medical Records, EMS Report, Recent Healthcare Encounters, Smoking History, Environmental/Occupational Exposures, Travel History, TB Exposure, Family History, Infectious Disease Risk, Airway Sources, Infectious Causes, Neoplastic Causes, Vascular Causes, Cardiac Causes, Autoimmune/Inflammatory, Coagulation Disorders, Other Conditions, Pulmonary Conditions, Cardiovascular Conditions, Bleeding Disorders, Malignancies, Infectious Diseases, Autoimmune Conditions, Surgical History, Vital Signs, General Appearance, HEENT, Neck, Abdominal, Extremities, Skin, Complete Blood Count, Coagulation Studies, Comprehensive Metabolic Panel, Arterial Blood Gas, Sputum Studies, TB Testing, Additional Studies, Chest X-ray, Chest CT, CT Angiography, Ventilation/Perfusion Scan, PET Scan, Ultrasound, Bronchoscopy, Pulmonary Function Tests, Echocardiogram, Thoracentesis, Autoimmune Serologies, Rate and Rhythm, Intervals and Measurements, Chamber Assessment, ST-T Changes, Other Findings, Comparison, Primary Diagnosis, Secondary Diagnoses, Severity Assessment, Stability Assessment, Risk Stratification, Clinical Reasoning, Clinical Course, Immediate Interventions, Further Diagnostic Testing, Treatment Approach, Procedural Interventions, Specialty Referrals, Follow-up Timeline, Admission vs. Discharge Criteria, Level of Care, Admission Indications, Discharge Planning, Return Precautions, Follow-up Appointments, Condition Explanation, Warning Signs, Medication Instructions, Activity Restrictions, Smoking Cessation, Follow-up Importance, Additional Resources
+[2025-04-11T18:07:23.491Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to hemoptysis/hemoptysis-tracker-revised.md: categoryMap is not defined
+[2025-04-11T18:07:23.491Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.491Z] [INFO] Processing chapter: Approach to pneumonia
+[2025-04-11T18:07:23.633Z] [INFO] Processing file: pneumonia-soap-note.md
+[2025-04-11T18:07:23.634Z] [INFO] Starting transaction for file: pneumonia-soap-note.md
+[2025-04-11T18:07:23.635Z] [INFO] Preprocessing file: pneumonia-soap-note.md
+[2025-04-11T18:07:23.636Z] [INFO] Found section: "Onset" at line 2
+[2025-04-11T18:07:23.636Z] [INFO] Found section: "Provocation/Palliation" at line 7
+[2025-04-11T18:07:23.637Z] [INFO] Found section: "Quality" at line 19
+[2025-04-11T18:07:23.637Z] [INFO] Found section: "Region/Radiation" at line 38
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Severity" at line 53
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Timing" at line 61
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Associated Symptoms" at line 76
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Severe Respiratory Distress" at line 97
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Hemodynamic Instability" at line 104
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Concerning Findings" at line 110
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "CURB-65 Criteria" at line 118
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "PSI Risk Class Indicators" at line 126
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Current Medications" at line 138
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Home Medications" at line 155
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Medication Allergies" at line 168
+[2025-04-11T18:07:23.638Z] [INFO] Found section: "Current Diet" at line 179
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Appetite" at line 187
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Hydration" at line 192
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Nutritional Status" at line 200
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Dietary Restrictions" at line 210
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "General" at line 218
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Respiratory" at line 226
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Cardiovascular" at line 238
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Gastrointestinal" at line 246
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Neurological" at line 254
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Genitourinary" at line 262
+[2025-04-11T18:07:23.639Z] [INFO] Found section: "Musculoskeletal" at line 270
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Skin" at line 276
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "ENT" at line 282
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Information Source" at line 291
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Reliability of Source" at line 301
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Timeline of Illness" at line 307
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Home Status" at line 316
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Treatment Prior to Presentation" at line 325
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Demographics" at line 333
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Lifestyle" at line 339
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Medical Conditions" at line 351
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Immunocompromised States" at line 367
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Vaccination Status" at line 377
+[2025-04-11T18:07:23.640Z] [INFO] Found section: "Recent Exposures" at line 389
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Infectious Pneumonia" at line 400
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Causative Pathogens" at line 408
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Non-Infectious Mimics" at line 430
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Pulmonary History" at line 445
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Cardiovascular History" at line 460
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Other Medical History" at line 475
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Surgical History" at line 497
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Social History" at line 503
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "Vital Signs" at line 516
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "General Appearance" at line 531
+[2025-04-11T18:07:23.641Z] [INFO] Found section: "HEENT" at line 550
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Respiratory" at line 560
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Cardiovascular" at line 598
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Abdominal" at line 615
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Extremities" at line 632
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Neurological" at line 642
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Skin" at line 664
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Complete Blood Count" at line 675
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Basic Metabolic Panel" at line 688
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Inflammatory Markers" at line 698
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Liver Function Tests" at line 703
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Coagulation Profile" at line 712
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Blood Gas Analysis" at line 718
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Microbiology" at line 733
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Other Tests" at line 752
+[2025-04-11T18:07:23.642Z] [INFO] Found section: "Chest X-ray" at line 772
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Chest CT" at line 802
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Ultrasound" at line 835
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Other Imaging" at line 847
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Bronchoscopy" at line 855
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Pleural Procedures" at line 875
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Pulmonary Function Tests" at line 893
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Sputum Studies" at line 901
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Other Special Studies" at line 913
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Basic Interpretation" at line 923
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Abnormalities" at line 940
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Comparison to Prior" at line 975
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Diagnosis" at line 984
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Severity Assessment" at line 1003
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Clinical Reasoning" at line 1011
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Microbiology Assessment" at line 1024
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Comorbidity Impact" at line 1032
+[2025-04-11T18:07:23.643Z] [INFO] Found section: "Antimicrobial Therapy" at line 1039
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Respiratory Support" at line 1075
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Fluid and Nutritional Management" at line 1106
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Additional Medications" at line 1121
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Procedures" at line 1142
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Monitoring and Follow-up" at line 1149
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Admission Criteria" at line 1171
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "ICU Admission Criteria" at line 1187
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Outpatient Management" at line 1194
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Discharge Planning" at line 1206
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Transfer Criteria" at line 1228
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Disease Information" at line 1235
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Medication Instructions" at line 1252
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Home Care Instructions" at line 1270
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Prevention" at line 1293
+[2025-04-11T18:07:23.644Z] [INFO] Found section: "Follow-up Instructions" at line 1306
+[2025-04-11T18:07:23.644Z] [INFO] Found 94 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, Severe Respiratory Distress, Hemodynamic Instability, Concerning Findings, CURB-65 Criteria, PSI Risk Class Indicators, Current Medications, Home Medications, Medication Allergies, Current Diet, Appetite, Hydration, Nutritional Status, Dietary Restrictions, General, Respiratory, Cardiovascular, Gastrointestinal, Neurological, Genitourinary, Musculoskeletal, Skin, ENT, Information Source, Reliability of Source, Timeline of Illness, Home Status, Treatment Prior to Presentation, Demographics, Lifestyle, Medical Conditions, Immunocompromised States, Vaccination Status, Recent Exposures, Infectious Pneumonia, Causative Pathogens, Non-Infectious Mimics, Pulmonary History, Cardiovascular History, Other Medical History, Surgical History, Social History, Vital Signs, General Appearance, HEENT, Abdominal, Extremities, Complete Blood Count, Basic Metabolic Panel, Inflammatory Markers, Liver Function Tests, Coagulation Profile, Blood Gas Analysis, Microbiology, Other Tests, Chest X-ray, Chest CT, Ultrasound, Other Imaging, Bronchoscopy, Pleural Procedures, Pulmonary Function Tests, Sputum Studies, Other Special Studies, Basic Interpretation, Abnormalities, Comparison to Prior, Diagnosis, Severity Assessment, Clinical Reasoning, Microbiology Assessment, Comorbidity Impact, Antimicrobial Therapy, Respiratory Support, Fluid and Nutritional Management, Additional Medications, Procedures, Monitoring and Follow-up, Admission Criteria, ICU Admission Criteria, Outpatient Management, Discharge Planning, Transfer Criteria, Disease Information, Medication Instructions, Home Care Instructions, Prevention, Follow-up Instructions
+[2025-04-11T18:07:23.645Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to pneumonia/pneumonia-soap-note.md: categoryMap is not defined
+[2025-04-11T18:07:23.645Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.645Z] [INFO] Processing chapter: Approach to pneumothorax
+[2025-04-11T18:07:23.792Z] [INFO] Processing file: pneumothorax-soap-note-revised.md
+[2025-04-11T18:07:23.792Z] [INFO] Starting transaction for file: pneumothorax-soap-note-revised.md
+[2025-04-11T18:07:23.793Z] [INFO] Preprocessing file: pneumothorax-soap-note-revised.md
+[2025-04-11T18:07:23.794Z] [INFO] Found section: "Onset" at line 1
+[2025-04-11T18:07:23.794Z] [INFO] Found section: "Provocation/Palliation" at line 6
+[2025-04-11T18:07:23.794Z] [INFO] Found section: "Quality" at line 13
+[2025-04-11T18:07:23.794Z] [INFO] Found section: "Radiation" at line 20
+[2025-04-11T18:07:23.794Z] [INFO] Found section: "Severity" at line 26
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Time/Temporal factors" at line 31
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Associated symptoms" at line 37
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Respiratory distress" at line 45
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Hemodynamic instability" at line 50
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Signs of tension pneumothorax" at line 55
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Worsening after intervention" at line 61
+[2025-04-11T18:07:23.795Z] [INFO] Found section: "Current medications" at line 68
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Medication history" at line 75
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Allergies" at line 81
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Current nutrition" at line 86
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Weight changes" at line 91
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Constitutional" at line 98
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Respiratory" at line 104
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Cardiovascular" at line 113
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Neurological" at line 120
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Musculoskeletal" at line 126
+[2025-04-11T18:07:23.796Z] [INFO] Found section: "Witness accounts" at line 132
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "EMS report" at line 137
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Previous medical records" at line 142
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Trauma" at line 149
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Underlying lung disease" at line 154
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Body habitus" at line 160
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Smoking history" at line 163
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Medical history factors" at line 168
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Recent procedures" at line 173
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Pneumothorax variants" at line 180
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Pleural disorders" at line 187
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Cardiac conditions" at line 193
+[2025-04-11T18:07:23.797Z] [INFO] Found section: "Inflammatory conditions" at line 198
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Pulmonary" at line 203
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Cardiovascular" at line 212
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Surgical history" at line 217
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Connective tissue disorder" at line 223
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Vital signs" at line 228
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "General appearance" at line 235
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "HEENT" at line 240
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Respiratory" at line 244
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Percussion" at line 249
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Auscultation" at line 257
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Adventitious sounds" at line 265
+[2025-04-11T18:07:23.798Z] [INFO] Found section: "Cardiovascular" at line 270
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Chest wall" at line 278
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Neurological" at line 285
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "CBC" at line 291
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "BMP" at line 297
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Coagulation studies" at line 306
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "ABG" at line 311
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Cardiac markers" at line 320
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Inflammatory markers" at line 324
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Chest X-ray" at line 330
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Chest CT" at line 340
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Ultrasound" at line 349
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "Pulmonary function tests" at line 356
+[2025-04-11T18:07:23.799Z] [INFO] Found section: "6-minute walk test" at line 363
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Genetic testing" at line 370
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Pleural fluid analysis" at line 375
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Basic measurements" at line 387
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Intervals" at line 392
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Findings" at line 398
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Pneumothorax type" at line 406
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Size" at line 413
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Risk stratification" at line 419
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Complications" at line 425
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Observation" at line 433
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Oxygen therapy" at line 438
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Needle aspiration" at line 443
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Chest tube" at line 448
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Surgical considerations" at line 457
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Pain management" at line 463
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Medications" at line 469
+[2025-04-11T18:07:23.800Z] [INFO] Found section: "Consultations" at line 474
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Admission criteria" at line 481
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Discharge criteria" at line 487
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Transfer considerations" at line 494
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Discharge planning" at line 498
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Follow-up appointments" at line 503
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Condition explanation" at line 510
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Activity restrictions" at line 515
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Warning signs" at line 523
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Smoking cessation" at line 529
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Medication teaching" at line 533
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Chest tube/Heimlich valve care" at line 538
+[2025-04-11T18:07:23.801Z] [INFO] Found section: "Follow-up instructions" at line 544
+[2025-04-11T18:07:23.801Z] [INFO] Found 84 sections in file: Onset, Provocation/Palliation, Quality, Radiation, Severity, Time/Temporal factors, Associated symptoms, Respiratory distress, Hemodynamic instability, Signs of tension pneumothorax, Worsening after intervention, Current medications, Medication history, Allergies, Current nutrition, Weight changes, Constitutional, Respiratory, Cardiovascular, Neurological, Musculoskeletal, Witness accounts, EMS report, Previous medical records, Trauma, Underlying lung disease, Body habitus, Smoking history, Medical history factors, Recent procedures, Pneumothorax variants, Pleural disorders, Cardiac conditions, Inflammatory conditions, Pulmonary, Surgical history, Connective tissue disorder, Vital signs, General appearance, HEENT, Percussion, Auscultation, Adventitious sounds, Chest wall, CBC, BMP, Coagulation studies, ABG, Cardiac markers, Inflammatory markers, Chest X-ray, Chest CT, Ultrasound, Pulmonary function tests, 6-minute walk test, Genetic testing, Pleural fluid analysis, Basic measurements, Intervals, Findings, Pneumothorax type, Size, Risk stratification, Complications, Observation, Oxygen therapy, Needle aspiration, Chest tube, Surgical considerations, Pain management, Medications, Consultations, Admission criteria, Discharge criteria, Transfer considerations, Discharge planning, Follow-up appointments, Condition explanation, Activity restrictions, Warning signs, Smoking cessation, Medication teaching, Chest tube/Heimlich valve care, Follow-up instructions
+[2025-04-11T18:07:23.801Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to pneumothorax/pneumothorax-soap-note-revised.md: categoryMap is not defined
+[2025-04-11T18:07:23.801Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.801Z] [INFO] Processing chapter: Approach to pulmonary embolism
+[2025-04-11T18:07:23.937Z] [INFO] Processing file: pulmonary-embolism-soap-note.md
+[2025-04-11T18:07:23.938Z] [INFO] Starting transaction for file: pulmonary-embolism-soap-note.md
+[2025-04-11T18:07:23.938Z] [INFO] Preprocessing file: pulmonary-embolism-soap-note.md
+[2025-04-11T18:07:23.941Z] [INFO] Found section: "Onset" at line 4
+[2025-04-11T18:07:23.941Z] [INFO] Found section: "Provocation/Palliation" at line 15
+[2025-04-11T18:07:23.942Z] [INFO] Found section: "Quality" at line 28
+[2025-04-11T18:07:23.942Z] [INFO] Found section: "Region/Radiation" at line 45
+[2025-04-11T18:07:23.942Z] [INFO] Found section: "Severity" at line 59
+[2025-04-11T18:07:23.943Z] [INFO] Found section: "Timing" at line 72
+[2025-04-11T18:07:23.943Z] [INFO] Found section: "Associated Symptoms" at line 85
+[2025-04-11T18:07:23.943Z] [INFO] Found section: "Critical Clinical Signs" at line 106
+[2025-04-11T18:07:23.943Z] [INFO] Found section: "High-Risk Features" at line 119
+[2025-04-11T18:07:23.944Z] [INFO] Found section: "Immediate Action Triggers" at line 128
+[2025-04-11T18:07:23.944Z] [INFO] Found section: "Anticoagulants" at line 138
+[2025-04-11T18:07:23.945Z] [INFO] Found section: "Medications Affecting Coagulation" at line 163
+[2025-04-11T18:07:23.945Z] [INFO] Found section: "Other Medications" at line 181
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Current Diet" at line 208
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Dietary Influences" at line 223
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Constitutional" at line 234
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Respiratory" at line 245
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Cardiovascular" at line 256
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Gastrointestinal" at line 267
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Genitourinary" at line 275
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Musculoskeletal" at line 281
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Neurological" at line 294
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Hematological" at line 303
+[2025-04-11T18:07:23.946Z] [INFO] Found section: "Information Source" at line 311
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Additional History Details" at line 322
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Risk Factor Verification" at line 335
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Hereditary Thrombophilias" at line 343
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Acquired Risk Factors" at line 351
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Risk Assessment Scores" at line 400
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Cardiovascular" at line 409
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Pulmonary" at line 417
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Musculoskeletal" at line 425
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Gastrointestinal" at line 430
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Other" at line 436
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Cardiovascular History" at line 443
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Pulmonary History" at line 455
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Vascular History" at line 467
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Hematologic History" at line 477
+[2025-04-11T18:07:23.947Z] [INFO] Found section: "Other Medical History" at line 487
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Obstetric/Gynecological History" at line 502
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Vital Signs" at line 512
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "General Appearance" at line 524
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Respiratory Exam" at line 540
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Cardiovascular Exam" at line 571
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Extremity Exam" at line 594
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Neurological Exam" at line 624
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Abdominal Exam" at line 635
+[2025-04-11T18:07:23.948Z] [INFO] Found section: "Basic Studies" at line 646
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Coagulation Studies" at line 668
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Cardiac Biomarkers" at line 675
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Arterial Blood Gas" at line 680
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Specialized Tests" at line 690
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Chest X-ray" at line 706
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Computed Tomography" at line 719
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Ventilation/Perfusion Scan" at line 738
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Duplex Ultrasound" at line 747
+[2025-04-11T18:07:23.949Z] [INFO] Found section: "Other Imaging" at line 763
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Pulmonary Function Tests" at line 783
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Exercise Testing" at line 792
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Right Heart Catheterization" at line 808
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Other Special Tests" at line 822
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Basic Interpretation" at line 830
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "PE-Related Findings" at line 848
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Other ECG Findings" at line 859
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "PE Probability" at line 874
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "PE Classification" at line 883
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Risk Stratification" at line 892
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Complications" at line 911
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Alternative Diagnoses" at line 919
+[2025-04-11T18:07:23.950Z] [INFO] Found section: "Anticoagulation" at line 926
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Advanced Interventions" at line 951
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Supportive Care" at line 969
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Monitoring" at line 990
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Level of Care" at line 1004
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Criteria for ICU Admission" at line 1011
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Criteria for Discharge" at line 1020
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Follow-up Plan" at line 1029
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Disease Understanding" at line 1046
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Medication Education" at line 1053
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Symptom Management" at line 1065
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Warning Signs" at line 1071
+[2025-04-11T18:07:23.951Z] [INFO] Found section: "Prevention Strategies" at line 1083
+[2025-04-11T18:07:23.951Z] [INFO] Found 79 sections in file: Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Timing, Associated Symptoms, Critical Clinical Signs, High-Risk Features, Immediate Action Triggers, Anticoagulants, Medications Affecting Coagulation, Other Medications, Current Diet, Dietary Influences, Constitutional, Respiratory, Cardiovascular, Gastrointestinal, Genitourinary, Musculoskeletal, Neurological, Hematological, Information Source, Additional History Details, Risk Factor Verification, Hereditary Thrombophilias, Acquired Risk Factors, Risk Assessment Scores, Pulmonary, Other, Cardiovascular History, Pulmonary History, Vascular History, Hematologic History, Other Medical History, Obstetric/Gynecological History, Vital Signs, General Appearance, Respiratory Exam, Cardiovascular Exam, Extremity Exam, Neurological Exam, Abdominal Exam, Basic Studies, Coagulation Studies, Cardiac Biomarkers, Arterial Blood Gas, Specialized Tests, Chest X-ray, Computed Tomography, Ventilation/Perfusion Scan, Duplex Ultrasound, Other Imaging, Pulmonary Function Tests, Exercise Testing, Right Heart Catheterization, Other Special Tests, Basic Interpretation, PE-Related Findings, Other ECG Findings, PE Probability, PE Classification, Risk Stratification, Complications, Alternative Diagnoses, Anticoagulation, Advanced Interventions, Supportive Care, Monitoring, Level of Care, Criteria for ICU Admission, Criteria for Discharge, Follow-up Plan, Disease Understanding, Medication Education, Symptom Management, Warning Signs, Prevention Strategies
+[2025-04-11T18:07:23.952Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to pulmonary embolism/pulmonary-embolism-soap-note.md: categoryMap is not defined
+[2025-04-11T18:07:23.952Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:23.952Z] [INFO] Processing chapter: Approach to respiratory distress
+[2025-04-11T18:07:24.106Z] [INFO] Processing file: respiratory-distress-tracker.md
+[2025-04-11T18:07:24.107Z] [INFO] Starting transaction for file: respiratory-distress-tracker.md
+[2025-04-11T18:07:24.107Z] [INFO] Preprocessing file: respiratory-distress-tracker.md
+[2025-04-11T18:07:24.109Z] [INFO] Found section: "Onset (O)" at line 2
+[2025-04-11T18:07:24.109Z] [INFO] Found section: "Provocation/Palliation (P)" at line 12
+[2025-04-11T18:07:24.110Z] [INFO] Found section: "Quality (Q)" at line 27
+[2025-04-11T18:07:24.110Z] [INFO] Found section: "Radiation (R)" at line 36
+[2025-04-11T18:07:24.110Z] [INFO] Found section: "Severity (S)" at line 44
+[2025-04-11T18:07:24.111Z] [INFO] Found section: "Timing (T)" at line 57
+[2025-04-11T18:07:24.111Z] [INFO] Found section: "Associated Symptoms" at line 68
+[2025-04-11T18:07:24.111Z] [INFO] Found section: "Critical Respiratory Signs" at line 94
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Critical Vital Signs" at line 106
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Concerning Features" at line 112
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Current Respiratory Medications" at line 128
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Other Current Medications" at line 169
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Medication Adherence" at line 188
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Recent Medication Changes" at line 194
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Nutritional Status" at line 203
+[2025-04-11T18:07:24.112Z] [INFO] Found section: "Diet Pattern" at line 218
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Eating-Related Respiratory Symptoms" at line 227
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Dietary Supplements" at line 235
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Constitutional" at line 248
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "HEENT" at line 257
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Respiratory" at line 270
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Cardiovascular" at line 291
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Gastrointestinal" at line 302
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Genitourinary" at line 312
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Musculoskeletal" at line 320
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Neurological" at line 328
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Psychiatric" at line 339
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Endocrine" at line 347
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Hematologic/Lymphatic" at line 355
+[2025-04-11T18:07:24.113Z] [INFO] Found section: "Allergic/Immunologic" at line 363
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Sources of Information" at line 373
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Additional Symptom Information" at line 388
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Treatment History Details" at line 397
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Social/Environmental Information" at line 410
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Respiratory Risk Factors" at line 422
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Cardiovascular Risk Factors" at line 448
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Other Medical Risk Factors" at line 462
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Recent Risk Exposures" at line 477
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Airway Disorders" at line 490
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Parenchymal Lung Disorders" at line 503
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Vascular Disorders" at line 519
+[2025-04-11T18:07:24.114Z] [INFO] Found section: "Pleural Disorders" at line 526
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Cardiac Disorders" at line 533
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Other Considerations" at line 542
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Respiratory Conditions" at line 555
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Cardiovascular Conditions" at line 597
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Other Relevant Conditions" at line 618
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Surgical History" at line 645
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Vital Signs" at line 658
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "General Appearance" at line 678
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "HEENT" at line 706
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Respiratory" at line 723
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Cardiovascular" at line 769
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Extremities" at line 793
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Abdominal" at line 803
+[2025-04-11T18:07:24.115Z] [INFO] Found section: "Neurological" at line 820
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Blood Gas Analysis" at line 836
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Complete Blood Count" at line 850
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Chemistry Panel" at line 864
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Inflammatory/Cardiac Markers" at line 882
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Infectious Disease" at line 891
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Other Tests" at line 905
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Chest X-ray" at line 919
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Chest CT" at line 946
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Other Imaging" at line 973
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Pulmonary Function Tests" at line 993
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Bronchoscopy" at line 1015
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Cardiopulmonary Exercise Testing" at line 1040
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Sleep Studies" at line 1053
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Other Special Tests" at line 1066
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Basic Information" at line 1089
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Conduction Abnormalities" at line 1115
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Ischemia/Infarction" at line 1133
+[2025-04-11T18:07:24.116Z] [INFO] Found section: "Other ECG Findings" at line 1147
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Primary Diagnosis" at line 1175
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Alternative Diagnoses" at line 1192
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Complications" at line 1203
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Prognostic Factors" at line 1220
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Clinical Reasoning Summary" at line 1235
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Immediate Interventions" at line 1244
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Diagnostic Plan" at line 1275
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Treatment Plan" at line 1290
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Monitoring Plan" at line 1314
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Level of Care" at line 1337
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Discharge Criteria" at line 1347
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Follow-up Plan" at line 1364
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Home Services" at line 1386
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Diagnosis Explanation" at line 1407
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Medication Education" at line 1421
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Self-Monitoring" at line 1439
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Lifestyle Modifications" at line 1454
+[2025-04-11T18:07:24.117Z] [INFO] Found section: "Education Materials" at line 1474
+[2025-04-11T18:07:24.118Z] [INFO] Found 88 sections in file: Onset (O), Provocation/Palliation (P), Quality (Q), Radiation (R), Severity (S), Timing (T), Associated Symptoms, Critical Respiratory Signs, Critical Vital Signs, Concerning Features, Current Respiratory Medications, Other Current Medications, Medication Adherence, Recent Medication Changes, Nutritional Status, Diet Pattern, Eating-Related Respiratory Symptoms, Dietary Supplements, Constitutional, HEENT, Respiratory, Cardiovascular, Gastrointestinal, Genitourinary, Musculoskeletal, Neurological, Psychiatric, Endocrine, Hematologic/Lymphatic, Allergic/Immunologic, Sources of Information, Additional Symptom Information, Treatment History Details, Social/Environmental Information, Respiratory Risk Factors, Cardiovascular Risk Factors, Other Medical Risk Factors, Recent Risk Exposures, Airway Disorders, Parenchymal Lung Disorders, Vascular Disorders, Pleural Disorders, Cardiac Disorders, Other Considerations, Respiratory Conditions, Cardiovascular Conditions, Other Relevant Conditions, Surgical History, Vital Signs, General Appearance, Extremities, Abdominal, Blood Gas Analysis, Complete Blood Count, Chemistry Panel, Inflammatory/Cardiac Markers, Infectious Disease, Other Tests, Chest X-ray, Chest CT, Other Imaging, Pulmonary Function Tests, Bronchoscopy, Cardiopulmonary Exercise Testing, Sleep Studies, Other Special Tests, Basic Information, Conduction Abnormalities, Ischemia/Infarction, Other ECG Findings, Primary Diagnosis, Alternative Diagnoses, Complications, Prognostic Factors, Clinical Reasoning Summary, Immediate Interventions, Diagnostic Plan, Treatment Plan, Monitoring Plan, Level of Care, Discharge Criteria, Follow-up Plan, Home Services, Diagnosis Explanation, Medication Education, Self-Monitoring, Lifestyle Modifications, Education Materials
+[2025-04-11T18:07:24.118Z] [ERROR] Error processing file /Users/lucas/Documents/gemini_ approaches/md_files/claude_approaches/Respiratory Presentations/Approach to respiratory distress/respiratory-distress-tracker.md: categoryMap is not defined
+[2025-04-11T18:07:24.118Z] [ERROR] ReferenceError: categoryMap is not defined
+    at processMarkdownFile (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:477:26)
+    at processChapter (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:584:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async migrateData (file:///Users/lucas/Lucas%20Projects/symptomchecker/tools/db-migration/migrate.mjs:704:23)
+[2025-04-11T18:07:24.118Z] [INFO] Migration completed: 0 chapters processed successfully, 19 chapters had errors
+[2025-04-11T18:07:24.118Z] [INFO] Migration completed in 3.351 seconds

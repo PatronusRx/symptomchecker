@@ -5,6 +5,34 @@ import { createClient } from '@supabase/supabase-js';
 import config from './config.mjs';
 import { processItemText, splitMultipleInputs } from './parser.mjs';
 
+// Add category number mapping
+config.categoryNumbers = {
+  1: 'History',
+  2: 'Alarm Features',
+  3: 'Medications',
+  4: 'Diet',
+  5: 'Review of Systems',
+  6: 'Collateral History',
+  7: 'Risk Factors',
+  8: 'Differential Diagnosis',
+  9: 'Past Medical History',
+  10: 'Physical Exam',
+  11: 'Lab Studies',
+  12: 'Imaging',
+  13: 'Special Tests',
+  14: 'ECG',
+  15: 'Assessment',
+  16: 'Plan',
+  17: 'Disposition',
+  18: 'Patient Education',
+};
+
+// Create reverse mapping for name to number lookup
+config.categoryNameToNumber = {};
+Object.entries(config.categoryNumbers).forEach(([num, name]) => {
+  config.categoryNameToNumber[name.toLowerCase()] = num;
+});
+
 // Initialize Supabase client
 const supabase = createClient(config.supabaseUrl, config.supabaseKey);
 
@@ -57,13 +85,51 @@ async function insertCategories() {
       });
     }
 
+    // Create a comprehensive category list from both numbered mapping and config
+    const allCategories = new Set();
+
+    // Add numbered categories
+    Object.values(config.categoryNumbers).forEach((name) => {
+      allCategories.add(name);
+    });
+
+    // Add categories from config
+    Object.entries(config.categories).forEach(([, { name }]) => {
+      allCategories.add(name);
+    });
+
     // Prepare categories that don't already exist
-    const categoriesToInsert = Object.entries(config.categories)
-      .map(([, { name, order }]) => ({
-        title: name,
-        display_order: order,
-      }))
-      .filter((c) => !existingTitles.includes(c.title));
+    const categoriesToInsert = [];
+
+    allCategories.forEach((name) => {
+      if (!existingTitles.includes(name)) {
+        // Find the order from config if it exists, otherwise use default order based on number
+        let order = 999;
+
+        // Look for order in config.categories
+        for (const [, info] of Object.entries(config.categories)) {
+          if (info.name === name) {
+            order = info.order;
+            break;
+          }
+        }
+
+        // If not found in config, try to get order from number mapping
+        if (order === 999) {
+          for (const [num, catName] of Object.entries(config.categoryNumbers)) {
+            if (catName === name) {
+              order = parseInt(num, 10) * 10;
+              break;
+            }
+          }
+        }
+
+        categoriesToInsert.push({
+          title: name,
+          display_order: order,
+        });
+      }
+    });
 
     if (categoriesToInsert.length > 0) {
       // Insert categories
@@ -113,6 +179,8 @@ function preprocessMarkdownFile(filePath) {
 
     const items = [];
     let currentSection = null;
+    let currentCategoryNumber = null;
+    let currentCategoryName = null;
 
     // Reset counters for each level when a new section starts
     let levelCounters = {};
@@ -128,15 +196,53 @@ function preprocessMarkdownFile(filePath) {
       // Skip empty lines
       if (!trimmedLine) continue;
 
-      // Extract title from first line (# 1. History) - we skip this
-      if (i === 0 && trimmedLine.startsWith('# ')) {
+      // Check for top-level category headers (both numbered and simple formats)
+      const numberedCategoryMatch = trimmedLine.match(/^# (\d+)\. (.+)$/);
+      const simpleCategoryMatch = trimmedLine.match(/^# (.+)$/);
+
+      if (numberedCategoryMatch) {
+        // Format: # 1. History
+        currentCategoryNumber = numberedCategoryMatch[1].trim();
+        const categoryTitle = numberedCategoryMatch[2].trim();
+
+        // Map the number to a known category name
+        currentCategoryName =
+          config.categoryNumbers[currentCategoryNumber] || categoryTitle;
+
+        log(`Found numbered category: "${currentCategoryName}" at line ${i}`);
+
+        // Reset section and hierarchy when a new category starts
+        currentSection = null;
+        hierarchyStack = [];
+        levelCounters = {};
+        continue;
+      } else if (simpleCategoryMatch && !trimmedLine.match(/^# \d+\./)) {
+        // Format: # History (but not a numbered category)
+        const categoryTitle = simpleCategoryMatch[1].trim();
+
+        // Look up category by name
+        currentCategoryName = categoryTitle;
+        currentCategoryNumber =
+          config.categoryNameToNumber[categoryTitle.toLowerCase()] || null;
+
+        log(`Found simple category: "${currentCategoryName}" at line ${i}`);
+
+        // Reset section and hierarchy when a new category starts
+        currentSection = null;
+        hierarchyStack = [];
+        levelCounters = {};
         continue;
       }
+
+      // Skip processing if no category found yet
+      if (!currentCategoryName) continue;
 
       // Extract section headers (## headers)
       if (trimmedLine.startsWith('## ')) {
         currentSection = trimmedLine.substring(3).trim();
-        log(`Found section: "${currentSection}" at line ${i}`);
+        log(
+          `Found section: "${currentSection}" in category "${currentCategoryName}" at line ${i}`
+        );
         // Reset everything when a new section starts
         hierarchyStack = [];
         levelCounters = {};
@@ -181,6 +287,8 @@ function preprocessMarkdownFile(filePath) {
         items.push({
           lineNumber: i,
           section: currentSection,
+          categoryName: currentCategoryName,
+          categoryNumber: currentCategoryNumber,
           type: 'header',
           headerLevel,
           title: headerTitle,
@@ -234,6 +342,8 @@ function preprocessMarkdownFile(filePath) {
         items.push({
           lineNumber: i,
           section: currentSection,
+          categoryName: currentCategoryName,
+          categoryNumber: currentCategoryNumber,
           type: 'item',
           itemText: processedItem.itemText,
           indentLevel,
@@ -262,6 +372,8 @@ function preprocessMarkdownFile(filePath) {
             items.push({
               lineNumber: i,
               section: currentSection,
+              categoryName: currentCategoryName,
+              categoryNumber: currentCategoryNumber,
               type: 'subitem',
               parentPath: path,
               itemText: subItem.itemText,
@@ -278,14 +390,27 @@ function preprocessMarkdownFile(filePath) {
       }
     }
 
-    // Get unique sections and log them
-    const sections = [...new Set(items.map((item) => item.section))];
-    log(`Found ${sections.length} sections in file: ${sections.join(', ')}`);
+    // Get unique categories and sections
+    const categories = [...new Set(items.map((item) => item.categoryName))];
+    const sections = [];
 
-    return { items, sections };
+    // Create unique section identifiers that include category
+    items.forEach((item) => {
+      const sectionKey = `${item.categoryName}|||${item.section}`;
+      if (!sections.includes(sectionKey)) {
+        sections.push(sectionKey);
+      }
+    });
+
+    log(
+      `Found ${categories.length} categories in file: ${categories.join(', ')}`
+    );
+    log(`Found ${sections.length} unique category-section combinations`);
+
+    return { items, categories, sections };
   } catch (error) {
     logError(`Error preprocessing file ${filePath}`, error);
-    return { items: [], sections: [] };
+    return { items: [], categories: [], sections: [] };
   }
 }
 
@@ -299,17 +424,15 @@ async function batchInsertItems(items, sectionIdMap) {
   // Map to track inserted items by path
   const itemIdByPath = {};
 
-  // Log section map for debugging
-  log(`Section ID map: ${JSON.stringify(sectionIdMap)}`);
-
   // Prepare all items for insertion - filter out items with missing section IDs
   const itemsToInsert = items
     .map((item) => {
-      const sectionId = sectionIdMap[item.section];
+      const sectionKey = `${item.categoryName}|||${item.section}`;
+      const sectionId = sectionIdMap[sectionKey];
 
       if (!sectionId) {
         log(
-          `Warning: No section ID found for item in section "${item.section}" - item will be skipped`,
+          `Warning: No section ID found for item in category "${item.categoryName}", section "${item.section}" - item will be skipped`,
           'warn'
         );
         return null;
@@ -449,16 +572,13 @@ async function updateParentChildRelationships(itemIdByPath) {
 /**
  * Process a single markdown file and insert into database
  */
-async function processMarkdownFile(filePath, chapterId, categoryId) {
+async function processMarkdownFile(filePath, chapterId, categoryMap) {
   const fileName = path.basename(filePath);
   log(`Processing file: ${fileName}`);
 
   try {
-    // Start a transaction for this file
-    log(`Starting transaction for file: ${fileName}`);
-
     // Preprocess file to extract structure and generate paths
-    const { items, sections } = preprocessMarkdownFile(filePath);
+    const { items, categories, sections } = preprocessMarkdownFile(filePath);
 
     if (items.length === 0) {
       log(`No items found in ${fileName}`, 'warn');
@@ -468,55 +588,86 @@ async function processMarkdownFile(filePath, chapterId, categoryId) {
     // Create section mapping
     const sectionIdMap = {};
 
-    for (let i = 0; i < sections.length; i++) {
-      const sectionTitle = sections[i];
+    // Process each category found in the file
+    for (const categoryName of categories) {
+      // Find category ID from the map
+      const categoryId = categoryMap[categoryName];
 
-      // Skip empty or null section titles
-      if (!sectionTitle || sectionTitle.trim() === '') {
-        log(`Warning: Empty section title found, skipping`, 'warn');
+      if (!categoryId) {
+        log(
+          `Warning: No category ID found for "${categoryName}" - skipping category`,
+          'warn'
+        );
         continue;
       }
 
-      log(`Attempting to insert section: "${sectionTitle}"`);
+      // Get sections for this category
+      const categorySections = [
+        ...new Set(
+          items
+            .filter((item) => item.categoryName === categoryName)
+            .map((item) => item.section)
+        ),
+      ];
 
-      try {
-        // Insert section
-        const { data: sectionData, error: sectionError } = await supabase
-          .from('sections')
-          .upsert({
-            chapter_id: chapterId,
-            category_id: categoryId,
-            title: sectionTitle,
-            display_order: i * 10,
-          })
-          .select();
+      // Insert or update sections for this category
+      for (let i = 0; i < categorySections.length; i++) {
+        const sectionTitle = categorySections[i];
 
-        if (sectionError) {
+        // Skip empty section titles
+        if (!sectionTitle || sectionTitle.trim() === '') {
           log(
-            `Error inserting section "${sectionTitle}": ${sectionError.message}`,
-            'error'
+            `Warning: Empty section title found in category "${categoryName}", skipping`,
+            'warn'
           );
           continue;
         }
 
-        if (!sectionData || sectionData.length === 0) {
+        log(
+          `Attempting to insert section: "${sectionTitle}" for category "${categoryName}"`
+        );
+
+        try {
+          // Insert section
+          const { data: sectionData, error: sectionError } = await supabase
+            .from('sections')
+            .upsert({
+              chapter_id: chapterId,
+              category_id: categoryId,
+              title: sectionTitle,
+              display_order: i * 10,
+            })
+            .select();
+
+          if (sectionError) {
+            log(
+              `Error inserting section "${sectionTitle}": ${sectionError.message}`,
+              'error'
+            );
+            continue;
+          }
+
+          if (!sectionData || sectionData.length === 0) {
+            log(
+              `No data returned when inserting section "${sectionTitle}"`,
+              'error'
+            );
+            continue;
+          }
+
+          // Store section ID with category+section as key
+          const sectionKey = `${categoryName}|||${sectionTitle}`;
+          sectionIdMap[sectionKey] = sectionData[0].id;
           log(
-            `No data returned when inserting section "${sectionTitle}"`,
+            `Inserted/updated section: ${sectionTitle} in category ${categoryName} (ID: ${sectionData[0].id})`
+          );
+        } catch (error) {
+          log(
+            `Exception when inserting section "${sectionTitle}": ${error.message}`,
             'error'
           );
           continue;
         }
-
-        sectionIdMap[sectionTitle] = sectionData[0].id;
-        log(
-          `Inserted/updated section: ${sectionTitle} (ID: ${sectionData[0].id})`
-        );
-      } catch (error) {
-        log(
-          `Exception when inserting section "${sectionTitle}": ${error.message}`,
-          'error'
-        );
-        continue;
       }
     }
 
@@ -559,14 +710,27 @@ async function processChapter(chapterDir, categoryMap) {
   log(`Processing chapter: ${chapterName}`);
 
   try {
-    // Extract chapter number from directory name (e.g., "Ch11_Syncope" -> 11)
-    const chapterMatch = chapterName.match(/Ch(\d+)_(.+)/);
-    if (!chapterMatch) {
-      throw new Error(`Invalid chapter directory name format: ${chapterName}`);
+    // Use the directory name as the chapter title
+    const chapterTitle = chapterName;
+
+    // Generate a chapter number based on directory index or keep track in a map
+    let chapterNumber;
+
+    // Check if we have a chapter number mapping
+    if (!config.chapterNumberMap) {
+      config.chapterNumberMap = {};
+      config.nextChapterNumber = 1;
     }
 
-    const chapterNumber = parseInt(chapterMatch[1], 10);
-    const chapterTitle = chapterMatch[2].replace(/_/g, ' ');
+    // Look up chapter number or assign a new one
+    if (config.chapterNumberMap[chapterTitle]) {
+      chapterNumber = config.chapterNumberMap[chapterTitle];
+    } else {
+      chapterNumber = config.nextChapterNumber++;
+      config.chapterNumberMap[chapterTitle] = chapterNumber;
+    }
+
+    log(`Using chapter number ${chapterNumber} for "${chapterTitle}"`);
 
     // Check if chapter already exists and handle it properly
     log(`Checking if chapter ${chapterNumber} exists...`);
@@ -611,34 +775,16 @@ async function processChapter(chapterDir, categoryMap) {
     const files = fs
       .readdirSync(chapterDir)
       .filter((file) => file.endsWith('.md'))
-      .sort((a, b) => {
-        const orderA = config.categories[a]?.order || 999;
-        const orderB = config.categories[b]?.order || 999;
-        return orderA - orderB;
-      });
+      .sort();
 
     let successCount = 0;
     let errorCount = 0;
 
     for (const file of files) {
-      const categoryInfo = config.categories[file];
-      if (!categoryInfo) {
-        log(`Skipping unknown file: ${file}`, 'warn');
-        continue;
-      }
-
-      const categoryId = categoryMap[categoryInfo.name];
-      if (!categoryId) {
-        logError(`Category not found: ${categoryInfo.name}`, {
-          message: `Could not find category ${categoryInfo.name} in the database`,
-        });
-        continue;
-      }
-
       const success = await processMarkdownFile(
         path.join(chapterDir, file),
         chapterId,
-        categoryId
+        categoryMap
       );
 
       if (success) {
@@ -734,13 +880,11 @@ async function migrateData() {
         throw new Error(`Chapter directory not found: ${chapterPath}`);
       }
     } else {
-      // Process all chapters
+      // Process all directories in the markdownBasePath
       chapterDirs = fs
         .readdirSync(config.markdownBasePath)
-        .filter(
-          (dir) =>
-            dir.startsWith('Ch') &&
-            fs.statSync(path.join(config.markdownBasePath, dir)).isDirectory()
+        .filter((dir) =>
+          fs.statSync(path.join(config.markdownBasePath, dir)).isDirectory()
         )
         .map((dir) => path.join(config.markdownBasePath, dir));
     }
