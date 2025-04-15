@@ -1,6 +1,6 @@
 'use client';
-import BodyVisualizationHome from '@/components/BodyVisualizationHome';
+import LandingPage from '@/components/LandingPage';
 
 export default function Home() {
-  return <BodyVisualizationHome />;
+  return <LandingPage />;
 }
