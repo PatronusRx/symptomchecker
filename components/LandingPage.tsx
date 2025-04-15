@@ -16,48 +16,11 @@ import '../app/landing.css';
 export default function LandingPage() {
   return (
     <div className="landing-wrapper flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold text-xl">
-            <Activity className="h-6 w-6 text-primary" />
-            <span>SymptomDx</span>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link
-              href="#features"
-              className="text-sm font-medium hover:text-primary"
-            >
-              Features
-            </Link>
-            <Link
-              href="#why"
-              className="text-sm font-medium hover:text-primary"
-            >
-              Why It Matters
-            </Link>
-            <Link
-              href="#about"
-              className="text-sm font-medium hover:text-primary"
-            >
-              About
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm">
-              Log in
-            </Button>
-            <Button size="sm">
-              Sign up
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
-              <div className="flex flex-col justify-center space-y-4">
+          <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px] items-center">
+              <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
                     FIND THE NEEDLE IN THE HAYSTACK
