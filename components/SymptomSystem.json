@@ -1,22 +1,251 @@
-[
-  "Approach to COPD exacerbation",
-  "Approach to acute coronary syndrome",
-  "Approach to aortic emergencies",
-  "Approach to asthma exacerbation",
-  "Approach to cardiac arrhythmias",
-  "Approach to chest pain",
-  "Approach to cough",
-  "Approach to deep vein thrombosis",
-  "Approach to dyspnea",
-  "Approach to heart failure exacerbation",
-  "Approach to hemoptysis",
-  "Approach to hypertensive emergencies",
-  "Approach to palpitations",
-  "Approach to peripheral edema",
-  "Approach to pneumonia",
-  "Approach to pneumothorax",
-  "Approach to pulmonary embolism",
-  "Approach to respiratory distress",
-  "Approach to swollen leg",
-  "Approach to syncope"
-]
+{
+  "sections": [
+    {
+      "section": "Cardiovascular Presentations",
+      "approaches": [
+        "Approach to chest pain",
+        "Approach to palpitations",
+        "Approach to syncope",
+        "Approach to hypertensive emergencies",
+        "Approach to dyspnea with suspected cardiac origin",
+        "Approach to peripheral edema",
+        "Approach to acute coronary syndrome",
+        "Approach to heart failure exacerbation",
+        "Approach to cardiac arrhythmias",
+        "Approach to aortic emergencies",
+        "Approach to deep vein thrombosis",
+        "Approach to swollen leg"
+      ]
+    },
+    {
+      "section": "Respiratory Presentations",
+      "approaches": [
+        "Approach to shortness of breath/dyspnea",
+        "Approach to dyspnea",
+        "Approach to cough",
+        "Approach to hemoptysis",
+        "Approach to respiratory distress",
+        "Approach to pneumonia",
+        "Approach to asthma exacerbation",
+        "Approach to COPD exacerbation",
+        "Approach to pulmonary embolism",
+        "Approach to pneumothorax",
+        "Approach to upper respiratory infections"
+      ]
+    },
+    {
+      "section": "Neurological Presentations",
+      "approaches": [
+        "Approach to headache",
+        "Approach to altered mental status",
+        "Approach to dizziness",
+        "Approach to seizures",
+        "Approach to stroke",
+        "Approach to weakness",
+        "Approach to focal weakness",
+        "Approach to intracranial hemorrhage",
+        "Approach to meningitis",
+        "Approach to peripheral neuropathy",
+        "Approach to movement disorders",
+        "Approach to spinal cord compression",
+        "Approach to visual disturbances"
+      ]
+    },
+    {
+      "section": "Gastrointestinal Presentations",
+      "approaches": [
+        "Approach to abdominal pain",
+        "Approach to nausea",
+        "Approach to diarrhea",
+        "Approach to GI bleeding",
+        "Approach to jaundice",
+        "Approach to acute pancreatitis",
+        "Approach to small bowel obstruction",
+        "Approach to biliary disease",
+        "Approach to liver failure",
+        "Approach to appendicitis",
+        "Approach to bloating",
+        "Approach to bariatric surgery complications"
+      ]
+    },
+    {
+      "section": "Genitourinary and Reproductive Presentations",
+      "approaches": [
+        "Approach to dysuria",
+        "Approach to hematuria",
+        "Approach to scrotal pain",
+        "Approach to vaginal bleeding",
+        "Approach to pelvic pain",
+        "Approach to flank pain",
+        "Approach to acute kidney injury",
+        "Approach to urinary retention",
+        "Approach to sexually transmitted infections",
+        "Approach to ectopic pregnancy"
+      ]
+    },
+    {
+      "section": "Infectious Disease Presentations",
+      "approaches": [
+        "Approach to fever",
+        "Approach to sepsis",
+        "Approach to skin and soft tissue infections",
+        "Approach to painful joint",
+        "Approach to warm joint",
+        "Approach to immunocompromised patients"
+      ]
+    },
+    {
+      "section": "Trauma Presentations",
+      "approaches": [
+        "Approach to blunt trauma",
+        "Approach to penetrating trauma",
+        "Approach to head injury",
+        "Approach to orthopedic injuries",
+        "Approach to lacerations",
+        "Approach to burns",
+        "Approach to crush injuries",
+        "Approach to blast injuries",
+        "Approach to non-accidental trauma",
+        "Approach to spinal injuries"
+      ]
+    },
+    {
+      "section": "Toxicologic Presentations",
+      "approaches": [
+        "Approach to overdose",
+        "Approach to alcohol intoxication",
+        "Approach to altered mental status with suspected toxicologic cause"
+      ]
+    },
+    {
+      "section": "Psychiatric Presentations",
+      "approaches": [
+        "Approach to suicidal ideation",
+        "Approach to agitation",
+        "Approach to psychosis",
+        "Approach to anxiety",
+        "Approach to sleep disorders",
+        "Approach to depression"
+      ]
+    },
+    {
+      "section": "Musculoskeletal and Rheumatologic Presentations",
+      "approaches": [
+        "Approach to back pain",
+        "Approach to joint pain",
+        "Approach to fractures",
+        "Approach to dislocations",
+        "Approach to compartment syndrome",
+        "Approach to gout",
+        "Approach to neck pain",
+        "Approach to shoulder",
+        "Approach to elbow",
+        "Approach to wrist",
+        "Approach to hand",
+        "Approach to forearm",
+        "Approach to hip",
+        "Approach to knee",
+        "Approach to ankle and foot"
+      ]
+    },
+    {
+      "section": "Dermatology Miscellaneous Common Presentations",
+      "approaches": ["Approach to rash", "Approach to allergic reactions"]
+    },
+    {
+      "section": "Environmental and Exposure Presentations",
+      "approaches": [
+        "Approach to hypothermia",
+        "Approach to hyperthermia",
+        "Approach to drowning",
+        "Approach to high-altitude illness",
+        "Approach to electrical injuries"
+      ]
+    },
+    {
+      "section": "Hematologic and Oncologic Presentations",
+      "approaches": [
+        "Approach to anemia",
+        "Approach to bleeding disorders",
+        "Approach to sickle cell crisis",
+        "Approach to neutropenic fever",
+        "Approach to oncologic emergencies"
+      ]
+    },
+    {
+      "section": "Pediatric-Specific Approaches",
+      "approaches": [
+        "Approach to pediatric fever",
+        "Approach to pediatric respiratory distress",
+        "Approach to pediatric dehydration",
+        "Approach to pediatric abdominal pain",
+        "Approach to neonatal emergencies",
+        "Approach to developmental milestones"
+      ]
+    },
+    {
+      "section": "Geriatric-Specific Approaches",
+      "approaches": [
+        "Approach to falls in the elderly",
+        "Approach to acute functional decline",
+        "Approach to elder abuse",
+        "Approach to delirium in the elderly"
+      ]
+    },
+    {
+      "section": "Endocrine and Metabolic Approaches",
+      "approaches": [
+        "Approach to diabetic ketoacidosis",
+        "Approach to hypoglycemia",
+        "Approach to thyroid storm",
+        "Approach to adrenal crisis",
+        "Approach to electrolyte abnormalities"
+      ]
+    },
+    {
+      "section": "ENT and Maxillofacial Approaches",
+      "approaches": [
+        "Approach to facial trauma",
+        "Approach to dental emergencies",
+        "Approach to ear pain",
+        "Approach to epistaxis",
+        "Approach to decreased hearing",
+        "Approach to sore throat"
+      ]
+    },
+    {
+      "section": "Ophthalmologic Approaches",
+      "approaches": [
+        "Approach to acute vision loss",
+        "Approach to corneal abrasion",
+        "Approach to chemical eye exposure",
+        "Approach to orbital cellulitis",
+        "Approach to acute angle-closure glaucoma",
+        "Approach to eye pain",
+        "Approach to eye redness"
+      ]
+    },
+    {
+      "section": "Obstetrics",
+      "approaches": [
+        "Approach to hyperemesis gravidarum",
+        "Approach to painful vaginal bleeding in pregnancy",
+        "Approach to preeclampsia",
+        "Approach to third trimester bleeding",
+        "Approach to first trimester bleeding",
+        "Approach to preterm labor"
+      ]
+    },
+    {
+      "section": "Procedures and Management Approaches",
+      "approaches": [
+        "Approach to difficult airway management",
+        "Approach to procedural sedation",
+        "Approach to mass casualty incidents",
+        "Approach to end-of-life care in the ED",
+        "Approach to post-operative complications",
+        "Approach to homeless patient care"
+      ]
+    }
+  ]
+}
