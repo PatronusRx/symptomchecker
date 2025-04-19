@@ -81,13 +81,13 @@ export default function RootLayout({
             </nav>
 
             <div className="flex items-center space-x-4">
-              <Link
+              {/* <Link
                 href="/login"
                 className="hidden md:inline-flex items-center justify-center px-4 py-2 border rounded-md text-sm font-medium text-white hover:bg-opacity-80"
                 style={{ borderColor: '#486581', background: '#243b53' }}
               >
                 Log In
-              </Link>
+              </Link> */}
               <Link
                 href="/dashboard"
                 className="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-opacity-90"
@@ -138,7 +138,7 @@ export default function RootLayout({
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center md:text-left">
                 <div>
                   <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 sm:mb-4">
-                    Product
+                    PRODUCT
                   </h3>
                   <ul className="space-y-2">
                     <li>
@@ -157,19 +157,11 @@ export default function RootLayout({
                         How it Works
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="text-xs sm:text-sm text-gray-400 hover:text-teal-400"
-                      >
-                        Pricing
-                      </Link>
-                    </li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 sm:mb-4">
-                    Company
+                    COMPANY
                   </h3>
                   <ul className="space-y-2">
                     <li>
@@ -185,22 +177,14 @@ export default function RootLayout({
                         href="#"
                         className="text-xs sm:text-sm text-gray-400 hover:text-teal-400"
                       >
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="text-xs sm:text-sm text-gray-400 hover:text-teal-400"
-                      >
-                        Careers
+                        Blogs
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 sm:mb-4">
-                    Support
+                    SUPPORT
                   </h3>
                   <ul className="space-y-2">
                     <li>
@@ -208,7 +192,7 @@ export default function RootLayout({
                         href="#"
                         className="text-xs sm:text-sm text-gray-400 hover:text-teal-400"
                       >
-                        Help Center
+                        Resource Articles
                       </Link>
                     </li>
                     <li>
@@ -219,19 +203,11 @@ export default function RootLayout({
                         Contact Us
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="text-xs sm:text-sm text-gray-400 hover:text-teal-400"
-                      >
-                        Privacy
-                      </Link>
-                    </li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 sm:mb-4">
-                    Legal
+                    LEGAL
                   </h3>
                   <ul className="space-y-2">
                     <li>

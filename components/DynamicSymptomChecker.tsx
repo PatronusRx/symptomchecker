@@ -30,6 +30,7 @@ import {
   LogOut,
   BookOpen,
   ArrowLeft,
+  Grid3X3,
 } from 'lucide-react';
 import {
   Chapter,
@@ -40,6 +41,7 @@ import {
 import ChecklistItemComponent from './checklist/ChecklistItem';
 import SoapNoteDisplay from './soap/SoapNoteDisplay';
 import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
+import HighDensityChecklist from './checklist/HighDensityChecklist';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -195,7 +197,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   // State for section display settings
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<'grid' | 'compact' | 'list'>('grid');
+  const [viewMode, setViewMode] = useState<
+    'grid' | 'compact' | 'list' | 'high-density'
+  >('high-density');
   const [gridColumns, setGridColumns] = useState(2);
 
   // State for SOAP note
@@ -974,6 +978,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                   <div className="flex items-center space-x-2 mt-2 sm:mt-0">
                     <span className="text-sm text-gray-500">View:</span>
                     <button
+                      onClick={() => setViewMode('high-density')}
+                      className={`p-1.5 rounded ${
+                        viewMode === 'high-density'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      title="High Density View"
+                    >
+                      <Grid3X3 size={18} />
+                    </button>
+                    <button
                       onClick={() => setViewMode('grid')}
                       className={`p-1.5 rounded ${
                         viewMode === 'grid'
@@ -1007,117 +1022,141 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                       <List size={18} />
                     </button>
 
-                    <div className="hidden sm:flex items-center ml-2 border-l pl-2">
-                      <span className="text-sm text-gray-500 mr-1">
-                        Columns:
-                      </span>
-                      {[1, 2, 3].map((cols) => (
-                        <button
-                          key={cols}
-                          onClick={() => setGridColumns(cols)}
-                          className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
-                            gridColumns === cols
-                              ? 'bg-blue-100 text-blue-700'
-                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                          }`}
-                        >
-                          {cols}
-                        </button>
-                      ))}
-                    </div>
+                    {viewMode !== 'high-density' && (
+                      <div className="hidden sm:flex items-center ml-2 border-l pl-2">
+                        <span className="text-sm text-gray-500 mr-1">
+                          Columns:
+                        </span>
+                        {[1, 2, 3].map((cols) => (
+                          <button
+                            key={cols}
+                            onClick={() => setGridColumns(cols)}
+                            className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
+                              gridColumns === cols
+                                ? 'bg-blue-100 text-blue-700'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            }`}
+                          >
+                            {cols}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Tab navigation for sections */}
-              <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
-                {getActiveCategorySections().map((section) => (
-                  <button
-                    key={section.id}
-                    className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                      selectedSection === section.id ||
-                      (!selectedSection && viewMode === 'list')
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
-                    onClick={() => handleSectionSelect(section.id)}
-                  >
-                    {section.title}
-                  </button>
-                ))}
-                {selectedSection && (
-                  <button
-                    className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                    onClick={() => setSelectedSection(null)}
-                  >
-                    Show All
-                  </button>
-                )}
-              </div>
-
-              {/* Checklist items in grid or list view */}
-              {viewMode === 'list' ? (
-                // List view (like original view)
-                <div className="divide-y divide-gray-100 bg-white rounded-b-lg shadow-sm">
-                  {getItemsBySectionForCategory()
-                    .filter(
-                      (sectionGroup) =>
-                        !selectedSection ||
-                        sectionGroup.section.id === selectedSection
-                    )
-                    .map((sectionGroup) => (
-                      <div
-                        key={sectionGroup.section.id}
-                        className="border-b border-gray-200 mb-3"
-                      >
-                        {/* Section Title */}
-                        <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
-                          <h3 className="text-md font-semibold text-blue-700">
-                            {sectionGroup.section.title}
-                          </h3>
-                        </div>
-
-                        {/* Section Items */}
-                        <div className="p-4 bg-white rounded-b-md">
-                          {/* Render top-level items with recursive function */}
-                          {buildNestedItemsHierarchy(sectionGroup.items).map(
-                            (item) => renderChecklistItem(item)
-                          )}
-                        </div>
-                      </div>
-                    ))}
+              {/* High Density View */}
+              {viewMode === 'high-density' ? (
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden h-[calc(100vh-240px)]">
+                  <HighDensityChecklist
+                    checklistItems={checklistItems}
+                    categories={categories}
+                    sections={sections}
+                    activeCategory={activeCategory}
+                    setActiveCategory={setActiveCategory}
+                    handleResponseChange={handleResponseChange}
+                    handleNotesChange={handleNotesChange}
+                    toggleItemExpansion={toggleItemExpansion}
+                    hasCategoryCompletedItems={hasCategoryCompletedItems}
+                    buildNestedItemsHierarchy={buildNestedItemsHierarchy}
+                    selectedSection={selectedSection}
+                    setSelectedSection={setSelectedSection}
+                  />
                 </div>
               ) : (
-                // Grid view
-                <div className={getGridClass()}>
-                  {getItemsBySectionForCategory()
-                    .filter(
-                      (sectionGroup) =>
-                        !selectedSection ||
-                        sectionGroup.section.id === selectedSection
-                    )
-                    .map((sectionGroup) => (
-                      <div
-                        key={sectionGroup.section.id}
-                        className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
+                <>
+                  {/* Tab navigation for sections */}
+                  <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
+                    {getActiveCategorySections().map((section) => (
+                      <button
+                        key={section.id}
+                        className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                          selectedSection === section.id ||
+                          (!selectedSection && viewMode === 'list')
+                            ? 'bg-blue-100 text-blue-800'
+                            : 'text-gray-700 hover:bg-gray-100'
+                        }`}
+                        onClick={() => handleSectionSelect(section.id)}
                       >
-                        {/* Section Title */}
-                        <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
-                          <h3 className="text-md font-semibold text-blue-700">
-                            {sectionGroup.section.title}
-                          </h3>
-                        </div>
-
-                        {/* Section Items */}
-                        <div className="p-3">
-                          {/* Render top-level items with recursive function */}
-                          {buildNestedItemsHierarchy(sectionGroup.items).map(
-                            (item) => renderChecklistItem(item)
-                          )}
-                        </div>
-                      </div>
+                        {section.title}
+                      </button>
                     ))}
-                </div>
+                    {selectedSection && (
+                      <button
+                        className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                        onClick={() => setSelectedSection(null)}
+                      >
+                        Show All
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Checklist items in grid or list view */}
+                  {viewMode === 'list' ? (
+                    // List view (like original view)
+                    <div className="divide-y divide-gray-100 bg-white rounded-b-lg shadow-sm">
+                      {getItemsBySectionForCategory()
+                        .filter(
+                          (sectionGroup) =>
+                            !selectedSection ||
+                            sectionGroup.section.id === selectedSection
+                        )
+                        .map((sectionGroup) => (
+                          <div
+                            key={sectionGroup.section.id}
+                            className="border-b border-gray-200 mb-3"
+                          >
+                            {/* Section Title */}
+                            <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                              <h3 className="text-md font-semibold text-blue-700">
+                                {sectionGroup.section.title}
+                              </h3>
+                            </div>
+
+                            {/* Section Items */}
+                            <div className="p-4 bg-white rounded-b-md">
+                              {/* Render top-level items with recursive function */}
+                              {buildNestedItemsHierarchy(
+                                sectionGroup.items
+                              ).map((item) => renderChecklistItem(item))}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  ) : (
+                    // Grid view
+                    <div className={getGridClass()}>
+                      {getItemsBySectionForCategory()
+                        .filter(
+                          (sectionGroup) =>
+                            !selectedSection ||
+                            sectionGroup.section.id === selectedSection
+                        )
+                        .map((sectionGroup) => (
+                          <div
+                            key={sectionGroup.section.id}
+                            className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
+                          >
+                            {/* Section Title */}
+                            <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
+                              <h3 className="text-md font-semibold text-blue-700">
+                                {sectionGroup.section.title}
+                              </h3>
+                            </div>
+
+                            {/* Section Items */}
+                            <div className="p-3">
+                              {/* Render top-level items with recursive function */}
+                              {buildNestedItemsHierarchy(
+                                sectionGroup.items
+                              ).map((item) => renderChecklistItem(item))}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </main>
