@@ -1,6 +1,6 @@
 'use client';
-import BodyVisualizationHome from '@/components/BodyVisualizationHome';
+import SectionBasedDashboard from '@/components/SectionBasedDashboard';
 
 export default function DashboardPage() {
-  return <BodyVisualizationHome />;
+  return <SectionBasedDashboard />;
 }

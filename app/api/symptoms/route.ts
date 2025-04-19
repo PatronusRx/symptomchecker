@@ -23,13 +23,8 @@ export async function GET() {
     const fileData = await fs.promises.readFile(filePath, 'utf8');
     const jsonData = JSON.parse(fileData) as SymptomSystemData;
 
-    // Extract all approach names from sections and flatten into a single array
-    const allApproaches = jsonData.sections.flatMap(
-      (section: Section) => section.approaches
-    );
-
-    // Return the flattened array as JSON
-    return NextResponse.json(allApproaches);
+    // Return the full sections array
+    return NextResponse.json(jsonData.sections);
   } catch (error) {
     console.error('Error reading symptom data:', error);
     return NextResponse.json(
