@@ -212,6 +212,17 @@ export default function ApproachPage() {
     router.push('/');
   };
 
+  // Hide footer on all screen sizes for this page
+  useEffect(() => {
+    // Add class to hide footer
+    document.body.classList.add('symptom-page-mobile');
+
+    // Clean up when component unmounts
+    return () => {
+      document.body.classList.remove('symptom-page-mobile');
+    };
+  }, []);
+
   if (loading) {
     return (
       <div className="container mx-auto p-4">

@@ -801,7 +801,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Top Navigation */}
       <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
@@ -884,7 +884,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-y-auto">
         {/* Mobile Navigation Sidebar */}
         {showMobileNav && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">

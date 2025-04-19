@@ -223,6 +223,24 @@ body {
   width: 0;
   height: 0;
 }
+
+/* Hide footer for symptom pages on all screen sizes */
+body.symptom-page-mobile footer {
+  display: none !important;
+}
+
+/* Give more space to the main content area */
+body.symptom-page-mobile main {
+  min-height: 100vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Remove unnecessary margins */
+body.symptom-page-mobile .spacing-responsive {
+  padding: 0;
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
