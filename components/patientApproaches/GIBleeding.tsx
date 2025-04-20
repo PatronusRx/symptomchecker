@@ -22,29 +22,35 @@ const questions: Record<string, Question> = {
     id: 'start',
     text: 'Where is the bleeding coming from?',
     options: [
-      { text: 'Vomiting blood or coffee-ground material', next: 'upper_quantity' },
+      {
+        text: 'Vomiting blood or coffee-ground material',
+        next: 'upper_quantity',
+      },
       { text: 'Black, tarry stool', next: 'black_stool' },
       { text: 'Red or maroon blood in stool', next: 'lower_quantity' },
       { text: 'Blood on toilet paper only', next: 'rectal_pain' },
-      { text: 'Not sure, but I have symptoms of blood loss', next: 'symptoms_blood_loss' },
+      {
+        text: 'Not sure, but I have symptoms of blood loss',
+        next: 'symptoms_blood_loss',
+      },
     ],
   },
   upper_quantity: {
     id: 'upper_quantity',
     text: 'How much blood have you vomited?',
     options: [
-      { 
-        text: 'Large amount (more than a cup)', 
-        next: 'results_emergency', 
-        severity: 'high' 
+      {
+        text: 'Large amount (more than a cup)',
+        next: 'results_emergency',
+        severity: 'high',
       },
-      { 
+      {
         text: 'Small to moderate amount',
-        next: 'symptoms_blood_loss' 
+        next: 'symptoms_blood_loss',
       },
-      { 
+      {
         text: 'Just specks or coffee-ground appearance',
-        next: 'recent_medications' 
+        next: 'recent_medications',
       },
     ],
   },
@@ -61,14 +67,14 @@ const questions: Record<string, Question> = {
     id: 'lower_quantity',
     text: 'How would you describe the amount of blood?',
     options: [
-      { 
-        text: 'Large amount mixed with stool or clots', 
-        next: 'results_emergency', 
-        severity: 'high'
+      {
+        text: 'Large amount mixed with stool or clots',
+        next: 'results_emergency',
+        severity: 'high',
       },
-      { 
+      {
         text: 'Moderate amount mixed with stool',
-        next: 'symptoms_blood_loss' 
+        next: 'symptoms_blood_loss',
       },
       { text: 'Small streaks on the surface of stool', next: 'rectal_pain' },
     ],
@@ -86,15 +92,15 @@ const questions: Record<string, Question> = {
     id: 'anal_symptoms',
     text: 'Do you have any of these symptoms in the anal area?',
     options: [
-      { 
-        text: 'Lumps or swelling around the anus', 
-        next: 'results_hemorrhoids', 
-        severity: 'low'
+      {
+        text: 'Lumps or swelling around the anus',
+        next: 'results_hemorrhoids',
+        severity: 'low',
       },
-      { 
+      {
         text: 'Tear or crack in the skin around the anus',
         next: 'results_anal_fissure',
-        severity: 'low'
+        severity: 'low',
       },
       { text: 'None of these', next: 'stool_changes' },
     ],
@@ -103,20 +109,20 @@ const questions: Record<string, Question> = {
     id: 'symptoms_blood_loss',
     text: 'Do you have any of these symptoms?',
     options: [
-      { 
-        text: 'Feeling dizzy or lightheaded when standing', 
-        next: 'results_emergency', 
-        severity: 'high'
+      {
+        text: 'Feeling dizzy or lightheaded when standing',
+        next: 'results_emergency',
+        severity: 'high',
       },
-      { 
+      {
         text: 'Rapid heartbeat or shortness of breath',
         next: 'results_emergency',
-        severity: 'high'
+        severity: 'high',
       },
-      { 
+      {
         text: 'Pale skin or fatigue',
         next: 'results_urgent_care',
-        severity: 'medium'
+        severity: 'medium',
       },
       { text: 'None of these', next: 'recent_medications' },
     ],
@@ -125,14 +131,14 @@ const questions: Record<string, Question> = {
     id: 'recent_medications',
     text: 'Do you take any of these medications?',
     options: [
-      { 
-        text: 'Blood thinners (e.g., warfarin, apixaban, aspirin)', 
-        next: 'results_urgent_care', 
-        severity: 'medium'
+      {
+        text: 'Blood thinners (e.g., warfarin, apixaban, aspirin)',
+        next: 'results_urgent_care',
+        severity: 'medium',
       },
-      { 
+      {
         text: 'NSAIDs (e.g., ibuprofen, naproxen)',
-        next: 'duration'
+        next: 'duration',
       },
       { text: 'None of these', next: 'duration' },
     ],
@@ -143,10 +149,10 @@ const questions: Record<string, Question> = {
     options: [
       { text: 'First time today', next: 'abdominal_pain' },
       { text: 'Started in the past few days', next: 'abdominal_pain' },
-      { 
+      {
         text: 'On and off for weeks or longer',
         next: 'results_primary_care',
-        severity: 'medium'
+        severity: 'medium',
       },
     ],
   },
@@ -154,10 +160,10 @@ const questions: Record<string, Question> = {
     id: 'abdominal_pain',
     text: 'Do you have abdominal pain?',
     options: [
-      { 
-        text: 'Severe pain', 
+      {
+        text: 'Severe pain',
         next: 'results_emergency',
-        severity: 'high'
+        severity: 'high',
       },
       { text: 'Mild to moderate pain', next: 'stool_changes' },
       { text: 'No pain', next: 'stool_changes' },
@@ -167,20 +173,20 @@ const questions: Record<string, Question> = {
     id: 'stool_changes',
     text: 'Have you noticed any recent changes in your bowel habits?',
     options: [
-      { 
-        text: 'New onset diarrhea', 
+      {
+        text: 'New onset diarrhea',
         next: 'results_primary_care',
-        severity: 'medium' 
+        severity: 'medium',
       },
-      { 
+      {
         text: 'New constipation',
         next: 'results_primary_care',
-        severity: 'medium'
+        severity: 'medium',
       },
-      { 
+      {
         text: 'Alternating diarrhea and constipation',
         next: 'results_primary_care',
-        severity: 'medium'
+        severity: 'medium',
       },
       { text: 'No changes', next: 'age' },
     ],
@@ -189,14 +195,14 @@ const questions: Record<string, Question> = {
     id: 'age',
     text: 'Are you 50 years or older?',
     options: [
-      { 
-        text: 'Yes', 
+      {
+        text: 'Yes',
         next: 'results_primary_care',
-        severity: 'medium' 
+        severity: 'medium',
       },
-      { 
-        text: 'No', 
-        next: 'risk_factors' 
+      {
+        text: 'No',
+        next: 'risk_factors',
       },
     ],
   },
@@ -204,25 +210,25 @@ const questions: Record<string, Question> = {
     id: 'risk_factors',
     text: 'Do you have any of these risk factors?',
     options: [
-      { 
-        text: 'Family history of colon cancer', 
+      {
+        text: 'Family history of colon cancer',
         next: 'results_primary_care',
-        severity: 'medium' 
+        severity: 'medium',
       },
-      { 
+      {
         text: 'Personal history of polyps or inflammatory bowel disease',
         next: 'results_primary_care',
-        severity: 'medium'
+        severity: 'medium',
       },
-      { 
+      {
         text: 'Recent weight loss without trying',
         next: 'results_primary_care',
-        severity: 'medium'
+        severity: 'medium',
       },
-      { 
+      {
         text: 'None of these',
         next: 'results_primary_care_routine',
-        severity: 'low'
+        severity: 'low',
       },
     ],
   },
@@ -231,38 +237,50 @@ const questions: Record<string, Question> = {
 const results: Record<string, Result> = {
   results_emergency: {
     title: 'Seek Emergency Care Immediately',
-    description: 'Your symptoms suggest a potentially serious GI bleed that requires immediate medical attention.',
-    recommendation: 'Call emergency services (911) or have someone take you to the nearest emergency room right away.',
+    description:
+      'Your symptoms suggest a potentially serious GI bleed that requires immediate medical attention.',
+    recommendation:
+      'Call emergency services (911) or have someone take you to the nearest emergency room right away.',
     severity: 'high',
   },
   results_urgent_care: {
     title: 'Seek Urgent Medical Care',
-    description: 'Your symptoms suggest a significant GI bleed that should be evaluated promptly.',
-    recommendation: 'Go to an urgent care center or emergency room within the next few hours.',
+    description:
+      'Your symptoms suggest a significant GI bleed that should be evaluated promptly.',
+    recommendation:
+      'Go to an urgent care center or emergency room within the next few hours.',
     severity: 'medium',
   },
   results_primary_care: {
     title: 'Contact Your Healthcare Provider',
-    description: 'Your symptoms suggest a condition that needs medical evaluation.',
-    recommendation: 'Call your healthcare provider today to discuss your symptoms and arrange for an evaluation in the next 1-2 days.',
+    description:
+      'Your symptoms suggest a condition that needs medical evaluation.',
+    recommendation:
+      'Call your healthcare provider today to discuss your symptoms and arrange for an evaluation in the next 1-2 days.',
     severity: 'medium',
   },
   results_primary_care_routine: {
     title: 'Schedule a Medical Appointment',
-    description: 'Your symptoms suggest a condition that should be evaluated by a healthcare provider.',
-    recommendation: 'Schedule an appointment with your healthcare provider within the next week.',
+    description:
+      'Your symptoms suggest a condition that should be evaluated by a healthcare provider.',
+    recommendation:
+      'Schedule an appointment with your healthcare provider within the next week.',
     severity: 'low',
   },
   results_hemorrhoids: {
     title: 'Possible Hemorrhoids',
-    description: 'Your symptoms suggest hemorrhoids, which are swollen veins in the rectum and anus that can cause bleeding and discomfort.',
-    recommendation: 'Try over-the-counter hemorrhoid treatments. If symptoms persist beyond a week or worsen, see your healthcare provider.',
+    description:
+      'Your symptoms suggest hemorrhoids, which are swollen veins in the rectum and anus that can cause bleeding and discomfort.',
+    recommendation:
+      'Try over-the-counter hemorrhoid treatments. If symptoms persist beyond a week or worsen, see your healthcare provider.',
     severity: 'low',
   },
   results_anal_fissure: {
     title: 'Possible Anal Fissure',
-    description: 'Your symptoms suggest an anal fissure, which is a small tear in the lining of the anus that can cause bleeding and pain during bowel movements.',
-    recommendation: 'Try sitz baths and stool softeners. If symptoms persist beyond two weeks or worsen, see your healthcare provider.',
+    description:
+      'Your symptoms suggest an anal fissure, which is a small tear in the lining of the anus that can cause bleeding and pain during bowel movements.',
+    recommendation:
+      'Try sitz baths and stool softeners. If symptoms persist beyond two weeks or worsen, see your healthcare provider.',
     severity: 'low',
   },
 };

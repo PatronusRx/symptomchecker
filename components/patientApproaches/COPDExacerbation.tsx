@@ -22,7 +22,10 @@ const questions: Record<string, Question> = {
     id: 'start',
     text: 'Have your COPD symptoms gotten worse recently?',
     options: [
-      { text: 'Yes, significantly worse in the past 24-48 hours', next: 'breathing_difficulty' },
+      {
+        text: 'Yes, significantly worse in the past 24-48 hours',
+        next: 'breathing_difficulty',
+      },
       { text: 'Yes, gradually worsening over days to weeks', next: 'duration' },
       { text: 'No, just checking my symptoms', next: 'regular_symptoms' },
     ],
@@ -31,18 +34,18 @@ const questions: Record<string, Question> = {
     id: 'breathing_difficulty',
     text: 'How difficult is your breathing right now?',
     options: [
-      { 
-        text: 'Severe - I can barely speak, can\'t walk across room, or can\'t lie flat', 
-        next: 'results_emergency', 
-        severity: 'high' 
+      {
+        text: "Severe - I can barely speak, can't walk across room, or can't lie flat",
+        next: 'results_emergency',
+        severity: 'high',
       },
-      { 
-        text: 'Moderate - I\'m short of breath with minimal activity',
-        next: 'color_changes' 
+      {
+        text: "Moderate - I'm short of breath with minimal activity",
+        next: 'color_changes',
       },
-      { 
-        text: 'Mild - I\'m more short of breath than usual but can still do most activities',
-        next: 'color_changes' 
+      {
+        text: "Mild - I'm more short of breath than usual but can still do most activities",
+        next: 'color_changes',
       },
     ],
   },
@@ -50,15 +53,15 @@ const questions: Record<string, Question> = {
     id: 'color_changes',
     text: 'Have you noticed any changes in the color of your phlegm/sputum?',
     options: [
-      { 
-        text: 'Yes, it\'s turned yellow, green, or brown', 
-        next: 'increased_sputum' 
+      {
+        text: "Yes, it's turned yellow, green, or brown",
+        next: 'increased_sputum',
       },
-      { 
-        text: 'No, still clear or white as usual', 
-        next: 'increased_sputum' 
+      {
+        text: 'No, still clear or white as usual',
+        next: 'increased_sputum',
       },
-      { text: 'I don\'t produce sputum', next: 'fever' },
+      { text: "I don't produce sputum", next: 'fever' },
     ],
   },
   increased_sputum: {
@@ -74,10 +77,10 @@ const questions: Record<string, Question> = {
     id: 'dehydration',
     text: 'Do you have signs of dehydration (dry mouth, reduced urination, extreme thirst)?',
     options: [
-      { 
-        text: 'Yes', 
-        next: 'results_urgent_care', 
-        severity: 'medium' 
+      {
+        text: 'Yes',
+        next: 'results_urgent_care',
+        severity: 'medium',
       },
       { text: 'No', next: 'fever' },
     ],
@@ -86,14 +89,14 @@ const questions: Record<string, Question> = {
     id: 'fever',
     text: 'Do you have a fever (temperature over 100.4°F or 38°C)?',
     options: [
-      { 
-        text: 'Yes, high fever (over 102°F/39°C)', 
-        next: 'results_urgent_care', 
-        severity: 'medium' 
+      {
+        text: 'Yes, high fever (over 102°F/39°C)',
+        next: 'results_urgent_care',
+        severity: 'medium',
       },
-      { 
-        text: 'Yes, low-grade fever', 
-        next: 'symptoms_worsening' 
+      {
+        text: 'Yes, low-grade fever',
+        next: 'symptoms_worsening',
       },
       { text: 'No fever', next: 'symptoms_worsening' },
     ],
@@ -104,34 +107,50 @@ const questions: Record<string, Question> = {
     options: [
       { text: '2-3 days', next: 'color_changes' },
       { text: '4-7 days', next: 'color_changes' },
-      { text: 'More than a week', next: 'results_primary_care', severity: 'medium' },
+      {
+        text: 'More than a week',
+        next: 'results_primary_care',
+        severity: 'medium',
+      },
     ],
   },
   regular_symptoms: {
     id: 'regular_symptoms',
     text: 'How would you describe your usual COPD symptoms?',
     options: [
-      { text: 'Well-controlled with current medications', next: 'results_stable', severity: 'low' },
-      { text: 'Sometimes bothersome but manageable', next: 'results_stable', severity: 'low' },
-      { text: 'Often limiting my daily activities', next: 'results_primary_care', severity: 'medium' },
+      {
+        text: 'Well-controlled with current medications',
+        next: 'results_stable',
+        severity: 'low',
+      },
+      {
+        text: 'Sometimes bothersome but manageable',
+        next: 'results_stable',
+        severity: 'low',
+      },
+      {
+        text: 'Often limiting my daily activities',
+        next: 'results_primary_care',
+        severity: 'medium',
+      },
     ],
   },
   symptoms_worsening: {
     id: 'symptoms_worsening',
     text: 'Have your symptoms been getting worse despite using your rescue inhaler?',
     options: [
-      { 
-        text: 'Yes, my inhaler isn\'t helping much', 
-        next: 'inhaler_frequency' 
+      {
+        text: "Yes, my inhaler isn't helping much",
+        next: 'inhaler_frequency',
       },
-      { 
+      {
         text: 'My inhaler helps somewhat but I need it much more often',
-        next: 'inhaler_frequency' 
+        next: 'inhaler_frequency',
       },
-      { 
+      {
         text: 'No, my inhaler is helping as usual',
         next: 'results_self_management',
-        severity: 'low'
+        severity: 'low',
       },
     ],
   },
@@ -139,18 +158,18 @@ const questions: Record<string, Question> = {
     id: 'inhaler_frequency',
     text: 'How often are you using your rescue inhaler?',
     options: [
-      { 
-        text: 'Much more than usual (every 1-2 hours or more)', 
+      {
+        text: 'Much more than usual (every 1-2 hours or more)',
         next: 'results_urgent_care',
-        severity: 'medium'
+        severity: 'medium',
       },
-      { 
+      {
         text: 'More than usual but less than every 2 hours',
-        next: 'bluish_color' 
+        next: 'bluish_color',
       },
-      { 
+      {
         text: 'About the same as usual',
-        next: 'bluish_color' 
+        next: 'bluish_color',
       },
     ],
   },
@@ -183,32 +202,42 @@ const questions: Record<string, Question> = {
 const results: Record<string, Result> = {
   results_emergency: {
     title: 'Seek Emergency Care Immediately',
-    description: 'Your symptoms suggest a severe COPD exacerbation that requires immediate medical attention.',
-    recommendation: 'Call emergency services (911) or have someone take you to the nearest emergency room right away.',
+    description:
+      'Your symptoms suggest a severe COPD exacerbation that requires immediate medical attention.',
+    recommendation:
+      'Call emergency services (911) or have someone take you to the nearest emergency room right away.',
     severity: 'high',
   },
   results_urgent_care: {
     title: 'Seek Urgent Medical Care',
-    description: 'Your symptoms suggest a significant COPD exacerbation that should be evaluated promptly.',
-    recommendation: 'Contact your healthcare provider today or visit an urgent care center within the next few hours.',
+    description:
+      'Your symptoms suggest a significant COPD exacerbation that should be evaluated promptly.',
+    recommendation:
+      'Contact your healthcare provider today or visit an urgent care center within the next few hours.',
     severity: 'medium',
   },
   results_primary_care: {
     title: 'Contact Your Healthcare Provider',
-    description: 'Your symptoms suggest a COPD exacerbation that should be evaluated by your healthcare provider.',
-    recommendation: 'Call your healthcare provider today to discuss your symptoms and arrange for an evaluation in the next 1-2 days.',
+    description:
+      'Your symptoms suggest a COPD exacerbation that should be evaluated by your healthcare provider.',
+    recommendation:
+      'Call your healthcare provider today to discuss your symptoms and arrange for an evaluation in the next 1-2 days.',
     severity: 'medium',
   },
   results_self_management: {
     title: 'Self-Management Appropriate',
-    description: 'Your symptoms suggest a mild COPD exacerbation that may be manageable at home with your prescribed medications.',
-    recommendation: 'Follow your COPD action plan if you have one. Use your medications as prescribed and monitor your symptoms closely. If they worsen, reassess using this tool or contact your healthcare provider.',
+    description:
+      'Your symptoms suggest a mild COPD exacerbation that may be manageable at home with your prescribed medications.',
+    recommendation:
+      'Follow your COPD action plan if you have one. Use your medications as prescribed and monitor your symptoms closely. If they worsen, reassess using this tool or contact your healthcare provider.',
     severity: 'low',
   },
   results_stable: {
     title: 'COPD Appears Stable',
-    description: 'Your symptoms appear to be consistent with your usual COPD status.',
-    recommendation: 'Continue your regular COPD management plan. If you have concerns about your overall COPD control, consider discussing them with your healthcare provider at your next visit.',
+    description:
+      'Your symptoms appear to be consistent with your usual COPD status.',
+    recommendation:
+      'Continue your regular COPD management plan. If you have concerns about your overall COPD control, consider discussing them with your healthcare provider at your next visit.',
     severity: 'low',
   },
 };
