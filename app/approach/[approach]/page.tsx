@@ -256,7 +256,7 @@ export default function ApproachPage() {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 ">
         <div className="flex-1 overflow-y-auto">
           <div className="p-1 md:p-2 w-full">
             {!chapterExists || error ? (
