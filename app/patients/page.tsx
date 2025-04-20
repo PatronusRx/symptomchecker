@@ -513,7 +513,12 @@ export default function PatientsPage() {
 
   // Handle symptom category click
   const handleCategoryClick = (route: string) => {
-    router.push(`/patients/${route}`);
+    // Special routing for Focal Weakness which is in the approach directory
+    if (route === 'focal-weakness') {
+      router.push(`/approach/${route}`);
+    } else {
+      router.push(`/patients/${route}`);
+    }
   };
 
   // Filter categories based on search term

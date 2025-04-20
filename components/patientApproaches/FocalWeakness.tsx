@@ -1,4 +1,5 @@
-'use client';
+'use client'; // This directive is needed when using Next.js App Router
+
 import { useState } from 'react';
 import {
   ChevronRight,
@@ -9,38 +10,20 @@ import {
   Home,
 } from 'lucide-react';
 
-// Define types for our data structure
-interface Question {
-  id: string;
-  label: string;
-  options: string[];
-  emergency?: string | string[];
-}
-
-interface Section {
-  title: string;
-  questions: Question[];
-  isEmergency?: boolean;
-}
-
-interface ResponsesType {
-  [key: string]: string;
-}
-
 export default function FocalWeaknessTracker() {
   const [currentSection, setCurrentSection] = useState(0);
-  const [responses, setResponses] = useState<ResponsesType>({});
+  const [responses, setResponses] = useState({});
   const [showReview, setShowReview] = useState(false);
   const [copied, setCopied] = useState(false);
   const [showEmergencyAlert, setShowEmergencyAlert] = useState(false);
 
-  const sections: Section[] = [
+  const sections = [
     {
-      title: 'lucas',
+      title: 'Symptom Onset',
       questions: [
         {
           id: 'onset_type',
-          label: 'IS very gay',
+          label: 'How did your weakness start?',
           options: [
             'Suddenly (within minutes)',
             'Gradually (over hours or days)',
@@ -238,9 +221,9 @@ export default function FocalWeaknessTracker() {
     },
   ];
 
-  const checkForEmergency = (section: Section, answers: ResponsesType) => {
+  const checkForEmergency = (section, answers) => {
     if (section.isEmergency) {
-      const hasEmergencyResponse = section.questions.some((q: Question) => {
+      const hasEmergencyResponse = section.questions.some((q) => {
         const response = answers[q.id];
         return (
           q.emergency === response ||
@@ -254,7 +237,7 @@ export default function FocalWeaknessTracker() {
     }
   };
 
-  const handleOptionSelect = (questionId: string, answer: string) => {
+  const handleOptionSelect = (questionId, answer) => {
     const newResponses = { ...responses, [questionId]: answer };
     setResponses(newResponses);
 
@@ -288,10 +271,12 @@ export default function FocalWeaknessTracker() {
       resultText += '\n';
     });
 
-    navigator.clipboard.writeText(resultText).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
-    });
+    if (typeof navigator !== 'undefined') {
+      navigator.clipboard.writeText(resultText).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
+      });
+    }
   };
 
   const handleRestart = () => {
