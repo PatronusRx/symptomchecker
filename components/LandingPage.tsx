@@ -117,7 +117,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-6 sm:mt-8">
-                  <div
+                  {/* <div
                     className="flex-shrink-0 p-2 rounded-md"
                     style={{ background: '#243b53' }}
                   >
@@ -132,7 +132,7 @@ export default function Home() {
                     <p className="text-xs" style={{ color: '#2dd4bf' }}>
                       SOC 2
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div
