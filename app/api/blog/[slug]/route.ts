@@ -6,7 +6,8 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  const slug = params.slug;
+  // Destructure slug from params to avoid using params.slug directly
+  const { slug } = params;
 
   try {
     // Find the page by slug
