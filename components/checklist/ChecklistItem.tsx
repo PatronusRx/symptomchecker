@@ -22,6 +22,10 @@ interface ChecklistItemProps {
   compact?: boolean; // New prop for compact view in grid layout
 }
 
+/**
+ * ChecklistItemComponent renders an individual symptom or finding that can be marked as present, absent, or not applicable
+ * It handles different views (compact/full), hierarchical nesting, and user notes input
+ */
 const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
   item,
   handleResponseChange,
@@ -119,27 +123,27 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
       {isHeader ? (
         // Render header-style item - simplified for grid
         <div
-          className={`px-3 py-2 bg-blue-50 rounded-md ${containerMargin} ${headerClass} ${shadowClass}`}
+          className={`checklistHeader px-3 py-2 bg-blue-50 rounded-md ${containerMargin} ${headerClass} ${shadowClass}`}
         >
           {item.item_text}
         </div>
       ) : (
         // Render regular checklist item - optimized for grid
         <div
-          className={`${containerPadding} hover:bg-gray-50 transition-all duration-150 rounded-md ${containerMargin} 
+          className={`checklistItem ${containerPadding} hover:bg-gray-50 transition-all duration-150 rounded-md ${containerMargin} 
             ${shadowClass} border-l-4 ${borderColorClass} border border-gray-100 
             ${bgColorClass} ${itemDepthClass} ${textSize}`}
           style={{
             borderColor: indentLevel > 0 ? 'rgba(209, 213, 219, 0.8)' : '',
           }}
         >
-          <div className="flex flex-wrap items-start gap-2">
-            <div className="flex-1 mr-1">
-              <div className="text-gray-900 font-medium mb-1 flex items-start">
+          <div className="checklistItemContent flex flex-wrap items-start gap-2">
+            <div className="checklistItemText flex-1 mr-1">
+              <div className="itemTitle text-gray-900 font-medium mb-1 flex items-start">
                 {indentLevel > 0 && !compact && (
                   <CornerDownRight
                     size={16}
-                    className="mr-1 mt-1 text-blue-400 flex-shrink-0"
+                    className="indentMarker mr-1 mt-1 text-blue-400 flex-shrink-0"
                   />
                 )}
                 <span>{item.item_text}</span>
@@ -147,21 +151,21 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
 
               {/* Input field for items with blanks - more compact in grid */}
               {hasBlankField && (
-                <div className="mt-1 pl-3 border-l border-gray-100 ml-1">
-                  <label className="block text-xs text-gray-600 mb-1">
+                <div className="itemInputField mt-1 pl-3 border-l border-gray-100 ml-1">
+                  <label className="inputLabel block text-xs text-gray-600 mb-1">
                     {getLabelFromText()}
                   </label>
-                  <div className="flex items-center">
+                  <div className="inputWrapper flex items-center">
                     <input
                       type="text"
-                      className="w-full border border-gray-300 rounded-md px-2 py-1 text-sm"
+                      className="valueInput w-full border border-gray-300 rounded-md px-2 py-1 text-sm"
                       placeholder="Enter value"
                       value={item.notes || ''}
                       onChange={(e) =>
                         handleNotesChange(item.id, e.target.value)
                       }
                     />
-                    <span className="ml-1 text-xs text-gray-500">
+                    <span className="unitLabel ml-1 text-xs text-gray-500">
                       {getUnitFromText()}
                     </span>
                   </div>
@@ -169,9 +173,9 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
               )}
             </div>
 
-            <div className="flex space-x-1 flex-shrink-0">
+            <div className="responseButtonsGroup flex space-x-1 flex-shrink-0">
               <button
-                className={`p-1 rounded-full ${buttonSize} flex items-center justify-center ${
+                className={`yesButton p-1 rounded-full ${buttonSize} flex items-center justify-center ${
                   item.response === '+'
                     ? 'bg-green-100 text-green-700 border-2 border-green-500'
                     : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600'
@@ -187,7 +191,7 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
                 <PlusCircle size={iconSize} />
               </button>
               <button
-                className={`p-1 rounded-full ${buttonSize} flex items-center justify-center ${
+                className={`noButton p-1 rounded-full ${buttonSize} flex items-center justify-center ${
                   item.response === '-'
                     ? 'bg-red-100 text-red-700 border-2 border-red-500'
                     : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600'
@@ -203,7 +207,7 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
                 <MinusCircle size={iconSize} />
               </button>
               <button
-                className={`p-1 rounded-full ${buttonSize} flex items-center justify-center ${
+                className={`naButton p-1 rounded-full ${buttonSize} flex items-center justify-center ${
                   item.response === 'NA'
                     ? 'bg-gray-200 text-gray-700 border-2 border-gray-400'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -222,7 +226,7 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
               {/* Only show expand/collapse button if item has children */}
               {hasChildren && (
                 <button
-                  className={`p-1 rounded-full ${buttonSize} flex items-center justify-center bg-gray-100 text-gray-600 hover:bg-gray-200`}
+                  className={`toggleChildrenButton p-1 rounded-full ${buttonSize} flex items-center justify-center bg-gray-100 text-gray-600 hover:bg-gray-200`}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleItemExpansion(item.id);
@@ -242,28 +246,27 @@ const ChecklistItemComponent: React.FC<ChecklistItemProps> = ({
           {/* Notes input field - shown for '+' and '-' responses - but only if not already has blank field */}
           {(item.response === '+' || item.response === '-') &&
             !hasBlankField && (
-              <div className="mt-2 border-l border-gray-100 pl-3">
+              <div className="notesFieldWrapper mt-2 border-l border-gray-100 pl-3">
                 <textarea
-                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  className="notesTextarea w-full p-2 border border-gray-300 rounded-md text-sm"
                   rows={compact ? 1 : 2}
                   placeholder={
                     item.response === '+' ? 'Add details...' : 'Add notes...'
                   }
                   value={item.notes || ''}
                   onChange={(e) => handleNotesChange(item.id, e.target.value)}
-                />
+                ></textarea>
               </div>
             )}
-        </div>
-      )}
 
-      {/* Render children with enhanced visual connector */}
-      {hasChildren && item.isExpanded && (
-        <div className={`mb-2 ${childrenContainer}`}>
-          {item.childItems &&
-            item.childItems.map((childItem) =>
-              renderChecklistItem(childItem, depth + 1)
-            )}
+          {/* Child items - only render when parent is expanded */}
+          {hasChildren && item.isExpanded && (
+            <div className={`childItemsContainer ${childrenContainer}`}>
+              {item.childItems?.map((childItem) =>
+                renderChecklistItem(childItem, depth + 1)
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>

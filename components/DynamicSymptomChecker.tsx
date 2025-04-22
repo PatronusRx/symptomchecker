@@ -127,23 +127,23 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
   completionPercentage,
 }) => {
   return (
-    <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
-      {/* Progress bar */}
-      <div className="px-4 pt-3">
-        <div className="bg-gray-100 h-2 rounded-full overflow-hidden">
+    <div className="categoryNavigationBar bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+      {/* Progress bar to show overall completion status */}
+      <div className="progressBarContainer px-4 pt-3">
+        <div className="progressBarTrack bg-gray-100 h-2 rounded-full overflow-hidden">
           <div
-            className="bg-blue-500 h-full rounded-full transition-all duration-500 ease-in-out"
+            className="progressBarFill bg-blue-500 h-full rounded-full transition-all duration-500 ease-in-out"
             style={{ width: `${completionPercentage}%` }}
           ></div>
         </div>
-        <div className="text-xs text-center mt-1 text-gray-500">
+        <div className="progressPercentage text-xs text-center mt-1 text-gray-500">
           {completionPercentage}% complete
         </div>
       </div>
 
-      {/* Scrollable categories */}
-      <div className="overflow-x-auto no-scrollbar py-2 px-2">
-        <div className="flex space-x-2 min-w-max">
+      {/* Scrollable categories horizontal navigation */}
+      <div className="categoryScrollContainer overflow-x-auto no-scrollbar py-2 px-2">
+        <div className="categoryButtonsRow flex space-x-2 min-w-max">
           {categories.map((category) => {
             const isActive = activeCategory === category.id;
             const hasCompleted = hasCategoryCompletedItems(category.id);
@@ -151,7 +151,7 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
             return (
               <button
                 key={category.id}
-                className={`flex flex-col items-center px-3 py-2 rounded-lg transition-colors ${
+                className={`categoryNavButton flex flex-col items-center px-3 py-2 rounded-lg transition-colors ${
                   isActive
                     ? 'bg-blue-50 text-blue-700 border-b-2 border-blue-500'
                     : 'text-gray-600 hover:bg-gray-50'
@@ -159,16 +159,16 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
                 onClick={() => setActiveCategory(category.id)}
               >
                 <div
-                  className={`relative ${
+                  className={`categoryIconWrapper relative ${
                     isActive ? 'text-blue-600' : 'text-gray-400'
                   }`}
                 >
                   {getCategoryIcon(category.title)}
                   {hasCompleted && !isActive && (
-                    <span className="absolute -top-1 -right-1 h-2 w-2 bg-green-500 rounded-full"></span>
+                    <span className="completionIndicator absolute -top-1 -right-1 h-2 w-2 bg-green-500 rounded-full"></span>
                   )}
                 </div>
-                <span className="mt-1 text-xs font-medium truncate max-w-[80px] text-center">
+                <span className="categoryLabel mt-1 text-xs font-medium truncate max-w-[80px] text-center">
                   {category.title}
                 </span>
               </button>

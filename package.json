@@ -15,6 +15,10 @@
     "migrate:full": "npm run clear:db && npm run migrate && node verify-fix-hierarchies-simple.js"
   },
   "dependencies": {
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^2.3.0",
     "@radix-ui/react-tabs": "^1.1.4",
     "@supabase/supabase-js": "^2.49.1",
     "clsx": "^2.1.1",

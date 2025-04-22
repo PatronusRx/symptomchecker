@@ -1,6 +1,8 @@
 'use client';
+import { fetchPages } from '@/lib/notion';
 import LandingPage from '@/components/LandingPage';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await fetchPages();
   return <LandingPage />;
 }
