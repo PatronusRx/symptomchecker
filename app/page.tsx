@@ -1,4 +1,3 @@
-'use client';
 import { fetchPages } from '@/lib/notion';
 import LandingPage from '@/components/LandingPage';
 

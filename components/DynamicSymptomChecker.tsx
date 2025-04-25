@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 import {
@@ -42,6 +42,7 @@ import ChecklistItemComponent from './checklist/ChecklistItem';
 import SoapNoteDisplay from './soap/SoapNoteDisplay';
 import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
 import HighDensityChecklist from './checklist/HighDensityChecklist';
+import { useSoap } from './contexts/SoapContext';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -186,6 +187,16 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   // Add router for navigation
   const router = useRouter();
 
+  // Add SOAP context
+  const {
+    approaches,
+    patientInfo,
+    setPatientInfo,
+    addOrUpdateApproach,
+    clearAllData,
+    getCombinedSoapNote,
+  } = useSoap();
+
   // State for data from Supabase
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -210,6 +221,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     plan: '',
   });
 
+  const shouldGenerateSoapNote = useRef(false);
+
   // UI states
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -218,26 +231,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   const [showMobilePreview, setShowMobilePreview] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(false);
   const [systemContext, setSystemContext] = useState<string | null>(null);
-
-  // Patient info state
-  const [patientInfo, setPatientInfo] = useState({
-    name: 'New Patient',
-    dob: '',
-    mrn: '',
-    visitDate: new Date().toISOString().split('T')[0],
-  });
-
-  // Function to update SOAP note - separate from state updates for better performance
-  const updateSoapNote = useCallback(() => {
-    const noteData = SoapNoteGenerator.generateNote(
-      checklistItems,
-      categories,
-      sections,
-      chapter,
-      duration
-    );
-    setGeneratedNote(noteData);
-  }, [checklistItems, categories, sections, chapter, duration]);
 
   // Get sections for the active category
   const getActiveCategorySections = useCallback(() => {
@@ -522,13 +515,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     }
   }, [loading, checklistItems.length]);
 
-  // Update SOAP note whenever relevant state changes
-  useEffect(() => {
-    if (!loading && checklistItems.length > 0) {
-      updateSoapNote();
-    }
-  }, [checklistItems, loading, updateSoapNote]);
-
   // Automatically adjust grid columns based on screen size
   useEffect(() => {
     const handleResize = () => {
@@ -574,10 +560,58 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     [triggerAutosave]
   );
 
+  // Generate SOAP note and save to context
+  const generateSoapNote = useCallback(() => {
+    const noteData = SoapNoteGenerator.generateNote(
+      checklistItems,
+      categories,
+      sections,
+      chapter,
+      duration
+    );
+
+    if (chapter) {
+      addOrUpdateApproach({
+        title: chapter.title,
+        slug: chapterSlug,
+        soapNote: noteData,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    setGeneratedNote(noteData);
+    return noteData;
+  }, [
+    checklistItems,
+    categories,
+    sections,
+    chapter,
+    duration,
+    chapterSlug,
+    addOrUpdateApproach,
+  ]);
+
+  useEffect(() => {
+    if (
+      !loading &&
+      checklistItems.length > 0 &&
+      chapter &&
+      shouldGenerateSoapNote.current
+    ) {
+      generateSoapNote();
+      shouldGenerateSoapNote.current = false;
+    }
+  }, [loading, checklistItems, chapter, duration]);
+
+  useEffect(() => {
+    if (!loading && checklistItems.length > 0) {
+      shouldGenerateSoapNote.current = true;
+    }
+  }, [checklistItems, duration]);
+
   // Handle response change (+/-/NA)
   const handleResponseChange = useCallback(
     (itemId: string, value: '+' | '-' | 'NA' | null) => {
-      // Function to recursively update child items
       const updateChildItems = (
         items: ChecklistItem[],
         parentId: string,
@@ -604,16 +638,16 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         });
       };
 
-      // If the value is positive (+), update all child items as well
       if (value === '+') {
         setChecklistItems((items) => updateChildItems(items, itemId, value));
       } else {
-        // For negative (-) or NA, only update the selected item
         updateChecklistItem(itemId, {
           response: value,
           isCompleted: value !== null,
         });
       }
+
+      shouldGenerateSoapNote.current = true;
     },
     [updateChecklistItem]
   );
@@ -621,10 +655,20 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   // Handle notes change
   const handleNotesChange = useCallback(
     (itemId: string, notes: string) => {
-      // Update the item with new notes
       updateChecklistItem(itemId, { notes });
+      shouldGenerateSoapNote.current = true;
     },
     [updateChecklistItem]
+  );
+
+  // Update duration handler to trigger SOAP note generation
+  const handleDurationChange = useCallback(
+    (value: string) => {
+      setDuration(value);
+      triggerAutosave();
+      shouldGenerateSoapNote.current = true;
+    },
+    [triggerAutosave]
   );
 
   // Toggle item expansion state
@@ -667,43 +711,32 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     [handleResponseChange, handleNotesChange, toggleItemExpansion, viewMode]
   );
 
-  // Generate SOAP note
-  const generateSoapNote = useCallback(() => {
-    const noteData = SoapNoteGenerator.generateNote(
-      checklistItems,
-      categories,
-      sections,
-      chapter,
-      duration
-    );
-    setGeneratedNote(noteData);
-    return noteData;
-  }, [checklistItems, categories, sections, chapter, duration]);
-
-  // Handle copy to clipboard
+  // Modified copyToClipboard - always uses combined note
   const copyToClipboard = useCallback(() => {
+    const combinedNote = getCombinedSoapNote();
     const soapText = SoapNoteGenerator.formatForClipboard(
-      generatedNote,
+      combinedNote,
       patientInfo
     );
 
     navigator.clipboard
       .writeText(soapText)
       .then(() => {
-        alert('SOAP note copied to clipboard!');
+        alert('Combined SOAP note copied to clipboard!');
       })
       .catch((err) => {
         console.error('Failed to copy: ', err);
       });
-  }, [patientInfo, generatedNote]);
+  }, [patientInfo, getCombinedSoapNote]);
 
-  // Clear all responses (new patient)
+  // Modified clear function - clears all data
   const clearAllResponses = useCallback(() => {
     if (
       window.confirm(
-        'Are you sure you want to clear all responses? This will reset the form for a new patient.'
+        'Are you sure you want to clear all data? This will reset the form for a new patient.'
       )
     ) {
+      clearAllData();
       setChecklistItems((items) =>
         items.map((item) => ({
           ...item,
@@ -715,17 +748,9 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           isExpanded: true,
         }))
       );
-
-      setPatientInfo({
-        name: 'New Patient',
-        dob: '',
-        mrn: '',
-        visitDate: new Date().toISOString().split('T')[0],
-      });
-
       setDuration('');
     }
-  }, []);
+  }, [clearAllData]);
 
   // Check if category has any completed questions
   const hasCategoryCompletedItems = useCallback(
@@ -805,11 +830,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       {/* Top Navigation */}
       <header className="bg-white shadow-sm px-3 py-2 flex justify-between items-center">
         <div className="flex items-center">
-          {/* Back button to return to system view */}
           <button
             className="mr-2 text-blue-500 hover:text-blue-700"
-            onClick={handleSystemBack}
-            aria-label="Back to system view"
+            onClick={() => router.push('/dashboard')}
+            aria-label="Back to dashboard"
           >
             <ArrowLeft size={20} />
           </button>
@@ -822,35 +846,22 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         </div>
 
         <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-1 text-green-600 text-xs">
-            <span
-              className={`transition-opacity duration-300 ${
-                isAutoSaving ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <RefreshCw size={12} className="animate-spin mr-1" />
-            </span>
-            <span
-              className={`transition-opacity duration-300 ${
-                isAutoSaving ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              Autosaving...
-            </span>
+          {/* Patient info display */}
+          <div className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md flex items-center text-xs">
+            <User size={12} className="mr-1.5" />
+            <span className="font-medium">{patientInfo.name}</span>
           </div>
 
-          <div className="hidden md:block">
-            <div className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md flex items-center text-xs">
-              <User size={12} className="mr-1.5" />
-              <span className="font-medium">
-                {patientInfo.name || 'New Patient'}
-              </span>
+          {/* Approach count indicator */}
+          {approaches.length > 0 && (
+            <div className="bg-green-50 text-green-800 px-2 py-1 rounded-md text-xs">
+              {approaches.length} approach{approaches.length !== 1 ? 'es' : ''}
             </div>
-          </div>
+          )}
 
           <button
             onClick={clearAllResponses}
-            className="bg-gray-100 text-gray-600 hidden md:flex items-center px-2 py-1 rounded-md hover:bg-gray-200 transition-colors text-xs font-medium"
+            className="bg-gray-100 text-gray-600 flex items-center px-2 py-1 rounded-md hover:bg-gray-200 transition-colors text-xs font-medium"
           >
             <RefreshCw size={12} className="mr-1" />
             New Patient
@@ -861,8 +872,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             className="bg-green-50 text-green-700 flex items-center px-2 py-1 rounded-md hover:bg-green-100 transition-colors text-xs font-medium"
           >
             <Clipboard size={12} className="mr-1" />
-            <span className="hidden md:inline">Copy SOAP Note</span>
-            <span className="inline md:hidden">Copy</span>
+            Copy Note
           </button>
 
           <button
@@ -953,11 +963,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                       className="w-full p-1.5 border border-gray-300 rounded-md text-sm"
                       placeholder="e.g., 2 days, 1 week, 3 months"
                       value={duration}
-                      onChange={(e) => {
-                        setDuration(e.target.value);
-                        triggerAutosave();
-                        generateSoapNote();
-                      }}
+                      onChange={(e) => handleDurationChange(e.target.value)}
                     />
                   </div>
                 </div>
@@ -1168,13 +1174,18 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             <div className="p-3 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
               <h2 className="text-base font-bold text-gray-800 flex items-center">
                 <FileText className="text-blue-600 mr-1.5" size={16} />
-                SOAP Note Preview
+                Combined SOAP Note
               </h2>
+              {approaches.length > 0 && (
+                <div className="text-xs text-gray-600 mt-1">
+                  Includes: {approaches.map((a) => a.title).join(', ')}
+                </div>
+              )}
             </div>
 
             <div className="flex-1 overflow-y-auto p-3">
               <SoapNoteDisplay
-                soapNote={generatedNote}
+                soapNote={getCombinedSoapNote()}
                 patientInfo={patientInfo}
               />
             </div>
@@ -1197,7 +1208,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
               <div className="p-3">
                 <SoapNoteDisplay
-                  soapNote={generatedNote}
+                  soapNote={getCombinedSoapNote()}
                   patientInfo={patientInfo}
                   isMobile={true}
                 />
