@@ -63,7 +63,7 @@ interface TopCategoryNavProps {
 }
 
 // Function to get the appropriate icon for a category
-const getCategoryIcon = (title: string, size: number = 20) => {
+const getCategoryIcon = (title: string, size: number = 16) => {
   const lowerTitle = title.toLowerCase();
 
   if (
@@ -129,21 +129,21 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
   return (
     <div className="categoryNavigationBar bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
       {/* Progress bar to show overall completion status */}
-      <div className="progressBarContainer px-4 pt-3">
-        <div className="progressBarTrack bg-gray-100 h-2 rounded-full overflow-hidden">
+      <div className="progressBarContainer px-3 pt-2">
+        <div className="progressBarTrack bg-gray-100 h-1.5 rounded-full overflow-hidden">
           <div
             className="progressBarFill bg-blue-500 h-full rounded-full transition-all duration-500 ease-in-out"
             style={{ width: `${completionPercentage}%` }}
           ></div>
         </div>
-        <div className="progressPercentage text-xs text-center mt-1 text-gray-500">
+        <div className="progressPercentage text-xs text-center mt-0.5 text-gray-500">
           {completionPercentage}% complete
         </div>
       </div>
 
       {/* Scrollable categories horizontal navigation */}
-      <div className="categoryScrollContainer overflow-x-auto no-scrollbar py-2 px-2">
-        <div className="categoryButtonsRow flex space-x-2 min-w-max">
+      <div className="categoryScrollContainer overflow-x-auto no-scrollbar py-1 px-2">
+        <div className="categoryButtonsRow flex space-x-1.5 min-w-max">
           {categories.map((category) => {
             const isActive = activeCategory === category.id;
             const hasCompleted = hasCategoryCompletedItems(category.id);
@@ -151,7 +151,7 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
             return (
               <button
                 key={category.id}
-                className={`categoryNavButton flex flex-col items-center px-3 py-2 rounded-lg transition-colors ${
+                className={`categoryNavButton flex flex-col items-center px-2 py-1 rounded-lg transition-colors ${
                   isActive
                     ? 'bg-blue-50 text-blue-700 border-b-2 border-blue-500'
                     : 'text-gray-600 hover:bg-gray-50'
@@ -165,10 +165,10 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
                 >
                   {getCategoryIcon(category.title)}
                   {hasCompleted && !isActive && (
-                    <span className="completionIndicator absolute -top-1 -right-1 h-2 w-2 bg-green-500 rounded-full"></span>
+                    <span className="completionIndicator absolute -top-1 -right-1 h-1.5 w-1.5 bg-green-500 rounded-full"></span>
                   )}
                 </div>
-                <span className="categoryLabel mt-1 text-xs font-medium truncate max-w-[80px] text-center">
+                <span className="categoryLabel mt-0.5 text-xs font-medium truncate max-w-[80px] text-center">
                   {category.title}
                 </span>
               </button>
@@ -761,13 +761,13 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     // For grid or compact view, determine column count
     switch (gridColumns) {
       case 1:
-        return 'grid grid-cols-1 gap-4';
+        return 'grid grid-cols-1 gap-2';
       case 2:
-        return 'grid grid-cols-1 md:grid-cols-2 gap-4';
+        return 'grid grid-cols-1 md:grid-cols-2 gap-2';
       case 3:
-        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4';
+        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2';
       default:
-        return 'grid grid-cols-1 md:grid-cols-2 gap-4';
+        return 'grid grid-cols-1 md:grid-cols-2 gap-2';
     }
   };
 
@@ -778,12 +778,12 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   if (loading) {
     return (
-      <div className="p-4 max-w-4xl mx-auto">
+      <div className="p-3 max-w-4xl mx-auto">
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-1/3 mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-6 bg-gray-200 rounded w-1/3 mb-3"></div>
+          <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
         </div>
       </div>
     );
@@ -791,10 +791,10 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
   if (error) {
     return (
-      <div className="p-4 max-w-4xl mx-auto">
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-          <h2 className="text-lg font-bold">Error</h2>
-          <p>{error}</p>
+      <div className="p-3 max-w-4xl mx-auto">
+        <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded">
+          <h2 className="text-base font-bold">Error</h2>
+          <p className="text-sm">{error}</p>
         </div>
       </div>
     );
@@ -803,32 +803,32 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Top Navigation */}
-      <header className="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
+      <header className="bg-white shadow-sm px-3 py-2 flex justify-between items-center">
         <div className="flex items-center">
           {/* Back button to return to system view */}
           <button
-            className="mr-3 text-blue-500 hover:text-blue-700"
+            className="mr-2 text-blue-500 hover:text-blue-700"
             onClick={handleSystemBack}
             aria-label="Back to system view"
           >
-            <ArrowLeft size={24} />
+            <ArrowLeft size={20} />
           </button>
           <div className="flex items-center">
-            <ClipboardEdit className="text-blue-600 mr-2" size={24} />
-            <h1 className="text-xl font-bold text-gray-800 hidden sm:block">
+            <ClipboardEdit className="text-blue-600 mr-1.5" size={20} />
+            <h1 className="text-lg font-bold text-gray-800 hidden sm:block">
               {chapter?.title || 'Symptom'} Checker
             </h1>
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
-          <div className="flex items-center space-x-1 text-green-600 text-sm">
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 text-green-600 text-xs">
             <span
               className={`transition-opacity duration-300 ${
                 isAutoSaving ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <RefreshCw size={14} className="animate-spin mr-1" />
+              <RefreshCw size={12} className="animate-spin mr-1" />
             </span>
             <span
               className={`transition-opacity duration-300 ${
@@ -840,8 +840,8 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           </div>
 
           <div className="hidden md:block">
-            <div className="bg-blue-50 text-blue-800 px-3 py-1 rounded-md flex items-center text-sm">
-              <User size={14} className="mr-2" />
+            <div className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md flex items-center text-xs">
+              <User size={12} className="mr-1.5" />
               <span className="font-medium">
                 {patientInfo.name || 'New Patient'}
               </span>
@@ -850,17 +850,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
           <button
             onClick={clearAllResponses}
-            className="bg-gray-100 text-gray-600 hidden md:flex items-center px-3 py-1.5 rounded-md hover:bg-gray-200 transition-colors text-sm font-medium"
+            className="bg-gray-100 text-gray-600 hidden md:flex items-center px-2 py-1 rounded-md hover:bg-gray-200 transition-colors text-xs font-medium"
           >
-            <RefreshCw size={14} className="mr-1" />
+            <RefreshCw size={12} className="mr-1" />
             New Patient
           </button>
 
           <button
             onClick={copyToClipboard}
-            className="bg-green-50 text-green-700 flex items-center px-3 py-1.5 rounded-md hover:bg-green-100 transition-colors text-sm font-medium"
+            className="bg-green-50 text-green-700 flex items-center px-2 py-1 rounded-md hover:bg-green-100 transition-colors text-xs font-medium"
           >
-            <Clipboard size={14} className="mr-1" />
+            <Clipboard size={12} className="mr-1" />
             <span className="hidden md:inline">Copy SOAP Note</span>
             <span className="inline md:hidden">Copy</span>
           </button>
@@ -869,7 +869,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
             className="md:hidden text-blue-600"
             onClick={() => setShowMobilePreview(true)}
           >
-            <FileText size={22} />
+            <FileText size={18} />
           </button>
         </div>
       </header>
@@ -889,14 +889,14 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         {showMobileNav && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
             <div className="absolute top-0 left-0 h-full w-64 bg-white shadow-lg z-50 overflow-y-auto">
-              <div className="p-4 flex justify-between items-center border-b">
-                <h2 className="font-bold text-lg">Categories</h2>
+              <div className="p-3 flex justify-between items-center border-b">
+                <h2 className="font-bold text-base">Categories</h2>
                 <button onClick={() => setShowMobileNav(false)}>
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
-              <nav className="py-2">
+              <nav className="py-1">
                 {categories.map((category) => {
                   const isActive = activeCategory === category.id;
                   const hasCompleted = hasCategoryCompletedItems(category.id);
@@ -904,7 +904,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                   return (
                     <button
                       key={category.id}
-                      className={`w-full text-left px-4 py-3 flex items-center ${
+                      className={`w-full text-left px-3 py-2 flex items-center ${
                         isActive
                           ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
                           : 'border-l-4 border-transparent'
@@ -917,13 +917,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                       <span
                         className={isActive ? 'text-blue-600' : 'text-gray-400'}
                       >
-                        {getCategoryIcon(category.title, 18)}
+                        {getCategoryIcon(category.title, 16)}
                       </span>
-                      <span className="ml-3 flex-1">{category.title}</span>
+                      <span className="ml-2 flex-1 text-sm">
+                        {category.title}
+                      </span>
 
                       {/* Status indicators */}
                       {hasCompleted && !isActive && (
-                        <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+                        <span className="h-1.5 w-1.5 bg-green-500 rounded-full"></span>
                       )}
                     </button>
                   );
@@ -937,18 +939,18 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         <div className="flex h-full">
           {/* Main Content - Checklist Items Display */}
           <main className="flex-1 overflow-y-auto">
-            <div className="max-w-7xl mx-auto p-4">
+            <div className="max-w-7xl mx-auto p-3">
               {/* Duration Input */}
-              <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+              <div className="bg-white rounded-lg shadow-sm p-3 mb-3">
                 <div className="flex items-center">
-                  <Clock size={20} className="text-blue-500 mr-2" />
+                  <Clock size={16} className="text-blue-500 mr-1.5" />
                   <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Duration of Symptoms
                     </label>
                     <input
                       type="text"
-                      className="w-full p-2 border border-gray-300 rounded-md"
+                      className="w-full p-1.5 border border-gray-300 rounded-md text-sm"
                       placeholder="e.g., 2 days, 1 week, 3 months"
                       value={duration}
                       onChange={(e) => {
@@ -962,76 +964,76 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
               </div>
 
               {/* View Mode Controls */}
-              <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
+              <div className="bg-white rounded-lg shadow-sm p-3 mb-3">
                 <div className="flex flex-wrap items-center justify-between">
                   <div>
-                    <h2 className="text-lg font-bold text-blue-800">
+                    <h2 className="text-base font-bold text-blue-800">
                       {categories.find((c) => c.id === activeCategory)?.title ||
                         'Questions'}
                     </h2>
-                    <div className="text-sm text-blue-600">
+                    <div className="text-xs text-blue-600">
                       {getActiveCategoryStats().completed}/
                       {getActiveCategoryStats().total} completed
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2 mt-2 sm:mt-0">
-                    <span className="text-sm text-gray-500">View:</span>
+                  <div className="flex items-center space-x-1.5 mt-1.5 sm:mt-0">
+                    <span className="text-xs text-gray-500">View:</span>
                     <button
                       onClick={() => setViewMode('high-density')}
-                      className={`p-1.5 rounded ${
+                      className={`p-1 rounded ${
                         viewMode === 'high-density'
                           ? 'bg-blue-100 text-blue-700'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       title="High Density View"
                     >
-                      <Grid3X3 size={18} />
+                      <Grid3X3 size={14} />
                     </button>
                     <button
                       onClick={() => setViewMode('grid')}
-                      className={`p-1.5 rounded ${
+                      className={`p-1 rounded ${
                         viewMode === 'grid'
                           ? 'bg-blue-100 text-blue-700'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       title="Grid View"
                     >
-                      <Grid size={18} />
+                      <Grid size={14} />
                     </button>
                     <button
                       onClick={() => setViewMode('compact')}
-                      className={`p-1.5 rounded ${
+                      className={`p-1 rounded ${
                         viewMode === 'compact'
                           ? 'bg-blue-100 text-blue-700'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       title="Compact View"
                     >
-                      <Layers size={18} />
+                      <Layers size={14} />
                     </button>
                     <button
                       onClick={() => setViewMode('list')}
-                      className={`p-1.5 rounded ${
+                      className={`p-1 rounded ${
                         viewMode === 'list'
                           ? 'bg-blue-100 text-blue-700'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       title="List View"
                     >
-                      <List size={18} />
+                      <List size={14} />
                     </button>
 
                     {viewMode !== 'high-density' && (
-                      <div className="hidden sm:flex items-center ml-2 border-l pl-2">
-                        <span className="text-sm text-gray-500 mr-1">
+                      <div className="hidden sm:flex items-center ml-1.5 border-l pl-1.5">
+                        <span className="text-xs text-gray-500 mr-1">
                           Columns:
                         </span>
                         {[1, 2, 3].map((cols) => (
                           <button
                             key={cols}
                             onClick={() => setGridColumns(cols)}
-                            className={`w-6 h-6 flex items-center justify-center rounded ml-1 ${
+                            className={`w-5 h-5 flex items-center justify-center rounded ml-1 text-xs ${
                               gridColumns === cols
                                 ? 'bg-blue-100 text-blue-700'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -1048,7 +1050,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
 
               {/* High Density View */}
               {viewMode === 'high-density' ? (
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden h-[calc(100vh-240px)]">
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden h-[calc(100vh-200px)]">
                   <HighDensityChecklist
                     checklistItems={checklistItems}
                     categories={categories}
@@ -1067,11 +1069,11 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
               ) : (
                 <>
                   {/* Tab navigation for sections */}
-                  <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-2 border-b border-gray-200 mb-0.5">
+                  <div className="flex overflow-x-auto no-scrollbar space-x-1 bg-white rounded-t-lg shadow-sm p-1.5 border-b border-gray-200 mb-0.5">
                     {getActiveCategorySections().map((section) => (
                       <button
                         key={section.id}
-                        className={`whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                        className={`whitespace-nowrap px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                           selectedSection === section.id ||
                           (!selectedSection && viewMode === 'list')
                             ? 'bg-blue-100 text-blue-800'
@@ -1084,7 +1086,7 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                     ))}
                     {selectedSection && (
                       <button
-                        className="whitespace-nowrap px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                        className="whitespace-nowrap px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
                         onClick={() => setSelectedSection(null)}
                       >
                         Show All
@@ -1105,17 +1107,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                         .map((sectionGroup) => (
                           <div
                             key={sectionGroup.section.id}
-                            className="border-b border-gray-200 mb-3"
+                            className="border-b border-gray-200 mb-2"
                           >
                             {/* Section Title */}
-                            <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
-                              <h3 className="text-md font-semibold text-blue-700">
+                            <div className="px-3 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm rounded-t-md">
+                              <h3 className="text-sm font-semibold text-blue-700">
                                 {sectionGroup.section.title}
                               </h3>
                             </div>
 
                             {/* Section Items */}
-                            <div className="p-4 bg-white rounded-b-md">
+                            <div className="p-3 bg-white rounded-b-md">
                               {/* Render top-level items with recursive function */}
                               {buildNestedItemsHierarchy(
                                 sectionGroup.items
@@ -1136,17 +1138,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
                         .map((sectionGroup) => (
                           <div
                             key={sectionGroup.section.id}
-                            className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden h-fit"
+                            className="bg-white rounded-lg shadow-sm mb-3 overflow-hidden h-fit"
                           >
                             {/* Section Title */}
-                            <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
-                              <h3 className="text-md font-semibold text-blue-700">
+                            <div className="px-3 py-2 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200">
+                              <h3 className="text-sm font-semibold text-blue-700">
                                 {sectionGroup.section.title}
                               </h3>
                             </div>
 
                             {/* Section Items */}
-                            <div className="p-3">
+                            <div className="p-2">
                               {/* Render top-level items with recursive function */}
                               {buildNestedItemsHierarchy(
                                 sectionGroup.items
@@ -1162,15 +1164,15 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           </main>
 
           {/* Right Sidebar - SOAP Note Preview */}
-          <aside className="bg-white shadow-sm hidden md:flex flex-col w-96 border-l border-gray-200 overflow-hidden">
-            <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
-              <h2 className="text-lg font-bold text-gray-800 flex items-center">
-                <FileText className="text-blue-600 mr-2" size={18} />
+          <aside className="bg-white shadow-sm hidden md:flex flex-col w-80 border-l border-gray-200 overflow-hidden">
+            <div className="p-3 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50">
+              <h2 className="text-base font-bold text-gray-800 flex items-center">
+                <FileText className="text-blue-600 mr-1.5" size={16} />
                 SOAP Note Preview
               </h2>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4">
+            <div className="flex-1 overflow-y-auto p-3">
               <SoapNoteDisplay
                 soapNote={generatedNote}
                 patientInfo={patientInfo}
@@ -1183,17 +1185,17 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
         {showMobilePreview && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
             <div className="absolute top-0 right-0 h-full w-full bg-white shadow-lg z-50 overflow-y-auto">
-              <div className="p-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
-                <h2 className="font-bold text-lg flex items-center">
-                  <FileText className="text-blue-600 mr-2" size={18} />
+              <div className="p-3 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 className="font-bold text-base flex items-center">
+                  <FileText className="text-blue-600 mr-1.5" size={16} />
                   SOAP Note Preview
                 </h2>
                 <button onClick={() => setShowMobilePreview(false)}>
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
-              <div className="p-4">
+              <div className="p-3">
                 <SoapNoteDisplay
                   soapNote={generatedNote}
                   patientInfo={patientInfo}
@@ -1202,18 +1204,18 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
               </div>
 
               {/* Bottom action bar */}
-              <div className="sticky bottom-0 bg-white border-t border-gray-200 p-3 flex justify-between">
+              <div className="sticky bottom-0 bg-white border-t border-gray-200 p-2 flex justify-between">
                 <button
                   onClick={() => setShowMobilePreview(false)}
-                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md"
+                  className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-md text-sm"
                 >
                   Back to Checklist
                 </button>
                 <button
                   onClick={copyToClipboard}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center"
+                  className="px-3 py-1.5 bg-blue-600 text-white rounded-md flex items-center text-sm"
                 >
-                  <Clipboard size={16} className="mr-1" />
+                  <Clipboard size={14} className="mr-1" />
                   Copy SOAP Note
                 </button>
               </div>

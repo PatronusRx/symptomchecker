@@ -291,20 +291,6 @@ export default function ApproachPage() {
               </div>
             ) : (
               <>
-                <div className="bg-white p-4 rounded-lg shadow mb-4">
-                  <h2 className="text-xl font-semibold mb-3">
-                    About this approach
-                  </h2>
-                  <p>
-                    This approach helps you diagnose and manage cases related to{' '}
-                    {approach.toLowerCase()}.
-                  </p>
-                  <div className="mt-3 p-2 bg-blue-50 rounded-md text-sm">
-                    <strong>Note:</strong> Chapter #{chapter?.chapter_number}:{' '}
-                    {chapter?.title}
-                  </div>
-                </div>
-
                 <div className="bg-white p-4 rounded-lg shadow">
                   <DynamicSymptomChecker chapterSlug={approachParam || ''} />
                 </div>
