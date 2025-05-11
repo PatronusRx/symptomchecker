@@ -82,8 +82,11 @@ export default function ApproachSidebar({
 
       {/* Sections and approaches */}
       <div className="flex-1 overflow-y-auto">
-        {filteredSections.map((section) => (
-          <div key={section.section} className="border-b border-gray-100">
+        {filteredSections.map((section, sectionIndex) => (
+          <div
+            key={`sidebar-section-${section.section}-${sectionIndex}`}
+            className="border-b border-gray-100"
+          >
             {/* Section header */}
             <button
               className="w-full px-3 py-2 flex items-center justify-between hover:bg-gray-50 bg-gray-50"
@@ -104,13 +107,13 @@ export default function ApproachSidebar({
             {/* Approaches list */}
             {expandedSections[section.section] && (
               <div className="pl-3 pr-2 pb-2">
-                {section.approaches.map((approach) => {
+                {section.approaches.map((approach, approachIndex) => {
                   const isActive = currentApproach === approach;
                   const isSelected = isApproachSelected(approach);
 
                   return (
                     <button
-                      key={approach}
+                      key={`sidebar-approach-${section.section}-${approach}-${approachIndex}`}
                       className={`w-full text-left px-2 py-2 text-sm rounded-md mb-1 flex items-center group transition-colors ${
                         isActive
                           ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
@@ -151,9 +154,9 @@ export default function ApproachSidebar({
             Selected Approaches ({approaches.length})
           </div>
           <div className="space-y-1">
-            {approaches.map((approach) => (
+            {approaches.map((approach, index) => (
               <div
-                key={approach.title}
+                key={`selected-approach-${approach.title}-${index}`}
                 className="flex items-center text-xs text-gray-600"
               >
                 <CheckCircle2 size={12} className="text-green-500 mr-1.5" />

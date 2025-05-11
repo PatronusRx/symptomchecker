@@ -126,9 +126,9 @@ export default function SectionBasedDashboard() {
           </div>
         ) : (
           <div className="sectionsContainer space-y-4">
-            {filteredSections.map((section) => (
+            {filteredSections.map((section, sectionIndex) => (
               <div
-                key={section.section}
+                key={`dashboard-section-${section.section}-${sectionIndex}`}
                 className="sectionCard bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden"
               >
                 {/* Section header with toggle button */}
@@ -173,9 +173,9 @@ export default function SectionBasedDashboard() {
                 {/* Approaches list - displayed when section is expanded */}
                 {expandedSections[section.section] && (
                   <div className="approachesGrid p-4 grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                    {section.approaches.map((approach) => (
+                    {section.approaches.map((approach, approachIndex) => (
                       <button
-                        key={approach}
+                        key={`dashboard-approach-${section.section}-${approach}-${approachIndex}`}
                         className="approachItem text-left p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded border-l-4 border-blue-500 transition-colors"
                         onClick={() => handleApproachClick(approach)}
                       >

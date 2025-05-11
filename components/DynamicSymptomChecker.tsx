@@ -567,7 +567,7 @@ export default function DynamicSymptomChecker({
 
     if (chapter) {
       addOrUpdateApproach({
-        title: chapter.title,
+        title: `${chapter.title}-${Date.now()}`,
         slug: chapterSlug,
         soapNote: noteData,
         timestamp: new Date().toISOString(),
@@ -867,7 +867,7 @@ export default function DynamicSymptomChecker({
 
       // Update the SOAP context with the new approach
       addOrUpdateApproach({
-        title: approach,
+        title: `${approach}-${Date.now()}`,
         slug: approach.toLowerCase().replace(/\s+/g, '-'),
         soapNote: generateSoapNote(),
         timestamp: new Date().toISOString(),
