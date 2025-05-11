@@ -58,7 +58,7 @@ export default function ApproachSidebar({
 
   // Check if an approach is selected
   const isApproachSelected = (approach: string) => {
-    return approaches.some((a) => a.title === approach);
+    return approaches.some((a) => a.title.split('-')[0] === approach);
   };
 
   return (
@@ -80,6 +80,27 @@ export default function ApproachSidebar({
         </div>
       </div>
 
+      {/* Selected approaches summary */}
+      {approaches.length > 0 && (
+        <div className="p-3 border-t border-gray-200 bg-gray-50">
+          <div className="text-xs font-medium text-gray-700 mb-1">
+            Selected Approaches ({approaches.length})
+          </div>
+          <div className="space-y-1">
+            {Array.from(
+              new Set(approaches.map((a) => a.title.split('-')[0]))
+            ).map((approachTitle, index) => (
+              <div
+                key={`selected-approach-${approachTitle}-${index}`}
+                className="flex items-center text-xs text-gray-600"
+              >
+                <CheckCircle2 size={12} className="text-green-500 mr-1.5" />
+                <span className="truncate">{approachTitle}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       {/* Sections and approaches */}
       <div className="flex-1 overflow-y-auto">
         {filteredSections.map((section, sectionIndex) => (
@@ -146,26 +167,6 @@ export default function ApproachSidebar({
           </div>
         )}
       </div>
-
-      {/* Selected approaches summary */}
-      {approaches.length > 0 && (
-        <div className="p-3 border-t border-gray-200 bg-gray-50">
-          <div className="text-xs font-medium text-gray-700 mb-1">
-            Selected Approaches ({approaches.length})
-          </div>
-          <div className="space-y-1">
-            {approaches.map((approach, index) => (
-              <div
-                key={`selected-approach-${approach.title}-${index}`}
-                className="flex items-center text-xs text-gray-600"
-              >
-                <CheckCircle2 size={12} className="text-green-500 mr-1.5" />
-                <span className="truncate">{approach.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
