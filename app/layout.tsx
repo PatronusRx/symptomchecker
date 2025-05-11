@@ -80,12 +80,12 @@ export default function RootLayout({
                 >
                   Blog
                 </Link>
-                <Link
+                {/* <Link
                   href="/patients"
                   className="navLink text-gray-300 hover:text-teal-400"
                 >
                   For Patients
-                </Link>
+                </Link> */}
               </nav>
 
               <div className="headerActions flex items-center space-x-4">
