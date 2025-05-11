@@ -43,6 +43,7 @@ import SoapNoteDisplay from './soap/SoapNoteDisplay';
 import { SoapNoteGenerator } from './soap/SoapNoteGenerator';
 import HighDensityChecklist from './checklist/HighDensityChecklist';
 import { useSoap } from './contexts/SoapContext';
+import ApproachSidebar from './ApproachSidebar';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -181,9 +182,38 @@ const TopCategoryNav: React.FC<TopCategoryNavProps> = ({
   );
 };
 
-const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
+export default function DynamicSymptomChecker({
   chapterSlug,
-}) => {
+}: DynamicSymptomCheckerProps) {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [chapter, setChapter] = useState<Chapter | null>(null);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [sections, setSections] = useState<Section[]>([]);
+  const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<
+    'grid' | 'list' | 'compact' | 'high-density'
+  >('grid');
+  const [gridColumns, setGridColumns] = useState(2);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showMobilePreview, setShowMobilePreview] = useState(false);
+  const [duration, setDuration] = useState('');
+  const [systemContext, setSystemContext] = useState<string | null>(null);
+  const [selectedApproach, setSelectedApproach] = useState<string | undefined>(
+    chapterSlug
+  );
+  const [isAutoSaving, setIsAutoSaving] = useState(false);
+  const [generatedNote, setGeneratedNote] = useState({
+    subjective: '',
+    objective: '',
+    assessment: '',
+    plan: '',
+  });
+
+  const shouldGenerateSoapNote = useRef(false);
+
   // Add router for navigation
   const router = useRouter();
 
@@ -196,41 +226,6 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     clearAllData,
     getCombinedSoapNote,
   } = useSoap();
-
-  // State for data from Supabase
-  const [chapter, setChapter] = useState<Chapter | null>(null);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [sections, setSections] = useState<Section[]>([]);
-  const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([]);
-
-  // State for the active category
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-  // State for section display settings
-  const [selectedSection, setSelectedSection] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<
-    'grid' | 'compact' | 'list' | 'high-density'
-  >('high-density');
-  const [gridColumns, setGridColumns] = useState(2);
-
-  // State for SOAP note
-  const [generatedNote, setGeneratedNote] = useState({
-    subjective: '',
-    objective: '',
-    assessment: '',
-    plan: '',
-  });
-
-  const shouldGenerateSoapNote = useRef(false);
-
-  // UI states
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [duration, setDuration] = useState('');
-  const [showMobileNav, setShowMobileNav] = useState(false);
-  const [showMobilePreview, setShowMobilePreview] = useState(false);
-  const [isAutoSaving, setIsAutoSaving] = useState(false);
-  const [systemContext, setSystemContext] = useState<string | null>(null);
 
   // Get sections for the active category
   const getActiveCategorySections = useCallback(() => {
@@ -801,6 +796,90 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
     setSelectedSection(selectedSection === sectionId ? null : sectionId);
   };
 
+  // Handle approach selection
+  const handleApproachSelect = async (approach: string) => {
+    setSelectedApproach(approach);
+    setLoading(true);
+
+    try {
+      // Format approach name for database query
+      const formattedApproach = approach
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      // Fetch chapter by approach name
+      const { data: chaptersData, error: chapterError } = await supabase
+        .from('chapters')
+        .select('*')
+        .ilike('title', `%${formattedApproach}%`);
+
+      if (chapterError) throw chapterError;
+      if (!chaptersData || chaptersData.length === 0) {
+        throw new Error(
+          `Approach "${formattedApproach}" not found in database`
+        );
+      }
+
+      // Use the first matching chapter
+      const chapterData = chaptersData[0];
+      setChapter(chapterData);
+
+      // Fetch sections for this chapter
+      const { data: sectionsData, error: sectionsError } = await supabase
+        .from('sections')
+        .select('*')
+        .eq('chapter_id', chapterData.id)
+        .order('display_order');
+
+      if (sectionsError) throw sectionsError;
+      setSections(sectionsData || []);
+
+      if (sectionsData && sectionsData.length > 0) {
+        // Fetch all checklist items for this chapter
+        const { data: itemsData, error: itemsError } = await supabase
+          .from('checklist_items')
+          .select('*')
+          .in(
+            'section_id',
+            sectionsData.map((s) => s.id)
+          )
+          .order('display_order');
+
+        if (itemsError) throw itemsError;
+
+        // Initialize with isCompleted property
+        const initializedItems = (itemsData || []).map((item) => ({
+          ...item,
+          isCompleted: false,
+          response: null,
+          notes: '',
+          isExpanded: true,
+        }));
+
+        setChecklistItems(initializedItems);
+
+        // Set the first category as active
+        if (categories.length > 0) {
+          setActiveCategory(categories[0].id);
+        }
+      }
+
+      // Update the SOAP context with the new approach
+      addOrUpdateApproach({
+        title: approach,
+        slug: approach.toLowerCase().replace(/\s+/g, '-'),
+        soapNote: generateSoapNote(),
+        timestamp: new Date().toISOString(),
+      });
+    } catch (err) {
+      console.error('Error loading approach:', err);
+      setError(err instanceof Error ? err.message : 'Unknown error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="p-3 max-w-4xl mx-auto">
@@ -945,8 +1024,14 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
           </div>
         )}
 
-        {/* Main Content Layout - Now a flex row with main + right sidebar */}
+        {/* Main Content Layout - Now a flex row with sidebar + main content + SOAP note */}
         <div className="flex h-full">
+          {/* Approach Sidebar */}
+          <ApproachSidebar
+            onApproachSelect={handleApproachSelect}
+            currentApproach={selectedApproach}
+          />
+
           {/* Main Content - Checklist Items Display */}
           <main className="flex-1 overflow-y-auto">
             <div className="max-w-7xl mx-auto p-3">
@@ -1236,6 +1321,4 @@ const DynamicSymptomChecker: React.FC<DynamicSymptomCheckerProps> = ({
       </div>
     </div>
   );
-};
-
-export default DynamicSymptomChecker;
+}
