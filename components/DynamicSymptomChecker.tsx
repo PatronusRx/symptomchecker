@@ -195,7 +195,7 @@ export default function DynamicSymptomChecker({
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<
     'grid' | 'list' | 'compact' | 'high-density'
-  >('grid');
+  >('high-density');
   const [gridColumns, setGridColumns] = useState(2);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
