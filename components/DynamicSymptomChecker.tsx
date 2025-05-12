@@ -925,35 +925,33 @@ export default function DynamicSymptomChecker({
         </div>
 
         <div className="flex items-center space-x-2">
-          {/* Patient info display */}
-          <div className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md flex items-center text-xs">
+          {/* Patient info display (non-interactive) */}
+          <div className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md flex items-center text-xs border border-transparent">
             <User size={12} className="mr-1.5" />
             <span className="font-medium">{patientInfo.name}</span>
           </div>
-
-          {/* Approach count indicator */}
+          {/* Approach count indicator (non-interactive) */}
           {approaches.length > 0 && (
-            <div className="bg-green-50 text-green-800 px-2 py-1 rounded-md text-xs">
+            <div className="bg-green-50 text-green-800 px-2 py-1 rounded-md text-xs border border-transparent">
               {approaches.length} approach{approaches.length !== 1 ? 'es' : ''}
             </div>
           )}
-
+          {/* New Patient button - red to indicate destructive action */}
           <button
             onClick={clearAllResponses}
-            className="bg-gray-100 text-gray-600 flex items-center px-2 py-1 rounded-md hover:bg-gray-200 transition-colors text-xs font-medium"
+            className="bg-white text-red-600 flex items-center px-3 py-1.5 rounded-md border border-red-300 hover:bg-red-50 hover:border-red-400 transition-all shadow-sm text-xs font-medium"
           >
-            <RefreshCw size={12} className="mr-1" />
+            <RefreshCw size={12} className="mr-1.5" />
             New Patient
           </button>
-
+          {/* Copy Note button - green to indicate positive action */}
           <button
             onClick={copyToClipboard}
-            className="bg-green-50 text-green-700 flex items-center px-2 py-1 rounded-md hover:bg-green-100 transition-colors text-xs font-medium"
+            className="bg-blue-600 text-white flex items-center px-3 py-1.5 rounded-md border border-blue-700 hover:bg-blue-700 hover:border-blue-800 transition-all shadow-sm text-xs font-medium"
           >
-            <Clipboard size={12} className="mr-1" />
+            <Clipboard size={12} className="mr-1.5" />
             Copy Note
-          </button>
-
+          </button>{' '}
           <button
             className="md:hidden text-blue-600"
             onClick={() => setShowMobilePreview(true)}
