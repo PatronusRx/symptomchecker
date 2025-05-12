@@ -10,13 +10,10 @@ import {
   Grid3X3,
   Grid,
   List,
-  ArrowLeft,
-  ArrowRight,
   ChevronDown,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
-  CornerDownRight,
 } from 'lucide-react';
 import { ChecklistItem, Category, Section } from '../../types/symptomChecker';
 
@@ -31,7 +28,6 @@ interface HighDensityChecklistProps {
     value: '+' | '-' | 'NA' | null
   ) => void;
   handleNotesChange: (itemId: string, notes: string) => void;
-  toggleItemExpansion: (itemId: string) => void;
   hasCategoryCompletedItems?: (id: string) => boolean;
   buildNestedItemsHierarchy?: (items: ChecklistItem[]) => ChecklistItem[];
   selectedSection?: string | null;
@@ -55,7 +51,6 @@ const HighDensityChecklist: React.FC<HighDensityChecklistProps> = ({
   setActiveCategory,
   handleResponseChange,
   handleNotesChange,
-  toggleItemExpansion,
   hasCategoryCompletedItems = () => false,
   buildNestedItemsHierarchy,
   selectedSection,

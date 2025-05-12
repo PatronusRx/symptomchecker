@@ -153,10 +153,13 @@ export default function BlogPost({ slug }: { slug: string }) {
 
           {post.featuredImage && (
             <div className="relative h-64 md:h-80 w-full mb-6">
-              <img
+              <Image
                 src={post.featuredImage}
                 alt={post.title}
-                className="object-cover w-full h-full rounded-lg"
+                className="object-cover rounded-lg"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
               />
             </div>
           )}
@@ -177,10 +180,17 @@ function renderNotionContent(blocks: NotionBlock[]) {
       case 'paragraph':
         return (
           <p key={block.id} className="mb-4">
-            {Array.isArray((block as { paragraph?: { rich_text?: NotionRichText[] } }).paragraph?.rich_text) && (block as { paragraph?: { rich_text?: NotionRichText[] } }).paragraph!.rich_text!.map((text: NotionRichText, index: number) => (
-              <span
-                key={index}
-                className={`
+            {Array.isArray(
+              (block as { paragraph?: { rich_text?: NotionRichText[] } })
+                .paragraph?.rich_text
+            ) &&
+              (
+                block as { paragraph?: { rich_text?: NotionRichText[] } }
+              ).paragraph!.rich_text!.map(
+                (text: NotionRichText, index: number) => (
+                  <span
+                    key={index}
+                    className={`
                   ${text.annotations.bold ? 'font-bold' : ''}
                   ${text.annotations.italic ? 'italic' : ''}
                   ${text.annotations.underline ? 'underline' : ''}
@@ -191,31 +201,56 @@ function renderNotionContent(blocks: NotionBlock[]) {
                       : ''
                   }
                 `}
-              >
-                {text.plain_text}
-              </span>
-            ))}
+                  >
+                    {text.plain_text}
+                  </span>
+                )
+              )}
           </p>
         );
 
       case 'heading_1':
         return (
           <h1 key={block.id} className="text-3xl font-bold mt-8 mb-4">
-            {Array.isArray((block as { heading_1?: { rich_text?: NotionRichText[] } }).heading_1?.rich_text) && (block as { heading_1?: { rich_text?: NotionRichText[] } }).heading_1!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+            {Array.isArray(
+              (block as { heading_1?: { rich_text?: NotionRichText[] } })
+                .heading_1?.rich_text
+            ) &&
+              (block as { heading_1?: { rich_text?: NotionRichText[] } })
+                .heading_1!.rich_text!.map(
+                  (page: NotionRichText) => page.plain_text
+                )
+                .join('')}
           </h1>
         );
 
       case 'heading_2':
         return (
           <h2 key={block.id} className="text-2xl font-bold mt-6 mb-3">
-            {Array.isArray((block as { heading_2?: { rich_text?: NotionRichText[] } }).heading_2?.rich_text) && (block as { heading_2?: { rich_text?: NotionRichText[] } }).heading_2!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+            {Array.isArray(
+              (block as { heading_2?: { rich_text?: NotionRichText[] } })
+                .heading_2?.rich_text
+            ) &&
+              (block as { heading_2?: { rich_text?: NotionRichText[] } })
+                .heading_2!.rich_text!.map(
+                  (page: NotionRichText) => page.plain_text
+                )
+                .join('')}
           </h2>
         );
 
       case 'heading_3':
         return (
           <h3 key={block.id} className="text-xl font-bold mt-5 mb-2">
-            {Array.isArray((block as { heading_3?: { rich_text?: NotionRichText[] } }).heading_3?.rich_text) && (block as { heading_3?: { rich_text?: NotionRichText[] } }).heading_3!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+            {Array.isArray(
+              (block as { heading_3?: { rich_text?: NotionRichText[] } })
+                .heading_3?.rich_text
+            ) &&
+              (block as { heading_3?: { rich_text?: NotionRichText[] } })
+                .heading_3!.rich_text!.map(
+                  (page: NotionRichText) => page.plain_text
+                )
+                .join('')}
           </h3>
         );
 
@@ -223,7 +258,22 @@ function renderNotionContent(blocks: NotionBlock[]) {
         return (
           <ul key={block.id} className="list-disc pl-6 mb-4">
             <li>
-              {Array.isArray((block as { bulleted_list_item?: { rich_text?: NotionRichText[] } }).bulleted_list_item?.rich_text) && (block as { bulleted_list_item?: { rich_text?: NotionRichText[] } }).bulleted_list_item!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+              {Array.isArray(
+                (
+                  block as {
+                    bulleted_list_item?: { rich_text?: NotionRichText[] };
+                  }
+                ).bulleted_list_item?.rich_text
+              ) &&
+                (
+                  block as {
+                    bulleted_list_item?: { rich_text?: NotionRichText[] };
+                  }
+                )
+                  .bulleted_list_item!.rich_text!.map(
+                    (page: NotionRichText) => page.plain_text
+                  )
+                  .join('')}
             </li>
           </ul>
         );
@@ -232,7 +282,22 @@ function renderNotionContent(blocks: NotionBlock[]) {
         return (
           <ol key={block.id} className="list-decimal pl-6 mb-4">
             <li>
-              {Array.isArray((block as { numbered_list_item?: { rich_text?: NotionRichText[] } }).numbered_list_item?.rich_text) && (block as { numbered_list_item?: { rich_text?: NotionRichText[] } }).numbered_list_item!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+              {Array.isArray(
+                (
+                  block as {
+                    numbered_list_item?: { rich_text?: NotionRichText[] };
+                  }
+                ).numbered_list_item?.rich_text
+              ) &&
+                (
+                  block as {
+                    numbered_list_item?: { rich_text?: NotionRichText[] };
+                  }
+                )
+                  .numbered_list_item!.rich_text!.map(
+                    (page: NotionRichText) => page.plain_text
+                  )
+                  .join('')}
             </li>
           </ol>
         );
@@ -243,7 +308,15 @@ function renderNotionContent(blocks: NotionBlock[]) {
             key={block.id}
             className="border-l-4 border-gray-300 pl-4 py-1 my-4 italic"
           >
-            {Array.isArray((block as { quote?: { rich_text?: NotionRichText[] } }).quote?.rich_text) && (block as { quote?: { rich_text?: NotionRichText[] } }).quote!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+            {Array.isArray(
+              (block as { quote?: { rich_text?: NotionRichText[] } }).quote
+                ?.rich_text
+            ) &&
+              (block as { quote?: { rich_text?: NotionRichText[] } })
+                .quote!.rich_text!.map(
+                  (page: NotionRichText) => page.plain_text
+                )
+                .join('')}
           </blockquote>
         );
 
@@ -254,7 +327,15 @@ function renderNotionContent(blocks: NotionBlock[]) {
             className="bg-gray-100 p-4 rounded-md overflow-x-auto my-4"
           >
             <code>
-              {Array.isArray((block as { code?: { rich_text?: NotionRichText[] } }).code?.rich_text) && (block as { code?: { rich_text?: NotionRichText[] } }).code!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
+              {Array.isArray(
+                (block as { code?: { rich_text?: NotionRichText[] } }).code
+                  ?.rich_text
+              ) &&
+                (block as { code?: { rich_text?: NotionRichText[] } })
+                  .code!.rich_text!.map(
+                    (page: NotionRichText) => page.plain_text
+                  )
+                  .join('')}
             </code>
           </pre>
         );
@@ -264,9 +345,19 @@ function renderNotionContent(blocks: NotionBlock[]) {
           <figure key={block.id} className="my-6">
             <Image
               src={
-                ((block as { image?: { type?: string; external?: { url?: string }; file?: { url?: string } } }).image?.type === 'external'
-                  ? (block as { image?: { external?: { url?: string } } }).image?.external?.url
-                  : (block as { image?: { file?: { url?: string } } }).image?.file?.url) || ''
+                ((
+                  block as {
+                    image?: {
+                      type?: string;
+                      external?: { url?: string };
+                      file?: { url?: string };
+                    };
+                  }
+                ).image?.type === 'external'
+                  ? (block as { image?: { external?: { url?: string } } }).image
+                      ?.external?.url
+                  : (block as { image?: { file?: { url?: string } } }).image
+                      ?.file?.url) || ''
               }
               alt="Blog image"
               className="w-full rounded-md"
@@ -275,8 +366,11 @@ function renderNotionContent(blocks: NotionBlock[]) {
               layout="responsive"
             />
             {(() => {
-              const imageBlock = block as { image?: { caption?: NotionRichText[] } };
-              return Array.isArray(imageBlock.image?.caption) && imageBlock.image.caption.length > 0 ? (
+              const imageBlock = block as {
+                image?: { caption?: NotionRichText[] };
+              };
+              return Array.isArray(imageBlock.image?.caption) &&
+                imageBlock.image.caption.length > 0 ? (
                 <figcaption className="text-sm text-center text-gray-500 mt-2">
                   {imageBlock.image.caption[0]?.plain_text}
                 </figcaption>
