@@ -268,20 +268,14 @@ const HighDensityChecklist: React.FC<HighDensityChecklistProps> = ({
         }}
       >
         <div className="flex-1 p-1 overflow-hidden">
-          <div
-            className="font-medium text-gray-700 overflow-hidden text-ellipsis flex items-start gap-1"
-            title={item.item_text}
-          >
+          <div className="relative group font-medium text-gray-700 flex items-start gap-1 cursor-pointer">
             {getNestingIndicator(indentLevel)}
-            <span
-              style={{
-                display: '-webkit-box',
-                WebkitLineClamp: viewDensity === 'ultra-compact' ? 1 : 2,
-                WebkitBoxOrient: 'vertical',
-              }}
-            >
+            <div className="overflow-hidden whitespace-nowrap text-ellipsis">
               {item.item_text}
-            </span>
+            </div>
+            <div className="absolute left-0 top-full mt-1 hidden group-hover:block bg-black text-white text-xs rounded p-1 z-50">
+              {item.item_text}
+            </div>
           </div>
 
           {/* Parent indicator if item has children */}
