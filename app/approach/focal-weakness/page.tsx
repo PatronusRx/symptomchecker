@@ -1,5 +1,5 @@
 'use client';
-import FocalWeaknessTracker from '@/components/patientApproaches/FocalWeakness';
+// FocalWeaknessTracker component is unavailable. Removed import.
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -25,7 +25,9 @@ export default function FocalWeaknessPage() {
         </h1>
       </header>
 
-      <FocalWeaknessTracker />
+      <div className="p-8 text-center text-gray-500">
+        The Focal Weakness Tracker feature is currently unavailable.
+      </div>
     </div>
   );
 }
