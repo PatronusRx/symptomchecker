@@ -1,9 +1,8 @@
 'use client';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { ArrowLeft, ClipboardEdit } from 'lucide-react';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
 
 interface Chapter {
@@ -17,7 +16,6 @@ interface Chapter {
 
 export default function ApproachPage() {
   const params = useParams();
-  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [chapterExists, setChapterExists] = useState(false);
@@ -208,10 +206,6 @@ export default function ApproachPage() {
     }
   }, [approachParam]);
 
-  const handleBackClick = () => {
-    router.push('/');
-  };
-
   // Hide footer on all screen sizes for this page
   useEffect(() => {
     // Add class to hide footer
@@ -235,28 +229,8 @@ export default function ApproachPage() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">
-      {/* Top Navigation */}
-      <header className="bg-white shadow-sm px-3 md:px-4 py-2 md:py-3 flex justify-between items-center">
-        <div className="flex items-center">
-          {/* Back button to return to home */}
-          <button
-            className="mr-2 md:mr-3 text-blue-500 hover:text-blue-700"
-            onClick={handleBackClick}
-            aria-label="Back to home"
-          >
-            <ArrowLeft size={20} className="md:w-6 md:h-6" />
-          </button>
-          <div className="flex items-center">
-            <ClipboardEdit className="text-blue-600 mr-2 w-5 h-5 md:w-6 md:h-6" />
-            <h1 className="text-responsive-lg font-bold text-gray-800">
-              {approach}
-            </h1>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
-      <div className="flex-1 ">
+      <div className="flex-1">
         <div className="flex-1 overflow-y-auto">
           <div className="p-1 md:p-2 w-full">
             {!chapterExists || error ? (
