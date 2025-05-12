@@ -1131,7 +1131,6 @@ export default function DynamicSymptomChecker({
                     setActiveCategory={setActiveCategory}
                     handleResponseChange={handleResponseChange}
                     handleNotesChange={handleNotesChange}
-                    toggleItemExpansion={toggleItemExpansion}
                     hasCategoryCompletedItems={hasCategoryCompletedItems}
                     buildNestedItemsHierarchy={buildNestedItemsHierarchy}
                     selectedSection={selectedSection}
