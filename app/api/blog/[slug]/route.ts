@@ -8,11 +8,12 @@ function hasProperties(page: unknown): page is PageObjectResponse {
   return !!page && typeof page === 'object' && 'properties' in page;
 }
 
+// Corrected function signature - properly destructuring params
 export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  // Destructure slug from params to avoid using params.slug directly
+  // Destructure slug from params
   const { slug } = params;
 
   try {
