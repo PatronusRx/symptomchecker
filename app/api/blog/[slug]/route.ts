@@ -10,10 +10,10 @@ function hasProperties(page: unknown): page is PageObjectResponse {
 
 export async function GET(
   request: Request,
-  context: { params: { slug: string } }
+  { params }: { params: { slug: string } }
 ) {
   // Destructure slug from params to avoid using params.slug directly
-  const { slug } = context.params;
+  const { slug } = params;
 
   try {
     // Find the page by slug
@@ -34,7 +34,10 @@ export async function GET(
     const page = response.results[0];
 
     if (!hasProperties(page)) {
-      return NextResponse.json({ error: 'Invalid Notion page object' }, { status: 500 });
+      return NextResponse.json(
+        { error: 'Invalid Notion page object' },
+        { status: 500 }
+      );
     }
 
     // Get page content
@@ -62,21 +65,33 @@ export async function GET(
     // Excerpt
     let excerpt = '';
     const excerptProp = properties.Excerpt;
-    if (excerptProp && excerptProp.type === 'rich_text' && excerptProp.rich_text[0]) {
+    if (
+      excerptProp &&
+      excerptProp.type === 'rich_text' &&
+      excerptProp.rich_text[0]
+    ) {
       excerpt = excerptProp.rich_text[0].plain_text;
     }
 
     // Published Date
     let publishedDate = null;
     const publishedDateProp = properties['Published Date'];
-    if (publishedDateProp && publishedDateProp.type === 'date' && publishedDateProp.date) {
+    if (
+      publishedDateProp &&
+      publishedDateProp.type === 'date' &&
+      publishedDateProp.date
+    ) {
       publishedDate = publishedDateProp.date.start;
     }
 
     // Tags
     let tags: string[] = [];
     const tagsProp = properties.Tags;
-    if (tagsProp && tagsProp.type === 'multi_select' && Array.isArray(tagsProp.multi_select)) {
+    if (
+      tagsProp &&
+      tagsProp.type === 'multi_select' &&
+      Array.isArray(tagsProp.multi_select)
+    ) {
       tags = tagsProp.multi_select.map((tag: { name: string }) => tag.name);
     }
 
@@ -114,7 +129,6 @@ export async function GET(
       status,
       content: blocks.results,
     };
-
 
     return NextResponse.json(post);
   } catch (error) {
