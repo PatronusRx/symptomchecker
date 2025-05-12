@@ -200,17 +200,12 @@ export default function DynamicSymptomChecker({
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
   const [duration, setDuration] = useState('');
-  const [systemContext, setSystemContext] = useState<string | null>(null);
+
   const [selectedApproach, setSelectedApproach] = useState<string | undefined>(
     chapterSlug
   );
-  const [isAutoSaving, setIsAutoSaving] = useState(false);
-  const [generatedNote, setGeneratedNote] = useState({
-    subjective: '',
-    objective: '',
-    assessment: '',
-    plan: '',
-  });
+
+
 
   const shouldGenerateSoapNote = useRef(false);
 
@@ -221,7 +216,6 @@ export default function DynamicSymptomChecker({
   const {
     approaches,
     patientInfo,
-    setPatientInfo,
     addOrUpdateApproach,
     clearAllData,
     getCombinedSoapNote,
@@ -373,21 +367,10 @@ export default function DynamicSymptomChecker({
       // Removed unused symptom variable
 
       if (system) {
-        setSystemContext(system);
+        
       }
     }
   }, []);
-
-  // Handle navigation back to system view
-  const handleSystemBack = () => {
-    if (systemContext) {
-      // Navigate back to the system view with the context
-      router.push(`/?system=${encodeURIComponent(systemContext)}`);
-    } else {
-      // If no context, just go back to home
-      router.push('/');
-    }
-  };
 
   // Fetch data from Supabase
   useEffect(() => {
@@ -531,9 +514,9 @@ export default function DynamicSymptomChecker({
 
   // Trigger autosave animation
   const triggerAutosave = useCallback(() => {
-    setIsAutoSaving(true);
+
     setTimeout(() => {
-      setIsAutoSaving(false);
+
     }, 1500);
   }, []);
 
@@ -574,7 +557,7 @@ export default function DynamicSymptomChecker({
       });
     }
 
-    setGeneratedNote(noteData);
+
     return noteData;
   }, [
     checklistItems,

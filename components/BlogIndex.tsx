@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 interface BlogPost {
   id: string;
   title: string;
@@ -76,10 +77,12 @@ export default function BlogIndex() {
           >
             {post.featuredImage && (
               <div className="relative h-48 w-full">
-                <img
+                <Image
                   src={post.featuredImage}
                   alt={post.title}
-                  className="object-cover w-full h-full"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
                 />
               </div>
             )}

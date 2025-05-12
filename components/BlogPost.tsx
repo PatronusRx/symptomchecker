@@ -4,11 +4,24 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
+
+// Type for Notion rich text objects
+interface NotionRichText {
+  plain_text: string;
+  annotations: {
+    bold: boolean;
+    italic: boolean;
+    underline: boolean;
+    strikethrough: boolean;
+    code: boolean;
+  };
+}
 
 interface NotionBlock {
   id: string;
   type: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface BlogPostData {
@@ -164,7 +177,7 @@ function renderNotionContent(blocks: NotionBlock[]) {
       case 'paragraph':
         return (
           <p key={block.id} className="mb-4">
-            {block.paragraph.rich_text.map((text: any, index: number) => (
+            {Array.isArray((block as { paragraph?: { rich_text?: NotionRichText[] } }).paragraph?.rich_text) && (block as { paragraph?: { rich_text?: NotionRichText[] } }).paragraph!.rich_text!.map((text: NotionRichText, index: number) => (
               <span
                 key={index}
                 className={`
@@ -188,27 +201,21 @@ function renderNotionContent(blocks: NotionBlock[]) {
       case 'heading_1':
         return (
           <h1 key={block.id} className="text-3xl font-bold mt-8 mb-4">
-            {block.heading_1.rich_text
-              .map((text: any) => text.plain_text)
-              .join('')}
+            {Array.isArray((block as { heading_1?: { rich_text?: NotionRichText[] } }).heading_1?.rich_text) && (block as { heading_1?: { rich_text?: NotionRichText[] } }).heading_1!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
           </h1>
         );
 
       case 'heading_2':
         return (
           <h2 key={block.id} className="text-2xl font-bold mt-6 mb-3">
-            {block.heading_2.rich_text
-              .map((text: any) => text.plain_text)
-              .join('')}
+            {Array.isArray((block as { heading_2?: { rich_text?: NotionRichText[] } }).heading_2?.rich_text) && (block as { heading_2?: { rich_text?: NotionRichText[] } }).heading_2!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
           </h2>
         );
 
       case 'heading_3':
         return (
           <h3 key={block.id} className="text-xl font-bold mt-5 mb-2">
-            {block.heading_3.rich_text
-              .map((text: any) => text.plain_text)
-              .join('')}
+            {Array.isArray((block as { heading_3?: { rich_text?: NotionRichText[] } }).heading_3?.rich_text) && (block as { heading_3?: { rich_text?: NotionRichText[] } }).heading_3!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
           </h3>
         );
 
@@ -216,9 +223,7 @@ function renderNotionContent(blocks: NotionBlock[]) {
         return (
           <ul key={block.id} className="list-disc pl-6 mb-4">
             <li>
-              {block.bulleted_list_item.rich_text
-                .map((text: any) => text.plain_text)
-                .join('')}
+              {Array.isArray((block as { bulleted_list_item?: { rich_text?: NotionRichText[] } }).bulleted_list_item?.rich_text) && (block as { bulleted_list_item?: { rich_text?: NotionRichText[] } }).bulleted_list_item!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
             </li>
           </ul>
         );
@@ -227,9 +232,7 @@ function renderNotionContent(blocks: NotionBlock[]) {
         return (
           <ol key={block.id} className="list-decimal pl-6 mb-4">
             <li>
-              {block.numbered_list_item.rich_text
-                .map((text: any) => text.plain_text)
-                .join('')}
+              {Array.isArray((block as { numbered_list_item?: { rich_text?: NotionRichText[] } }).numbered_list_item?.rich_text) && (block as { numbered_list_item?: { rich_text?: NotionRichText[] } }).numbered_list_item!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
             </li>
           </ol>
         );
@@ -240,7 +243,7 @@ function renderNotionContent(blocks: NotionBlock[]) {
             key={block.id}
             className="border-l-4 border-gray-300 pl-4 py-1 my-4 italic"
           >
-            {block.quote.rich_text.map((text: any) => text.plain_text).join('')}
+            {Array.isArray((block as { quote?: { rich_text?: NotionRichText[] } }).quote?.rich_text) && (block as { quote?: { rich_text?: NotionRichText[] } }).quote!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
           </blockquote>
         );
 
@@ -251,9 +254,7 @@ function renderNotionContent(blocks: NotionBlock[]) {
             className="bg-gray-100 p-4 rounded-md overflow-x-auto my-4"
           >
             <code>
-              {block.code.rich_text
-                .map((text: any) => text.plain_text)
-                .join('')}
+              {Array.isArray((block as { code?: { rich_text?: NotionRichText[] } }).code?.rich_text) && (block as { code?: { rich_text?: NotionRichText[] } }).code!.rich_text!.map((page: NotionRichText) => page.plain_text).join('')}
             </code>
           </pre>
         );
@@ -261,20 +262,26 @@ function renderNotionContent(blocks: NotionBlock[]) {
       case 'image':
         return (
           <figure key={block.id} className="my-6">
-            <img
+            <Image
               src={
-                block.image.type === 'external'
-                  ? block.image.external.url
-                  : block.image.file.url
+                ((block as { image?: { type?: string; external?: { url?: string }; file?: { url?: string } } }).image?.type === 'external'
+                  ? (block as { image?: { external?: { url?: string } } }).image?.external?.url
+                  : (block as { image?: { file?: { url?: string } } }).image?.file?.url) || ''
               }
               alt="Blog image"
               className="w-full rounded-md"
+              width={1200}
+              height={600}
+              layout="responsive"
             />
-            {block.image.caption.length > 0 && (
-              <figcaption className="text-sm text-center text-gray-500 mt-2">
-                {block.image.caption[0].plain_text}
-              </figcaption>
-            )}
+            {(() => {
+              const imageBlock = block as { image?: { caption?: NotionRichText[] } };
+              return Array.isArray(imageBlock.image?.caption) && imageBlock.image.caption.length > 0 ? (
+                <figcaption className="text-sm text-center text-gray-500 mt-2">
+                  {imageBlock.image.caption[0]?.plain_text}
+                </figcaption>
+              ) : null;
+            })()}
           </figure>
         );
 

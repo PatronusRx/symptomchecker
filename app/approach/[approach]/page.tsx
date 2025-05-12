@@ -5,14 +5,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import DynamicSymptomChecker from '@/components/DynamicSymptomChecker';
 
-interface Chapter {
-  id: string;
-  chapter_number: number;
-  title: string;
-  content?: string;
-  created_at?: string;
-  updated_at?: string;
-}
+
 
 export default function ApproachPage() {
   const params = useParams();
@@ -20,7 +13,7 @@ export default function ApproachPage() {
   const [error, setError] = useState<string | null>(null);
   const [chapterExists, setChapterExists] = useState(false);
   const [approach, setApproach] = useState<string>('');
-  const [chapter, setChapter] = useState<Chapter | null>(null);
+
 
   // Get the approach parameter from the URL
   const approachParam =
@@ -177,7 +170,7 @@ export default function ApproachPage() {
             console.log(
               `Found best match: ${bestMatch.title} (ID: ${bestMatch.id})`
             );
-            setChapter(bestMatch as Chapter);
+
             setChapterExists(true);
           }
         } else {
@@ -185,7 +178,7 @@ export default function ApproachPage() {
           console.log(
             `Found exact chapter match: ${exactChapterData[0].title} (ID: ${exactChapterData[0].id})`
           );
-          setChapter(exactChapterData[0] as Chapter);
+
           setChapterExists(true);
         }
       } catch (err) {
